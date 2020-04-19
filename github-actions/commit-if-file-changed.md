@@ -18,14 +18,13 @@ on:
       run: |-
         git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
-        git add README.md
-        git diff --quiet || git commit -m "Updated README"
+        git diff --quiet || git add README.md && git commit -m "Updated README"
         git push
 ```
-My first attempt threw an error if I tried o run `gi commit -m ...` and the README had not changed.
+My first attempt threw an error if I tried o run `git commit -m ...` and the README had not changed.
 
-It turns out `git diff --quiet` exits with a 1 exit code if anything has changed, so this recipe commits only if something differs:
+It turns out `git diff --quiet` exits with a 1 exit code if anything has changed, so this recipe adds the file and commits it only if something differs:
 
 ```bash
-git diff --quiet || git commit -m "Updated README"
+git diff --quiet || git add README.md && git commit -m "Updated README"
 ```
