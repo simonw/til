@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simon Willison: TIL</title>
+<title>TIL search: {{ q }}</title>
 <style>
 body {
     box-sizing: border-box;
@@ -34,29 +34,29 @@ input[type=submit] {
     line-height: 1;
     border-radius: .25rem;
 }
+.topic {
+    background-color: #ccc;
+    padding: 3px;
+    border: 1px solid #777;
+    font-size: 0.65em;
+    position: relative;
+    top: -1px;
+}
 </style>
 </head>
 <body>
-
-<h1>Simon Willison: TIL</h1>
-<p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>.</p>
-
-<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+<nav><a href="/">TIL index</a></nav>
+<h1>TIL search: {{ q }}</h1>
 
 <form action="/til/search">
     <p>
-        <input type="search" name="q">
+        <input type="search" name="q" value="{{ q }}">
         <input type="submit" value="Search">
     </p>
 </form>
 
-{% for row in sql("select distinct topic from til order by topic") %}
-    <h2>{{ row.topic }}</h2>
-    <ul>
-        {% for til in sql("select * from til where topic = '" + row.topic + "'") %}
-            <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
-        {% endfor %}
-    </ul>
+{% for row in rows %}
+    <p><span class="topic">{{ row.topic }}</span> <a href="{{ row.url }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
 {% endfor %}
 
 </body>

@@ -4,6 +4,9 @@
     "about_url": "https://github.com/simonw/til",
     "databases": {
         "til": {
+            "queries": {
+                "search": "select\n  til_fts.rank,\n  til.*\nfrom\n  til\n  join til_fts on til.rowid = til_fts.rowid\nwhere\n  til_fts match case\n    :q\n    when '' then '*'\n    else escape_fts(:q)\n  end\norder by\n  til_fts.rank limit 20\n"
+            },
             "tables": {
                 "til": {
                     "sort_desc": "updated_utc",
