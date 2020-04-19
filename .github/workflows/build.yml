@@ -1,0 +1,54 @@
+name: Build README and deploy Datasette
+
+on:
+  push:
+    branches:
+    - master
+    paths-ignore:
+    - README.md
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+      # We need full history to introspect created/updated:
+      with:
+        fetch-depth: 0  
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - uses: actions/cache@v1
+      name: Configure pip caching
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Build database
+      run: python build_database.py
+    - name: Update README
+      run: python update_readme.py --rewrite
+    - name: Commit README back to the repo
+      run: |-
+        git add README.md
+        git commit -m "Updated README"
+        git push
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: Deploy Datasette using Zeit Now
+      env:
+        NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+      run: |-
+        datasette publish now2 til.db \
+          --token $NOW_TOKEN \
+          --project simon-til \
+          --metadata metadata.json
