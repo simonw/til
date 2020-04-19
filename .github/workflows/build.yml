@@ -34,13 +34,15 @@ jobs:
     - name: Build database
       run: python build_database.py
     - name: Update README
-      run: python update_readme.py --rewrite
+      run: |-
+        python update_readme.py --rewrite
+        cat README.md
+        git diff
     - name: Commit README back to the repo
       run: |-
         git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
         git add README.md
-        git diff
         git diff --quiet || git commit -m "Updated README"
         git push
     - name: Setup Node.js
