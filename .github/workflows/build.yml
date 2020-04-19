@@ -40,6 +40,7 @@ jobs:
         git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
         git add README.md
+        git diff
         git diff --quiet || git commit -m "Updated README"
         git push
     - name: Setup Node.js
