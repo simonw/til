@@ -17,6 +17,9 @@ body {
 
 <h1>Simon Willison: TIL</h1>
 <p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>.</p>
+
+<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+
 {% for row in sql("select distinct topic from til order by topic") %}
     <h2>{{ row.topic }}</h2>
     <ul>
