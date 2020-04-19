@@ -4,3 +4,4 @@ datasette
 py-gfm
 datasette-render-markdown
 datasette-publish-now
+datasette-template-sql

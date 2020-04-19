@@ -55,4 +55,6 @@ jobs:
           --project simon-til \
           --metadata metadata.json \
           --install py-gfm \
-          --install datasette-render-markdown
+          --install datasette-render-markdown \
+          --install datasette-template-sql \
+          --template-dir template

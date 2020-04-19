@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+{% set til = display_rows[0] %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ til.title }}</title>
+<style>
+body {
+    font-family: helvetica;
+    padding: 1em 2em;
+    max-width: 800px;
+    line-height: 1.2em;
+}
+.created {
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+    font-size: 0.8em;
+}
+</style>
+</head>
+<body>
+<nav><a href="/">TIL index</a></nav>
+<h1>{{ til.title }}</h1>
+
+{{ render_markdown(
+    til.body,
+    extra_tags=[
+        "img",
+        "hr",
+        "br",
+        "details",
+        "summary",
+        "input",
+        "div",
+        "span"
+    ],
+    extra_attrs={
+        "input": [
+            "type",
+            "disabled",
+            "checked"
+        ],
+        "img": [
+            "src"
+        ],
+        "div": [
+            "class"
+        ],
+        "span": [
+            "class"
+        ]
+    },
+    extensions=[
+        "mdx_gfm:GithubFlavoredMarkdownExtension"
+    ])
+}}
+
+<p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }}{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
+
+</body>
+</html>

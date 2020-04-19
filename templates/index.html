@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simon Willison: TIL</title>
+<style>
+body {
+    font-family: helvetica;
+    padding: 1em 2em;
+    max-width: 800px;
+    line-height: 1.5em;
+}
+</style>
+</head>
+<body>
+
+<h1>Simon Willison: TIL</h1>
+<p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>.</p>
+{% for row in sql("select distinct topic from til order by topic") %}
+    <h2>{{ row.topic }}</h2>
+    <ul>
+        {% for til in sql("select * from til where topic = '" + row.topic + "'") %}
+            <li><a href="/til/til/{{ til.path }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+</body>
+</html>
