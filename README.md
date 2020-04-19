@@ -17,4 +17,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## zeit-now
 
 * [Running a Python ASGI app on Zeit Now v2](https://github.com/simonw/til/blob/master/zeit-now/python-asgi-on-now-v2.md) - 2020-04-19
+
+## sqlite
+
+* [Lag window function in SQLite](https://github.com/simonw/til/blob/master/sqlite/lag-window-function.md) - 2020-04-19
 <!-- index ends -->
