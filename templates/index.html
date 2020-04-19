@@ -21,7 +21,7 @@ body {
     <h2>{{ row.topic }}</h2>
     <ul>
         {% for til in sql("select * from til where topic = '" + row.topic + "'") %}
-            <li><a href="/til/til/{{ til.path }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+            <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
         {% endfor %}
     </ul>
 {% endfor %}
