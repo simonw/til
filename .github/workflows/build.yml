@@ -33,13 +33,11 @@ jobs:
         pip install -r requirements.txt
     - name: Build database
       run: python build_database.py
-    - name: Update README
+    - name: Update README, commit if it changed
       run: |-
         python update_readme.py --rewrite
         cat README.md
         git diff
-    - name: Commit README back to the repo
-      run: |-
         git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
         git add README.md
