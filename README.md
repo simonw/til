@@ -13,4 +13,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## python
 
 * [Convert a datetime object to UTC without using pytz](https://github.com/simonw/til/blob/master/python/convert-to-utc-without-pytz.md) - 2020-04-19
+
+## zeit-now
+
+* [Running a Python ASGI app on Zeit Now v2](https://github.com/simonw/til/blob/master/zeit-now/python-asgi-on-now-v2.md) - 2020-04-19
 <!-- index ends -->
