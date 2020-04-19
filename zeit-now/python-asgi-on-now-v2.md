@@ -1,6 +1,6 @@
 # Running a Python ASGI app on Zeit Now v2
 
-Now v2 really wants you to deploy static assets with serverless functions tucked away in a separate folder. They suggest creating modules like `api/index.py` which will be served up automatically as API backends to your client-side JavaScript.
+Now v2 really wants you to deploy static assets with [serverless functions](https://zeit.co/docs/v2/serverless-functions/introduction) tucked away in a separate folder. They suggest creating modules like `api/index.py` which will be served up automatically as API backends to your client-side JavaScript.
 
 It turns out you can subvert that model entirely and route all of your traffic through a single function - great for serving up Python WSGI or ASGI apps that handle traffic routing themselves.
 
@@ -24,7 +24,7 @@ the trick is to use the `"routes"` key in a `now.json` file like this:
 }
 ```
 
-Here `json_head.py` is a Python module which uses [Sanic](https://github.com/huge-success/sanic) to expose a `app` object that conforms to the ASGI protocol. The same trick works for [Starlette](https://github.com/encode/starlette) too, and should work for libraries that expose WSGI protocl objects such as Flask.
+Here `json_head.py` is a Python module which uses [Sanic](https://github.com/huge-success/sanic) to expose a `app` object that conforms to the ASGI protocol. The same trick works for [Starlette](https://github.com/encode/starlette) too, and should work for libraries that expose WSGI protocol objects such as Flask.
 
 Some examples I've built that use this pattern:
 
