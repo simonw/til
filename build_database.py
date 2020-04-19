@@ -40,7 +40,7 @@ def build_database(repo_path):
         path = str(filepath.relative_to(root))
         url = "https://github.com/simonw/til/blob/master/{}".format(path)
         record = {
-            "path": path,
+            "path": path.replace("/", "_"),
             "topic": path.split("/")[0],
             "title": title,
             "url": url,
