@@ -1,6 +1,6 @@
 # Commit a file if it changed
 
-Tthis recipe runs a Python script to update a README, then commits it back to the parent repo but only if it has changed:
+This recipe runs a Python script to update a README, then commits it back to the parent repo but only if it has changed:
 
 ```yaml
 on:
