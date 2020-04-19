@@ -1,0 +1,53 @@
+{
+    "title": "Today I Learned",
+    "about": "simonw/til",
+    "about_url": "https://github.com/simonw/til",
+    "databases": {
+        "til": {
+            "tables": {
+                "til": {
+                    "sort_desc": "updated_utc",
+                    "facets": [
+                        "topic"
+                    ],
+                    "plugins": {
+                        "datasette-render-markdown": {
+                            "columns": [
+                                "body"
+                            ],
+                            "extra_tags": [
+                                "img",
+                                "hr",
+                                "br",
+                                "details",
+                                "summary",
+                                "input",
+                                "div",
+                                "span"
+                            ],
+                            "extra_attrs": {
+                                "input": [
+                                    "type",
+                                    "disabled",
+                                    "checked"
+                                ],
+                                "img": [
+                                    "src"
+                                ],
+                                "div": [
+                                    "class"
+                                ],
+                                "span": [
+                                    "class"
+                                ]
+                            },
+                            "extensions": [
+                                "mdx_gfm:GithubFlavoredMarkdownExtension"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
