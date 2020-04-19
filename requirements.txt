@@ -3,3 +3,4 @@ sqlite-utils
 datasette
 py-gfm
 datasette-render-markdown
+datasette-publish-now
