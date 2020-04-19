@@ -8,6 +8,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Only run GitHub Action on push to master](https://github.com/simonw/til/blob/master/github-actions/only-master.md) - 2020-04-19
 * [Dump out all GitHub Actions context](https://github.com/simonw/til/blob/master/github-actions/dump-context.md) - 2020-04-19
 * [Set environment variables for all steps in a GitHub Action](https://github.com/simonw/til/blob/master/github-actions/set-environment-for-all-steps.md) - 2020-04-19
+* [Commit a file if it changed](https://github.com/simonw/til/blob/master/github-actions/commit-if-file-changed.md) - 2020-04-19
 
 ## python
 
