@@ -28,3 +28,15 @@ It turns out `git diff --quiet` exits with a 1 exit code if anything has changed
 ```bash
 git diff --quiet || (git add README.md && git commit -m "Updated README")
 ```
+
+Mikeal Rogers has a [publish-to-github-action](https://github.com/mikeal/publish-to-github-action) which uses a [slightly different pattern](https://github.com/mikeal/publish-to-github-action/blob/000c8a4f43e2a7dd4aab81e3fdf8be36d4457ed8/entrypoint.sh#L21-L27):
+
+```bash
+# publish any new files
+git checkout master
+git add -A
+timestamp=$(date -u)
+git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
+git pull --rebase publisher master
+git push publisher master
+```
