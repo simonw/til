@@ -22,4 +22,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## sqlite
 
 * [Lag window function in SQLite](https://github.com/simonw/til/blob/master/sqlite/lag-window-function.md) - 2020-04-19
+
+## presenting
+
+* [Using macOS stickies to display a workshop link on the screen](https://github.com/simonw/til/blob/master/presenting/stickies-for-workshop-links.md) - 2020-04-20
 <!-- index ends -->
