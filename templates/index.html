@@ -53,7 +53,7 @@ input[type=submit] {
 {% for row in sql("select distinct topic from til order by topic") %}
     <h2>{{ row.topic }}</h2>
     <ul>
-        {% for til in sql("select * from til where topic = '" + row.topic + "'") %}
+        {% for til in sql("select * from til where topic = '" + row.topic + "' order by created_utc") %}
             <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
         {% endfor %}
     </ul>
