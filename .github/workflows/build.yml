@@ -59,5 +59,6 @@ jobs:
           --install py-gfm \
           --install datasette-render-markdown \
           --install datasette-template-sql \
+          --install datasette-atom \
           --plugins-dir plugins \
           --template-dir templates
