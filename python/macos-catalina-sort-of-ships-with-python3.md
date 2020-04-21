@@ -68,7 +68,10 @@ Updating Homebrew...
 ######################################################################## 100.0%
 ==> Pouring pipx-0.15.1.3_1.catalina.bottle.tar.gz
 🍺  /usr/local/Cellar/pipx/0.15.1.3_1: 92 files, 566.8KB
-simon@Simons-MacBook-Pro ~ % pipx install github-to-sqlite
+```
+Now I'll try using it to install a command-line tool ([github-to-sqlite](https://github.com/dogsheep/github-to-sqlite)):
+```
+% pipx install github-to-sqlite
   installed package github-to-sqlite 1.1, Python 3.8.2
   These apps are now globally available
     - github-to-sqlite
