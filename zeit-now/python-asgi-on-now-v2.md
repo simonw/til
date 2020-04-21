@@ -33,3 +33,8 @@ Some examples I've built that use this pattern:
 * Apps published using https://github.com/simonw/datasette-publish-now
 
 Here's [the Zeit builder code](https://github.com/zeit/now/blob/c9437e714a754da2d25ae23160d5ad9cf64e2228/packages/now-python/now_init.py#L82) that detects ASGI or WSGI apps, for a peek at how it works under the hood.
+
+See also:
+
+* [Hello, Zeit Now v2](https://simonwillison.net/2020/Apr/8/weeknotes-zeit-now-v2/#hello-zeit-now-v2) where I started exploring it more
+* [Better Datasette on Now v2](https://simonwillison.net/2020/Apr/16/weeknotes-hacking-23-different-projects/) documenting further improvement tricks I uncovered
