@@ -22,6 +22,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## sqlite
 
 * [Lag window function in SQLite](https://github.com/simonw/til/blob/master/sqlite/lag-window-function.md) - 2020-04-19
+* [Null case comparisons in SQLite](https://github.com/simonw/til/blob/master/sqlite/null-case.md) - 2020-04-21
 
 ## presenting
 
