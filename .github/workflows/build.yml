@@ -59,4 +59,5 @@ jobs:
           --install datasette-template-sql \
           --install datasette-atom \
           --plugins-dir plugins \
-          --template-dir templates
+          --template-dir templates \
+          --public
