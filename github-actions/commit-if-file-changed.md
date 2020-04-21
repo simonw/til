@@ -7,10 +7,6 @@ on:
   push:
     branches:
     - master
-    # We don't want to run this action in a loop - where
-    # push of README triggers yet another run:
-    paths-ignore:
-    - README.md
 # ...
     - name: Update README
       run: python update_readme.py --rewrite
