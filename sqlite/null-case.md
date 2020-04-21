@@ -15,8 +15,8 @@ from
   left join media_tweets on tweets.id = media_tweets.tweets_id
   left join media on media.id = media_tweets.media_id
 where
-  full_text like :p0
-  and user = :p1
+  full_text like '%lb%'
+  and user = 3166449535
   and lbs is not null
 group by
   tweets.id
