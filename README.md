@@ -28,4 +28,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## presenting
 
 * [Using macOS stickies to display a workshop link on the screen](https://github.com/simonw/til/blob/master/presenting/stickies-for-workshop-links.md) - 2020-04-20
+
+## macos
+
+* [Running pip install -e .[test] in zsh on macOS Catalina](https://github.com/simonw/til/blob/master/macos/zsh-pip-install.md) - 2020-04-21
 <!-- index ends -->
