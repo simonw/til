@@ -1,6 +1,14 @@
 # Null case comparisons in SQLite
 
-I wrote this query:
+I wanted to say "output this transformed value if it's not null, otherwise nothing". The recipe I figured out was:
+
+```sql
+  case
+    when (media_url_https is not null) then json_object('img_src', media_url_https, 'width', 300)
+  end as photo
+```
+
+Full query example:
 
 ```sql
 select
@@ -22,12 +30,4 @@ group by
   tweets.id
 order by
   created_at
-```
-
-I had to figure out how to say "output this if it's not null, otherwise nothing". The recipe I figured out was:
-
-```sql
-  case
-    when (media_url_https is not null) then json_object('img_src', media_url_https, 'width', 300)
-  end as photo
 ```
