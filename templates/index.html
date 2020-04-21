@@ -62,7 +62,7 @@ input[type=submit] {
 <path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" />
     </svg> Atom feed</a></p>
 
-<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc limit 5") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
 
 <form action="/til/search">
     <p>
