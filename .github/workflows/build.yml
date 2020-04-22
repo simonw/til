@@ -50,7 +50,7 @@ jobs:
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
-        datasette publish now2 til.db \
+        datasette publish now til.db \
           --token $NOW_TOKEN \
           --project simon-til \
           --metadata metadata.json \
