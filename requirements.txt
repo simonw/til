@@ -1,6 +1,5 @@
 GitPython
 sqlite-utils
-datasette
 py-gfm
 datasette~=0.40
 datasette-render-markdown
