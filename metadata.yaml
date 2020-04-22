@@ -1,0 +1,64 @@
+title: Today I Learned
+about: simonw/til
+about_url: https://github.com/simonw/til
+databases:
+  til:
+    queries:
+      search: |
+        select
+          til_fts.rank,
+          til.*
+        from
+          til
+          join til_fts on til.rowid = til_fts.rowid
+        where
+          til_fts match case
+            :q
+            when '' then '*'
+            else escape_fts(:q)
+          end
+        order by
+          til_fts.rank limit 20
+      feed: |-
+        SELECT
+          'tag:til.simonwillison.net,' || path as atom_id,
+          title as atom_title,
+          created_utc as atom_updated,
+          render_markdown(body) as atom_content_html
+        FROM
+          til
+        order by
+          created_utc desc
+        limit
+          15
+    tables:
+      til:
+        sort_desc: updated_utc
+        facets:
+        - topic
+        plugins:
+          datasette-render-markdown:
+            columns:
+            - body
+            extra_tags:
+            - img
+            - hr
+            - br
+            - details
+            - summary
+            - input
+            - div
+            - span
+            extra_attrs:
+              input:
+              - type
+              - disabled
+              - checked
+              img:
+              - src
+              div:
+              - class
+              span:
+              - class
+            extensions:
+            - mdx_gfm:GithubFlavoredMarkdownExtension

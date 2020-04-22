@@ -53,7 +53,7 @@ jobs:
         datasette publish now til.db \
           --token $NOW_TOKEN \
           --project simon-til \
-          --metadata metadata.json \
+          --metadata metadata.yaml \
           --install py-gfm \
           --install datasette-render-markdown \
           --install datasette-template-sql \
