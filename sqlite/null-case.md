@@ -31,3 +31,4 @@ group by
 order by
   created_at
 ```
+This uses [datasette-rure](https://github.com/simonw/datasette-rure) for the `regexp_match()` function. Example output here: https://twitter.com/simonw/status/1249400425138155523
