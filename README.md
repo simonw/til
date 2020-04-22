@@ -33,6 +33,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 * [Running pip install -e .[test] in zsh on macOS Catalina](https://github.com/simonw/til/blob/master/macos/zsh-pip-install.md) - 2020-04-21
 * [Get Skitch working on Catalina](https://github.com/simonw/til/blob/master/macos/skitch-catalina.md) - 2020-04-21
+* [Close terminal window on Ctrl+D for macOS](https://github.com/simonw/til/blob/master/macos/close-terminal-on-ctrl-d.md) - 2020-04-21
 
 ## cloudrun
 
