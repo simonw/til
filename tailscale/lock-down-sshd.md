@@ -37,3 +37,13 @@ Bonus: point a real DNS subdomain at the Tailscale IP and you can `ssh ubuntu@re
 Handy debugging tip: `tail -f /var/log/auth.log` shows recent sign-in attempts.
 
 Thanks to [@apenwarr for tips](https://twitter.com/apenwarr/status/1253318250131263489).
+
+## Alternative pattern
+
+[This conversation](https://twitter.com/moderat10n/status/1253407976330690561) questions if the above recipe will work correctly when a server reboots. It seems it's possible that sshd might start up before the `tailscale0` network has been created, resulting in problems.
+
+[@bradfitz instead recommends](https://twitter.com/bradfitz/status/1253420075018645505) adding the following line:
+
+    AllowUsers *@100.64.0.0/10
+
+This will allow SSH access only from users within the Tailscale range of IPs. It shouldn't cause any problems during server startup.
