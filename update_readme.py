@@ -9,6 +9,8 @@ root = pathlib.Path(__file__).parent.resolve()
 index_re = re.compile(r"<!\-\- index starts \-\->.*<!\-\- index ends \-\->", re.DOTALL)
 count_re = re.compile(r"<!\-\- count starts \-\->.*<!\-\- count ends \-\->", re.DOTALL)
 
+COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
+
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
     by_topic = {}
@@ -32,7 +34,7 @@ if __name__ == "__main__":
         index_txt = "\n".join(index).strip()
         readme_contents = readme.open().read()
         rewritten = index_re.sub(index_txt, readme_contents)
-        rewritten = count_re.sub(str(db["til"].count), rewritten)
+        rewritten = count_re.sub(COUNT_TEMPLATE.format(db["til"].count)), rewritten)
         readme.open("w").write(rewritten)
     else:
         print("\n".join(index))
