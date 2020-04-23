@@ -34,7 +34,7 @@ if __name__ == "__main__":
         index_txt = "\n".join(index).strip()
         readme_contents = readme.open().read()
         rewritten = index_re.sub(index_txt, readme_contents)
-        rewritten = count_re.sub(COUNT_TEMPLATE.format(db["til"].count)), rewritten)
+        rewritten = count_re.sub(COUNT_TEMPLATE.format(db["til"].count), rewritten)
         readme.open("w").write(rewritten)
     else:
         print("\n".join(index))
