@@ -38,4 +38,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## cloudrun
 
 * [Use labels on Cloud Run services for a billing breakdown](https://github.com/simonw/til/blob/master/cloudrun/use-labels-for-billing-breakdown.md) - 2020-04-21
+
+## tailscale
+
+* [Restricting SSH connections to devices within a Tailscale network](https://github.com/simonw/til/blob/master/tailscale/lock-down-sshd.md) - 2020-04-23
 <!-- index ends -->
