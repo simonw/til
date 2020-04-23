@@ -32,6 +32,8 @@ I can now SSH to Tailscale from my laptop, but only if I use the Tailscale IP ad
 ```
 ssh ubuntu@100.122.168.55 -i lightsail.pem
 ```
+Bonus: point a real DNS subdomain at the Tailscale IP and you can `ssh ubuntu@realsubdomain.example.com` instead of remembering the IP address.
+
 Handy debugging tip: `tail -f /var/log/auth.log` shows recent sign-in attempts.
 
 Thanks to [@apenwarr for tips](https://twitter.com/apenwarr/status/1253318250131263489).
