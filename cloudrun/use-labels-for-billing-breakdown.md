@@ -37,5 +37,10 @@ Service [covid-19] revision [covid-19-00122-zod] has been deployed and is servin
   ✓ Routing traffic...                                                                                                                                                                                               
 Done.                                                                                                                                                                                                                
 ```
+I had to wait a couple of days for this to take effect, but once it did I could get results by visiting Billing -> Reports, then selecting `service` from the group by menu here:
 
-I think it takes a while for the labelled billing breakdown to start showing up. If I'm right then https://console.cloud.google.com/billing/00C25B-639CE5-5833F9/reports;chartType=STACKED_BAR;grouping=GROUP_BY_LABEL_KEYS;groupingLabel=serving.knative.dev%2Fservice;products=services%2F152E-C115-5142 will show me this breakdown at some point, maybe tomorrow? I'll add a screenshot when it does.
+<img src="use-labels-for-billing-breakdown-1.png" width="300">
+
+The graph (I picked bar chart over line chart) looked like this:
+
+![Graph](use-labels-for-billing-breakdown-2.png)
