@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->16<!-- count ends --> TILs so far.
+<!-- count starts -->17<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## github-actions
@@ -36,6 +36,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Running pip install -e .[test] in zsh on macOS Catalina](https://github.com/simonw/til/blob/master/macos/zsh-pip-install.md) - 2020-04-21
 * [Get Skitch working on Catalina](https://github.com/simonw/til/blob/master/macos/skitch-catalina.md) - 2020-04-21
 * [Close terminal window on Ctrl+D for macOS](https://github.com/simonw/til/blob/master/macos/close-terminal-on-ctrl-d.md) - 2020-04-21
+* [Fixing "compinit: insecure directories" error](https://github.com/simonw/til/blob/master/macos/fixing-compinit-insecure-directories.md) - 2020-04-26
 
 ## cloudrun
 
