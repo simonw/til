@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->17<!-- count ends --> TILs so far.
+<!-- count starts -->18<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## github-actions
@@ -45,4 +45,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## tailscale
 
 * [Restricting SSH connections to devices within a Tailscale network](https://github.com/simonw/til/blob/master/tailscale/lock-down-sshd.md) - 2020-04-23
+
+## pytest
+
+* [Session-scoped temporary directories in pytest](https://github.com/simonw/til/blob/master/pytest/session-scoped-tmp.md) - 2020-04-26
 <!-- index ends -->
