@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->19<!-- count ends --> TILs so far.
+<!-- count starts -->20<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## github-actions
@@ -50,4 +50,5 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## pytest
 
 * [Session-scoped temporary directories in pytest](https://github.com/simonw/til/blob/master/pytest/session-scoped-tmp.md) - 2020-04-26
+* [How to mock httpx using pytest-mock](https://github.com/simonw/til/blob/master/pytest/mock-httpx.md) - 2020-04-29
 <!-- index ends -->
