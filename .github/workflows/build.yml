@@ -58,6 +58,7 @@ jobs:
           --install datasette-render-markdown \
           --install datasette-template-sql \
           --install datasette-atom \
+          --install datasette-json-html \
           --plugins-dir plugins \
           --template-dir templates \
           --public
