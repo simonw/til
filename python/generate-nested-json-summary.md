@@ -23,7 +23,7 @@ import json, requests
 data = requests.get(
     "https://github.com/simonw/coronavirus-data-gov-archive/blob/master/data_latest.json?raw=true"
 ).json()
-print(json.dumps(summarize(data, list_limit=2), indent=4))
+print(json.dumps(summarize(data, list_limit=2, key_limit=10), indent=4))
 ```
 And the output:
 ```json
@@ -52,6 +52,16 @@ And the output:
                 {
                     "date": "2020-03-16",
                     "value": 20
+                }
+            ],
+            "dailyTotalDeaths": [
+                {
+                    "date": "2020-03-10",
+                    "value": 6
+                },
+                {
+                    "date": "2020-03-11",
+                    "value": 6
                 }
             ]
         }
@@ -85,6 +95,56 @@ And the output:
                 {
                     "age": "90_to_94",
                     "value": 3580
+                }
+            ],
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-01-30",
+                    "value": 1
+                },
+                {
+                    "date": "2020-01-31",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-01-30",
+                    "value": 1
+                },
+                {
+                    "date": "2020-01-31",
+                    "value": 2
+                }
+            ],
+            "dailyDeaths": [
+                {
+                    "date": "2020-03-28",
+                    "value": 247
+                },
+                {
+                    "date": "2020-03-29",
+                    "value": 199
+                }
+            ],
+            "dailyTotalDeaths": [
+                {
+                    "date": "2020-03-27",
+                    "value": 679
+                },
+                {
+                    "date": "2020-03-28",
+                    "value": 926
+                }
+            ],
+            "previouslyReportedDailyTotalCases": [
+                {
+                    "date": "2020-01-30",
+                    "value": 1
+                },
+                {
+                    "date": "2020-01-31",
+                    "value": 2
                 }
             ]
         },
@@ -320,6 +380,682 @@ And the output:
                 {
                     "date": "2020-03-01",
                     "value": 9
+                }
+            ]
+        },
+        "E12000008": {
+            "name": {
+                "value": "South East"
+            },
+            "totalCases": {
+                "value": 16323
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-01-31",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-03",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-01-31",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-03",
+                    "value": 2
+                }
+            ]
+        },
+        "E12000009": {
+            "name": {
+                "value": "South West"
+            },
+            "totalCases": {
+                "value": 5986
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-02-03",
+                    "value": 2
+                },
+                {
+                    "date": "2020-02-26",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-02-03",
+                    "value": 2
+                },
+                {
+                    "date": "2020-02-26",
+                    "value": 3
+                }
+            ]
+        },
+        "E12000005": {
+            "name": {
+                "value": "West Midlands"
+            },
+            "totalCases": {
+                "value": 12393
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-02-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-23",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-02-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-23",
+                    "value": 2
+                }
+            ]
+        },
+        "E12000003": {
+            "name": {
+                "value": "Yorkshire and The Humber"
+            },
+            "totalCases": {
+                "value": 9499
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-01-30",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-03",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-01-30",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-03",
+                    "value": 2
+                }
+            ]
+        }
+    },
+    "utlas": {
+        "E09000002": {
+            "name": {
+                "value": "Barking and Dagenham"
+            },
+            "totalCases": {
+                "value": 445
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-08",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-08",
+                    "value": 2
+                }
+            ]
+        },
+        "E09000003": {
+            "name": {
+                "value": "Barnet"
+            },
+            "totalCases": {
+                "value": 1170
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-02-16",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-28",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-02-16",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-28",
+                    "value": 2
+                }
+            ]
+        },
+        "E08000016": {
+            "name": {
+                "value": "Barnsley"
+            },
+            "totalCases": {
+                "value": 590
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-02-03",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-02",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-02-03",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-02",
+                    "value": 2
+                }
+            ]
+        },
+        "E06000022": {
+            "name": {
+                "value": "Bath and North East Somerset"
+            },
+            "totalCases": {
+                "value": 203
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-11",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 2
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-11",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 3
+                }
+            ]
+        },
+        "E06000055": {
+            "name": {
+                "value": "Bedford"
+            },
+            "totalCases": {
+                "value": 424
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-13",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-17",
+                    "value": 2
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-13",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-17",
+                    "value": 3
+                }
+            ]
+        },
+        "E09000004": {
+            "name": {
+                "value": "Bexley"
+            },
+            "totalCases": {
+                "value": 596
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-09",
+                    "value": 2
+                },
+                {
+                    "date": "2020-03-10",
+                    "value": 2
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-09",
+                    "value": 2
+                },
+                {
+                    "date": "2020-03-10",
+                    "value": 4
+                }
+            ]
+        },
+        "E08000025": {
+            "name": {
+                "value": "Birmingham"
+            },
+            "totalCases": {
+                "value": 2733
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-02",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-02",
+                    "value": 2
+                }
+            ]
+        },
+        "E06000008": {
+            "name": {
+                "value": "Blackburn with Darwen"
+            },
+            "totalCases": {
+                "value": 293
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-13",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-20",
+                    "value": 2
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-13",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-20",
+                    "value": 3
+                }
+            ]
+        },
+        "E06000009": {
+            "name": {
+                "value": "Blackpool"
+            },
+            "totalCases": {
+                "value": 388
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-10",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-10",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 2
+                }
+            ]
+        },
+        "E08000001": {
+            "name": {
+                "value": "Bolton"
+            },
+            "totalCases": {
+                "value": 717
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-05",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-05",
+                    "value": 2
+                }
+            ]
+        }
+    },
+    "ltlas": {
+        "E07000223": {
+            "name": {
+                "value": "Adur"
+            },
+            "totalCases": {
+                "value": 76
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-19",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-22",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-19",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-22",
+                    "value": 2
+                }
+            ]
+        },
+        "E07000026": {
+            "name": {
+                "value": "Allerdale"
+            },
+            "totalCases": {
+                "value": 191
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-13",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-13",
+                    "value": 2
+                }
+            ]
+        },
+        "E07000032": {
+            "name": {
+                "value": "Amber Valley"
+            },
+            "totalCases": {
+                "value": 133
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-13",
+                    "value": 3
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-13",
+                    "value": 4
+                }
+            ]
+        },
+        "E07000224": {
+            "name": {
+                "value": "Arun"
+            },
+            "totalCases": {
+                "value": 121
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-18",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-18",
+                    "value": 2
+                }
+            ]
+        },
+        "E07000170": {
+            "name": {
+                "value": "Ashfield"
+            },
+            "totalCases": {
+                "value": 182
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 3
+                },
+                {
+                    "date": "2020-03-15",
+                    "value": 3
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 3
+                },
+                {
+                    "date": "2020-03-15",
+                    "value": 6
+                }
+            ]
+        },
+        "E07000105": {
+            "name": {
+                "value": "Ashford"
+            },
+            "totalCases": {
+                "value": 403
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-03",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-03",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 2
+                }
+            ]
+        },
+        "E07000004": {
+            "name": {
+                "value": "Aylesbury Vale"
+            },
+            "totalCases": {
+                "value": 301
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-04",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-04",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-12",
+                    "value": 2
+                }
+            ]
+        },
+        "E07000200": {
+            "name": {
+                "value": "Babergh"
+            },
+            "totalCases": {
+                "value": 98
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-15",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-14",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-15",
+                    "value": 2
+                }
+            ]
+        },
+        "E09000002": {
+            "name": {
+                "value": "Barking and Dagenham"
+            },
+            "totalCases": {
+                "value": 445
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-08",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-03-01",
+                    "value": 1
+                },
+                {
+                    "date": "2020-03-08",
+                    "value": 2
+                }
+            ]
+        },
+        "E09000003": {
+            "name": {
+                "value": "Barnet"
+            },
+            "totalCases": {
+                "value": 1170
+            },
+            "dailyConfirmedCases": [
+                {
+                    "date": "2020-02-16",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-28",
+                    "value": 1
+                }
+            ],
+            "dailyTotalConfirmedCases": [
+                {
+                    "date": "2020-02-16",
+                    "value": 1
+                },
+                {
+                    "date": "2020-02-28",
+                    "value": 2
                 }
             ]
         }
