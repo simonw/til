@@ -190,4 +190,4 @@ This gave me back:
 }
 ```
 
-Sadly I really wanted to get the dependents, not the dependencies - but that's [still not available](https://stackoverflow.com/questions/58734176/how-to-use-github-api-to-get-a-repositorys-dependents-information-in-github) even as a preview API.
+Sadly I really wanted to get the dependents, not the dependencies - but that's [still not available](https://stackoverflow.com/questions/58734176/how-to-use-github-api-to-get-a-repositorys-dependents-information-in-github) even as a preview API. So I [scraped them](https://github.com/dogsheep/github-to-sqlite/issues/34) instead.
