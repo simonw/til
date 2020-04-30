@@ -47,3 +47,7 @@ Thanks to [@apenwarr for tips](https://twitter.com/apenwarr/status/1253318250131
     AllowUsers *@100.64.0.0/10
 
 This will allow SSH access only from users within the Tailscale range of IPs. It shouldn't cause any problems during server startup.
+
+## ⚠️ Warning!
+
+This is complicated. See https://github.com/simonw/til/issues/7 for an explanation of a potential vulnerability in this pattern.
