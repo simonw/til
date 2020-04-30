@@ -23,6 +23,7 @@ databases:
         SELECT
           'tag:til.simonwillison.net,' || path as atom_id,
           title as atom_title,
+          url as atom_link,
           created_utc as atom_updated,
           render_markdown(body) as atom_content_html
         FROM
