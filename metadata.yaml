@@ -21,7 +21,7 @@ databases:
           til_fts.rank limit 20
       feed: |-
         SELECT
-          'tag:til.simonwillison.net,' || path as atom_id,
+          'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
           title as atom_title,
           url as atom_link,
           created_utc as atom_updated,
