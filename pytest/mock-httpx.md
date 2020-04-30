@@ -39,3 +39,26 @@ def test_performs_conditional_get(mocker):
         )
 ```
 https://github.com/simonw/conditional-get/blob/485fab46f01edd99818b829e99765ed9ce0978b5/tests/test_cli.py
+
+## Mocking httpx.stream
+
+I later had to figure out how to mock the following:
+
+```python
+with httpx.stream("GET", url, headers=headers) as response:
+...
+with open(output, "wb") as fp:
+    for b in response.iter_bytes():
+        fp.write(b)
+```
+https://stackoverflow.com/a/6112456 helped me figure out the following:
+```python
+def test_performs_conditional_get(mocker):
+    m = mocker.patch.object(cli, "httpx")
+    m.stream.return_value.__enter__.return_value = mocker.Mock()
+    m.stream.return_value.__enter__.return_value.status_code = 200
+    m.stream.return_value.__enter__.return_value.iter_bytes.return_value = [
+        b"Hello PNG"
+    ]
+```
+https://github.com/simonw/conditional-get/blob/80454f972d39e2b418572d7938146830fab98fa6/tests/test_cli.py
