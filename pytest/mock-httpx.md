@@ -46,10 +46,10 @@ I later had to figure out how to mock the following:
 
 ```python
 with httpx.stream("GET", url, headers=headers) as response:
-...
-with open(output, "wb") as fp:
-    for b in response.iter_bytes():
-        fp.write(b)
+    ...
+    with open(output, "wb") as fp:
+        for b in response.iter_bytes():
+            fp.write(b)
 ```
 https://stackoverflow.com/a/6112456 helped me figure out the following:
 ```python
