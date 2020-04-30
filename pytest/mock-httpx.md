@@ -6,7 +6,7 @@ The key was to use `mocker.patch.object(cli, "httpx")` which patches the `httpx`
 
 Here the `mocker` function argument is a fixture that is provided by `pytest-mock`.
 
-```
+```python
 from conditional_get import cli
 from click.testing import CliRunner
 
