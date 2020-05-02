@@ -13,7 +13,7 @@ const { timingSafeEqual } = require('crypto');
 
 const compare = (a, b) => {
     try {
-        return timingSafeEqual(Buffer.from(a || , "utf8"), Buffer.from(b, "utf8"));
+        return timingSafeEqual(Buffer.from(a, "utf8"), Buffer.from(b, "utf8"));
     } catch {
         return false;
     }
