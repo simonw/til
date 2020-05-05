@@ -7,7 +7,7 @@ from datasette_render_markdown import render_markdown
 def _render_markdown(s):
     return render_markdown(
         s,
-        extra_tags=["img", "hr", "br", "details", "summary", "input", "div", "span"],
+        extra_tags=["div", "img", "hr", "br", "details", "summary", "input", "div", "span"],
         extra_attrs={
             "input": ["type", "disabled", "checked"],
             "img": ["src", "alt"],
