@@ -25,7 +25,7 @@ databases:
           title as atom_title,
           url as atom_link,
           created_utc as atom_updated,
-          render_markdown(body) as atom_content_html,
+          rewrite_github_images(render_markdown(body), url) as atom_content_html,
           'Simon Willison' as atom_author_name,
           'https://simonwillison.net/' as atom_author_uri
         FROM
