@@ -7,7 +7,7 @@ from datasette_render_markdown import render_markdown
 def _render_markdown(s):
     return render_markdown(
         s,
-        extra_tags=["div", "img", "hr", "br", "details", "summary", "input", "div", "span"],
+        extra_tags=["img", "hr", "br", "details", "summary", "input", "div", "span",],
         extra_attrs={
             "input": ["type", "disabled", "checked"],
             "img": ["src", "alt"],
@@ -21,10 +21,10 @@ def _render_markdown(s):
 
 def rewrite_github_images(html, base_url):
     "Rewrite image src= to be relative to base_url"
-    soup = BeautifulSoup("<div>{}</div>".format(html), "lxml")
+    soup = BeautifulSoup(html, "lxml")
     for img in soup.find_all("img"):
         img["src"] = urljoin(base_url, img["src"]).replace("/blob/", "/raw/")
-    return soup.find("body").next.prettify()
+    return str(soup.body).replace("<body>", "").replace("</body>", "").strip()
 
 
 @hookimpl
