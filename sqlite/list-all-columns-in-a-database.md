@@ -142,3 +142,18 @@ Executing that second query will return results like this:
 |units|2|frequency|int|0||0|
 
 (I generated that Markdown table by pasting the HTML from Datasette into this tool: https://jmalarcon.github.io/markdowntables/)
+
+## Better alternative using a join
+
+```sql
+select
+  sqlite_master.name as table_name,
+  table_info.*
+from
+  sqlite_master
+  join pragma_table_info(sqlite_master.name) as table_info
+order by
+  sqlite_master.name,
+  table_info.cid
+```
+[Demo](https://latest.datasette.io/fixtures?sql=select%0D%0A++sqlite_master.name+as+table_name%2C%0D%0A++table_info.*%0D%0Afrom%0D%0A++sqlite_master%0D%0A++join+pragma_table_info%28sqlite_master.name%29+as+table_info%0D%0Aorder+by%0D%0A++sqlite_master.name%2C%0D%0A++table_info.cid).
