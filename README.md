@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->26<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
+<!-- count starts -->27<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -30,6 +30,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Lag window function in SQLite](https://github.com/simonw/til/blob/master/sqlite/lag-window-function.md) - 2020-04-19
 * [Null case comparisons in SQLite](https://github.com/simonw/til/blob/master/sqlite/null-case.md) - 2020-04-21
 * [Compile a new sqlite3 binary on Ubuntu](https://github.com/simonw/til/blob/master/sqlite/compile-sqlite3-ubuntu.md) - 2020-04-30
+* [List all columns in a SQLite database](https://github.com/simonw/til/blob/master/sqlite/list-all-columns-in-a-database.md) - 2020-05-06
 
 ## presenting
 
