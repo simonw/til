@@ -4,5 +4,5 @@ py-gfm
 beautifulsoup4
 datasette~=0.40
 datasette-render-markdown
-datasette-publish-now~=0.5
+datasette-publish-now~=0.5.1
 datasette-template-sql>=1.0
