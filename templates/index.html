@@ -66,7 +66,7 @@ input[type=submit] {
 
 <form action="/til/search">
     <p>
-        <input type="search" name="q">
+        <input type="search" name="q" placeholder="Search {{ sql("select count(*) from TIL")[0][0] }} TILs">
         <input type="submit" value="Search">
     </p>
 </form>
