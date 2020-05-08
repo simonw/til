@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->27<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
+<!-- count starts -->28<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -20,6 +20,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Generated a summary of nested JSON data](https://github.com/simonw/til/blob/master/python/generate-nested-json-summary.md) - 2020-04-28
 * [Installing and upgrading Datasette plugins with pipx](https://github.com/simonw/til/blob/master/python/installing-upgrading-plugins-with-pipx.md) - 2020-05-04
 * [Use setup.py to install platform-specific dependencies](https://github.com/simonw/til/blob/master/python/platform-specific-dependencies.md) - 2020-05-05
+* [Build the official Python documentation locally](https://github.com/simonw/til/blob/master/python/build-official-docs.md) - 2020-05-08
 
 ## zeit-now
 
