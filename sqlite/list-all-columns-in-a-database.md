@@ -157,3 +157,23 @@ order by
   table_info.cid
 ```
 [Demo](https://latest.datasette.io/fixtures?sql=select%0D%0A++sqlite_master.name+as+table_name%2C%0D%0A++table_info.*%0D%0Afrom%0D%0A++sqlite_master%0D%0A++join+pragma_table_info%28sqlite_master.name%29+as+table_info%0D%0Aorder+by%0D%0A++sqlite_master.name%2C%0D%0A++table_info.cid).
+
+## Another recipe
+
+[Amjith pointed](https://twitter.com/amjithr/status/1258576704164909056) to [this query](https://github.com/dbcli/litecli/blob/829220b1e2c3fea84d7c3f0ea8f791f3c28e6230/litecli/sqlexecute.py#L33-L39) used in litecli:
+
+```sql
+SELECT
+  m.name as tableName,
+  p.name as columnName
+FROM
+  sqlite_master m
+  LEFT OUTER JOIN pragma_table_info((m.name)) p ON m.name <> p.name
+WHERE
+  m.type IN ('table', 'view')
+  AND m.name NOT LIKE 'sqlite_%'
+ORDER BY
+  tableName,
+  columnName
+```
+[Demo](https://latest.datasette.io/fixtures?sql=SELECT+m.name+as+tableName%2C+p.name+as+columnName%0D%0A++++++++FROM+sqlite_master+m%0D%0A++++++++LEFT+OUTER+JOIN+pragma_table_info%28%28m.name%29%29+p+ON+m.name+%3C%3E+p.name%0D%0A++++++++WHERE+m.type+IN+%28%27table%27%2C%27view%27%29+AND+m.name+NOT+LIKE+%27sqlite_%25%27%0D%0A++++++++ORDER+BY+tableName%2C+columnName).
