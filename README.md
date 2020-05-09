@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->28<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
+<!-- count starts -->29<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -68,4 +68,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## firefox
 
 * [Search across all loaded resources in Firefox](https://github.com/simonw/til/blob/master/firefox/search-across-all-resources.md) - 2020-05-05
+
+## markdown
+
+* [Converting HTML and rich-text to Markdown](https://github.com/simonw/til/blob/master/markdown/converting-to-markdown.md) - 2020-05-09
 <!-- index ends -->
