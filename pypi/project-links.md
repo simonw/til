@@ -17,3 +17,5 @@ The [documentation](https://packaging.python.org/guides/distributing-packages-us
 I looked at the HTML source code and searched the PyPI website source code for one of the CSS classes I found there: https://github.com/pypa/warehouse/search?q=fa-bug&unscoped_q=fa-bug
 
 This lead me to the macro that defines the custom icons, which shows what custom keys or URLs are supported: https://github.com/pypa/warehouse/blob/2f00f4a9f208546ff0ebb6a6e61439021ca60a43/warehouse/templates/packaging/detail.html#L16-L60
+
+<img src="project-links.png" width="333" alt="Project links on PyPI">
