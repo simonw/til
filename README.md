@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->31<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
+<!-- count starts -->32<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom?_feed_title=Simon+Willison+TIL">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -57,6 +57,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 * [Session-scoped temporary directories in pytest](https://github.com/simonw/til/blob/master/pytest/session-scoped-tmp.md) - 2020-04-26
 * [How to mock httpx using pytest-mock](https://github.com/simonw/til/blob/master/pytest/mock-httpx.md) - 2020-04-29
+* [Asserting a dictionary is a subset of another dictionary](https://github.com/simonw/til/blob/master/pytest/assert-dictionary-subset.md) - 2020-05-28
 
 ## github
 
