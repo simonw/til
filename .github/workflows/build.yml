@@ -57,7 +57,7 @@ jobs:
           --install py-gfm \
           --install datasette-render-markdown \
           --install datasette-template-sql \
-          --install datasette-atom~=0.5 \
+          --install datasette-atom~=0.6 \
           --install datasette-json-html \
           --install beautifulsoup4 \
           --plugins-dir plugins \

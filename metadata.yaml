@@ -19,21 +19,23 @@ databases:
           end
         order by
           til_fts.rank limit 20
-      feed: |-
-        SELECT
-          'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
-          title as atom_title,
-          url as atom_link,
-          created_utc as atom_updated,
-          rewrite_github_images(render_markdown(body), url) as atom_content_html,
-          'Simon Willison' as atom_author_name,
-          'https://simonwillison.net/' as atom_author_uri
-        FROM
-          til
-        order by
-          created_utc desc
-        limit
-          15
+      feed:
+        title: Simon Willison TIL
+        sql: |-
+          SELECT
+            'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
+            title as atom_title,
+            url as atom_link,
+            created_utc as atom_updated,
+            rewrite_github_images(render_markdown(body), url) as atom_content_html,
+            'Simon Willison' as atom_author_name,
+            'https://simonwillison.net/' as atom_author_uri
+          FROM
+            til
+          order by
+            created_utc desc
+          limit
+            15
     tables:
       til:
         sort_desc: updated_utc
