@@ -52,6 +52,7 @@ jobs:
       run: |-
         datasette publish now til.db \
           --token $NOW_TOKEN \
+          --branch master \
           --project simon-til \
           --metadata metadata.yaml \
           --install py-gfm \
