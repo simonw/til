@@ -34,7 +34,7 @@ Now we need python3 and the various build tools (SQLite also needs `tcl` for the
 
     apt-get install -y python3 build-essential tcl wget
 
-Annoyngly installing `tcl` requires us to interactively set the timezone data - I enter `2` for America and then `85` for Los Angeles.
+Annoyingly installing `tcl` requires us to interactively set the timezone data - I enter `2` for America and then `85` for Los Angeles.
 
 Download and extract the SQLite code:
 
