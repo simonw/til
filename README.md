@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->33<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->34<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -79,4 +79,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## pypi
 
 * [Adding project links to PyPI](https://github.com/simonw/til/blob/master/pypi/project-links.md) - 2020-05-11
+
+## asgi
+
+* [Writing tests for the ASGI lifespan protocol with HTTPX](https://github.com/simonw/til/blob/master/asgi/lifespan-test-httpx.md) - 2020-06-29
 <!-- index ends -->
