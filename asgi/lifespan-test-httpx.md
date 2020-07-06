@@ -15,6 +15,8 @@ You can wrap an ASGI app in `async with LifespanManager(app):` and the correct l
 Here's how to use it to [trigger lifespan events in a test](https://github.com/simonw/datasette-debug-asgi/blob/72d568d32a3159c763ce908c0b269736935c6987/test_datasette_debug_asgi.py):
 
 ```python
+from asgi_lifespan import LifespanManager
+
 @pytest.mark.asyncio
 async def test_datasette_debug_asgi():
     ds = Datasette([], memory=True)
