@@ -55,6 +55,10 @@ input[type=submit] {
     </p>
 </form>
 
+{% if q and not rows %}
+    <p><em>No results for "{{ q }}"</em></p>
+{% endif %}
+    
 {% for row in rows %}
     <p><span class="topic">{{ row.topic }}</span> <a href="{{ row.url }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
 {% endfor %}
