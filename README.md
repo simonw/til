@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->34<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->35<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -63,6 +63,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## github
 
 * [Accessing repository dependencies in the GitHub GraphQL API](https://github.com/simonw/til/blob/master/github/dependencies-graphql-api.md) - 2020-04-30
+* [Paginating through the GitHub GraphQL API with Python](https://github.com/simonw/til/blob/master/github/graphql-pagination-python.md) - 2020-07-09
 
 ## node
 
