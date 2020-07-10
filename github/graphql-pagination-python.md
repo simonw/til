@@ -1,6 +1,8 @@
 # Paginating through the GitHub GraphQL API with Python
 
-For my [auto-updating personal README](https://twitter.com/simonw/status/1281435464474324993) I needed to fetch the latest release for every repository I have on GitHub. Since I have 316 public repos I wanted the most efficent way possible to do this. I deceded to exercise the GitHub GraphQL API.
+(See also [Building a self-updating profile README for GitHub](https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/) on my blog)
+
+For my [auto-updating personal README](https://twitter.com/simonw/status/1281435464474324993) I needed to fetch the latest release for every repository I have on GitHub. Since I have 316 public repos I wanted the most efficent way possible to do this. I decided to use the [GitHub GraphQL API](https://developer.github.com/v4/).
 
 Their API allows you to fetch up to 100 repositories at once, and each one can return up to 100 releases. Since I only wanted the most recent release my query ended up looking like this:
 
