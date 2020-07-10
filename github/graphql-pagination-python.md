@@ -31,9 +31,13 @@ This gives me back my 100 first repos, and for each one returns the most recent 
 
 Just one problem: I needed to paginate through all 316. The way you do this with the GitHub GraphQL API is using the `after:` argument and the `endcursor` returned from `pageInfo`. You can send `after:null` to get the first page, then `after:TOKEN` where TOKEN is the `endCursor` from the previous results.
 
-My Python code ended up looking like this:
+My Python code ended up looking like this (using [python-graphql-client](https://pypi.org/project/python-graphql-client/)):
 
 ```python
+from python_graphql_client import GraphqlClient
+
+client = GraphqlClient(endpoint="https://api.github.com/graphql")
+
 def make_query(after_cursor=None):
     return """
 query {
