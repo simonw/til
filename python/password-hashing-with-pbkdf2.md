@@ -33,3 +33,4 @@ def verify_password(password, password_hash):
     compare_hash = hash_password(password, salt, iterations)
     return secrets.compare_digest(password_hash, compare_hash)
 ```
+Code here: https://github.com/simonw/datasette-auth-passwords/blob/ac538faf510d8ea7cf8064b9567d09c6a69e079a/datasette_auth_passwords/utils.py
