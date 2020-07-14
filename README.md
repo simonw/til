@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->36<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->37<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -22,6 +22,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Use setup.py to install platform-specific dependencies](https://github.com/simonw/til/blob/master/python/platform-specific-dependencies.md) - 2020-05-05
 * [Build the official Python documentation locally](https://github.com/simonw/til/blob/master/python/build-official-docs.md) - 2020-05-08
 * [Introspecting Python function parameters](https://github.com/simonw/til/blob/master/python/introspect-function-parameters.md) - 2020-05-27
+* [Password hashing in Python with pbkdf2](https://github.com/simonw/til/blob/master/python/password-hashing-with-pbkdf2.md) - 2020-07-13
 
 ## zeit-now
 
