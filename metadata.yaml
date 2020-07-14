@@ -7,7 +7,8 @@ databases:
       search: |
         select
           til_fts.rank,
-          til.*
+          til.*,
+          snippet(til_fts, -1, 'b4de2a49c8', '8c94a2ed4b', '...', 60) as snippet
         from
           til
           join til_fts on til.rowid = til_fts.rowid
