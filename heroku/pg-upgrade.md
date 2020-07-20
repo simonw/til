@@ -2,7 +2,7 @@
 
 Figured this out in https://github.com/simonw/simonwillisonblog/issues/132 - I was running PostgreSQL 9.x and I wanted 11.x in order to use the new `search_type="websearch"` option in Django 3.1.
 
-I followed the steps in [Upgrading with pg:copy](https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases#upgrading-with-pg-copy) (I don't have any database followrs so the `pg:upgrade` route wasn't open to me).
+I followed the steps in [Upgrading with pg:copy](https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases#upgrading-with-pg-copy) (I don't have any database followers so the `pg:upgrade` route wasn't open to me).
 
 Because I'm the only user who writes to my database I skipped the maintenance mode bit.
 
