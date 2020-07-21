@@ -1,6 +1,6 @@
 # Registering temporary pluggy plugins inside tests
 
-While implementing more finely-grained permissions for `datasette-insert-api` ([issue 8](https://github.com/simonw/datasette-insert-api/issues/8) I decided I wanted to register a Datasette pluggy plugin for the duration of a single test.
+While implementing more finely-grained permissions for `datasette-insert-api` ([issue 8](https://github.com/simonw/datasette-insert-api/issues/8)) I decided I wanted to register a Datasette pluggy plugin for the duration of a single test.
 
 Here's the pattern I figured out for doing that:
 
