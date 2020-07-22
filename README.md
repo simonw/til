@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->39<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->40<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -12,6 +12,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Set environment variables for all steps in a GitHub Action](https://github.com/simonw/til/blob/master/github-actions/set-environment-for-all-steps.md) - 2020-04-19
 * [Commit a file if it changed](https://github.com/simonw/til/blob/master/github-actions/commit-if-file-changed.md) - 2020-04-19
 * [Running different steps on a schedule](https://github.com/simonw/til/blob/master/github-actions/different-steps-on-a-schedule.md) - 2020-04-20
+* [Updating a Markdown table of contents with a GitHub Action](https://github.com/simonw/til/blob/master/github-actions/markdown-table-of-contents.md) - 2020-07-22
 
 ## python
 
