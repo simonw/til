@@ -50,3 +50,5 @@ jobs:
         git push
 ```
 You can see this running on the [dogsheep/twitter-to-sqlite](https://github.com/dogsheep/twitter-to-sqlite) repository.
+
+Unfortunately these links don't work on READMEs that are rendered by PyPI yet, e.g. [twitter-to-sqlite](https://pypi.org/project/twitter-to-sqlite/). There's an open issue for that [here](https://github.com/pypa/readme_renderer/issues/169).
