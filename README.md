@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->41<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->42<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -96,4 +96,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## javascript
 
 * [Implementing a "copy to clipboard" button](https://github.com/simonw/til/blob/master/javascript/copy-button.md) - 2020-07-23
+
+## django
+
+* [PostgreSQL full-text search in the Django Admin](https://github.com/simonw/til/blob/master/django/postgresql-full-text-search-admin.md) - 2020-07-25
 <!-- index ends -->
