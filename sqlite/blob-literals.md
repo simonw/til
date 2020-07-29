@@ -6,7 +6,7 @@ I wanted to construct a string of SQL that would return a blob value:
 select 'binary-data' as content, 'x.jpg' as content_filename
 ```
 
-This was while writing a unit test for `datasette-media` - for [issue #19](https://github.com/simonw/datasette-media/issues/19).
+This was while writing a unit test for `datasette-media` - for [issue #19](https://github.com/simonw/datasette-media/issues/19). I used it in the test [here](https://github.com/simonw/datasette-media/blob/2cf64d949ccb8cd5f34b24aeb41b2a91de14cdd2/tests/test_media.py#L292-L295).
 
 The SQLite documentation for [Literal values](https://www.sqlite.org/lang_expr.html#literal_values_constants_) explains how to do this:
 
