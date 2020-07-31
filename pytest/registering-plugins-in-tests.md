@@ -10,8 +10,7 @@ from datasette.plugins import pm
 import pytest
 
 
-@pytest.mark.asyncio
-async def test_using_test_plugin():
+def test_using_test_plugin():
     class TestPlugin:
         __name__ = "TestPlugin"
 
