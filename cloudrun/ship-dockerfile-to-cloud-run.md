@@ -42,3 +42,10 @@ IMAGE="gcr.io/$PROJECT/$NAME"
 gcloud builds submit --tag $IMAGE
 gcloud run deploy --allow-unauthenticated --platform=managed --image $IMAGE $NAME --memory 2Gi
 ```
+Before running the script I had installed the Cloud Run SDK and run `gcloud init` to login.
+
+The `NAME` variable ends up being used as the name of both my built image and my service. This needs to be unique in your Cloud Run account, or your deploy will over-write an existing service.
+
+Cloud Run deployed my site to https://metmuseum-j7hipcg4aq-uc.a.run.app/
+
+I then used the "Domain mappings" feature in the Cloud Run web console to point a better web address at it.
