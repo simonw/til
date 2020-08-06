@@ -61,6 +61,7 @@ jobs:
           --install datasette-atom~=0.6 \
           --install datasette-json-html \
           --install beautifulsoup4 \
+          --install datasette-graphql \
           --plugins-dir plugins \
           --template-dir templates \
           --public
