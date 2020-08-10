@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->44<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->45<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -37,6 +37,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [List all columns in a SQLite database](https://github.com/simonw/til/blob/master/sqlite/list-all-columns-in-a-database.md) - 2020-05-06
 * [Using LD_PRELOAD to run any version of SQLite with Python](https://github.com/simonw/til/blob/master/sqlite/ld-preload.md) - 2020-06-17
 * [SQLite BLOB literals](https://github.com/simonw/til/blob/master/sqlite/blob-literals.md) - 2020-07-29
+* [Enabling WAL mode for SQLite database files](https://github.com/simonw/til/blob/master/sqlite/enabling-wal-mode.md) - 2020-08-09
 
 ## presenting
 
