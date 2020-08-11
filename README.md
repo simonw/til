@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->46<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->47<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -107,4 +107,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 ## docker
 
 * [Attaching a bash shell to a running Docker container](https://github.com/simonw/til/blob/master/docker/attach-bash-to-running-container.md) - 2020-08-10
+
+## homebrew
+
+* [Packaging a Python CLI tool for Homebrew](https://github.com/simonw/til/blob/master/homebrew/packaging-python-cli-for-homebrew.md) - 2020-08-11
 <!-- index ends -->
