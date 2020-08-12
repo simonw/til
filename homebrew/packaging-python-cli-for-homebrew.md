@@ -90,6 +90,29 @@ Running `poet datasette` generates the resource stanzas, but leaves you to add t
 
 You need to fill in the description and the `test` block, but other than that it looks like it should work straight away.
 
+## Implementing the test block
+
+https://docs.brew.sh/Formula-Cookbook#add-a-test-to-the-formula says:
+
+> We want tests that don't require any user input and test the basic functionality of the application. For example `foo build-foo input.foo` is a good test and (despite their widespread use) `foo --version` and `foo --help` are bad tests. However, a bad test is better than no test at all.
+
+Here's the test block I ended up using for Datasette:
+
+```ruby
+  test do
+    assert_match "15", shell_output("#{bin}/datasette --get '/:memory:.csv?sql=select+3*5'")
+    assert_match "<title>Datasette:", shell_output("#{bin}/datasette --get '/'")
+  end
+```
+
+And here's my test for `sqlite-utils`:
+
+```ruby
+  test do
+    assert_match "15", shell_output("#{bin}/sqlite-utils :memory: 'select 3 * 5'")
+  end
+```
+
 ## Iterating on this
 
 I found running `brew install datasette`, seeing if it worked, then running `brew uninstall datasette`, modifying the `.rb` file on GitHub and running `datasette install datasette` again worked fine during development.
