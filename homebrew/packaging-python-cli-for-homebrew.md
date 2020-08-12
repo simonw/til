@@ -55,7 +55,7 @@ For the initial block you need the URL to a source distribution and the `sha256`
 
 Every dependency needs to be listed as a resource. They all need to be available as `sdist` packages - I made sure all of my dependencies had an `sdist` on PyPI.
 
-Then I used the [homebrew-pypi-poet](https://pypi.org/project/homebrew-pypi-poet/) tool to construct the rest of the resource blocks for me. You install that in a fresh virtual environment with the module you are packaging:
+Then I used the [homebrew-pypi-poet](https://github.com/tdsmith/homebrew-pypi-poet) tool to construct the rest of the resource blocks for me. You install that in a fresh virtual environment with the module you are packaging:
 
 ```
 $ cd /tmp
