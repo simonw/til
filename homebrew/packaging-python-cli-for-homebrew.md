@@ -129,4 +129,4 @@ The Homebrew [CONTRIBUTING](https://github.com/Homebrew/homebrew-core/blob/maste
 
 - Add a `license`, e.g. `license "Apache 2.0" - [example](https://github.com/Homebrew/homebrew-core/blob/99c3304fbe89996ae8d72b5357b14fbe8983680c/Formula/datasette.rb#L7).
 - Run `brew audit --new-formula datasette` and fix any warnings ([see here](https://github.com/simonw/homebrew-datasette/issues/7)).
-- Submit a PR with the new formula and a title of e.g. `datasette 0.47.1 (new formula)` - here's [mine for Datasette](https://github.com/Homebrew/homebrew-core/pull/59494).
+- Submit a PR with the new formula and a title of e.g. `datasette 0.47.1 (new formula)` - here's [mine for Datasette](https://github.com/Homebrew/homebrew-core/pull/59494) and [for sqlite-utils](https://github.com/Homebrew/homebrew-core/pull/59533).
