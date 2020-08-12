@@ -95,3 +95,15 @@ You need to fill in the description and the `test` block, but other than that it
 I found running `brew install datasette`, seeing if it worked, then running `brew uninstall datasette`, modifying the `.rb` file on GitHub and running `datasette install datasette` again worked fine during development.
 
 If you get any errors, `brew install datasette --debug` shows more information and drops you into an interactive debugging session when an error occurs.
+
+## Submitting to homebrew-core
+
+If your package gets accepted into [homebrew-core](https://github.com/Homebrew/homebrew-core) users will be able to install it just by running `brew install packagename`.
+
+More importantly: Homebrew maintain "bottle" versions of all of those core packages. These are pre-compiled bundles of assets (a separate `.tar.gz` for each recent macOS operating system) which install MUCH faster than regular Homebrew, which has to compile everything.
+
+The Homebrew [CONTRIBUTING](https://github.com/Homebrew/homebrew-core/blob/master/CONTRIBUTING.md) document tells you how to do this. For Python packages the import things to remember are:
+
+- Add a `license`, e.g. `license "Apache 2.0" - [example](https://github.com/Homebrew/homebrew-core/blob/99c3304fbe89996ae8d72b5357b14fbe8983680c/Formula/datasette.rb#L7).
+- Run `brew audit --new-formula datasette` and fix any warnings ([see here](https://github.com/simonw/homebrew-datasette/issues/7)).
+- Submit a PR with the new formula and a title of e.g. `datasette 0.47.1 (new formula)` - here's [mine for Datasette](https://github.com/Homebrew/homebrew-core/pull/59494).
