@@ -1,11 +1,19 @@
 # Packaging a Python CLI tool for Homebrew
 
-Today I figured out how to package [Datasette](https://github.com/simonw/datasette) for installation with Homebrew. You can now install it like this:
+I finally figured out how to package [Datasette](https://github.com/simonw/datasette) for installation with Homebrew. My package was accepted into Homebrew core, which means you can now install it like this:
+
+    brew install datasette
+
+Prior to being accepted, you needed to install it from my own Homebrew tap like this:
 
     brew tap simonw/datasette
-    brew install simonw/datasette/datasette
+    brew install datasette
     # wait a bit...
     datasette --version
+
+Or you could skip the `tap` step and run this:
+
+    brew install simonw/datasette/datasette
 
 Here's my code that makes this work: https://github.com/simonw/homebrew-datasette
 
