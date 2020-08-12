@@ -19,3 +19,9 @@ I ran this against all of the `*.db` files in a directory like this:
 The first time I ran this it worked on all but one file, which showed the `Error: database is locked` message - so I kept trying against that file until it worked.
 
 After running this each `.db` file has an accompanying `.db-shm` and `.db-wal` file. So far I've not seen the "database is locked" message, so I think it had the desired effect.
+
+## Using sqlite-utils
+
+I added a command to [sqlite-utils 2.15] that does this:
+
+    sqlite-utils enable-Wal *.db
