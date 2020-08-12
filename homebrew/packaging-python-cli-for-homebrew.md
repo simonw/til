@@ -82,6 +82,14 @@ There's one major gotcha here: `datasette` itself was included as a `resource` b
 
 But that's it! Publish the new `yourname.rb` file, run the `brew tap yourname/yourtap` and `brew install yourname/yourtap/yourformula`.
 
+## Even better: poet -f
+
+Running `poet datasette` generates the resource stanzas, but leaves you to add the rest of the formula (and manually remove the package itself from that list of resources).
+
+`poet -f datasette` generates the full formula.
+
+You need to fill in the description and the `test` block, but other than that it looks like it should work straight away.
+
 ## Iterating on this
 
 I found running `brew install datasette`, seeing if it worked, then running `brew uninstall datasette`, modifying the `.rb` file on GitHub and running `datasette install datasette` again worked fine during development.
