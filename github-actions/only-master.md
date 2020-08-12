@@ -1,4 +1,4 @@
-# Only run GitHub Action on push to master
+# Only run GitHub Action on push to master / main
 
 Spotted in [this Cloud Run example](https://github.com/GoogleCloudPlatform/github-actions/blob/20c294aabd5331f9f7b8a26e6075d41c31ce5e0d/example-workflows/cloud-run/.github/workflows/cloud-run.yml):
 
