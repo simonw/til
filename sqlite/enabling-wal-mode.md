@@ -24,4 +24,4 @@ After running this each `.db` file has an accompanying `.db-shm` and `.db-wal` f
 
 I added a command to [sqlite-utils 2.15](https://sqlite-utils.readthedocs.io/en/stable/changelog.html#v2-15) that does this:
 
-    sqlite-utils enable-Wal *.db
+    sqlite-utils enable-wal *.db
