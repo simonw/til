@@ -71,10 +71,10 @@ input[type=submit] {
     </p>
 </form>
 
-{% for row in sql("select distinct topic from til order by topic") %}
+{% for row in sql("select topic from til group by topic order by max(created_utc) desc") %}
     <h2>{{ row.topic }}</h2>
     <ul>
-        {% for til in sql("select * from til where topic = :topic order by created_utc", {"topic": row.topic}) %}
+        {% for til in sql("select * from til where topic = :topic order by created_utc desc", {"topic": row.topic}) %}
             <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
         {% endfor %}
     </ul>
