@@ -27,7 +27,7 @@ To generate an HTML report showing which lines are not covered by tests:
 pytest --cov=asgi_csrf --cov-report=html
 open htmlcov/index.html
 ```
-Here's a hosted copy of that report: https://asgi-csrf-htmlcov.simonw.vercel.app/asgi_csrf_py.html
+Here's a hosted copy of that report: https://asgi-csrf-htmlcov-ewca4t9se.vercel.app/asgi_csrf_py.html
 
 ## Failing the tests if coverage is below a certain threshold
 
