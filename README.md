@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->50<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->51<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -66,6 +66,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [How to mock httpx using pytest-mock](https://github.com/simonw/til/blob/main/pytest/mock-httpx.md) - 2020-04-29
 * [Asserting a dictionary is a subset of another dictionary](https://github.com/simonw/til/blob/main/pytest/assert-dictionary-subset.md) - 2020-05-28
 * [Registering temporary pluggy plugins inside tests](https://github.com/simonw/til/blob/main/pytest/registering-plugins-in-tests.md) - 2020-07-21
+* [Code coverage using pytest and codecov.io](https://github.com/simonw/til/blob/main/pytest/pytest-code-coverage.md) - 2020-08-15
 
 ## github
 
