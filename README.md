@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->52<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->53<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -97,6 +97,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 * [Using heroku pg:pull to restore a backup to a macOS laptop](https://github.com/simonw/til/blob/main/heroku/pg-pull.md) - 2020-07-10
 * [Upgrading a Heroku PostgreSQL database with pg:copy](https://github.com/simonw/til/blob/main/heroku/pg-upgrade.md) - 2020-07-20
+* [Programatically accessing Heroku PostgreSQL from GitHub Actions](https://github.com/simonw/til/blob/main/heroku/programatic-access-postgresql.md) - 2020-08-18
 
 ## javascript
 
