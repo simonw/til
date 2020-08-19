@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->53<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->54<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -50,6 +50,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 * [Get Skitch working on Catalina](https://github.com/simonw/til/blob/main/macos/skitch-catalina.md) - 2020-04-21
 * [Close terminal window on Ctrl+D for macOS](https://github.com/simonw/til/blob/main/macos/close-terminal-on-ctrl-d.md) - 2020-04-21
 * [Fixing "compinit: insecure directories" error](https://github.com/simonw/til/blob/main/macos/fixing-compinit-insecure-directories.md) - 2020-04-26
+* [Finding the largest SQLite files on a Mac](https://github.com/simonw/til/blob/main/macos/find-largest-sqlite.md) - 2020-08-19
 
 ## cloudrun
 
