@@ -30,7 +30,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Download previous database
-      run: curl -o til.db https://til.simonwillison.net/til.db
+      run: curl --fail -o til.db https://til.simonwillison.net/til.db
+      continue-on-error: true
     - name: Build database
       run: python build_database.py
     - name: Soundness check
