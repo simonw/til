@@ -49,7 +49,7 @@ def build_database(repo_path):
             row = table.get(path_slug)
             previous_body = row["body"]
             previous_html = row["html"]
-        except NotFoundError:
+        except (NotFoundError, KeyError):
             previous_body = None
             previous_html = None
         record = {
