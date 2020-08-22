@@ -4,10 +4,10 @@ If you provide your own custom generated ICS file hosted at a URL it's nice to b
 
 As far as I can tell this isn't documented anywhere, but it is possible.
 
-The format is:
+The format is `https://www.google.com/calendar/render?cid=webcal://` followed by your URL.
 
-    https://www.google.com/calendar/render?cid=webcal://pretalx.com/pycon-au-2020/schedule/export/schedule.ics
+For example: https://www.google.com/calendar/render?cid=webcal://pretalx.com/pycon-au-2020/schedule/export/schedule.ics
 
-So it's `https://www.google.com/calendar/render?cid=webcal://` followed by your URL.
+This drops the user into the a Google Calendar interface with a prompt for them to confirm their subscription.
 
 I believe this only works if you are serving your ICS feed over HTTPS.
