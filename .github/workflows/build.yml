@@ -33,6 +33,9 @@ jobs:
       run: curl -o til.db https://til.simonwillison.net/til.db
     - name: Build database
       run: python build_database.py
+    - name: Soundness check
+      run: |-
+        datasette . --get / | grep "Simon Willison: TIL"
     - name: Update README
       run: |-
         python update_readme.py --rewrite
