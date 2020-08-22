@@ -23,38 +23,7 @@ body {
 <nav><a href="/">TIL index</a></nav>
 <h1>{{ til.title }}</h1>
 
-{{ render_markdown(
-    til.body,
-    extra_tags=[
-        "img",
-        "hr",
-        "br",
-        "details",
-        "summary",
-        "input",
-        "div",
-        "span"
-    ],
-    extra_attrs={
-        "input": [
-            "type",
-            "disabled",
-            "checked"
-        ],
-        "img": [
-            "src"
-        ],
-        "div": [
-            "class"
-        ],
-        "span": [
-            "class"
-        ]
-    },
-    extensions=[
-        "mdx_gfm:GithubFlavoredMarkdownExtension"
-    ])
-}}
+{{ til.html|safe }}
 
 <p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }}{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
 

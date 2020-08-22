@@ -29,6 +29,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Download previous database
+      run: curl -o til.db https://til.simonwillison.net/til.db
     - name: Build database
       run: python build_database.py
     - name: Update README
