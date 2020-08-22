@@ -28,7 +28,7 @@ databases:
             title as atom_title,
             url as atom_link,
             created_utc as atom_updated,
-            rewrite_github_images(render_markdown(body), url) as atom_content_html,
+            html as atom_content_html,
             'Simon Willison' as atom_author_name,
             'https://simonwillison.net/' as atom_author_uri
           FROM
@@ -42,29 +42,3 @@ databases:
         sort_desc: updated_utc
         facets:
         - topic
-        plugins:
-          datasette-render-markdown:
-            columns:
-            - body
-            extra_tags:
-            - img
-            - hr
-            - br
-            - details
-            - summary
-            - input
-            - div
-            - span
-            extra_attrs:
-              input:
-              - type
-              - disabled
-              - checked
-              img:
-              - src
-              div:
-              - class
-              span:
-              - class
-            extensions:
-            - mdx_gfm:GithubFlavoredMarkdownExtension
