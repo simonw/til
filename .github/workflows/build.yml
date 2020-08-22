@@ -57,8 +57,6 @@ jobs:
           --branch main \
           --project simon-til \
           --metadata metadata.yaml \
-          --install py-gfm \
-          --install datasette-render-markdown \
           --install datasette-template-sql \
           --install datasette-atom~=0.6 \
           --install datasette-json-html \
