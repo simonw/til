@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which I spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->58<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->59<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -128,4 +128,8 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 * [Pointing a custom subdomain at Read the Docs](https://github.com/simonw/til/blob/main/readthedocs/custom-subdomain.md) - 2020-08-14
 * [Read the Docs Search API](https://github.com/simonw/til/blob/main/readthedocs/readthedocs-search-api.md) - 2020-08-16
+
+## ics
+
+* [Providing a "subscribe in Google Calendar" link for an ics feed](https://github.com/simonw/til/blob/main/ics/google-calendar-ics-subscribe-link.md) - 2020-08-21
 <!-- index ends -->
