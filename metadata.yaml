@@ -26,7 +26,7 @@ databases:
           SELECT
             'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
             title as atom_title,
-            url as atom_link,
+            'https://til.simonwillison.net/til/til/' || path as atom_link,
             created_utc as atom_updated,
             html as atom_content_html,
             'Simon Willison' as atom_author_name,

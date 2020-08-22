@@ -11,7 +11,7 @@ body {
     font-family: helvetica;
     padding: 1em;
     max-width: 800px;
-    line-height: 1.5em;
+    line-height: 1.4;
 }
 input[type=search] {
     padding: .25em;
@@ -62,7 +62,7 @@ input[type=submit] {
 <path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" />
     </svg> Atom feed</a></p>
 
-<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc limit 5") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc limit 5") %}<a href="/til/til/{{ row.path }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
 
 <form action="/til/search">
     <p>
@@ -75,7 +75,7 @@ input[type=submit] {
     <h2>{{ row.topic }}</h2>
     <ul>
         {% for til in sql("select * from til where topic = :topic order by created_utc desc", {"topic": row.topic}) %}
-            <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+            <li><a href="/til/til/{{ til.path }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
         {% endfor %}
     </ul>
 {% endfor %}
