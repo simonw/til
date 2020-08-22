@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->59<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->60<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -134,4 +134,8 @@ Search these TILs at https://til.simonwillison.net/
 ## ics
 
 * [Providing a "subscribe in Google Calendar" link for an ics feed](https://github.com/simonw/til/blob/main/ics/google-calendar-ics-subscribe-link.md) - 2020-08-21
+
+## svg
+
+* [Creating a dynamic line chart with SVG](https://github.com/simonw/til/blob/main/svg/dynamic-line-chart.md) - 2020-08-22
 <!-- index ends -->
