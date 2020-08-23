@@ -99,6 +99,8 @@ I then pasted the results into the SVG and previewed it by pasting it into https
 
 I wanted to scale the SVG image to fit the div it was overlayed onto - which had a fixed height of 60px but a variable width.
 
+[How to Scale SVG](https://css-tricks.com/scale-svg/) was useful for understanding the options here.
+
 SVG images maintain their aspect ratio by default. Adding `preserveAspectRatio="none"` changed this, so the image could be distorted to fit the shape.
 
 Unfortunately this has a visual impact on the line of the graph - causing it to be wider and narrower at different angles. We decided that this brush-stroke effect was actually OK for our purposes.
