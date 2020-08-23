@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->60<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->61<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -16,6 +16,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running different steps on a schedule](https://github.com/simonw/til/blob/main/github-actions/different-steps-on-a-schedule.md) - 2020-04-20
 * [Updating a Markdown table of contents with a GitHub Action](https://github.com/simonw/til/blob/main/github-actions/markdown-table-of-contents.md) - 2020-07-22
 * [Using grep to write tests in CI](https://github.com/simonw/til/blob/main/github-actions/grep-tests.md) - 2020-08-19
+* [Skipping a GitHub Actions step without failing](https://github.com/simonw/til/blob/main/github-actions/continue-on-error.md) - 2020-08-22
 
 ## python
 
