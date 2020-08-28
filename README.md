@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->63<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->64<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -123,6 +123,7 @@ Search these TILs at https://til.simonwillison.net/
 ## homebrew
 
 * [Packaging a Python CLI tool for Homebrew](https://github.com/simonw/til/blob/main/homebrew/packaging-python-cli-for-homebrew.md) - 2020-08-11
+* [Browsing your local git checkout of homebrew-core](https://github.com/simonw/til/blob/main/homebrew/homebrew-core-local-git-checkout.md) - 2020-08-27
 
 ## zsh
 
