@@ -26,7 +26,7 @@ body {
 
 {{ til.html|safe }}
 
-<p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }}{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
+<p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }}{% endif %} &middot; <a href="https://github.com/simonw/til/commits/main/{{ til.path }}">History</a> &middot; <a href="{{ til.url }}">Edit</a></p>
 
 </body>
 </html>
