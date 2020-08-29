@@ -1,6 +1,6 @@
 # How to mock httpx using pytest-mock
 
-I wrote this test to exercise some [httpx](https://pypi.org/project/httpx/) code today, using [pytest-mock]().
+I wrote this test to exercise some [httpx](https://pypi.org/project/httpx/) code today, using [pytest-mock](https://pypi.org/project/pytest-mock/).
 
 The key was to use `mocker.patch.object(cli, "httpx")` which patches the `httpx` module that was imported by the `cli` module.
 
