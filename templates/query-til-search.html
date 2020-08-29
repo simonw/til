@@ -66,7 +66,7 @@ pre strong {
 {% endif %}
     
 {% for row in rows %}
-    <p><span class="topic">{{ row.topic }}</span> <a href="{{ row.url }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
+    <p><span class="topic">{{ row.topic }}</span> <a href="/til/til/{{ til.path }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
     <pre>{{ highlight(row.snippet)|safe }}</pre>
 {% endfor %}
 
