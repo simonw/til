@@ -148,5 +148,5 @@ Search these TILs at https://til.simonwillison.net/
 
 ## jq
 
-* [Converting AirTable JSON for use with sqlite-utils using jq](https://github.com/simonw/til/blob/main/jq/reformatting-airtable-json.md) - 2020-08-28
+* [Converting Airtable JSON for use with sqlite-utils using jq](https://github.com/simonw/til/blob/main/jq/reformatting-airtable-json.md) - 2020-08-28
 <!-- index ends -->
