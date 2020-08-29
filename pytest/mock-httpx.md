@@ -62,3 +62,26 @@ def test_performs_conditional_get(mocker):
     ]
 ```
 https://github.com/simonw/conditional-get/blob/80454f972d39e2b418572d7938146830fab98fa6/tests/test_cli.py
+
+## Mocking an HTTP error triggered by response.raise_for_status()
+
+The `response.raise_for_status()` raises an exception if an HTTP error (e.g. a 404 or 500) occurred.
+
+Here's how I [mocked that to return an error](https://github.com/simonw/airtable-to-yaml/blob/ebd94b2e29d6f2ec3dc64d161495a759330027e8/tests/test_airtable_to_yaml.py#L43-L56):
+
+```python
+def test_airtable_to_yaml_error(mocker):
+    m = mocker.patch.object(cli, "httpx")
+    m.get.return_value = mocker.Mock()
+    m.get.return_value.status_code = 401
+    m.get.return_value.raise_for_status.side_effect = httpx.HTTPError(
+        "Unauthorized", request=None
+    )
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        result = runner.invoke(
+            cli.cli, [".", "appZOGvNJPXCQ205F", "tablename", "-v", "--key", "x"]
+        )
+        assert result.exit_code == 1
+        assert result.stdout == "Error: Unauthorized\n"
+```
