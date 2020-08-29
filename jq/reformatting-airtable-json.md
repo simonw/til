@@ -1,6 +1,6 @@
-# Converting AirTable JSON for use with sqlite-utils using jq
+# Converting Airtable JSON for use with sqlite-utils using jq
 
-The AirTable API outputs JSON that looks like this:
+The Airtable API outputs JSON that looks like this:
 
 ```json
 {
