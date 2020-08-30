@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->65<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->66<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -111,6 +111,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Implementing a "copy to clipboard" button](https://github.com/simonw/til/blob/main/javascript/copy-button.md) - 2020-07-23
 * [Working around the size limit for nodeValue in the DOM](https://github.com/simonw/til/blob/main/javascript/working-around-nodevalue-size-limit.md) - 2020-08-21
 * [Dynamically loading multiple assets with a callback](https://github.com/simonw/til/blob/main/javascript/dynamically-loading-assets.md) - 2020-08-21
+* [Minifying JavaScript with npx uglify-js](https://github.com/simonw/til/blob/main/javascript/minifying-uglify-npx.md) - 2020-08-30
 
 ## django
 
