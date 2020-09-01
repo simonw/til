@@ -3,6 +3,7 @@ import httpx
 import git
 import os
 import pathlib
+from urllib.parse import urlencode
 import sqlite_utils
 from sqlite_utils.db import NotFoundError
 import time
@@ -94,7 +95,11 @@ def build_database(repo_path):
         # Fetch screenshot
         if SCREENSHOT_HOST and ((body != previous_body) or not previous_shot):
             input_url = "til.simonwillison.net/til/til/{}".format(path_slug)
-            shot_url = SCREENSHOT_HOST + input_url + "?key=" + SCREENSHOT_KEY
+            shot_url = SCREENSHOT_HOST + input_url + "?" + urlencode({
+                "key": SCREENSHOT_KEY,
+                "viewportWidth": 800,
+                "viewportHeight": 400,
+            })
             response = httpx.get(shot_url)
             if response.status_code == 200:
                 record["shot"] = response.content
