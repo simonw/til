@@ -33,6 +33,9 @@ jobs:
       run: curl --fail -o til.db https://til.simonwillison.net/til.db
       continue-on-error: true
     - name: Build database
+      env:
+        SCREENSHOT_HOST: ${{ secrets.SCREENSHOT_HOST }}
+        SCREENSHOT_KEY: ${{ secrets.SCREENSHOT_KEY }}
       run: python build_database.py
     - name: Soundness check
       run: |-
