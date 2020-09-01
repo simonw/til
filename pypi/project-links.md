@@ -20,4 +20,4 @@ This lead me to the macro that defines the custom icons, which shows what custom
 
 I added these to the [sqlite-utils PyPI page](https://pypi.org/project/sqlite-utils/) in [this commit](https://github.com/simonw/sqlite-utils/commit/74b30af31bf5169559c06aa6e57e1e4873076720).
 
-<img src="project-links.png" width="333" alt="Project links on PyPI">
+<img src="https://raw.githubusercontent.com/simonw/til/main/pypi/project-links.png" width="333" alt="Project links on PyPI">
