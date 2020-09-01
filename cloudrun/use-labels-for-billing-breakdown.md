@@ -39,8 +39,8 @@ Done.
 ```
 I had to wait a couple of days for this to take effect, but once it did I could get results by visiting Billing -> Reports, then selecting `service` from the group by menu here:
 
-<img src="use-labels-for-billing-breakdown-1.png" width="300">
+<img src="https://raw.githubusercontent.com/simonw/til/main/cloudrun/use-labels-for-billing-breakdown-1.png" width="300">
 
 The graph (I picked bar chart over line chart) looked like this:
 
-![Graph](use-labels-for-billing-breakdown-2.png)
+![Graph](https://raw.githubusercontent.com/simonw/til/main/cloudrun/use-labels-for-billing-breakdown-2.png)
