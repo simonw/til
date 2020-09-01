@@ -68,6 +68,7 @@ jobs:
           --install beautifulsoup4 \
           --install datasette-debug-asgi \
           --install "datasette-graphql>=0.12" \
+          --install datasette-media \
           --plugins-dir plugins \
           --template-dir templates \
           --public

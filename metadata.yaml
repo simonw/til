@@ -4,6 +4,9 @@ about_url: https://github.com/simonw/til
 plugins:
   datasette-atom:
     allow_unsafe_html_in_canned_queries: true
+  datasette-media:
+    screenshot:
+      "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
 databases:
   til:
     queries:

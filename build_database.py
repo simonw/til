@@ -7,8 +7,10 @@ import sqlite_utils
 from sqlite_utils.db import NotFoundError
 import time
 
-
 root = pathlib.Path(__file__).parent.resolve()
+
+SCREENSHOT_HOST = os.environ.get("SCREENSHOT_HOST")
+SCREENSHOT_KEY = os.environ.get("SCREENSHOT_KEY")
 
 
 def created_changed_times(repo_path, ref="main"):
@@ -49,9 +51,11 @@ def build_database(repo_path):
             row = table.get(path_slug)
             previous_body = row["body"]
             previous_html = row["html"]
+            previous_shot = row.get("shot")
         except (NotFoundError, KeyError):
             previous_body = None
             previous_html = None
+            previous_shot = None
         record = {
             "path": path_slug,
             "topic": path.split("/")[0],
@@ -87,6 +91,17 @@ def build_database(repo_path):
                 assert False, "Could not render {} - last response was {}".format(
                     path, response.headers
                 )
+        # Fetch screenshot
+        if SCREENSHOT_HOST and ((body != previous_body) or not previous_shot):
+            input_url = "til.simonwillison.net/til/til/{}".format(path_slug)
+            shot_url = SCREENSHOT_HOST + input_url + "?key=" + SCREENSHOT_KEY
+            response = httpx.get(shot_url)
+            if response.status_code == 200:
+                record["shot"] = response.content
+                print("Got screenshot of {} ({} bytes)".format(shot_url, len(response.content)))
+                time.sleep(2)
+            else:
+                print("Screenshot of {} failed: {}".format(shot_url, response))
         record.update(all_times[path])
         with db.conn:
             table.upsert(record, alter=True)

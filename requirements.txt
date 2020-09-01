@@ -6,4 +6,5 @@ datasette-atom>=0.7
 datasette-publish-now>=0.6
 datasette-template-sql>=1.0
 datasette-graphql
+datasette-media
 httpx
