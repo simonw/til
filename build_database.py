@@ -75,7 +75,7 @@ def build_database(repo_path):
                 response = httpx.post(
                     "https://api.github.com/markdown",
                     json={
-                        # mode=gfm woud expand #13 issue links and suchlike
+                        # mode=gfm would expand #13 issue links and suchlike
                         "mode": "markdown",
                         "text": body,
                     },
