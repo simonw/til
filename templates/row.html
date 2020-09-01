@@ -22,10 +22,10 @@
 <meta property="og:image:height" content="400">
 <style>
 body {
-    font-family: helvetica;
-    padding: 1em 2em;
-    max-width: 800px;
+    font-family: "Helvetica Neue", helvetica, sans-serif;
     line-height: 1.4;
+    margin: 0;
+    padding: 0;
 }
 .created {
     border-top: 1px solid #ccc;
@@ -35,15 +35,40 @@ body {
 pre {
     white-space: pre-wrap;
 }
+nav {
+    text-align: left;
+    background: linear-gradient(to bottom, rgb(154, 103, 175) 0%, rgb(96, 72, 129) 49%, rgb(100, 67, 130) 100%);
+    color: white;
+}
+nav p {
+    display: block;
+    margin: 0;
+    padding: 4px 0px 4px 2em;
+}
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:focus,
+nav a:active {
+    color: white;
+    text-decoration: none;
+}
+section.body {
+    padding: 0.5em 2em;
+    max-width: 800px;
+}
 </style>
 </head>
 <body>
-<nav><a href="/">TIL index</a></nav>
+<nav>
+    <p><a href="/">Simon Willison’s TILs</a></p>
+</nav>
+<section class="body">
 <h1>{{ til.title }}</h1>
 
 {{ til.html|safe }}
 
 <p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }} &middot; <a href="{{ til.url|replace("https://github.com/simonw/til/blob/", "https://github.com/simonw/til/commits/") }}">History</a>{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
-
+</section>
 </body>
 </html>
