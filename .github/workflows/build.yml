@@ -92,12 +92,13 @@ jobs:
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
-        datasette publish now main/til.db \
+        cd main
+        datasette publish now til.db \
           --token $NOW_TOKEN \
           --branch main \
           --project simon-til \
-          --metadata main/metadata.yaml \
-          --static static:main/static \
+          --metadata metadata.yaml \
+          --static static:static \
           --install datasette-template-sql \
           --install "datasette-atom>=0.7" \
           --install datasette-json-html \
@@ -105,6 +106,6 @@ jobs:
           --install datasette-debug-asgi \
           --install "datasette-graphql>=0.12" \
           --install datasette-media \
-          --plugins-dir main/plugins \
-          --template-dir main/templates \
+          --plugins-dir plugins \
+          --template-dir templates \
           --public
