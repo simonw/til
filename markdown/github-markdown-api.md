@@ -48,6 +48,26 @@ if response.status_code == 200:
  'vary': 'Accept-Encoding, Accept, X-Requested-With',
  'x-github-request-id': 'C9F0:12D7:32CDD4:8064E2:5F416FFD'}
 ```
+## Calling it from JavaScript with fetch()
+
+I built a [JavaScript tool that uses this API](/tools/render-markdown). Here's the key function:
+
+```javascript
+async function render(markdown) {
+    return (await fetch('https://api.github.com/markdown', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({'mode': 'markdown', 'text': markdown})
+    })).text();
+}
+```
+Called like this:
+```javascript
+let rendered = await render(input.value);
+```
+
 ## Syntax highlighting CSS
 
 Code examples you send to this API will come back something like this:
