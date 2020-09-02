@@ -61,7 +61,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Use labels on Cloud Run services for a billing breakdown](https://github.com/simonw/til/blob/main/cloudrun/use-labels-for-billing-breakdown.md) - 2020-04-21
 * [How to deploy a folder with a Dockerfile to Cloud Run](https://github.com/simonw/til/blob/main/cloudrun/ship-dockerfile-to-cloud-run.md) - 2020-08-04
-* [Using the gcloud run services list command](https://github.com/simonw/til/blob/main/cloudrun/using-gcloud-run-services-list.md) - 2020-09-01
+* [Using the gcloud run services list command](https://github.com/simonw/til/blob/main/cloudrun/gcloud-run-services-list.md) - 2020-09-01
 
 ## tailscale
 
