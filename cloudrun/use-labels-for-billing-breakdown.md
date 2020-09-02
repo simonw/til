@@ -53,3 +53,11 @@ I had to wait a couple of days for this to take effect, but once it did I could 
 The graph (I picked bar chart over line chart) looked like this:
 
 ![Graph](https://raw.githubusercontent.com/simonw/til/main/cloudrun/use-labels-for-billing-breakdown-2.png)
+
+## Using the metrics explorer
+
+Even without setting up these extra `service` labels the [Metrics explorer](https://console.cloud.google.com/monitoring/metrics-explorer) can show you breakdowns of billing time against different services.
+
+Here's how to configure that:
+
+<img src="https://raw.githubusercontent.com/simonw/til/main/cloudrun/billing-metrics-explorer.png" width="300">
