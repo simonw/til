@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->68<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->69<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -61,6 +61,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Use labels on Cloud Run services for a billing breakdown](https://github.com/simonw/til/blob/main/cloudrun/use-labels-for-billing-breakdown.md) - 2020-04-21
 * [How to deploy a folder with a Dockerfile to Cloud Run](https://github.com/simonw/til/blob/main/cloudrun/ship-dockerfile-to-cloud-run.md) - 2020-08-04
+* [Using the gcloud run services list command](https://github.com/simonw/til/blob/main/cloudrun/using-gcloud-run-services-list.md) - 2020-09-01
 
 ## tailscale
 
