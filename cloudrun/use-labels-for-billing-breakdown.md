@@ -14,16 +14,20 @@ Here's a bash script which loops through all of the services that do NOT have a 
 
 ```bash
 #!/bin/bash
-for service in $(
+for line in $(
   gcloud run services list --platform=managed \
-    --format="csv(SERVICE)" \
+    --format="csv(SERVICE,REGION)" \
     --filter "NOT metadata.labels.service:*" \
   | tail -n +2)
 do
-  echo $service
+  IFS=$','; service_and_region=($line); unset IFS;
+  service=${service_and_region[0]}
+  region=${service_and_region[1]}
+  echo "service: $service    region: $region"
   gcloud run services update $service \
-    --region=us-central1 --platform=managed \
+    --region=$region --platform=managed \
     --update-labels service=$service
+  echo
 done
 ```
 
