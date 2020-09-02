@@ -58,6 +58,7 @@ jobs:
         python build_database.py
     - name: Soundness check
       run: |-
+        cd main
         datasette . --get / | grep "Simon Willison: TIL"
     - name: Generate missing screenshots
       run: |-
