@@ -10,24 +10,29 @@ gcloud run services update csvconf --region=us-central1 --platform=managed --upd
 
 I found it needed the `--platform=managed` and `--region=X` options to avoid it asking interactive questions.
 
-I applied this to all of my services by runnning this command:
+Here's a bash script which loops through all of the services that do NOT have a `service` label and applies one:
 
+```bash
+#!/bin/bash
+for service in $(
+  gcloud run services list --platform=managed \
+    --format="csv(SERVICE)" \
+    --filter "NOT metadata.labels.service:*" \
+  | tail -n +2)
+do
+  echo $service
+  gcloud run services update $service \
+    --region=us-central1 --platform=managed \
+    --update-labels service=$service
+done
 ```
-gcloud run services list --platform=managed | tail -n +2
-+  asgi-log-demo                  us-central1  https://asgi-log-demo-j7hipcg4aq-uc.a.run.app                  email@gmail.com                                           2020-04-22T00:40:39.483Z
-+  cloud-run-hello                us-central1  https://cloud-run-hello-j7hipcg4aq-uc.a.run.app                email@gmail.com                                           2020-04-22T00:46:48.251Z
-+  covid-19                       us-central1  https://covid-19-j7hipcg4aq-uc.a.run.app                       email@gmail.com                                           
-```
 
-I tried figuring out how to use awk to get at the different fields, then gave up and copied them all into Visual Studio Code and used multi-line editing to turn them into:
-
+It runs the equivalent of this for each service:
 ```
 gcloud run services update asgi-log-demo --region=us-central1 --platform=managed --update-labels service=asgi-log-demo
-gcloud run services update cloud-run-hello --region=us-central1 --platform=managed --update-labels service=cloud-run-hello
-gcloud run services update covid-19 --region=us-central1 --platform=managed --update-labels service=covid-19
 ```
 
-I saved that as a `runme.sh` script and used `. runme.sh` to run it.
+I saved that as a `runme.sh` script, run `chmod 755 runme.sh` and then  `./runme.sh` to run it.
 
 The output of the script looked like this (one entry for each service) - each one took ~30s to run.
 ```
