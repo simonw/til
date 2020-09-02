@@ -97,9 +97,9 @@ jobs:
           --branch main \
           --project simon-til \
           --metadata main/metadata.yaml \
-          --static static:static \
+          --static static:main/static \
           --install datasette-template-sql \
-          --install datasette-atom>=0.7 \
+          --install "datasette-atom>=0.7" \
           --install datasette-json-html \
           --install beautifulsoup4 \
           --install datasette-debug-asgi \
