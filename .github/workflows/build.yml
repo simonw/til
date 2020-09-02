@@ -47,7 +47,7 @@ jobs:
     - name: Download previous database unless REBUILD in commit message
       if: |-
         !contains(github.event.head_commit.message, 'REBUILD')
-      run: curl --fail -o main/til.db https://github.com/simonw/til-db/blob/main/til.db?raw=true
+      run: curl --fail -o main/til.db https://raw.githubusercontent.com/simonw/til-db/main/til.db
       continue-on-error: true
     - name: Build database
       env:
@@ -79,7 +79,7 @@ jobs:
     - name: Save til.db to simonw/til-db
       run: |-
         cd til-db
-        cp ../til.db .
+        cp ../main/til.db .
         git add til.db
         git commit --amend --no-edit
         git push --force
@@ -91,11 +91,11 @@ jobs:
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
-        datasette publish now til.db \
+        datasette publish now main/til.db \
           --token $NOW_TOKEN \
           --branch main \
           --project simon-til \
-          --metadata metadata.yaml \
+          --metadata main/metadata.yaml \
           --static static:static \
           --install datasette-template-sql \
           --install datasette-atom>=0.7 \
@@ -104,6 +104,6 @@ jobs:
           --install datasette-debug-asgi \
           --install "datasette-graphql>=0.12" \
           --install datasette-media \
-          --plugins-dir plugins \
-          --template-dir templates \
+          --plugins-dir main/plugins \
+          --template-dir main/templates \
           --public
