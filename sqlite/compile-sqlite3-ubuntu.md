@@ -17,7 +17,7 @@ gcc shell.c sqlite3.c -lpthread -ldl
 ```
 Now you can move the `a.out` file somewhere else:
 ```
-midir ~/bin
+mkdir ~/bin
 mv ./a.out ~/bin/sqlite3
 ```
 I used the backup command like this:
