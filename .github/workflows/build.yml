@@ -50,7 +50,7 @@ jobs:
     - name: Soundness check
       run: |-
         datasette . --get / | grep "Simon Willison: TIL"
-      - name: Generate missing screenshots
+    - name: Generate missing screenshots
       run: |-
         python generate_screenshots.py
     - name: Update README
