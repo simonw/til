@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->69<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->70<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -30,6 +30,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Password hashing in Python with pbkdf2](https://github.com/simonw/til/blob/main/python/password-hashing-with-pbkdf2.md) - 2020-07-13
 * [How to call pip programatically from Python](https://github.com/simonw/til/blob/main/python/call-pip-programatically.md) - 2020-08-11
 * [Outputting JSON with reduced floating point precision](https://github.com/simonw/til/blob/main/python/json-floating-point.md) - 2020-08-21
+* [Debugging a Click application using pdb](https://github.com/simonw/til/blob/main/python/debug-click-with-pdb.md) - 2020-09-03
 
 ## zeit-now
 
