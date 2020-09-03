@@ -1,6 +1,8 @@
 # Debugging a Click application using pdb
 
-If you're working on a Python Click application and it throws an exception:
+This tip is for when you are working on a Python command-line application that runs using that program's name, as opposed to typing `python my_script.py`. I usually need this when I'm working on applications built using [Click](https://click.palletsprojects.com/), e.g. projects I start using my [click-app](https://github.com/simonw/click-app) cookiecutter template.
+
+So you're working on one of these apps and it throws an exception:
 
 ```
 % dogsheep-beta index beta.db dogsheep-beta.yml 
