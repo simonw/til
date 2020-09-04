@@ -190,6 +190,15 @@ async function render(markdown) {
     })).text();
 }
 
+/* Populate textarea from localStorage */
+if (!input.value && localStorage.getItem('saved')) {
+    input.value = localStorage.getItem('saved');
+    button.click();
+}
+input.addEventListener('input', () => {
+    localStorage.setItem('saved', input.value);
+});
+
 </script>
 
 </body>
