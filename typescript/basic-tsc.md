@@ -13,7 +13,7 @@ I created a new project:
 
 Then installed the TypeScript compiler:
 
-   npm install --save-dev typescript
+    npm install --save-dev typescript
 
 Using `--global` instead of `--save-dev` would have installed in globally, but I'm not ready for that kind of commitment yet!
 
