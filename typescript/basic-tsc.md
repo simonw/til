@@ -68,6 +68,13 @@ I changed the last line of my `greetings.ts` file to `greeting(1)` (a type error
 
     [9:33:56 AM] Found 1 error. Watching for file changes.
 
+
+## Using npx
+
+Tip [from @Benjie](https://twitter.com/Benjie/status/1302655836163014656): you can use [npx](https://www.npmjs.com/package/npx) to avoid the `./node_modules/.bin` prefix. I had thought that `npx` installed and ran a new global version, but it turns out it will notice your `node_modules` folder and run from that instead if one exists:
+
+    % npx tsc --watch
+
 ## Running this Visual Studio Code
 
 VSCode has built-in TypeScript support. Hit Shift+Command+B and select the `tsc: watch` option and it runs that watch command in a embedded terminal pane inside the editor itself.
