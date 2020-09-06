@@ -17,6 +17,10 @@ Then installed the TypeScript compiler:
 
 Using `--global` instead of `--save-dev` would have installed in globally, but I'm not ready for that kind of commitment yet!
 
+Apparently I need a `tsconfig.json` file. Running this command creates one for me containing some suggested defaults:
+
+    % ./node_modules/.bin/tsc --init
+
 Next step: create a `.ts` file to start testing it out. I put the following in `greetings.ts`:
 
 ```typescript
