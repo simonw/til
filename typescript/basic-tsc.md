@@ -35,7 +35,7 @@ Next, compile it! Thanks to `npm install --save-dev typescript` the `tsc` compil
 
     % ./node_modules/.bin/tsc
 
-Run without any arguments it compiles any `.ts` files in the current directory and produces matching `.js` files.
+Run without any arguments it seeks out the `tsconfig.json` file, compiles any `.ts` files and produces matching `.js` files.
 
 That seems to have worked:
 
@@ -70,4 +70,4 @@ I changed the last line of my `greetings.ts` file to `greeting(1)` (a type error
 
 ## Running this Visual Studio Code
 
-VSCode has built-in TypeScript support. Hit Shift+Apple+B and select the `tsc: watch` option and it runs that watch command in a embedded terminal pane inside the editor itself.
+VSCode has built-in TypeScript support. Hit Shift+Command+B and select the `tsc: watch` option and it runs that watch command in a embedded terminal pane inside the editor itself.
