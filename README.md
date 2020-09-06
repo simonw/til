@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->70<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->71<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -157,4 +157,8 @@ Search these TILs at https://til.simonwillison.net/
 ## bash
 
 * [Looping over comma-separated values in Bash](https://github.com/simonw/til/blob/main/bash/loop-over-csv.md) - 2020-09-01
+
+## typescript
+
+* [Very basic tsc usage](https://github.com/simonw/til/blob/main/typescript/basic-tsc.md) - 2020-09-06
 <!-- index ends -->
