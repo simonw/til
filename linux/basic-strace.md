@@ -14,7 +14,7 @@ lseek(4, 923292032, SEEK_SET)           = 923292032
 write(4, "\0\3kf\0\0\0\0\265\17I\247\326\307U\263xF\34\305\336\231\352a", 24) = 24
 lseek(4, 923292056, SEEK_SET)           = 923292056
 ```
-So at least there's stuff happining!
+So at least there's stuff happening!
 
 Running `strace -c` does a count of syscalls and provides a summary. The command appears not to do anything, but when you hit `Ctrl+C` after a few seconds it will dump out the counts so far:
 ```
