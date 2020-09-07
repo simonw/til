@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->71<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->72<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -161,4 +161,8 @@ Search these TILs at https://til.simonwillison.net/
 ## typescript
 
 * [Very basic tsc usage](https://github.com/simonw/til/blob/main/typescript/basic-tsc.md) - 2020-09-06
+
+## aws
+
+* [Display EC2 instance costs per month](https://github.com/simonw/til/blob/main/aws/instance-costs-per-month.md) - 2020-09-06
 <!-- index ends -->
