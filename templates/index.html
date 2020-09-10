@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "til_base.html" %}
+
+{% block title %}Simon Willison: TIL{% endblock %}<!DOCTYPE html>
+
+{% block extra_head %}
 <link rel="alternate" type="application/atom+xml" title="Atom" href="/til/feed.atom">
-<title>Simon Willison: TIL</title>
 <style>
-body {
-    box-sizing: border-box;
-    font-family: helvetica;
-    padding: 1em;
-    max-width: 800px;
-    line-height: 1.4;
-}
 input[type=search] {
     padding: .25em;
     font-size: 0.9rem;
@@ -36,9 +28,9 @@ input[type=submit] {
     border-radius: .25rem;
 }
 </style>
-</head>
-<body>
+{% endblock %}
 
+{% block body %}
 <h1>Simon Willison: TIL</h1>
 <p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>.</p>
 
@@ -80,5 +72,4 @@ input[type=submit] {
     </ul>
 {% endfor %}
 
-</body>
-</html>
+{% endblock %}

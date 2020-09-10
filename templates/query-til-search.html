@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TIL search: {{ q }}</title>
+{% extends "til_base.html" %}
+
+{% block title %}TIL search: {{ q }}{% endblock %}
+
+{% block extra_head %}
 <style>
-body {
-    box-sizing: border-box;
-    font-family: helvetica;
-    padding: 1em;
-    max-width: 800px;
-    line-height: 1.5em;
-}
 input[type=search] {
     padding: .25em;
     font-size: 0.9rem;
@@ -49,9 +41,8 @@ pre strong {
     background-color: yellow;
 }
 </style>
-</head>
-<body>
-<nav><a href="/">TIL index</a></nav>
+{% endblock %}
+{% block body %}
 <h1>TIL search: {{ q }}</h1>
 
 <form action="/til/search">
@@ -70,5 +61,4 @@ pre strong {
     <pre>{{ highlight(row.snippet)|safe }}</pre>
 {% endfor %}
 
-</body>
-</html>
+{% endblock %}
