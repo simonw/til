@@ -6,7 +6,10 @@ import tempfile
 
 root = pathlib.Path(__file__).parent.resolve()
 TMP_PATH = pathlib.Path(tempfile.gettempdir())
-
+SHOT_HASH_PATHS = [
+    (root / "templates" / "row.html"),
+    (root / "templates" / "til_base.html"),
+]
 
 def png_for_path(path):
     page_html = str(TMP_PATH / "generate-screenshots-page.html")
@@ -33,14 +36,16 @@ def generate_screenshots(root):
     db = sqlite_utils.Database(root / "til.db")
 
     # The shot_hash incorporates a hash of all of row.html
-    row_html_hash = hashlib.md5(
-        (root / "templates" / "row.html").read_text().encode("utf-8")
-    ).hexdigest()
+
+    shot_html_hash = hashlib.md5()
+    for filepath in SHOT_HASH_PATHS:
+        shot_html_hash.update(filepath.read_text().encode("utf-8"))
+    shot_html_hash = shot_html_hash.hexdigest()
 
     for row in db["til"].rows:
         path = row["path"]
         html = row["html"]
-        shot_hash = hashlib.md5((row_html_hash + html).encode("utf-8")).hexdigest()
+        shot_hash = hashlib.md5((shot_html_hash + html).encode("utf-8")).hexdigest()
         if shot_hash != row.get("shot_hash"):
             png = png_for_path("/til/til/{}".format(path))
             db["til"].update(path, {"shot": png, "shot_hash": shot_hash}, alter=True)
