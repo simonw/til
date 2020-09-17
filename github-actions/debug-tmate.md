@@ -27,3 +27,16 @@ SSH: ssh JA69KaB2avRPRZSkRb8JPa9Gd@nyc1.tmate.io
 I ran `ssh JA69KaB2avRPRZSkRb8JPa9Gd@nyc1.tmate.io` and got a direction connection to the Action, with my project files all available thanks to the `- uses: actions/checkout@v2` step.
 
 Once I'd finish testing things out in that environment, I typed `touch continue` and the session ended itself.
+
+## Starting a shell just for test failures on manual runs
+
+I had a tricky test failure that I wanted to debug interactively. Here's a recipe for starting a tmate shell ONLY if the previous step failed, and only if the run was triggered manually (using `workflow_dispatch`) - because I don't want an accidental test opening up a shell and burning up my GitHub Actions minutes allowance.
+
+```yaml
+    steps:
+    - name: Run tests
+      run: pytest
+    - name: tmate session if tests fail
+      if: failure() && github.event_name == 'workflow_dispatch'
+      uses: mxschmitt/action-tmate@v3
+```
