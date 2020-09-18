@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->75<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->76<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -168,4 +168,8 @@ Search these TILs at https://til.simonwillison.net/
 ## aws
 
 * [Display EC2 instance costs per month](https://github.com/simonw/til/blob/main/aws/instance-costs-per-month.md) - 2020-09-06
+
+## jinja
+
+* [Turning on Jinja autoescaping when using Template() directly](https://github.com/simonw/til/blob/main/jinja/autoescape-template.md) - 2020-09-18
 <!-- index ends -->
