@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->76<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->77<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -47,6 +47,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using LD_PRELOAD to run any version of SQLite with Python](https://github.com/simonw/til/blob/main/sqlite/ld-preload.md) - 2020-06-17
 * [SQLite BLOB literals](https://github.com/simonw/til/blob/main/sqlite/blob-literals.md) - 2020-07-29
 * [Enabling WAL mode for SQLite database files](https://github.com/simonw/til/blob/main/sqlite/enabling-wal-mode.md) - 2020-08-09
+* [Compiling the SQLite spellfix.c module on macOS](https://github.com/simonw/til/blob/main/sqlite/compile-spellfix-osx.md) - 2020-09-19
 
 ## presenting
 
