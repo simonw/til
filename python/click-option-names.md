@@ -18,6 +18,6 @@ Short version: you can do this:
 # ...
 @click.option("-o", "--open", "open_browser", is_flag=True, help="Open Datasette in your web browser")
 def my_command(open_browser):
-    # Now open() is no longer available
+    # Now open() can be used safely
 ```
 Click will use the positional argument without any hyphen prefixes as the name of the argument. If none is provided it will use the first `--` one. If that's not defined it will use the `-o` one - all with the hypens stripped.
