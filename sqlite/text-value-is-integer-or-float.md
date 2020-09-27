@@ -16,6 +16,8 @@ cast(cast(value AS REAL) AS TEXT) in (value, value || '.0')
 ```
 The `|| '.0'` bit there is needed because `cast('1' as REAL)` returns `1.0`, not just `1`.
 
+(Note that `1.200` will not pass this test and will be incorrectly considered an invalid floating point representation)
+
 ## Demos
 
 The float version:
