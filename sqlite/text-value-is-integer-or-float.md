@@ -43,7 +43,7 @@ from
 
 | value | is_valid_float |
 | ----- | -------------- |
-|       |                |
+| null  | null           |
 | 1     | 1              |
 | 1.1   | 1              |
 | dog   | 0              |
@@ -72,7 +72,7 @@ from
 
 | value | is_valid_int |
 | ----- | ------------ |
-|       |              |
+| null  | null         |
 | 1     | 1            |
 | 1.1   | 0            |
 | dog   | 0            |
