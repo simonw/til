@@ -15,3 +15,11 @@ So I edited the CodeMirror file to use a single `/* ... */` comment at the top o
 For CSS I used `clean-css-cli`:
 
     npx clean-css-cli codemirror-5.57.0.css -o codemirror-5.57.0.min.css
+
+## Using tercer instead
+
+It turns out `uglify-js` doesn't support ES6 at all. You can use [tercer](https://github.com/terser/terser) instead:
+
+    npx terser codemirror-5.57.0.js -o codemirror-5.57.0.min.js --comments '/LICENSE/'
+
+Discovered in [datasette-edit-tables #16](https://github.com/simonw/datasette-edit-tables/issues/16).
