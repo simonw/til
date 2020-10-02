@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->81<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->82<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -180,4 +180,5 @@ Search these TILs at https://til.simonwillison.net/
 ## selenium
 
 * [Installing Selenium for Python on macOS with ChromeDriver](https://github.com/simonw/til/blob/main/selenium/selenium-python-macos.md) - 2020-10-02
+* [Using async/await in JavaScript in Selenium](https://github.com/simonw/til/blob/main/selenium/async-javascript-in-selenium.md) - 2020-10-02
 <!-- index ends -->
