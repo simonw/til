@@ -75,6 +75,6 @@ Tip [from @Benjie](https://twitter.com/Benjie/status/1302655836163014656): you c
 
     % npx tsc --watch
 
-## Running this Visual Studio Code
+## Running this in Visual Studio Code
 
 VSCode has built-in TypeScript support. Hit Shift+Command+B and select the `tsc: watch` option and it runs that watch command in a embedded terminal pane inside the editor itself.
