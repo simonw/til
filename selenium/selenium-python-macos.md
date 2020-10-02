@@ -57,3 +57,13 @@ Example Domain
 This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.
 More information...
 ```
+
+## Installing geckodriver for Firefox
+
+I got Firefox support working by downloading the `geckodriver` binary from https://github.com/mozilla/geckodriver and copying that to my `~/bin/` directory. Then this worked:
+```python
+firefox = webdriver.Firefox(executable_path="/Users/simon/bin/geckodriver")
+firefox.get('http://seleniumhq.org/')
+print(firefox.find_element_by_css_selector('body').text)
+```
+I used `wget` for the download (rather than clicking the link in my browser) thanks to the warning here: https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html
