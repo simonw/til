@@ -11,3 +11,5 @@ bash: # This string 'has single' "and double" quotes and a $: command not found
 How does this work? [James Coglan explains](https://twitter.com/mountain_ghosts/status/1311767073933099010):
 
 > The `!` character begins a history expansion; `!string` produces the last command beginning with `string`, and `:q` is a modifier that quotes the result; so I'm guessing this is equivalent to `!string` where `string` is `""`, so it produces the most recent command, just like `!!` does
+
+A bunch more useful tips in the [thread about this on Hacker News](https://news.ycombinator.com/item?id=24659282).
