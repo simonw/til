@@ -83,6 +83,7 @@ def build_database(repo_path):
                 else:
                     print("  sleeping 60s")
                     time.sleep(60)
+                    retries += 1
             else:
                 assert False, "Could not render {} - last response was {}".format(
                     path, response.headers
