@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->83<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->84<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -182,4 +182,8 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Installing Selenium for Python on macOS with ChromeDriver](https://github.com/simonw/til/blob/main/selenium/selenium-python-macos.md) - 2020-10-02
 * [Using async/await in JavaScript in Selenium](https://github.com/simonw/til/blob/main/selenium/async-javascript-in-selenium.md) - 2020-10-02
+
+## digitalocean
+
+* [Running Datasette on DigitalOcean App Platform](https://github.com/simonw/til/blob/main/digitalocean/datasette-on-digitalocean-app-platform.md) - 2020-10-06
 <!-- index ends -->
