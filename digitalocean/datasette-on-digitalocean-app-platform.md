@@ -19,6 +19,8 @@ Connect this GitHub repository up to DigitalOcean App Platform and it will deplo
 
 Any SQLite `.db` files that you add to the root of the GitHub repository will be automatically served by Datasette when it starts up.
 
+Because Datasette is run using `datasette .` it will also automatically pick up a `metadata.json` file or anything in custom `templates/` or `plugins/` folders, as described in [Configuration directory mode](https://docs.datasette.io/en/stable/config.html#configuration-directory-mode) in the documentation.
+
 ## Building database files
 
 I don't particularly like putting binary SQLite files in a GitHub repository - I prefer to store CSV files or SQL text files and build them into a database file as part of the deployment process.
