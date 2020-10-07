@@ -27,7 +27,9 @@ I don't particularly like putting binary SQLite files in a GitHub repository - I
 
 The best way I've found to do this in a DigitalOcean App is to create a `build.sh` script that builds the database, then execute it using a `Build Command`.
 
-I've not yet figured out a neat way to configure build scripts entirely in the repository, but you can instead use the DigitalOcean App Platform web interface to set one. Visit the "Components" tab end click "Edit" in the Commands section, then set the "Build Command" to `. build.sh`. Now any code you add to a `build.sh` script in your repo will be executed as part of the deployment.
+One way to do this is to visit the "Components" tab end click "Edit" in the Commands section, then set the "Build Command" to `. build.sh`. Now any code you add to a `build.sh` script in your repo will be executed as part of the deployment.
+
+A better way (thanks, [Kamal Nasser](https://www.digitalocean.com/community/questions/configure-a-build-command-for-a-python-project-without-using-the-web-ui?comment=92105)) is to use a `bin/pre_compile` or `bin/post_compile` script in your repository.
 
 I started with a `build.sh` script that looked like this:
 
