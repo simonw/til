@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->86<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->87<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -34,6 +34,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Outputting JSON with reduced floating point precision](https://github.com/simonw/til/blob/main/python/json-floating-point.md) - 2020-08-21
 * [Debugging a Click application using pdb](https://github.com/simonw/til/blob/main/python/debug-click-with-pdb.md) - 2020-09-03
 * [Understanding option names in Click](https://github.com/simonw/til/blob/main/python/click-option-names.md) - 2020-09-22
+* [Explicit file encodings using click.File](https://github.com/simonw/til/blob/main/python/click-file-encoding.md) - 2020-10-16
 
 ## zeit-now
 
