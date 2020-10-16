@@ -1,6 +1,6 @@
 # Explicit file encodings using click.File
 
-I wanted to add a `--encoding` option to `sqlite-utils insert` which could be used to change the file encoding used to read the incoming CSV or TSV file.
+I wanted to add a `--encoding` option to `sqlite-utils insert` which could be used to change the file encoding used to read the incoming CSV or TSV file - see [sqlite-utils #182](https://github.com/simonw/sqlite-utils/issues/182).
 
 Just one problem: the Click file argument was defined using `click.File()`, which has useful features like automatically handling `-` for standard input. The code looked like this:
 
