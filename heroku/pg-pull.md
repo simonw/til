@@ -20,10 +20,12 @@ I found my all-caps environment variable by running the following:
 
     heroku run env -a simonwillisonblog | grep POSTGRESQL
     Running env on simonwillisonblog... up, run.2963 (Hobby)
-    HEROKU_POSTGRESQL_OLIVE_URL=postgres://....
+    HEROKU_POSTGRESQL_JADE_URL=postgres://....
 
 Then I ran this command:
 
-    heroku pg:pull HEROKU_POSTGRESQL_OLIVE_URL simonwillisonblog -a simonwillisonblog
+    heroku pg:pull HEROKU_POSTGRESQL_JADE_URL simonwillisonblog -a simonwillisonblog
 
 This created a local PostgreSQL database called `simonwillisonblog` and imported my latest backup.
+
+When I ran it a second time I had to use `dropdb simonwillisonblog` first to drop the existing local database.
