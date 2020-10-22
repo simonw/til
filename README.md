@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->87<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->88<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -123,6 +123,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Dynamically loading multiple assets with a callback](https://github.com/simonw/til/blob/main/javascript/dynamically-loading-assets.md) - 2020-08-21
 * [Minifying JavaScript with npx uglify-js](https://github.com/simonw/til/blob/main/javascript/minifying-uglify-npx.md) - 2020-08-30
 * [Manipulating query strings with URLSearchParams](https://github.com/simonw/til/blob/main/javascript/manipulating-query-params.md) - 2020-10-04
+* [Writing JavaScript that responds to media queries](https://github.com/simonw/til/blob/main/javascript/javascript-that-responds-to-media-queries.md) - 2020-10-21
 
 ## django
 
