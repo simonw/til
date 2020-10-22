@@ -13,7 +13,7 @@ jobs:
         uses: zofrex/mirror-branch@ea152f124954fa4eb26eea3fe0dbe313a3a08d94
         with:
           target-branch: master
-          force: false
+          force: true
       - name: Mirror to "main"
         uses: zofrex/mirror-branch@ea152f124954fa4eb26eea3fe0dbe313a3a08d94
         with:
