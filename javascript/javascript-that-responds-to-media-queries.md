@@ -22,7 +22,7 @@ mediaMatcher.addListener(conditionalRearrange);
 ```
 [Full code is here](https://github.com/simonw/simonwillisonblog/blob/13c287336675e3b4f8e3f3d0f4fdeff738e87ad0/templates/homepage.html#L45-L88).
 
-My `rearrangeForMobile()` function made changes to the DOM that themselves were governed my show/hide CSS media queries - so if the user changes the width of the page things will continue to display correctly based on the current width, without needing to execute extra JavaScript.
+That `rearrangeForMobile()` function makes changes to the DOM, by copying some content from the sidebar into the main column. Media queries in my CSS then control the display of that content at different screen sizes - so if the user changes the width of the page things will continue to display correctly based on the current width, without needing to execute extra JavaScript.
 
 Here's [the accompanying CSS](https://github.com/simonw/simonwillisonblog/blob/13c287336675e3b4f8e3f3d0f4fdeff738e87ad0/static/css/all.css#L795-L812):
 
