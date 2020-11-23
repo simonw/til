@@ -50,9 +50,6 @@ jobs:
       run: curl --fail -o main/til.db https://raw.githubusercontent.com/simonw/til-db/main/til.db
       continue-on-error: true
     - name: Build database
-      env:
-        SCREENSHOT_HOST: ${{ secrets.SCREENSHOT_HOST }}
-        SCREENSHOT_KEY: ${{ secrets.SCREENSHOT_KEY }}
       run: |-
         cd main
         python build_database.py
