@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->90<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->91<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -192,4 +192,8 @@ Search these TILs at https://til.simonwillison.net/
 ## digitalocean
 
 * [Running Datasette on DigitalOcean App Platform](https://github.com/simonw/til/blob/main/digitalocean/datasette-on-digitalocean-app-platform.md) - 2020-10-06
+
+## datasette
+
+* [Redirects for Datasette](https://github.com/simonw/til/blob/main/datasette/redirects-for-datasette.md) - 2020-11-25
 <!-- index ends -->
