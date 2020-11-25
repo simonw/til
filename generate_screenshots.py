@@ -11,6 +11,7 @@ SHOT_HASH_PATHS = [
     (root / "templates" / "til_base.html"),
 ]
 
+
 def png_for_path(path):
     page_html = str(TMP_PATH / "generate-screenshots-page.html")
     # Use datasette to generate HTML
@@ -33,7 +34,7 @@ def png_for_path(path):
 
 
 def generate_screenshots(root):
-    db = sqlite_utils.Database(root / "til.db")
+    db = sqlite_utils.Database(root / "tils.db")
 
     # The shot_hash incorporates a hash of all of row.html
 
@@ -47,7 +48,7 @@ def generate_screenshots(root):
         html = row["html"]
         shot_hash = hashlib.md5((shot_html_hash + html).encode("utf-8")).hexdigest()
         if shot_hash != row.get("shot_hash"):
-            png = png_for_path("/til/til/{}".format(path))
+            png = png_for_path("/tils/til/{}".format(path))
             db["til"].update(path, {"shot": png, "shot_hash": shot_hash}, alter=True)
             print(
                 "Got {} byte PNG for {} shot hash {}".format(len(png), path, shot_hash)

@@ -1,0 +1,24 @@
+{% extends "til_base.html" %}
+
+{% set tils = sql("""
+    select * from til where topic = :topic order by created_utc
+""", {"topic": topic})
+%}
+
+{% block title %}Simon Willison: TILs on {{ topic }}{% endblock %}<!DOCTYPE html>
+
+{% block body %}
+
+{% if not tils %}
+    {{ raise_404("No TILs found") }}
+{% endif %}
+
+<h1>Simon Willison: TILs on {{ topic }}</h1>
+
+<ul>
+{% for til in tils %}
+    <li><a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

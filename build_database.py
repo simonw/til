@@ -35,13 +35,14 @@ def created_changed_times(repo_path, ref="main"):
 
 def build_database(repo_path):
     all_times = created_changed_times(repo_path)
-    db = sqlite_utils.Database(repo_path / "til.db")
+    db = sqlite_utils.Database(repo_path / "tils.db")
     table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = filepath.open()
         title = fp.readline().lstrip("#").strip()
         body = fp.read().strip()
         path = str(filepath.relative_to(root))
+        slug = filepath.stem
         url = "https://github.com/simonw/til/blob/main/{}".format(path)
         # Do we need to render the markdown?
         path_slug = path.replace("/", "_")
@@ -54,6 +55,7 @@ def build_database(repo_path):
             previous_html = None
         record = {
             "path": path_slug,
+            "slug": slug,
             "topic": path.split("/")[0],
             "title": title,
             "url": url,
@@ -61,6 +63,7 @@ def build_database(repo_path):
         }
         if (body != previous_body) or not previous_html:
             retries = 0
+            response = None
             while retries < 3:
                 headers = {}
                 if os.environ.get("GITHUB_TOKEN"):

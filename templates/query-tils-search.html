@@ -45,7 +45,7 @@ pre strong {
 {% block body %}
 <h1>TIL search: {{ q }}</h1>
 
-<form action="/til/search">
+<form action="/tils/search">
     <p>
         <input type="search" name="q" value="{{ q }}">
         <input type="submit" value="Search">
@@ -57,7 +57,7 @@ pre strong {
 {% endif %}
     
 {% for row in rows %}
-    <p><span class="topic">{{ row.topic }}</span> <a href="/til/til/{{ row.path }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
+    <p><span class="topic">{{ row.topic }}</span> <a href="/{{ row.topic }}/{{ row.slug }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
     <pre>{{ highlight(row.snippet)|safe }}</pre>
 {% endfor %}
 

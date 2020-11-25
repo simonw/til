@@ -47,7 +47,7 @@ jobs:
     - name: Download previous database unless REBUILD in commit message
       if: |-
         !contains(github.event.head_commit.message, 'REBUILD')
-      run: curl --fail -o main/til.db https://raw.githubusercontent.com/simonw/til-db/main/til.db
+      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/simonw/til-db/main/tils.db
       continue-on-error: true
     - name: Build database
       run: |-
@@ -74,11 +74,11 @@ jobs:
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
-    - name: Save til.db to simonw/til-db
+    - name: Save tils.db to simonw/til-db
       run: |-
         cd til-db
-        cp ../main/til.db .
-        git add til.db
+        cp ../main/tils.db .
+        git add tils.db
         git commit --amend --no-edit
         git push --force
     - name: Setup Node.js
@@ -90,7 +90,7 @@ jobs:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
         cd main
-        datasette publish now til.db \
+        datasette publish now tils.db \
           --token $NOW_TOKEN \
           --branch main \
           --project simon-til \

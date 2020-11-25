@@ -8,7 +8,7 @@ plugins:
     screenshot:
       "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
 databases:
-  til:
+  tils:
     queries:
       search: |
         select
@@ -21,7 +21,7 @@ databases:
         where
           til_fts match case
             :q
-            when '' then '*'
+            when '' then 'nomatchforthisterm'
             else escape_fts(:q)
           end
         order by
@@ -32,7 +32,7 @@ databases:
           SELECT
             'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
             title as atom_title,
-            'https://til.simonwillison.net/til/til/' || path as atom_link,
+            'https://til.simonwillison.net/' || topic || '/' || slug as atom_link,
             created_utc as atom_updated,
             html as atom_content_html,
             'Simon Willison' as atom_author_name,

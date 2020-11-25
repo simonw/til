@@ -6,7 +6,7 @@ I wanted to have a GitHub Action step run that might fail, but if it failed the 
 
 ```yaml
     - name: Download previous database
-      run: curl --fail -o til.db https://til.simonwillison.net/til.db
+      run: curl --fail -o tils.db https://til.simonwillison.net/tils.db
       continue-on-error: true
     - name: Build database
       run: python build_database.py
@@ -14,6 +14,6 @@ I wanted to have a GitHub Action step run that might fail, but if it failed the 
 
 [From this workflow](https://github.com/simonw/til/blob/7d799a24921f66e585b8a6b8756b7f8040c899df/.github/workflows/build.yml#L32-L36)
 
-I'm using `curl --fail` here which returns an error code if the file download files (without `--fail` it was writing out a two line error message to a file called `til.db` which is not what I wanted). Then `continue-on-error: true` to keep on going even if the download failed.
+I'm using `curl --fail` here which returns an error code if the file download files (without `--fail` it was writing out a two line error message to a file called `tils.db` which is not what I wanted). Then `continue-on-error: true` to keep on going even if the download failed.
 
-My `build_database.py` script updates the `til.db` database file if it exists and creates it from scratch if it doesn't.
+My `build_database.py` script updates the `tils.db` database file if it exists and creates it from scratch if it doesn't.
