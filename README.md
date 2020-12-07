@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->92<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->93<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -150,6 +150,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Pointing a custom subdomain at Read the Docs](https://github.com/simonw/til/blob/main/readthedocs/custom-subdomain.md) - 2020-08-14
 * [Read the Docs Search API](https://github.com/simonw/til/blob/main/readthedocs/readthedocs-search-api.md) - 2020-08-16
+* [Using custom Sphinx templates on Read the Docs](https://github.com/simonw/til/blob/main/readthedocs/custom-sphinx-templates.md) - 2020-12-07
 
 ## ics
 
