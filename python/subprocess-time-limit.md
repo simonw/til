@@ -75,4 +75,6 @@ asyncio.exceptions.TimeoutError
 ```
 It returns the stdout output of the code, so to use this you'll need to figure out some kind of serialization format for the data that is returned from the subprocess. JSON or pickle should work fine.
 
+`sus.executable` is the path to the current Python interpreter. This ensures that any imports will take place in the correct Python virtual environment. Passing `-` as the first argument causes Python to execute code from standard input, which is then passed using the `.communicate()` method.
+
 Is this a good idea? I think so, but I'd love to hear from you if there's a simpler, cleaner way to do this.
