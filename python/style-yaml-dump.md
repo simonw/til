@@ -27,7 +27,7 @@ By default, the YAML output by `import yaml; print(yaml.dump(items))` looks like
     behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).'
   date: '2020-10-31'
 ```
-I wanted to list the `date` key first, and I wanted the `body` key to use `|-` YAML multi-line syntax rather than a single quoted string.
+I wanted to list the `date` key first, and I wanted the `body` key to use `>-` YAML multi-line syntax rather than a single quoted string.
 
 I ended up combining [these](https://stackoverflow.com/a/8641732) [two](https://stackoverflow.com/a/16782282) recipes from Stack Overflow. First I registered new representers with PyYaml:
 
@@ -39,7 +39,7 @@ class literal(str):
     pass
 
 def literal_presenter(dumper, data):
-    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style=">")
 
 
 yaml.add_representer(literal, literal_presenter)
@@ -62,15 +62,19 @@ Then I used the following Python code to output my YAML in the desired key order
 print(yaml.dump([OrderedDict([
     ("date", item["date"]),
     ("body", literal(item["body"]))
-]) for item in items]))
+]) for item in items], width=100))
 ```
 The result was:
 ```yaml
 - date: '2020-11-28'
-  body: |-
-    [Datasette 0.52](https://docs.datasette.io/en/stable/changelog.html#v0-52) - `--config` is now `--setting`, new `database_actions` plugin hook, `datasette publish cloudrun --apt-get-install` option and several bug fixes.
+  body: >-
+    [Datasette 0.52](https://docs.datasette.io/en/stable/changelog.html#v0-52) - `--config` is now `--setting`,
+    new `database_actions` plugin hook, `datasette publish cloudrun --apt-get-install` option and several
+    bug fixes.
 - date: '2020-10-31'
-  body: |-
-    [Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51) - A new visual design, plugin hooks for adding navigation options, better handling of binary data, URL building utility methods and better support for running Datasette behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).
+  body: >-
+    [Datasette 0.51](https://docs.datasette.io/en/stable/changelog.html#v0-51) - A new visual design,
+    plugin hooks for adding navigation options, better handling of binary data, URL building utility methods
+    and better support for running Datasette behind a proxy. [Annotated release notes](https://simonwillison.net/2020/Nov/1/datasette-0-51/).
 ```
-Ideally I'd like to wrap that text within those `|-` blocks but I haven't figured out a way to do that yet.
+Using `>` as the line style caused the `width=100` argument to be respected. When I tried this with `|` as the line style the indentation was not applied.
