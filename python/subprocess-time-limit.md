@@ -49,6 +49,11 @@ async def execute_python_with_time_limit(code, time_limit):
         )
     except asyncio.exceptions.TimeoutError:
         raise
+    try:
+        proc.kill()
+    except OSError:
+        # Ignore 'no such process' error
+        pass
     return stdout, stderr
 ```
 Example of using it (pasting into the shell you get from `python3 -m asyncio` in Python 3.8+):
