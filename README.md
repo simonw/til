@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->91<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->92<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -36,6 +36,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Understanding option names in Click](https://github.com/simonw/til/blob/main/python/click-option-names.md) - 2020-09-22
 * [Explicit file encodings using click.File](https://github.com/simonw/til/blob/main/python/click-file-encoding.md) - 2020-10-16
 * [Decorators with optional arguments](https://github.com/simonw/til/blob/main/python/decorators-with-optional-arguments.md) - 2020-10-28
+* [Running Python code in a subprocess with a time limit](https://github.com/simonw/til/blob/main/python/subprocess-time-limit.md) - 2020-12-06
 
 ## zeit-now
 
