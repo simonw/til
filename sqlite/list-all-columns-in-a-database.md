@@ -153,10 +153,11 @@ from
   sqlite_master
   join pragma_table_info(sqlite_master.name) as table_info
 order by
-  sqlite_master.name,
-  table_info.cid
+  sqlite_master.name
 ```
 [Demo](https://latest.datasette.io/fixtures?sql=select%0D%0A++sqlite_master.name+as+table_name%2C%0D%0A++table_info.*%0D%0Afrom%0D%0A++sqlite_master%0D%0A++join+pragma_table_info%28sqlite_master.name%29+as+table_info%0D%0Aorder+by%0D%0A++sqlite_master.name%2C%0D%0A++table_info.cid).
+
+This works with the `pragma_table_info` and `pragma_index_list` and `pragma_foreign_key_list` functions too.
 
 ## Another recipe
 
