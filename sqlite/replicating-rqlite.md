@@ -2,7 +2,7 @@
 
 I tried out [rqlite](https://github.com/rqlite/rqlite) today, a "lightweight, distributed relational database, which uses SQLite as its storage engine". It uses the Raft consensus algorithm to allow multiple SQLite instances to elect a leader and replicate changes amongst themselves.
 
-By default `rqlite` asks you to use its own custom HTTP API - but I wanted to try running it against Datasette. Raft author Philip O'Toole confirmed that [this should work](https://twitter.com/general_order24/status/1343619601758908419) provided any writes go through the API - each node can be configured to write to an on-disk database file which Datasette can then read from (the default is to use in-memory databases and an on-disk Raft log).
+By default `rqlite` asks you to use its own custom HTTP API - but I wanted to try running it against Datasette. rqlite author Philip O'Toole confirmed that [this should work](https://twitter.com/general_order24/status/1343619601758908419) provided any writes go through the API - each node can be configured to write to an on-disk database file which Datasette can then read from (the default is to use in-memory databases and an on-disk Raft log).
 
 Here's how I got that working on my macOS laptop. I used the latest macOS binary from https://github.com/rqlite/rqlite/releases (`rqlite` is written in Go and provides pre-complied binaries for different systems).
 
