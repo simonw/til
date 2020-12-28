@@ -2,7 +2,7 @@
 
 {% set tils = sql("""
     select * from til where path = :topic || '_' || :slug || '.md'
-""", {"topic": topic, "slug": slug})
+""", {"topic": topic, "slug": slug}, database="tils")
 %}
 {% set til = tils[0] %}
 {% if not tils %}
