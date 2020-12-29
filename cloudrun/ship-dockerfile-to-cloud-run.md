@@ -2,7 +2,7 @@
 
 I deployed https://metmusem.datasettes.com/ by creating a folder on my computer containing a Dockerfile and then shipping that folder up to Google Cloud Run.
 
-Normally I use [datasette publish cloudrun](https://datasette.readthedocs.io/en/stable/publish.html#publishing-to-google-cloud-run) to deploy to Cloud Run, but in this case I decided to do it by hand.
+Normally I use [datasette publish cloudrun](https://docs.datasette.io/en/stable/publish.html#publishing-to-google-cloud-run) to deploy to Cloud Run, but in this case I decided to do it by hand.
 
 I created a folder and dropped two files into it: a `Dockerfile` and a `metadata.json`. BUT... this trick would work with more files in the same directory - it uploads the entire directory contents to be built by Google's cloud builder.
 

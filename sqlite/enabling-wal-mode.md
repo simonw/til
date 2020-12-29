@@ -22,6 +22,6 @@ After running this each `.db` file has an accompanying `.db-shm` and `.db-wal` f
 
 ## Using sqlite-utils
 
-I added a command to [sqlite-utils 2.15](https://sqlite-utils.readthedocs.io/en/stable/changelog.html#v2-15) that does this:
+I added a command to [sqlite-utils 2.15](https://sqlite-utils.datasette.io/en/stable/changelog.html#v2-15) that does this:
 
     sqlite-utils enable-wal *.db

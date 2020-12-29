@@ -55,5 +55,5 @@ I then had to figure out how to upgrade them. Thanks to https://github.com/pipxp
         }
     ]
 
-I added all of this to the Datasette docs here: https://datasette.readthedocs.io/en/latest/installation.html#install-using-pipx
+I added all of this to the Datasette docs here: https://docs.datasette.io/en/latest/installation.html#using-pipx
 (see https://github.com/simonw/datasette/issues/756).

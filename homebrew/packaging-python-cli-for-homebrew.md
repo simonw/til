@@ -35,7 +35,7 @@ The shape of the formula is this:
 class Datasette < Formula
   include Language::Python::Virtualenv
   desc "An open source multi-tool for exploring and publishing data"
-  homepage "https://datasette.readthedocs.io/"
+  homepage "https://datasette.io/"
   url "https://files.pythonhosted.org/packages/96/e2/abc76ee41d9895145e43323c591aa77f2b27959deb640278fc1a43f6b222/datasette-0.46.tar.gz"
   version "0.46"
   sha256 "eb5e5dcb8a0957ed1def841108576afb15a38ce61d222bf54a25d827999ad521"

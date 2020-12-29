@@ -1,6 +1,6 @@
 # Decorators with optional arguments
 
-[sqlite-utils](https://sqlite-utils.readthedocs.io/) provides [a decorator](https://sqlite-utils.readthedocs.io/en/stable/python-api.html#registering-custom-sql-functions) for registering custom Python functions that looks like this:
+[sqlite-utils](https://sqlite-utils.datasette.io/) provides [a decorator](https://sqlite-utils.datasette.io/en/stable/python-api.html#registering-custom-sql-functions) for registering custom Python functions that looks like this:
 
 ```python
 from sqlite_utils import Database

@@ -1,6 +1,6 @@
 # Figuring out if a text value in SQLite is a valid integer or float
 
-Given a table with a `TEXT` column in SQLite I want to figure out if every value in that table is actually the text representation of an integer or floating point value, so I can decide if it's a good idea to change the type of the column (using [sqlite-utils transform](https://sqlite-utils.readthedocs.io/en/stable/python-api.html#transforming-a-table)).
+Given a table with a `TEXT` column in SQLite I want to figure out if every value in that table is actually the text representation of an integer or floating point value, so I can decide if it's a good idea to change the type of the column (using [sqlite-utils transform](https://sqlite-utils.datasette.io/en/stable/python-api.html#transforming-a-table)).
 
 To do this efficiently, I want a SQLite idiom that will tell me if a string value is a valid integer or floating point number.
 
