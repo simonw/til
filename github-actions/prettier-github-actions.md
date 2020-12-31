@@ -13,7 +13,7 @@ I added `.prettierrc` to the root of the repo with the following settings:
 
 Then I created the following `.github/workflows/prettier.yml` file:
 
-```
+```yaml
 name: Check JavaScript for conformance with Prettier
 
 on:
