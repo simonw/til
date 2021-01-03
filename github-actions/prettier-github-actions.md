@@ -40,6 +40,6 @@ jobs:
 
 The `npx prettier --check 'datasette/static/*[!.min].js'` line ensures that prettier is run in "check" mode (which fails the tests if a matching file does not conform to the formatting rules) - it checks any `.js` file in the `datasette/static` folder but excludes any `.min.js` minified files.
 
-I'm using `npx` to run Prettier which installs it if it is missing - as far as I can tell `npx` respects the `.npm` cache so I'm using that to avoid downloading a new copy of Prettier every time.
+I'm using `npx` to run Prettier which installs it if it is missing - as far as I can tell `npx` respects the `.npm` cache so I'm using that to avoid downloading a new copy of Prettier every time. **UPDATE:** Apparently it doesn't, see [#1169](https://github.com/simonw/datasette/issues/1169)
 
 I decided to use the hash of the `prettier.yml` file itself as the key for the cached data, so any time I change the workflow it should invalidate the cache.
