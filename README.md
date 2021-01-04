@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->100<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->101<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -40,6 +40,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running Python code in a subprocess with a time limit](https://github.com/simonw/til/blob/main/python/subprocess-time-limit.md) - 2020-12-06
 * [Controlling the style of dumped YAML using PyYAML](https://github.com/simonw/til/blob/main/python/style-yaml-dump.md) - 2020-12-07
 * [Relinquishing control in Python asyncio](https://github.com/simonw/til/blob/main/python/yielding-in-asyncio.md) - 2020-12-29
+* [Packaging a Python app as a standalone binary with PyInstaller](https://github.com/simonw/til/blob/main/python/packaging-pyinstaller.md) - 2021-01-04
 
 ## zeit-now
 
