@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->101<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->102<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -58,6 +58,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Compiling the SQLite spellfix.c module on macOS](https://github.com/simonw/til/blob/main/sqlite/compile-spellfix-osx.md) - 2020-09-19
 * [Figuring out if a text value in SQLite is a valid integer or float](https://github.com/simonw/til/blob/main/sqlite/text-value-is-integer-or-float.md) - 2020-09-27
 * [Replicating SQLite with rqlite](https://github.com/simonw/til/blob/main/sqlite/replicating-rqlite.md) - 2020-12-28
+* [Identifying column combination patterns in a SQLite table](https://github.com/simonw/til/blob/main/sqlite/column-combinations.md) - 2021-01-12
 
 ## presenting
 
