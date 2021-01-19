@@ -85,12 +85,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Deploy Datasette using Zeit Now
+    - name: Deploy Datasette using Vercel
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
         cd main
-        datasette publish now tils.db \
+        datasette publish vercel tils.db \
           --token $NOW_TOKEN \
           --branch main \
           --project simon-til \

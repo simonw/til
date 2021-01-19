@@ -1,6 +1,6 @@
-# Running a Python ASGI app on Zeit Now v2
+# Running a Python ASGI app on Vercel
 
-Now v2 really wants you to deploy static assets with [serverless functions](https://zeit.co/docs/v2/serverless-functions/introduction) tucked away in a separate folder. They suggest creating modules like `api/index.py` which will be served up automatically as API backends to your client-side JavaScript.
+Vercel really wants you to deploy static assets with [serverless functions](https://vercel.com/docs/serverless-functions/introduction) tucked away in a separate folder. They suggest creating modules like `api/index.py` which will be served up automatically as API backends to your client-side JavaScript.
 
 It turns out you can subvert that model entirely and route all of your traffic through a single function - great for serving up Python WSGI or ASGI apps that handle traffic routing themselves.
 
@@ -32,7 +32,7 @@ Some examples I've built that use this pattern:
 * https://github.com/simonw/gzthermal-web
 * Apps published using https://github.com/simonw/datasette-publish-now
 
-Here's [the Zeit builder code](https://github.com/zeit/now/blob/c9437e714a754da2d25ae23160d5ad9cf64e2228/packages/now-python/now_init.py#L82) that detects ASGI or WSGI apps, for a peek at how it works under the hood.
+Here's [the Vercel builder code](https://github.com/vercel/vercel/blob/c9437e714a754da2d25ae23160d5ad9cf64e2228/packages/now-python/now_init.py#L82) that detects ASGI or WSGI apps, for a peek at how it works under the hood.
 
 See also:
 
