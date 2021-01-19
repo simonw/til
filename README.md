@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->105<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->106<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -98,6 +98,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Paginating through the GitHub GraphQL API with Python](https://github.com/simonw/til/blob/main/github/graphql-pagination-python.md) - 2020-07-09
 * [Searching for repositories by topic using the GitHub GraphQL API](https://github.com/simonw/til/blob/main/github/graphql-search-topics.md) - 2020-10-09
 * [Bulk fetching repository details with the GitHub GraphQL API](https://github.com/simonw/til/blob/main/github/bulk-repo-github-graphql.md) - 2021-01-17
+* [Syntax highlighting Python console examples with GFM](https://github.com/simonw/til/blob/main/github/syntax-highlighting-python-console.md) - 2021-01-18
 
 ## node
 
