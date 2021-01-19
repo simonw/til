@@ -52,18 +52,21 @@ Removing `--count` shows the actual content.
 
 I used this for loop to import only the valid lines into a SQLite database:
 
-    for file in *.csv;
-      do rg --invert-match '^[^"]*"(?:[^"]*"[^"]*")*[^"]*$' $file | \
-        sqlite-utils insert my.db rows - --csv;
-    done;
+```bash
+for file in *.csv;
+    do rg --invert-match '^[^"]*"(?:[^"]*"[^"]*")*[^"]*$' $file | \
+    sqlite-utils insert my.db rows - --csv;
+done;
+```
 
 ## Saving the broken lines for later
 
 To save the lines that contained odd numbers of double quotes I used this command:
 
-    rg '^[^"]*"(?:[^"]*"[^"]*")*[^"]*$' \
-      --glob '*.csv' \
-      --no-line-number \
-      --no-filename > saved.txt
-
+```bash
+rg '^[^"]*"(?:[^"]*"[^"]*")*[^"]*$' \
+  --glob '*.csv' \
+  --no-line-number \
+  --no-filename > saved.txt
+```
 Since I don't actually care which file they lived in - all of these CSV files share the same structure - I used `--no-filename` to omit the filename from the results and `--no-line-number` to omit the line number. The result is a `saved.txt` file containing just the raw CSV data that I skipped from the import.
