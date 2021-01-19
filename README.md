@@ -44,7 +44,7 @@ Search these TILs at https://til.simonwillison.net/
 
 ## zeit-now
 
-* [Running a Python ASGI app on Zeit Now v2](https://github.com/simonw/til/blob/main/zeit-now/python-asgi-on-now-v2.md) - 2020-04-19
+* [Running a Python ASGI app on Vercel](https://github.com/simonw/til/blob/main/zeit-now/python-asgi-on-now-v2.md) - 2020-04-19
 
 ## sqlite
 
