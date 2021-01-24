@@ -23,3 +23,7 @@ It turns out `uglify-js` doesn't support ES6 at all. You can use [tercer](https:
     npx terser codemirror-5.57.0.js -o codemirror-5.57.0.min.js --comments '/LICENSE/'
 
 Discovered in [datasette-edit-tables #16](https://github.com/simonw/datasette-edit-tables/issues/16).
+
+## Trying out Uglify interactively
+
+[UglifyJS 3: Online JavaScript minifier](https://skalman.github.io/UglifyJS-online/) is a useful way to try out Ugllify since it shows you the results as you type, which makes it easy to spot tiny changes you can make that result in a shorter minified output.
