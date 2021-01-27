@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->108<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->109<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -219,4 +219,5 @@ Search these TILs at https://til.simonwillison.net/
 ## cookiecutter
 
 * [Testing cookiecutter templates with pytest](https://github.com/simonw/til/blob/main/cookiecutter/pytest-for-cookiecutter.md) - 2021-01-27
+* [Conditionally creating directories in cookiecutter](https://github.com/simonw/til/blob/main/cookiecutter/conditionally-creating-directories.md) - 2021-01-27
 <!-- index ends -->
