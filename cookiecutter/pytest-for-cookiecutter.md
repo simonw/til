@@ -16,9 +16,11 @@ TEMPLATE_DIRECTORY = str(pathlib.Path(__file__).parent.parent)
 
 
 def test_static_and_templates(tmpdir):
-    generate(
-        tmpdir,
-        {
+    cookiecutter(
+        template=TEMPLATE_DIRECTORY,
+        output_dir=str(tmpdir),
+        no_input=True,
+        extra_context={
             "plugin_name": "foo",
             "description": "blah",
             "include_templates_directory": "y",
@@ -41,22 +43,10 @@ def test_static_and_templates(tmpdir):
         "datasette-foo/tests",
         "datasette-foo/tests/test_foo.py",
     }
+    setup_py = (tmpdir / "datasette-foo" / "setup.py").read_text("utf-8")
     assert (
         'package_data={\n        "datasette_foo": ["static/*", "templates/*"]\n    }'
-    ) in read_setup_py(tmpdir)
-
-
-def generate(directory, context):
-    cookiecutter(
-        template=TEMPLATE_DIRECTORY,
-        output_dir=str(directory),
-        no_input=True,
-        extra_context=context,
-    )
-
-
-def read_setup_py(tmpdir):
-    return (tmpdir / "datasette-foo" / "setup.py").read_text("utf-8")
+    ) in setup_py
 
 
 def paths(directory):
