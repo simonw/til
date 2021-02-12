@@ -103,6 +103,7 @@ jobs:
           --install datasette-debug-asgi \
           --install "datasette-graphql>=0.12" \
           --install datasette-media \
+          --install datasette-render-images \
           --plugins-dir plugins \
           --template-dir templates \
           --public
