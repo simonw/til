@@ -7,4 +7,3 @@ datasette-publish-vercel>=0.9.1
 datasette-template-sql>=1.0.2
 datasette-graphql
 datasette-media
-datasette-render-images
