@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->116<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->117<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -230,4 +230,8 @@ Search these TILs at https://til.simonwillison.net/
 ## gis
 
 * [Downloading MapZen elevation tiles](https://github.com/simonw/til/blob/main/gis/mapzen-elevation-tiles.md) - 2021-02-04
+
+## sphinx
+
+* [Using sphinx.ext.extlinks for issue links](https://github.com/simonw/til/blob/main/sphinx/sphinx-ext-extlinks.md) - 2021-02-17
 <!-- index ends -->
