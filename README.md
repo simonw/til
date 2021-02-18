@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->115<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->116<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -182,6 +182,7 @@ Search these TILs at https://til.simonwillison.net/
 ## jq
 
 * [Converting Airtable JSON for use with sqlite-utils using jq](https://github.com/simonw/til/blob/main/jq/reformatting-airtable-json.md) - 2020-08-28
+* [Loading radio.garden into SQLite using jq](https://github.com/simonw/til/blob/main/jq/radio-garden-jq.md) - 2021-02-17
 
 ## bash
 
