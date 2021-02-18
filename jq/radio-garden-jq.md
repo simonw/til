@@ -58,3 +58,14 @@ Then I piped that result to `sqlite-utils`:
 
     % cat places | jq '[.data.list[] | {id: .id, title: .title, country: .country, url: .url, size: .size, latitude: .geo[1], longitude: .geo[0]}]' | \
       sqlite-utils insert radio.db stations - --pk=id
+
+Here's the whole process as a one-liner:
+
+    curl http://radio.garden/api/ara/content/places | \
+      jq '[.data.list[] | {id: .id, title: .title, country: .country, url: .url, size: .size, latitude: .geo[1], longitude: .geo[0]}]' | \
+      sqlite-utils insert radio.db stations - --pk=id
+
+I then opened it in Datasette so I could do things like see it on a map and facet by country:
+
+    datasette install datasette-cluster-map
+    datasette radio.db -o
