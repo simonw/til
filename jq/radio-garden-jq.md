@@ -32,7 +32,15 @@ I ran that through `jq` to pretty print it and see what it looked like:
 
 I need a flat JSON list to load this into `sqlite-utils`. I used `jq` to reshape the data like so:
 
-    % cat places | jq '[.data.list[] | {id: .id, title: .title, country: .country, url: .url, size: .size, latitude: .geo[1], longitude: .geo[0]}]' | head -n 20
+    % cat places | jq '[.data.list[] | {
+        id: .id,
+        title: .title,
+        country: .country,
+        url: .url,
+        size: .size,
+        latitude: .geo[1],
+        longitude: .geo[0]
+    }]' | head -n 20
     [
       {
         "id": "GBy0N9TE",
@@ -56,14 +64,27 @@ I need a flat JSON list to load this into `sqlite-utils`. I used `jq` to reshape
 
 Then I piped that result to `sqlite-utils`:
 
-    % cat places | jq '[.data.list[] | {id: .id, title: .title, country: .country, url: .url, size: .size, latitude: .geo[1], longitude: .geo[0]}]' | \
-      sqlite-utils insert radio.db stations - --pk=id
+    % cat places | jq '[.data.list[] | {
+        id: .id,
+        title: .title,
+        country: .country,
+        url: .url,
+        size: .size,
+        latitude: .geo[1],
+        longitude: .geo[0]
+    }]' | sqlite-utils insert radio.db stations - --pk=id
 
 Here's the whole process as a one-liner:
 
-    curl http://radio.garden/api/ara/content/places | \
-      jq '[.data.list[] | {id: .id, title: .title, country: .country, url: .url, size: .size, latitude: .geo[1], longitude: .geo[0]}]' | \
-      sqlite-utils insert radio.db stations - --pk=id
+    curl http://radio.garden/api/ara/content/places | jq '[.data.list[] | {
+        id: .id,
+        title: .title,
+        country: .country,
+        url: .url,
+        size: .size,
+        latitude: .geo[1],
+        longitude: .geo[0]
+    }]' | sqlite-utils insert radio.db stations - --pk=id
 
 I then opened it in Datasette so I could do things like see it on a map and facet by country:
 
