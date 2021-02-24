@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->117<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->118<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -234,4 +234,8 @@ Search these TILs at https://til.simonwillison.net/
 ## sphinx
 
 * [Using sphinx.ext.extlinks for issue links](https://github.com/simonw/til/blob/main/sphinx/sphinx-ext-extlinks.md) - 2021-02-17
+
+## postgresql
+
+* [Show the SQL schema for a PostgreSQL database](https://github.com/simonw/til/blob/main/postgresql/show-schema.md) - 2021-02-23
 <!-- index ends -->
