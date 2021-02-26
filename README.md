@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->120<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->121<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -240,4 +240,5 @@ Search these TILs at https://til.simonwillison.net/
 ## postgresql
 
 * [Show the SQL schema for a PostgreSQL database](https://github.com/simonw/til/blob/main/postgresql/show-schema.md) - 2021-02-23
+* [Granting a PostgreSQL user read-only access to some tables](https://github.com/simonw/til/blob/main/postgresql/read-only-postgresql-user.md) - 2021-02-26
 <!-- index ends -->
