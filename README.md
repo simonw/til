@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->119<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->120<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -146,6 +146,7 @@ Search these TILs at https://til.simonwillison.net/
 ## django
 
 * [PostgreSQL full-text search in the Django Admin](https://github.com/simonw/til/blob/main/django/postgresql-full-text-search-admin.md) - 2020-07-25
+* [Adding extra read-only information to a Django change page](https://github.com/simonw/til/blob/main/django/extra-read-only-admin-information.md) - 2021-02-25
 
 ## docker
 
