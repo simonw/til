@@ -30,7 +30,7 @@ heroku pg:wait -a simonwillisonblog
 ```
 Then I used this command to figure out which `_URL` it had:
 ```
-heroku config -a simonwillisonblog | grep DATABASE
+heroku config -a simonwillisonblog | grep URL
 ```
 Which meant I could run the copy:
 ```
