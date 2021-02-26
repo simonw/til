@@ -6,7 +6,7 @@ I followed the steps in [Upgrading with pg:copy](https://devcenter.heroku.com/ar
 
 Because I'm the only user who writes to my database I skipped the maintenance mode bit.
 
-## Step one: provision a new DB:
+## Step one: provision a new DB
 
     $ heroku addons:create heroku-postgresql:hobby-basic -a simonwillisonblog
     Creating heroku-postgresql:hobby-basic on ⬢ simonwillisonblog... $9/month
@@ -21,7 +21,18 @@ Because I'm the only user who writes to my database I skipped the maintenance mo
 
 ## Step 2 skipped - I didn't bother with maintenance mode
 
-## Step 3: copy the data to the new database:
+## Step 3: copy the data to the new database
+
+I had to wait for it to finish provisioning first:
+
+```
+heroku pg:wait -a simonwillisonblog
+```
+Then I used this command to figure out which `_URL` it had:
+```
+heroku config -a simonwillisonblog | grep DATABASE
+```
+Which meant I could run the copy:
 ```
 $ heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_JADE_URL --app simonwillisonblog
 ▸    WARNING: Destructive action
@@ -34,7 +45,7 @@ Starting copy of DATABASE to JADE... done
 Copying... done
 ```
 
-## Step 4: promote the new database:
+## Step 4: promote the new database
 ```
 $ heroku pg:promote HEROKU_POSTGRESQL_JADE -a simonwillisonblog
 Ensuring an alternate alias for existing DATABASE_URL... HEROKU_POSTGRESQL_OLIVE_URL
