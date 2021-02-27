@@ -146,7 +146,7 @@ Search these TILs at https://til.simonwillison.net/
 ## django
 
 * [PostgreSQL full-text search in the Django Admin](https://github.com/simonw/til/blob/main/django/postgresql-full-text-search-admin.md) - 2020-07-25
-* [Adding extra read-only information to a Django change page](https://github.com/simonw/til/blob/main/django/extra-read-only-admin-information.md) - 2021-02-25
+* [Adding extra read-only information to a Django admin change page](https://github.com/simonw/til/blob/main/django/extra-read-only-admin-information.md) - 2021-02-25
 
 ## docker
 
