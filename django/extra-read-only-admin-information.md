@@ -1,4 +1,4 @@
-# Adding extra read-only information to a Django change page
+# Adding extra read-only information to a Django admin change page
 
 I figured out this pattern today for adding templated extra blocks of information to the Django admin change page for an object.
 
