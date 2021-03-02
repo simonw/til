@@ -44,9 +44,8 @@ def admin_client(client, admin_user):
 
 # Then write tests like this:
 def test_admin_create_location_sets_public_id(admin_client):
-    response = client.post(
+    response = admin_client.post(
         "/admin/core/location/add/",
-        {}
-    )
+    # ...
 ```
 Place the `admin_client` fixture in a `conftest.py` file to make it available to all of your tests no matter what module they occur in.
