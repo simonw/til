@@ -29,9 +29,19 @@ def test_admin_create_location_sets_public_id(client, admin_user):
 ```
 The trick here is to use the `client` and `admin_user` pytest-django fixtures ([documented here](https://pytest-django.readthedocs.io/en/latest/helpers.html#fixtures)) to get a configured test client and admin user object, then use `client.force_login(admin_user)` to obtain a session where that user is signed-in to the admin. Then write tests as normal.
 
-## Creating an admin_client fixture
+## Using the admin_client fixture
 
-If you're going to use this pattern in more than one test, you can create a custom fixture that sets up an admin client for you like this:
+Even better: use the `admin_client` fixture provided by `pytest-django 
+` which is already signed into the admin:
+
+```python
+def test_admin_create_location_sets_public_id(admin_client):
+    response = admin_client.post(
+        "/admin/core/location/add/",
+    # ...
+```
+
+Before finding out that this was included I implemented my own version of it:
 
 ```python
 import pytest
@@ -48,4 +58,3 @@ def test_admin_create_location_sets_public_id(admin_client):
         "/admin/core/location/add/",
     # ...
 ```
-Place the `admin_client` fixture in a `conftest.py` file to make it available to all of your tests no matter what module they occur in.
