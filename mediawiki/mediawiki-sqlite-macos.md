@@ -42,7 +42,7 @@ Here's what worked for me:
     % mkdir ~/wiki
     % cd ~/wiki
     % wget https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.12.zip
-    % unzip https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.12.zip
+    % unzip mediawiki-1.31.12.zip
     % cd mediawiki-1.31.12
     % php -S localhost:8000
     PHP 7.3.11 Development Server started at Sat Mar  6 20:58:21 2021
