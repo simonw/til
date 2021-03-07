@@ -1,6 +1,6 @@
 # How to run MediaWiki with SQLite on a macOS laptop
 
-Today I [got curious](File:Rich.gif) about how MediaWiki records page history, so I started digging around and in the process figured out how to run it against a SQLite database on my macOS laptop!
+Today I [got curious](https://twitter.com/simonw/status/1368414296888070146) about how MediaWiki records page history, so I started digging around and in the process figured out how to run it against a SQLite database on my macOS laptop!
 
 ## Requirements: PHP
 
