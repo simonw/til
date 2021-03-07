@@ -35,7 +35,7 @@ I downloaded the latest version of MediaWiki from [their downloads page](https:/
 
 Turns out the latest MediaWiki requires PHP 7.3.19, but the version bundled with my laptop was 7.3.11.
 
-I didn't want to mess around with upgrading PHP, so I used the [compatibility page](https://www.mediawiki.org/wiki/Compatibility#PHP) to figure out the most recent MediaWiki versian that would work with PHP 7.3.11. I decided to try MediaWiki 1.31, which can be downloaded from <https://releases.wikimedia.org/mediawiki/1.31/?C=S;O=D>
+I didn't want to mess around with upgrading PHP, so I used the [compatibility page](https://www.mediawiki.org/wiki/Compatibility#PHP) to figure out the most recent MediaWiki version that would work with PHP 7.3.11. I decided to try MediaWiki 1.31, which can be downloaded from <https://releases.wikimedia.org/mediawiki/1.31/?C=S;O=D>
 
 Here's what worked for me:
 
