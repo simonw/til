@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->124<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->125<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -149,6 +149,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Adding extra read-only information to a Django admin change page](https://github.com/simonw/til/blob/main/django/extra-read-only-admin-information.md) - 2021-02-25
 * [Writing tests for the Django admin with pytest-django](https://github.com/simonw/til/blob/main/django/testing-django-admin-with-pytest.md) - 2021-03-02
 * [Show the timezone for datetimes in the Django admin](https://github.com/simonw/til/blob/main/django/show-timezone-in-django-admin.md) - 2021-03-02
+* [Pretty-printing all read-only JSON in the Django admin](https://github.com/simonw/til/blob/main/django/pretty-print-json-admin.md) - 2021-03-07
 
 ## docker
 
