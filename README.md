@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->128<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->129<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -225,6 +225,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Redirects for Datasette](https://github.com/simonw/til/blob/main/datasette/redirects-for-datasette.md) - 2020-11-25
 * [Serving MBTiles with datasette-media](https://github.com/simonw/til/blob/main/datasette/serving-mbtiles.md) - 2021-02-03
+* [Querying for GitHub issues open for less than 60 seconds](https://github.com/simonw/til/blob/main/datasette/issues-open-for-less-than-x-seconds.md) - 2021-03-12
 
 ## jupyter
 
