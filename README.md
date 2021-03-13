@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->129<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->130<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -64,6 +64,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Identifying column combination patterns in a SQLite table](https://github.com/simonw/til/blob/main/sqlite/column-combinations.md) - 2021-01-12
 * [Fixing broken text encodings with sqlite-transform and ftfy](https://github.com/simonw/til/blob/main/sqlite/fixing-column-encoding-with-ftfy-and-sqlite-transform.md) - 2021-01-18
 * [Splitting on commas in SQLite](https://github.com/simonw/til/blob/main/sqlite/splitting-commas-sqlite.md) - 2021-02-01
+* [Querying for items stored in UTC that were created on a Thursday in PST](https://github.com/simonw/til/blob/main/sqlite/utc-items-on-thursday-in-pst.md) - 2021-03-12
 
 ## presenting
 
