@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->130<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->131<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -156,6 +156,7 @@ Search these TILs at https://til.simonwillison.net/
 ## docker
 
 * [Attaching a bash shell to a running Docker container](https://github.com/simonw/til/blob/main/docker/attach-bash-to-running-container.md) - 2020-08-10
+* [Running gdb against a Python process in a running Docker container](https://github.com/simonw/til/blob/main/docker/gdb-python-docker.md) - 2021-03-21
 
 ## homebrew
 
