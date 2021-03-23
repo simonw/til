@@ -31,3 +31,4 @@ order by
 limit
   20
 ```
+The `%(latitude)s` and `%(longitude)s` bits are named parameters when working with the Python [psycopg2](https://pypi.org/project/psycopg2/) library - they also work with [django-sql-dashboard](https://pypi.org/project/django-sql-dashboard/) which I used to prototype this query.
