@@ -13,11 +13,17 @@ with locations_with_distance as (
   select
     *,
     (
-      3959 * acos (
-        cos (radians(%(latitude)s::float)) * cos(radians(latitude)) * cos(
+      acos (
+        cos (
+          radians(%(latitude)s::float)
+        ) * cos(
+          radians(latitude)
+        ) * cos(
           radians(longitude) - radians(%(longitude)s::float)
-        ) + sin (radians(%(latitude)s::float)) * sin(radians(latitude))
-      )
+        ) + sin(
+          radians(%(latitude)s::float)
+        ) * sin(radians(latitude))
+      ) * 3959
     ) as distance_miles
   from
     location
@@ -41,17 +47,17 @@ Here's that same formula using the Django ORM:
 from django.db.models import F
 from django.db.models.functions import ACos, Cos, Radians, Sin
 
-Location.objects.annotate(
+locations = Location.objects.annotate(
     distance_miles = ACos(
         Cos(
-            Radians(input_latitude) * Cos(
-                Radians(F('latitude'))
-            ) * Cos(
-                Radians(F('longitude')) - Radians(input_longitude)
-            ) + Sin(
-                Radians(input_latitude) * Sin(Radians(F('latitude')))
-            )
-        )
+            Radians(input_latitude)
+        ) * Cos(
+            Radians(F('latitude'))
+        ) * Cos(
+            Radians(F('longitude')) - Radians(input_longitude)
+        ) + Sin(
+            Radians(input_latitude)
+        ) * Sin(Radians(F('latitude')))
     ) * 3959
-)
+).order_by('distance_miles')[:10]
 ```
