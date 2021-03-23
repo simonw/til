@@ -32,3 +32,26 @@ limit
   20
 ```
 The `%(latitude)s` and `%(longitude)s` bits are named parameters when working with the Python [psycopg2](https://pypi.org/project/psycopg2/) library - they also work with [django-sql-dashboard](https://pypi.org/project/django-sql-dashboard/) which I used to prototype this query.
+
+## Translated to Django
+
+Here's that same formula using the Django ORM:
+
+```python
+from django.db.models import F
+from django.db.models.functions import ACos, Cos, Radians, Sin
+
+Location.objects.annotate(
+    distance_miles = ACos(
+        Cos(
+            Radians(input_latitude) * Cos(
+                Radians(F('latitude'))
+            ) * Cos(
+                Radians(F('longitude')) - Radians(input_longitude)
+            ) + Sin(
+                Radians(input_latitude) * Sin(Radians(F('latitude')))
+            )
+        )
+    ) * 3959
+)
+```
