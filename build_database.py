@@ -1,13 +1,17 @@
 from datetime import timezone
+import httpx
 import git
+import os
 import pathlib
+from urllib.parse import urlencode
 import sqlite_utils
-
+from sqlite_utils.db import NotFoundError
+import time
 
 root = pathlib.Path(__file__).parent.resolve()
 
 
-def created_changed_times(repo_path, ref="master"):
+def created_changed_times(repo_path, ref="main"):
     created_changed_times = {}
     repo = git.Repo(repo_path, odbt=git.GitDB)
     commits = reversed(list(repo.iter_commits(ref)))
@@ -31,25 +35,69 @@ def created_changed_times(repo_path, ref="master"):
 
 def build_database(repo_path):
     all_times = created_changed_times(repo_path)
-    db = sqlite_utils.Database(repo_path / "til.db")
+    db = sqlite_utils.Database(repo_path / "tils.db")
     table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = filepath.open()
         title = fp.readline().lstrip("#").strip()
         body = fp.read().strip()
         path = str(filepath.relative_to(root))
-        url = "https://github.com/simonw/til/blob/master/{}".format(path)
+        slug = filepath.stem
+        url = "https://github.com/simonw/til/blob/main/{}".format(path)
+        # Do we need to render the markdown?
+        path_slug = path.replace("/", "_")
+        try:
+            row = table.get(path_slug)
+            previous_body = row["body"]
+            previous_html = row["html"]
+        except (NotFoundError, KeyError):
+            previous_body = None
+            previous_html = None
         record = {
-            "path": path.replace("/", "_"),
+            "path": path_slug,
+            "slug": slug,
             "topic": path.split("/")[0],
             "title": title,
             "url": url,
             "body": body,
         }
+        if (body != previous_body) or not previous_html:
+            retries = 0
+            response = None
+            while retries < 3:
+                headers = {}
+                if os.environ.get("GITHUB_TOKEN"):
+                    headers = {
+                        "authorization": "Bearer {}".format(os.environ["GITHUB_TOKEN"])
+                    }
+                response = httpx.post(
+                    "https://api.github.com/markdown",
+                    json={
+                        # mode=gfm would expand #13 issue links and suchlike
+                        "mode": "markdown",
+                        "text": body,
+                    },
+                    headers=headers,
+                )
+                if response.status_code == 200:
+                    record["html"] = response.text
+                    print("Rendered HTML for {}".format(path))
+                    break
+                else:
+                    print("  sleeping 60s")
+                    time.sleep(60)
+                    retries += 1
+            else:
+                assert False, "Could not render {} - last response was {}".format(
+                    path, response.headers
+                )
         record.update(all_times[path])
-        table.insert(record)
-    if "til_fts" not in db.table_names():
-        table.enable_fts(["title", "body"])
+        with db.conn:
+            table.upsert(record, alter=True)
+
+    table.enable_fts(
+        ["title", "body"], tokenize="porter", create_triggers=True, replace=True
+    )
 
 
 if __name__ == "__main__":

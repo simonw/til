@@ -36,3 +36,36 @@ git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
 git pull --rebase publisher master
 git push publisher master
 ```
+
+Cleanest example yet: https://github.com/simonw/coronavirus-data-gov-archive/blob/master/.github/workflows/scheduled.yml
+
+```yaml
+name: Fetch latest data
+
+on:
+  push:
+  repository_dispatch:
+  schedule:
+    - cron:  '25 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch latest data
+      run: |-
+        curl https://c19downloads.azureedge.net/downloads/data/data_latest.json | jq . > data_latest.json
+        curl https://c19pub.azureedge.net/utlas.geojson | gunzip | jq . > utlas.geojson
+        curl https://c19pub.azureedge.net/countries.geojson | gunzip | jq . > countries.geojson
+        curl https://c19pub.azureedge.net/regions.geojson | gunzip | jq . > regions.geojson
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
+```

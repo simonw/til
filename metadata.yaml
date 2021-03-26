@@ -1,0 +1,50 @@
+title: Today I Learned
+about: simonw/til
+about_url: https://github.com/simonw/til
+plugins:
+  datasette-atom:
+    allow_unsafe_html_in_canned_queries: true
+  datasette-media:
+    screenshot:
+      "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
+databases:
+  tils:
+    queries:
+      search: |
+        select
+          til_fts.rank,
+          til.*,
+          snippet(til_fts, -1, 'b4de2a49c8', '8c94a2ed4b', '...', 60) as snippet
+        from
+          til
+          join til_fts on til.rowid = til_fts.rowid
+        where
+          til_fts match case
+            :q
+            when '' then 'nomatchforthisterm'
+            else escape_fts(:q)
+          end
+        order by
+          til_fts.rank limit 20
+      feed:
+        title: Simon Willison TIL
+        sql: |-
+          SELECT
+            'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
+            title as atom_title,
+            'https://til.simonwillison.net/' || topic || '/' || slug as atom_link,
+            created_utc as atom_updated,
+            html as atom_content_html,
+            'Simon Willison' as atom_author_name,
+            'https://simonwillison.net/' as atom_author_uri
+          FROM
+            til
+          order by
+            created_utc desc
+          limit
+            15
+    tables:
+      til:
+        sort_desc: updated_utc
+        facets:
+        - topic

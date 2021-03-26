@@ -1,62 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-{% set til = display_rows[0] %}
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ til.title }}</title>
-<style>
-body {
-    font-family: helvetica;
-    padding: 1em 2em;
-    max-width: 800px;
-    line-height: 1.2em;
-}
-.created {
-    border-top: 1px solid #ccc;
-    padding-top: 1em;
-    font-size: 0.8em;
-}
-</style>
-</head>
-<body>
-<nav><a href="/">TIL index</a></nav>
+{% extends "til_base.html" %}
+
+{% block title %}{% set til = display_rows[0] %}{{ til.title }} | Simon Willison’s TILs{% endblock %}
+
+{% block extra_head %}{% set til = display_rows[0] %}
+<link rel="stylesheet" href="/static/github-light.css">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@simonw">
+<meta name="twitter:title" content="{{ til.title }}">
+<meta name="twitter:description" content="{{ til.body }}">
+<meta name="twitter:image" content="https://til.simonwillison.net/-/media/screenshot/{{ til.path }}">
+<meta name="twitter:image:alt" content="Screenshot of this article">
+<meta property="og:url" content="https://til.simonwillison.net/til/til/{{ til.path }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ til.title }}">
+<meta property="og:description" content="{{ til.body }}">
+<meta property="og:image" content="https://til.simonwillison.net/-/media/screenshot/{{ til.path }}">
+<meta property="og:image:alt" content="Screenshot of this article">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="400">
+{% endblock %}
+
+{% block body %}{% set til = display_rows[0] %}
 <h1>{{ til.title }}</h1>
 
-{{ render_markdown(
-    til.body,
-    extra_tags=[
-        "img",
-        "hr",
-        "br",
-        "details",
-        "summary",
-        "input",
-        "div",
-        "span"
-    ],
-    extra_attrs={
-        "input": [
-            "type",
-            "disabled",
-            "checked"
-        ],
-        "img": [
-            "src"
-        ],
-        "div": [
-            "class"
-        ],
-        "span": [
-            "class"
-        ]
-    },
-    extensions=[
-        "mdx_gfm:GithubFlavoredMarkdownExtension"
-    ])
-}}
+{{ til.html|safe }}
 
-<p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }}{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
-
-</body>
-</html>
+<p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }} &middot; <a href="{{ til.url|replace("https://github.com/simonw/til/blob/", "https://github.com/simonw/til/commits/") }}">History</a>{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
+{% endblock %}

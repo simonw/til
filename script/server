@@ -1,0 +1,2 @@
+#!/bin/bash
+datasette . -p 8002

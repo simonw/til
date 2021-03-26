@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TIL search: {{ q }}</title>
+{% extends "til_base.html" %}
+
+{% block title %}TIL search: {{ q }}{% endblock %}
+
+{% block extra_head %}
 <style>
-body {
-    box-sizing: border-box;
-    font-family: helvetica;
-    padding: 1em;
-    max-width: 800px;
-    line-height: 1.5em;
-}
 input[type=search] {
     padding: .25em;
     font-size: 0.9rem;
@@ -42,22 +34,31 @@ input[type=submit] {
     position: relative;
     top: -1px;
 }
+pre {
+    white-space: pre-wrap;
+}
+pre strong {
+    background-color: yellow;
+}
 </style>
-</head>
-<body>
-<nav><a href="/">TIL index</a></nav>
+{% endblock %}
+{% block body %}
 <h1>TIL search: {{ q }}</h1>
 
-<form action="/til/search">
+<form action="/tils/search">
     <p>
         <input type="search" name="q" value="{{ q }}">
         <input type="submit" value="Search">
     </p>
 </form>
 
+{% if q and not rows %}
+    <p><em>No results for "{{ q }}"</em></p>
+{% endif %}
+    
 {% for row in rows %}
-    <p><span class="topic">{{ row.topic }}</span> <a href="{{ row.url }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
+    <p><span class="topic">{{ row.topic }}</span> <a href="/{{ row.topic }}/{{ row.slug }}">{{ row.title }}</a> - {{ row.created[:10] }}</p>
+    <pre>{{ highlight(row.snippet)|safe }}</pre>
 {% endfor %}
 
-</body>
-</html>
+{% endblock %}

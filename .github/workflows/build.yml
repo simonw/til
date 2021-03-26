@@ -3,9 +3,7 @@ name: Build README and deploy Datasette
 on:
   push:
     branches:
-    - master
-    paths-ignore:
-    - README.md
+    - main
 
 jobs:
   build:
@@ -15,50 +13,96 @@ jobs:
       uses: actions/checkout@v2
       # We need full history to introspect created/updated:
       with:
-        fetch-depth: 0  
+        fetch-depth: 0
+        path: main
+    - name: Checkout til-db
+      uses: actions/checkout@v2
+      with:
+        repository: simonw/til-db
+        path: til-db
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_PUSH }}
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - uses: actions/cache@v1
+    - uses: actions/cache@v2
       name: Configure pip caching
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+    - uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-
+        restore-keys: |
+          ${{ runner.os }}-node-
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r main/requirements.txt
+    - name: Install npm dependencies
+      run: sudo npm install -g puppeteer-cli --unsafe-perm=true
+    - name: Download previous database unless REBUILD in commit message
+      if: |-
+        !contains(github.event.head_commit.message, 'REBUILD')
+      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/simonw/til-db/main/tils.db
+      continue-on-error: true
     - name: Build database
-      run: python build_database.py
+      run: |-
+        cd main
+        python build_database.py
+    - name: Soundness check
+      run: |-
+        cd main
+        datasette . --get / | grep "Simon Willison: TIL"
+    - name: Generate missing screenshots
+      run: |-
+        cd main
+        python generate_screenshots.py
     - name: Update README
       run: |-
+        cd main
         python update_readme.py --rewrite
         cat README.md
     - name: Commit and push if README changed
       run: |-
+        cd main
         git diff
         git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
+    - name: Save tils.db to simonw/til-db
+      run: |-
+        cd til-db
+        cp ../main/tils.db .
+        git add tils.db
+        git commit --amend --no-edit
+        git push --force
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Deploy Datasette using Zeit Now
+    - name: Deploy Datasette using Vercel
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
-        datasette publish now2 til.db \
+        cd main
+        datasette publish vercel tils.db \
           --token $NOW_TOKEN \
+          --branch main \
           --project simon-til \
-          --metadata metadata.json \
-          --install py-gfm \
-          --install datasette-render-markdown \
+          --metadata metadata.yaml \
+          --static static:static \
           --install datasette-template-sql \
-          --install datasette-atom \
+          --install "datasette-atom>=0.7" \
+          --install datasette-json-html \
+          --install beautifulsoup4 \
+          --install datasette-debug-asgi \
+          --install "datasette-graphql>=0.12" \
+          --install datasette-media \
           --plugins-dir plugins \
-          --template-dir templates
+          --template-dir templates \
+          --public

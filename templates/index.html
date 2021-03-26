@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="/til/feed.atom?_feed_title=Simon+Willison+TIL">
-<title>Simon Willison: TIL</title>
+{% extends "til_base.html" %}
+
+{% block title %}Simon Willison: TIL{% endblock %}<!DOCTYPE html>
+
+{% block extra_head %}
+<link href="https://github.com/simonw" rel="me">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/tils/feed.atom">
 <style>
-body {
-    box-sizing: border-box;
-    font-family: helvetica;
-    padding: 1em;
-    max-width: 800px;
-    line-height: 1.5em;
-}
 input[type=search] {
     padding: .25em;
     font-size: 0.9rem;
@@ -36,13 +29,13 @@ input[type=submit] {
     border-radius: .25rem;
 }
 </style>
-</head>
-<body>
+{% endblock %}
 
+{% block body %}
 <h1>Simon Willison: TIL</h1>
 <p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>.</p>
 
-<p><a style="text-decoration: none" href="/til/feed.atom?_feed_title=Simon+Willison+TIL" title="Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256">
+<p><a style="text-decoration: none" href="/tils/feed.atom" title="Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256">
     <defs>
     <linearGradient id="a" x1=".1" x2=".9" y1=".1" y2=".9">
         <stop offset="0" stop-color="#E3702D" />
@@ -62,23 +55,22 @@ input[type=submit] {
 <path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" />
     </svg> Atom feed</a></p>
 
-<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc") %}<a href="{{ row.url }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
+<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc limit 5", database="tils") %}<a href="/{{ row.topic }}/{{ row.slug }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
 
-<form action="/til/search">
+<form action="/tils/search">
     <p>
-        <input type="search" name="q">
+        <input type="search" name="q" placeholder="Search {{ sql("select count(*) from TIL", database="tils")[0][0] }} TILs">
         <input type="submit" value="Search">
     </p>
 </form>
 
-{% for row in sql("select distinct topic from til order by topic") %}
+{% for row in sql("select topic from til group by topic order by max(created_utc) desc", database="tils") %}
     <h2>{{ row.topic }}</h2>
     <ul>
-        {% for til in sql("select * from til where topic = '" + row.topic + "' order by created_utc") %}
-            <li><a href="{{ til.url }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+        {% for til in sql("select * from til where topic = :topic order by created_utc desc", {"topic": row.topic}, database="tils") %}
+            <li><a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
         {% endfor %}
     </ul>
 {% endfor %}
 
-</body>
-</html>
+{% endblock %}
