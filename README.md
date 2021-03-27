@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->134<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->135<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -49,6 +49,7 @@ Search these TILs at https://til.simonwillison.net/
 ## zeit-now
 
 * [Running a Python ASGI app on Vercel](https://github.com/simonw/til/blob/main/zeit-now/python-asgi-on-now-v2.md) - 2020-04-19
+* [Redirecting all paths on a Vercel instance](https://github.com/simonw/til/blob/main/zeit-now/redirecting-all-paths-on-vercel.md) - 2021-03-27
 
 ## sqlite
 
