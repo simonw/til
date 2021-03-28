@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->135<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->136<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -258,4 +258,8 @@ Search these TILs at https://til.simonwillison.net/
 ## mediawiki
 
 * [How to run MediaWiki with SQLite on a macOS laptop](https://github.com/simonw/til/blob/main/mediawiki/mediawiki-sqlite-macos.md) - 2021-03-06
+
+## azure
+
+* [Writing an Azure Function that serves all traffic to a subdomain](https://github.com/simonw/til/blob/main/azure/all-traffic-to-subdomain.md) - 2021-03-27
 <!-- index ends -->
