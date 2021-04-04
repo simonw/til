@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->137<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->138<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -263,4 +263,8 @@ Search these TILs at https://til.simonwillison.net/
 ## azure
 
 * [Writing an Azure Function that serves all traffic to a subdomain](https://github.com/simonw/til/blob/main/azure/all-traffic-to-subdomain.md) - 2021-03-27
+
+## vscode
+
+* [Language-specific indentation settings in VS Code](https://github.com/simonw/til/blob/main/vscode/language-specific-indentation-settings.md) - 2021-04-04
 <!-- index ends -->
