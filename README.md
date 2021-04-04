@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->136<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->137<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -120,6 +120,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Converting HTML and rich-text to Markdown](https://github.com/simonw/til/blob/main/markdown/converting-to-markdown.md) - 2020-05-09
 * [Rendering Markdown with the GitHub Markdown API](https://github.com/simonw/til/blob/main/markdown/github-markdown-api.md) - 2020-08-22
+* [Useful Markdown extensions in Python](https://github.com/simonw/til/blob/main/markdown/markdown-extensions-python.md) - 2021-04-03
 
 ## pypi
 
