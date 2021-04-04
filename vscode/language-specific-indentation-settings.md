@@ -32,3 +32,4 @@ I ended up with the following in my JSON (plus a bunch of other stuff I've edite
     }
 }
 ```
+This file is stored on my machine at `~/Library/Application Support/Code/User/settings.json`.
