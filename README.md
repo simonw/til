@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->138<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->139<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -155,6 +155,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Show the timezone for datetimes in the Django admin](https://github.com/simonw/til/blob/main/django/show-timezone-in-django-admin.md) - 2021-03-02
 * [Pretty-printing all read-only JSON in the Django admin](https://github.com/simonw/til/blob/main/django/pretty-print-json-admin.md) - 2021-03-07
 * [How to almost get facet counts in the Django admin](https://github.com/simonw/til/blob/main/django/almost-facet-counts-django-admin.md) - 2021-03-11
+* [Efficient bulk deletions in Django](https://github.com/simonw/til/blob/main/django/efficient-bulk-deletions-in-django.md) - 2021-04-09
 
 ## docker
 
