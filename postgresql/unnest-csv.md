@@ -1,6 +1,6 @@
 # Using unnest() to use a comma-separated string as the input to an IN query
 
-[django-sql-dashboard](https://github.com/simonw/django-sql-dashboard) lets you define a SQL query plus one or more text inputs that hte user can provide in order to execute the query.
+[django-sql-dashboard](https://github.com/simonw/django-sql-dashboard) lets you define a SQL query plus one or more text inputs that the user can provide in order to execute the query.
 
 I wanted the user to provide a comma-separated list of IDs which I would then use as input to a `WHERE column IN ...` query.
 
