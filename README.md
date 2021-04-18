@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->142<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->143<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -157,6 +157,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Pretty-printing all read-only JSON in the Django admin](https://github.com/simonw/til/blob/main/django/pretty-print-json-admin.md) - 2021-03-07
 * [How to almost get facet counts in the Django admin](https://github.com/simonw/til/blob/main/django/almost-facet-counts-django-admin.md) - 2021-03-11
 * [Efficient bulk deletions in Django](https://github.com/simonw/til/blob/main/django/efficient-bulk-deletions-in-django.md) - 2021-04-09
+* [Enabling the fuzzystrmatch extension in PostgreSQL with a Django migration](https://github.com/simonw/til/blob/main/django/migration-postgresql-fuzzystrmatch.md) - 2021-04-18
 
 ## docker
 
