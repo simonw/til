@@ -15,22 +15,26 @@ Here's the recipe I came up with for doing that for tables in the Django admin:
 function resizeTable() {
   /* So Windows mouse users can see the horizontal scrollbar
      https://github.com/CAVaccineInventory/vial/issues/363 */
-  let container = document.querySelector("#changelist-form .results");
-  let paginator = document.querySelector("p.paginator");
-  if (!container || !paginator) {
-    return;
+  if (window.matchMedia('screen and (min-width: 800px)').matches) {
+    let container = document.querySelector("#changelist-form .results");
+    let paginator = document.querySelector("p.paginator");
+    if (!container || !paginator) {
+        return;
+    }
+    let height =
+        window.innerHeight -
+        container.getBoundingClientRect().top -
+        paginator.getBoundingClientRect().height -
+        10;
+    container.style.overflowY = "auto";
+    container.style.height = height + "px";
   }
-  let height =
-    window.innerHeight -
-    container.getBoundingClientRect().top -
-    paginator.getBoundingClientRect().height -
-    10;
-  container.style.overflowY = "auto";
-  container.style.height = height + "px";
 }
 window.addEventListener("load", resizeTable);
 </script>
 ```
+I added the `window.matchMedia()` check when I realized that this approach wasn't useful at mobile screen sizes.
+
 Here `#changelist-form .results` is a `<div>` that wraps the main table on the page, and `p.paginator` is the pagination links shown directly below the table. I decided to set the vertically scrollable height to `window height - top-of-table - paginator height - 10px`.
 
 I added this code to my project's custom `admin/base_site.html` template, which now looks something like this:
