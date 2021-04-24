@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->145<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->146<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -262,6 +262,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Closest locations to a point](https://github.com/simonw/til/blob/main/postgresql/closest-locations-to-a-point.md) - 2021-03-22
 * [Using unnest() to use a comma-separated string as the input to an IN query](https://github.com/simonw/til/blob/main/postgresql/unnest-csv.md) - 2021-04-10
 * [Using json_extract_path in PostgreSQL](https://github.com/simonw/til/blob/main/postgresql/json-extract-path.md) - 2021-04-13
+* [Constructing GeoJSON in PostgreSQL](https://github.com/simonw/til/blob/main/postgresql/constructing-geojson-in-postgresql.md) - 2021-04-24
 
 ## mediawiki
 
