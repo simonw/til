@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->147<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->148<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -161,6 +161,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Usable horizontal scrollbars in the Django admin for mouse users](https://github.com/simonw/til/blob/main/django/django-admin-horizontal-scroll.md) - 2021-04-20
 * [Filter by comma-separated values in the Django admin](https://github.com/simonw/til/blob/main/django/filter-by-comma-separated-values.md) - 2021-04-21
 * [Django Admin action for exporting selected rows as CSV](https://github.com/simonw/til/blob/main/django/export-csv-from-django-admin.md) - 2021-04-25
+* [migrations.RunSQL.noop for reversible SQL migrations](https://github.com/simonw/til/blob/main/django/migrations-runsql-noop.md) - 2021-05-02
 
 ## docker
 
