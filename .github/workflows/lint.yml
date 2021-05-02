@@ -1,0 +1,26 @@
+name: Markdown Lint
+on: pull_request
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Get file changes
+      id: get_file_changes
+      uses: trilom/file-changes-action@v1.2.3
+      with:
+        output: ' '
+    - name: Echo changed files
+      run: |
+        echo Changed files: ${{ steps.get_file_changes.outputs.files }}
+    - name: Get only md files
+      id: get_md_changes
+      run: |
+        echo -e "::set-output name=files::\c";echo "${{ steps.get_file_changes.outputs.files }}" | for i in $(cat) ; do if [[ $i == *.md ]]; then echo -e "$i \c"; fi  ;done
+    - name: markdownlint-cli
+      if: ${{ steps.get_md_changes.outputs.files}}
+      uses: nosborn/github-action-markdown-cli@v1.1.1
+      with:
+        files: ${{ steps.get_md_changes.outputs.files}}
+        config_file: ".markdownlint"
