@@ -1,6 +1,6 @@
 # Efficient bulk deletions in Django
 
-I needed to bulk-delete a large number of objects today. Django deletions are relatively inefficent by default, because Django implements its own version of cascading deletions and fires signals for each deleted object.
+I needed to bulk-delete a large number of objects today. Django deletions are relatively inefficient by default, because Django implements its own version of cascading deletions and fires signals for each deleted object.
 
 I knew that I wanted to avoid both of these and run a bulk `DELETE` SQL operation.
 
