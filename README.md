@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->149<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->150<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -147,6 +147,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Writing JavaScript that responds to media queries](https://github.com/simonw/til/blob/main/javascript/javascript-that-responds-to-media-queries.md) - 2020-10-21
 * [Dropdown menu with details summary](https://github.com/simonw/til/blob/main/javascript/dropdown-menu-with-details-summary.md) - 2020-10-31
 * [Using Jest without a package.json](https://github.com/simonw/til/blob/main/javascript/jest-without-package-json.md) - 2020-12-30
+* [Scroll page to form if there are errors](https://github.com/simonw/til/blob/main/javascript/scroll-to-form-if-errors.md) - 2021-05-08
 
 ## django
 
