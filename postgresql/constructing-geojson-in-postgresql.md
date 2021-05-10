@@ -101,3 +101,41 @@ Example output from this query:
     }
 }
 ```
+## Using ST_AsGeoJSON
+
+After writing this TIL I found a much quicker option: the `ST_AsGeoJSON()` function. This works if your table has a geometry column on it - in my case I [enhanced my location table](https://simonwillison.net/2021/May/3/adding-geodjango-to-an-existing-django-project/) to include a point column.
+
+The following SQL generates a full GeoJSON feature row for each location in the database:
+
+```sql
+select ST_AsGeoJSON(location.*) from location
+```
+The `location.*` is required - if you try to use `ST_AsGeoJSON(*)` you get an error claiming that "No function matches the given name and argument types".
+
+The output looks something like this:
+```json
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -117.65499,
+      34.10835
+    ]
+  },
+  "properties": {
+    "id": 4285,
+    "name": "Vons Pharmacy #2681",
+    "public_id": "recbECvQlveAyBorV",
+    "import_json": {
+      "Name": "Vons Pharmacy #2681",
+      "Hours": "Monday - Friday: 8:00 AM \u2013 8:00 PM\nSaturday - Sunday: 9:00 AM \u2013 5:00 PM",
+      "County": "San Bernardino County",
+      "county_id": [
+        "reclZ8DWOEuoluStG"
+      ]
+    }
+  }
+}
+```
+That `import_json` section is a PostgreSQL JSON column in the database - note that it gets output as nested data inside the `"properties"` object.
