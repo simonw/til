@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->151<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->152<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -283,4 +283,8 @@ Search these TILs at https://til.simonwillison.net/
 ## wikipedia
 
 * [The Wikipedia page stats API](https://github.com/simonw/til/blob/main/wikipedia/page-stats-api.md) - 2021-05-13
+
+## vega
+
+* [Vega-Lite bar charts in the same order as the data](https://github.com/simonw/til/blob/main/vega/bar-chart-ordering.md) - 2021-05-15
 <!-- index ends -->
