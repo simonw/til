@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->153<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->154<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -288,4 +288,8 @@ Search these TILs at https://til.simonwillison.net/
 ## vega
 
 * [Vega-Lite bar charts in the same order as the data](https://github.com/simonw/til/blob/main/vega/bar-chart-ordering.md) - 2021-05-15
+
+## spatialite
+
+* [KNN queries with SpatiaLite](https://github.com/simonw/til/blob/main/spatialite/knn.md) - 2021-05-16
 <!-- index ends -->
