@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->154<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->155<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -164,6 +164,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Django Admin action for exporting selected rows as CSV](https://github.com/simonw/til/blob/main/django/export-csv-from-django-admin.md) - 2021-04-25
 * [migrations.RunSQL.noop for reversible SQL migrations](https://github.com/simonw/til/blob/main/django/migrations-runsql-noop.md) - 2021-05-02
 * [Enabling a gin index for faster LIKE queries](https://github.com/simonw/til/blob/main/django/enabling-gin-index.md) - 2021-05-16
+* [Django data migration using a PostgreSQL CTE](https://github.com/simonw/til/blob/main/django/migration-using-cte.md) - 2021-05-17
 
 ## docker
 
