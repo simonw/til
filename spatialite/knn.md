@@ -15,6 +15,10 @@ curl 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojso
 ```
 This will create a `usgs.db` SpatiaLite database with a spatial index.
 
+This should have a `knn` virtual table already. If one does not exist you can create one like this:
+
+    sqlite-utils --load-extension=spatialite usgs.db 'CREATE VIRTUAL TABLE knn USING VirtualKNN();'
+
 Open it in Datasette like this:
 
 ```bash
