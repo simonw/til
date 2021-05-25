@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->159<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->160<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -80,6 +80,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Fixing "compinit: insecure directories" error](https://github.com/simonw/til/blob/main/macos/fixing-compinit-insecure-directories.md) - 2020-04-26
 * [Finding the largest SQLite files on a Mac](https://github.com/simonw/til/blob/main/macos/find-largest-sqlite.md) - 2020-08-19
 * [Shrinking PNG files with pngquant and oxipng](https://github.com/simonw/til/blob/main/macos/shrinking-pngs-with-pngquant-and-oxipng.md) - 2021-02-07
+* [Running Docker on a remote M1 Mac](https://github.com/simonw/til/blob/main/macos/running-docker-on-remote-m1.md) - 2021-05-25
 
 ## cloudrun
 
