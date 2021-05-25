@@ -16,6 +16,8 @@ So be sure to open a terminal in the Screen Sharing app over VNC and run the ins
 
 Pasting in the installation command from https://brew.sh/ did the trick. I then installed Docker using `brew install --cask docker`. These both needed to be done not over SSH.
 
+Docker for Mac required Rosetta 2 - thankfully installing that is a case of running `softwareupdate --install-rosetta` - which for me only took a couple of seconds and displayed an error message which appeared not to matter at all, since Docker for Mac then started working fine.
+
 When I tried to run Docker containers with mounted volumes I ran into an issue where a UI prompt displayed on the macOS desktop stating that Docker wanted access to my filesystem - another reason to run the first set of commands over VNC rather than SSH.
 
 Eventually I got to a point where `docker run` commands were safe to run via SSH instead of a terminal over VNC.
