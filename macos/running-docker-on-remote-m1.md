@@ -1,4 +1,4 @@
-# Running Docker on a remote M1 Mac
+# Running Docker on an M1 Mac
 
 *TLDR: Use `platform: linux/amd64` in `docker-compose.yml` and your containers will probably work!* 
 
