@@ -1,5 +1,7 @@
 # Running Docker on a remote M1 Mac
 
+*TLDR: Use `platform: linux/amd64` in `docker-compose.yml` and your containers will probably work!* 
+
 I was trying to figure out how to get a development environment for a Django project running inside Docker in a M1 Mac.
 
 Since I don't have an M1 Mac, I decided to rent one. AWS haven't launched this yet (at least anywhere I could find it), and Scaleway were out of stock on their machines which you can rent by the day, so I tried using a $109/month M1 Mac Mini [from MacStadium](https://www.macstadium.com/m1-mini).
@@ -26,7 +28,7 @@ Eventually I got to a point where `docker run` commands were safe to run via SSH
 
 Not unique to remote macOS but this was the first time I used the VS Code [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh) extension and it worked flawlessly - I gave it the IP address, username and password that I had used over SSH and I was able to edit files on the remote Mac in the same way I edit files on my local machine. Fantastic.
 
-## And then I gave up
+## And then I almost gave up...
 
 Getting things to work in Docker on an M1 is really, really hard. Python dependencies using wheels such as `psycopg2-binary` failed to install. `apt-get install ...` inside a Docker container seemed to work for most packages - I upgraded to `FROM python:3.9-buster` as my base image and was able to run `apt-get install python-psycopg2` to talk to PostgreSQL.
 
@@ -66,4 +68,24 @@ Armin Ronacher [said on Twitter](https://twitter.com/mitsuhiko/status/1397266788
 
 > M1 macs add a whole new world of crazy to Python. Apple Python and homebrew Python and the different types of pyenv pythons and different cpu archs add completely new sources of frustration and errors. I still get random compiler errors from macos version mismatches on big sur.
 
-Which made me feel a little bit better about being defeated!
+Which made me feel a little bit better about being defeated! Until...
+
+## platform: linux/amd64 to the rescue!
+
+Mo McRoberts on Twitter [pointed out that](https://twitter.com/nevali/status/1397337506962677763):
+
+> also Docker for M1 runs linux/amd64 containers *really well*, not ideal, but good enough for a lot of uses
+
+So I dug in a bit.... and it turns out you can tell Docker for Mac to build and run containers using the `linux/amd64` architecture and everything... just works!
+
+I'm using Docker Compose (see [Docker Compose for Django development](https://til.simonwillison.net/docker/docker-compose-for-django-development) so I added the `platform: linux/amd64` YAML key for my container:
+
+```yaml
+  web:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: python manage.py runserver 0.0.0.0:3000
+```
+And that did the trick! I ran `docker-compose build` to rebuild the containers and `docker-compose up` to start them running and everything worked exactly the same as it did on my non-M1 Mac laptop.
