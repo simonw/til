@@ -13,6 +13,8 @@ I ended up with this `docker-compose.yml` file in the root of the project:
 ```yaml
 version: "3.1"
 
+volumes:
+  postgresql-data:
 services:
   database:
     image: postgis/postgis:13-3.1
@@ -21,6 +23,8 @@ services:
       - "5432"
     ports:
       - "5432:5432"
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: mydb
@@ -53,7 +57,11 @@ services:
     depends_on:
       - database
 ```
-The `db` container runs PostGIS. The `web` container runs the Django development server, built using the custom `Dockerfile.dev` Dockerfile. The `migrations` container simply runs the apps migrations and then terminates - with `depends_on` used to ensure that migrations run after the hdatabase server starts and before the web server.
+The `db` container runs PostGIS. It uses a named volume to persist PostgreSQL data in between container restarts.
+
+The `web` container runs the Django development server, built using the custom `Dockerfile.dev` Dockerfile.
+
+The `migrations` container simply runs the apps migrations and then terminates - with `depends_on` used to ensure that migrations run after the hdatabase server starts and before the web server.
 
 The `container_name: myapp` field on the `web` container is a convenience which means you can later run commands like this:
 
