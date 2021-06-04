@@ -45,7 +45,7 @@ Permissions:
             '
 '
           ),
-          'None'
+          'No permissions'
         )
       from
         auth_permission
@@ -60,3 +60,26 @@ from
 The output looks like this:
 
 <img width="473" alt="Groups_and_permissions" src="https://user-images.githubusercontent.com/9599/120677616-1ee7d300-c44c-11eb-95c6-ca5053338621.png">
+
+The first time I ran this I got back `null` for the Markdown for one of the records - it turned out that one of my groups had no permissions at all, so this query:
+
+```sql
+select
+  string_agg(
+    '* ' || auth_permission.name,
+    '
+'
+  )
+from
+  auth_permission
+  join auth_group_permissions on auth_group_permissions.permission_id = auth_permission.id
+where
+  auth_group_permissions.group_id = auth_group_original.id
+```
+Returned `null` - and concatenating `null` to everything else produced `null` too.
+
+The fix was to add a `coalesce()` - which returns the first not-null argument - like this:
+
+```sql
+select coalesce(string_agg(...), 'No permissions')
+```
