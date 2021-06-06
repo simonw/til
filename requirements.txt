@@ -1,7 +1,7 @@
 GitPython
 sqlite-utils>=3.2
 beautifulsoup4
-datasette>=0.54
+datasette>=0.57
 datasette-atom>=0.7
 datasette-publish-vercel>=0.9.1
 datasette-template-sql>=1.0.2
