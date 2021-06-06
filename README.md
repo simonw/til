@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->162<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->163<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -303,4 +303,8 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Finding duplicate records by matching name and nearby distance](https://github.com/simonw/til/blob/main/sql/finding-dupes-by-name-and-distance.md) - 2021-05-19
 * [Building a Markdown summary of Django group permissions](https://github.com/simonw/til/blob/main/sql/django-group-permissions-markdown.md) - 2021-06-03
+
+## amplitude
+
+* [Exporting Amplitude events to SQLite](https://github.com/simonw/til/blob/main/amplitude/export-events-to-datasette.md) - 2021-06-06
 <!-- index ends -->
