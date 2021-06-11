@@ -4,7 +4,7 @@ First, install MySQL like so:
 
     brew install mysql
 
-This installs the server but doesn't run it. You can run it in the background like this:
+This installs the server but doesn't run it. You  can run it in the background like this:
 ```
 % mysql.server start
 Starting MySQL
@@ -33,3 +33,11 @@ To have launchd start mysql now and restart at login:
   brew services start mysql
 ```
 You can re-display that message by running `brew reinstall mysql`.
+
+## Installing the mysqlclient Python library
+
+This took me a long time to figure out. Eventually this worked:
+
+    MYSQLCLIENT_CFLAGS=`pkg-config mysqlclient --cflags` \
+      MYSQLCLIENT_LDFLAGS=`pkg-config mysqlclient --libs` \
+      pip install mysqlclient
