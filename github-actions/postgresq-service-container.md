@@ -50,3 +50,25 @@ jobs:
         cd myproject
         pytest
 ```
+
+## And against MySQL
+
+I had to figure this out against MySQL as well for `db-to-sqlite` - here's [the workflow test.yml file](https://github.com/simonw/db-to-sqlite/blob/1.4/.github/workflows/test.yml) I ended up with. Key extract here:
+
+```yaml
+    services:
+      mysql:
+        image: mysql
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: test_db_to_sqlite
+        options: >-
+          --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        ports:
+          - 3306:3306
+    # ...
+    - name: Run tests
+      env:
+        MYSQL_TEST_DB_CONNECTION: mysql://root@127.0.0.1:${{ job.services.mysql.ports['3306'] }}/test_db_to_sqlite
+      run: pytest -vv
+```
