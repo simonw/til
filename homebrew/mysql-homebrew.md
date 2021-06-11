@@ -12,7 +12,8 @@ Starting MySQL
 %
 ```
 Then later on you can stop it like so:
-```% mysql.server stop 
+```
+% mysql.server stop 
 Shutting down MySQL
 . SUCCESS! 
 %
