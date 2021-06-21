@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->165<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->166<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -312,4 +312,8 @@ Search these TILs at https://til.simonwillison.net/
 ## vim
 
 * [Mouse support in vim](https://github.com/simonw/til/blob/main/vim/mouse-support-in-vim.md) - 2021-06-19
+
+## reddit
+
+* [Scraping Reddit via their JSON API](https://github.com/simonw/til/blob/main/reddit/scraping-reddit-json.md) - 2021-06-21
 <!-- index ends -->
