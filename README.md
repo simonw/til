@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->166<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->167<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -21,6 +21,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Talking to a PostgreSQL service container from inside a Docker container](https://github.com/simonw/til/blob/main/github-actions/service-containers-docker.md) - 2020-09-18
 * [Using Prettier to check JavaScript code style in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/prettier-github-actions.md) - 2020-12-31
 * [Running tests against PostgreSQL in a service container](https://github.com/simonw/til/blob/main/github-actions/postgresq-service-container.md) - 2021-02-23
+* [Installing different PostgreSQL server versions in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/different-postgresql-versions.md) - 2021-07-05
 
 ## python
 
