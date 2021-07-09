@@ -2,7 +2,7 @@
 
 In [VIAL issue 724](https://github.com/CAVaccineInventory/vial/issues/724) a Cloud Scheduler job which triggered a Cloud Run hosted export script - by sending an HTTP POST to an endpoint - was returning an error. The logs showed the error happened exactly three minutes after the task started executing.
 
-Turns out the HTTP endpoint (which does a lot of work) was taking longer than three minutes, which is the undocumented default time limit for Clode Scheduler jobs.
+Turns out the HTTP endpoint (which does a lot of work) was taking longer than three minutes, which is the undocumented default time limit for Cloud Scheduler jobs.
 
 Unfortunately it's not possible to increase this time limit using the Cloud Scheduler web console, but it IS possible to increase the limit using the CLI `gcloud` tool.
 
