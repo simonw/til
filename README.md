@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->171<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->172<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -69,6 +69,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Splitting on commas in SQLite](https://github.com/simonw/til/blob/main/sqlite/splitting-commas-sqlite.md) - 2021-02-01
 * [Querying for items stored in UTC that were created on a Thursday in PST](https://github.com/simonw/til/blob/main/sqlite/utc-items-on-thursday-in-pst.md) - 2021-03-12
 * [Using pysqlite3 on macOS](https://github.com/simonw/til/blob/main/sqlite/pysqlite3-on-macos.md) - 2021-07-10
+* [Importing CSV data into SQLite with .import](https://github.com/simonw/til/blob/main/sqlite/import-csv.md) - 2021-07-13
 
 ## presenting
 
