@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->172<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->173<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -325,4 +325,8 @@ Search these TILs at https://til.simonwillison.net/
 ## nginx
 
 * [Using nginx to proxy to a Unix domain socket](https://github.com/simonw/til/blob/main/nginx/proxy-domain-sockets.md) - 2021-07-10
+
+## tesseract
+
+* [Using the tesseract CLI tool](https://github.com/simonw/til/blob/main/tesseract/tesseract-cli.md) - 2021-07-18
 <!-- index ends -->
