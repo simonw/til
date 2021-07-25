@@ -42,6 +42,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r main/requirements.txt
+        pip install https://github.com/simonw/datasette-publish-vercel/archive/a66b1fe2cddc29863efb08eb7337348c725fdddb.zip
     - name: Install npm dependencies
       run: sudo npm install -g puppeteer-cli --unsafe-perm=true
     - name: Download previous database unless REBUILD in commit message
@@ -94,6 +95,7 @@ jobs:
           --token $NOW_TOKEN \
           --branch main \
           --project simon-til \
+          --scope datasette \
           --metadata metadata.yaml \
           --static static:static \
           --install datasette-template-sql \
