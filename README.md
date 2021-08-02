@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->174<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->175<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -293,6 +293,7 @@ Search these TILs at https://til.simonwillison.net/
 ## vscode
 
 * [Language-specific indentation settings in VS Code](https://github.com/simonw/til/blob/main/vscode/language-specific-indentation-settings.md) - 2021-04-04
+* [Search and replace with regular expressions in VS Code](https://github.com/simonw/til/blob/main/vscode/vs-code-regular-expressions.md) - 2021-08-02
 
 ## wikipedia
 
