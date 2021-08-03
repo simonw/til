@@ -68,4 +68,4 @@ jobs:
 ```
 Now any push or pull request will have the spell checker applied to it, and will fail if any new incorrectly spelled words are detected.
 
-Here's [the full PR](https://github.com/simonw/datasette/pull/1418) where I added this to Datasette.
+Here's [the full PR](https://github.com/simonw/datasette/pull/1418) where I added this to Datasette, and [the commit](https://github.com/simonw/sqlite-utils/commit/991cf56ae2840aaefda2af828a5c40396d2506ca) where I added this to `sqlite-utils`.
