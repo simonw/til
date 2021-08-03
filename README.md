@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->176<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->177<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -332,4 +332,8 @@ Search these TILs at https://til.simonwillison.net/
 ## tesseract
 
 * [Using the tesseract CLI tool](https://github.com/simonw/til/blob/main/tesseract/tesseract-cli.md) - 2021-07-18
+
+## imagemagick
+
+* [Set a GIF to loop using ImageMagick](https://github.com/simonw/til/blob/main/imagemagick/set-a-gif-to-loop.md) - 2021-08-03
 <!-- index ends -->
