@@ -2,9 +2,13 @@
 
 Today I discovered [codespell](https://github.com/codespell-project/codespell/) via [this Rich commit](https://github.com/willmcgugan/rich/commit/9c12a4537499797c43725fff5276ef0da62423ef#diff-ce84a1b2c9eb4ab3ea22f610cad7111cb9a2f66365c3b24679901376a2a73ab2). `codespell` is a really simple spell checker that can be run locally or incorporated into a CI flow.
 
+codespell is designed to run against source code. Instead of using a dictionary of correctly spelled words it instead uses a dictionary of known common spelling mistakes, derived from English Wikipedia ([defined here](https://github.com/codespell-project/codespell/tree/master/codespell_lib/data)). This makes it less likely to be confused by variable or function names, while still being able to spot spelling mistakes in comments.
+
 Basic usage:
 
     pip install codespell
+    codespell
+    # Or point it at a folder, or files in that folder:
     codespell docs/*.rst
 
 This outputs any spelling errors it finds in those files. I got this the first time I ran it against the Datasette documentation:
