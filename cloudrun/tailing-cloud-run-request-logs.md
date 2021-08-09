@@ -187,3 +187,15 @@ group by
 order by
   avg_latency desc
 ```
+
+## Using the Logs explorer
+
+Alternatively, you can use the Google Cloud logs explorer! It has pretty decent faceted search built in.
+
+Here's a query showing results from that log file:
+```
+resource.type="cloud_run_revision"
+log_name="projects/datasette-222320/logs/run.googleapis.com%2Frequests"
+```
+Run that at https://console.cloud.google.com/logs/query - or here's a link I can use to execute that directly (for the last 7 days): https://console.cloud.google.com/logs/query;query=resource.type%3D%22cloud_run_revision%22%0Alog_name%3D%22projects%2Fdatasette-222320%2Flogs%2Frun.googleapis.com%252Frequests%22;timeRange=P7D;?project=datasette-222320
+
