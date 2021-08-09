@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->180<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->181<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -47,6 +47,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using io.BufferedReader to peek against a non-peekable stream](https://github.com/simonw/til/blob/main/python/io-bufferedreader.md) - 2021-02-15
 * [Tracing every executed Python statement](https://github.com/simonw/til/blob/main/python/tracing-every-statement.md) - 2021-03-21
 * [Check spelling using codespell](https://github.com/simonw/til/blob/main/python/codespell.md) - 2021-08-03
+* [Find local variables in the traceback for an exception](https://github.com/simonw/til/blob/main/python/find-local-variables-in-exception-traceback.md) - 2021-08-09
 
 ## zeit-now
 
