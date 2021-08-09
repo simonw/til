@@ -173,3 +173,17 @@ Then I ran `datasette /tmp/logs.db` to start exploring the logs. Faceting by `re
 
 <img width="1340" alt="Screenshot of logs in Datasette" src="https://user-images.githubusercontent.com/9599/128755995-fab7e478-82a5-4d80-a959-f89f7dd39209.png">
 
+The `httpRequest_latency` column contains text data that looks like `0.012572683s` - thankfully if you cast it to a `float` the trailing `s` will be ignored. Here's an example query showing the services with the highest average latency:
+
+```sql
+select
+  resource_labels_service_name,
+  avg(cast(httpRequest_latency as float)) as avg_latency,
+  count(*)
+from
+  logs
+group by
+  resource_labels_service_name
+order by
+  avg_latency desc
+```
