@@ -139,6 +139,36 @@ CLOUDSDK_PYTHON_SITEPACKAGES=1 gcloud alpha logging tail \
 ```
 That last line inserts the data into the `/tmp/logs.db` database file. `--nl` means "expect newline-delimited JSON", `--alter` means "add new columns if they are missing", `--batch-size 1` means "commit after every record" (so I can see them in Datasette while they are streaming in).
 
+The resulting schema looks like this (via `sqlite-utils schema /tmp/logs.db`):
+```sql
+CREATE TABLE [logs] (
+   [httpRequest_latency] TEXT,
+   [httpRequest_remoteIp] TEXT,
+   [httpRequest_requestMethod] TEXT,
+   [httpRequest_requestSize] TEXT,
+   [httpRequest_requestUrl] TEXT,
+   [httpRequest_responseSize] TEXT,
+   [httpRequest_serverIp] TEXT,
+   [httpRequest_status] INTEGER,
+   [httpRequest_userAgent] TEXT,
+   [insertId] TEXT,
+   [labels_instanceId] TEXT,
+   [labels_service] TEXT,
+   [logName] TEXT,
+   [receiveTimestamp] TEXT,
+   [resource_labels_configuration_name] TEXT,
+   [resource_labels_location] TEXT,
+   [resource_labels_project_id] TEXT,
+   [resource_labels_revision_name] TEXT,
+   [resource_labels_service_name] TEXT,
+   [resource_type] TEXT,
+   [severity] TEXT,
+   [timestamp] TEXT,
+   [trace] TEXT,
+   [httpRequest_referer] TEXT
+);
+```
+
 Then I ran `datasette /tmp/logs.db` to start exploring the logs. Faceting by `resource_labels_service_name` was particularly useful.
 
 <img width="1340" alt="Screenshot of logs in Datasette" src="https://user-images.githubusercontent.com/9599/128755995-fab7e478-82a5-4d80-a959-f89f7dd39209.png">
