@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->179<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->180<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -95,6 +95,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Listing files uploaded to Cloud Build](https://github.com/simonw/til/blob/main/cloudrun/listing-cloudbuild-files.md) - 2021-04-14
 * [Switching between gcloud accounts](https://github.com/simonw/til/blob/main/cloudrun/multiple-gcloud-accounts.md) - 2021-05-18
 * [Increasing the time limit for a Google Cloud Scheduler task](https://github.com/simonw/til/blob/main/cloudrun/increase-cloud-scheduler-time-limit.md) - 2021-07-08
+* [Tailing Google Cloud Run request logs and importing them into SQLite](https://github.com/simonw/til/blob/main/cloudrun/tailing-cloud-run-request-logs.md) - 2021-08-09
 
 ## tailscale
 
