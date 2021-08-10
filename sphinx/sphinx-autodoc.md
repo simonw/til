@@ -36,7 +36,22 @@ This was enough to start generating documentation for the `sqlite_utils.db.Datab
 
 I added my own rST headings and reference links - this ensured that the classes would automatically show up in the table of contents for my documentation.
 
-## More options
+## Live updates while editing docstrings
+
+I use [sphinx-autobuild](https://pypi.org/project/sphinx-autobuild/) to automatically rebuild and reload the browser while I'm editing documentation.
+
+This has [a known limitation](https://github.com/executablebooks/sphinx-autobuild#relevant-sphinx-bugs) that it won't pick up on edits made to the `*.py` files that should cause a reload.
+
+I found a workaround: add `-a` to disable incremental builds (rebuilding everything) and `--watch ../sqlite_utils` to trigger a new build when any file in that folder was updated.
+
+I added this to [the Makefile](https://github.com/simonw/sqlite-utils/blob/6155da72c8939b5d9bdacb7853e5e8d1767ce1d5/docs/Makefile) is the `docs/` directory:
+```
+livehtml:
+    sphinx-autobuild -a -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(0) --watch ../sqlite_utils
+```
+Then running `make livehtml` started a web server for the documentation that would refresh the browser any time I edited a docstring.
+
+## More autoclass options
 
 I ended up using the following:
 
