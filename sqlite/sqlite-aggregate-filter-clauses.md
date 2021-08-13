@@ -1,6 +1,6 @@
 # SQLite aggregate filter clauses
 
-SQLite supports aggregate filter clauses, as described in this [SQL Pivot in all databases](https://modern-sql.com/use-case/pivot) tutorial.
+SQLite supports aggregate filter clauses (as of [3.30.0, released 2019-10-04](https://www.sqlite.org/changes.html#version_3_30_0)), as described in this [SQL Pivot in all databases](https://modern-sql.com/use-case/pivot) tutorial.
 
 An example query:
 ```sql
