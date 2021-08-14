@@ -5,7 +5,7 @@ I wanted the ability to test my Python software against specific version of SQLi
 First, clone the GitHub mirror of SQLite (so I don't have to learn how to use Fossil):
 
     cd /tmp
-    git clone https://github.com/sqlite/sqlite`
+    git clone https://github.com/sqlite/sqlite
 
 Check out the version tag you want to try:
 
