@@ -139,6 +139,16 @@ CLOUDSDK_PYTHON_SITEPACKAGES=1 gcloud alpha logging tail \
 ```
 That last line inserts the data into the `/tmp/logs.db` database file. `--nl` means "expect newline-delimited JSON", `--alter` means "add new columns if they are missing", `--batch-size 1` means "commit after every record" (so I can see them in Datasette while they are streaming in).
 
+**UPDATE:** [sqlite-utils 3.15](https://sqlite-utils.datasette.io/en/stable/changelog.html#v3-15) added a `--flatten` option which you can use instead of that second `jq` recipe, so this should work instead:
+
+```
+CLOUDSDK_PYTHON_SITEPACKAGES=1 gcloud alpha logging tail \
+  projects/datasette-222320/logs/run.googleapis.com%2Frequests \
+  --format json \
+| jq -cn --stream 'fromstream(1|truncate_stream(inputs))' \
+| sqlite-utils insert /tmp/logs.db logs - --nl --alter --batch-size 1 --flatten
+```
+
 The resulting schema looks like this (via `sqlite-utils schema /tmp/logs.db`):
 ```sql
 CREATE TABLE [logs] (
