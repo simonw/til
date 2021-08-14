@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->182<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->183<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -73,6 +73,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using pysqlite3 on macOS](https://github.com/simonw/til/blob/main/sqlite/pysqlite3-on-macos.md) - 2021-07-10
 * [Importing CSV data into SQLite with .import](https://github.com/simonw/til/blob/main/sqlite/import-csv.md) - 2021-07-13
 * [SQLite aggregate filter clauses](https://github.com/simonw/til/blob/main/sqlite/sqlite-aggregate-filter-clauses.md) - 2021-08-04
+* [Building a specific version of SQLite with pysqlite on macOS](https://github.com/simonw/til/blob/main/sqlite/build-specific-sqlite-pysqlite-macos.md) - 2021-08-14
 
 ## presenting
 
