@@ -41,4 +41,16 @@ The end result sits in  a `pysqlite3` folder in, on my machine, `/tmp/pysqlite3/
     >>> pysqlite3.connect(":memory:").execute("select sqlite_version()").fetchone()[0]
     '3.17.0'
 
+## Turn that into a wheel
+
+Running the following produces a wheel for the current platform that bundles the `.so`file:
+
+    python3 setup.py bdist_wheel
+
+On my machine that created `/tmp/pysqlite3/dist/pysqlite3-0.4.6-cp39-cp39-macosx_10_15_x86_64.whl`.
+
+Having created that file, running this in any virtual enviroment installed my custom build of `pysqlite3` with the correct SQLite version:
+
+    pip install /tmp/pysqlite3/dist/pysqlite3-0.4.6-cp39-cp39-macosx_10_15_x86_64.whl
+
 I'm hoping that this process works almost exactly the same on Linux.
