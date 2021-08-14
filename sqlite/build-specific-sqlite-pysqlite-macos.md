@@ -43,7 +43,7 @@ The end result sits in  a `pysqlite3` folder in, on my machine, `/tmp/pysqlite3/
 
 ## Turn that into a wheel
 
-Running the following produces a wheel for the current platform that bundles the `.so`file:
+Running the following produces a wheel for the current platform that bundles the compiled `.so` file:
 
     python3 setup.py bdist_wheel
 
