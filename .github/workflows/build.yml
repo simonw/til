@@ -92,7 +92,6 @@ jobs:
         cd main
         datasette publish vercel tils.db \
           --token $NOW_TOKEN \
-          --branch main \
           --project simon-til \
           --scope datasette \
           --metadata metadata.yaml \
