@@ -1,4 +1,4 @@
-# Building a specific version of SQLite with pysqlite on macOS
+# Building a specific version of SQLite with pysqlite on macOS/Linux
 
 I wanted the ability to test my Python software against specific version of SQLite on macOS. I found a way to do that using [pysqlite3](https://github.com/coleifer/pysqlite3).
 
@@ -53,4 +53,4 @@ Having created that file, running this in any virtual enviroment installed my cu
 
     pip install /tmp/pysqlite3/dist/pysqlite3-0.4.6-cp39-cp39-macosx_10_15_x86_64.whl
 
-I'm hoping that this process works almost exactly the same on Linux.
+This exact same process works on Linux too (tested inside a default GitHub Actions Linux worker).
