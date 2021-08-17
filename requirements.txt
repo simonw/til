@@ -7,3 +7,4 @@ datasette-publish-vercel>=0.10
 datasette-template-sql>=1.0.2
 datasette-graphql
 datasette-media
+datasette-block-robots

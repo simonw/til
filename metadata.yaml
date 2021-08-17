@@ -7,6 +7,10 @@ plugins:
   datasette-media:
     screenshot:
       "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
+  datasette-block-robots:
+    literal: |-
+      User-agent: *
+      Disallow: /tils
 databases:
   tils:
     queries:
