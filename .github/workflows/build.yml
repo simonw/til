@@ -90,7 +90,8 @@ jobs:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
         cd main
-        datasette publish vercel tils.db \
+        wget https://latest.datasette.io/fixtures.db
+        datasette publish vercel tils.db fixtures.db \
           --token $NOW_TOKEN \
           --project simon-til \
           --scope datasette \
