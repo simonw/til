@@ -115,3 +115,21 @@ rowid|name
 There's one catch with the above recipe: if you delete ALL of the rows from a table (`delete * from foo`) SQLite defaults to reusing rowids in that table, starting again from 1. This means that your accompanying records in the `_dqe_changes` table will have stale rowids, which could lead to surprising behaviour.
 
 If tables have a `id integer primary key` column SQLite does NOT reuse rowids, [as explained here](https://www.sqlite.org/autoinc.html).
+
+## Initializing for a new table
+
+The above recipe expects the triggers to be installed on the table before any rows are written to it.
+
+If applying this recipe to an already-populated table, the following SQL should initialize `_dqe_changes` with a row for every row:
+
+```sql
+INSERT OR IGNORE INTO _dqe_tables([table]) VALUES ('foo');
+INSERT OR REPLACE INTO _dqe_changes(table_id, rowid, deleted, updated_ms)
+     with table_id as (select id from _dqe_tables where [table] = 'foo')
+     select
+        table_id.id,
+        foo.rowid,
+        null as deleted,
+        strftime('%s','now') || substr(strftime('%f','now'),4) as updated_ms
+    from foo, table_id;
+```
