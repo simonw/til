@@ -20,8 +20,16 @@ The first time I ran this it worked on all but one file, which showed the `Error
 
 After running this each `.db` file has an accompanying `.db-shm` and `.db-wal` file. So far I've not seen the "database is locked" message, so I think it had the desired effect.
 
+## Turning WAL mode off again
+
+If you want to turn WAL mode off and go back to the SQLite default, the unintuitive way to do that is:
+
+    PRAGMA journal_mode=delete;
+
 ## Using sqlite-utils
 
 I added a command to [sqlite-utils 2.15](https://sqlite-utils.datasette.io/en/stable/changelog.html#v2-15) that does this:
 
     sqlite-utils enable-wal *.db
+
+The `disable-Wal` command disables it again.
