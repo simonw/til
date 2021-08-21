@@ -57,7 +57,7 @@ Plot.plot({
 })
 ```
 - `[...bin.map(t => t.created_at)].sort()` is a recipe for creating a sorted copy of an array of values
-- `max = sorted.slice(-1)[0]` gets the last item in that arry
+- `max = sorted.slice(-1)[0]` gets the last item in that array
 
 Then I compose and return the string.
 
