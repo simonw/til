@@ -176,6 +176,20 @@ button.addEventListener('click', async function() {
         Array.from(
             preview.querySelectorAll('div.highlight-source-python')
         ).forEach(el => el.replaceWith(el.firstChild));
+        /* Remove <a href="https://camo.githubusercontent.com"... wrapper
+        links around images, and replace src= with data-canonical-src= */
+        Array.from(
+            preview.querySelectorAll(
+              'a[href^="https://camo.githubusercontent.com"]'
+            )
+        ).forEach(el => el.replaceWith(el.firstChild));
+        Array.from(
+            preview.querySelectorAll(
+              'img[data-canonical-src]'
+            )
+        ).forEach(
+            el => el.setAttribute('src', el.getAttribute('data-canonical-src'))
+        );
         output.value = preview.innerHTML.replace(/<h([1-6])>\n/g, '<h$1>');
     }
 });
