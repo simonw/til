@@ -23,6 +23,12 @@ Plot.plot({
 
 <img width="669" alt="My histogram of tweets" src="https://user-images.githubusercontent.com/9599/130336556-6f91a1e5-8efe-448d-83f3-a9748cb11aac.png">
 
+It turns out that while d3 uses Sturges' formula Observable Plot instead uses Scott's rule:
+
+> D3 chose Sturges’ formula because it was the popular choice (at the time) but Observable Plot defaults to Scott’s rule, with a max of 200 bins, which tends to perform better. Related: <a href="https://robjhyndman.com/papers/sturges.pdf">https://robjhyndman.com/papers/sturges.pdf</a></p>
+> 
+> [Mike Bostock](https://twitter.com/mbostock/status/1429281697854464002) - @mbostock
+
 ## Adding tooltips
 
 I wanted to add tooltips to the above chart. This was the hardest part to figure out - it turns out that second argument to `.binX()` can take a `title` option, which can be a function that accepts a `bin` array of items and returns a title.
