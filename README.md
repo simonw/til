@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->187<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->188<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -352,4 +352,8 @@ Search these TILs at https://til.simonwillison.net/
 ## purpleair
 
 * [Calculating the AQI based on the Purple Air API for a sensor](https://github.com/simonw/til/blob/main/purpleair/purple-air-aqi.md) - 2021-08-31
+
+## electron
+
+* [Using the Chrome DevTools console as a REPL for an Electron app](https://github.com/simonw/til/blob/main/electron/electron-debugger-console.md) - 2021-08-31
 <!-- index ends -->
