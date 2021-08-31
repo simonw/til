@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AQI</title>
+    <style>
+      body {
+        padding: 1em;
+        margin: 0;
+        font-family: verdana;
+      }
+
+      button {
+        font-size: 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AQI</h1>
+    <p>Purple Air location:</p>
+    <form method="GET">
+      <p>
+        <input id="sensor" name="sensor" type="text" />
+        <input type="submit" value="Go" />
+      </p>
+    </form>
+    <h2 id="aqi"></h2>
+    <pre id="details"></pre>
+
+    <script type="module">
+      const input = document.getElementById("sensor");
+      const pre = document.getElementById("details");
+      const h2 = document.getElementById("aqi");
+      const params = new URLSearchParams(location.search);
+      console.log(params);
+      if (params.get("sensor")) {
+        input.value = params.get("sensor");
+      }
+      async function go() {
+        if (input.value) {
+          const data = await fetchAqi(input.value);
+          h2.innerHTML = `AQI at ${data.details.results[0].Label} is <span class="current">${data.current}</span>`;
+          pre.innerText = JSON.stringify(data.details, null, 4);
+        }
+      }
+      (await go());
+
+      /* Adapted from https://github.com/zakj/scriptable/blob/d42a2d7727a2642ad6ee880c15ae65dca4232fe4/purpleAir.js */
+
+      async function fetchAqi(sensorId) {
+        const response = await fetch(
+          `https://www.purpleair.com/json?show=${sensorId}`
+        );
+        const json = await response.json();
+        const stats = json.results
+          .filter((r) => !(r.Flag || r.A_H))
+          .map((r) => JSON.parse(r.Stats));
+        const pm2_5 = stats.reduce((acc, { v }) => acc + v, 0) / stats.length;
+        const trend = stats[0].v1 - stats[0].v3;
+        return {
+          current: aqiFromPm(pm2_5),
+          trend: Math.abs(trend) > 5 ? trend : 0,
+          details: json
+        };
+      }
+
+      function aqiFromPm(pm) {
+        const table = [
+          [0.0, 12.0, 0, 50],
+          [12.1, 35.4, 51, 100],
+          [35.5, 55.4, 101, 150],
+          [55.5, 150.4, 151, 200],
+          [150.5, 250.4, 201, 300],
+          [250.5, 500.4, 301, 500],
+        ];
+        const computeAqi = (concI, [concLo, concHi, aqiLo, aqiHi]) =>
+          Math.round(
+            ((concI - concLo) / (concHi - concLo)) * (aqiHi - aqiLo) + aqiLo
+          );
+        const values = table.find(
+          ([concLo, concHi, aqiLo, aqiHi]) => pm <= concHi
+        );
+        return values ? computeAqi(pm, values) : 500;
+      }
+    </script>
+  </body>
+</html>
