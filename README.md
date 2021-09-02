@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->188<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->189<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -356,4 +356,5 @@ Search these TILs at https://til.simonwillison.net/
 ## electron
 
 * [Using the Chrome DevTools console as a REPL for an Electron app](https://github.com/simonw/til/blob/main/electron/electron-debugger-console.md) - 2021-08-31
+* [Open external links in an Electron app using the system browser](https://github.com/simonw/til/blob/main/electron/electron-external-links-system-browser.md) - 2021-09-02
 <!-- index ends -->
