@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->189<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->190<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -22,6 +22,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using Prettier to check JavaScript code style in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/prettier-github-actions.md) - 2020-12-31
 * [Running tests against PostgreSQL in a service container](https://github.com/simonw/til/blob/main/github-actions/postgresq-service-container.md) - 2021-02-23
 * [Installing different PostgreSQL server versions in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/different-postgresql-versions.md) - 2021-07-05
+* [Attaching a generated file to a GitHub release using Actions](https://github.com/simonw/til/blob/main/github-actions/attach-generated-file-to-release.md) - 2021-09-07
 
 ## python
 
