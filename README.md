@@ -345,7 +345,7 @@ Search these TILs at https://til.simonwillison.net/
 ## imagemagick
 
 * [Set a GIF to loop using ImageMagick](https://github.com/simonw/til/blob/main/imagemagick/set-a-gif-to-loop.md) - 2021-08-03
-* [Compressing an animated GIF with ImageMagick mogrify](https://github.com/simonw/til/blob/main/imagemagick/compress-animated-gif.md) - 2021-08-05
+* [Compressing an animated GIF with gifsicle or ImageMagick mogrify](https://github.com/simonw/til/blob/main/imagemagick/compress-animated-gif.md) - 2021-08-05
 
 ## observable-plot
 
