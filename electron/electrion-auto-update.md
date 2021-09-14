@@ -1,6 +1,6 @@
 # Configuring auto-update for an Electron app
 
-This is _almost_ really simple. I used https://github.com/electron/update-electron-app for it, the instructions for which are:
+This is _almost_ really simple. I used [electron/update-electron-app](https://github.com/electron/update-electron-app) for it, the instructions for which are:
 
 - Add it to `packages.json` with `npm i update-electron-app`
 - Make sure your `"repository"` field in that file points to your GitHub repository
