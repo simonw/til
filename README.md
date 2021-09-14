@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->193<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->194<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -361,4 +361,5 @@ Search these TILs at https://til.simonwillison.net/
 * [Open external links in an Electron app using the system browser](https://github.com/simonw/til/blob/main/electron/electron-external-links-system-browser.md) - 2021-09-02
 * [Signing and notarizing an Electron app for distribution using GitHub Actions](https://github.com/simonw/til/blob/main/electron/sign-notarize-electron-macos.md) - 2021-09-08
 * [Bundling Python inside an Electron app](https://github.com/simonw/til/blob/main/electron/python-inside-electron.md) - 2021-09-08
+* [Configuring auto-update for an Electron app](https://github.com/simonw/til/blob/main/electron/electrion-auto-update.md) - 2021-09-13
 <!-- index ends -->
