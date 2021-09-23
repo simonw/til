@@ -1,6 +1,6 @@
 # Switching between gcloud accounts
 
-I have two different GCloud accounts active at the moment. Here's how to list them with `gcloud auth list`:
+I have two different Google Cloud accounts active at the moment. Here's how to list them with `gcloud auth list`:
 
 ```
 % gcloud auth list
