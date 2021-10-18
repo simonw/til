@@ -43,3 +43,5 @@ c.execute('select * from "global-power-plants" limit 10').fetchall()
 ```
 This works!
 
+<img width="1546" alt="Screenshot of JupyterLite running my example code" src="https://user-images.githubusercontent.com/9599/137788071-c39bbdbb-7d8d-464e-9729-ad1c63bb8be8.png">
+
