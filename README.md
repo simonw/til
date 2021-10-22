@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->198<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->199<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -369,4 +369,8 @@ Search these TILs at https://til.simonwillison.net/
 ## googlecloud
 
 * [Publishing to a public Google Cloud bucket with gsutil](https://github.com/simonw/til/blob/main/googlecloud/gsutil-bucket.md) - 2021-09-20
+
+## git
+
+* [Removing a git commit and force pushing to remove it from history](https://github.com/simonw/til/blob/main/git/remove-commit-and-force-push.md) - 2021-10-22
 <!-- index ends -->
