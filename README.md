@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->199<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->200<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -373,4 +373,8 @@ Search these TILs at https://til.simonwillison.net/
 ## git
 
 * [Removing a git commit and force pushing to remove it from history](https://github.com/simonw/til/blob/main/git/remove-commit-and-force-push.md) - 2021-10-22
+
+## web-components
+
+* [Understanding Kristofer Joseph's Single File Web Component](https://github.com/simonw/til/blob/main/web-components/understanding-single-file-web-component.md) - 2021-10-27
 <!-- index ends -->
