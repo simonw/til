@@ -27,9 +27,9 @@ For my own education I spent some time picking it apart and built my own annotat
         /*
           These styles affect only content inside the shadow DOM.
 
-          Styles in the outside document mostly do not affect these,
-          with the  exception of inheritable styles such as color,
-          font and line-height.
+          Styles in the outside document mostly do not affect stuff
+          here, but there are some exceptions: font-family affects
+          this <h1> for example. I don't understand the rules here.
         */
         h1 {
           color: red;
