@@ -4,6 +4,8 @@
 
 For my own education I spent some time picking it apart and built my own annotated version of the code showing what I learned.
 
+Justin Fagnani [provided useful feedback](https://twitter.com/justinfagnani/status/1453531485240102916) on this on Twitter.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
