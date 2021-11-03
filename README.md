@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->200<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->201<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -115,6 +115,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Registering temporary pluggy plugins inside tests](https://github.com/simonw/til/blob/main/pytest/registering-plugins-in-tests.md) - 2020-07-21
 * [Code coverage using pytest and codecov.io](https://github.com/simonw/til/blob/main/pytest/pytest-code-coverage.md) - 2020-08-15
 * [Start a server in a subprocess during a pytest session](https://github.com/simonw/til/blob/main/pytest/subprocess-server.md) - 2020-08-31
+* [Using VCR and pytest with pytest-recording](https://github.com/simonw/til/blob/main/pytest/pytest-recording-vcr.md) - 2021-11-02
 
 ## github
 
