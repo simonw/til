@@ -55,3 +55,13 @@ E             ?                                          ^^^^^^^^^^
 It turns out `__str__()` calls do not play well with the `call()` constructor - see [this StackOverflow question](https://stackoverflow.com/questions/61926147/how-to-represent-unittest-mock-call-str).
 
 My solution was to cast them all to `str()` using a list comprehension, which ended up fixing that problem.
+
+## Gotcha: parameter ordering
+
+There's one major flaw to the `str()` trick I'm using here: the order in which parameters are displayed in the string representation of `call()` may differ between Python versions. I had to undo this trick in one place I was using it ([see here](https://github.com/simonw/s3-credentials/issues/8)) as a result due to the following test failure:
+
+```
+E  At index 4 diff:
+     "call().get_user_policy(PolicyName='policy-one', UserName='one')"
+  != "call().get_user_policy(UserName='one', PolicyName='policy-one')"
+```
