@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->202<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->203<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -379,4 +379,8 @@ Search these TILs at https://til.simonwillison.net/
 ## web-components
 
 * [Understanding Kristofer Joseph's Single File Web Component](https://github.com/simonw/til/blob/main/web-components/understanding-single-file-web-component.md) - 2021-10-27
+
+## kubernetes
+
+* [Basic Datasette in Kubernetes](https://github.com/simonw/til/blob/main/kubernetes/basic-datasette-in-kubernetes.md) - 2021-11-05
 <!-- index ends -->
