@@ -31,7 +31,7 @@ The argument is the name of the channel, which apparently can be an empty string
 This is the bare-bones HTML for the browser side of the application
 
 It creates a WebSocket connection back to the host, and sets it up so any
-message that arrives via that WebSite will be appended to the textContent
+message that arrives via that WebSocket will be appended to the textContent
 of the pre element on the page.
 
 The input element has an onkeyup that checks for the Enter key and sends
