@@ -94,3 +94,9 @@ await listenAndServe(":8080", (r: Request) => {
   }
 })
 ```
+
+Relevant links:
+
+- [Deno listenAndServe documentation](https://deno.land/manual/examples/http_server#using-the-codestdhttpcode-library)
+- [Deno Deploy BroadcastChannel documenattion](https://deno.com/deploy/docs/runtime-broadcast-channel/)
+- [MDN documentation of the related BroadcastChannel browser API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
