@@ -2,7 +2,7 @@
 
 Deno Deploy is a hosted Deno service that promises [a multi-tenant JavaScript engine running in 25 data centers across the world](https://deno.com/blog/deploy-beta1/).
 
-Today [this demo](https://dash.deno.com/playground/mini-ws-chat) showed up [on Hacker News](https://news.ycombinator.com/item?id=29131751), which implements "a multi-datacenter chat, client+server in 23 lines of TS".
+Today [this demo](https://dash.deno.com/playground/mini-ws-chat) by [Ondřej Žára](https://twitter.com/0ndras/status/1457027832404713479) showed up [on Hacker News](https://news.ycombinator.com/item?id=29131751), which implements "a multi-datacenter chat, client+server in 23 lines of TS".
 
 Here's my annotated copy of the code, which I wrote while figuring out how it works.
 
