@@ -42,7 +42,7 @@ ws.onmessage = e => pre.textContent += e.data+"\\n"</script>
 <input onkeyup="event.key=='Enter'&&ws.send(this.value)"><pre id=pre>`
 
 /*
-This bit does the broadcast work: any time a message is recieved from the
+This bit does the broadcast work: any time a message is received from the
 BroadcastChannel it is forwarded on to every single one of the currently
 attached WebSocket connections, using the data in that "sockets" set.
 
@@ -60,7 +60,7 @@ channel.onmessage = e => {
 await listenAndServe(":8080", (r: Request) => {
     try {
         /*
-        Deno.upgradeWebSocket is a relatively new feature, added in Deno v1.21
+        Deno.upgradeWebSocket is a relatively new feature, added in Deno v1.12
         in July 2021:
         https://deno.com/blog/v1.12#server-side-websocket-support-in-native-http
         
@@ -101,5 +101,5 @@ await listenAndServe(":8080", (r: Request) => {
 Relevant links:
 
 - [Deno listenAndServe documentation](https://deno.land/manual/examples/http_server#using-the-codestdhttpcode-library)
-- [Deno Deploy BroadcastChannel documenattion](https://deno.com/deploy/docs/runtime-broadcast-channel/)
+- [Deno Deploy BroadcastChannel documentation](https://deno.com/deploy/docs/runtime-broadcast-channel/)
 - [MDN documentation of the related BroadcastChannel browser API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
