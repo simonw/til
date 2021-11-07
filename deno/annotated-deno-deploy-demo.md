@@ -56,7 +56,12 @@ channel.onmessage = e => {
     sockets.forEach(s => s.send(e.data))
 }
 
-// I don't think await is necessary here - the code works the same without it
+/*
+I tried removing the await here and the demo still worked.
+
+But https://deno.land/std@0.113.0/http/server.ts#L224 shows that this function
+is indeed an async that returns a Promise.
+*/
 await listenAndServe(":8080", (r: Request) => {
     try {
         /*
