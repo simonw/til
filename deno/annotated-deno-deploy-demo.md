@@ -56,6 +56,7 @@ channel.onmessage = e => {
     sockets.forEach(s => s.send(e.data))
 }
 
+// I don't think await is necessary here - the code works the same without it
 await listenAndServe(":8080", (r: Request) => {
     try {
         /*
