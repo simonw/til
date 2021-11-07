@@ -22,6 +22,8 @@ It is modelled after the browser API of the same name.
 
 It sets up a channel between ALL instances of the server-side script running
 in every one of the Deno Deploy global network of data centers.
+
+The argument is the name of the channel, which apparently can be an empty string.
 */
     channel = new BroadcastChannel(""),
     headers = {"Content-type": "text/html"},
