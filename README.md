@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->204<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->205<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -167,6 +167,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Scroll page to form if there are errors](https://github.com/simonw/til/blob/main/javascript/scroll-to-form-if-errors.md) - 2021-05-08
 * [Preventing double form submissions with JavaScript](https://github.com/simonw/til/blob/main/javascript/preventing-double-form-submission.md) - 2021-07-08
 * [Loading lit from Skypack](https://github.com/simonw/til/blob/main/javascript/lit-with-skypack.md) - 2021-09-21
+* [Using Tesseract.js to OCR every image on a page](https://github.com/simonw/til/blob/main/javascript/tesseract-ocr-javascript.md) - 2021-11-09
 
 ## django
 
