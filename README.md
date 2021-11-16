@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->205<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->206<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -51,6 +51,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Find local variables in the traceback for an exception](https://github.com/simonw/til/blob/main/python/find-local-variables-in-exception-traceback.md) - 2021-08-09
 * [Using Fabric with an SSH public key](https://github.com/simonw/til/blob/main/python/fabric-ssh-key.md) - 2021-10-06
 * [Using the sqlite3 Python module in Pyodide - Python WebAssembly](https://github.com/simonw/til/blob/main/python/sqlite-in-pyodide.md) - 2021-10-18
+* [Planning parallel downloads with TopologicalSorter](https://github.com/simonw/til/blob/main/python/graphlib-topologicalsorter.md) - 2021-11-16
 
 ## zeit-now
 
