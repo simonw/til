@@ -4,7 +4,7 @@ For [complicated reasons](https://github.com/simonw/datasette/issues/878) I foun
 
 I figured out how to do it using [graphlib.TopologicalSorter](https://docs.python.org/3/library/graphlib.html#graphlib.TopologicalSorter), which was added to the Python standard library [in Python 3.9](https://docs.python.org/3/whatsnew/3.9.html#graphlib).
 
-Since I want my code to work on older versions of Python, I was pleased to see that [the graphlib.py module](https://github.com/python/cpython/blob/3.10/Lib/graphlib.py) is standalone and can be easily vendored.
+Since I want my code to work on older versions of Python, I was pleased to see that [the graphlib.py module](https://github.com/python/cpython/blob/3.10/Lib/graphlib.py) is standalone and can be easily vendored (though it uses the walrus `:=` operator so I had to [modify it](https://github.com/simonw/datasette/blob/8f757da0750fe7f27b4ed3839bc3ef3650832ad9/datasette/utils/vendored_graphlib.py) for compatibility with Python 3.6 and 3.7).
 
 For this example: imagine I know the dependencies of some packages, and I want to fire off some downloads - running them in parallel where possible.
 
