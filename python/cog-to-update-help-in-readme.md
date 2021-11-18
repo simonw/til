@@ -38,7 +38,7 @@ It's designed to interact well with comments - in this case HTML comments - such
 
 Any time I generate content like this in a repo I like to include a test that will fail if I forget to update the content.
 
-`cog` clearly isn't designed to be used as an indepenedent library, but I came up with the following pattern `pytest` test which works well, in my `tests/test_csvs_to_sqlite.py` module:
+`cog` clearly isn't designed to be used as an independent library, but I came up with the following pattern `pytest` test which works well, in my `tests/test_csvs_to_sqlite.py` module:
 
 ```python
 from cogapp import Cog
