@@ -19,3 +19,5 @@ customElements.define('my-el',MyEl);
 </script>
 <my-el></my-el>
 ```
+
+Also relevant: [lit-dist](https://github.com/fserb/lit-dist).
