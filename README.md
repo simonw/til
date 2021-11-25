@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->209<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->210<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -395,4 +395,8 @@ Search these TILs at https://til.simonwillison.net/
 ## fly
 
 * [Assigning a custom subdomain to a Fly app](https://github.com/simonw/til/blob/main/fly/custom-subdomain-fly.md) - 2021-11-20
+
+## caddy
+
+* [Pausing traffic and retrying in Caddy](https://github.com/simonw/til/blob/main/caddy/pause-retry-traffic.md) - 2021-11-24
 <!-- index ends -->
