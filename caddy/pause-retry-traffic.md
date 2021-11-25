@@ -8,6 +8,10 @@ I first heard about this pattern [from Braintree](https://simonwillison.net/2011
 
 I decided to try this out. This was my first time using Caddy and I'm really impressed with both the design of the software and the quality of the [getting started documentation](https://caddyserver.com/docs/getting-started).
 
+I installed Caddy using Homebrew:
+
+    brew install caddy
+
 ## The Caddyfile
 
 You can configure Caddy in a bunch of different ways - the two main options are using JSON via the Caddy API or using their own custom Caddyfile format.
