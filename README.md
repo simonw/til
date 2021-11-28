@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->210<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->211<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -399,4 +399,8 @@ Search these TILs at https://til.simonwillison.net/
 ## caddy
 
 * [Pausing traffic and retrying in Caddy](https://github.com/simonw/til/blob/main/caddy/pause-retry-traffic.md) - 2021-11-24
+
+## npm
+
+* [Publishing a Web Component to npm](https://github.com/simonw/til/blob/main/npm/publish-web-component.md) - 2021-11-28
 <!-- index ends -->
