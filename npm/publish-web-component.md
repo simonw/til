@@ -117,11 +117,19 @@ That error message was enitrely misleading: the issue was that I hadn't yet clic
 
 https://www.npmjs.com/package/datasette-table
 
-## Now that it's on npm unpkg works
+## Now that it's on npm unpkg and Skypack work
 
-Now that it's live, the following works as a quick way of trying out the Web Component:
+Now that it's live, the following works as a quick way of trying out the Web Component loaded from [unpkg](https://unpkg.com):
 ```html
 <script type="module" src="https://unpkg.com/datasette-table?module"></script>
+
+<datasette-table
+    url="https://global-power-plants.datasettes.com/global-power-plants/global-power-plants.json"
+></datasette-table>
+```
+[Skypack](https://www.skypack.dev/) works the same way:
+```html
+<script type="module" src="https://cdn.skypack.dev/datasette-table"></script>
 
 <datasette-table
     url="https://global-power-plants.datasettes.com/global-power-plants/global-power-plants.json"
