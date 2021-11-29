@@ -90,7 +90,7 @@ Vite needs an `index.html` file, so I created one like so:
 
 Then I ran `npm run dev` to start the Vite server, then navigated to `http://localhost:3000/` to try out the app.
 
-Vite works by scanning the `index.html` for any JavaScript references, then doing magic on the files that it founds. View source on the running dev server showed that it adds this line to the top of `index.html` when it serves it:
+Vite works by scanning the `index.html` for any JavaScript references, then doing magic on the files that it finds. View source on the running dev server showed that it adds this line to the top of `index.html` when it serves it:
 
 ```html
 <script type="module" src="/@vite/client"></script>
