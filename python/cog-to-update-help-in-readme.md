@@ -34,7 +34,13 @@ Cog works by scanning for a `[[[cog ... ]]]` section, executing the code there, 
 
 It's designed to interact well with comments - in this case HTML comments - such that the `cog` generation code can be hidden.
 
-## Writing a test
+## Testing with cog --check
+
+A version of Cog released after I first wrote this TIL added a new `--check` option, so you can run a test in CI to check if the file needs to be updated using:
+
+    cog --check README.md
+
+## Writing a test (before cog --check)
 
 Any time I generate content like this in a repo I like to include a test that will fail if I forget to update the content.
 
