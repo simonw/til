@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->213<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->214<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -54,6 +54,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Planning parallel downloads with TopologicalSorter](https://github.com/simonw/til/blob/main/python/graphlib-topologicalsorter.md) - 2021-11-16
 * [Using cog to update --help in a Markdown README file](https://github.com/simonw/til/blob/main/python/cog-to-update-help-in-readme.md) - 2021-11-18
 * [Ignoring a line in both flake8 and mypy](https://github.com/simonw/til/blob/main/python/ignore-both-flake8-and-mypy.md) - 2021-11-30
+* [\_\_init_subclass\_\_](https://github.com/simonw/til/blob/main/python/init-subclass.md) - 2021-12-03
 
 ## zeit-now
 
