@@ -1,4 +1,4 @@
-# \_\_init_subclass\_\_
+# __init_subclass__
 
 David Beazley [on Twitter](https://twitter.com/dabeaz/status/1466731368956809219) said:
 
