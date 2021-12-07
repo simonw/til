@@ -1,4 +1,4 @@
-# Storing files in S3 bucket between GitHub Actions runs
+# Storing files in an S3 bucket between GitHub Actions runs
 
 For my [git-history live demos](https://github.com/simonw/git-history/issues/30) I needed to store quite large files (~200MB SQLite databases) in between GitHub Actions runs, to avoid having to recreate the entire file from scratch every time.
 
