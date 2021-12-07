@@ -23,7 +23,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running tests against PostgreSQL in a service container](https://github.com/simonw/til/blob/main/github-actions/postgresq-service-container.md) - 2021-02-23
 * [Installing different PostgreSQL server versions in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/different-postgresql-versions.md) - 2021-07-05
 * [Attaching a generated file to a GitHub release using Actions](https://github.com/simonw/til/blob/main/github-actions/attach-generated-file-to-release.md) - 2021-09-07
-* [Storing files in S3 bucket between GitHub Actions runs](https://github.com/simonw/til/blob/main/github-actions/s3-bucket-github-actions.md) - 2021-12-07
+* [Storing files in an S3 bucket between GitHub Actions runs](https://github.com/simonw/til/blob/main/github-actions/s3-bucket-github-actions.md) - 2021-12-07
 
 ## python
 
