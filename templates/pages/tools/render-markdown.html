@@ -193,7 +193,7 @@ button.addEventListener('click', async function() {
                 el.removeAttribute('data-canonical-src');
             }
         );
-        output.value = preview.innerHTML.replace(/<h([1-6])>\n/g, '<h$1>').replace('<br>', '<br />');
+        output.value = preview.innerHTML.replace(/<h([1-6])>\n/g, '<h$1>').replace(/<br>/g, '<br />');
     }
 });
 
