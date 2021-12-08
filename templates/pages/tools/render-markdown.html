@@ -188,9 +188,12 @@ button.addEventListener('click', async function() {
               'img[data-canonical-src]'
             )
         ).forEach(
-            el => el.setAttribute('src', el.getAttribute('data-canonical-src'))
+            el => {
+                el.setAttribute('src', el.getAttribute('data-canonical-src'));
+                el.removeAttribute('data-canonical-src');
+            }
         );
-        output.value = preview.innerHTML.replace(/<h([1-6])>\n/g, '<h$1>');
+        output.value = preview.innerHTML.replace(/<h([1-6])>\n/g, '<h$1>').replace('<br>', '<br />');
     }
 });
 
