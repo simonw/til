@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->217<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->218<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -409,4 +409,8 @@ Search these TILs at https://til.simonwillison.net/
 ## npm
 
 * [Publishing a Web Component to npm](https://github.com/simonw/til/blob/main/npm/publish-web-component.md) - 2021-11-28
+
+## pluggy
+
+* [Registering the same Pluggy hook multiple times in a single file](https://github.com/simonw/til/blob/main/pluggy/multiple-hooks-same-file.md) - 2021-12-16
 <!-- index ends -->
