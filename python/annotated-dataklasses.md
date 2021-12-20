@@ -29,7 +29,7 @@ class Coordinates:
 
     def __eq__(self, other):
         if self.__class__ is other.__class__:
-            return (self,x, self.y,) == (other.x, other.y)
+            return (self,x, self.y,) == (other.x, other.y,)
         else:
             return NotImplemented
 ```
