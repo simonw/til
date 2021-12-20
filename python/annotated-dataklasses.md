@@ -1,4 +1,4 @@
-# Annotated explanation of dataklasses by David Beazley
+# Annotated explanation of David Beazley's dataklasses
 
 David Beazley [on Twitter](https://twitter.com/dabeaz/status/1472742536649351173):
 
