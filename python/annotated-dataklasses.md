@@ -217,7 +217,7 @@ def make__init__(fields):
     # Calling ",".join(dict) joins just the keys of that dictionary
     code = "def __init__(self, " + ",".join(fields) + "):\n"
     # So here we have:
-    #    def __init__(self, , y):
+    #    def __init__(self, x, y):
     return code + "\n".join(f" self.{name} = {name}\n" for name in fields)
     # This adds on:
     #   self.x = x
