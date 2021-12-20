@@ -46,6 +46,14 @@ Then uses the `func.__code__.replace(co_names=repl_co_names, co_varnames=repl_co
 
 I don't yet understand why he does this as opposed to generating the code using `x` and `y` directly. I'll update this with an explanation once I find one!
 
+Update: Jacob Kaplan-Moss [explains it here](https://twitter.com/jacobian/status/1472789373552762884)!
+
+> That's the absolutely _wild_ trick at the heart of this, and what makes it fast:
+>
+> the bytecode for `__init__(self, x, y)` is exactly the same as the bytecode for `__init__(self, foo, bar)`!
+>
+> So that means Dave can cache the generated code for for "any `__init__` function with two args" and then _re-use the exact same code_ for any later 2-arity `__init__`s!
+
 ## My annotated copy
 
 First, including the copyright message as required by the copyright message:
