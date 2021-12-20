@@ -24,3 +24,5 @@ def filters_from_request_2(request, database, datasette):
     # ...
 ```
 Which allows you to write more than one plugin implementation function in the same Python module file.
+
+Note that the `specname` feature requires [Pluggy 1.0.0](https://github.com/pytest-dev/pluggy/blob/main/CHANGELOG.rst#pluggy-100-2021-08-25) or higher.
