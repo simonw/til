@@ -88,7 +88,11 @@ from functools import lru_cache, reduce
 # The return value will be that compiled function. With some enhancements.
 def codegen(func):
     # This caches the result so if you pass the same numfields it won't have to
-    # carry out the same work twice
+    # carry out the same work twice.
+    #
+    # This is the key performance optimization for this code - it means that
+    # the same generated code can be reused for any class that has the same
+    # number of arguments!
     @lru_cache
     def make_func_code(numfields):
         # numfields in len(fields)
@@ -122,6 +126,10 @@ def codegen(func):
         # As shown above, this uses exec() to compile and return
         # a function body created using the generated source code
         func = make_func_code(len(fields))
+
+        # But remember: because we cache and reuse method bodies, this has
+        # ugly _0, _1 parameters and variables that we want to make nicer.
+
         # co_names: tuple of names other than arguments and function locals
         co_names = func.__code__.co_names
         # For the Coordinates example, co_names = ("_0", "_1")
