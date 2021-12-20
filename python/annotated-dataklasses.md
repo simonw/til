@@ -33,6 +33,19 @@ class Coordinates:
         else:
             return NotImplemented
 ```
+## The key trick: code generation
+
+The key to understanding how the code works is to understand that it is using code generation. David introspects out the annotated class properties, from the class itself and any superclasses, and then counts how many they are. He then generates methods that look like this:
+
+```python
+def __init__(self, _0, _1):
+    self._0 = _0
+    self._1 = _1
+```
+Then uses the `func.__code__.replace(co_names=repl_co_names, co_varnames=repl_co_varnames)` method to rename those `_0` and `_1` variables back to `x` and `y`.
+
+I don't yet understand why he does this as opposed to generating the code using `x` and `y` directly. I'll update this with an explanation once I find one!
+
 ## My annotated copy
 
 First, including the copyright message as required by the copyright message:
