@@ -18,7 +18,7 @@ class Coordinates:
 And turns it into this:
 ```python
 class Coordinates:
-    __match_args__ = ("x", "y")
+    __match_args__ = {'x': <class 'int'>, 'y': <class 'int'>}
 
     def __init__(self, x, y):
         self.x = x
@@ -295,7 +295,12 @@ def dataklass(cls):
     # if not '__iter__' in clsdict:  cls.__iter__ = make__iter__(fields)
     # if not '__hash__' in clsdict:  cls.__hash__ = make__hash__(fields)
     cls.__match_args__ = fields
-    # This is related to Python structural typing:
+    # This sets __match_args__ to {'x': <class 'int'>, 'y': <class 'int'>}
+    # Usually __match_args__ is expected to be a tuple like ("x", "y")
+    # but presumably this still works with a dictionary because it is used
+    # for "name in __match_args__" style lookups.
+    #
+    # __match_args__ is a property used by Python structural typing:
     # https://www.python.org/dev/peps/pep-0622/#special-attribute-match-args
     return cls
 
