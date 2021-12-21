@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->221<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->222<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -416,4 +416,8 @@ Search these TILs at https://til.simonwillison.net/
 ## pluggy
 
 * [Registering the same Pluggy hook multiple times in a single file](https://github.com/simonw/til/blob/main/pluggy/multiple-hooks-same-file.md) - 2021-12-16
+
+## cloudflare
+
+* [Adding a robots.txt using Cloudflare workers](https://github.com/simonw/til/blob/main/cloudflare/robots-txt-cloudflare-workers.md) - 2021-12-21
 <!-- index ends -->
