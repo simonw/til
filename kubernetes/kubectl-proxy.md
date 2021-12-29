@@ -6,7 +6,7 @@ Assuming you have `kubectl` setup and authorized against a cluster (I'm using Di
 
     kubectl proxy --port 9000
 
-This starts a proxy running on `localhost` port 9000 which can be used to make authenticated API calls to the cluster. The authentication wrapper (which I think defauls to client certificates) is added automatically, so you can just hit `http://localhost:9000/` using `curl`.
+This starts a proxy running on `localhost` port 9000 which can be used to make authenticated API calls to the cluster. The authentication wrapper (which I think defaults to client certificates) is added automatically, so you can just hit `http://localhost:9000/` using `curl`.
 ```
 curl localhost:9000
 {
