@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->225<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->226<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -259,6 +259,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Display EC2 instance costs per month](https://github.com/simonw/til/blob/main/aws/instance-costs-per-month.md) - 2020-09-06
 * [Recovering data from AWS Lightsail using EC2](https://github.com/simonw/til/blob/main/aws/recovering-lightsail-data.md) - 2021-01-16
+* [Adding a CORS policy to an S3 bucket](https://github.com/simonw/til/blob/main/aws/s3-cors.md) - 2022-01-04
 
 ## jinja
 
