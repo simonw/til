@@ -4,7 +4,7 @@ Amazon S3 buckets that are configured to work as public websites can support COR
 
 This configuration happens at the bucket level - it's not something that can be applied to individual items.
 
-[Here's their documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html). As with so many AWS things it involves hand-crafting a JSON document - the documentation for that format - with useful examples - [is here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html).
+[Here's their documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html). As with so many AWS things it involves hand-crafting a JSON document: the documentation for that format, with useful examples, [is here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html).
 
 I opted to use the S3 web console option - find the bucket in the console interface, click the "Security" tab and you can paste in a JSON configuration.
 
