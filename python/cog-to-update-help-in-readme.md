@@ -77,3 +77,21 @@ Here I'm faking the command-line arguments to pass in just the path to my `READM
 Cog then writes the generated output to `stdout` - which I capture with that `sys.stdout` trick.
 
 Finally, I compare the generated output to the current file content and fail the test with a reminder to run `cog -r` if they do not match.
+
+## Cog for reStructuredText
+
+Here's an example of `cog` in a `.rst` file:
+
+```
+.. [[[cog
+    import tabulate
+    cog.out("\n" + "\n".join('- ``{}``'.format(t) for t in tabulate.tabulate_formats) + "\n\n")
+.. ]]]
+
+- ``fancy_grid``
+- ``fancy_outline``
+- ``github``
+
+.. [[[end]]]
+```
+The trailing and leading newlines are important to avoid a warning about "Explicit markup ends without a blank line; unexpected unindent".
