@@ -82,7 +82,7 @@ Finally, I compare the generated output to the current file content and fail the
 
 Here's an example of `cog` in a `.rst` file:
 
-```
+```rst
 .. [[[cog
     import tabulate
     cog.out("\n" + "\n".join('- ``{}``'.format(t) for t in tabulate.tabulate_formats) + "\n\n")
