@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->227<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->228<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -128,6 +128,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using VCR and pytest with pytest-recording](https://github.com/simonw/til/blob/main/pytest/pytest-recording-vcr.md) - 2021-11-02
 * [Quick and dirty mock testing with mock_calls](https://github.com/simonw/til/blob/main/pytest/pytest-mock-calls.md) - 2021-11-02
 * [Writing pytest tests against tools written with argparse](https://github.com/simonw/til/blob/main/pytest/pytest-argparse.md) - 2022-01-08
+* [Testing a Click app with streaming input](https://github.com/simonw/til/blob/main/pytest/test-click-app-with-streaming-input.md) - 2022-01-09
 
 ## github
 
