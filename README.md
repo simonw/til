@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->228<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->229<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -138,6 +138,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Bulk fetching repository details with the GitHub GraphQL API](https://github.com/simonw/til/blob/main/github/bulk-repo-github-graphql.md) - 2021-01-17
 * [Syntax highlighting Python console examples with GFM](https://github.com/simonw/til/blob/main/github/syntax-highlighting-python-console.md) - 2021-01-18
 * [Transferring a GitHub issue from a private to a public repository](https://github.com/simonw/til/blob/main/github/transfer-issue-private-to-public.md) - 2021-12-22
+* [Configuring Dependabot for a Python project with dependencies in setup.py](https://github.com/simonw/til/blob/main/github/dependabot-python-setup.md) - 2022-01-14
 
 ## node
 
