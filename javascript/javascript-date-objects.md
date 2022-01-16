@@ -73,3 +73,12 @@ MDN documentation:
 
 - [toLocaleDateString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
 - [toLocaleTimeString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+
+## Discussion
+
+Lots of useful comments on this in [replies on Twitter](https://twitter.com/simonw/status/1482810703123607552), including recommendations for these libraries:
+
+- [Intl.DateTimeFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) for even more advanced formatting options in the browser standards
+- [Luxon](https://moment.github.io/luxon/) - the more modern alternative to the [no longer recommended](https://momentjs.com/docs/#/-project-status/) Moment.js
+- [date-fns](https://date-fns.org/) as a more modular modern alternative
+- GitHub's [time-elements](https://github.com/github/time-elements) web components
