@@ -19,7 +19,7 @@ Safari requires dates to look like this - without the `T` you get `Invalid Date`
 
 `2022-03-05T14:35:00Z`
 
-Adding the trailing `Z` causes the date to be treated as if it was UTC. This means you can work with in in a mostly timezone-unaware fashion.
+Adding the trailing `Z` causes the date to be treated as if it was UTC. This can be helpful if you plan to work with them in a mostly timezone-unaware fashion, though see the note about using `{timeZone: "UTC"}` with the formatting methods later in this document.
 
 ## Timezones
 
