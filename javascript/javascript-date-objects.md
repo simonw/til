@@ -82,3 +82,4 @@ Lots of useful comments on this in [replies on Twitter](https://twitter.com/simo
 - [Luxon](https://moment.github.io/luxon/) - the more modern alternative to the [no longer recommended](https://momentjs.com/docs/#/-project-status/) Moment.js
 - [date-fns](https://date-fns.org/) as a more modular modern alternative
 - GitHub's [time-elements](https://github.com/github/time-elements) web components
+- There's a new browser standard for JavaScript date operations coming in the future called Temporal, [described in detail here](https://2ality.com/2021/06/temporal-api.html)
