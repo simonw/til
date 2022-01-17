@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->230<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->231<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -59,6 +59,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using C_INCLUDE_PATH to install Python packages](https://github.com/simonw/til/blob/main/python/using-c-include-path-to-install-python-packages.md) - 2021-12-09
 * [Safely outputting JSON](https://github.com/simonw/til/blob/main/python/safe-output-json.md) - 2021-12-17
 * [Annotated explanation of David Beazley's dataklasses](https://github.com/simonw/til/blob/main/python/annotated-dataklasses.md) - 2021-12-19
+* [Streaming indented output of a JSON array](https://github.com/simonw/til/blob/main/python/output-json-array-streaming.md) - 2022-01-17
 
 ## zeit-now
 
