@@ -23,6 +23,8 @@ But I wanted to do it from a streaming iterator - without first buffering the en
 Here's the pattern I came up with:
 
 ```python
+import itertools, json, textwrap
+
 def stream_indented_json(iterator, indent=2):
     # We have to iterate two-at-a-time so we can know if we
     # should output a trailing comma or if we have reached
@@ -48,7 +50,7 @@ def stream_indented_json(iterator, indent=2):
         yield "[]"
 ```
 Example usage:
-```
+```python
 for line in stream_indented_json(item_iterator):
     click.echo(line)
 ```
