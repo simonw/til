@@ -51,7 +51,7 @@ If your object key contains a `"` character you can't use the `$."..."` syntax t
 
 `$.has\" quotes in it`
 
-For example ([demo](https://latest.datasette.io/_memory?sql=select+json_extract(%27{%0D%0A++++%22has\%22+quotes+in+it%22%3A+%22hello%22%0D%0A}%27%2C+%27%24.has\%22+quotes+in+it%27)&path=%24.has\%22+quotes+in+it)):
+For example ([demo](https://latest.datasette.io/_memory?sql=select+json_extract(%27%7B%0D%0A++++%22has%5C%22+quotes+in+it%22:+%22hello%22%0D%0A%7D%27,+%27$.has%5C%22+quotes+in+it%27)&path=$.has%5C%22+quotes+in+it)):
 
 ```sql
 select json_extract('{
