@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->231<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->232<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -87,6 +87,7 @@ Search these TILs at https://til.simonwillison.net/
 * [SQLite aggregate filter clauses](https://github.com/simonw/til/blob/main/sqlite/sqlite-aggregate-filter-clauses.md) - 2021-08-04
 * [Building a specific version of SQLite with pysqlite on macOS/Linux](https://github.com/simonw/til/blob/main/sqlite/build-specific-sqlite-pysqlite-macos.md) - 2021-08-14
 * [Track timestamped changes to a SQLite table using triggers](https://github.com/simonw/til/blob/main/sqlite/track-timestamped-changes-to-a-table.md) - 2021-08-19
+* [json_extract() path syntax in SQLite](https://github.com/simonw/til/blob/main/sqlite/json-extract-path.md) - 2022-01-18
 
 ## presenting
 
