@@ -12,6 +12,8 @@ Paths must always start with a `$`, which represnts the root of the JSON value.
 
 This can be followed by `.key` or `."key"` to navigate into object keys, and `[0]` to navigate into arrays.
 
+The double quote syntax is useful if your key includes `.` characters.
+
 Given this example document:
 
 ```json
