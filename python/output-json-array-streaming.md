@@ -35,18 +35,18 @@ def stream_indented_json(iterator, indent=2):
     for item, next_item in itertools.zip_longest(current_iter, next_iter):
         is_last = next_item is None
         data = item
-        line = "{firstchar}{serialized}{maybecomma}{lastchar}".format(
-            firstchar="[\n" if first else "",
+        line = "{first}{serialized}{separator}{last}".format(
+            first="[\n" if first else "",
             serialized=textwrap.indent(
                 json.dumps(data, indent=indent, default=repr), " " * indent
             ),
-            maybecomma="," if not is_last else "",
-            lastchar="\n]" if is_last else "",
+            separator="," if not is_last else "",
+            last="\n]" if is_last else "",
         )
         yield line
         first = False
     if first:
-        # We didn't output any rows, so yield the empty list
+        # We didn't output anything, so yield the empty list
         yield "[]"
 ```
 Example usage:
