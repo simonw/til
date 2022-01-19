@@ -1,6 +1,6 @@
 # json_extract() path syntax in SQLite
 
-Several of the [SQLite JSON functions](), such as `json_extract()` and `json_array_length()`, take a path argument. This uses custom syntax along the lines of `$.a[2].b`, as described [in the documentation here](https://sqlite.org/json1.html#json_arguments).
+Several of the [SQLite JSON functions](), such as `json_extract()` and `json_array_length()`, take a path argument. This uses custom syntax along the lines of `$.a[2].b`, as described [in the documentation here](https://sqlite.org/json1.html#path_arguments).
 
 The syntax is similar to that used by MySQL, which is [documented here](https://dev.mysql.com/doc/refman/8.0/en/json.html#json-path-syntax).
 
