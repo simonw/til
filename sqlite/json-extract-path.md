@@ -35,7 +35,7 @@ Given this example document:
 - `$.creatures[0].name` returns `Cleo` ([demo](https://latest.datasette.io/_memory?sql=select+json_extract%28%27%7B%0D%0A++++%22creatures%22%3A+%5B%0D%0A++++++++%7B%0D%0A++++++++++++%22name%22%3A+%22Cleo%22%2C%0D%0A++++++++++++%22species%22%3A+%22dog%22%0D%0A++++++++%7D%2C%0D%0A++++++++%7B%0D%0A++++++++++++%22name%22%3A+%22Azi%22%2C%0D%0A++++++++++++%22species%22%3A+%22chicken%22%2C%0D%0A++++++++++++%22weight.lb%22%3A+1.6%0D%0A++++++++%7D%0D%0A++++%5D%0D%0A%7D%27%2C+%3Apath%29&path=%24.creatures%5B0%5D.name))
 - `$.creatures[1]."weight.lb"` returns `1.6` ([demo](https://latest.datasette.io/_memory?sql=select+json_extract%28%27%7B%0D%0A++++%22creatures%22%3A+%5B%0D%0A++++++++%7B%0D%0A++++++++++++%22name%22%3A+%22Cleo%22%2C%0D%0A++++++++++++%22species%22%3A+%22dog%22%0D%0A++++++++%7D%2C%0D%0A++++++++%7B%0D%0A++++++++++++%22name%22%3A+%22Azi%22%2C%0D%0A++++++++++++%22species%22%3A+%22chicken%22%2C%0D%0A++++++++++++%22weight.lb%22%3A+1.6%0D%0A++++++++%7D%0D%0A++++%5D%0D%0A%7D%27%2C+%3Apath%29&path=%24.creatures%5B1%5D.%22weight.lb%22))
 
-## The mysterious \#
+## \#-1 to access arrays by index from the end
 
 You can also use `#` inside the `[]` array syntax to refer to the length of the array.
 
