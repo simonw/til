@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->235<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->236<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -227,6 +227,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Read the Docs Search API](https://github.com/simonw/til/blob/main/readthedocs/readthedocs-search-api.md) - 2020-08-16
 * [Using custom Sphinx templates on Read the Docs](https://github.com/simonw/til/blob/main/readthedocs/custom-sphinx-templates.md) - 2020-12-07
 * [Promoting the stable version of the documentation using rel=canonical](https://github.com/simonw/til/blob/main/readthedocs/documentation-seo-canonical.md) - 2022-01-20
+* [Linking from /latest/ to /stable/ on Read The Docs](https://github.com/simonw/til/blob/main/readthedocs/link-from-latest-to-stable.md) - 2022-01-20
 
 ## ics
 
