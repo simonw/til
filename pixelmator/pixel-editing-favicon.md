@@ -24,4 +24,6 @@ I exported the finished image as a PNG, then used https://squoosh.app/ to shrink
 
 ![Screenshot of the Squoosh interface - I used effort=3 and colors=8](https://user-images.githubusercontent.com/9599/150406568-4081e9aa-2161-4f6c-bc97-5e99780d6ea0.png)
 
+The end result, comparing the browser-resized icon to my hand-edited one:
 
+![The one I let the browser resize has some fuzzy edges. The hand-edited one does not.](https://user-images.githubusercontent.com/9599/150407521-a7b0c823-d9f3-4c31-b927-6ac9d93e9d85.png)
