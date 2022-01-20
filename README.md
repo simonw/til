@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->233<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->234<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -434,4 +434,8 @@ Search these TILs at https://til.simonwillison.net/
 ## webauthn
 
 * [WebAuthn browser support](https://github.com/simonw/til/blob/main/webauthn/webauthn-browser-support.md) - 2021-12-29
+
+## pixelmator
+
+* [Pixel editing a favicon with Pixelmator](https://github.com/simonw/til/blob/main/pixelmator/pixel-editing-favicon.md) - 2022-01-20
 <!-- index ends -->
