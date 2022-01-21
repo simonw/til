@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->236<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->237<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -416,6 +416,7 @@ Search these TILs at https://til.simonwillison.net/
 ## fly
 
 * [Assigning a custom subdomain to a Fly app](https://github.com/simonw/til/blob/main/fly/custom-subdomain-fly.md) - 2021-11-20
+* [Using the undocumented Fly GraphQL API](https://github.com/simonw/til/blob/main/fly/undocumented-graphql-api.md) - 2022-01-21
 
 ## caddy
 
