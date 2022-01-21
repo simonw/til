@@ -30,3 +30,49 @@ Here's a query I used to answer the question "what volumes do I have attached, a
   }
 }
 ```
+Here's a much more fun query:
+```graphql
+{
+  # Your user account:
+  viewer {
+    avatarUrl
+    createdAt
+    email
+    # This returned the following for me:
+    # ["backend_wordpress", "response_headers_middleware", "firecracker", "dashboard_logs"]
+    featureFlags
+  }
+  nearestRegion {
+    # This returned "sjc"
+    code
+  }
+  personalOrganization {
+    name
+    creditBalance
+    creditBalanceFormatted
+    # Not sure what these are but they look interesting - I have 7
+    loggedCertificates {
+      totalCount
+      nodes {
+        cert
+        id
+        root
+      }
+    }
+    isCreditCardSaved
+    wireGuardPeers {
+      # Returned one entry for me, with name:
+      # interactive-Simons-MacBook-Pro-swillison-gmail-com-26
+      # Presumably the flyctl CLI command set this up
+      totalCount
+      nodes {
+        name
+        network
+        peerip
+        pubkey
+        region
+      }
+    }
+  }
+}
+```
