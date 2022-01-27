@@ -48,7 +48,7 @@ Plot.plot({
         {
           x: "created_at",
           title: bin => {
-            let sorted = [...bin.map(t => t.created_at)].sort();
+            let sorted = [...Array.from(bin).map(t => t.created_at)].sort();
             let min = sorted[0];
             let max = sorted.slice(-1)[0];
             let count = sorted.length;
