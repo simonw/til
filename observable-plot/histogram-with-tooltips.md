@@ -33,6 +33,8 @@ It turns out that while d3 uses Sturges' formula Observable Plot instead uses Sc
 
 I wanted to add tooltips to the above chart. This was the hardest part to figure out - it turns out that second argument to `.binX()` can take a `title` option, which can be a function that accepts a `bin` array of items and returns a title.
 
+**UPDATE 27th January 2022:** The below code example no longer works - the `bin` argument passed to the `title:` function used to be a list of items in that bin, but now appears to just be a single item.
+
 This is what I ended up using:
 
 ```javascript
