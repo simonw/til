@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->238<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->239<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -442,4 +442,8 @@ Search these TILs at https://til.simonwillison.net/
 ## pixelmator
 
 * [Pixel editing a favicon with Pixelmator](https://github.com/simonw/til/blob/main/pixelmator/pixel-editing-favicon.md) - 2022-01-20
+
+## graphql
+
+* [get-graphql-schema](https://github.com/simonw/til/blob/main/graphql/get-graphql-schema.md) - 2022-02-01
 <!-- index ends -->
