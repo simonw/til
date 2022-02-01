@@ -1,6 +1,6 @@
 # Using the undocumented Fly GraphQL API
 
-[Fly](https://fly.io/) has a GraphQL API which is used by some of their own tools - I found it while browsing around their code on GitHub.
+[Fly](https://fly.io/) has a GraphQL API which is used by some of their own tools - I found it while [browsing around their code](https://github.com/superfly/flyctl/blob/603b0adccf5416188eabaa7dc73f9c0ec88fa6ca/api/resource_volumes.go#L5-L40) on GitHub.
 
 It's very much undocumented, which means you would be very foolish to write any software against it and expect it to continue to work as Fly make changes.
 
