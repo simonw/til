@@ -76,6 +76,27 @@ Here's a much more fun query:
   }
 }
 ```
+This one returns recent logs (only for the past hour / max of 50 values - those are the highest numbers that can be used for those parameters):
+```graphql
+{
+  apps {
+    nodes {
+      name
+      vms {
+        totalCount
+        nodes {
+          recentLogs(limit: 50, range: 3600) {
+            id
+            region
+            message
+            timestamp
+          }
+        }
+      }
+    }
+  }
+}
+```
 And another one which digs into the details of attached volumes:
 ```graphql
 {
