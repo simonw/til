@@ -40,6 +40,19 @@ def test_performs_conditional_get(mocker):
 ```
 https://github.com/simonw/conditional-get/blob/485fab46f01edd99818b829e99765ed9ce0978b5/tests/test_cli.py
 
+## Mocking a JSON response
+
+Here's a mock for a GraphQL POST request that returns JSON:
+```python
+@pytest.fixture
+def mock_graphql_region(mocker):
+    m = mocker.patch("datasette_publish_fly.httpx")
+    m.post.return_value = mocker.Mock()
+    m.post.return_value.status_code = 200
+    m.post.return_value.json.return_value = {"data": {"nearestRegion": {"code": "sjc"}}}
+```
+https://github.com/simonw/datasette-publish-fly/blob/5253220bded001e94561e215d553f352838e7a1c/tests/test_publish_fly.py#L16-L21
+
 ## Mocking httpx.stream
 
 I later had to figure out how to mock the following:
