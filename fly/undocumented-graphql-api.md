@@ -76,3 +76,52 @@ Here's a much more fun query:
   }
 }
 ```
+And another one which digs into the details of attached volumes:
+```graphql
+{
+  apps {
+    nodes {
+      name
+      services {
+        checks {
+          httpPath
+          httpMethod
+          name
+        }
+        description
+      }
+      volumes {
+        nodes {
+          id
+          name
+          createdAt
+          host {
+            id
+          }
+          sizeGb
+          status
+          usedBytes
+          region
+          app {
+            name
+          }
+          attachedAllocation {
+            privateIP
+            # Not sure why attachedAllocation on a volume gives app HTTP traffic logs:
+            recentLogs {
+              id
+              message
+              timestamp
+            }
+            canary
+            events {
+              message
+              timestamp
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
