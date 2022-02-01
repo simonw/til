@@ -29,7 +29,7 @@ type assetsCollection {
 ```
 You can retrieve a JSON version of this from the GraphQL server itself using the query at the bottom of this document.
 
-But... if you want it back in readable text as shown above, you can use the [get-graphql-schema]() tool. Run that like this:
+But... if you want it back in readable text as shown above, you can use the [get-graphql-schema](https://www.npmjs.com/package/get-graphql-schema) tool. Run that like this:
 
     npx get-graphql-schema https://github-to-sqlite.dogsheep.net/graphql
 
