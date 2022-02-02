@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->239<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->240<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -24,6 +24,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Installing different PostgreSQL server versions in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/different-postgresql-versions.md) - 2021-07-05
 * [Attaching a generated file to a GitHub release using Actions](https://github.com/simonw/til/blob/main/github-actions/attach-generated-file-to-release.md) - 2021-09-07
 * [Storing files in an S3 bucket between GitHub Actions runs](https://github.com/simonw/til/blob/main/github-actions/s3-bucket-github-actions.md) - 2021-12-07
+* [Testing against Python 3.11 preview using GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/python-3-11.md) - 2022-02-02
 
 ## python
 
