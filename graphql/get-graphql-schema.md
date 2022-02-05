@@ -33,6 +33,10 @@ But... if you want it back in readable text as shown above, you can use the [get
 
     npx get-graphql-schema https://github-to-sqlite.dogsheep.net/graphql
 
+If the API requires authentication, use the `--header` option like this:
+
+    npx get-graphql-schema https://api.github.com/graphql -h 'Authorization=Bearer XXX'
+
 ## Retrieving the schema as JSON using GraphQL
 
 I found this query using the network inspector against a GraphiQL instance (https://api.fly.io/graphql) that offered a "Schema" tab:
