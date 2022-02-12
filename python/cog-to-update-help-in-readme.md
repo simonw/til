@@ -95,3 +95,10 @@ Here's an example of `cog` in a `.rst` file:
 .. [[[end]]]
 ```
 The trailing and leading newlines are important to avoid a warning about "Explicit markup ends without a blank line; unexpected unindent".
+
+## CLI reference pages
+
+I added these to both Datasette and `sqlite-utils`: full pages that list the help for every command provided by those tools.
+
+- [Datasette CLI reference](https://docs.datasette.io/en/stable/cli-reference.html) - underlying [source code](https://raw.githubusercontent.com/simonw/datasette/main/docs/cli-reference.rst)
+- [sqlite-utils CLI reference](https://sqlite-utils.datasette.io/en/stable/cli-reference.html) - underlying [source code](https://raw.githubusercontent.com/simonw/sqlite-utils/main/docs/cli-reference.rst)
