@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->243<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->244<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -262,6 +262,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Escaping a SQL query to use with curl and Datasette](https://github.com/simonw/til/blob/main/bash/escaping-sql-for-curl-to-datasette.md) - 2020-12-08
 * [Skipping CSV rows with odd numbers of quotes using ripgrep](https://github.com/simonw/til/blob/main/bash/skip-csv-rows-with-odd-numbers.md) - 2020-12-11
 * [Finding CSV files that start with a BOM using ripgrep](https://github.com/simonw/til/blob/main/bash/finding-bom-csv-files-with-ripgrep.md) - 2021-05-28
+* [nullglob in bash](https://github.com/simonw/til/blob/main/bash/nullglob-in-bash.md) - 2022-02-14
 
 ## typescript
 
