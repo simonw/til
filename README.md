@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->244<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->245<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -90,6 +90,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Track timestamped changes to a SQLite table using triggers](https://github.com/simonw/til/blob/main/sqlite/track-timestamped-changes-to-a-table.md) - 2021-08-19
 * [json_extract() path syntax in SQLite](https://github.com/simonw/til/blob/main/sqlite/json-extract-path.md) - 2022-01-18
 * [Ordered group_concat() in SQLite](https://github.com/simonw/til/blob/main/sqlite/ordered-group-concat.md) - 2022-02-06
+* [Combining substr and instr to extract text](https://github.com/simonw/til/blob/main/sqlite/substr-instr.md) - 2022-02-15
 
 ## presenting
 
