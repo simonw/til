@@ -18,6 +18,8 @@ So the URL for a folder with ID `1E6Zg2X2bjjtPzVfX8YqdXZDCoB3AVA7i` ends up look
 
 You need to accompany that with a `Authorization: Bearer YOUR_ACCESS_TOKEN` header - see [Google OAuth for CLI applications](https://til.simonwillison.net/googlecloud/google-oauth-cli-application) for more on that.
 
+## Recursively fetching from sub-folders
+
 This will get you the files and folders within a folder... but you have to do extra work if you want to recursively fetch files from every sub-folder.
 
 A sub-folder in the response from that API looks like this:
