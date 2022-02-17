@@ -1,5 +1,7 @@
 # Open a debugging shell in GitHub Actions with tmate
 
+> :warning: **17 Feb 2022: There have been reports of running tmate causing account suspensions**. See [this issue](https://github.com/mxschmitt/action-tmate/issues/104) for details. Continue with caution.
+
 Thanks to [this Twitter conversation](https://twitter.com/harrymarr/status/1304820879268950021) I found out about [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate), which uses https://tmate.io/ to open an interactive shell session running inside the GitHub Actions environment.
 
 I created a `.github/workflows/tmate.yml` file in my repo containing the following:
