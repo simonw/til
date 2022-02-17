@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->245<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->246<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -401,6 +401,7 @@ Search these TILs at https://til.simonwillison.net/
 ## googlecloud
 
 * [Publishing to a public Google Cloud bucket with gsutil](https://github.com/simonw/til/blob/main/googlecloud/gsutil-bucket.md) - 2021-09-20
+* [Google OAuth for a CLI application](https://github.com/simonw/til/blob/main/googlecloud/google-oauth-cli-application.md) - 2022-02-16
 
 ## git
 
