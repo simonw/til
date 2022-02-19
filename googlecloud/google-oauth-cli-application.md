@@ -8,6 +8,8 @@ For CLI apps, the flow is that you show the user a URL, they click on it, sign i
 
 In the Google Cloud console you need to navigate to "APIs and Services", "Credentials", "Create Credentials" and select "OAuth client ID". You need to create a client ID for application type "Desktop app".
 
+![Screenshot of the Google Cloud API key interface](https://raw.githubusercontent.com/simonw/til/main/googlecloud/google-oauth-cli-application-oauth-client-id.png)
+
 Completing this form will give you a `google_client_id` and a `google_client_secret`. Even though it's called a secret it's safe to distribute this in your application and include it in your code in a public GitHub repository. The [Google documentation](https://developers.google.com/identity/protocols/oauth2#installed) says:
 
 > The process results in a client ID and, in some cases, a client secret, which you embed in the source code of your application. (In this context, the client secret is obviously not treated as a secret.)
