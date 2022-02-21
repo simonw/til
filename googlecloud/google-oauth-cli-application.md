@@ -1,5 +1,7 @@
 # Google OAuth for a CLI application
 
+> :warning: The OOB flow described in this document has been [scheduled for deprecation](https://developers.googleblog.com/2022/02/making-oauth-flows-safer.html?m=1#disallowed-oo) by Google. See [issue #39](https://github.com/simonw/google-drive-to-sqlite/issues/39) for notes on how to replace it.
+
 I had to figure out how to do the OAuth flow while building my [google-drive-to-sqlite](https://github.com/simonw/google-drive-to-sqlite) CLI application - [issue here](https://github.com/simonw/google-drive-to-sqlite/issues/2).
 
 For CLI apps, the flow is that you show the user a URL, they click on it, sign into their Google account, grant your application permission and the Google website then shows them a code. They copy and paste that code back into your application and you can exchange it for an `access_token` and a `refresh_token`. The `access_token` will work for an hour, but you can store the `refresh_token` and use it to obtain a new `access_token` any time you like.
