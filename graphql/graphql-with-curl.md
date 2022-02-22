@@ -29,7 +29,7 @@ curl -s https://api.github.com/graphql -X POST \
   }
 }' '{"query":$query}')"
 ```
-As you can see, the GraphQL query itself is embedded in plain texit inside a complex set of escaping tricks.
+As you can see, the GraphQL query itself is embedded in plain text inside a complex set of escaping tricks.
 
 ## Building a JSON document with jq
 
