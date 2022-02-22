@@ -1,6 +1,6 @@
 # Using curl to run GraphQL queries from the command line
 
-I wanted to run a query against the GitHub GraphQL API using `curl` on the command line, while keeping the query itself as readable as possible. Here's the recipe I came up with, with TOKEN replaced by my GitHub API personal access token:
+I wanted to run a query against the GitHub GraphQL API using `curl` on the command line, while keeping the query itself as readable as possible. Here's the recipe I came up with (tested in both `bash` and `zsh`), with TOKEN replaced by my GitHub API personal access token:
 ```
 curl -s https://api.github.com/graphql -X POST \
 -H "Authorization: Bearer TOKEN" \
