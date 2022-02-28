@@ -4,7 +4,7 @@ I usually use Homebrew on macOS, but I decided to try using the official Python 
 
 My big fear was that it would add Yet Another Python to my system in a way that made the [XKCD 1987](https://xkcd.com/1987/) situation even worse!
 
-I downloaded the installer using the prompt on the Python.org homepage (in the Download menu):
+I downloaded the installer using the prompt on the Python.org homepage (in the "Downloads" menu):
 
 <img width="967" alt="image" src="https://user-images.githubusercontent.com/9599/156053747-0cad53c1-6646-4398-a36d-582179bf4a93.png">
 
