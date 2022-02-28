@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->250<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->251<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -106,6 +106,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Shrinking PNG files with pngquant and oxipng](https://github.com/simonw/til/blob/main/macos/shrinking-pngs-with-pngquant-and-oxipng.md) - 2021-02-07
 * [Running Docker on an M1 Mac](https://github.com/simonw/til/blob/main/macos/running-docker-on-remote-m1.md) - 2021-05-25
 * [Using lsof on macOS](https://github.com/simonw/til/blob/main/macos/lsof-macos.md) - 2021-12-11
+* [Installing Python on macOS with the official Python installer](https://github.com/simonw/til/blob/main/macos/python-installer-macos.md) - 2022-02-28
 
 ## cloudrun
 
