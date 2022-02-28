@@ -1,6 +1,6 @@
 # Running the latest SQLite in Datasette using Homebrew
 
-I made a pleasant discovery today: Homebrew are very quick to update to the latest SQLite release, and since [Datasette](https://datasette.io/) when installed via Homebrew uses that version, this means you can use `brew update sqlite` to ensure you are running the most recent SQLite version within Datasette.
+I made a pleasant discovery today: Homebrew are very quick to update to the latest SQLite release (here's [their formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/sqlite.rb)), and since [Datasette](https://datasette.io/) when installed via Homebrew uses that version, this means you can use `brew update sqlite` to ensure you are running the most recent SQLite version within Datasette.
 
 If you've installed Datasette using Homebrew:
 
