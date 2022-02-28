@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->248<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->249<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -297,6 +297,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running Datasette on Replit](https://github.com/simonw/til/blob/main/datasette/datasette-on-replit.md) - 2021-05-02
 * [Searching all columns of a table in Datasette](https://github.com/simonw/til/blob/main/datasette/search-all-columns-trick.md) - 2021-08-23
 * [Reusing an existing Click tool with register_commands](https://github.com/simonw/til/blob/main/datasette/reuse-click-for-register-commands.md) - 2021-11-29
+* [Crawling Datasette with Datasette](https://github.com/simonw/til/blob/main/datasette/crawling-datasette-with-datasette.md) - 2022-02-27
 
 ## jupyter
 
