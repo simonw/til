@@ -42,6 +42,35 @@ from
   ne_50m_admin_0_countries
 ```
 
+The `ne_10m_admin_1_states_provinces` table is useful: it has subdivisions for a bunch of different countries. Here's the UK divided into counties:
+
+```sql
+select
+  ogc_fid,
+  GeomFromWKB(GEOMETRY) as geometry,
+  featurecla,
+  scalerank,
+  adm1_code,
+  diss_me,
+  iso_3166_2,
+  wikipedia,
+  iso_a2,
+  adm0_sr,
+  name,
+  name_alt,
+  type,
+  type_en,
+  area_sqkm,
+  latitude,
+  longitude,
+  admin
+from
+  ne_10m_admin_1_states_provinces
+where
+  admin = 'United Kingdom'
+```
+I tried this with `select *, GeomFromWKB(GEOMETRY) as geometry` first but it didn't work with `datasette-geojson-map` because the `*` picked up the original `GEOMETRY` column in the wrong format.
+
 The scales are:
 
 - Large scale data, 1:10m - most detailed
