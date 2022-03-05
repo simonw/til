@@ -42,6 +42,19 @@ from
   ne_50m_admin_0_countries
 ```
 
+This query draws a coloured map of countries using the `datasette-geojson-map` and `sqlite-colorbrewer` plugins:
+
+```sql
+select
+  ogc_fid,
+  GeomFromWKB(GEOMETRY) as geometry,
+  colorbrewer('Paired', 9, MAPCOLOR9 - 1) as fill
+from
+  ne_10m_admin_0_countries
+```
+
+<img width="1098" alt="Screenshot of a map showing different countries in random colours" src="https://user-images.githubusercontent.com/9599/156858327-08f99300-29fd-4ca8-a268-f8c2ec659349.png">
+
 The `ne_10m_admin_1_states_provinces` table is useful: it has subdivisions for a bunch of different countries. Here's the UK divided into counties:
 
 ```sql
