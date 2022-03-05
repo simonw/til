@@ -43,12 +43,12 @@ Download and extract the SQLite code:
     tar -xzvf SQLite-cf538e27.tar.gz
     cd SQLite-cf538e27
 
-Now we can build the extension.
+Now we can build the extension. The `CPPFLAGS` are optional but I found I needed them to get the full Datasette test suite to pass later on:
 
-    ./configure
+    CPPFLAGS="-DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_RTREE=1" ./configure
     make
 
-No need to run `make install`, we just need the library compiled.
+There is no need to run `make install` here, we just need the compiled library.
 
 This puts the libraries in a `.libs` directory:
 
@@ -102,6 +102,10 @@ http://0.0.0.0:8001/-/versions
 
 And confirm that the default SQLite version is `"version": "3.31.1"`.
 
+Alternatively, run this to see the versions output without needing to run the server:
+
+    datasette --get /-/versions.json
+
 Quit Datasette and start it again with the `LD_PRELOAD`:
 
     LD_PRELOAD=.libs/libsqlite3.so datasette -h 0.0.0.0
@@ -136,3 +140,20 @@ And now http://0.0.0.0:8001/-/versions reports the following:
     }
 }
 ```
+
+## Running the Datasette tests
+
+To run Datasette's test suite I needed to install a few extra dependencies:
+
+```
+apt-get install -y python3-pip git python3.8-venv
+cd /tmp
+git clone https://github.com/simonw/datasette
+cd datasette
+python3 -m venv venv
+source venv/bin/activate
+pip install wheel # So bdist_wheel works in next step
+pip install -e '.[test]'
+LD_PRELOAD=/tmp/SQLite-cf538e27/.libs/libsqlite3.so python3 -c 
+```
+I used this process to track down a bug that was introduced between SQLite 3.36.0 and 3.37.0 in [this issue](https://github.com/simonw/datasette/issues/1647).
