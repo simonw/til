@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->252<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->253<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -136,6 +136,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Writing pytest tests against tools written with argparse](https://github.com/simonw/til/blob/main/pytest/pytest-argparse.md) - 2022-01-08
 * [Testing a Click app with streaming input](https://github.com/simonw/til/blob/main/pytest/test-click-app-with-streaming-input.md) - 2022-01-09
 * [Opt-in integration tests with pytest --integration](https://github.com/simonw/til/blob/main/pytest/only-run-integration.md) - 2022-01-26
+* [pytest coverage with context](https://github.com/simonw/til/blob/main/pytest/coverage-with-context.md) - 2022-03-04
 
 ## github
 
