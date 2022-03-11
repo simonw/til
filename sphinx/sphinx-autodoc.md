@@ -81,6 +81,7 @@ Adding reStructuredText to the docstrings works for formatting the generated API
 
 ```python
     def rows_where(
+        self,
         where: str = None,
         where_args: Optional[Union[Iterable, dict]] = None,
         order_by: str = None,
@@ -89,23 +90,26 @@ Adding reStructuredText to the docstrings works for formatting the generated API
         offset: int = None,
     ) -> Generator[dict, None, None]:
         """
-        Iterate over every row in this table or view that matches the specified
-        where clause.
-
-        - ``where`` - a SQL fragment to use as a ``WHERE`` clause, for example
-          ``age > ?`` or``age > :age``.
-        - ``where_args`` - a list of arguments (if using ``?``) or a dictionary
-          (if using ``:age``).
-        - ``order_by`` - optional column or fragment of SQL to order by.
-        - ``select`` - optional comma-separated list of columns to select.
-        - ``limit`` - optional integer number of rows to limit to.
-        - ``offset`` - optional integer for SQL offset.
-
+        Iterate over every row in this table or view that matches the specified where clause.
         Returns each row as a dictionary. See :ref:`python_api_rows` for more details.
+
+        :param where: SQL where fragment to use, for example ``id > ?``
+        :param where_args: Parameters to use with that fragment - an iterable for ``id > ?``
+          parameters, or a dictionary for ``id > :id``
+        :param order_by: Column or fragment of SQL to order by
+        :param select: Comma-separated list of columns to select - defaults to ``*``
+        :param limit: Integer number of rows to limit to
+        :param offset: Integer for SQL offset
         """
         if not self.exists():
             # ...
 ```
+If you add `autodoc_typehints = "description"` to the `conf.py` configuration the `:param name: Description` lines will be shown in a list of parameters that also includes the type hints:
+
+<img width="674" alt="Screenshot showing the type hints in the list of parameters" src="https://user-images.githubusercontent.com/9599/157924734-dcf56d26-69dd-4201-b81a-988eb4414a8b.png">
+
+I learned about this in [sqlite-utils/issues/413](https://github.com/simonw/sqlite-utils/issues/413) while trying to improve the display of complex type annotations.
+
 ## Getting it working on Read The Docs
 
 Read The Docs has the option to deploy branches - you can set that up in  the "Versions" tab. I was working in an `autodoc` branch - I set that branch to be "Active" and "Hidden", so it would be built by Read The Docs but not linked to from anywhere.
