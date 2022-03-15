@@ -63,10 +63,10 @@ But... when you copy and paste out the column into a VS Code file you get this:
   width: 800
 ```
 Hitting save in VS Code (for me on my Mac) resulted in a file with `\n` lines in it.
-
+```
 % python -c "print(repr(open('/tmp/saved.txt', 'rb').read()))"
 b'- url: https://simonwillison.net/\n  width: 800\n- url: https://datasette.io/\n  width: 800\n- url: https://www.example.com/\n  width: 800'
-
+```
 You can confirm that the original clipboard text contained `\r` and not `\n` by doing this:
 
 ```
