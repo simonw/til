@@ -10,7 +10,7 @@ The formula is:
 
     =if(isblank(A4), "", "- url: " & A4)
 
-The `&` character is used for strinc concatenation.
+The `&` character is used for string concatenation.
 
 The `if(condition, if-true, if-false)` function is used to return an empty string if the cell is blank, or a concatenated string otherwise.
 
