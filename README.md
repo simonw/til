@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->253<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->254<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -460,4 +460,8 @@ Search these TILs at https://til.simonwillison.net/
 
 * [get-graphql-schema](https://github.com/simonw/til/blob/main/graphql/get-graphql-schema.md) - 2022-02-01
 * [Using curl to run GraphQL queries from the command line](https://github.com/simonw/til/blob/main/graphql/graphql-with-curl.md) - 2022-02-21
+
+## google-sheets
+
+* [Concatenating strings and newlines in Google Sheets](https://github.com/simonw/til/blob/main/google-sheets/concatenate.md) - 2022-03-15
 <!-- index ends -->
