@@ -52,6 +52,5 @@ group by
 order by
   num_rows desc' as query from pragma_table_info(:table)
 ```
-[Try that out](https://latest.datasette.io/fixtures?sql=select+%27select%0D%0A%27+%7C%7C+group_concat%28%27++++case+when+%5B%27+%7C%7C+name+%7C%7C+%27%5D+is+not+null+then+%27+%7C%7C+quote%28name+%7C%7C+%27%2C+%27%29+%7C%7C+%27+else+%27%27%27%27+end%27%2C+%27+%7C%7C%0D%0A%27%29+%7C%7C+%27%0D%0A++as+columns%2C%0D%0A++count%28*%29+as+num_rows%0D%0Afrom%0D%0A++%5B%27+%7C%7C+%3Atable+%7C%7C+%27%5D%0D%0Agroup+by%0D%0A++columns%0D%0Aorder+by%0D%0A++num_rows+desc%27+as+query+from+pragma_table_info%28%3Atable%29&table=facetable)
-
+[Try that out](https://latest-with-plugins.datasette.io/fixtures?sql=select+%27select%0D%0A%27+%7C%7C+group_concat%28%27++++case+when+%5B%27+%7C%7C+name+%7C%7C+%27%5D+is+not+null+then+%27+%7C%7C+quote%28name+%7C%7C+%27%2C+%27%29+%7C%7C+%27+else+%27%27%27%27+end%27%2C+%27+%7C%7C%0D%0A%27%29+%7C%7C+%27%0D%0A++as+columns%2C%0D%0A++count%28*%29+as+num_rows%0D%0Afrom%0D%0A++%5B%27+%7C%7C+%3Atable+%7C%7C+%27%5D%0D%0Agroup+by%0D%0A++columns%0D%0Aorder+by%0D%0A++num_rows+desc%27+as+query+from+pragma_table_info%28%3Atable%29&table=facetable) in a demo that includes the [datasette-query-links](https://datasette.io/plugins/datasette-query-links) plugin.
 This takes `:table` as an input and generates SQL which can be used to generate column-combination counts.
