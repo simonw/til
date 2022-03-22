@@ -19,7 +19,7 @@ An alternative mechanism I've used is to gate the specific deploy steps in the a
     # Only run the deploy if push was to master
     - name: Set up Cloud Run
       if: github.ref == 'refs/heads/master'
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
       with:
         version: '275.0.0'
         service_account_email: ${{ secrets.GCP_SA_EMAIL }}
