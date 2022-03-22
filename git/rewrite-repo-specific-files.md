@@ -1,6 +1,6 @@
 # Rewriting a repo to contain the history of just specific files
 
-I wanted to start a new git repository containing just the history of two specific files from my [help-scraper repository](https://github.com/simonw/help-scraper).
+I wanted to start [a new git repository](https://github.com/simonw/graphql-scraper/tree/828a1efc4307cca6cd378c394c2d33eac2eceb52) containing just the history of two specific files from my [help-scraper repository](https://github.com/simonw/help-scraper).
 
 I started out planning to use `git filter-branch` for this, but got put off when [this StackOverflow thread](https://stackoverflow.com/questions/2982055/detach-many-subdirectories-into-a-new-separate-git-repository) started talking about the need to understand the differences between macOS `sed` and regular GNU `sed`.
 
