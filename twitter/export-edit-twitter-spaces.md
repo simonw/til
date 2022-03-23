@@ -10,7 +10,7 @@ I hoped I could instead hack around in my browser network panel to extract the a
 
 So I hit export, waited 24 hours and downloaded my 900MB archive zip file.
 
-Within the zip file was a `spaces_media/` folder containig a 49.8MB `space-1ypKdEXvkMLGW_0.ts` audio recording.
+Within the zip file was a `spaces_media/` folder containing a 49.8MB `space-1ypKdEXvkMLGW_0.ts` audio recording.
 
 ## Converting that to mp3
 
