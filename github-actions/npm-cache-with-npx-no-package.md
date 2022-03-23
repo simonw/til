@@ -1,6 +1,6 @@
 # Using the GitHub Actions cache with npx and no package.json
 
-Some of my repositories have GitHub Actions workflows that execute commands using `npx`, for example my [help-scraping] repo using `npx` to [install and run](https://github.com/simonw/help-scraper/blob/54ef9b1fa579dc2d3f68055ffdac9996fd6dae9c/.github/workflows/scrape.yml#L76-L80) the `get-graphql-schema` tool:
+Some of my repositories have GitHub Actions workflows that execute commands using `npx`, for example my [graphql-scraper](https://github.com/simonw/graphql-scraper) repo using `npx` to [install and run](https://github.com/simonw/help-scraper/blob/54ef9b1fa579dc2d3f68055ffdac9996fd6dae9c/.github/workflows/scrape.yml#L76-L80) the `get-graphql-schema` tool:
 
     npx get-graphql-schema https://api.fly.io/graphql > flyctl/fly.graphql
 
