@@ -6,7 +6,7 @@ I figured out how to use it with [shot-scraper](https://datasette.io/tools/shot-
 
 Here's the recipe:
 
-    shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/"
+    shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -16,7 +16,7 @@ It's using Skypack to [load the module](https://www.skypack.dev/view/@mozilla/re
 
 This outputs the JSON structure created by Readability directly to the console.
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/"
+% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -30,7 +30,7 @@ This outputs the JSON structure created by Readability directly to the console.
 ```
 Piping to `jq keys` shows the keys in the returned object:
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/"
+% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -50,7 +50,7 @@ Piping to `jq keys` shows the keys in the returned object:
 
 To get just the text content, use `jq .textContent -r` (the `-r` returns the raw string, without the surrounding double quotes):
 ```
-% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/"
+% shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
     async () => {
       const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
       return (new readability.Readability(document)).parse();
@@ -63,7 +63,7 @@ In preparation for Datasette 1.0, this release includes ...
 I can even pipe it directly into `sqlite-utils` to insert it into a SQLite database table:
 
 ```
-% shot-scraper javascript https://simonwillison.net/2021/Oct/19/datasette-059/"
+% shot-scraper javascript https://simonwillison.net/2021/Oct/19/datasette-059/ "
 async () => {    
   const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
   return (new readability.Readability(document)).parse();
