@@ -2,7 +2,9 @@
 
 [Readability.js](https://github.com/mozilla/readability) is "A standalone version of the readability library used for Firefox Reader View".
 
-I figured out how to use it with [shot-scraper](https://datasette.io/tools/shot-scraper) to extract the core content from a page using the command line.
+My [shot-scraper](https://datasette.io/tools/shot-scraper) tool has a `shot-scraper javascript` command which can load a web page in a headless browser (via [Playwright](https://playwright.dev/)), execute JavaScript against that page and return the result to the console as JSON - see [Scraping web pages from the command line with shot-scraper](https://simonwillison.net/2022/Mar/14/scraping-web-pages-shot-scraper/).
+
+I figured out how to use the two of these together to extract the core content from a web page using the command line.
 
 Here's the recipe:
 
