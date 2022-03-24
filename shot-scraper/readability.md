@@ -92,3 +92,11 @@ Or even set that up as an alias, by adding the following to `~/.zshrc`:
 Then restart a terminal window and run:
 
     readability https://til.simonwillison.net/shot-scraper/readability
+
+## A note on safety
+
+The [Readability.js README says](https://github.com/mozilla/readability/blob/0.4.1/README.md#security):
+
+> If you're going to use Readability with untrusted input (whether in HTML or DOM form), we **strongly** recommend you use a sanitizer library like [DOMPurify](https://github.com/cure53/DOMPurify) to avoid script injection when you use the output of Readability.
+
+It looks like DOMPurify could be executed against the output of Readability using the same import mechanism shown above.
