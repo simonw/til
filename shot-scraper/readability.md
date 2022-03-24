@@ -69,3 +69,26 @@ async () => {
   return (new readability.Readability(document)).parse();
 }" | sqlite-utils insert articles.db articles -
 ```
+
+## Saving the script to a file
+
+If you want to run this a lot, you can avoid copying-and-pasting it by saving it to a file called `readability.js`:
+
+```javascript
+async () => {    
+  const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
+  return (new readability.Readability(document)).parse();
+}
+```
+
+And then running:
+
+    shot-scraper javascript https://til.simonwillison.net/shot-scraper/readability -i readability.js
+
+Or even set that up as an alias, by adding the following to `~/.zshrc`:
+
+    alias readability="shot-scraper javascript -i ~/readability.js"
+
+Then restart a terminal window and run:
+
+    readability https://til.simonwillison.net/shot-scraper/readability
