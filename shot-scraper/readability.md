@@ -14,7 +14,7 @@ Here's the recipe:
       return (new readability.Readability(document)).parse();
     }"
 
-It's using Skypack to [load the module](https://www.skypack.dev/view/@mozilla/readability). Playwright (the tech that powers `shot-scarper`) knows how to execute `async ()` functions and return their results.
+It's using Skypack to [load the module](https://www.skypack.dev/view/@mozilla/readability). Playwright (the tech that powers `shot-scraper`) knows how to execute `async ()` functions and return their results.
 
 This outputs the JSON structure created by Readability directly to the console.
 ```
