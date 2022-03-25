@@ -18,7 +18,7 @@ Within the zip file was a `spaces_media/` folder containing a 49.8MB `space-1ypK
  
  > So regarding "Exporting the recording": the thing is served as a m3u playlist. If you find that URL in your browser's network tab, you can throw it against youtube-dl and it will give you the full recording as a single file (mp4 for reasons, but it's really just aac in there)
 
-This works! I ran the Firefox developer tools console against the Twitter spaces page, filtered for "m3u" and hit the play button to capture the URL to that playlist:
+This works! I ran the Firefox developer tools console against the Twitter spaces page, filtered for "m3u" and hit "Play" on the recording to kick off the audio load and capture the URL to that playlist file:
 
 <img width="602" alt="image" src="https://user-images.githubusercontent.com/9599/160168737-7f7e779b-4d8d-491b-9c86-be99d6c2f980.png">
 
