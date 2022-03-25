@@ -6,7 +6,7 @@ My [shot-scraper](https://datasette.io/tools/shot-scraper) tool has a `shot-scra
 
 I figured out how to use the two of these together to extract the core content from a web page using the command line.
 
-Here's the recipe:
+Here is the recipe:
 
     shot-scraper javascript https://simonwillison.net/2022/Mar/24/datasette-061/ "
     async () => {
