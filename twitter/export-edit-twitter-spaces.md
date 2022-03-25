@@ -12,6 +12,34 @@ So I hit export, waited 24 hours and downloaded my 900MB archive zip file.
 
 Within the zip file was a `spaces_media/` folder containing a 49.8MB `space-1ypKdEXvkMLGW_0.ts` audio recording.
 
+## Export using youtube-dl
+
+ Jan-Erik Rediger [sent me this tip](https://twitter.com/badboy_/status/1507315981970030593) on Twitter:
+ 
+ > So regarding "Exporting the recording": the thing is served as a m3u playlist. If you find that URL in your browser's network tab, you can throw it against youtube-dl and it will give you the full recording as a single file (mp4 for reasons, but it's really just aac in there)
+
+This works! I ran the Firefox developer tools console against the Twitter spaces page, filtered for "m3u" and hit the play button to capture the URL to that playlist:
+
+<img width="602" alt="image" src="https://user-images.githubusercontent.com/9599/160168737-7f7e779b-4d8d-491b-9c86-be99d6c2f980.png">
+
+Then I pasted the resulting URL to `youtube-dl`:
+
+```
+% youtube-dl "https://prod-fastly-us-west-1.video.pscp.tv/Transcoding/v1/hls/GPI6dSzgZcfqRfMLplfNp_0xu1QXQ8iDEEA0KymUd5WuqOZCZ9LGGKY6vBQdumX7YV1TT2fGtMdXdl2qqtVvPA/non_transcode/us-west-1/periscope-replay-direct-prod-us-west-1-public/audio-space/playlist_16798763063413909336.m3u8?type=replay"
+[generic] playlist_16798763063413909336: Requesting header
+[generic] playlist_16798763063413909336: Downloading m3u8 information
+[download] Destination: playlist_16798763063413909336-playlist_16798763063413909336.mp4
+ffmpeg version 4.2.1 Copyright (c) 2000-2019 the FFmpeg developers
+...
+size=   44469kB time=01:03:45.66 bitrate=  95.2kbits/s speed=65.5x    
+video:0kB audio:44982kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[ffmpeg] Downloaded 45536276 bytes
+[download] 100% of 43.43MiB in 01:00
+% ls -lh
+total 90120
+-rw-r--r--  1 simon  wheel    43M Mar 25 10:08 playlist_16798763063413909336-playlist_16798763063413909336.mp4
+```
+
 ## Converting that to mp3
 
 I used `ffmpeg` (installed via `brew install ffmpeg`) to convert that file to an MP3:
