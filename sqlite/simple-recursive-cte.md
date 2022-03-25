@@ -51,4 +51,3 @@ select * from counter limit 5;
 |   2 |   5 |
 |   3 |   7 |
 |   4 |   9 |
-```
