@@ -40,14 +40,15 @@ This query returns two columns, `x` and `y`:
 with recursive counter(x, y) as (
   select 0 as x, 1 as y
     union
-  select x + 1, x + 2 from counter
+  select x + 1, y + 2 from counter
 )
 select * from counter limit 5;
 ```
 |   x |   y |
 |-----|-----|
 |   0 |   1 |
-|   1 |   2 |
-|   2 |   3 |
-|   3 |   4 |
-|   4 |   5 |
+|   1 |   3 |
+|   2 |   5 |
+|   3 |   7 |
+|   4 |   9 |
+```
