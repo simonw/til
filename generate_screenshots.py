@@ -48,7 +48,7 @@ def generate_screenshots(root):
         html = row["html"]
         shot_hash = hashlib.md5((shot_html_hash + html).encode("utf-8")).hexdigest()
         if shot_hash != row.get("shot_hash"):
-            png = png_for_path("/tils/til/{}".format(path))
+            png = png_for_path("/{}/{}".format(row["topic"], row["slug"]))
             db["til"].update(path, {"shot": png, "shot_hash": shot_hash}, alter=True)
             print(
                 "Got {} byte PNG for {} shot hash {}".format(len(png), path, shot_hash)
