@@ -33,15 +33,15 @@ https://pillarpointstewards.us.auth0.com/authorize?
   &scope=openid+profile+email
   &state=FtYFQBczDZemVurdBan5PjRiePPGhU
 ```
-You can also hit https://pillarpointstewards.us.auth0.com/.well-known/openid-configuration to get back JSON describing all of the end points, but I prefer to hard-code them in rather than take on the performance overhead of that additional HTTP requst.
+You can also hit https://pillarpointstewards.us.auth0.com/.well-known/openid-configuration to get back JSON describing all of the end points, but I prefer to hard-code them in rather than take on the performance overhead of that additional HTTP request.
 
-The `state=` field there is a random string that you generate. You should store this in a cookie so you can compare it later on to protect against redirect attacks.
+The `state=` field there is a random string that you generate. You should store this in a cookie so you can compare it later on to [protect against CSRF attacks](https://auth0.com/docs/secure/attack-protection/state-parameters).
 
 ## User redirects back to your callback URL
 
 The user signs in on Auth0 (which they may do via Google SSO, or by creating or using an Auth0 account). Auth0 then redirects them back to your callback URL, like this:
 
-    /callback?code=CODE_HERE&state=STATE_YOU_PROVIDED
+    https://your-site/callback?code=CODE_HERE&state=STATE_YOU_PROVIDED
 
 Check that state against the cookie you set earlier (optional but a good idea).
 
