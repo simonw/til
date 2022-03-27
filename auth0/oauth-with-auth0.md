@@ -71,7 +71,7 @@ response = httpx.post(
     "https://{}/oauth/token".format(config["domain"]),
     data={
         "grant_type": "authorization_code",
-        "redirect_uri": redirect_uri,,
+        "redirect_uri": redirect_uri,
         "code": code,
     },
     auth=(config["client_id"], config["client_secret"]),
