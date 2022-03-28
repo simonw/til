@@ -1,6 +1,6 @@
 # Compiling to WASM with llvm on macOS
 
-https://github.com/ern0/howto-wasm-minimal ([my fork here](https://github.com/simonw/howto-wasm-minimal)) is a neat demo of a minimal WASM module. It uses C++ to define functions for simple image manipulation including blurring an image, compiles it to WASM using llvm/clang++, then uses JavaScript to run those functions against an image loaded into a `<canvas>` element.
+[howto-wasm-minimal](https://github.com/ern0/howto-wasm-minimal) by Zalka Ernő ([my fork here](https://github.com/simonw/howto-wasm-minimal)) is a neat demo of a minimal WASM module. It uses C++ to define functions for simple image manipulation including blurring an image, compiles it to WASM using llvm/clang++, then uses JavaScript to run those functions against an image loaded into a `<canvas>` element.
 
 I decided to try compiling it myself:
 
