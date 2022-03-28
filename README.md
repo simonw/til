@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->263<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->264<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -482,4 +482,8 @@ Search these TILs at https://til.simonwillison.net/
 ## auth0
 
 * [Simplest possible OAuth authentication with Auth0](https://github.com/simonw/til/blob/main/auth0/oauth-with-auth0.md) - 2022-03-26
+
+## webassembly
+
+* [Compiling to WASM with llvm on macOS](https://github.com/simonw/til/blob/main/webassembly/compile-to-wasm-llvm-macos.md) - 2022-03-28
 <!-- index ends -->
