@@ -157,3 +157,29 @@ Custom:
 Custom:
  - name: "producers"
 ```
+Also fun: `wasm-decompile` to "decompile a wasm binary into readable C-like syntax":
+```
+% wasm-decompile inc.wasm
+import memory env_memory;
+
+global stack_pointer:int = 66560;
+export global dso_handle:int = 1024;
+export global data_end:int = 1024;
+export global global_base:int = 1024;
+export global heap_base:int = 66560;
+...
+```
+
+And `wasm-opcodecnt` to "count opcode usage for instructions":
+```
+% wasm-opcodecnt inc.wasm 
+Total opcodes: 1188
+
+Opcode counts:
+local.get: 263
+i32.const: 240
+i32.add: 172
+local.set: 88
+...
+```
+More in the README: https://github.com/WebAssembly/wabt/blob/main/README.md
