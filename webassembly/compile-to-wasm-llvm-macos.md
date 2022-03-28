@@ -77,4 +77,83 @@ clang++ \
 	inc.cpp
 
 hexdump inc.wasm | head -n 1
+#wasm-objdump -x inc.wasm
+```
+
+## Bonus: Web Assembly Binary Toolkit
+
+The last commented-out line of that script caught my attention:
+
+    wasm-objdump -x inc.wasm
+
+I searched, and `wasm-objdump` is part of the tools provided by the [WebAssembly Binary Toolkit ](https://github.com/WebAssembly/wabt).
+
+You can install that with Homebrew by running `brew install wabt`.
+
+Then this worked:
+
+```
+% wasm-objdump -x inc.wasm
+
+inc.wasm:	file format wasm 0x1
+
+Section Details:
+
+Type[4]:
+ - type[0] () -> nil
+ - type[1] (i32) -> i32
+ - type[2] (i32, i32) -> nil
+ - type[3] (i32, i32, i32) -> nil
+Import[1]:
+ - memory[0] pages: initial=2 <- env.memory
+Function[7]:
+ - func[0] sig=0 <__wasm_call_ctors>
+ - func[1] sig=1 <inc>
+ - func[2] sig=0 <incmem>
+ - func[3] sig=2 <gray>
+ - func[4] sig=2 <swaprg>
+ - func[5] sig=3 <swap_red>
+ - func[6] sig=2 <blur>
+Global[7]:
+ - global[0] i32 mutable=1 <__stack_pointer> - init i32=66560
+ - global[1] i32 mutable=0 <__dso_handle> - init i32=1024
+ - global[2] i32 mutable=0 <__data_end> - init i32=1024
+ - global[3] i32 mutable=0 <__global_base> - init i32=1024
+ - global[4] i32 mutable=0 <__heap_base> - init i32=66560
+ - global[5] i32 mutable=0 <__memory_base> - init i32=0
+ - global[6] i32 mutable=0 <__table_base> - init i32=1
+Export[13]:
+ - func[0] <__wasm_call_ctors> -> "__wasm_call_ctors"
+ - func[1] <inc> -> "inc"
+ - func[2] <incmem> -> "incmem"
+ - func[3] <gray> -> "gray"
+ - func[4] <swaprg> -> "swaprg"
+ - func[5] <swap_red> -> "swap_red"
+ - func[6] <blur> -> "blur"
+ - global[1] -> "__dso_handle"
+ - global[2] -> "__data_end"
+ - global[3] -> "__global_base"
+ - global[4] -> "__heap_base"
+ - global[5] -> "__memory_base"
+ - global[6] -> "__table_base"
+Code[7]:
+ - func[0] size=2 <__wasm_call_ctors>
+ - func[1] size=7 <inc>
+ - func[2] size=69 <incmem>
+ - func[3] size=101 <gray>
+ - func[4] size=215 <swaprg>
+ - func[5] size=1332 <swap_red>
+ - func[6] size=615 <blur>
+Custom:
+ - name: "name"
+ - func[0] <__wasm_call_ctors>
+ - func[1] <inc>
+ - func[2] <incmem>
+ - func[3] <gray>
+ - func[4] <swaprg>
+ - func[5] <swap_red>
+ - func[6] <blur>
+ - global[0] <__stack_pointer>
+Custom:
+ - name: "producers"
 ```
