@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->266<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->267<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -143,6 +143,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Opt-in integration tests with pytest --integration](https://github.com/simonw/til/blob/main/pytest/only-run-integration.md) - 2022-01-26
 * [pytest coverage with context](https://github.com/simonw/til/blob/main/pytest/coverage-with-context.md) - 2022-03-04
 * [Async fixtures with pytest-asyncio](https://github.com/simonw/til/blob/main/pytest/async-fixtures.md) - 2022-03-19
+* [Treating warnings as errors in pytest](https://github.com/simonw/til/blob/main/pytest/treat-warnings-as-errors.md) - 2022-04-01
 
 ## github
 
