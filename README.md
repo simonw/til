@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->267<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->268<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -485,6 +485,7 @@ Search these TILs at https://til.simonwillison.net/
 ## auth0
 
 * [Simplest possible OAuth authentication with Auth0](https://github.com/simonw/til/blob/main/auth0/oauth-with-auth0.md) - 2022-03-26
+* [Logging users out of Auth0](https://github.com/simonw/til/blob/main/auth0/auth0-logout.md) - 2022-04-03
 
 ## webassembly
 
