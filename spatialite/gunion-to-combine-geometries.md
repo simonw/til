@@ -79,3 +79,20 @@ group by
 ```
 
 <img width="1197" alt="Each region now shows as a different coloured line" src="https://user-images.githubusercontent.com/9599/163035751-f0d465df-bc44-4822-82c6-24715680663f.png">
+
+## Using sqlite-colorbrewer
+
+`datasette-geojson-map` creator Chris Amico [suggested](https://twitter.com/eyeseast/status/1513961522392883205) using his [sqlite-colorbrewer](https://datasette.io/plugins/sqlite-colorbrewer) plugin to generate the colours. Here's the query using that instead:
+
+```sql
+select
+  'FRA Region ' || FRAREGIONS as title,
+  colorbrewer('Paired', 9, FRAREGIONS) as stroke,
+  GUnion(geometry) as geometry
+from
+  track
+group by
+  FRAREGIONS
+```
+
+<img width="1200" alt="The same map again but with a more pleasant colour scheme" src="https://user-images.githubusercontent.com/9599/163041882-e9a1500b-ca11-4059-a779-b1f3e1f51035.png">
