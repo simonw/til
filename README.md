@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->269<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->270<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -364,6 +364,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [KNN queries with SpatiaLite](https://github.com/simonw/til/blob/main/spatialite/knn.md) - 2021-05-16
 * [Creating a minimal SpatiaLite database with Python](https://github.com/simonw/til/blob/main/spatialite/minimal-spatialite-database-in-python.md) - 2021-12-17
+* [GUnion to combine geometries in SpatiaLite](https://github.com/simonw/til/blob/main/spatialite/gunion-to-combine-geometries.md) - 2022-04-12
 
 ## sql
 
