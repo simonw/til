@@ -25,7 +25,7 @@ A few days later my application was approved.
 
 Since the goal here is to get credentials that can be used to write to the account (in order to Tweet), the application needs to be configured to support that.
 
-It turns out you need to turn on "OAuth 1.0a" in order to generate a read-write token for the account.
+It turns out you need to turn on "OAuth 1.0a" in order to generate a read-write token for the account (thanks Igor Brigadir for [the tip](https://twitter.com/IgorBrigadir/status/1515766922742272004)).
 
 The following settings worked for me:
 
