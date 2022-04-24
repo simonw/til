@@ -17,6 +17,23 @@ I read most documentation on my phone, so when I'm writing code examples I tend 
 
     blacken-docs -l 60 docs/*.rst
 
+## Missing function bodies with ...
+
+I was getting errors with some of my code examples that looked like this:
+
+```python
+@pytest.fixture
+def datasette(tmp_path_factory):
+    # This fixture will be executed repeatedly for every test
+```
+This is because of the missing function body. It turns out adding `...` (which looks prettier than `pass`) fixes this issue:
+```python
+@pytest.fixture
+def datasette(tmp_path_factory):
+    # This fixture will be executed repeatedly for every test
+    ...
+```
+
 ## Running this in CI
 
 The `blacken-docs` command outputs errors if it finds any Python examples it cannot parse. I actually found a couple of bugs in my examples using this, so it's a handy feature.
