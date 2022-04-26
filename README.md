@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->274<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->275<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -114,6 +114,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Installing Python on macOS with the official Python installer](https://github.com/simonw/til/blob/main/macos/python-installer-macos.md) - 2022-02-28
 * [Trick Apple Photos into letting you access your video files](https://github.com/simonw/til/blob/main/macos/apple-photos-large-files.md) - 2022-04-12
 * [Seeing files opened by a process using opensnoop](https://github.com/simonw/til/blob/main/macos/open-files-with-opensnoop.md) - 2022-04-26
+* [Atuin for zsh shell history in SQLite](https://github.com/simonw/til/blob/main/macos/atuin.md) - 2022-04-26
 
 ## cloudrun
 
