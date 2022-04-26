@@ -24,10 +24,14 @@ Atuin hijacks the `Ctrl+R` shortcut to provide an interactive search window, whi
 
 But it also hijacks the Up arrow key, which I didn't like - it interfered with how I usually use that (quickly getting back my previous command and editing it).
 
-[This thread](https://github.com/ellie/atuin/issues/51) in the Atuin issues lead me to a solution. I edited my `~/.zshrc` file and replaced the `atuin` bit at the bottom with this:
+[This thread](https://github.com/ellie/atuin/issues/51) in the Atuin issues lead me to a solution - though the fix there put my cursor at the start of the line when I wanted it at the end of the line instead. [This StackExchange](https://unix.stackexchange.com/a/97844) showed me the fix for that.
+
+I edited my `~/.zshrc` file and replaced the `atuin` bit at the bottom with this:
 
 ```zsh
 eval "$(atuin init zsh)"
-# Disable up binding: https://github.com/ellie/atuin/issues/51#issuecomment-834833821
-bindkey "^[[A" history-beginning-search-backward # after the atuin init
+# Restore original up binding: https://til.simonwillison.net/macos/atuin
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
 ```
