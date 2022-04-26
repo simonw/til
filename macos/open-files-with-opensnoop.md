@@ -34,3 +34,14 @@ Then I ran `open /Users/simon/.local/share/atuin/history.db` (because I have [Da
 ![Screenshot of Datasette showing the history table from the atuin database](https://user-images.githubusercontent.com/9599/165356208-4546e23a-47e6-47f1-a759-f1d849131aa0.png)
 
 The `2>/dev/null` bit redirects standard error for `opensnoop` to `/dev/null` - without this it spews out a noisy volume of `dtrace: error ...` warnings.
+
+## Alternative solutions
+
+My [Twitter thread](https://twitter.com/simonw/status/1518999393415811073) asking about this resulted in a bunch of leads that I've not fully investigated yet, including:
+
+- [FileMonitor](https://objective-see.com/products/utilities.html#FileMonitor)
+- [FSMonitor](https://fsmonitor.com/)
+- `iosnoop`
+- `fs_usage`
+- `sudo dtrace -n 'syscall::open*:entry { printf("%s %s",execname,copyinstr(arg0)); }'`
+- `strace` (Linux, not macOS)
