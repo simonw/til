@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->275<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->276<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -497,4 +497,8 @@ Search these TILs at https://til.simonwillison.net/
 ## webassembly
 
 * [Compiling to WASM with llvm on macOS](https://github.com/simonw/til/blob/main/webassembly/compile-to-wasm-llvm-macos.md) - 2022-03-28
+
+## service-workers
+
+* [Intercepting fetch in a service worker](https://github.com/simonw/til/blob/main/service-workers/intercept-fetch.md) - 2022-04-30
 <!-- index ends -->
