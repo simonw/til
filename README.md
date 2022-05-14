@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->277<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->278<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -64,6 +64,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Annotated explanation of David Beazley's dataklasses](https://github.com/simonw/til/blob/main/python/annotated-dataklasses.md) - 2021-12-19
 * [Streaming indented output of a JSON array](https://github.com/simonw/til/blob/main/python/output-json-array-streaming.md) - 2022-01-17
 * [Generating a calendar week grid with the Python Calendar module](https://github.com/simonw/til/blob/main/python/calendar-weeks.md) - 2022-03-31
+* [Efficiently copying a file](https://github.com/simonw/til/blob/main/python/copy-file.md) - 2022-05-13
 
 ## zeit-now
 
