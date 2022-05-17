@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->278<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->279<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -27,6 +27,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Testing against Python 3.11 preview using GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/python-3-11.md) - 2022-02-02
 * [Using the GitHub Actions cache with npx and no package.json](https://github.com/simonw/til/blob/main/github-actions/npm-cache-with-npx-no-package.md) - 2022-03-22
 * [Deploying a live Datasette demo when the tests pass](https://github.com/simonw/til/blob/main/github-actions/deploy-live-demo-when-tests-pass.md) - 2022-03-27
+* [GitHub Actions job summaries](https://github.com/simonw/til/blob/main/github-actions/job-summaries.md) - 2022-05-17
 
 ## python
 
