@@ -9,7 +9,7 @@ echo "{markdown content}" >> $GITHUB_STEP_SUMMARY
 ```
 I decided to try this out in my [simonw/pypi-datasette-packages](https://github.com/simonw/pypi-datasette-packages/) repo, which runs a daily Git scraper that records a copy of the PyPI JSON for packages within the Datasette ecosystem.
 
-I ended up missing it with the Git commit code, so the step [now looks like this](https://github.com/simonw/pypi-datasette-packages/blob/54d43180a97d30011149d1e7ae3aaafed2ad7818/.github/workflows/fetch.yml#L20-L32):
+I ended up mixing it with the Git commit code, so the step [now looks like this](https://github.com/simonw/pypi-datasette-packages/blob/54d43180a97d30011149d1e7ae3aaafed2ad7818/.github/workflows/fetch.yml#L20-L32):
 
 ```yaml
     - name: Commit and push
