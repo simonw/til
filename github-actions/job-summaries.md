@@ -26,7 +26,7 @@ I ended up missing it with the Git commit code, so the step [now looks like this
         git pull --rebase
         git push
 ```
-This produces a summary that looks like this:
+This produces [a summary](https://github.com/simonw/pypi-datasette-packages/actions/runs/2336190331) that looks like this:
 
 <img width="657" alt="Screenshot of the summary" src="https://user-images.githubusercontent.com/9599/168874059-b08afb20-c9f3-4c6d-9224-311f21696bfd.png">
 
