@@ -28,7 +28,7 @@ Created access key for user: s3.read-write.my-project-fly-logs
 
 The full set of configuration needed by `fly-log-shipper` for S3 is:
 
-- `ORG - Fly organisation slug
+- `ORG` - Fly organisation slug
 - `ACCESS_TOKEN` - Fly personal access token
 - `AWS_ACCESS_KEY_ID`	- AWS Access key with access to the log bucket
 - `AWS_SECRET_ACCESS_KEY` - AWS secret access key
@@ -93,4 +93,16 @@ image found: img_19gm46rqwn14x0jk
  1 desired, 1 placed, 1 healthy, 0 unhealthy
 --> v1 deployed successfully
 ```
-I used [Transmit](https://panic.com/transmit/) to inspect the bucket and my logs are showing up there as intended!
+I used [Transmit](https://panic.com/transmit/) to inspect the bucket and my logs are showing up there as intended.
+
+I can also now list my log files using `s3-credentials list-bucket` and the credentials I saved earlier:
+
+```
+% s3-credentials list-bucket -a logging-credentials.txt my-project-fly-logs --csv 
+Key,LastModified,ETag,Size,StorageClass,Owner
+my-project-admin/2022-05-25//1653507279-b9534d49-546a-47cb-bd93-36e08b8457ee.log.gz,2022-05-25 19:34:40+00:00,"""8b499f523bd2f5e9438cf2c0d42eab8c""",335,STANDARD,
+my-project-admin/2022-05-25//1653507625-fc3c0f32-b3e8-4681-98ce-a4fe2960d1b2.log.gz,2022-05-25 19:40:26+00:00,"""5fe1f6fbf747706930edcfd00e3dd4fe""",444,STANDARD,
+my-project-admin/2022-05-25//1653508693-7f4da568-e462-46a2-9904-e3ac801c7fee.log.gz,2022-05-25 19:58:14+00:00,"""794c57787a692a17d1fbfb78df442d58""",353,STANDARD,
+my-project-postgresql/2022-05-25//1653507222-60e072e2-fd78-437f-a097-c063df424224.log.gz,2022-05-25 19:33:43+00:00,"""5d9965b79260e6a0f27cff5f02eee71d""",3376,STANDARD,
+my-project-postgresql/2022-05-25//1653507525-b3a04523-8732-4072-92c0-57dd06a680b1.log.gz,2022-05-25 
+```
