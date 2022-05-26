@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->282<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->283<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -451,6 +451,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using the undocumented Fly GraphQL API](https://github.com/simonw/til/blob/main/fly/undocumented-graphql-api.md) - 2022-01-21
 * [Using the Fly Docker registry](https://github.com/simonw/til/blob/main/fly/fly-docker-registry.md) - 2022-05-21
 * [Writing Fly logs to S3](https://github.com/simonw/til/blob/main/fly/fly-logs-to-s3.md) - 2022-05-25
+* [Wildcard DNS and SSL on Fly](https://github.com/simonw/til/blob/main/fly/wildcard-dns-ssl.md) - 2022-05-25
 
 ## caddy
 
