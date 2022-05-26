@@ -66,3 +66,63 @@ Add that DNS record, then click the "Check again" button on the certificate scre
 ## Deploy an app
 
 With the certificate in place, you can deploy a Fly app (using regular Fly or the new [Fly Machines](https://fly.io/blog/fly-machines/)). Traffic to any subdomain of your domain, with or without `https://`, will be served by your new application.
+
+## Configuring ports for your app
+
+One last detail which caught me out: you need to configure your Fly app to accept traffic on both port 80 AND port 443 for this to work.
+
+This is needed even if your app itself only serves on port 80 (or 8000 or whatever). The configuration here tells Fly's routing proxy what to do.
+
+Using `fly.toml` this means there should be two `services.ports` sections - here's an example that includes those:
+
+```
+app = "your-wildcard-dns-app"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[[services]]
+  internal_port = 8000
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = "80"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000
+    grace_period = "10s"
+```
+If you are using Fly Machines you'll need to include the following in the JSON that is used to launch the machine:
+
+```json
+    "services": [
+      {
+        "ports": [
+          {
+            "port": 80,
+            "handlers": [
+              "http"
+            ]
+          },
+          {
+            "port": 443,
+            "handlers": [
+              "tls",
+              "http"
+            ]
+          }
+        ],
+        "protocol": "tcp",
+        "internal_port": 8001
+      }
+```
