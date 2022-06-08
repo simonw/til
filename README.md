@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->285<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->286<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -299,6 +299,7 @@ Search these TILs at https://til.simonwillison.net/
 ## jinja
 
 * [Turning on Jinja autoescaping when using Template() directly](https://github.com/simonw/til/blob/main/jinja/autoescape-template.md) - 2020-09-18
+* [Formatting thousands in Jinja](https://github.com/simonw/til/blob/main/jinja/format-thousands.md) - 2022-06-08
 
 ## selenium
 
