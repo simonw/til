@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->284<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->285<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -509,4 +509,8 @@ Search these TILs at https://til.simonwillison.net/
 ## service-workers
 
 * [Intercepting fetch in a service worker](https://github.com/simonw/til/blob/main/service-workers/intercept-fetch.md) - 2022-04-30
+
+## networking
+
+* [Making HTTP calls using IPv6](https://github.com/simonw/til/blob/main/networking/http-ipv6.md) - 2022-06-08
 <!-- index ends -->
