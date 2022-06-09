@@ -44,4 +44,4 @@ Python  17990 simon   12r     REG                1,5 747413504           1875507
 ```
 The column with `FD=cwd`, `TYPE=DIR` shows the working directory for the process.
 
-The `TYPE=IPv4` one is interesting, it shows that we are lestining on `localhost:8422`.
+The `TYPE=IPv4` one is interesting, it shows that we are listening on `localhost:8422`.
