@@ -81,10 +81,6 @@ jobs:
         git add tils.db
         git commit --amend --no-edit
         git push --force
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
     - name: Deploy Datasette using Vercel
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
