@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->286<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->287<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -265,6 +265,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Piping echo to a file owned by root using sudo and tee](https://github.com/simonw/til/blob/main/linux/echo-pipe-to-file-su.md) - 2020-08-24
 * [Basic strace to see what a process is doing](https://github.com/simonw/til/blob/main/linux/basic-strace.md) - 2020-09-07
 * [Enabling a user to execute a specific command as root without a password](https://github.com/simonw/til/blob/main/linux/allow-sudo-without-password-specific-command.md) - 2022-02-13
+* [Using iconv to convert the text encoding of a file](https://github.com/simonw/til/blob/main/linux/iconv.md) - 2022-06-14
 
 ## jq
 
