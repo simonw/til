@@ -1,6 +1,6 @@
 # Ordered group_concat() in SQLite
 
-I was trying to use `group_concat()` to glue together some column values into a stiched together Markdown document. My first attempt lookd like this:
+I was trying to use `group_concat()` to glue together some column values into a stiched together Markdown document. My first attempt looked like this:
 
 ```sql
 select group_concat('## ' || chapter || '
