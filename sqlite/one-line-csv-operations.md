@@ -62,3 +62,25 @@ Or use `-cmd '.mode markdown'` to get a Markdown table:
 | 7               | 2        | 87.17             |
 | 8               | 2        | 95.705            |
 | 9               | 1        | 113.6             |
+
+A full list of output modes can be seen like this:
+
+```
+% sqlite3 -cmd '.help mode'
+.mode MODE ?TABLE?       Set output mode
+   MODE is one of:
+     ascii     Columns/rows delimited by 0x1F and 0x1E
+     box       Tables using unicode box-drawing characters
+     csv       Comma-separated values
+     column    Output in columns.  (See .width)
+     html      HTML <table> code
+     insert    SQL insert statements for TABLE
+     json      Results in a JSON array
+     line      One value per line
+     list      Values delimited by "|"
+     markdown  Markdown table format
+     quote     Escape answers as for SQL
+     table     ASCII-art table
+     tabs      Tab-separated values
+     tcl       TCL list elements
+```
