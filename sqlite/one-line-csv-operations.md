@@ -84,3 +84,10 @@ A full list of output modes can be seen like this:
      tabs      Tab-separated values
      tcl       TCL list elements
 ```
+## Other options
+
+There are a whole bunch of other tools that can be used for this kind of thing!
+
+My own [sqlite-utils memory](https://simonwillison.net/2021/Jun/19/sqlite-utils-memory/) command can load data from JSON, CSV or TSV into an in-memory database and run a query against it. It's a LOT slower than using `sqlite3` directly though.
+
+[dsq](https://github.com/multiprocessio/dsq) is a tool that does this kind of thing (and a lot more). Author Phil Eaton compiled [a collection of benchmarks](https://github.com/multiprocessio/dsq#benchmark) of other similar tools, and his [benchmarking script](https://github.com/multiprocessio/dsq/blob/43e72ff1d2c871082fed0ae401dd59e2ff9f6cfe/scripts/benchmark.sh) demonstrates how to use each one of them.
