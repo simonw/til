@@ -7,6 +7,11 @@ I figured out how to run a SQL query directly against a CSV file using the `sqli
 
 This uses the special `:memory:` filename to open an in-memory database. Then it uses two `-cmd` options to turn on CSV mode and import the `taxi.csv` file into a table called `taxi`. Then it runs the SQL query.
 
+Instead of setting the mode with `.mode` you can use `.import -csv` like this (thanks, [Mark Lawrence](https://sqlite.org/forum/forumpost/ad9d1a8f3e9feb8b)):
+
+    sqlite3 :memory: -cmd '.import -csv taxi.csv taxi' \
+      'SELECT passenger_count, COUNT(*), AVG(total_amount) FROM taxi GROUP BY passenger_count'
+
 You can get `taxi.csv` by downloading the compressed file from [here](https://github.com/multiprocessio/dsq/blob/43e72ff1d2c871082fed0ae401dd59e2ff9f6cfe/testdata/taxi.csv.7z) and running:
 
     7z e -aos taxi.csv.7z
