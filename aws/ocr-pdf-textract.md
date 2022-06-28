@@ -4,6 +4,14 @@
 
 It can be run directly against JPEG or PNG images up to 5MB, but if you want to run OCR against a PDF file you have to first upload it to an S3 bucket. 
 
+## Try it out first
+
+You don't need to use the API at all to try Textract out against a document: they offer a demo tool in the AWS console:
+
+https://us-west-1.console.aws.amazon.com/textract/home?region=us-west-1#/demo
+
+<img alt="Screenshot of the demo interface showing uploaded image and resulting text" src="https://user-images.githubusercontent.com/9599/176274424-441aee18-8e8c-44bf-9748-f53e33e3fa76.png" width="600">
+
 ## Limits
 
 Relevant [limits](https://docs.aws.amazon.com/textract/latest/dg/limits.html) for PDF files:
