@@ -14,7 +14,7 @@ Relevant [limits](https://docs.aws.amazon.com/textract/latest/dg/limits.html) fo
 
 ## Uploading to S3
 
-I used my [s3-credentials]([https://s3-credentials.datasette.io/](https://github.com/simonw/s3-credentials/) tool to create an S3 bucket with credentials for uploading files to it:
+I used my [s3-credentials](https://github.com/simonw/s3-credentials/) tool to create an S3 bucket with credentials for uploading files to it:
 
 ```
 ~ % s3-credentials create sfms-history -c
