@@ -62,6 +62,9 @@ response = textract.start_document_text_detection(
 )
 job_id = response["JobId"]
 ```
+
+## Polling for completion
+
 You can then use that `job_id` to poll for completion. The `textract.get_document_text_detection` call returns a `JobStatus` key of `IN_PROGRESS` if it is still processing.
 
 Here's a function I wrote to poll for completion:
@@ -86,6 +89,8 @@ I was wondering how long you have to retrieve the results of a job. The [get_doc
 
 > A `JobId` value is only valid for 7 days.
 
+## Fetching the results
+
 The response that you get back at the end is paginated. Here's a function to gather all of the "blocks" of text that it detected across multiple pages:
 
 ```python
@@ -103,6 +108,8 @@ def get_all_blocks(job_id):
         next_token = response.get("NextToken")
     return blocks
 ```
+(I could have used [this boto3 pagination trick](https://til.simonwillison.net/aws/helper-for-boto-aws-pagination) instead.)
+
 Blocks come in three types: `LINE`, `WORD`, and `PAGE`. The `PAGE` blocks do not contain any text, just indications of which lines and words were on the page. The `LINE` and `WORD` blocks duplicate each other - you probably just want the `LINE` blocks.
 
 Here's an example of a `LINE` block:
