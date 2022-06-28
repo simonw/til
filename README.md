@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->289<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->290<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -286,6 +286,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Finding CSV files that start with a BOM using ripgrep](https://github.com/simonw/til/blob/main/bash/finding-bom-csv-files-with-ripgrep.md) - 2021-05-28
 * [nullglob in bash](https://github.com/simonw/til/blob/main/bash/nullglob-in-bash.md) - 2022-02-14
 * [Using awk to add a prefix](https://github.com/simonw/til/blob/main/bash/use-awk-to-add-a-prefix.md) - 2022-04-08
+* [Ignoring errors in a section of a Bash script](https://github.com/simonw/til/blob/main/bash/ignore-errors.md) - 2022-06-27
 
 ## typescript
 
