@@ -2,7 +2,7 @@
 
 I needed to write a test that checked for a really complex sequence of mock calls for [s3-credentials#3](https://github.com/simonw/s3-credentials/issues/3).
 
-I ended up using the following trick:
+I ended up using the following trick, using [pytest-mock](https://pypi.org/project/pytest-mock/):
 
 ```python
 def test_create(mocker):
