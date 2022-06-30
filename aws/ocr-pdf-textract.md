@@ -2,7 +2,9 @@
 
 [Textract](https://aws.amazon.com/textract/) is the AWS OCR API. It's very good - I've fed it hand-written notes from the 1890s and it read them better than I could.
 
-It can be run directly against JPEG or PNG images up to 5MB, but if you want to run OCR against a PDF file you have to first upload it to an S3 bucket. 
+It can be run directly against JPEG or PNG images up to 5MB, but if you want to run OCR against a PDF file you have to first upload it to an S3 bucket.
+
+**Update 30th June 2022**: I used what I learned in this TIL [to build s3-ocr](https://simonwillison.net/2022/Jun/30/s3-ocr/), a command line utility for running OCR against PDFs in an S3 bucket.
 
 ## Try it out first
 
