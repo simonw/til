@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->291<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->292<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -244,6 +244,7 @@ Search these TILs at https://til.simonwillison.net/
 ## zsh
 
 * [Customizing my zsh prompt](https://github.com/simonw/til/blob/main/zsh/custom-zsh-prompt.md) - 2020-08-12
+* [Passing command arguments using heredoc syntax](https://github.com/simonw/til/blob/main/zsh/argument-heredoc.md) - 2022-07-07
 
 ## readthedocs
 
