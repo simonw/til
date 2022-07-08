@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->292<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->293<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -162,6 +162,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Transferring a GitHub issue from a private to a public repository](https://github.com/simonw/til/blob/main/github/transfer-issue-private-to-public.md) - 2021-12-22
 * [Configuring Dependabot for a Python project with dependencies in setup.py](https://github.com/simonw/til/blob/main/github/dependabot-python-setup.md) - 2022-01-14
 * [Setting up a custom subdomain for a GitHub Pages site](https://github.com/simonw/til/blob/main/github/custom-subdomain-github-pages.md) - 2022-05-04
+* [Reporting bugs in GitHub to GitHub](https://github.com/simonw/til/blob/main/github/reporting-bugs.md) - 2022-07-07
 
 ## node
 
