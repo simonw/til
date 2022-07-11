@@ -16,28 +16,41 @@ My [simonwillisonblog-backup workflow](https://github.com/simonw/simonwillisonbl
 
 I decided to upgrade it to also build and deploy a SQLite database of the content to [datasette.simonwillison.net](https://datasette.simonwillison.net/) - but only if a change had been detected.
 
-I figured out the following pattern for doing that:
+I figured out the following pattern for doing that.
+
+First, I added a line to the above block that set a `change_detected` [output variable](https://docs.github.com/en/actions/using-jobs/defining-outputs-for-jobs) for that step if it made it past the `|| exit 0`. I also added an `id` to the step so I could reference it later on:
 
 ```yaml
+    - name: Commit any changes
+      id: commit_and_push
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add simonwillisonblog
+        timestamp=$(date -u)
         git commit -m "Latest data: ${timestamp}" || exit 0
         git push
         echo "::set-output name=change_detected::1"
+```
+This next piece took me a while to figure out: I also had to declare that output variable at the top of the initial job, copying the result of the named step:
+```yaml
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    outputs:
+      change_detected: ${{ steps.commit_and_push.outputs.change_detected }}
+```
+Without this, the output is not visible to the second job.
 
+My second job started like this:
+```yaml
   build_and_deploy:
     runs-on: ubuntu-latest
     needs: backup
     if: ${{ inputs.force_deploy || needs.backup.outputs.change_detected }}
     steps:
 ```
-I'm taking advantage of the `|| exit 0` I already had, which ends that step early.
-
-Then I added this line to run after that point:
-
-    echo "::set-output name=change_detected::1"
-
-This defines a [job output](https://docs.github.com/en/actions/using-jobs/defining-outputs-for-jobs) for that job - a job with the name of `backup`.
-
-I define a second job called `build_and_deploy` and specify that it `needs: backup` - so it should run directly after that backup job completes.
+This second job is called `build_and_deploy` and specify that it `needs: backup` - so it should run directly after that backup job completes.
 
 That new job has an `if:` expression which looks at `needs.backup.outputs.change_detected` to read the variable that was set by my `echo "::set-output` line.
 
