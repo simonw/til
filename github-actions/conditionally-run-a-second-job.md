@@ -9,8 +9,7 @@ My [simonwillisonblog-backup workflow](https://github.com/simonw/simonwillisonbl
         git config user.email "actions@users.noreply.github.com"
         git add simonwillisonblog
         timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" |
-| exit 0
+        git commit -m "Latest data: ${timestamp}" || exit 0
         git push
 ```
 
