@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->294<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->295<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -471,6 +471,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Publishing a Web Component to npm](https://github.com/simonw/til/blob/main/npm/publish-web-component.md) - 2021-11-28
 * [Annotated package.json for idb-keyval](https://github.com/simonw/til/blob/main/npm/annotated-package-json.md) - 2022-02-10
+* [Upgrading packages with npm](https://github.com/simonw/til/blob/main/npm/upgrading-packages.md) - 2022-07-13
 
 ## pluggy
 
