@@ -1,0 +1,17 @@
+{% extends "til_base.html" %}
+
+{% block title %}Simon Willison: all TILs{% endblock %}
+
+{% block body %}
+<h1>Simon Willison: all TILs</h1>
+
+{% for row in sql("select topic from til group by topic order by max(created_utc) desc", database="tils") %}
+    <h2>{{ row.topic }}</h2>
+    <ul>
+        {% for til in sql("select * from til where topic = :topic order by created_utc desc", {"topic": row.topic}, database="tils") %}
+            <li><a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}

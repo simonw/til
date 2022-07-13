@@ -31,10 +31,23 @@ input[type=submit] {
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.topic {
+    background-color: #ccc;
+    padding: 3px;
+    border: 1px solid #777;
+    font-size: 0.65em;
+    position: relative;
+    top: -1px;
+}
+.topic a {
+    text-decoration: none;
+    color: black;
+}
 </style>
 {% endblock %}
 
 {% block body %}
+{% set til_count = sql("select count(*) from TIL", database="tils")[0][0] %}
 <h1>Simon Willison: TIL</h1>
 <p>Things I've learned, collected in <a href="https://github.com/simonw/til">simonw/til</a>. You may also enjoy <a href="https://simonwillison.net/">my blog</a>.</p>
 
@@ -58,22 +71,26 @@ h1 {
 <path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" />
     </svg> Atom feed</a></p>
 
-<p><strong>Recently added:</strong> {% for row in sql("select * from til order by created_utc desc limit 5", database="tils") %}<a href="/{{ row.topic }}/{{ row.slug }}">{{ row.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
-
 <form action="/tils/search">
     <p>
-        <input type="search" name="q" placeholder="Search {{ sql("select count(*) from TIL", database="tils")[0][0] }} TILs">
+        <input type="search" name="q" placeholder="Search {{ til_count }} TILs">
         <input type="submit" value="Search">
     </p>
 </form>
 
-{% for row in sql("select topic from til group by topic order by max(created_utc) desc", database="tils") %}
-    <h2>{{ row.topic }}</h2>
-    <ul>
-        {% for til in sql("select * from til where topic = :topic order by created_utc desc", {"topic": row.topic}, database="tils") %}
-            <li><a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
-        {% endfor %}
-    </ul>
+<p><strong>Browse by topic:</strong>
+{% for row in sql("select topic, count(*) as num_tils from til group by topic order by max(created_utc) desc", database="tils") %}
+  <a title="{{ row.num_tils }} TIL{{ "s" if row.num_tils > 1 else "" }}" href="/{{ row.topic }}">{{ row.topic }}</a> {{ row.num_tils }}{% if not loop.last %} &middot;{% endif %}
+{% endfor %}
+</p>
+
+<h2>Recent TILs</h2>
+
+<p><a href="/all">Browse all {{ til_count }} TILs</a></p>
+
+{% for til in sql("select * from til order by created_utc desc limit 30", database="tils") %}
+    <h3><span class="topic"><a href="/{{ til.topic }}">{{ til.topic }}</a></span> <a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</h3>
+    {{ first_paragraph(til["html"]).replace("</p>", " &#8230; </p>")|safe }}
 {% endfor %}
 
 {% endblock %}

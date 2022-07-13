@@ -15,10 +15,9 @@
 
 <h1>Simon Willison: TILs on {{ topic }}</h1>
 
-<ul>
 {% for til in tils %}
-    <li><a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
+    <h3><span class="topic">{{ til.topic }}</span> <a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</h3>
+    {{ first_paragraph(til["html"]).replace("</p>", " &#8230; </p>")|safe }}
 {% endfor %}
-</ul>
 
 {% endblock %}

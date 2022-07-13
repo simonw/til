@@ -1,5 +1,11 @@
 from datasette import hookimpl
+from bs4 import BeautifulSoup as Soup
 import html
+
+
+def first_paragraph(html):
+    soup = Soup(html, "html.parser")
+    return str(soup.find("p"))
 
 
 def highlight(s):
@@ -13,4 +19,5 @@ def extra_template_vars(request):
     return {
         "q": request.args.get("q", ""),
         "highlight": highlight,
+        "first_paragraph": first_paragraph,
     }
