@@ -1,7 +1,7 @@
 {% extends "til_base.html" %}
 
 {% set tils = sql("""
-    select * from til where topic = :topic order by created_utc
+    select * from til where topic = :topic order by created_utc desc
 """, {"topic": topic}, database="tils")
 %}
 
