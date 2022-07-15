@@ -2,7 +2,7 @@
 
 Here's how to format a number in Jinja with commas for thousands, without needing any custom filters or template functions:
 
-    {{ "{:,}".format(row_count) }} row{{ "" if row_count == 1 else "s" }}
+    {{ "{:,}".format(row_count) }}
 
 Output looks like this:
 
