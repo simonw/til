@@ -3,7 +3,7 @@ sqlite-utils>=3.2
 beautifulsoup4
 datasette>=0.57
 datasette-atom>=0.7
-datasette-publish-vercel>=0.14
+datasette-publish-vercel>=0.14.1
 datasette-template-sql>=1.0.2
 datasette-graphql
 datasette-media
