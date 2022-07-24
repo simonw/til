@@ -14,7 +14,7 @@ Then a second step to install the browsers using by Playwright itself:
 
     playwright install
 
-I had those browsers installed already, but I still needed to run that command since the updated version of `playwright-pytest` needed more recent versions of those libraries.
+I had those browsers installed already, but I still needed to run that command since the updated version of `playwright-pytest` needed more recent versions.
 
 (I had limited internet while doing this, and discovered that you can trick Playwright into using an older browser version by renaming a folder in `~/Library/Caches/ms-playwright` to the one that shows up in the error message that says that the browsers cannot be found.)
 
