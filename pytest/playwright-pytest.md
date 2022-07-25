@@ -1,6 +1,6 @@
 # Using pytest and Playwright to test a JavaScript web application
 
-I [decided to add](https://github.com/simonw/datasette-lite/issues/35) automated tests to my [Datasette Lite](https://simonwillison.net/2022/May/4/datasette-lite/) project. Datasette Lite bundles my Datasette Python web application us a client-side application running inside WebAssembly using Pyodide.
+I [decided to add](https://github.com/simonw/datasette-lite/issues/35) automated tests to my [Datasette Lite](https://simonwillison.net/2022/May/4/datasette-lite/) project. Datasette Lite bundles my Datasette Python web application as a client-side application running inside WebAssembly using Pyodide.
 
 I wrote the tests using [playwright-pytest](https://github.com/microsoft/playwright-pytest), which lets you write tests in Python using Microsoft's [Playwright](https://playwright.dev/) browser automation library.
 
