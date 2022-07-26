@@ -16,3 +16,11 @@ I have a lot of files in my Dropbox so I excluded those like this:
 33779712 /Users/simon/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite
 ```
 Figured out via [this comment](https://news.ycombinator.com/item?id=24179518) by why_only_15 on Hacker News.
+
+## SQLite files in a specific directory
+
+The `-onlyin directory/` option searches just within a specified folder.
+
+Here's how to see all of the SQLite files that have been created by Firefox (which is a lot, because it is used as a disk format for websites that use `localStorage`):
+
+    mdfind "kMDItemDisplayName == *.sqlite" -onlyin ~/Library/Application\ Support/Firefox
