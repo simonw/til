@@ -44,3 +44,12 @@ def decode_matchinfo(buf):
     # buf is a bytestring of unsigned integers, each 4 bytes long
     return struct.unpack("<" + ("I" * (len(buf) // 4)), buf)
 ```
+## Bonus: How to tell which endianness your system has
+
+Turns out Python can tell you if you are big-endian or little-endian like this:
+
+```pycon
+>>> from sys import byteorder
+>>> byteorder
+'little'
+```
