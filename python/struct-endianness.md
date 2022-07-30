@@ -17,7 +17,7 @@ My `decode_matchinfo()` function runs against a binary data structure returned b
 
 SQLite doesn't change the binary format depending on the endianness of the system, which means that my function here works correctly on little-endian but does the wrong thing on big-endian systems:
 
-**Update:** I was entirely wrong about this. SQLite DOES change the format based on the endianness of the system. My big fix was incorrect - see [this issue comment](https://github.com/simonw/sqlite-fts4/issues/6#issuecomment-1200053863) for details.
+**Update:** I was entirely wrong about this. SQLite DOES change the format based on the endianness of the system. My bug fix was incorrect - see [this issue comment](https://github.com/simonw/sqlite-fts4/issues/6#issuecomment-1200053863) for details.
 
 On little-endian systems:
 
