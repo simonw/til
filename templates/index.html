@@ -79,7 +79,7 @@ h1 {
 </form>
 
 <p><strong>Browse by topic:</strong>
-{% for row in sql("select topic, count(*) as num_tils from til group by topic order by max(created_utc) desc", database="tils") %}
+{% for row in sql("select topic, count(*) as num_tils from til group by topic order by topic", database="tils") %}
   <a title="{{ row.num_tils }} TIL{{ "s" if row.num_tils > 1 else "" }}" href="/{{ row.topic }}">{{ row.topic }}</a> {{ row.num_tils }}{% if not loop.last %} &middot;{% endif %}
 {% endfor %}
 </p>
