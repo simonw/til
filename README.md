@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->302<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->303<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -239,6 +239,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Docker Compose for Django development](https://github.com/simonw/til/blob/main/docker/docker-compose-for-django-development.md) - 2021-05-24
 * [Allowing a container in Docker Desktop for Mac to talk to a PostgreSQL server on the host machine](https://github.com/simonw/til/blob/main/docker/docker-for-mac-container-to-postgresql-on-host.md) - 2022-03-31
 * [Testing things in Fedora using Docker](https://github.com/simonw/til/blob/main/docker/test-fedora-in-docker.md) - 2022-07-27
+* [Emulating a big-endian s390x with QEMU](https://github.com/simonw/til/blob/main/docker/emulate-s390x-with-qemu.md) - 2022-07-29
 
 ## homebrew
 
