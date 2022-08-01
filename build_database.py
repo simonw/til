@@ -83,7 +83,10 @@ def build_database(repo_path):
                     record["html"] = response.text
                     print("Rendered HTML for {}".format(path))
                     break
+                elif response.status_code == 401:
+                    assert False, "401 Unauthorized error rendering markdown"
                 else:
+                    print(response.status_code, response.headers)
                     print("  sleeping 60s")
                     time.sleep(60)
                     retries += 1
