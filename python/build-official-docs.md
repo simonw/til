@@ -8,7 +8,7 @@ cd into the `Doc` directory:
 
     $ cd cpython/Doc
 
-To get a virtual environment with Sphinx and other required tools, run this:
+To get a virtual environment with Sphinx and other required tools, run `make venv` like this:
 
     $ make venv
     python3 -m venv ./venv
