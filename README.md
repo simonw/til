@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->303<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->304<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -103,6 +103,7 @@ Search these TILs at https://til.simonwillison.net/
 * [The simplest recursive CTE](https://github.com/simonw/til/blob/main/sqlite/simple-recursive-cte.md) - 2022-03-20
 * [Counting SQLite virtual machine operations](https://github.com/simonw/til/blob/main/sqlite/counting-vm-ops.md) - 2022-03-20
 * [One-liner for running queries against CSV files with SQLite](https://github.com/simonw/til/blob/main/sqlite/one-line-csv-operations.md) - 2022-06-20
+* [Related content with SQLite FTS and a Datasette template function](https://github.com/simonw/til/blob/main/sqlite/related-content.md) - 2022-07-31
 
 ## presenting
 
