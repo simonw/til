@@ -26,11 +26,21 @@ def extra_template_vars(request, datasette):
         text = multi_spaces.sub(" ", text)
         words = list(set(text.lower().strip().split()))
         sql = """
-        select til.topic, til.slug, til.title, til.created, til.html
-        from til join til_fts on til.rowid = til_fts.rowid
-        where til_fts match :words
-        and not (til.slug = :slug and til.topic = :topic)
-        order by til_fts.rank limit 5
+        select
+          til.topic, til.slug, til.title, til.created
+        from
+          til
+          join til_fts on til.rowid = til_fts.rowid
+        where
+          til_fts match :words
+          and not (
+            til.slug = :slug
+            and til.topic = :topic
+          )
+        order by
+          til_fts.rank
+        limit
+          5
         """
         result = await datasette.get_database().execute(
             sql,
