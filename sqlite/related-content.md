@@ -8,6 +8,8 @@ I'm generating the related content using a SQLite full-text search query.
 
 I take the title and body text of an entry, strip out any non-alphanumeric characters, de-dupe the words, and then combine them to form a big OR search query.
 
+I built an initial prototype of this using [an Observable notebook](https://observablehq.com/@simonw/turn-pasted-text-into-a-big-sqlite-fts-or-query) that generated these queries from pasted text. See also [my research issue](https://github.com/simonw/til/issues/50).
+
 Here's a simple version of that query, using some example words pulled from [this entry](https://til.simonwillison.net/github-actions/postgresq-service-container). It executes against `til_fts` which is a SQLite FTS table [created](https://github.com/simonw/til/blob/cb62b8ab4c7b26ec7a895adea7f2d405b48686ba/build_database.py#L98-L100) using the `.enable_fts()` method of the [sqlite-utils Python library](https://sqlite-utils.datasette.io/en/stable/python-api.html#python-api-fts).
 ```sql
 select title, rank from til_fts where til_fts match '
