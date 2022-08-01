@@ -93,6 +93,9 @@ Jinja automatically awaits this kind of function when the template is rendered (
 So this function takes a TIL entry, creates a de-duped list of words from the title and body, uses that to construct and execute the SQL query and returns the results:
 
 ```python
+from datasette import hookimpl
+import re
+
 non_alphanumeric = re.compile(r"[^a-zA-Z0-9\s]")
 multi_spaces = re.compile(r"\s+")
 
