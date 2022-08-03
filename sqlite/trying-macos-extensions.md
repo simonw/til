@@ -58,40 +58,20 @@ Running this confirms that it doesn't have that `OMIT_LOAD_EXTENSION` option:
 
 You can also download a precompiled SQLite binary for macOS from the [SQLite downloads page](https://www.sqlite.org/download.html) - though this isn't signed, so you'll need to follow the steps described next to get it to run.
 
-## Running sqlite-lines
+## Download the .dylib files using wget
 
-Download the `lines0.dylib` file from the [0.1.1 release page](https://github.com/asg017/sqlite-lines/releases/tag/v0.1.1):
-
-    wget https://github.com/asg017/sqlite-lines/releases/download/v0.1.1/lines0.dylib
-
-The `.dylib` file is compiled for macOS. You can also grab `lines_nofs0.dylib` if you want a version that excludes the `lines_read(path)` function, which can read files from the filesystem.
-
-The first time you try loading the extension you will get an error:
-
+I figured this out after first writing this TIL. If you download a `.dylib` extension using `wget` it will work straight away:
 ```
-% /usr/local/opt/sqlite/bin/sqlite3
-sqlite> .load lines0.dylib
-Error: dlopen(/Users/simon/Downloads/lines0.dylib.dylib, 0x000A): tried: '/Users/simon/Downloads/lines0.dylib.dylib' (no such file), '/usr/local/lib/lines0.dylib.dylib' (no such file), '/usr/lib/lines0.dylib.dylib' (no such file)
-```
-macOS will also pop up a helpful dialog box telling you what went wrong:
-
-<img src="https://static.simonwillison.net/static/2022/sqlite-lines-computer-says-no.png" width="300" alt="lines0.dylib cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel">
-
-This is because the code hasn't been signed. You can still open it though - the trick is to head over to the macOS Security tab in System Preferences:
-
-![The security panel now has an extra line saying "lines0.dylib was blocked from use because it is not from an identified developer" - with a Allow Anyway button.](https://static.simonwillison.net/static/2022/security-lines0.png)
-
-Click "Allow Anyway", then try running the `.load` command again. Click "Open" one more time in this dialog:
-
-<img src="https://static.simonwillison.net/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
-
-And the extension will load from now on!
-
-Here's an example of the extension in action:
-
-```
-% /usr/local/opt/sqlite/bin/sqlite3
-sqlite> .load lines0.dylib
+% cd /tmp
+/tmp % wget https://github.com/asg017/sqlite-lines/releases/download/v0.1.1/lines0.dylib
+...
+Saving to: ‘lines0.dylib’
+/tmp % /usr/local/opt/sqlite/bin/sqlite3
+SQLite version 3.39.2 2022-07-21 15:24:47
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .load lines0
 sqlite> .mode column
 sqlite> select
   line ->> 'color' as color, 
@@ -105,10 +85,9 @@ color  sum
 blue   67 
 red    135
 ```
+## And for sqlite-html
 
-## Running sqlite-html
-
-Surprisingly, the `html0.dylib` extension from Alex's [releases page](https://github.com/asg017/sqlite-html/releases/tag/v0.1.0) worked for me without any of the above issues:
+Grab the `html0.dylib` extension from Alex's [releases page](https://github.com/asg017/sqlite-html/releases/tag/v0.1.0), again using `wget`:
 ```
 % cd /tmp
 % wget https://github.com/asg017/sqlite-html/releases/download/v0.1.0/html0.dylib
@@ -146,3 +125,28 @@ html              text
 <li>Charlie</li>  Charlie
 <li>Delta</li>    Delta  
 ```
+
+## If you download with your browser you'll have to jump through more hoops
+
+I first tried downloading the `lines0.dylib` file from the [0.1.1 release page](https://github.com/asg017/sqlite-lines/releases/tag/v0.1.1).
+
+The first time I tried loading the extension I got this error:
+
+```
+% /usr/local/opt/sqlite/bin/sqlite3
+sqlite> .load /Users/simon/Downloads/lines0.dylib
+Error: dlopen(/Users/simon/Downloads/lines0.dylib.dylib, 0x000A): tried: '/Users/simon/Downloads/lines0.dylib.dylib' (no such file), '/usr/local/lib/lines0.dylib.dylib' (no such file), '/usr/lib/lines0.dylib.dylib' (no such file)
+```
+macOS popped up up a helpful dialog box saing what went wrong:
+
+<img src="https://static.simonwillison.net/static/2022/sqlite-lines-computer-says-no.png" width="300" alt="lines0.dylib cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel">
+
+This is because the code hasn't been signed. You can still open it though - the trick is to head over to the macOS Security tab in System Preferences:
+
+![The security panel now has an extra line saying "lines0.dylib was blocked from use because it is not from an identified developer" - with a Allow Anyway button.](https://static.simonwillison.net/static/2022/security-lines0.png)
+
+Click "Allow Anyway", then try running the `.load` command again. Click "Open" one more time in this dialog:
+
+<img src="https://static.simonwillison.net/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
+
+And the extension will load from now on!
