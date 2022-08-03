@@ -75,7 +75,7 @@ Error: dlopen(/Users/simon/Downloads/lines0.dylib.dylib, 0x000A): tried: '/Users
 ```
 macOS will also pop up a helpful dialog box telling you what went wrong:
 
-!["lines0.dylib" cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel](https://static.simonwillison.net/static/2022/sqlite-lines-computer-says-no.png)
+<img src="https://static.simonwillison.net/static/2022/sqlite-lines-computer-says-no.png" width="300" alt="lines0.dylib cannot be opened because the developer cannot be verified. macOS cannot verify that this app is free from malware. Buttons: Move to Trash or Cancel">
 
 This is because the code hasn't been signed. You can still open it though - the trick is to head over to the macOS Security tab in System Preferences:
 
@@ -83,7 +83,7 @@ This is because the code hasn't been signed. You can still open it though - the 
 
 Click "Allow Anyway", then try running the `.load` command again. Click "Open" one more time in this dialog:
 
-![Same dialog a before but now there is an Open button ](https://static.simonwillison.net/static/2022/lines0-allow.png)
+<img src="https://static.simonwillison.net/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
 
 And the extension will load from now on!
 
