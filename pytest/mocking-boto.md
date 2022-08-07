@@ -11,21 +11,14 @@ I ended up turning to Python mocks, here provided by the the [pytest-mock](https
 ```python
 def test_limit_exceeded_automatic_retry(s3, mocker):
     mocked = mocker.patch("s3_ocr.cli.start_document_text_extraction")
-    # It's going to fail the time
-    should_fail = True
-
-    def side_effect(*args, **kwargs):
-        nonlocal should_fail
-        if should_fail:
-            should_fail = False
-            raise boto3.client("textract").exceptions.LimitExceededException(
-                error_response={},
-                operation_name="StartDocumentTextExtraction",
-            )
-        else:
-            return {"JobId": "123"}
-
-    mocked.side_effect = side_effect
+    # It's going to fail the first time, then succeed
+    mocked.side_effect = [
+        boto3.client("textract").exceptions.LimitExceededException(
+            error_response={},
+            operation_name="StartDocumentTextExtraction",
+        ),
+        {"JobId": "123"},
+    ]
     runner = CliRunner()
     result = runner.invoke(cli, ["start", "my-bucket", "--all"])
     assert result.exit_code == 0
@@ -46,22 +39,18 @@ The most confusing thing about working with Python mocks is figuring out the str
 
 The code I am testing here implements automatic retries. As such, I needed the API method I am simulating to fail the first time and then succeed the second time.
 
-The way to do that is with a `side_effect()` function which changes its behaviour the second time it is called. I used a `nonlocal` variable to keep track of whether the function should fail or not:
+Originally I had done this with a `side_effect()` function - see below - but then [@szotten on Twitter](https://twitter.com/szotten/status/1556337221258575873) pointed out that you can instead set `mock.side_effect` to a list and it will [cycle through those items in turn](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect):
 
 ```python
-should_fail = True
-
-def side_effect(*args, **kwargs):
-    nonlocal should_fail
-    if should_fail:
-        should_fail = False
-        raise boto3.client("textract").exceptions.LimitExceededException(
-            error_response={},
-            operation_name="StartDocumentTextExtraction",
-        )
-    else:
-        return {"JobId": "123"}
+mocked.side_effect = [
+    boto3.client("textract").exceptions.LimitExceededException(
+        error_response={},
+        operation_name="StartDocumentTextExtraction",
+    ),
+    {"JobId": "123"},
+]
 ```
+Any exception objects in that list will be raised by the mocked function; any other kind of object will be returned.
 
 The hardest thing to figure out was how to simulate the exception. The original error message indicated `botocore.errorfactory.LimitExceededException` but that's not actually a class you can import and raise.
 
@@ -88,4 +77,27 @@ class ClientError(Exception):
         super().__init__(msg)
         self.response = error_response
         self.operation_name = operation_name
+```
+
+## Using a side effect function
+
+Prior to the tip about setting `.side_effect` to a list I used a side effect function instead, with a `nonlocal` variable to change its behaviour the second time it was called:
+
+```
+
+The way to do that is with a `side_effect()` function which changes its behaviour the second time it is called. I used a `nonlocal` variable to keep track of whether the function should fail or not:
+
+```python
+should_fail = True
+
+def side_effect(*args, **kwargs):
+    nonlocal should_fail
+    if should_fail:
+        should_fail = False
+        raise boto3.client("textract").exceptions.LimitExceededException(
+            error_response={},
+            operation_name="StartDocumentTextExtraction",
+        )
+    else:
+        return {"JobId": "123"}
 ```
