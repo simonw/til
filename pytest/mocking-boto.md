@@ -81,11 +81,7 @@ class ClientError(Exception):
 
 ## Using a side effect function
 
-Prior to the tip about setting `.side_effect` to a list I used a side effect function instead, with a `nonlocal` variable to change its behaviour the second time it was called:
-
-```
-
-The way to do that is with a `side_effect()` function which changes its behaviour the second time it is called. I used a `nonlocal` variable to keep track of whether the function should fail or not:
+Prior to the tip about setting `.side_effect` to a list I used a side effect function instead, with a `nonlocal` variable to change its behaviour the second time it was called.
 
 ```python
 should_fail = True
@@ -100,4 +96,6 @@ def side_effect(*args, **kwargs):
         )
     else:
         return {"JobId": "123"}
+
+mocked.side_effect = side_effect
 ```
