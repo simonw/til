@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->306<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->307<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -157,6 +157,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Async fixtures with pytest-asyncio](https://github.com/simonw/til/blob/main/pytest/async-fixtures.md) - 2022-03-19
 * [Treating warnings as errors in pytest](https://github.com/simonw/til/blob/main/pytest/treat-warnings-as-errors.md) - 2022-04-01
 * [Using pytest and Playwright to test a JavaScript web application](https://github.com/simonw/til/blob/main/pytest/playwright-pytest.md) - 2022-07-24
+* [Mocking a Textract LimitExceededException with boto](https://github.com/simonw/til/blob/main/pytest/mocking-boto.md) - 2022-08-07
 
 ## github
 
