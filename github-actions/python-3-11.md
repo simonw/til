@@ -6,7 +6,7 @@ I used the new [GitHub Code Search](https://cs.github.com/) to figure out how to
 
     3.11 path:workflows/*.yml
 
-And found [this example](https://cs.github.com/urllib3/urllib3/blob/7bec77e81aa0a194c98381053225813f5347c9d2/.github/workflows/ci.yml#L60) from `urllib3` which showed that the version tag to use is:
+And found [this example](https://github.com/urllib3/urllib3/blob/7bec77e81aa0a194c98381053225813f5347c9d2/.github/workflows/ci.yml#L60) from `urllib3` which showed that the version tag to use is:
 
     3.11-dev
 
