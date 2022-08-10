@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->307<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->308<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -535,4 +535,8 @@ Search these TILs at https://til.simonwillison.net/
 ## networking
 
 * [Making HTTP calls using IPv6](https://github.com/simonw/til/blob/main/networking/http-ipv6.md) - 2022-06-08
+
+## gpt3
+
+* [Using GPT-3 to figure out jq recipes](https://github.com/simonw/til/blob/main/gpt3/jq.md) - 2022-08-10
 <!-- index ends -->
