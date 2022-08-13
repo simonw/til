@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->308<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->309<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -215,6 +215,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Loading lit from Skypack](https://github.com/simonw/til/blob/main/javascript/lit-with-skypack.md) - 2021-09-21
 * [Using Tesseract.js to OCR every image on a page](https://github.com/simonw/til/blob/main/javascript/tesseract-ocr-javascript.md) - 2021-11-09
 * [JavaScript date objects](https://github.com/simonw/til/blob/main/javascript/javascript-date-objects.md) - 2022-01-16
+* [Creating a tiled zoomable image with OpenSeadragon and vips](https://github.com/simonw/til/blob/main/javascript/openseadragon.md) - 2022-08-12
 
 ## django
 
