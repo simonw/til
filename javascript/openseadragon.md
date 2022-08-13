@@ -30,7 +30,7 @@ This command creates an XML file called `Miniature_Victorian_Slide_Collection.dz
 % find . | grep Miniat | wc -l
     5233
 ```
-That's a LOT of files. They were each around 256 × 256 in resolution - I deceded to see if I could make them bigger and reduce their number.
+That's a LOT of files. They were each around 256 × 256 in resolution - I decided to see if I could make them bigger and reduce their number.
 
 I used the `--tile-size` option to do this:
 
