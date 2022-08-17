@@ -6,8 +6,7 @@ I jumped on this as a great opportunity to demonstrate [Datasette Lite](https://
 
 ## Creating an example database in Datasette Lite
 
-I started with the following SQL to create the demo table (GitHub Copilot filled out the recipes for me when it guessed what I was trying to do):
-
+I started with the following SQL to create the demo table:
 ```sql
 create table recipes (id integer primary key, name text, ingredients text);
 insert into recipes values (1, 'Cake', '["flour", "sugar", "eggs"]');
@@ -15,6 +14,9 @@ insert into recipes values (2, 'Pancakes', '["flour", "eggs", "butter"]');
 insert into recipes values (3, 'Waffles', '["flour", "milk", "eggs"]');
 insert into recipes values (4, 'Pizza', '["flour", "sugar", "eggs", "cheese"]');
 ```
+I actually got GitHub Copilot to write most of that for me:
+
+<img alt="In GitHub Copilot, I start with:  create table recipes (id integer primary key, name text, ingredients text);  I type &quot;insert into&quot; and it autocompletes to:  insert into recipes values (1, 'Pizza', 'Tomato Sauce, Cheese, and Pizza');  I  edit that to 'Cake' instead and it fills in &quot;flour, sugar, eggs, butter'  Then I edit that to be a JSON array instead  It completes (with a few tweaks from me) with:  insert into recipes values (2, 'Pancakes', '[&quot;flour&quot;, &quot;sugar&quot;, &quot;eggs&quot;, &quot;butter&quot;]'); insert into recipes values (3, 'Pizza', '[&quot;vegetables&quot;, &quot;cheese&quot;, &quot;tomatoes&quot;, &quot;sauce&quot;]'); insert into recipes values (4, 'Spaghetti', '[&quot;pasta&quot;, &quot;tomatoes&quot;, &quot;sauce&quot;]');" src="https://user-images.githubusercontent.com/9599/185261271-cf8aff79-67dc-4359-89a2-5f8a857e944a.gif">
 
 I saved that [to a gist](https://gist.github.com/simonw/1f8a91123ccefd8844187225b1832d7a) and opened it in Datasette Lite with this URL:
 
