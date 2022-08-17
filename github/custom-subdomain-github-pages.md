@@ -10,7 +10,7 @@ Shortly after launching I realized that the project deserved its own vanity subd
 
 GitHub Pages makes this really easy.
 
-I started by pointing the `CNAME` for `lite.datasette.io` at `simonw.github.io` - I use Vercel for that domain, so I set this up in their interface.
+I started by pointing the `CNAME` for `lite.datasette.io` at `simonw.github.io` - I use Vercel for the DNS for that domain, so I set this up in their interface.
 
 Then I used the Pages tab in the "settings" interface for the GitHub repository and told it about my new domain.
 
