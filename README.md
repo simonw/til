@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->312<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->313<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -543,4 +543,8 @@ Search these TILs at https://til.simonwillison.net/
 ## gpt3
 
 * [Using GPT-3 to figure out jq recipes](https://github.com/simonw/til/blob/main/gpt3/jq.md) - 2022-08-10
+
+## quarto
+
+* [Trying out Quarto on macOS](https://github.com/simonw/til/blob/main/quarto/trying-out-quarto.md) - 2022-08-18
 <!-- index ends -->
