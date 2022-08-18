@@ -37,3 +37,5 @@ Now that I knew which Python was being used, I could install the `nbformat` and 
 ```
 
 Having installed those two packages into that particular Python instance, the "Render" button in VS Code worked and gave me a rendered PDF preview.
+
+I filed a bug report about this here: https://github.com/quarto-dev/quarto-cli/issues/1972
