@@ -79,7 +79,7 @@ html_attribute_has
 
 ## A better solution using json_group_array() and json_each()
 
-[Alex pointed out](https://twitter.com/agarcia_me/status/1562462457976590336) an alternative solution using SQLite's JSON functions, which is actually better beacuse it avoids any risk of commas or quotation marks in the values breaking the resulting string.
+[Alex pointed out](https://twitter.com/agarcia_me/status/1562462457976590336) an alternative solution using SQLite's JSON functions, which is actually better because it avoids any risk of commas or quotation marks in the values breaking the resulting string.
 
 ```sql
 select json_group_array(distinct name)
