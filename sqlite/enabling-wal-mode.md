@@ -33,3 +33,11 @@ I added a command to [sqlite-utils 2.15](https://sqlite-utils.datasette.io/en/st
     sqlite-utils enable-wal *.db
 
 The `disable-Wal` command disables it again.
+
+## Futher notes
+
+Ben Johnson wrote about how WAL mode internals work in great detail in [How SQLite Scales Read Concurrency ](https://fly.io/blog/sqlite-internals-wal/).
+
+In a Hacker News comment, Ben [points out](https://news.ycombinator.com/item?id=32581486):
+
+>  The other odd thing is that the journal_mode is only persistent for WAL, I believe. The DELETE, TRUNCATE, & PERSIST modes are per-connection. It makes sense though since those 3 modes deal with the rollback journal and are compatible with each other while the WAL is totally separate. https://www.sqlite.org/pragma.html#pragma_journal_mode
