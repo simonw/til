@@ -11,6 +11,9 @@ plugins:
     literal: |-
       User-agent: *
       Disallow: /tils
+  datasette-sitemap:
+    sql: |-
+      select '/' || topic || '/' || slug as path from til
 databases:
   tils:
     queries:
