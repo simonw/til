@@ -9,6 +9,7 @@ plugins:
       "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
   datasette-block-robots:
     literal: |-
+      Sitemap: https://til.simonwillison.net/sitemap.xml
       User-agent: *
       Disallow: /tils
   datasette-sitemap:
