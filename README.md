@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->314<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->315<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -108,6 +108,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Trying out SQLite extensions on macOS](https://github.com/simonw/til/blob/main/sqlite/trying-macos-extensions.md) - 2022-08-03
 * [Sort by number of JSON intersections](https://github.com/simonw/til/blob/main/sqlite/sort-by-number-of-json-intersections.md) - 2022-08-17
 * [Seeing which functions are unique to a specific SQLite / Datasette instance](https://github.com/simonw/til/blob/main/sqlite/function-list.md) - 2022-08-23
+* [SQLite VACUUM: database or disk is full](https://github.com/simonw/til/blob/main/sqlite/vacum-disk-full.md) - 2022-08-29
 
 ## presenting
 
