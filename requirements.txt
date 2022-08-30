@@ -8,4 +8,4 @@ datasette-template-sql>=1.0.2
 datasette-graphql
 datasette-media
 datasette-block-robots
-datasette-sitemap>=0.1.1
+datasette-sitemap>=1.0

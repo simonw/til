@@ -94,7 +94,7 @@ jobs:
           --metadata metadata.yaml \
           --static static:static \
           --install datasette-template-sql \
-          --install https://github.com/simonw/datasette-sitemap/archive/f3dadf4064d627e2bf616eee1456bd1a132a9d27.zip \
+          --install "datasette-sitemap>=1.0" \
           --install "datasette-atom>=0.7" \
           --install datasette-json-html \
           --install beautifulsoup4 \
