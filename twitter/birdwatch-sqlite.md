@@ -127,6 +127,8 @@ This command shows a progress bar while it works:
 
     Importing 27,909 tweets  [#####-------------------]   17%  00:10:26
 
+If you don't have Twitter APIv1 credentials consider using [twarc](https://twarc-project.readthedocs.io/) instead (maybe with [this plugin](https://github.com/DocNow/twarc-csv)).
+
 The final database schema looks like this:
 
 ```sql
