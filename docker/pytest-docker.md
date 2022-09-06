@@ -6,7 +6,7 @@ I decided to do this using Docker, using the official [python:3.7-buster](https:
 
 Here's the recipe that worked for me:
 ```bash
-docker run -it -v `pwd`:/code \
+docker run --rm -it -v `pwd`:/code \
   python:3.7-buster \
   bash -c "cd /code && pip install -e '.[test]' && pytest"
 ```
@@ -14,6 +14,8 @@ docker run -it -v `pwd`:/code \
 This command runs interactively so I can see the output (the `-it` option).
 
 It mounts the current directory (with my testable application in it - I ran this in the root of a `datasette` checkout) as the `/code` volume inside the container.
+
+The `--rm` option ensures that the container used for the test will be deleted once the test has completed (not just stopped).
 
 It then runs the following using `bash -c`:
 
