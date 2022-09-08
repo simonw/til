@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->318<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->319<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -175,6 +175,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Setting up a custom subdomain for a GitHub Pages site](https://github.com/simonw/til/blob/main/github/custom-subdomain-github-pages.md) - 2022-05-04
 * [Reporting bugs in GitHub to GitHub](https://github.com/simonw/til/blob/main/github/reporting-bugs.md) - 2022-07-07
 * [Migrating a GitHub wiki from one repository to another](https://github.com/simonw/til/blob/main/github/migrate-github-wiki.md) - 2022-07-28
+* [Clone, edit and push text files that live in a Gist](https://github.com/simonw/til/blob/main/github/clone-and-push-gist.md) - 2022-09-08
 
 ## node
 
