@@ -1,4 +1,4 @@
-# Clone, edit and push text files that live in a Gist
+# Clone, edit and push files that live in a Gist
 
 GitHub [Gists](https://gist.github.com/) are full Git repositories, and can be cloned and pushed to.
 
