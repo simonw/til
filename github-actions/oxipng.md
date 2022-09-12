@@ -29,12 +29,7 @@ The full recipe for installing Oxipng in GitHub Actions looks like this:
         which oxipng || cargo install oxipng
 ```
 
-The first time the action runs it does a full compile of Oxipng - but on subsequent runs this gets output instead:
-
-```
-    Updating crates.io index
-     Ignored package `oxipng v5.0.1` is already installed, use --force to override
-```
+The first time the action runs it does a full compile of Oxipng - but on subsequent runs the `which oxipng` command succeeds and skips the `cargo install` step entirely.
 
 ## Running Oxipng in an Action
 
