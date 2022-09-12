@@ -26,7 +26,7 @@ The full recipe for installing Oxipng in GitHub Actions looks like this:
         key: ${{ runner.os }}-cargo
     - name: Install Oxipng
       run: |
-        cargo install oxipng
+        which oxipng || cargo install oxipng
 ```
 
 The first time the action runs it does a full compile of Oxipng - but on subsequent runs this gets output instead:
