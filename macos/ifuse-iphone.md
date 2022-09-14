@@ -16,11 +16,11 @@ Here's what worked for me.
 5. `brew install gromgit/fuse/ifuse-mac`
 6. A tricky bit: this has installed an unsigned binary, which macOS really doesn't want to execute. So...
 7. `mkdir /tmp/iPhone`
-8. `ifuse ~/iPhone --udid 00008110-001631C105BA801E` - using the serial number you figured out earlier
+8. `ifuse /tmp/iPhone --udid 00008110-001631C105BA801E` - using the serial number you figured out earlier
 9. This should fail with an error complaining about the unsigned binary
 10. Open System Preferences -> Security & Privacy and allow that binary to run. You may then need to restart your computer.
 11. After the reboot, `mkdir /tmp/iPhone` again.
-12. Now try `ifuse ~/iPhone --udid 00008110-001631C105BA801E` again - this time it should work
+12. Now try `ifuse /tmp/iPhone --udid 00008110-001631C105BA801E` again - this time it should work
 
 If everything goes right, you can run `open /tmp/iPhone` to open a Finder window showing at least some of the contents of your phone. You can also `cd /tmp/iPhone` to start poking around from the terminal.
 
