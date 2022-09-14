@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->320<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->321<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -129,6 +129,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Seeing files opened by a process using opensnoop](https://github.com/simonw/til/blob/main/macos/open-files-with-opensnoop.md) - 2022-04-26
 * [Atuin for zsh shell history in SQLite](https://github.com/simonw/til/blob/main/macos/atuin.md) - 2022-04-26
 * [Driving an external display from a Mac laptop](https://github.com/simonw/til/blob/main/macos/external-display-laptop.md) - 2022-09-10
+* [Browse files (including SQLite databases) on your iPhone with ifuse](https://github.com/simonw/til/blob/main/macos/ifuse-iphone.md) - 2022-09-13
 
 ## cloudrun
 
