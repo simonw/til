@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->321<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->322<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -71,6 +71,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Freezing requirements with pip-tools](https://github.com/simonw/til/blob/main/python/pip-tools.md) - 2022-07-14
 * [struct endianness in Python](https://github.com/simonw/til/blob/main/python/struct-endianness.md) - 2022-07-28
 * [Defining setup.py dependencies using a URL](https://github.com/simonw/til/blob/main/python/setup-py-from-url.md) - 2022-08-13
+* [Running PyPy on macOS using Homebrew](https://github.com/simonw/til/blob/main/python/pypy-macos.md) - 2022-09-14
 
 ## zeit-now
 
