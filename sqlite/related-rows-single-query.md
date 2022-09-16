@@ -1,4 +1,4 @@
-# Returning related rows in a single SQL query using JSON
+X# Returning related rows in a single SQL query using JSON
 
 When building database-backed applications you'll often find yourself wanting to return a row from the database along with its related rows.
 
@@ -158,14 +158,22 @@ Other databases are capable of the same thing, but using different functions. Po
 Here's an equivalent query in PostgreSQL syntax:
 
 ```sql
-select blog_entry.title,
-  json_agg(
-    json_build_object('tag', blog_tag.tag)
-  ) as tags
-from blog_entry
-left join blog_entry_tags on blog_entry.id = blog_entry_tags.entry_id
-left join blog_tag on blog_entry_tags.tag_id = blog_tag.id
-group by blog_entry.id
-order by blog_entry.id desc
+select
+  blog_entry.id,
+  title,
+  slug,
+  created,
+  coalesce(json_agg(json_build_object(blog_tag.id, blog_tag.tag)) filter (
+    where
+      blog_tag.tag is not null
+  ), json_build_array()) as tags
+from
+  blog_entry
+  left join blog_entry_tags on blog_entry.id = blog_entry_tags.entry_id
+  left join blog_tag on blog_entry_tags.tag_id = blog_tag.id
+group by
+  blog_entry.id
+order by
+  blog_entry.id
 ```
 [See that running here](https://simonwillison.net/dashboard/json-agg-example/) in `django-sql-dashboard`.
