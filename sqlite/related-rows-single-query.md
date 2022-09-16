@@ -1,4 +1,4 @@
-X# Returning related rows in a single SQL query using JSON
+# Returning related rows in a single SQL query using JSON
 
 When building database-backed applications you'll often find yourself wanting to return a row from the database along with its related rows.
 
