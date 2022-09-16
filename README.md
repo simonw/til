@@ -110,7 +110,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Sort by number of JSON intersections](https://github.com/simonw/til/blob/main/sqlite/sort-by-number-of-json-intersections.md) - 2022-08-17
 * [Seeing which functions are unique to a specific SQLite / Datasette instance](https://github.com/simonw/til/blob/main/sqlite/function-list.md) - 2022-08-23
 * [SQLite VACUUM: database or disk is full](https://github.com/simonw/til/blob/main/sqlite/vacum-disk-full.md) - 2022-08-29
-* [X# Returning related rows in a single SQL query using JSON](https://github.com/simonw/til/blob/main/sqlite/related-rows-single-query.md) - 2022-09-16
+* [Returning related rows in a single SQL query using JSON](https://github.com/simonw/til/blob/main/sqlite/related-rows-single-query.md) - 2022-09-16
 
 ## presenting
 
