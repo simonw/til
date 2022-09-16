@@ -119,7 +119,7 @@ group by
 order by
   blog_entry.id desc
 ```
-This [outputs the following though](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) - I have not yet figured out a great pattern to replace those `{"tag": null}` entries with an empty array:
+This almost works, but [it outputs the following](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) returning `{"tag": null}` for entries with no tags:
 
 | id | title | tags |
 | --- | --- | --- |
@@ -127,7 +127,29 @@ This [outputs the following though](https://datasette.simonwillison.net/simonwil
 | 2 | Blogging aint easy | [{"tag":null}] |
 | 1 | WaSP Phase II | [{"tag":null}] |
 
-Using `replace(..., '[{"tag":null}]', '[]')` [does work](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++replace%28json_group_array%28json_object%28%27tag%27%2C+blog_tag.tag%29%29%2C+%27%5B%7B%22tag%22%3Anull%7D%5D%27%2C+%27%5B%5D%27%29+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id), but it doesn't feel very elegant!
+David Fetter [showed me](https://twitter.com/davidfetter/status/1570882233631903745?s=46&t=S0XOcgrqscFA3YNL8BYWBw) the solution:
+
+```sql
+select
+  blog_entry.id,
+  blog_entry.title,
+  json_group_array(
+    json_object('tag', blog_tag.tag) 
+  ) filter (
+    where
+      blog_tag.tag is not null
+  ) as tags
+from
+  blog_entry
+  left join blog_entry_tags on blog_entry.id = blog_entry_tags.entry_id
+  left join blog_tag on blog_tag.id = blog_entry_tags.tag_id
+group by
+  blog_entry.id
+order by
+  blog_entry.id
+```
+
+That extra filter on the aggregation [does the trick](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%27tag%27%2C+blog_tag.tag%29+%0D%0A++%29+filter+%28%0D%0A++++where%0D%0A++++++blog_tag.tag+is+not+null%0D%0A++%29+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id)!
 
 ## Other databases
 
