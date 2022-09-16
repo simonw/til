@@ -130,3 +130,18 @@ This [outputs the following though](https://datasette.simonwillison.net/simonwil
 ## Other databases
 
 Other databases are capable of the same thing, but using different functions. PostgreSQL has [json_agg()](https://www.postgresql.org/docs/9.5/functions-aggregate.html) for example, which is also available in Django as [JSONBAgg](https://docs.djangoproject.com/en/4.1/ref/contrib/postgres/aggregates/#jsonbagg).
+
+Here's an equivalent query in PostgreSQL syntax:
+
+```sql
+select blog_entry.title,
+  json_agg(
+    json_build_object('tag', blog_tag.tag)
+  ) as tags
+from blog_entry
+left join blog_entry_tags on blog_entry.id = blog_entry_tags.entry_id
+left join blog_tag on blog_entry_tags.tag_id = blog_tag.id
+group by blog_entry.id
+order by blog_entry.id
+```
+[See that running here](https://simonwillison.net/dashboard/json-agg-example/) in `django-sql-dashboard`.
