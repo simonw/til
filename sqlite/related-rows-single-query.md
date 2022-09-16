@@ -119,13 +119,15 @@ group by
 order by
   blog_entry.id desc
 ```
-This [outputs the following though](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) - I have not yet figured out a good pattern to replace those `{"tag": null}` entries with an empty array:
+This [outputs the following though](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++json_group_array(json_object(%27tag%27%2C+blog_tag.tag))+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Awhere+blog_entry.id+%3C+4%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id+desc) - I have not yet figured out a great pattern to replace those `{"tag": null}` entries with an empty array:
 
 | id | title | tags |
 | --- | --- | --- |
 | 3 | Todo list | [{"tag":null}] |
 | 2 | Blogging aint easy | [{"tag":null}] |
 | 1 | WaSP Phase II | [{"tag":null}] |
+
+Using `replace(..., '[{"tag":null}]', '[]')` [does work](https://datasette.simonwillison.net/simonwillisonblog?sql=select%0D%0A++blog_entry.id%2C%0D%0A++blog_entry.title%2C%0D%0A++replace%28json_group_array%28json_object%28%27tag%27%2C+blog_tag.tag%29%29%2C+%27%5B%7B%22tag%22%3Anull%7D%5D%27%2C+%27%5B%5D%27%29+as+tags%0D%0Afrom%0D%0A++blog_entry%0D%0A++left+join+blog_entry_tags+on+blog_entry.id+%3D+blog_entry_tags.entry_id%0D%0A++left+join+blog_tag+on+blog_tag.id+%3D+blog_entry_tags.tag_id%0D%0Agroup+by%0D%0A++blog_entry.id%0D%0Aorder+by%0D%0A++blog_entry.id), but it doesn't feel very elegant!
 
 ## Other databases
 
