@@ -142,6 +142,6 @@ from blog_entry
 left join blog_entry_tags on blog_entry.id = blog_entry_tags.entry_id
 left join blog_tag on blog_entry_tags.tag_id = blog_tag.id
 group by blog_entry.id
-order by blog_entry.id
+order by blog_entry.id desc
 ```
 [See that running here](https://simonwillison.net/dashboard/json-agg-example/) in `django-sql-dashboard`.
