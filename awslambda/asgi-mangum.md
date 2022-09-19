@@ -375,7 +375,7 @@ aws lambda update-function-code \
   --function-name lambda-python-hello-world \
   --zip-file fileb://function.zip
 ```
-This did the trick! I now had a Datasette instance running on Lambda.
+This did the trick! I now had a Datasette instance running on Lambda: https://fnkvspusjrl5dxytaxnuwidxem0hverw.lambda-url.us-east-1.on.aws/
 
 The default Lambda configuration only provides 128MB of RAM, and I was getting occasional timeout errors. Bumping that up to 256MB fixed the problem:
 
