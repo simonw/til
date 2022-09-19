@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->324<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->325<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -561,4 +561,8 @@ Search these TILs at https://til.simonwillison.net/
 ## duckdb
 
 * [Using DuckDB in Python to access Parquet data](https://github.com/simonw/til/blob/main/duckdb/parquet.md) - 2022-09-16
+
+## awslambda
+
+* [Deploying Python web apps as AWS Lambda functions](https://github.com/simonw/til/blob/main/awslambda/asgi-mangum.md) - 2022-09-18
 <!-- index ends -->
