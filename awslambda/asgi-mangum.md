@@ -317,7 +317,7 @@ This recipe works! The result is a `lib/` folder full of Amazon Linux Python pac
 
 I want to deploy [Datasette](https://datasette.io/).
 
-Datasetet is an [ASGI application](https://simonwillison.net/2019/Jun/23/datasette-asgi/).
+Datasette is an [ASGI application](https://simonwillison.net/2019/Jun/23/datasette-asgi/).
 
 But... AWS Lambda functions have their own weird interface to HTTP - the `event` and `context` parameters shown above.
 
