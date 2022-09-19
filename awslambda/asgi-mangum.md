@@ -210,7 +210,7 @@ Adding dependencies to the project was by far the most confusing aspect of this 
 
 Eventually I found a [good way to do it](https://github.com/pixegami/fastapi-tutorial/blob/4ec9247faf53e4c399ea18a4ac27c0e85a137955/README.md#deploying-fastapi-to-aws-lambda) thanks to the example code published to accompany [this YouTube video](https://www.youtube.com/watch?v=RGIM4JfsSk0) by Pixegami.
 
-The trick is to include ALL of your depndencies _in the root of your zip file_.
+The trick is to include ALL of your dependencies _in the root of your zip file_.
 
 Forget about `requirements.txt` and suchlike - you need to install copies of the actual dependencies themselves.
 
