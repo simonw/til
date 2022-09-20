@@ -8,7 +8,7 @@ Today I figured out the full rules for the path syntax, based on [this forum thr
 
 ## Basic syntax for objects and arrays
 
-Paths must always start with a `$`, which represnts the root of the JSON value.
+Paths must always start with a `$`, which represents the root of the JSON value.
 
 This can be followed by `.key` or `."key"` to navigate into object keys, and `[0]` to navigate into arrays.
 
@@ -47,7 +47,7 @@ But... you can apply a single integer subtraction operation to that `#` - so you
 
 Here's [the commit](https://sqlite.org/src/info/35ed68a651f) that added that custom SQLite extension in 2019.
 
-## Keys containing a "
+## Keys containing a double quote
 
 If your object key contains a `"` character you can't use the `$."..."` syntax to access it - but provided it does not also contain a `.` character you can escape it like this:
 
