@@ -38,5 +38,5 @@ Heat and stir to dissolve together, without boiling too much. Stir in a tiny spl
 5. Add 3 floz rye
 6. Dry shake vigorously in the shaker. Dry shaking means shaking without ice. I went about 15 seconds. The result should be a foamy egg white mix.
 7. Now add ice - I added 6 cubes. Shake vigorously again - I did another 15s.
-8. Strain into the chilled glasses, each containing another three ice cubes (or a big square ice cube if you have them)
+8. Strain into the chilled glasses, each containing another four ice cubes (or a big square ice cube if you have them)
 9. Add a couple of drops of angostura bitters on the top
