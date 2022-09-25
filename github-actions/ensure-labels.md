@@ -1,4 +1,4 @@
-# Ensure labels exist
+# Ensure labels exist in a GitHub repository
 
 I wanted to ensure that when [this template repository](https://github.com/simonw/action-transcription) was used to create a new repo that repo would have a specific set of labels.
 
