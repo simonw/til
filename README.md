@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->326<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->327<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -30,6 +30,7 @@ Search these TILs at https://til.simonwillison.net/
 * [GitHub Actions job summaries](https://github.com/simonw/til/blob/main/github-actions/job-summaries.md) - 2022-05-17
 * [Optimizing PNGs in GitHub Actions using Oxipng](https://github.com/simonw/til/blob/main/github-actions/oxipng.md) - 2022-05-18
 * [Conditionally running a second job in a GitHub Actions workflow](https://github.com/simonw/til/blob/main/github-actions/conditionally-run-a-second-job.md) - 2022-07-11
+* [Ensure labels exist in a GitHub repository](https://github.com/simonw/til/blob/main/github-actions/ensure-labels.md) - 2022-09-25
 
 ## python
 
