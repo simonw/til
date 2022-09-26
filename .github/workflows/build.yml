@@ -70,7 +70,7 @@ jobs:
       run: |-
         cd main
         git diff
-        git config --global user.email "readme-bot@example.com"
+        git config --global user.email "actions@users.noreply.github.com"
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
@@ -79,9 +79,7 @@ jobs:
         cd til-db
         cp ../main/tils.db .
         git add tils.db
-        git config --global user.email "readme-bot@example.com"
-        git config --global user.name "README-bot"
-        git commit --amend --no-edit
+        git commit --amend --no-edit --author="README-bot <actions@users.noreply.github.com>"
         git push --force
     - name: Deploy Datasette using Vercel
       env:
