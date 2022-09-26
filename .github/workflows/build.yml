@@ -79,6 +79,8 @@ jobs:
         cd til-db
         cp ../main/tils.db .
         git add tils.db
+        git config --global user.email "readme-bot@example.com"
+        git config --global user.name "README-bot"
         git commit --amend --no-edit
         git push --force
     - name: Deploy Datasette using Vercel
