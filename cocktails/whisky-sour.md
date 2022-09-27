@@ -14,6 +14,7 @@ I picked up the recipe for this one from [this video](https://www.tiktok.com/t/Z
 
 I made two drinks in one go, so I doubled these.
 
+I tried this recipe once with a fancy scotch but it wasn't nearly as nice as the one made with rye.
 ## Equipment
 
 - Jiggers
