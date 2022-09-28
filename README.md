@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->327<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->328<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -324,6 +324,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Helper function for pagination using AWS boto3](https://github.com/simonw/til/blob/main/aws/helper-for-boto-aws-pagination.md) - 2022-01-19
 * [Running OCR against a PDF file with AWS Textract](https://github.com/simonw/til/blob/main/aws/ocr-pdf-textract.md) - 2022-06-28
 * [Using boto3 from the command line](https://github.com/simonw/til/blob/main/aws/boto-command-line.md) - 2022-08-02
+* [Athena error: The specified key does not exist](https://github.com/simonw/til/blob/main/aws/athena-key-does-not-exist.md) - 2022-09-27
 
 ## jinja
 
