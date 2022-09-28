@@ -106,3 +106,6 @@ my-project-admin/2022-05-25//1653508693-7f4da568-e462-46a2-9904-e3ac801c7fee.log
 my-project-postgresql/2022-05-25//1653507222-60e072e2-fd78-437f-a097-c063df424224.log.gz,2022-05-25 19:33:43+00:00,"""5d9965b79260e6a0f27cff5f02eee71d""",3376,STANDARD,
 my-project-postgresql/2022-05-25//1653507525-b3a04523-8732-4072-92c0-57dd06a680b1.log.gz,2022-05-25 
 ```
+**Update:** My initial attempt at doing this had a small bug: those `//` folder separators in that output turn out [to break AWS Athena](https://til.simonwillison.net/aws/athena-key-does-not-exist).
+
+Deploying the latest version of the `fly-log-shipper` directly from their repository seems to fix that though (with [this fix](https://github.com/superfly/fly-log-shipper/pull/29) applied too).
