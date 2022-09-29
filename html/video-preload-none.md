@@ -16,7 +16,7 @@ This is useful if you are going to show multiple video players on a page at the 
   >
 </video>
 ```
-- `preload="none"` causes the browser to not preload the video until the user hits play.
+- `preload="none"` causes the browser to not preload the video until the user hits play
 - `poster="..."` provides an image thumbnail to show in the player when it first loads
 
 More information: [MDN guide to the Video element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
