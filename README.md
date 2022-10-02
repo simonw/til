@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->330<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->331<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -572,6 +572,7 @@ Search these TILs at https://til.simonwillison.net/
 ## cocktails
 
 * [Whisky sour](https://github.com/simonw/til/blob/main/cocktails/whisky-sour.md) - 2022-09-25
+* [Tommy's Margarita](https://github.com/simonw/til/blob/main/cocktails/tommys-margarita.md) - 2022-10-02
 
 ## html
 
