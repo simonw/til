@@ -24,7 +24,9 @@ Also required: jiggers for measuring. Good craft cocktails require accurate meas
 
 The drink is constructed in the shaker. Always start with the cheapest ingredients - that way mistakes are less expensive.
 
-Fill a shaker tin about a quarter way with ice. Any ice will do - save the fancy stuff for drinks that are presented with it (I serve my margaritas without ice).
+Fill a shaker tin about a third of the way with ice. Any ice will do - save the fancy stuff for drinks that are presented with it (I serve my margaritas without ice). I use about five ice cubes per drink.
+
+Or for a more detailed, expert guide to shaking, consult [this guide on Serious Eats](https://www.seriouseats.com/how-to-shake-a-cocktail-like-a-pro).
 
 But... a chilled glass makes for a better drink. Glasses will chill in the freezer surprisingly quickly - dropping some in the ice tray when you start making the drink (or a few minutes beforehand) is enough to effectively chill them.
 
