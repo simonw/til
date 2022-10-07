@@ -4,6 +4,8 @@ I've been writing my Fly logs to S3 in newline-delimited JSON format using the r
 
 I recently needed to run a search against those logs. I decided to use [AWS Athena](https://aws.amazon.com/athena/).
 
+(Scroll to the bottom for a cunning shortcut using GPT-3.)
+
 ## The log format
 
 My logs are shipped to S3 using [Vector](https://vector.dev/). It actually creates a huge number of tiny gzipped files in my S3 bucket, each one representing just a small number of log lines.
@@ -117,4 +119,50 @@ from
 where
   message like '%sqlite3.OperationalError: no such table: _public_tables%'
 limit 100;
+```
+
+## Generating the configuration using GPT-3
+
+Manually converting that JSON into a `CREATE EXTERNAL TABLE` definition is tedious and error-prone.
+
+It turns out you can instead use the OpenAI GPT-3 language model to do that work for you!
+
+Using [the playground](https://simonwillison.net/2022/Jun/5/play-with-gpt3/) I tried the following prompt:
+
+```
+write an AWS Athena create table statement for querying this JSON data:
+
+{
+  "event": {
+    "provider": "app"
+  },
+  "fly": {
+    "app": {
+      "instance": "0e286551c30586",
+      "name": "dc-team-52-simon-46d213"
+    },
+    "region": "sjc"
+  },
+  "host": "0ad1",
+  "log": {
+    "level": "info"
+  },
+  "message": "subprocess exited, litestream shutting down",
+  "timestamp": "2022-09-27T20:34:37.252022967Z"
+}
+```
+GPT-3 responded:
+```
+CREATE EXTERNAL TABLE IF NOT EXISTS logs (
+  event struct<provider:string>,
+  fly
+  struct<app:struct<instance:string.name:string>,region:string>
+  host string,
+  log struct<level:string>,
+  message string,
+  timestamp string
+)
+ROW FORMAT SERDE
+  'org.openx.data.jsonserde.JsonSerDe'
+LOCATION 's3://bucket/path/to/json/data/';
 ```
