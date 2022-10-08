@@ -73,7 +73,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |-
-        s3-credentials put-object til.simonwillison.net tils.db ../main/tils.db
+        s3-credentials put-object til.simonwillison.net tils.db main/tils.db
     - name: Deploy Datasette using Vercel
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
