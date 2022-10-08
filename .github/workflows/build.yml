@@ -15,12 +15,6 @@ jobs:
       with:
         fetch-depth: 0
         path: main
-    - name: Checkout til-db
-      uses: actions/checkout@v2
-      with:
-        repository: simonw/til-db
-        path: til-db
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_PUSH }}
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -47,7 +41,7 @@ jobs:
     - name: Download previous database unless REBUILD in commit message
       if: |-
         !contains(github.event.head_commit.message, 'REBUILD')
-      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/simonw/til-db/main/tils.db
+      run: curl --fail -o main/tils.db https://s3.amazonaws.com/til.simonwillison.net/tils.db
       continue-on-error: true
     - name: Build database
       run: |-
@@ -74,13 +68,12 @@ jobs:
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
-    - name: Save tils.db to simonw/til-db
+    - name: Upload latest tils.db to the S3 bucket
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |-
-        cd til-db
-        cp ../main/tils.db .
-        git add tils.db
-        git commit --amend --no-edit --author="README-bot <actions@users.noreply.github.com>"
-        git push --force
+        s3-credentials put-object til.simonwillison.net tils.db ../main/tils.db
     - name: Deploy Datasette using Vercel
       env:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
