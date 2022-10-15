@@ -55,3 +55,9 @@ I typed `#` one more time and it autocompleted again to:
 https://images-na.ssl-images-amazon.com/images/I/51UMeAAJNRL._SL50_.gif
 ```
 ... and this time that URL is a 404. Copilot made this one up!
+
+Here's the full flow in VS Code:
+
+![Animation showing the above prompts being executed in VS Code](https://user-images.githubusercontent.com/9599/196009873-f2884d59-c597-40f0-9746-b8fcc283d12d.gif)
+
+
