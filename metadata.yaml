@@ -50,6 +50,25 @@ databases:
             created_utc desc
           limit
             15
+      feed_by_topic:
+        title: Simon Willison TIL for topic
+        sql: |-
+          SELECT
+            'tag:til.simonwillison.net,2020-04-30:' || path as atom_id,
+            title as atom_title,
+            'https://til.simonwillison.net/' || topic || '/' || slug as atom_link,
+            created_utc as atom_updated,
+            html as atom_content_html,
+            'Simon Willison' as atom_author_name,
+            'https://simonwillison.net/' as atom_author_uri
+          FROM
+            til
+          where
+            topic = :topic
+          order by
+            created_utc desc
+          limit
+            15
     tables:
       til:
         sort_desc: updated_utc
