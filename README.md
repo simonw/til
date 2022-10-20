@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->336<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->337<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -245,6 +245,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Enabling a gin index for faster LIKE queries](https://github.com/simonw/til/blob/main/django/enabling-gin-index.md) - 2021-05-16
 * [Django data migration using a PostgreSQL CTE](https://github.com/simonw/til/blob/main/django/migration-using-cte.md) - 2021-05-17
 * [Using just with Django](https://github.com/simonw/til/blob/main/django/just-with-django.md) - 2022-06-06
+* [Adding a Datasette ASGI app to Django](https://github.com/simonw/til/blob/main/django/datasette-django.md) - 2022-10-20
 
 ## docker
 
