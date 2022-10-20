@@ -15,6 +15,27 @@
 
 <h1>Simon Willison: TILs on {{ topic }}</h1>
 
+<p><a style="text-decoration: none" href="/tils/feed_by_topic.atom?topic={{ topic }}" title="Atom feed"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 256 256">
+    <defs>
+    <linearGradient id="a" x1=".1" x2=".9" y1=".1" y2=".9">
+        <stop offset="0" stop-color="#E3702D" />
+        <stop offset=".1" stop-color="#EA7D31" />
+        <stop offset=".4" stop-color="#F69537" />
+        <stop offset=".5" stop-color="#FB9E3A" />
+        <stop offset=".7" stop-color="#EA7C31" />
+        <stop offset=".9" stop-color="#DE642B" />
+        <stop offset="1" stop-color="#D95B29" />
+    </linearGradient>
+</defs>
+<rect width="256" height="256" fill="#CC5D15" rx="55" ry="55" />
+<rect width="246" height="246" x="5" y="5" fill="#F49C52" rx="50" ry="50" />
+<rect width="236" height="236" x="10" y="10" fill="url(#a)" rx="47" ry="47" />
+<circle cx="68" cy="189" r="24" fill="#FFF" />
+<path fill="#FFF" d="M160 213h-34a82 82 0 0 0-82-82V97a116 116 0 0 1 116 116z" />
+<path fill="#FFF" d="M184 213A140 140 0 0 0 44 73V38a175 175 0 0 1 175 175z" />
+    </svg> Atom feed for {{ topic }}</a></p>
+
+
 {% for til in tils %}
     <h3><span class="topic">{{ til.topic }}</span> <a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</h3>
     {{ first_paragraph(til["html"]).replace("</p>", " &#8230; </p>")|safe }}
