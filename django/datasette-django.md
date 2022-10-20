@@ -49,7 +49,7 @@ async def application(scope, receive, send):
 
 Prior to this change, the file contained `application = get_asgi_application()`. `application` is the ASGI application that will be served.
 
-This code replaces that with a tiny ASGI app that looks at the incoming `scope["path"]` and, if it starts with `/datasette/`, sends it to the Djatasette ASGI application. All other requests are sent to Django.
+This code replaces that with a tiny ASGI app that looks at the incoming `scope["path"]` and, if it starts with `/datasette/`, sends it to the Datasette ASGI application. All other requests are sent to Django.
 
 The `Datasette()` constructor at the start finds all SQLite databases that have been configured for Django, extracts their file path (`db["NAME"]` is a path object for SQLite databases) and passes that to the Datasette constructor.
 
