@@ -73,4 +73,4 @@ Add `--reload` to cause it to automatically reload any time a file on disk is ch
 
 ## Using Datasette
 
-With this in place, browsing to `http://127.0.0.1:8000/dashboard/` will provide a Datasette interface for running read-only queries against your Django SQLite databases.
+With this in place, browsing to `http://127.0.0.1:8000/datasette/` will provide a Datasette interface for running read-only queries against your Django SQLite databases.
