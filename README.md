@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->337<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->338<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -74,6 +74,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Defining setup.py dependencies using a URL](https://github.com/simonw/til/blob/main/python/setup-py-from-url.md) - 2022-08-13
 * [Running PyPy on macOS using Homebrew](https://github.com/simonw/til/blob/main/python/pypy-macos.md) - 2022-09-14
 * [Using psutil to investigate "Too many open files"](https://github.com/simonw/til/blob/main/python/too-many-open-files-psutil.md) - 2022-10-13
+* [Simple load testing with Locust](https://github.com/simonw/til/blob/main/python/locust.md) - 2022-10-22
 
 ## zeit-now
 
