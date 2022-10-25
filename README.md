@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->339<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->340<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -75,6 +75,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running PyPy on macOS using Homebrew](https://github.com/simonw/til/blob/main/python/pypy-macos.md) - 2022-09-14
 * [Using psutil to investigate "Too many open files"](https://github.com/simonw/til/blob/main/python/too-many-open-files-psutil.md) - 2022-10-13
 * [Simple load testing with Locust](https://github.com/simonw/til/blob/main/python/locust.md) - 2022-10-22
+* [os.remove() on Windows fails if the file is already open](https://github.com/simonw/til/blob/main/python/os-remove-windows.md) - 2022-10-25
 
 ## zeit-now
 
