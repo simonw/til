@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->340<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->341<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -115,6 +115,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Seeing which functions are unique to a specific SQLite / Datasette instance](https://github.com/simonw/til/blob/main/sqlite/function-list.md) - 2022-08-23
 * [SQLite VACUUM: database or disk is full](https://github.com/simonw/til/blob/main/sqlite/vacum-disk-full.md) - 2022-08-29
 * [Returning related rows in a single SQL query using JSON](https://github.com/simonw/til/blob/main/sqlite/related-rows-single-query.md) - 2022-09-16
+* [Finding the SQLite version used by Web SQL in Chrome](https://github.com/simonw/til/blob/main/sqlite/sqlite-version-websql-chrome.md) - 2022-10-28
 
 ## presenting
 
