@@ -20,6 +20,9 @@ If you create a file called `foo.html` in the repo and visit the page `/foo` you
 
 - https://simonw.github.io/playing-with-github-pages/folder redirects to `/folder/`
 
+This only happens if the folder exists.
+
+
 ## /folder/ will serve folder/index.html
 
 - https://simonw.github.io/playing-with-github-pages/folder/ serves `folder/index.html`
