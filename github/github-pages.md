@@ -26,6 +26,10 @@ If you create a file called `foo.html` in the repo and visit the page `/foo` you
 - https://simonw.github.io/playing-with-github-pages/folder/index serves `folder/index.html`
 - https://simonw.github.io/playing-with-github-pages/folder/index.html serves `folder/index.html`
 
+## A 404.html file will be used for 404s
+
+Creating a `404.html` file in the root of the directory customizes the page served for a 404 error.
+
 ## The .html rule beats the folder redirect rule
 
 I created `folder2.html` and `folder2/index.html`:
@@ -47,6 +51,13 @@ I created `json/index.html`:
 - https://simonw.github.io/playing-with-github-pages/json/index.json serves `json/index.json`
 
 Note that `/json/index` served a 404 - so unlike `.html` the `.json` extension is not automatically appended.
+
+## If there is no index.html or index.json a folder will 404
+
+I created `folder-with-no-index` with a `bar.html` file but no `index.html` or `index.json`:
+
+- https://simonw.github.io/playing-with-github-pages/folder-with-no-index redirects to `/folder-with-no-index/`
+- https://simonw.github.io/playing-with-github-pages/folder-with-no-index/ serves a 404
 
 ## Custom redirects are not supported
 
