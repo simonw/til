@@ -2,11 +2,11 @@
 
 I extracted and enhanced this TIL from [my April 8th 2020 weeknotes](https://simonwillison.net/2020/Apr/8/weeknotes-zeit-now-v2/#git-bisect) to make it easier to find.
 
-I fixed two bugs in Datasette using `git bisect run`- a tool which lets you run an automated binary search against a commit log to find the source of a bug.
+I fixed two bugs in Datasette using `git bisect run` - a tool which lets you run an automated binary search against a commit log to find the source of a bug.
 
 Since I was figuring out a new tool, I fired up another GitHub issue self-conversation: in [issue #716](https://github.com/simonw/datasette/issues/716) I document my process of both learning to use `git bisect run` and using it to find a solution to that particular bug.
 
-It worked great, so I used the same trick on [issue 689](https://github.com/simonw/datasette/issues/689) as well.
+It worked great, so I used the same trick on [issue #689](https://github.com/simonw/datasette/issues/689) as well.
 
 Watching `git bisect run` churn through 32 revisions in a few seconds and pinpoint the exact moment a bug was introduced is pretty delightful.
 
