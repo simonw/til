@@ -43,7 +43,7 @@ I created `folder2.html` and `folder2/index.html`:
 
 Here's [a StackOverflow post](https://stackoverflow.com/questions/39199042/serve-json-data-from-github-pages/50667394#50667394) about this.
 
-I created `json/index.html`:
+I created `json/index.json`:
 
 - https://simonw.github.io/playing-with-github-pages/json redirects to `/json/`
 - https://simonw.github.io/playing-with-github-pages/json/ serves `json/index.json`
