@@ -47,7 +47,7 @@ I wanted `@simon@simonwillison.net` as my ID, but it started out as `@simon@fedi
 
 To do this, you need to set up some `/.well-known/...` URLs on your core domain.
 
-I exactly copied [how Andrew did this](https://aeracode.org/2022/11/01/fediverse-custom-domains/). Here's [my commit to my Django blog]().
+I exactly copied [how Andrew did this](https://aeracode.org/2022/11/01/fediverse-custom-domains/). Here's [my commit to my Django blog](https://github.com/simonw/simonwillisonblog/commit/f112e57f8619852985f15a71c00309f5046b8f1a).
 
 There's one last step here: as explained in [Mastodon usernames different from the domain used for installation](https://masto.host/mastodon-usernames-different-from-the-domain-used-for-installation/) you need to update the `LOCAL_DOMAIN` and `WEB_DOMAIN` settings. These aren't currently available for `masto.host` customers to change, but you can email their support team about it.
 
