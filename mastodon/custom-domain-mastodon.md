@@ -3,7 +3,7 @@
 This TIL is mainly a rehash of these two articles by Jacob and Andrew:
 
 - [Setting up a personal Fediverse ID / Mastodon instance](https://jacobian.org/til/my-mastodon-instance/) - Jacob Kaplan-Moss
-- [The Fediverse, And Custom Domains](https://aeracode.org/2022/11/01/fediverse-custom-domains/)
+- [The Fediverse, And Custom Domains](https://aeracode.org/2022/11/01/fediverse-custom-domains/) - Andrew Godwin
 
 I decided if I was going to get into Mastodon I wanted it on a domain that I controlled.
 
