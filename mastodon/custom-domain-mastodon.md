@@ -56,3 +56,7 @@ I emailed them and they fixed it for me six minutes later! And now `@simon@simon
 ## Finding people to follow
 
 I started by following `@jacob@jacobian.org` and `@andrew@aeracode.org`. Then I looked at who they were following. Then I tweeted about my new account and started following-back people who followed me.
+
+## The iPhone app is really good
+
+I installed [the official Mastodon app](https://apps.apple.com/us/app/mastodon-for-iphone-and-ipad/id1571998974) on my iPhone. It's really good! I signed in by giving it my `https://fedi.simonwillison.net/` address, and now it's sending me notifications and generally working exactly how I would want it to.
