@@ -25,7 +25,7 @@ On my machine part of the ouput from this says `OMIT_LOAD_EXTENSION`.
 
 You can run `which sqlite3` to see where it is located - on my system that outputs `/usr/bin/sqlite3`.
 
-If you use Homebrew you can run `brew install sqlite` - this will install a modern version of SQLite, but it won't link it into your path (it's a "key-only package" in Homebrew jargon) to avoid conflicting with the macOS default installation. Running `brew info sqlite` confirms this.
+If you use Homebrew you can run `brew install sqlite` - this will install a modern version of SQLite, but it won't link it into your path (it's a "keg-only package" in Homebrew jargon) to avoid conflicting with the macOS default installation. Running `brew info sqlite` confirms this.
 
 ```
 % brew info sqlite 
