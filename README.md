@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->346<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->347<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -568,6 +568,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Using GPT-3 to figure out jq recipes](https://github.com/simonw/til/blob/main/gpt3/jq.md) - 2022-08-10
 * [Guessing Amazon image URLs using GitHub Copilot](https://github.com/simonw/til/blob/main/gpt3/guessing-amazon-urls.md) - 2022-10-15
+* [Generating OpenAPI specifications using GPT-3](https://github.com/simonw/til/blob/main/gpt3/open-api.md) - 2022-11-13
 
 ## quarto
 
