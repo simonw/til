@@ -1,8 +1,8 @@
 # Writing tests with Copilot
 
-I needed to write a pretty tedious collection of repetitive tests, for various error status.
+I needed to write a relatively repetitive collection of tests, for a number of different possible error states.
 
-The code I was testing looks like this:
+The code I was testing [looks like this](https://github.com/simonw/datasette/blob/187d91d68617ca48e34c1fb0c6722a40f8567d45/datasette/views/database.py#L561-L687):
 
 ```python
 columns = data.get("columns")
@@ -58,3 +58,5 @@ It correctly guessed both the error assertion and the desired invalid input for 
 Here's an animated screenshot:
 
 ![In this animation I start typing below the comment that says rows must be a list of objects - Copilot correctly deduces that I neeed an example with a rows item that is a list, and that the expected status code is 400, and that the returned error should match the text in the comment.](https://user-images.githubusercontent.com/9599/201836958-78288b9a-7ee6-4035-bfb3-b37e935cbc5a.gif)
+
+The [finished tests are here](https://github.com/simonw/datasette/blob/187d91d68617ca48e34c1fb0c6722a40f8567d45/tests/test_api_write.py#L548-L722).
