@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->349<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->350<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -592,6 +592,7 @@ Search these TILs at https://til.simonwillison.net/
 ## html
 
 * [HTML video that loads when the user clicks play](https://github.com/simonw/til/blob/main/html/video-preload-none.md) - 2022-09-29
+* [HTML datalist](https://github.com/simonw/til/blob/main/html/datalist.md) - 2022-11-14
 
 ## mastodon
 
