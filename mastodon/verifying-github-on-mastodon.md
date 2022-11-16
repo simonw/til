@@ -2,7 +2,7 @@
 
 Mastodon has a really neat way of implementing verification, using the [rel=me microformat](https://microformats.org/wiki/rel-me).
 
-You can edit your Mastodon profile and add up to four links to it. Mine looks like this at the moment:
+You can edit your Mastodon profile and add up to four links to it. Mine [looks like this](https://fedi.simonwillison.net/@simon) at the moment:
 
 <img width="565" alt="My Mastodon profile has four links: BLOG: simonwillison.net, GitHub: simonw.github.io, Twitter: twitter.com/simonw and TIL: til.simonwilliso.net. All but the Twitter one show a green checkmark and a green background, to indicate they are verified." src="https://user-images.githubusercontent.com/9599/202297154-a2b00a62-beaa-44a5-9114-5fed2fb9b6fc.png">
 
