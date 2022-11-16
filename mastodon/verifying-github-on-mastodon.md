@@ -16,11 +16,11 @@ Getting a verified link to GitHub is a tiny bit trickier. GitHub _does_ support 
 
 <img width="335" alt="The edit profile form on GitHub, with a number of different form fields" src="https://user-images.githubusercontent.com/9599/202298033-fd78a7c0-1c83-4b37-b708-ef65038c1443.png">
 
-The only two fields here that will have `rel=me` applied to them when GitHub serves the final page are the link field (which I have set to my personal blog at https://simonwillison.net/ and, weirdly, the location field (which I have set to Half Moon Bay, CA).
+The only field here that will have `rel=me` applied to it when GitHub serves the final page is that link field, which I have set to my personal blog at https://simonwillison.net/
 
-So the easiest way to verify your GitHub profile is to point one of those to your Mastodon page, which in my case is https://fedi.simonwillison.net/@simon
+So the easiest way to verify your GitHub profile is to point the link to your Mastodon page, which in my case is https://fedi.simonwillison.net/@simon
 
-But... I didn't want to sacrifice either of those fields!
+But... I didn't want to sacrifice that field! I want to link to my blog.
 
 The first thing I tried was editing my profile to point to Mastodon, then editing my Mastodon profile to trigger a verification job, then editing my GitHub profile back again.
 
