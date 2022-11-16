@@ -8,7 +8,15 @@ I needed to run Selenium on macOS for the first time today. Here's how I got it 
 
 This is by far the easiest option:
 
-    brew cask install chromedriver
+    brew install chromedriver --cask
+
+Or to upgrade an existing installation:
+
+    brew upgrade chromedriver --cask
+
+This is useful if you are seeing an error like this one:
+
+> Message: session not created: This version of ChromeDriver only supports Chrome version 85
 
 This also ensures `chromedriver` is on your path, which means you don't need to use an explicit `chromedriver_path` later on.
 
