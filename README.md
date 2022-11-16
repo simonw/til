@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->351<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->352<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -599,6 +599,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Getting Mastodon running on a custom domain](https://github.com/simonw/til/blob/main/mastodon/custom-domain-mastodon.md) - 2022-11-02
 * [Export a Mastodon timeline to SQLite](https://github.com/simonw/til/blob/main/mastodon/export-timeline-to-sqlite.md) - 2022-11-04
+* [Verifying your GitHub profile on Mastodon](https://github.com/simonw/til/blob/main/mastodon/verifying-github-on-mastodon.md) - 2022-11-16
 
 ## json
 
