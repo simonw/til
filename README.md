@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->350<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->351<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -476,6 +476,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Removing a git commit and force pushing to remove it from history](https://github.com/simonw/til/blob/main/git/remove-commit-and-force-push.md) - 2021-10-22
 * [Rewriting a repo to contain the history of just specific files](https://github.com/simonw/til/blob/main/git/rewrite-repo-specific-files.md) - 2022-03-22
 * [git bisect](https://github.com/simonw/til/blob/main/git/git-bisect.md) - 2022-10-29
+* [How to create a tarball of a git repository using "git archive"](https://github.com/simonw/til/blob/main/git/git-archive.md) - 2022-11-15
 
 ## web-components
 
