@@ -19,6 +19,8 @@ I see this as a pleasantly low-risk vendor, because since I'm pointing my own do
 
 My impressions of it so far have been excellent - especially the speed of their customer support (see later note).
 
+*The Mastodon docs have [a list of other companies](https://docs.joinmastodon.org/user/run-your-own/#so-you-want-to-run-your-own-mastodon-server) that provide hosted instances like this.*
+
 ## Pay for an account, then set up a CNAME
 
 I paid for a subscription, then added the following configuration to my Cloudflare DNS:
