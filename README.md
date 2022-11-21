@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->352<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->353<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -450,6 +450,7 @@ Search these TILs at https://til.simonwillison.net/
 ## observable-plot
 
 * [Histogram with tooltips in Observable Plot](https://github.com/simonw/til/blob/main/observable-plot/histogram-with-tooltips.md) - 2021-08-21
+* [Wider tooltip areas for Observable Plot](https://github.com/simonw/til/blob/main/observable-plot/wider-tooltip-areas.md) - 2022-11-21
 
 ## purpleair
 
