@@ -49,7 +49,7 @@ Note that it imports from `datasette` even though Datasette is not one of the de
 
 The `register_commands()` hook implementation is passed the `cli` object used by Datasette itself. I can use `cli.add_command(...)` to add a new command to it - in this case a command group, but either works fine.
 
-Without the `name="client" parameter here the command registered as `datasette cli --help`, which wasn't what I wanted.
+Without the `name="client"` parameter here the command registered as `datasette cli --help`, which wasn't what I wanted.
 
 ## dclient/cli.py
 
