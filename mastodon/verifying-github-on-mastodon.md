@@ -12,7 +12,7 @@ My https://simonwillison.net/ and https://til.simonwillison.net/ page headers in
 
     <link href="https://fedi.simonwillison.net/@simon" rel="me">
 
-Getting a verified link to GitHub is a tiny bit trickier. GitHub _does_ support `rel=me` - but only on two of the links in your profile:
+Getting a verified link to GitHub is a tiny bit trickier. GitHub _does_ support `rel=me` - but only for one of the link fields in your profile:
 
 <img width="335" alt="The edit profile form on GitHub, with a number of different form fields" src="https://user-images.githubusercontent.com/9599/202298033-fd78a7c0-1c83-4b37-b708-ef65038c1443.png">
 
