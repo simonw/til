@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->353<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->354<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -359,6 +359,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Crawling Datasette with Datasette](https://github.com/simonw/til/blob/main/datasette/crawling-datasette-with-datasette.md) - 2022-02-27
 * [Registering new Datasette plugin hooks by defining them in other plugins](https://github.com/simonw/til/blob/main/datasette/register-new-plugin-hooks.md) - 2022-06-17
 * [Writing a Datasette CLI plugin that mostly duplicates an existing command](https://github.com/simonw/til/blob/main/datasette/plugin-modifies-command.md) - 2022-10-22
+* [Writing a CLI utility that is also a Datasette plugin](https://github.com/simonw/til/blob/main/datasette/cli-tool-that-is-also-a-plugin.md) - 2022-11-21
 
 ## jupyter
 
