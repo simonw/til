@@ -31,3 +31,19 @@ Plot.plot({
 The final effect looks like this:
 
 <img width="657" alt="CleanShot 2022-11-21 at 13 55 17@2x" src="https://user-images.githubusercontent.com/9599/203165945-936b527b-6222-4f72-af56-9f072243ecd5.png">
+
+## Covering the whole vertical area
+
+[Fil on Twitter](https://twitter.com/recifs/status/1595002225092620289) suggests this improvement, which extends the hover area for each point on the line to the full height of the chart:
+
+```javascript
+    Plot.tickX(points, {
+      x: "date",
+      title: (d) => d.date.toLocaleString() + " - " + d.users.toLocaleString(),
+      strokeWidth: 12,
+      stroke: "white",
+      opacity: 0.01
+    })
+```
+
+
