@@ -30,7 +30,7 @@ Angus Hollands [suggested a neat fix](https://twitter.com/agoose77/status/159287
 
 GitHub reserves `https://your-username.github.io/` as a URL that you can create your own static GitHub Pages site on.
 
-The way you do this is to create a repository called `github.com/your-username/your-username.github.io` - any HTML you put in that repo will be served from your personal domain.
+The way you do this is to create a repository called `github.com/your-username/your-username.github.com` - any HTML you put in that repo will be served from your personal domain.
 
 Angus pointed out that since GitHub restrict who can publish there, proving ownership of `simonw.github.io` is equivalent to proving ownership of `github.com/simonw`.
 
