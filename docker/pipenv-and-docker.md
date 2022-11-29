@@ -2,6 +2,32 @@
 
 I had [a Django project](https://github.com/natbat/cbwg) that used `pipenv` (in particular a `Pipfile.lock`) to manage dependencies and I wanted to build a Docker container for it.
 
+This worked:
+
+```dockerfile
+FROM python:3.6.15-slim-buster
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY . .
+
+RUN pip install pipenv
+RUN pipenv sync --system
+
+RUN ./manage.py collectstatic --noinput
+
+EXPOSE 8000
+
+CMD pipenv run gunicorn --bind 0.0.0.0:8000 --timeout 120 --workers 2 cbwg.wsgi
+```
+
+The key trick here is using `pipenv sync --system` to install into the system Python, rather than trying to create a virtual environment.
+
+(`--system` trick courtesy of [feedback on Mastodon](https://social.lol/@ryan/109424753653794299))
+
+## Previous method before learning about --system
+
 With the help of [this article](https://sourcery.ai/blog/python-docker/) (for the `PIPENV_VENV_IN_PROJECT` tip) I came up with the following:
 
 ```dockerfile
