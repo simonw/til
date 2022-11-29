@@ -17,7 +17,7 @@ Here's the pattern I found that works:
         cache-dependency-path: setup.py
     - name: Install dependencies
       run: |
-        pip install -e '.[test]'
+        pip install '.[test]'
 ```
 
 And here's a full `.github/workflows/test.yml` configuration that uses a matrix to run tests against five currently supported Python versions:
@@ -46,7 +46,7 @@ jobs:
         cache-dependency-path: setup.py
     - name: Install dependencies
       run: |
-        pip install -e '.[test]'
+        pip install '.[test]'
     - name: Run tests
       run: |
         pytest
