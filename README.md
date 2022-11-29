@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->356<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->357<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -263,6 +263,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Testing things in Fedora using Docker](https://github.com/simonw/til/blob/main/docker/test-fedora-in-docker.md) - 2022-07-27
 * [Emulating a big-endian s390x with QEMU](https://github.com/simonw/til/blob/main/docker/emulate-s390x-with-qemu.md) - 2022-07-29
 * [Run pytest against a specific Python version using Docker](https://github.com/simonw/til/blob/main/docker/pytest-docker.md) - 2022-09-05
+* [Using pipenv and Docker](https://github.com/simonw/til/blob/main/docker/pipenv-and-docker.md) - 2022-11-28
 
 ## homebrew
 
