@@ -10,6 +10,8 @@ And found [this example](https://github.com/urllib3/urllib3/blob/7bec77e81aa0a19
 
     3.11-dev
 
+> **Update 28th Noveber 2022**: `3.12-dev` now works for Python 3.12 preview
+
 I added that to my test matrix like so:
 
 ```yaml
