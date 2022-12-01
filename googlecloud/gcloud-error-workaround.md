@@ -54,6 +54,20 @@ If you are still experiencing problems, please reinstall the Cloud SDK using the
 ```
 After some frustrating trial-and-error, I found that a workaround which is currently effective for some reason (on 1st December 2022) is to downgrade the Python version to 3.9 and increase the `version` field to `318.0.0`.
 
+So now I use:
+
+```yaml
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Set up Cloud Run
+      uses: google-github-actions/setup-gcloud@v0
+      with:
+        version: '318.0.0'
+        service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+```
 ## Maybe upgrade to google-github-actions/setup-gcloud@v1 ?
 
 In  writing this up I noticed that I'm still using `v0` of the action, but `v1` is now available.
