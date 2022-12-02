@@ -8,6 +8,8 @@ I built a [simonw/playing-with-github-pages](https://github.com/simonw/playing-w
 
 GitHub Pages was originally built around the [Jekyll](https://jekyllrb.com/) Ruby static site framework. You can turn that off by adding a `.nojekyll` file to your repository root.
 
+Weirdly, I found that this also fixed an issue where files in a directory called `node_modules/` were serving as a 404. Adding `.nojekyll` fixed that.
+
 ## /foo will serve content from foo.html, if it exists
 
 If you create a file called `foo.html` in the repo and visit the page `/foo` you will see content from that file.
