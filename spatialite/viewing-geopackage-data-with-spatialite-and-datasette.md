@@ -1,6 +1,6 @@
 # Viewing GeoPackage data with SpatiaLite and Datasette
 
-I managed to display a polygon fom a GeoPackage database file today, using SpatiaLite and Datasette.
+I managed to display polygons fom a GeoPackage database file today, using SpatiaLite and Datasette.
 
 ## GeoPackage
 
@@ -119,6 +119,6 @@ from dnr_wildlife_management_areas_public_facilities_lines
 
 <img width="1146" alt="A map showing geometries returned by Datasette" src="https://user-images.githubusercontent.com/9599/206952011-ce799edb-732e-4e87-a559-e06a7b0401e5.png">
 
-This plugin works against SpatiaLite geometries, not GeoJSON, so I dropped the `AsGeoJSON()` call.
+This plugin works against SpatiaLite geometries as well as GeoJSON, so I dropped the `AsGeoJSON()` call here.
 
 The binary data here is being rendered using [datasette-render-binary](https://datasette.io/plugins/datasette-render-binary).
