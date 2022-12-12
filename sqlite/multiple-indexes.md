@@ -2,7 +2,7 @@
 
 I was trying to figure out if SQLite has the ability to use more than one index as part of executing a single query, or if it only ever picks a single index that it thinks will give the best performance.
 
-[1.5. Multiple AND-Connected WHERE-Clause Terms]([https://www.sqlite.org/queryplanner.html#_multi_column_indices](https://www.sqlite.org/queryplanner.html#_multiple_and_connected_where_clause_terms)) in the query palnner documentation gives the impression that the single best index is selected if there are multiple options:
+[1.5. Multiple AND-Connected WHERE-Clause Terms](https://www.sqlite.org/queryplanner.html#_multiple_and_connected_where_clause_terms) in the query planner documentation gives the impression that the single best index is selected if there are multiple options:
 
 > So which index, Idx1 or Idx2, will SQLite choose? If the [ANALYZE](https://www.sqlite.org/lang_analyze.html) command has been run on the database, so that SQLite has had an opportunity to gather statistics about the available indices, then SQLite will know that the Idx1 index usually narrows the search down to a single item (our example of fruit='Orange' is the exception to this rule) whereas the Idx2 index will normally only narrow the search down to two rows. So, if all else is equal, SQLite will choose Idx1 with the hope of narrowing the search to as small a number of rows as possible.
 
