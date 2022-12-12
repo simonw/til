@@ -97,7 +97,9 @@ Datasette can't call this function because it writes to the database file, so I 
 
 ```
 /usr/local/Cellar/sqlite-utils/3.28/bin/sqlite-utils \
-  query struc_dnr_wld_mgmt_areas_pub.gpkg 'select InitSpatialMetadata()'
+  query struc_dnr_wld_mgmt_areas_pub.gpkg \
+  'select InitSpatialMetadata()' \
+  --load-extension spatialite
 ```
 This did the job! Having run this, I could open Datasette against the database file (now upgraded to a SpatiaLite database) and view GeoJSON with:
 
