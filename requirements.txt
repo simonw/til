@@ -10,3 +10,4 @@ datasette-media
 datasette-block-robots
 datasette-sitemap>=1.0
 s3-credentials
+shot-scraper

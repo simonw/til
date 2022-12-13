@@ -17,15 +17,18 @@ def png_for_path(path):
     # Use datasette to generate HTML
     proc = subprocess.run(["datasette", ".", "--get", path], capture_output=True)
     open(page_html, "wb").write(proc.stdout)
-    # Now use puppeteer screenshot to generate a PNG
+    # Now use shot-scraper to generate a PNG
     proc2 = subprocess.run(
         [
-            "puppeteer",
-            "screenshot",
+            "shot-scraper",
+            "shot",
             page_html,
-            "--viewport",
-            "800x400",
-            "--full-page=false",
+            "-w",
+            "800",
+            "-h",
+            "400",
+            "-o",
+            "-",
         ],
         capture_output=True,
     )
