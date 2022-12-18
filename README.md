@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->364<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->365<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -324,6 +324,7 @@ Search these TILs at https://til.simonwillison.net/
 * [nullglob in bash](https://github.com/simonw/til/blob/main/bash/nullglob-in-bash.md) - 2022-02-14
 * [Using awk to add a prefix](https://github.com/simonw/til/blob/main/bash/use-awk-to-add-a-prefix.md) - 2022-04-08
 * [Ignoring errors in a section of a Bash script](https://github.com/simonw/til/blob/main/bash/ignore-errors.md) - 2022-06-27
+* [Start, test, then stop a localhost web server in a Bash script](https://github.com/simonw/til/blob/main/bash/start-test-then-stop-server.md) - 2022-12-17
 
 ## typescript
 
