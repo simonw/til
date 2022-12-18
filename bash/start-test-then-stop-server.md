@@ -131,7 +131,7 @@ Worth breaking down the `curl` command here a bit:
 
     curl --output /dev/null --silent --insecure --head --fail --max-time 2 $test_url
 
-It`s avoiding any output at all with a combination of writing output to `/dev/null` and using `--silent` to turn off logging.
+It's avoiding any output at all with a combination of writing output to `/dev/null` and using `--silent` to turn off logging.
 
 It uses `--insecure` because our server is running with a self-signed certificate, which will produce errors without this option - and here we just want to poll until the server is up and running.
 
