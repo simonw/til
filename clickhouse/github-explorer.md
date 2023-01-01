@@ -48,7 +48,7 @@ ORDER BY
 LIMIT
   100
 ```
-[This link](https://play.clickhouse.com/play?user=play#U0VMRUNUCiAgY3JlYXRlZF9hdCwKICBhY3Rvcl9sb2dpbiwKICByZXBvX25hbWUsCiAgZXZlbnRfdHlwZSwKICB0aXRsZQpGUk9NCiAgZ2l0aHViX2V2ZW50cwpXSEVSRQogIGFjdG9yX2xvZ2luID0gJ3NpbW9udycKICBBTkQgcmVwb19uYW1lICE9ICdzaW1vbncvZGlzYXN0ZXItZGF0YScKT1JERVIgQlkKICBjcmVhdGVkX2F0IERFU0MKTElNSVQKICAxMDA=) executes that query.
+[This link](https://play.clickhouse.com/play?user=play#U0VMRUNUCiAgY3JlYXRlZF9hdCwKICBhY3Rvcl9sb2dpbiwKICByZXBvX25hbWUsCiAgZXZlbnRfdHlwZSwKICB0aXRsZQpGUk9NCiAgZ2l0aHViX2V2ZW50cwpXSEVSRQogIGFjdG9yX2xvZ2luID0gJ3NpbW9udycKICBBTkQgcmVwb19uYW1lICE9ICdzaW1vbncvZGlzYXN0ZXItZGF0YScKT1JERVIgQlkKICBjcmVhdGVkX2F0IERFU0MKTElNSVQKICAxMDA=) executes that query - note how it includes a base64 encoded copy of the SQL query following the `#` in the URL.
 
 There are 77 tables total in the Playground instance - you can get a list of them like this:
 ```sql
