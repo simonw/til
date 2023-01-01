@@ -6,7 +6,7 @@ Via [this comment](https://news.ycombinator.com/item?id=34197637) on Hacker News
 
 [ClickHouse](https://clickhouse.com/) is an open source column-oriented database, originally developed at Yandex but spun out into a separate, VC-funded company in 2021. It's designed for big data analytical queries - in a similar space to HBase, BigQuery and DuckDB.
 
-It turns out it can do that trick with HTTP range queries where you can point it at the URL to a Parquet or `.native.zst` file (ClickHouse native format, optionally compressed using [Facebook Zstandard](https://github.com/facebook/zstd)) and run queries without downloading the entire file first.
+It turns out it can do [that trick with HTTP range queries](https://news.ycombinator.com/item?id=34197637) where you can point it at the URL to a Parquet or `.native.zst` file (ClickHouse native format, optionally compressed using [Facebook Zstandard](https://github.com/facebook/zstd)) and run queries without downloading the entire file first.
 
 ## Exploring the Playground
 
