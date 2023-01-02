@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->366<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->367<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -621,4 +621,8 @@ Search these TILs at https://til.simonwillison.net/
 ## clickhouse
 
 * [Querying the GitHub archive with the ClickHouse playground](https://github.com/simonw/til/blob/main/clickhouse/github-explorer.md) - 2022-12-31
+
+## cooking
+
+* [Breakfast tacos with eggs, vegetarian sausages and avocado sauce](https://github.com/simonw/til/blob/main/cooking/breakfast-tacos.md) - 2023-01-02
 <!-- index ends -->
