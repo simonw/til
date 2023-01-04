@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->367<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->368<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -120,6 +120,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Finding the SQLite version used by Web SQL in Chrome](https://github.com/simonw/til/blob/main/sqlite/sqlite-version-websql-chrome.md) - 2022-10-28
 * [SQLite can use more than one index for a query](https://github.com/simonw/til/blob/main/sqlite/multiple-indexes.md) - 2022-12-11
 * [Comparing database rows before and after with SQLite JSON functions](https://github.com/simonw/til/blob/main/sqlite/compare-before-after-json.md) - 2022-12-14
+* [Geopoly in SQLite](https://github.com/simonw/til/blob/main/sqlite/geopoly.md) - 2023-01-04
 
 ## presenting
 
