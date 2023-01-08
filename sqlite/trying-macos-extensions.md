@@ -150,3 +150,7 @@ Click "Allow Anyway", then try running the `.load` command again. Click "Open" o
 <img src="https://static.simonwillison.net/static/2022/lines0-allow.png" width="300" alt="Same dialog a before but now there is an Open button">
 
 And the extension will load from now on!
+
+## And for Python
+
+See [Loading SQLite extensions in Python on macOS](https://til.simonwillison.net/sqlite/sqlite-extensions-python-macos).
