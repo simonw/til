@@ -100,6 +100,8 @@ Now I can open it in Datasette Lite like so:
 
 https://lite.datasette.io/?sql=https://gist.github.com/simonw/ee4d5938016b10c490f7efa03c4bf185
 
+<img width="980" alt="Datasette Lite showing 7 tables for each of the JSON files" src="https://user-images.githubusercontent.com/9599/211655990-345a9646-2def-4e68-b7b3-182007d1e5a3.png">
+
 ## Automating the data extraction
 
 One last step: I decided to script the data extraction itself, using shot-scraper javascript.
