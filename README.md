@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->369<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->370<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -560,6 +560,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Extracting web page content using Readability.js and shot-scraper](https://github.com/simonw/til/blob/main/shot-scraper/readability.md) - 2022-03-24
 * [shot-scraper for a subset of table columns](https://github.com/simonw/til/blob/main/shot-scraper/subset-of-table-columns.md) - 2022-10-14
+* [Scraping the Sky News Westminster Accounts, a Flourish application](https://github.com/simonw/til/blob/main/shot-scraper/scraping-flourish.md) - 2023-01-10
 
 ## auth0
 
