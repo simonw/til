@@ -4,6 +4,8 @@ Sky News in partnership with [Tortoise](https://www.tortoisemedia.com/) publishe
 
 You can explore the data [in their interactive here](https://news.sky.com/story/westminster-accounts-search-for-your-mp-or-enter-your-full-postcode-12771627). It's really well built.
 
+Tortoise have a [comprehensive explanation of their methodology](https://www.tortoisemedia.com/2023/01/08/the-westminster-accounts-methodology/) that is well worth reading.
+
 The interactive is built with [Flourish](https://flourish.studio/features/). I decided to see if I could get the raw data back out again.
 
 ## Extracting the data with copy and paste
