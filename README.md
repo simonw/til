@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->370<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->371<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -78,6 +78,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Simple load testing with Locust](https://github.com/simonw/til/blob/main/python/locust.md) - 2022-10-22
 * [os.remove() on Windows fails if the file is already open](https://github.com/simonw/til/blob/main/python/os-remove-windows.md) - 2022-10-25
 * [The pdb interact command](https://github.com/simonw/til/blob/main/python/pdb-interact.md) - 2022-10-31
+* [Upgrading a pipx application to an alpha version](https://github.com/simonw/til/blob/main/python/pipx-alpha.md) - 2023-01-11
 
 ## zeit-now
 
