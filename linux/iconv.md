@@ -25,3 +25,15 @@ UTF-32BE
 UTF-32LE
 UNICODE-1-1-UTF-7 UTF-7 CSUNICODE11UTF7
 ```
+
+## Discarding invalid characters
+
+I picked up this tip [from Ben Brandwood](https://twitter.com/ben_brandwood/status/1617926062213853185): you can also use `iconv` to fix problems when a file includes invalid UTF-8 characters.
+
+The trick is to use the `-c` option, which `iconv --help` tells you will "discard unconvertible characters".
+
+Here's Ben's recipe:
+
+    iconv -f utf-8 -t utf-8 -c FILE.txt -o NEW_FILE
+
+Note that the input encoding (`-f`) and the output encoding (`-t`) are the same here. The `-c` option does all of the work.
