@@ -120,3 +120,4 @@ git remote remove origin
 git remote add origin git@github.com:simonw/my-repo.git
 git push -u origin main
 ```
+This was likely unnecessary: the GitHub documentation says that a force push should remove all traces of the old commits.
