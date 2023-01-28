@@ -1,7 +1,6 @@
 # Installing lxml for Python on an M1/M2 Mac
 
-I ran into this error while trying to run `pip install lxml` on an M2 Mac:
-
+I ran into this error while trying to run `pip install lxml` on an M2 Mac, inside a virtual environment I had intitially created using `pipenv shell`:
 ```
 % pip install lxml
 Collecting lxml
