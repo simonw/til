@@ -106,7 +106,7 @@ https://lite.datasette.io/?sql=https://gist.github.com/simonw/ee4d5938016b10c490
 
 ## Automating the data extraction
 
-One last step: I decided to script the data extraction itself, using shot-scraper javascript.
+One last step: I decided to script the data extraction itself, using [shot-scraper javascript](https://simonwillison.net/2022/Mar/14/scraping-web-pages-shot-scraper/).
 
 I built a new tool to help with that - [json-to-files](https://pypi.org/project/json-to-files) - which accepts a JSON object mapping filenames to content and writes those files to disk.
 
