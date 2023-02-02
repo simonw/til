@@ -98,6 +98,7 @@ if __name__ == "__main__":
         "for i in range(10000): print('hello world')",
         "print('hello world')",
         "for i in range(100000): print('hello world')",
+        "import sqlite3; print(sqlite3.connect(':memory:').execute('select sqlite_version()').fetchone()[0])"
     ):
         try:
             print(code)
@@ -174,4 +175,19 @@ note: using the `WASMTIME_BACKTRACE_DETAILS=1` environment variable may show mor
 
 Caused by:
     wasm trap: all fuel consumed by WebAssembly
+import sqlite3; print(sqlite3.connect(':memory:').execute('select sqlite_version()').fetchone()[0])
+====
+result:
+
+3.39.2
+
+
+mem size pages of 64kb: 160
+data length: 10485760
+fuel consumed: 381954995
 ```
+That last code line - `import sqlite3; print(sqlite3.connect(':memory:').execute('select sqlite_version()').fetchone()[0])` - produces the following output:
+
+    3.39.2
+
+This confirms that there's a WebAssembly build of SQLite bundled in with that Python WASM package, and it's a relatively recent version.
