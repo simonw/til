@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->378<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->379<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -577,6 +577,7 @@ Search these TILs at https://til.simonwillison.net/
 ## webassembly
 
 * [Compiling to WASM with llvm on macOS](https://github.com/simonw/til/blob/main/webassembly/compile-to-wasm-llvm-macos.md) - 2022-03-28
+* [Run Python code in a WebAssembly sandbox](https://github.com/simonw/til/blob/main/webassembly/python-in-a-wasm-sandbox.md) - 2023-02-02
 
 ## service-workers
 
