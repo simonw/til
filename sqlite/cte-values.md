@@ -23,4 +23,4 @@ The `with x(c1, c2, c3)` bit defines a temporary table for the duration of the q
 
 Then the `values (...), (...)` bit defines two rows within that table - and can define many more.
 
-This is useful for injecting data that you can then join againts other tables - or for providing queries that include their own example data to illustrate different SQL concepts.
+This is useful for injecting data that you can then join against other tables - or for providing queries that include their own example data to illustrate different SQL concepts.
