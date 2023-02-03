@@ -1,6 +1,6 @@
 # Building Mastodon bots with GitHub Actions and toot
 
-Twitter announced today that they'll be ending free API access for bots.
+Twitter [announced today](https://twitter.com/TwitterDev/status/1621026986784337922) that they'll be ending free API access for bots.
 
 My [@covidsewage](https://twitter.com/covidsewage) Twitter bot posts a screenshot of the latest Covid sewage data for parts of the San Francisco Bay Area every morning. I decided to port it to Mastodon.
 
