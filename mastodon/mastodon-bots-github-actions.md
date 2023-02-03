@@ -27,7 +27,7 @@ The `toot post` command only works if you authenticate first.
 Toot authentication is _really nice_. All you have to do is run:
 
 ```
-toot auth
+toot login
 ```
 It will ask for your Mastodon instance (my private one is `fedi.simonwillison.net`) and spit out a link to click on.
 
