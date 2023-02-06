@@ -29,3 +29,18 @@ Then I ran this command:
 This created a local PostgreSQL database called `simonwillisonblog` and imported my latest backup.
 
 When I ran it a second time I had to use `dropdb simonwillisonblog` first to drop the existing local database.
+
+## createdb: command not found
+
+I ran this flow on a new computer (with a fresh install of Postgres.app) and got the following error:
+```
+% heroku pg:pull HEROKU_POSTGRESQL_JADE_URL simonwillisonblog -a simonwillisonblog
+heroku-cli: Pulling postgresql-animate-15868 ---> simonwillisonblog
+/bin/sh: createdb: command not found
+```
+I fixed this by temporarily adding `/Applications/Postgres.app/Contents/Versions/15/bin` to my path, like this:
+
+```
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/15/bin \
+  heroku pg:pull HEROKU_POSTGRESQL_JADE_URL simonwillisonblog -a simonwillisonblog
+```
