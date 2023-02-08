@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->381<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->382<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -642,4 +642,8 @@ Search these TILs at https://til.simonwillison.net/
 ## llms
 
 * [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://github.com/simonw/til/blob/main/llms/nanogpt-shakespeare-m2.md) - 2023-02-01
+
+## ab
+
+* [Avoiding "length" errors in Apache Bench with the -l option](https://github.com/simonw/til/blob/main/ab/apache-bench-length-errors.md) - 2023-02-08
 <!-- index ends -->
