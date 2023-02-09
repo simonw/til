@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->383<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->384<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -643,6 +643,7 @@ Search these TILs at https://til.simonwillison.net/
 ## llms
 
 * [Running nanoGPT on a MacBook M2 to generate terrible Shakespeare](https://github.com/simonw/til/blob/main/llms/nanogpt-shakespeare-m2.md) - 2023-02-01
+* [Training nanoGPT entirely on content from my blog](https://github.com/simonw/til/blob/main/llms/training-nanogpt-on-my-blog.md) - 2023-02-09
 
 ## ab
 
