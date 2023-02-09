@@ -1,4 +1,4 @@
-# Subqueries in select expressions in SQLite
+# Subqueries in select expressions in SQLite - also window functions
 
 I figured out a single SQL query for the following today. Given a table of GitHub repositories, for each repository return:
 
@@ -319,3 +319,46 @@ where rel_rank <= 3
 group by full_name
 order by releases_count desc
 ```
+[Try that finished query here](https://latest-with-plugins.datasette.io/github?sql=%0D%0Awith+cte+as+%28%0D%0A++select%0D%0A++++repos.full_name%2C%0D%0A++++max%28releases.created_at%29+over+%28partition+by+repos.id%29+as+max_created_at%2C%0D%0A++++count%28releases.id%29+over+%28partition+by+repos.id%29+as+releases_count%2C%0D%0A++++releases.id+as+rel_id%2C%0D%0A++++releases.name+as+rel_name%2C%0D%0A++++releases.created_at+as+rel_created_at%2C%0D%0A++++rank%28%29+over+%28partition+by+repos.id+order+by+releases.created_at+desc%29+as+rel_rank%0D%0A++from+repos%0D%0A++++left+join+releases+on+releases.repo+%3D+repos.id%0D%0A%29%0D%0Aselect%0D%0A++full_name%2C%0D%0A++max_created_at%2C%0D%0A++releases_count%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%0D%0A++++++%27id%27%2C+rel_id%2C%0D%0A++++++%27name%27%2C+rel_name%2C%0D%0A++++++%27created_at%27%2C+rel_created_at%0D%0A++++%29%0D%0A++%29+filter+%28where+rel_id+is+not+null%29+as+recent_releases%0D%0Afrom+cte%0D%0Awhere+rel_rank+%3C%3D+3%0D%0Agroup+by+full_name%0D%0Aorder+by+releases_count+desc).
+
+## Simplified to use just one window function
+
+The `max_created_at` and `releases_count` columns are being created by window functions, but it's actually possible to rearrange the query to use regular aggregations for those. Here's what I figured out:
+
+```sql
+with cte as (
+  select
+    repos.full_name,
+    releases.created_at,
+    releases.id as rel_id,
+    releases.name as rel_name,
+    releases.created_at as rel_created_at,
+    rank() over (partition by repos.id order by releases.created_at desc) as rel_rank
+  from repos
+    left join releases on releases.repo = repos.id
+)
+select
+  full_name,
+  max(created_at) as max_created_at,
+  count(rel_id) as releases_count,
+  json_group_array(
+    json_object(
+      'id', rel_id,
+      'name', rel_name,
+      'created_at', rel_created_at
+    )
+  ) filter (where rel_id is not null and rel_rank <= 3) as recent_releases
+from cte
+group by full_name
+order by releases_count desc
+```
+[Try that version here](https://latest-with-plugins.datasette.io/github?sql=%0D%0Awith+cte+as+%28%0D%0A++select%0D%0A++++repos.full_name%2C%0D%0A++++releases.created_at%2C%0D%0A++++releases.id+as+rel_id%2C%0D%0A++++releases.name+as+rel_name%2C%0D%0A++++releases.created_at+as+rel_created_at%2C%0D%0A++++rank%28%29+over+%28partition+by+repos.id+order+by+releases.created_at+desc%29+as+rel_rank%0D%0A++from+repos%0D%0A++++left+join+releases+on+releases.repo+%3D+repos.id%0D%0A%29%0D%0Aselect%0D%0A++full_name%2C%0D%0A++max%28created_at%29+as+max_created_at%2C%0D%0A++count%28rel_id%29+as+releases_count%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%0D%0A++++++%27id%27%2C+rel_id%2C%0D%0A++++++%27name%27%2C+rel_name%2C%0D%0A++++++%27created_at%27%2C+rel_created_at%0D%0A++++%29%0D%0A++%29+filter+%28where+rel_id+is+not+null+and+rel_rank+%3C%3D+3%29+as+recent_releases%0D%0Afrom+cte%0D%0Agroup+by+full_name%0D%0Aorder+by+releases_count+desc).
+
+The trick here is to select the `created_at` and `releases.id` columns in the initial CTE, then use `max(created_at) as max_created_at` and `count(rel_id) as releases_count` in the second section of the query, in order to total things up based on the group by.
+
+I also modified the filter on `json_group_array()` to look like this:
+
+```sql
+) filter (where rel_id is not null and rel_rank <= 3) as recent_releases
+```
+This was needed so that the `releases_count` number would reflect ALL releases for the repo, even while the JSON array only showed the first three ordered by `created_at` descending (as specified in the `rank()` window function).
