@@ -233,15 +233,89 @@ Then later in the query the `from cte where rel_rank <= 3` filters to just the f
 The `explain query plan` for this variant looks like this:
 
 ```
-    CO-ROUTINE cte
-        CO-ROUTINE (subquery-3)
-            CO-ROUTINE (subquery-4)
-                SCAN releases
-                SEARCH repos USING INTEGER PRIMARY KEY (rowid=?)
-                USE TEMP B-TREE FOR ORDER BY
-            SCAN (subquery-4)
-        SCAN (subquery-3)
-    SCAN cte
-    USE TEMP B-TREE FOR GROUP BY
-    USE TEMP B-TREE FOR ORDER BY
+CO-ROUTINE cte
+    CO-ROUTINE (subquery-3)
+        CO-ROUTINE (subquery-4)
+            SCAN releases
+            SEARCH repos USING INTEGER PRIMARY KEY (rowid=?)
+            USE TEMP B-TREE FOR ORDER BY
+        SCAN (subquery-4)
+    SCAN (subquery-3)
+SCAN cte
+USE TEMP B-TREE FOR GROUP BY
+USE TEMP B-TREE FOR ORDER BY
+```
+
+## Using a left join to include repos with no releases
+
+There's a catch with this query though: since it's using a regular join between `repos` and `releases` it won't return a row at all for any repository that does not have at least one associated release.
+
+We can fix that using a `left join`, like this:
+
+```sql
+  from repos
+    left join releases on releases.repo = repos.id
+```
+This almost has the desired effect, but if [you run it](https://latest-with-plugins.datasette.io/github?sql=with+cte+as+(%0D%0A++select%0D%0A++++repos.full_name%2C%0D%0A++++max(releases.created_at)+over+(partition+by+repos.id)+as+max_created_at%2C%0D%0A++++count(*)+over+(partition+by+repos.id)+as+releases_count%2C%0D%0A++++releases.id+as+rel_id%2C%0D%0A++++releases.name+as+rel_name%2C%0D%0A++++releases.created_at+as+rel_created_at%2C%0D%0A++++rank()+over+(partition+by+repos.id+order+by+releases.created_at+desc)+as+rel_rank%0D%0A++from+repos%0D%0A++++left+join+releases+on+releases.repo+%3D+repos.id%0D%0A)%0D%0Aselect%0D%0A++full_name%2C%0D%0A++max_created_at%2C%0D%0A++releases_count%2C%0D%0A++json_group_array(%0D%0A++++json_object(%0D%0A++++++%27id%27%2C+rel_id%2C%0D%0A++++++%27name%27%2C+rel_name%2C%0D%0A++++++%27created_at%27%2C+rel_created_at%0D%0A++++)%0D%0A++)+as+recent_releases%0D%0Afrom+cte%0D%0Awhere+rel_rank+%3C%3D+3%0D%0Agroup+by+full_name%0D%0Aorder+by+releases_count+desc) you'll notice that it returns rows that look like this:
+
+| full_name                                                            | max_created_at       |   releases_count | recent_releases                                                    |
+|----------------------------------------------------------------------|----------------------|------------------|--------------------------------------------------------------------|
+| zerok/covid19-aut-stats                                              |                      |                1 | [{"id":null,"name":null,"created_at":null}]                        |
+| yml/sybarval_dataviz                                                 |                      |                1 | [{"id":null,"name":null,"created_at":null}]                        |
+
+There are two things wrong here: `releases_count` is 1 when it should be 0, and the `recent_releases` returns an array with an object full of nulls.
+
+We can fix the first problem by changing this line:
+```sql
+count(*) over (partition by repos.id) as releases_count,
+```
+To this:
+```sql
+count(releases.id) over (partition by repos.id) as releases_count,
+```
+This will only increment the counter for rows where that column isn't null, which fixes the problem and returns a 0 value.
+
+For the second problem, we can add a filter to the end of the `json_group_array()` aggregation like this:
+
+```sql
+  json_group_array(
+    json_object(
+      'id', rel_id,
+      'name', rel_name,
+      'created_at', rel_created_at
+    )
+  ) filter (where rel_id is not null) as recent_releases
+```
+This excludes the left joined release data with the null values, which results in an empty `[]` for repos with no releases.
+
+The finished query looks like this:
+
+```sql
+with cte as (
+  select
+    repos.full_name,
+    max(releases.created_at) over (partition by repos.id) as max_created_at,
+    count(releases.id) over (partition by repos.id) as releases_count,
+    releases.id as rel_id,
+    releases.name as rel_name,
+    releases.created_at as rel_created_at,
+    rank() over (partition by repos.id order by releases.created_at desc) as rel_rank
+  from repos
+    left join releases on releases.repo = repos.id
+)
+select
+  full_name,
+  max_created_at,
+  releases_count,
+  json_group_array(
+    json_object(
+      'id', rel_id,
+      'name', rel_name,
+      'created_at', rel_created_at
+    )
+  ) filter (where rel_id is not null) as recent_releases
+from cte
+where rel_rank <= 3
+group by full_name
+order by releases_count desc
 ```
