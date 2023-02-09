@@ -178,3 +178,70 @@ Some jargon definitions here to help decipher this:
 - `CORRELATED SCALAR SUBQUERY`: a scalar subquery is a subquery that returns a single value - all three of our subqueries in the `select` clauses do this. `CORRELATED` means that the subquery is correlated with the outer query - it references the outer query's table (`repos` in this case).
 - `CO-ROUTINE`: I don't fully understand these. Here's [the SQLite documentation explanation](https://www.sqlite.org/optoverview.html#subquery_co_routines).
 - `USE TEMP B-TREE FOR ORDER BY` means that the query is using a temporary B-tree to sort the results.
+
+## Achieving the same thing with window functions
+
+[Anton Zhiyanov](https://twitter.com/ohmypy/status/1623586489358553088) provided this alternative SQL function which achieves the same result using window functions instead of subqueries:
+
+```sql
+with cte as (
+  select
+    repos.full_name,
+    max(releases.created_at) over (partition by repos.id) as max_created_at,
+    count(*) over (partition by repos.id) as releases_count,
+    releases.id as rel_id,
+    releases.name as rel_name,
+    releases.created_at as rel_created_at,
+    rank() over (partition by repos.id order by releases.created_at desc) as rel_rank
+  from repos
+    join releases on releases.repo = repos.id
+)
+select
+  full_name,
+  max_created_at,
+  releases_count,
+  json_group_array(
+    json_object(
+      'id', rel_id,
+      'name', rel_name,
+      'created_at', rel_created_at
+    )
+  ) as recent_releases
+from cte
+where rel_rank <= 3
+group by full_name
+order by releases_count desc
+limit 10;
+```
+[Try that out here](https://latest-with-plugins.datasette.io/github?sql=with+cte+as+%28%0D%0A++select%0D%0A++++repos.full_name%2C%0D%0A++++max%28releases.created_at%29+over+%28partition+by+repos.id%29+as+max_created_at%2C%0D%0A++++count%28*%29+over+%28partition+by+repos.id%29+as+releases_count%2C%0D%0A++++releases.id+as+rel_id%2C%0D%0A++++releases.name+as+rel_name%2C%0D%0A++++releases.created_at+as+rel_created_at%2C%0D%0A++++rank%28%29+over+%28partition+by+repos.id+order+by+releases.created_at+desc%29+as+rel_rank%0D%0A++from+repos%0D%0A++++join+releases+on+releases.repo+%3D+repos.id%0D%0A%29%0D%0Aselect%0D%0A++full_name%2C%0D%0A++max_created_at%2C%0D%0A++releases_count%2C%0D%0A++json_group_array%28%0D%0A++++json_object%28%0D%0A++++++%27id%27%2C+rel_id%2C%0D%0A++++++%27name%27%2C+rel_name%2C%0D%0A++++++%27created_at%27%2C+rel_created_at%0D%0A++++%29%0D%0A++%29+as+recent_releases%0D%0Afrom+cte%0D%0Awhere+rel_rank+%3C%3D+3%0D%0Agroup+by+full_name%0D%0Aorder+by+releases_count+desc%0D%0Alimit+10%3B).
+
+The key trick here is the `rank() over` line:
+
+```sql
+rank() over (partition by repos.id order by releases.created_at desc) as rel_rank
+```
+This adds an integer called `rel_rank` to each row in that CTE showing the relative ranking of each release, ordered by their created date. [This version of the query](https://latest-with-plugins.datasette.io/github?sql=with+cte+as+%28%0D%0A++select%0D%0A++++repos.full_name%2C%0D%0A++++max%28releases.created_at%29+over+%28partition+by+repos.id%29+as+max_created_at%2C%0D%0A++++count%28*%29+over+%28partition+by+repos.id%29+as+releases_count%2C%0D%0A++++releases.id+as+rel_id%2C%0D%0A++++releases.name+as+rel_name%2C%0D%0A++++releases.created_at+as+rel_created_at%2C%0D%0A++++rank%28%29+over+%28partition+by+repos.id+order+by+releases.created_at+desc%29+as+rel_rank%0D%0A++from+repos%0D%0A++++join+releases+on+releases.repo+%3D+repos.id%0D%0A%29%0D%0Aselect+*+from+cte) shows the contents of the `cte` table, which starts like this:
+
+| full_name                      | max_created_at       |   releases_count |   rel_id | rel_name                                                       | rel_created_at       |   rel_rank |
+|--------------------------------|----------------------|------------------|----------|----------------------------------------------------------------|----------------------|------------|
+| simonw/datasette               | 2022-12-15T02:02:42Z |              121 | 86103928 | 1.0a2                                                          | 2022-12-15T02:02:42Z |          1 |
+| simonw/datasette               | 2022-12-15T02:02:42Z |              121 | 84755750 | 1.0a1                                                          | 2022-12-01T21:30:39Z |          2 |
+| simonw/datasette               | 2022-12-15T02:02:42Z |              121 | 84496148 | 1.0a0                                                          | 2022-11-29T19:57:54Z |          3 |
+
+Then later in the query the `from cte where rel_rank <= 3` filters to just the first three releases for each repository, such that the `group by` can be used in conjunction with `json_group_array()` to generate the JSON for just those three.
+
+The `explain query plan` for this variant looks like this:
+
+```
+    CO-ROUTINE cte
+        CO-ROUTINE (subquery-3)
+            CO-ROUTINE (subquery-4)
+                SCAN releases
+                SEARCH repos USING INTEGER PRIMARY KEY (rowid=?)
+                USE TEMP B-TREE FOR ORDER BY
+            SCAN (subquery-4)
+        SCAN (subquery-3)
+    SCAN cte
+    USE TEMP B-TREE FOR GROUP BY
+    USE TEMP B-TREE FOR ORDER BY
+```
