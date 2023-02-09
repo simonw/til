@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->382<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->383<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -128,6 +128,7 @@ Search these TILs at https://til.simonwillison.net/
 * [SQLite pragma_function_list()](https://github.com/simonw/til/blob/main/sqlite/pragma-function-list.md) - 2023-01-27
 * [Combining CTEs and VALUES in SQLite](https://github.com/simonw/til/blob/main/sqlite/cte-values.md) - 2023-01-29
 * [The SQLite now argument is stable within the same query](https://github.com/simonw/til/blob/main/sqlite/now-argument-stability.md) - 2023-02-05
+* [Subqueries in select expressions in SQLite](https://github.com/simonw/til/blob/main/sqlite/subqueries-in-select.md) - 2023-02-08
 
 ## presenting
 
