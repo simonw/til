@@ -12,7 +12,7 @@ Or to run it against all PNGs in a folder:
 
     for file in *.webp; do sips -s format png "$file" --out "${file%.*}.png"; done
 
-I had never heard of `sips` before - but apparently it's been a default command on macOS for a very long time.
+I had never heard of `sips` before - but apparently it's been a default command on macOS for [a very long time](http://preserve.mactech.com/articles/mactech/Vol.23/23.07/2307MacInTheShell/index.html).
 
 It stands for "scriptable image processing system". `man sips` starts like this:
 
