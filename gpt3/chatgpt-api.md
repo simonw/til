@@ -1,6 +1,6 @@
 # A simple Python wrapper for the ChatGPT API
 
-OpenAI [released an API for ChatGPT]() yesterday. It's 1/10th of the price of the `text-davinci-003` model!
+OpenAI [released an API for ChatGPT](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) yesterday. It's 1/10th of the price of the `text-davinci-003` model!
 
 Their official [openai](https://pypi.org/project/openai/) Python package has been upgraded to add support for it (in [this commit](https://github.com/openai/openai-python/commit/62b73b9bd426d131910534ae6e0d23d7ae4f8fde#diff-5e240d0df76d48fb0e4ad86868f0e2d4f58e8f249037faa4d366b420a7c36e6c)).
 
