@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->387<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->388<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -599,6 +599,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Writing tests with Copilot](https://github.com/simonw/til/blob/main/gpt3/writing-test-with-copilot.md) - 2022-11-14
 * [Reformatting text with Copilot](https://github.com/simonw/til/blob/main/gpt3/reformatting-text-with-copilot.md) - 2022-12-09
 * [A simple Python wrapper for the ChatGPT API](https://github.com/simonw/til/blob/main/gpt3/chatgpt-api.md) - 2023-03-02
+* [Using ChatGPT to write AppleScript](https://github.com/simonw/til/blob/main/gpt3/chatgpt-applescript.md) - 2023-03-08
 
 ## quarto
 
