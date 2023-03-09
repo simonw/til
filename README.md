@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->388<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->389<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -392,6 +392,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Downloading MapZen elevation tiles](https://github.com/simonw/til/blob/main/gis/mapzen-elevation-tiles.md) - 2021-02-04
 * [Natural Earth in SpatiaLite and Datasette](https://github.com/simonw/til/blob/main/gis/natural-earth-in-spatialite-and-datasette.md) - 2022-03-04
+* [Using SQL with GDAL](https://github.com/simonw/til/blob/main/gis/gdal-sql.md) - 2023-03-09
 
 ## sphinx
 
