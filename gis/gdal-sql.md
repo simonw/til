@@ -7,7 +7,7 @@ GDAL is a complex beast. I finally understand the difference between GDAL and GE
 - **[GEOS](https://libgeos.org/)** is an open source C/C++ library providing polygon and topology operations ("computational geometry") - it's used by tools like the Python [Shapely](https://shapely.readthedocs.io/) library, and is baked into all sorts of other GIS software such as PostGIS and QGIS. It handles things like points, polygons, multipolygons and linestrings and implements operations such as intersections, union, distance, area and length. It also provides algorithms for spatial indexing.
 - **[GDAL](https://gdal.org/)** is "a translator library for raster and vector geospatial data formats" - it's built on top of GEOS and a whole host of other libraries and provides a wide range of tools (and library functions) for manipulating dozens of raster and vector formats - Shapefiles, GeoJSON, MBTiles, GeoTIFF and many more.
 
-When you run `brew install gdal` on macOS you get a whole host of useful binary CLI tools:
+When you run `brew install gdal` on macOS you get a bunch of useful binary CLI tools:
 
 ```
 brew list gdal | grep bin
@@ -63,8 +63,11 @@ ogrinfo combined-shapefile-with-oceans.shp
 INFO: Open of `combined-shapefile-with-oceans.shp'
       using driver `ESRI Shapefile' successful.
 1: combined-shapefile-with-oceans (Polygon)
-
-% ogrinfo timezones.geojson
+```
+```
+ogrinfo timezones.geojson
+```
+```
 INFO: Open of `timezones.geojson'
       using driver `GeoJSON' successful.
 1: timezones
