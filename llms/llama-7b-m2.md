@@ -43,7 +43,7 @@ llama.sh
 tokenizer.model
 tokenizer_checklist.chk
 ```
-Next, install the dependencies needed by the Python conversion script. These aren't (yet) documented in the `llama.cpp` README:
+Next, install the dependencies needed by the Python conversion script.
 ```
 pip install torch numpy sentencepiece
 ```
