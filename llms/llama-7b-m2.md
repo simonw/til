@@ -193,7 +193,7 @@ Generally though, this has absolutely blown me away. I thought it would be years
 
 ## Resource usage
 
-While running, the model uses about 4GB of RAM and Activiy Monitor shows it using 748% CPU - which makes sense since I told it to use 8 CPU cores.
+While running, the model uses about 4GB of RAM and Activity Monitor shows it using 748% CPU - which makes sense since I told it to use 8 CPU cores.
 
 I imagine it's possible to run a larger model such as 13B on this hardware, but I've not figured out how to do that yet. Facebook claim the following:
 
