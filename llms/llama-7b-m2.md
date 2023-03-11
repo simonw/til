@@ -1,10 +1,14 @@
-# Running LLaMA 7B on a 64GB M2 MacBook Pro with llama.cpp
+# Running LLaMA 7B and 13B on a 64GB M2 MacBook Pro with llama.cpp
 
 Facebook's [LLaMA](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/) is a "collection of foundation language models ranging from 7B to 65B parameters", released on February 24th 2023.
 
-It claims to be small enough to run on consumer hardware. I just ran the 7B model on my 64GB M2 MacBook Pro!
+It claims to be small enough to run on consumer hardware. I just ran the 7B and 13B models on my 64GB M2 MacBook Pro!
 
 I'm using [llama.cpp](https://github.com/ggerganov/llama.cpp) by  Georgi Gerganov, a "port of Facebook's LLaMA model in C/C++". Georgi previously released [whisper.cpp](https://github.com/ggerganov/whisper.cpp) which does the same thing for OpenAI's Whisper automatic speech recognition model.
+
+Facebook claim the following:
+
+> LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla70B and PaLM-540B
 
 ## Setup
 
@@ -12,7 +16,7 @@ To run `llama.cpp` you need an Apple Silicon MacBook M1/M2 with xcode installed.
 
 You also need the LLaMA models. You can request access from Facebook through [this form](https://forms.gle/jk851eBVbX1m5TAv5), or you can grab it via BitTorrent from the link [in this cheeky pull request](https://github.com/facebookresearch/llama/pull/73).
 
-The model is a 240GB download, which includes the 7B, 13B, 30B and 65B models. I've only tried running the smaller 7B model so far.
+The model is a 240GB download, which includes the 7B, 13B, 30B and 65B models. I've only tried running the smaller 7B and 13B models so far.
 
 Next, checkout the `llama.cpp` repository:
 
@@ -97,7 +101,7 @@ options:
                         model path (default: models/llama-7B/ggml-model.bin)
 ```
 
-## Results of some prompts
+## Results of some prompts for 7B
 
 ### The first man on the moon was
 
@@ -191,12 +195,67 @@ I've not figured out the right prompt to get it to summarize text yet, for examp
 
 Generally though, this has absolutely blown me away. I thought it would be years before we could run models like this on personal hardware, but here we are already!
 
+## Running 13B
+
+Thanks to [this commit](https://github.com/ggerganov/llama.cpp/commit/007a8f6f459c6eb56678fdee4c09219ddb85b640) it's also no easy to run the 13B model (and potentially larger models which I haven't tried yet).
+
+Prior to running any conversions the `13B` folder contains these files:
+```
+154B checklist.chk
+12G consolidated.00.pth
+12G consolidated.01.pth
+101B params.json
+```
+To convert that model to `ggml`:
+
+    convert-pth-to-ggml.py models/13B/ 1
+
+The `1` there just indicates that the output should be float16 - `0` would result in float32.
+
+This produces two additional files:
+```
+12G ggml-model-f16.bin
+12G ggml-model-f16.bin.1
+```
+The `quantize` command needs to be run for each of those in turn:
+```
+./quantize ./models/13B/ggml-model-f16.bin   ./models/13B/ggml-model-q4_0.bin 2
+./quantize ./models/13B/ggml-model-f16.bin.1 ./models/13B/ggml-model-q4_0.bin.1 2
+```
+This produces the final models to use for inference:
+```
+3.8G ggml-model-q4_0.bin
+3.8G ggml-model-q4_0.bin.1
+```
+Then to run a prompt:
+```
+./main \
+  -m ./models/13B/ggml-model-q4_0.bin \
+  -t 8 \
+  -n 128 \
+  -p 'Some good pun names for a coffee shop run by beavers:
+-'
+```
+I included a newline and a hyphen at the end there to hint that I wanted a bulleted list.
+```
+Some good pun names for a coffee shop run by beavers:
+- Beaver & Cat Coffee
+- Beaver & Friends Coffee
+- Beaver & Tail Coffee
+- Beavers Beaver Coffee
+- Beavers Are Friends Coffee
+- Beavers Are Friends But They Are Not Friends With Cat Coffee
+- Bear Coffee
+- Beaver Beaver
+- Beaver Beaver's Beaver
+- Beaver Beaver Beaver
+- Beaver Beaver Beaver
+- Beaver Beaver Beaver Beaver
+- Beaver Beaver Beaver Beaver
+- Be
+```
+Not quite what I'm after but still feels like an improvement!
+
 ## Resource usage
 
-While running, the model uses about 4GB of RAM and Activity Monitor shows it using 748% CPU - which makes sense since I told it to use 8 CPU cores.
-
-I imagine it's possible to run a larger model such as 13B on this hardware, but I've not figured out how to do that yet. Facebook claim the following:
-
-> LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla70B and PaLM-540B
-
-So running even just the 13B model could be a huge step up.
+While running, the 13B model uses about 4GB of RAM and Activity Monitor shows it using 748% CPU - which makes sense since I told it to use 8 CPU cores.
