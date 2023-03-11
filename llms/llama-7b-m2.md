@@ -195,6 +195,8 @@ As far as I can tell LLaMA has not had this, which makes it a lot harder to use.
 
 I've not figured out the right prompt to get it to summarize text yet, for example.
 
+The LLaMA FAQ has a [section with some tips](https://github.com/facebookresearch/llama/blob/main/FAQ.md#2-generations-are-bad) for getting better results through prompting.
+
 Generally though, this has absolutely blown me away. I thought it would be years before we could run models like this on personal hardware, but here we are already!
 
 ## Running 13B
