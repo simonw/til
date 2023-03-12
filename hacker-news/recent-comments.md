@@ -34,7 +34,7 @@ This gives you back JSON, but how can we turn that into something that's more re
 
 ## Loading that into Datasette Lite
 
-I'm going to use [Datasette Lite](https://lite.datasette.io/), my build of Datasette running directly in the browser using Python compiled to WebAssembly.
+I'm going to use [Datasette Lite](https://lite.datasette.io/), my build of Datasette running directly in the browser using Python compiled to WebAssembly. More on [how that works here](https://simonwillison.net/2022/May/4/datasette-lite/).
 
 This is possible because the Algolia API returns JSON with a `access-control-allow-origin: *` CORS header, allowing that data to be loaded by other web applications running on different domains.
 
