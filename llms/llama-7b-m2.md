@@ -14,7 +14,7 @@ Facebook claim the following:
 
 ## Setup
 
-To run `llama.cpp` you need an Apple Silicon MacBook M1/M2 with xcode installed. You also need Python 3 - I used Python 3.10, after finding that 3.11 didn't work because there was no `torch` wheel for it yet.
+To run `llama.cpp` you need an Apple Silicon MacBook M1/M2 with xcode installed. You also need Python 3 - I used Python 3.10, after finding that 3.11 didn't work because there was no `torch` wheel for it yet, but there's a workaround for 3.11 listed below.
 
 You also need the LLaMA models. You can request access from Facebook through [this form](https://forms.gle/jk851eBVbX1m5TAv5), or you can grab it via BitTorrent from the link [in this cheeky pull request](https://github.com/facebookresearch/llama/pull/73).
 
@@ -30,9 +30,9 @@ Run `make` to compile the C++ code:
 ```
 make
 ```
-Next you need a Python 3.10 environment you can install some packages into, in order to run the Python script that converts the model to the smaller format used by `llama.cpp`.
+Next you need a Python environment you can install some packages into, in order to run the Python script that converts the model to the smaller format used by `llama.cpp`.
 
-I use `pipenv` so I created an environment like this:
+I use `pipenv` and Python 3.10 so I created an environment like this:
 
 ```
 pipenv shell --python 3.10
@@ -52,6 +52,10 @@ tokenizer_checklist.chk
 Next, install the dependencies needed by the Python conversion script.
 ```
 pip install torch numpy sentencepiece
+```
+If you are using Python 3.11 you can use this instead to get a working `pytorch`:
+```
+pip install --pre torch --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 Before running the conversions scripts, `models/7B/consolidated.00.pth` should be a 13GB file.
 
