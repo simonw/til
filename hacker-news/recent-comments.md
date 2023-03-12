@@ -197,7 +197,7 @@ select * from json_tree('[
 
 This is pretty useful! The complex nested object has been flattened for us. Most of these rows aren't relevant... but if we filter for `type = 'object'` we can get hold of just the nested items within that structure that are complete JSON objects.
 
-So that's what my bigger query does. I call 'json_tree()' on the `children` column for each of those top level objects, then filter for `object` within that to get out the nested comments.
+So that's what my bigger query does. I call `json_tree()` on the `children` column for each of those top level objects, then filter for `object` within that to get out the nested comments.
 
 Then at the end I do a `union all` against the top level rows, to ensure they are included in the resulting table.
 
