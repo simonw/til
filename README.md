@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->391<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->392<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -655,4 +655,8 @@ Search these TILs at https://til.simonwillison.net/
 ## ab
 
 * [Avoiding "length" errors in Apache Bench with the -l option](https://github.com/simonw/til/blob/main/ab/apache-bench-length-errors.md) - 2023-02-08
+
+## hacker-news
+
+* [How to read Hacker News threads with most recent comments first](https://github.com/simonw/til/blob/main/hacker-news/recent-comments.md) - 2023-03-12
 <!-- index ends -->
