@@ -70,6 +70,8 @@ Answer: Fifteen times twenty five equals 375.
 ## The code
 
 ```python
+# This code is Apache 2 licensed:
+# https://www.apache.org/licenses/LICENSE-2.0
 import openai
 import re
 import httpx

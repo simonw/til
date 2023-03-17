@@ -48,6 +48,8 @@ This is enough to generate a response - but it's your responsibility to then pas
 I built this simple wrapper class to automate the process of recording the conversation and replaying it back to the API each time:
 
 ```python
+# This code is Apache 2 licensed:
+# https://www.apache.org/licenses/LICENSE-2.0
 import openai
 
 class ChatBot:
