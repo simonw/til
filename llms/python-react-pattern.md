@@ -14,8 +14,8 @@ Matt used [langchain](https://github.com/hwchase17/langchain) for his implementa
 
 Here's my first attempt at a very rough implementation. It gains access to three new actions:
 
-* `wikipedia: <search term>` - searche Wikipedia and returns the snippet of the first result
-* `simon_blog_search: <search term>` - searche my blog and return the truncated text of the first result
+* `wikipedia: <search term>` - search Wikipedia and returns the snippet of the first result
+* `simon_blog_search: <search term>` - search my blog and return the truncated text of the first result
 * `calculate: <expression>` - evaluate an expression using Python's `eval()` function (so dangerous! This should absolutely use something like [a WebAssembly sandbox](https://til.simonwillison.net/webassembly/python-in-a-wasm-sandbox) instead)
 
 ## Some examples
