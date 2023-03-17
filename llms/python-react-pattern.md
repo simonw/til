@@ -20,9 +20,6 @@ Here's my first attempt at a very rough implementation. It gains access to three
 
 Here are some (very cherry-picked) examples of my `query()` function running, showing the underlying deliberations of the LLM:
 
-
-A few (very cherry-picked) example executions:
-
 ```python
 query("What does England share borders with?")
 ```
