@@ -22,6 +22,8 @@ Here's my first attempt at a very rough implementation. It gains access to three
 
 Here are some (very cherry-picked) examples of my `query()` function running, showing the underlying deliberations of the LLM:
 
+### What does England share borders with?
+
 ```python
 query("What does England share borders with?")
 ```
@@ -33,6 +35,8 @@ PAUSE
 Observation: <span class="searchmatch">England</span> is a country that is part of the United Kingdom. It shares land borders with Wales to its west and Scotland to its north. The Irish Sea lies northwest
 Answer: England shares borders with Wales and Scotland.
 ```
+
+### Has Simon been to Madagascar?
 
 ```python
 query("Has Simon been to Madagascar?")
@@ -55,6 +59,8 @@ Observation: According to the blog post searched on Simon's blog, he has visited
 
 Answer: Yes, Simon has been to Madagascar and visited the Pirates Museum located in Antananarivo.
 ```
+### Fifteen * twenty five
+
 ```python
 query("Fifteen * twenty five")
 ```
