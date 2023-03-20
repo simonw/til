@@ -4,7 +4,7 @@ A popular nightmare scenario for AI is giving it access to tools, so it can make
 
 Let's do that now!
 
-The ReAct pattern is [described in this paper](https://react-lm.github.io/). It's a pattern where you implement additional actions that an LLM can take - searching Wikipedia or running calculations for example - and then teach it how to request that those actions are run, then feed their results back into the LLM.
+The ReAct pattern (for Reason+Act) is [described in this paper](https://react-lm.github.io/). It's a pattern where you implement additional actions that an LLM can take - searching Wikipedia or running calculations for example - and then teach it how to request that those actions are run, then feed their results back into the LLM.
 
 See also my post [Could you train a ChatGPT-beating model for $85,000 and run it in a browser?](https://simonwillison.net/2023/Mar/17/beat-chatgpt-in-a-browser/#react-pattern).
 
