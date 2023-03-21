@@ -86,7 +86,7 @@ https://lite.datasette.io/?install=datasette-render-image-tags&json=https://s3.a
 
 This is doing a few things.
 
-- `?install=datasette-render-image-tags` tells Datasette Lite to install the [datasette-render-image-tags](https://datasette.io/plugins/datasette-render-image-tags) plugin, which looks for any URLs ending in `.png` (or `.gif` or `.jpg`) and turn themm into embedded image elements.
+- `?install=datasette-render-image-tags` tells Datasette Lite to install the [datasette-render-image-tags](https://datasette.io/plugins/datasette-render-image-tags) plugin, which looks for any URLs ending in `.png` (or `.gif` or `.jpg`) and turn them  into embedded image elements.
 - `&json=https://s3.amazonaws.com/simonw-open-cors-bucket/PickaPic-images.json` tells Datasette Lite to load the JSON data from that URL. This works for JSON arrays of objects and for newline-delimited JSON, like we have here.
 - `#/data?sql=select...` tells Datasette Lite to navigate to the SQL querying interface and run the specified query.
 - `&q=raccoon` at the end is a query parameter that will be used as part of the query.
