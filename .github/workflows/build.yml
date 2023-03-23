@@ -92,7 +92,7 @@ jobs:
           --install datasette-json-html \
           --install beautifulsoup4 \
           --install "datasette-debug-asgi>=1.1" \
-          --install "datasette-graphql>=0.12" \
+          --install "datasette-graphql>=2.2" \
           --install datasette-media \
           --install datasette-block-robots \
           --plugins-dir plugins \
