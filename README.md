@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->395<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->396<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -325,6 +325,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Converting no-decimal-point latitudes and longitudes using jq](https://github.com/simonw/til/blob/main/jq/convert-no-decimal-point-latitude-jq.md) - 2021-03-11
 * [Turning an array of arrays into objects with jq](https://github.com/simonw/til/blob/main/jq/array-of-array-to-objects.md) - 2021-05-25
 * [Extracting objects recursively with jq](https://github.com/simonw/til/blob/main/jq/extracting-objects-recursively.md) - 2021-07-24
+* [Convert git log output to JSON using jq](https://github.com/simonw/til/blob/main/jq/git-log-json.md) - 2023-03-25
 
 ## bash
 
