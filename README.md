@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->396<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->397<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -663,4 +663,8 @@ Search these TILs at https://til.simonwillison.net/
 ## hacker-news
 
 * [How to read Hacker News threads with most recent comments first](https://github.com/simonw/til/blob/main/hacker-news/recent-comments.md) - 2023-03-12
+
+## observable
+
+* [Using jq in an Observable notebook](https://github.com/simonw/til/blob/main/observable/jq-in-observable.md) - 2023-03-25
 <!-- index ends -->
