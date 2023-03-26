@@ -4,7 +4,7 @@ Vercel really wants you to deploy static assets with [serverless functions](http
 
 It turns out you can subvert that model entirely and route all of your traffic through a single function - great for serving up Python WSGI or ASGI apps that handle traffic routing themselves.
 
-the trick is to use the `"routes"` key in a `now.json` file like this:
+the trick is to use the `"routes"` key in a `vercel.json` file like this:
 
 ```json
 {
@@ -12,7 +12,7 @@ the trick is to use the `"routes"` key in a `now.json` file like this:
     "builds": [
         {
             "src": "json_head.py",
-            "use": "@now/python"
+            "use": "@vercel/python"
         }
     ],
     "routes": [
