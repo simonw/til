@@ -1,6 +1,6 @@
 # Convert git log output to JSON using jq
 
-I just spent way too long messing around with ChatGPT trying to figure this out. After much iteration, here's a recipe that works (mostly written by me at this point):
+I just spent way too long messing around with ChatGPT ([transcript here](https://gist.github.com/simonw/c3b486fa90d7c32a0e8dfb47e151090a)) trying to figure this out. After much iteration, here's a recipe that works (mostly written by me at this point):
 
 ```bash
 git log --pretty=format:'%H%x00%an <%ae>%x00%ad%x00%s%x00' | \
