@@ -24,6 +24,26 @@ Running this code in a Jupyter notebook does the following:
 
 ![It outputs a list of cheesecakes one token at a time](https://user-images.githubusercontent.com/9599/229312744-a2013a06-3a53-4a46-9e40-3080e4887ff7.gif)
 
+## Using async/await
+
+The OpenAI Python library can also work with `asyncio`. Here's how to do the above using their `async/await` support - with the `.acreate()` method:
+
+```python
+async for chunk in await openai.ChatCompletion.acreate(
+    model="gpt-3.5-turbo",
+    messages=[{
+        "role": "user",
+        "content": "Generate a list of 20 great names for sentient cheesecakes that teach SQL"
+    }],
+    stream=True,
+):
+    content = chunk["choices"][0].get("delta", {}).get("content")
+    if content is not None:
+        print(content, end='')
+```
+
+## Those chunks
+
 Here's what those chunks look like - the first two and then the last two:
 ```
 {
