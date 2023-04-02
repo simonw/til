@@ -188,5 +188,7 @@ The resulting table looked like this:
 | 00:03:30 |           816 |
 | 00:03:40 |           812 |
 
-I used [datasette-copyable](https://datasette.io/plugins/datasette-copyable) to copy the data out to a Google Sheet and handed it over to Natalie for the rest of the analysis.
+I used [datasette-copyable](https://datasette.io/plugins/datasette-copyable) to copy the data out to a Google Sheet. Here's my first attempt at charting the data, which makes it easy to spot places where the OCR got the wrong results:
+
+![Google Sheets table and chart representing the data. Starts at 830C and drops down over 1hr 40 minutes. The line chart has some very obvious spikes and troughs from outliers but is mostly smooth.](https://static.simonwillison.net/static/2023/google-sheets-temperature-over-time.jpg)
 
