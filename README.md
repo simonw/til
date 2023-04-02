@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->399<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->400<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -498,6 +498,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Recursively fetching metadata for all files in a Google Drive folder](https://github.com/simonw/til/blob/main/googlecloud/recursive-fetch-google-drive.md) - 2022-02-16
 * [Analyzing Google Cloud spend with Datasette](https://github.com/simonw/til/blob/main/googlecloud/google-cloud-spend-datasette.md) - 2022-08-16
 * [Workaround for google-github-actions/setup-gcloud errors](https://github.com/simonw/til/blob/main/googlecloud/gcloud-error-workaround.md) - 2022-12-01
+* [Reading thermometer temperatures over time from a video](https://github.com/simonw/til/blob/main/googlecloud/video-frame-ocr.md) - 2023-04-02
 
 ## git
 
