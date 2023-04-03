@@ -12,3 +12,5 @@ update simonwillisonblog.til set shot = null;
 " | sqlite3
 ```
 I'm using that in [this GitHub Actions workflow](https://github.com/simonw/simonwillisonblog-backup/blob/main/.github/workflows/backup.yml).
+
+That last `update simonwillisonblog.til set shot = null` line is because the `shot` column contains a large BLOB screenshot image which I don't need in the copied table.
