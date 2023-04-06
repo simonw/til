@@ -26,7 +26,7 @@ Finally, I added:
 
 And it gave me examples for Actix-web and Rocket, both in Rust.
 
-If you want to see the examples it produced they're in this transcript: https://gist.github.com/simonw/fa2379b97420404a81b0fcdb4db79657
+I've shared the full transcript here: https://gist.github.com/simonw/fa2379b97420404a81b0fcdb4db79657
 
 As someone who spends a whole lot of time on API design, this feels like a *really* useful trick - researching how multiple frameworks across multiple other languages solve a problem is incredibly useful for coming up with a coherent new API design.
 
