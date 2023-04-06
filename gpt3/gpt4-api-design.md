@@ -1,4 +1,3 @@
-
 # GPT-4 for API design research
 
 I came up with a really useful prompt for GPT-4 today. I was [considering options](https://github.com/simonw/datasette/issues/2054#issuecomment-1499491258) for refactoring how Datasette's core view functions work, and was contemplating alternative ways to dispatch to different functions based on a combination of the URL path and the HTTP verb.
