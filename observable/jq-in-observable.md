@@ -51,4 +51,4 @@ html`<h2>Output:</h2>
   2
 )}</textarea>
 ```
-Here's [an example of a notebook I created](https://observablehq.com/@simonw/chatgpt-json-transcript-to-markdown) using `jq-web`.
+Here's [an example of a notebook I created](https://observablehq.com/@simonw/chatgpt-json-transcript-to-markdown-using-jq) using `jq-web`.
