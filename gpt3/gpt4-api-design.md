@@ -1,3 +1,4 @@
+
 # GPT-4 for API design research
 
 I came up with a really useful prompt for GPT-4 today. I was [considering options](https://github.com/simonw/datasette/issues/2054#issuecomment-1499491258) for refactoring how Datasette's core view functions work, and was contemplating alternative ways to dispatch to different functions based on a combination of the URL path and the HTTP verb.
@@ -179,4 +180,21 @@ fn post_example() -> content::Plain<&'static str> {
 fn rocket() -> _ {
     rocket::build().mount("/", routes![get_example, post_example])
 }
+```
+And from [a tip](https://hachyderm.io/@jimfl/110153500273239062) from Jim Flanagan, here's what it gave me for Elixir/Phoenix:
+```elixir
+defmodule ExampleAppWeb.Router do
+  use ExampleAppWeb, :router
+
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/api", ExampleAppWeb do
+    pipe_through :api
+
+    get "/example", ExampleController, :get_example
+    post "/example", ExampleController, :post_example
+  end
+end
 ```
