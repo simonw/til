@@ -608,7 +608,7 @@ Search these TILs at https://til.simonwillison.net/
 * [A simple Python wrapper for the ChatGPT API](https://github.com/simonw/til/blob/main/gpt3/chatgpt-api.md) - 2023-03-02
 * [Using ChatGPT to write AppleScript](https://github.com/simonw/til/blob/main/gpt3/chatgpt-applescript.md) - 2023-03-08
 * [Using the ChatGPT streaming API from Python](https://github.com/simonw/til/blob/main/gpt3/python-chatgpt-streaming-api.md) - 2023-04-01
-* [](https://github.com/simonw/til/blob/main/gpt3/gpt4-api-design.md) - 2023-04-06
+* [GPT-4 for API design research](https://github.com/simonw/til/blob/main/gpt3/gpt4-api-design.md) - 2023-04-06
 
 ## quarto
 
