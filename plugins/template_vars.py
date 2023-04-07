@@ -54,3 +54,8 @@ def extra_template_vars(request, datasette):
         "first_paragraph": first_paragraph,
         "related_tils": related_tils,
     }
+
+
+@hookimpl
+def prepare_connection(conn):
+    conn.create_function("first_paragraph", 1, first_paragraph)
