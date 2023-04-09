@@ -49,6 +49,6 @@ There are `86400` seconds in a day.
 
 So... `julianday('now') - 2440587.5` is the number of days since the Unix epoch, and multiplying that by `86400` gives us the floating point number of seconds since the Unix epoch.
 
-Finally we multiple by `1000` because we want milliseconds, not seconds - and we cast the result to an integer because that's the type of number I want to store.
+Finally we multiply by `1000` because we want milliseconds, not seconds - and we cast the result to an integer because that's the type of number I want to store.
 
 See [sqlite-history/issues/6](https://github.com/simonw/sqlite-history/issues/6) for background information on why I needed this.
