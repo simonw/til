@@ -15,6 +15,14 @@ Milliseconds is *much more complex*. After some digging around, I found the foll
 
 [Try these both here](https://latest.datasette.io/_memory?sql=select%0D%0A++strftime%28%27%25s%27%2C+%27now%27%29+as+seconds_since_epoch%2C%0D%0A++cast%28%28julianday%28%27now%27%29+-+2440587.5%29+*+86400+*+1000+as+integer%29+as+ms_since_epoch%3B).
 
+## Displaying them as human readable strings
+
+This fragment of SQL turns them back into a readable UTC value:
+```sql
+select strftime('%Y-%m-%d %H:%M:%S', :timestamp_ms / 1000, 'unixepoch')
+```
+The output looks like this: `2023-04-09 05:04:24` - [try that out here](https://latest.datasette.io/_memory?sql=select+strftime%28%27%25Y-%25m-%25d+%25H%3A%25M%3A%25S%27%2C+%3Atimestamp_ms+%2F+1000%2C+%27unixepoch%27%29%0D%0A&timestamp_ms=1681016664769).
+
 ## How it works
 
 The `julianday('now')` function returns the number of days since the "Julian epoch". The Julian epoch is 12:00 noon on January 1, 4713 BC in the proleptic Julian calendar.
