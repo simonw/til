@@ -37,7 +37,9 @@ The `julianday('now')` function returns the number of days since the "Julian epo
 
 [Wikipedia says](https://en.wikipedia.org/wiki/Julian_day):
 
-> The Julian day is the continuous count of days since the beginning of the Julian period, and is used primarily by astronomers, and in software for easily calculating elapsed days between two events (e.g. food production date and sell by date).[
+> The Julian day is the continuous count of days since the beginning of the Julian period, and is used primarily by astronomers, and in software for easily calculating elapsed days between two events (e.g. food production date and sell by date).
+
+The significance of 4713 BC? It was chosen as a date before any existing historical record.
 
 Crucially, the `julianday` function returns a floating point number of days. This differs from `strftime('%s', 'now')` which returns an integer number of seconds.
 
