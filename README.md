@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->404<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->405<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -674,4 +674,8 @@ Search these TILs at https://til.simonwillison.net/
 ## observable
 
 * [Using jq in an Observable notebook](https://github.com/simonw/til/blob/main/observable/jq-in-observable.md) - 2023-03-25
+
+## midjourney
+
+* [Creating desktop backgrounds using Midjourney](https://github.com/simonw/til/blob/main/midjourney/desktop-backgrounds.md) - 2023-04-10
 <!-- index ends -->
