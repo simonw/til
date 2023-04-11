@@ -52,3 +52,31 @@ So... `julianday('now') - 2440587.5` is the number of days since the Unix epoch,
 Finally we multiply by `1000` because we want milliseconds, not seconds - and we cast the result to an integer because that's the type of number I want to store.
 
 See [sqlite-history/issues/6](https://github.com/simonw/sqlite-history/issues/6) for background information on why I needed this.
+
+## Alternative approach using fractional seconds
+
+[mgr on the SQLite Forum](https://sqlite.org/forum/forumpost/1f173cd9ea810bd0) pointed out an alternative way of solving this, using the `%f` format code for `strftime()` which returns the number of seconds as a floating point number of seconds at millisecond accuracy:
+
+> `%f` fractional seconds: `SS.SSS`
+
+For example 18.412 for 18s and 412ms past the minute.
+
+They suggested this:
+
+```sql
+select 1000*(strftime('%s','now')+mod(strftime('%f','now'),1));
+```
+The `mod()` function isn't available on all SQLite installations though. I found this pattern works instead:
+
+```sql
+select
+  (1000 * (strftime('%s', 'now'))) + cast(
+    substr(
+      strftime('%f', 'now'),
+      instr(strftime('%f', 'now'), '.') + 1
+    ) as integer
+  ) as timestamp_ms
+```
+[Try that here](https://latest.datasette.io/_memory?sql=select%0D%0A++(1000+*+(strftime(%27%25s%27%2C+%27now%27)))+%2B+cast(%0D%0A++++substr(%0D%0A++++++strftime(%27%25f%27%2C+%27now%27)%2C%0D%0A++++++instr(strftime(%27%25f%27%2C+%27now%27)%2C+%27.%27)+%2B+1%0D%0A++++)+as+integer%0D%0A++)+as+timestamp_ms).
+
+The `substr('18.413', instr('18.413', '.') + 1)` part returns just the characters after the first `.` character, which are then cast to integer to get the milliseconds fraction of that second. These are added to `1000 * ` the unix timestamp in seconds.
