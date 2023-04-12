@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->405<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->406<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -662,6 +662,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Training nanoGPT entirely on content from my blog](https://github.com/simonw/til/blob/main/llms/training-nanogpt-on-my-blog.md) - 2023-02-09
 * [Running LLaMA 7B and 13B on a 64GB M2 MacBook Pro with llama.cpp](https://github.com/simonw/til/blob/main/llms/llama-7b-m2.md) - 2023-03-10
 * [A simple Python implementation of the ReAct pattern for LLMs](https://github.com/simonw/til/blob/main/llms/python-react-pattern.md) - 2023-03-17
+* [Running Dolly 2.0 on Paperspace](https://github.com/simonw/til/blob/main/llms/dolly-2.md) - 2023-04-12
 
 ## ab
 
