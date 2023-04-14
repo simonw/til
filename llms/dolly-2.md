@@ -91,7 +91,3 @@ def prompt(s):
 And now I can call `prompt("my prompt here")` to run a prompt.
 
 One slight mystery: this loads `dolly-v2-2-8b` from Hugging Face but I can't find a corresponding page for that model now - https://huggingface.co/databricks/dolly-v2-2-8b redirects to https://huggingface.co/databricks/dolly-v2-3b - it looks like you can use `databricks/dolly-v2-3b` to get the same model, so maybe something was renamed on Hugging Face.
-
-
-
-https://colab.research.google.com/drive/1A8Prplbjr16hy9eGfWd3-r34FOuccB2c?usp=sharing#scrollTo=TFDTEMuUNeBT
