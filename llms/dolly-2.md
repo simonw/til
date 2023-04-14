@@ -50,3 +50,48 @@ The response:
 The good news: it generated a decent looking answer! But it took 716s - nearly 12 minutes - to do that.
 
 I'm clearly doing something wrong here.
+
+## Dolly v2-2-8b or v2-3b on Colab
+
+Databricks [released smaller checkpoints](https://twitter.com/vagabondjack/status/1646532406198026240) in response to feedback on how hard it was to run the larger models.
+
+Kevin Wu shared [this Colab notebook](https://colab.research.google.com/drive/1A8Prplbjr16hy9eGfWd3-r34FOuccB2c?usp=sharing#scrollTo=TFDTEMuUNeBT) which runs the smaller Dolly v2-2-8b model on Google's Colab infrastructure.
+
+This worked well for me, and returned answers to prompts in 10-30s running against a backend with 12.7GB of system RAM and 15GB of GPU.
+
+The notebook ran this code:
+
+```python
+!pip -q install git+https://github.com/huggingface/transformers # need to install from github
+!pip -q install accelerate>=0.12.0
+```
+Then:
+```python
+import torch
+from transformers import pipeline
+
+# use dolly-v2-12b if you're using Colab Pro+, using pythia-2.8b for Free Colab
+generate_text = pipeline(
+    model="databricks/dolly-v2-2-8b", 
+    torch_dtype=torch.bfloat16, 
+    trust_remote_code=True,
+    device_map="auto"
+)
+```
+I added this:
+```python
+import time
+def prompt(s):
+    start = time.time()
+    response = generate_text(s)     
+    end = time.time()
+    print(end - start)
+    return response
+```
+And now I can call `prompt("my prompt here")` to run a prompt.
+
+One slight mystery: this loads `dolly-v2-2-8b` from Hugging Face but I can't find a corresponding page for that model now - https://huggingface.co/databricks/dolly-v2-2-8b redirects to https://huggingface.co/databricks/dolly-v2-3b - it looks like you can use `databricks/dolly-v2-3b` to get the same model, so maybe something was renamed on Hugging Face.
+
+
+
+https://colab.research.google.com/drive/1A8Prplbjr16hy9eGfWd3-r34FOuccB2c?usp=sharing#scrollTo=TFDTEMuUNeBT
