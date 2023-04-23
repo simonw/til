@@ -41,7 +41,7 @@ There's a lot of information in there, but the most important bits for solving t
 ```
 For my first attempt, I assumed that `PixelWidth` and `PixelHeight` represented the width and height of the image, respectively.
 
-This almost worked... except for some photos which were displayed in portrait mode, for which the two values appeared to be skipped.
+This almost worked... except for some photos which were displayed in portrait mode, for which the two values appeared to be swapped.
 
 The answer turned out to be in the `Orientation` parameter. GPT-4 helped me understand the following:
 
