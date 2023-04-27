@@ -80,6 +80,8 @@ Describe your project here.
 ```
 To add dependencies to that project, use `rye add`:
 
+    rye add httpx
+
 This added the following line to `pyproject.toml`:
 
     dependencies = ["httpx~=0.24.0"]
