@@ -179,6 +179,8 @@ ModuleNotFoundError: No module named 'pkg_resources'
 ```
 Rye has strong opinions, including omitting `pip` and `setuptools` entirely from the environments that it creates.
 
+[ **UPDATE**: I released [Datasette 0.64.3](https://docs.datasette.io/en/stable/changelog.html#v0-64-3) with a fix for this and now it installs correctly under Rye ]
+
 It turns out Datasette includes code that imports `pkg_resources`, assuming that `setuptools` will be present because it's usually there as a Python environment default!
 
 I added `setuptools` to Datasette's `setup.py` dependencies in an attempt to fix that, in [issue #2065](https://github.com/simonw/datasette/issues/2065).
