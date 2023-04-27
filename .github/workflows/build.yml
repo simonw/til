@@ -55,7 +55,7 @@ jobs:
       run: |-
         cd main
         python generate_screenshots.py
-        sqliet-utils vacuum main/tils.db
+        sqlite-utils vacuum main/tils.db
     - name: Update README
       run: |-
         cd main
