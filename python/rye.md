@@ -22,7 +22,7 @@ The Rye docs suggested running this:
 
     rye pin cpython@3.11
 
-As far as I can tell all this did was write `3.11.1` to a `~/.python-version` file. I'm not sure if there are any tools other than Rye which pay attention to this file.
+As far as I can tell all this did was write `3.11.1` to a `~/.python-version` file. I'm not sure if there are any tools other than Rye which pay attention to this file. (UPDATE: [pyenv uses this file too](https://github.com/pyenv/pyenv#understanding-python-version-selection))
 
 Actually fetching versions of Python can be done using `rye toolchain fetch VERSION`, for example:
 
