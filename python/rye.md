@@ -198,6 +198,12 @@ https://github.com/simonw/datasette/archive/main.zip
 ```
 Evidently Rye doesn't (yet?) support installing from URLs.
 
+> **UPDATE**: Armin [showed me a way](https://twitter.com/mitsuhiko/status/1651470124015054848) to do this:
+>
+>     rye install 'datasette @ https://github.com/simonw/datasette/archive/main.zip'
+>
+> This worked - running `~/.rye/shims/datasette --version` confirmed the installation.
+
 Instead, I downloaded the `main.zip` file and ran Rye install against that directly:
 
 ```
