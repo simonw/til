@@ -55,6 +55,7 @@ jobs:
       run: |-
         cd main
         python generate_screenshots.py
+        sqliet-utils vacuum main/tils.db
     - name: Update README
       run: |-
         cd main
@@ -79,8 +80,7 @@ jobs:
         NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
       run: |-
         cd main
-        wget https://latest.datasette.io/fixtures.db
-        datasette publish vercel tils.db fixtures.db \
+        datasette publish vercel tils.db \
           --token $NOW_TOKEN \
           --project simon-til \
           --scope datasette \
