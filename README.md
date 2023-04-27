@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->407<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->408<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -81,6 +81,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Upgrading a pipx application to an alpha version](https://github.com/simonw/til/blob/main/python/pipx-alpha.md) - 2023-01-11
 * [Installing lxml for Python on an M1/M2 Mac](https://github.com/simonw/til/blob/main/python/lxml-m1-mac.md) - 2023-01-27
 * [Calculating embeddings with gtr-t5-large in Python](https://github.com/simonw/til/blob/main/python/gtr-t5-large.md) - 2023-01-31
+* [A few notes on Rye](https://github.com/simonw/til/blob/main/python/rye.md) - 2023-04-26
 
 ## zeit-now
 
