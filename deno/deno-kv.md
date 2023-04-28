@@ -179,3 +179,8 @@ CREATE TABLE migration_state(
 INSERT INTO "migration_state" VALUES(0,2);
 ```
 I had to upgrade to [Deno 1.32.5](https://github.com/denoland/deno/releases/tag/v1.32.5) to get this to work (`brew upgrade deno`) as the `kv.atomic().sum(...)` feature is brand new.
+
+## Further reading
+
+- The [Deno KV Key Space](https://deno.com/manual@v1.33.1/runtime/kv/key_space) documentation has some interesting lower-level details of how this all works.
+- [Secondary Indexes](https://deno.com/manual@v1.33.1/runtime/kv/secondary_indexes) shows some advanced patterns for working with Deno KV.
