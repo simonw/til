@@ -41,3 +41,5 @@ Ben Johnson wrote about how WAL mode internals work in great detail in [How SQLi
 In a Hacker News comment, Ben [points out](https://news.ycombinator.com/item?id=32581486):
 
 >  The other odd thing is that the journal_mode is only persistent for WAL, I believe. The DELETE, TRUNCATE, & PERSIST modes are per-connection. It makes sense though since those 3 modes deal with the rollback journal and are compatible with each other while the WAL is totally separate. https://www.sqlite.org/pragma.html#pragma_journal_mode
+
+I made some extensive notes on the performance impact of WAL mode in [Benchmarking SQLite in Django](https://simonwillison.net/2022/Oct/23/datasette-gunicorn/#benchmarking-sqlite).
