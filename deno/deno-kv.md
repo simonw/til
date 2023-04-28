@@ -109,3 +109,73 @@ It looks to me like they've designed a data structure that will work well with t
 It looks like the magic part is that if you write code that uses `Deno.openKv()` without any extra arguments, your script will use a SQLite database in that `location_data` directory when it runs locally... but once deployed to Deno Deploy it will switch to using a FoundationDB-backed cloud database, replicated around the world.
 
 I find this particularly interesting in terms of open source business models: they're baking a core feature into their framework which their SaaS platform is uniquely positioned to offer as a global-scale upgrade.
+
+## A counter
+
+I tried to copy this from the KV marketing landing page, and ended up having to tweak it a bit to get it to work.
+
+Saved as `counter.js`:
+```javascript
+import { serve } from "https://deno.land/std/http/server.ts";
+
+const kv = await Deno.openKv('count.db');
+
+serve (async () => {
+    await kv.atomic().sum(["visits"], 1n).commit();
+    const res = await kv.get(["visits"]);
+    console.log(res);
+    return new Response(`Visits: ${res.value.value}`);
+});
+```
+Run like this:
+```
+deno --unstable run counter.js
+```
+```
+✅ Granted read access to "count.db".
+✅ Granted write access to "count.db".
+✅ Granted net access to "0.0.0.0:8000".
+Listening on http://localhost:8000/
+```
+Now `http://localhost:8000/` serves a blank page with a "Visits: 3" number that increments on every hit.
+
+The console logs this out:
+
+```
+{
+  key: [ "visits" ],
+  value: KvU64 { value: 19n },
+  versionstamp: "00000000000000130000"
+}
+{
+  key: [ "visits" ],
+  value: KvU64 { value: 20n },
+  versionstamp: "00000000000000140000"
+}
+{
+  key: [ "visits" ],
+  value: KvU64 { value: 21n },
+  versionstamp: "00000000000000150000"
+}
+```
+And the relevant parts of the SQLite database dump look like this:
+```sql
+CREATE TABLE data_version (
+  k integer primary key,
+  version integer not null
+);
+INSERT INTO "data_version" VALUES(0,22);
+CREATE TABLE kv (
+  k blob primary key,
+  v blob not null,
+  v_encoding integer not null,
+  version integer not null
+) without rowid;
+INSERT INTO "kv" VALUES(X'0276697369747300',X'1600000000000000',2,22);
+CREATE TABLE migration_state(
+  k integer not null primary key,
+  version integer not null
+);
+INSERT INTO "migration_state" VALUES(0,2);
+```
+I had to upgrade to [Deno 1.32.5](https://github.com/denoland/deno/releases/tag/v1.32.5) to get this to work (`brew upgrade deno`) as the `kv.atomic().sum(...)` feature is brand new.
