@@ -58,11 +58,6 @@ jobs:
       run: |-
         cd main
         python generate_screenshots.py
-        # Drop screenshots older than a year, temporary size improvement
-        sqlite-utils tils.db "
-          update til set shot = x'89504E470D0A1A0A0000000D494844520000010000000100010300000066BC3A2500000003504C5445B5D0D0630416EA0000001F494441546881EDC1010D000000C2A0F74F6D0E37A00000000000000000BE0D210000019A60E1D50000000049454E44AE426082'
-          where created <= '2023'
-        "
         sqlite-utils vacuum tils.db
     - name: Update README
       run: |-
