@@ -52,6 +52,9 @@ jobs:
         cd main
         datasette . --get / | grep "Simon Willison: TIL"
     - name: Generate missing screenshots
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |-
         cd main
         python generate_screenshots.py
