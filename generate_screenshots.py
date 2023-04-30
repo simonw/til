@@ -8,7 +8,7 @@ import tempfile
 root = pathlib.Path(__file__).parent.resolve()
 TMP_PATH = pathlib.Path(tempfile.gettempdir())
 SHOT_HASH_PATHS = [
-    (root / "templates" / "row.html"),
+    (root / "templates" / "pages" / "{topic}" / "{slug}.html"),
     (root / "templates" / "til_base.html"),
 ]
 
