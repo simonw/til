@@ -6,9 +6,6 @@ plugins:
     path: /-/graphql
   datasette-atom:
     allow_unsafe_html_in_canned_queries: true
-  datasette-media:
-    screenshot:
-      "sql": "select shot as content, 'image/png' as content_type from til where path=:key"
   datasette-block-robots:
     literal: |-
       User-agent: *

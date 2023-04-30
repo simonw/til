@@ -6,7 +6,6 @@ datasette-atom>=0.7
 datasette-publish-vercel>=0.14.1
 datasette-template-sql>=1.0.2
 datasette-graphql
-datasette-media
 datasette-block-robots
 datasette-sitemap>=1.0
 s3-credentials
