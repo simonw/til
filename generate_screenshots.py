@@ -49,6 +49,10 @@ def jpeg_for_path(path):
 def generate_screenshots(root):
     db = sqlite_utils.Database(root / "tils.db")
 
+    # If the old 'shot' column exists, drop it
+    if "shot" in db["til"].columns_dict:
+        db["til"].transform(drop=["shot"])
+
     # shot_hash incorporates a hash of key templates
     shot_html_hash = hashlib.md5()
     for filepath in SHOT_HASH_PATHS:
