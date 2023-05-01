@@ -70,9 +70,9 @@ The `-n` option stands for `--null-input` - which is described as:
 
 > Don´t read any input at all! Instead, the filter is run once using null as the input. This is useful when using `jq` as a simple calculator or to construct JSON data from scratch.
 
-Then `--arg query '...'` sets a variable within jQuery to the string representing my GraphQL query.
+Then `--arg query '...'` sets a variable within `jq` to the string representing my GraphQL query.
 
-Finally I evaluate the jQuery expression `'{"query":$query}'` which constructs the final document with my GraphQL query as the value for the `"query"` key.
+Finally I evaluate the `jq` expression `'{"query":$query}'` which constructs the final document with my GraphQL query as the value for the `"query"` key.
 
 ## Passing that to curl with "$()"
 
