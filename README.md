@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->412<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->413<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -526,6 +526,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Annotated code for a demo of WebSocket chat in Deno Deploy](https://github.com/simonw/til/blob/main/deno/annotated-deno-deploy-demo.md) - 2021-11-06
 * [Deno KV](https://github.com/simonw/til/blob/main/deno/deno-kv.md) - 2023-04-28
+* [Running Python code in a Pyodide sandbox via Deno](https://github.com/simonw/til/blob/main/deno/pyodide-sandbox.md) - 2023-05-10
 
 ## fly
 
