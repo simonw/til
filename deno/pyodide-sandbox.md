@@ -152,6 +152,26 @@ I haven't decided on an approach to timeouts yet. It will probably be in the Jav
       response.body = JSON.stringify({ error: error.message });
     }
 ```
+## Lock down Deno even more
+
+The `--allow-read` option allows code running in Deno to read any file.
+
+After some experimentation, this seems to restrict what it can read more tightly:
+```
+deno run --allow-read=runner.js,/Users/simon/Library/Caches/deno/npm/registry.npmjs.org/pyodide/0.23.2 runner.js
+```
+I'm not sure why `runner.js` needs to be in that comma-separated list.
+
+The full path to the `pyodide/0.23.2` folder is needed to allow access to the following three files:
+
+- `/Users/simon/Library/Caches/deno/npm/registry.npmjs.org/pyodide/0.23.2/python_stdlib.zip`
+- `/Users/simon/Library/Caches/deno/npm/registry.npmjs.org/pyodide/0.23.2/pyodide.asm.wasm`
+- `/Users/simon/Library/Caches/deno/npm/registry.npmjs.org/pyodide/0.23.2/repodata.json`
+
+I'm not sure how best to construct that path in a way that's independent of the specific host the code is running on.
+
+Ideally I'd like to fetch those files and use them without any possibility of Deno attempting to fetch them from npm.
+
 ## Package with deno compile?
 
 A neat feature of Deno is [deno compile](https://deno.com/manual@v1.33.2/tools/compiler), which can turn a Deno script into a standalone executable - including targetting multiple platforms.
