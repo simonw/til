@@ -152,3 +152,10 @@ I haven't decided on an approach to timeouts yet. It will probably be in the Jav
       response.body = JSON.stringify({ error: error.message });
     }
 ```
+## Package with deno compile?
+
+A neat feature of Deno is [deno compile](https://deno.com/manual@v1.33.2/tools/compiler), which can turn a Deno script into a standalone executable - including targetting multiple platforms.
+
+It would be interesting to see if this could be used to turn the `runner.js` into an executable that could be more easily distributed to platforms where I want to implement this sandbox pattern.
+
+Thah generated executable would presumably bundle Deno, V8, Pyodide and the WebAssembly build of Python itself!
