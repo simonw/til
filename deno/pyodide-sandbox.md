@@ -178,4 +178,4 @@ A neat feature of Deno is [deno compile](https://deno.com/manual@v1.33.2/tools/c
 
 It would be interesting to see if this could be used to turn the `runner.js` into an executable that could be more easily distributed to platforms where I want to implement this sandbox pattern.
 
-Thah generated executable would presumably bundle Deno, V8, Pyodide and the WebAssembly build of Python itself!
+The generated executable would presumably bundle Deno, V8, Pyodide and the WebAssembly build of Python itself!
