@@ -6,7 +6,9 @@ Fetching seconds since the epoch is easy:
 ```sql
 select strftime('%s', 'now');
 ```
-Milliseconds is *much more complex*. After some digging around, I found the following recipe:
+Prior to [SQLite 3.42.0](https://sqlite.org/releaselog/3_42_0.html) (released in May 2023) milliseconds were *much more complex*.
+
+After some digging around, I found the following recipe:
 ```sql
 select cast(
   (julianday('now') - 2440587.5)
@@ -14,6 +16,12 @@ select cast(
 )
 ```
 [Try these both here](https://latest.datasette.io/_memory?sql=select%0D%0A++strftime%28%27%25s%27%2C+%27now%27%29+as+seconds_since_epoch%2C%0D%0A++cast%28%28julianday%28%27now%27%29+-+2440587.5%29+*+86400+*+1000+as+integer%29+as+ms_since_epoch%3B).
+
+In SQLite 3.42.0 and higher you can do this instead:
+
+```sql
+select unixepoch('subsec'); 
+```
 
 ## Displaying them as human readable strings
 
