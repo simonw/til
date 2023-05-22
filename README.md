@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->414<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->415<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -690,4 +690,8 @@ Search these TILs at https://til.simonwillison.net/
 ## exif
 
 * [Interpreting photo orientation and locations in EXIF data](https://github.com/simonw/til/blob/main/exif/orientation-and-location.md) - 2023-04-22
+
+## misc
+
+* [hexdump and hexdump -C](https://github.com/simonw/til/blob/main/misc/hexdump.md) - 2023-05-22
 <!-- index ends -->
