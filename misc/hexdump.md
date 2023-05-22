@@ -1,0 +1,36 @@
+# hexdump and hexdump -C
+
+While exploring null bytes in [this issue](https://github.com/simonw/ttok/issues/3) I learned that the `hexdump` command on macOS (and presumably other Unix systems) has a confusing default output.
+
+Consider the following:
+```
+$ echo -n 'abc\0' | hexdump
+0000000 6261 0063                              
+0000004
+```
+Compared to:
+```
+$ echo -n 'a' | hexdump    
+0000000 0061                                   
+0000001
+```
+I'm using `echo -n` here to avoid adding an extra newline, which encodes as `0a`.
+
+How come `abc\0` starts with 6261 where `a` starts with `0061`?
+
+It turns out `hexdump` default format is 16-bit words in little-endian format, which is really confusing.
+
+## hexdump -C
+
+Using the `-C` option fixes this:
+```
+$ echo -n 'a' | hexdump -C
+00000000  61                                                |a|
+00000001
+$ echo -n 'abc\0' | hexdump -C
+00000000  61 62 63 00                                       |abc.|
+00000004
+```
+`C` here stands for "canonical".
+
+In addition to causing `hexdump` to output byte by byte, it also includes an ASCII representation on the right hand side.
