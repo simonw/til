@@ -4,7 +4,7 @@ I got [a bug report](https://github.com/simonw/sqlite-fts4/issues/6) concerning 
 
 The s390x is an [IBM mainframe architecture](https://en.wikipedia.org/wiki/Linux_on_IBM_Z), which I found glamorous!
 
-The bug related to those machines being big-endian v.s. my software being tested on little-endian machines. My first attempt at fixing it (see [this TIL](https://til.simonwillison.net/python/struct-endianness)) turned out not to be correct. I really needed a way to test agaist an emulated s390x machine with big-endian byte order.
+The bug related to those machines being big-endian v.s. my software being tested on little-endian machines. My first attempt at fixing it (see [this TIL](https://til.simonwillison.net/python/struct-endianness)) turned out not to be correct. I really needed a way to test against an emulated s390x machine with big-endian byte order.
 
 I figured out how to do that using Docker for Mac and QEMU.
 
