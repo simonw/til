@@ -6,6 +6,8 @@ MLC (Machine Learning Compilation) on May 22nd 2023: [Bringing Open Large Langua
 
 The instructions [they provided](https://mlc.ai/mlc-llm/#windows-linux-mac) didn't quite give me all the information I needed to get this to work. Here's what I did instead.
 
+**UPDATE:** The official instructions now cover `RedPajama-INCITE-Chat-3B` as well.
+
 ## Install Conda
 
 Their instructions require Conda. I installed `miniconda` using Homebrew like this:
