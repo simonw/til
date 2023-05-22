@@ -58,3 +58,11 @@ bash-3.2$ printf $'abc\0' | hexdump -C
 00000003
 ```
 So it looks like using `printf 'abc\0'` is the best recipe for Bash on macOS. I'm not sure if Bash on other platforms differs.
+
+Bill Mill [suggested](https://hachyderm.io/@llimllib/110413915366228318) `echo -ne` for this:
+```
+bash-3.2$ echo -ne 'abc\0' | hexdump -C
+00000000  61 62 63 00                                       |abc.|
+00000004
+```
+The `-e` option enables the interpretation of backslash escapes.
