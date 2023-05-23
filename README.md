@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->416<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->417<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -134,6 +134,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Copy tables between SQLite databases](https://github.com/simonw/til/blob/main/sqlite/copy-tables-between-databases.md) - 2023-04-03
 * [Saving an in-memory SQLite database to a file in Python](https://github.com/simonw/til/blob/main/sqlite/python-sqlite-memory-to-file.md) - 2023-04-08
 * [Unix timestamp in milliseconds in SQLite](https://github.com/simonw/til/blob/main/sqlite/unix-timestamp-milliseconds-sqlite.md) - 2023-04-08
+* [Comparing two training datasets using sqlite-utils](https://github.com/simonw/til/blob/main/sqlite/comparing-datasets.md) - 2023-05-23
 
 ## presenting
 
