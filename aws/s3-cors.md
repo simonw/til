@@ -6,7 +6,20 @@ This configuration happens at the bucket level - it's not something that can be 
 
 [Here's their documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html). As with so many AWS things it involves hand-crafting a JSON document: the documentation for that format, with useful examples, [is here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html).
 
-I opted to use the S3 web console option - find the bucket in the console interface, click the "Security" tab and you can paste in a JSON configuration.
+## Using s3-credentials
+
+My [s3-credentials tool](https://s3-credentials.readthedocs.io/) now has a command for setting a CORS policy:
+
+```
+s3-credentials set-cors-policy my-cors-bucket \
+  --allowed-method GET \
+  --allowed-origin https://simonwillison.net/
+```
+Here's the [full documentation for that command](https://s3-credentials.readthedocs.io/en/stable/other-commands.html#set-cors-policy-and-get-cors-policy).
+
+## Using the S3 web console
+
+I originally opted to use the S3 web console option - find the bucket in the console interface, click the "Security" tab and you can paste in a JSON configuration.
 
 The configuration I tried first was this one:
 
