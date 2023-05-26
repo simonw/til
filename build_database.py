@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from datetime import timezone
 import httpx
 import git
@@ -9,6 +10,11 @@ from sqlite_utils.db import NotFoundError
 import time
 
 root = pathlib.Path(__file__).parent.resolve()
+
+
+def first_paragraph_text_only(html):
+    soup = BeautifulSoup(html, "html.parser")
+    return " ".join(soup.find("p").stripped_strings)
 
 
 def created_changed_times(repo_path, ref="main"):
@@ -96,6 +102,8 @@ def build_database(repo_path):
                 assert False, "Could not render {} - last response was {}".format(
                     path, response.headers
                 )
+        # Populate summary
+        record["summary"] = first_paragraph_text_only(record.get("html") or previous_html or "")
         record.update(all_times[path])
         with db.conn:
             table.upsert(record, alter=True)
