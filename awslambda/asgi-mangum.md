@@ -393,3 +393,5 @@ Mangum works with ASGI apps, so any app built using [Starlette](https://www.star
 One thing I haven't figured out yet is how to assign a custom domain name to a Lambda function.
 
 I understand doing that involves several other AWS services, potentially API Gateway, CloudFront and Route53. I'll update this once I figure those out.
+
+**UPDATE:** [Here are my notes](https://github.com/simonw/public-notes/issues/1) exploring ways of applying custom URLs to Lambda funcions. 
