@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->418<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->419<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -454,6 +454,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Building a Markdown summary of Django group permissions](https://github.com/simonw/til/blob/main/sql/django-group-permissions-markdown.md) - 2021-06-03
 * [Cumulative total over time in SQL](https://github.com/simonw/til/blob/main/sql/cumulative-total-over-time.md) - 2021-09-13
 * [Using recursive CTEs to explore hierarchical Twitter threads](https://github.com/simonw/til/blob/main/sql/recursive-cte-twitter-threads.md) - 2023-01-30
+* [Consecutive groups in SQL using window functions](https://github.com/simonw/til/blob/main/sql/consecutive-groups.md) - 2023-06-08
 
 ## amplitude
 
