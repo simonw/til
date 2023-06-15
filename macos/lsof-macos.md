@@ -45,3 +45,12 @@ Python  17990 simon   12r     REG                1,5 747413504           1875507
 The column with `FD=cwd`, `TYPE=DIR` shows the working directory for the process.
 
 The `TYPE=IPv4` one is interesting, it shows that we are listening on `localhost:8422`.
+
+## PID listening on a port
+
+To find out which process is listening on a specific port, use `lsof -i :8000`. For example:
+```
+~ % lsof -i :8000
+COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  23862 simon    3u  IPv4 0x78af109648024857      0t0  TCP localhost:irdmi (LISTEN)
+```
