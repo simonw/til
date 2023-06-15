@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->420<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->421<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -157,6 +157,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Driving an external display from a Mac laptop](https://github.com/simonw/til/blob/main/macos/external-display-laptop.md) - 2022-09-10
 * [Browse files (including SQLite databases) on your iPhone with ifuse](https://github.com/simonw/til/blob/main/macos/ifuse-iphone.md) - 2022-09-13
 * [sips: Scriptable image processing system](https://github.com/simonw/til/blob/main/macos/sips.md) - 2023-02-18
+* [Using fs_usage to see what files a process is using](https://github.com/simonw/til/blob/main/macos/fs-usage.md) - 2023-06-15
 
 ## cloudrun
 
