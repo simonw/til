@@ -70,3 +70,8 @@ The `-f` filter option accepts the following values:
 - `cachehit` appears to show ALL of the above information, with the addition of `CACHE_HIT` rows.
 
 So for most of my purposes it looks like `sudo fs_usage -f pathname PID` is the most useful command.
+
+## See also these TILs
+
+- [Using lsof on macOS](https://til.simonwillison.net/macos/lsof-macos)
+- [Seeing files opened by a process using opensnoop](https://til.simonwillison.net/macos/open-files-with-opensnoop)
