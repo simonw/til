@@ -6,14 +6,9 @@ I finally figured out how to package [Datasette](https://github.com/simonw/datas
 
 Prior to being accepted, you needed to install it from my own Homebrew tap like this:
 
-    brew tap simonw/datasette
-    brew install datasette
+    brew install simonw/datasette/datasette
     # wait a bit...
     datasette --version
-
-Or you could skip the `tap` step and run this:
-
-    brew install simonw/datasette/datasette
 
 Here's my code that makes this work: https://github.com/simonw/homebrew-datasette
 
@@ -58,45 +53,39 @@ class Datasette < Formula
   end
 end
 ```
-
-For the initial block you need the URL to a source distribution and the `sha256` code for it. I got these for Datasette by publishing a `sdist` package to PyPI and then clicking [the "View hashes" button](https://pypi.org/project/datasette/0.46/#copy-hash-modal-372b7614-26f5-4356-a89a-3854323983bf) next to the source release.
-
 Every dependency needs to be listed as a resource. They all need to be available as `sdist` packages - I made sure all of my dependencies had an `sdist` on PyPI.
 
-Then I used the [homebrew-pypi-poet](https://github.com/tdsmith/homebrew-pypi-poet) tool to construct the rest of the resource blocks for me. You install that in a fresh virtual environment with the module you are packaging:
+Then I used the [homebrew-pypi-poet](https://github.com/tdsmith/homebrew-pypi-poet) tool to construct the formula.
 
+This **must be installed in a fresh virtual environment**. If you install it into an environment with other packages those packages will be included in the formula even if they are not used by that tool.
+
+Create a fresh virtual environment like this:
+
+```bash
+cd /tmp
+mkdir fresh
+cd fresh
+python -m venv venv
+source venv/bin/activate
 ```
-$ cd /tmp
-$ mkdir d
-$ cd d
-$ pipenv shell
-(d) $ pip install datasette homebrew-pypi-poet
-...
-(d) $ poet 
-usage: poet [-h] [--single package [package ...] | --formula package | --resources package] [--also package] [-V]
-(d) $ poet datasette
-  resource "aiofiles" do
-    url "https://files.pythonhosted.org/packages/2b/64/437053d6a4ba3b3eea1044131a25b458489320cb9609e19ac17261e4dc9b/aiofiles-0.5.0.tar.gz"
-    sha256 "98e6bcfd1b50f97db4980e182ddd509b7cc35909e903a8fe50d8849e02d815af"
-  end
+I'll demonstrate installing [strip-tags](https://github.com/simonw/strip-tags) here since it is not yet packaged for Homebrew, unlike Datasette.
 
-  resource "asgi-csrf" do
-    url "https://files.pythonhosted.org/packages/20/19/60188a9d88e5af17cfb91dac465f898d8eccf69bc215ac731d64c49fea5c/asgi-csrf-0.6.1.tar.gz"
-    sha256 "4045b8b45c330e068b8b96f914e585ea69228efbfe574ab4a4be2d8c6009a19f"
-  end
-  ...
+Install both `strip-tags` and the `homebrew-pypi-poet` package:
+```bash
+pip install strip-tags homebrew-pypi-poet
 ```
-There's one major gotcha here: `datasette` itself was included as a `resource` block. It's important to *remove this resource block* - if you don't, the `datasette` command-line tool will not be sym-linked from the `/usr/local/bin` directory by Homebrew which means users won't be able to type `datasette` to run it. See [issue #2](https://github.com/simonw/homebrew-datasette/issues/2) for how we figured that out.
+Next, run `poet -f` to create the formula:
+```bash
+poet -f strip-tags > strip-tags.rb
+```
+You can test installing the formula like this:
+```bash
+HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose --debug strip-tags.rb
+```
 
-But that's it! Publish the new `yourname.rb` file, run the `brew tap yourname/yourtap` and `brew install yourname/yourtap/yourformula`.
+If this works, you'll be able to run `strip-tags` - use `which strip-tags` to check where it was installed.
 
-## Even better: poet -f
-
-Running `poet datasette` generates the resource stanzas, but leaves you to add the rest of the formula (and manually remove the package itself from that list of resources).
-
-`poet -f datasette` generates the full formula.
-
-You need to fill in the description and the `test` block, but other than that it looks like it should work straight away.
+Now add `strip-tags.rb` to the `Formula` folder in your repository, then do `brew uninstall strip-tags` and then `brew install yourname/yourtap/strip-tags` to test installing from the formula in the GitHub repository.
 
 ## Implementing the test block
 
@@ -118,6 +107,12 @@ And here's my test for `sqlite-utils`:
 ```ruby
   test do
     assert_match "15", shell_output("#{bin}/sqlite-utils :memory: 'select 3 * 5'")
+  end
+```
+And for `llm`:
+```ruby
+  test do
+    assert_match "llm, version", shell_output("#{bin}/llm --version")
   end
 ```
 
