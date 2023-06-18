@@ -87,3 +87,5 @@ symbex 'test*csv*' | llm --system 'based on these tests guess what this tool doe
 ```
 Output:
 > This tool seems to be a web application that provides a user interface to query databases and export query results in various formats, including HTML, JSON, and CSV. The tests verify that the tool correctly generates HTML pages with links to export query results in JSON or CSV format, exports tables to CSV format with custom options (such as whether to include labels and nullable labels), and performs streaming of CSV data. The tests also check that the tool sets appropriate HTTP headers, allows CORS, and handles errors and large CSV files gracefully.
+
+See [symbex: search Python code for functions and classes, then pipe them into a LLM](https://simonwillison.net/2023/Jun/18/symbex/) for more on that project.
