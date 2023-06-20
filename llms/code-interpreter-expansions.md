@@ -2,6 +2,8 @@
 
 The ChatGPT Code Interpreter alpha remains incredibly interesting. I wrote about how I was using it [for Python and SQLite benchmarking](https://simonwillison.net/2023/Apr/12/code-interpreter/) a few weeks ago. Today I found a neat pattern for expanding its capabilities with custom binaries.
 
+> **Update:** June 20th 2023 as far as I can tell this trick no longer works - I think they have removed the ability to use `subprocess.call()`.
+
 If you don't yet have access to the alpha, the key thing to know is that it provides ChatGPT with access to a Python interpreter. It doesn't have network access - it can't make outbound HTTP requests, or download packages - but it can do all sorts of interesting things by running code.
 
 ## Uploading files
