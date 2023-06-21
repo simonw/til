@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->423<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->424<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -296,6 +296,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Upgrading Python Homebrew packages using pip](https://github.com/simonw/til/blob/main/homebrew/upgrading-python-homebrew-packages.md) - 2020-10-14
 * [Running a MySQL server using Homebrew](https://github.com/simonw/til/blob/main/homebrew/mysql-homebrew.md) - 2021-06-11
 * [Running the latest SQLite in Datasette using Homebrew](https://github.com/simonw/til/blob/main/homebrew/latest-sqlite.md) - 2022-02-28
+* [Automatically maintaining Homebrew formulas using GitHub Actions](https://github.com/simonw/til/blob/main/homebrew/auto-formulas-github-actions.md) - 2023-06-21
 
 ## zsh
 
