@@ -4,6 +4,12 @@
 
 I built a [simonw/playing-with-github-pages](https://github.com/simonw/playing-with-github-pages) repo today. This is what I learned:
 
+## Enabling GitHub Pages for a repo
+
+Navigate to **Settings -> Pages** - or use the repository URL plus `/settings/pages` - and tell it which branch to deploy (usually `main`):
+
+![Build and deployment: Source: Deploy from a branch GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository. Save button.](https://github.com/simonw/til/assets/9599/b899b14c-e247-4e52-9157-d2b0c6b0c7c8)
+
 ## Add a .nojekyll file to disable Jekyll
 
 GitHub Pages was originally built around the [Jekyll](https://jekyllrb.com/) Ruby static site framework. You can turn that off by adding a `.nojekyll` file to your repository root.
