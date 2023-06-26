@@ -50,6 +50,10 @@ And (using inline syntax):
 ```toml
 name = { first = "Tom", last = "Preston-Werner" }
 point = { x = 1, y = 2 }
+animal = { type = { name = "pug" } }
+```
+That last line can also be:
+```toml
 animal = { type.name = "pug" }
 ```
 The same is true of arrays. This example uses `[[...]]` syntax:
