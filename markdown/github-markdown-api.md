@@ -16,7 +16,8 @@ This is example Markdown
 response = httpx.post(
     "https://api.github.com/markdown",
     json={
-        # mode=gfm woud expand #13 issue links and suchlike
+        # mode=gfm would expand #13 issue links, provided you pass
+        # context=simonw/datasette too
         "mode": "markdown",
         "text": body,
     },
