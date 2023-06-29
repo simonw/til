@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->426<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->427<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -213,6 +213,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Clone, edit and push files that live in a Gist](https://github.com/simonw/til/blob/main/github/clone-and-push-gist.md) - 2022-09-08
 * [GitHub Pages: The Missing Manual](https://github.com/simonw/til/blob/main/github/github-pages.md) - 2022-10-31
 * [Finding uses of an API with the new GitHub Code Search](https://github.com/simonw/til/blob/main/github/github-code-search-api-uses.md) - 2022-12-08
+* [Bulk editing status in GitHub Projects](https://github.com/simonw/til/blob/main/github/bulk-edit-github-projects.md) - 2023-06-29
 
 ## node
 
