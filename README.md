@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->425<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->426<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -84,6 +84,7 @@ Search these TILs at https://til.simonwillison.net/
 * [A few notes on Rye](https://github.com/simonw/til/blob/main/python/rye.md) - 2023-04-26
 * [The location of the pip cache directory](https://github.com/simonw/til/blob/main/python/pip-cache.md) - 2023-04-28
 * [TOML in Python](https://github.com/simonw/til/blob/main/python/toml.md) - 2023-06-26
+* [CLI tools hidden in the Python standard library](https://github.com/simonw/til/blob/main/python/stdlib-cli-tools.md) - 2023-06-28
 
 ## zeit-now
 
