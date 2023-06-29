@@ -254,6 +254,10 @@ echo '{"foo": "bar", "baz": [1, 2, 3]}' | python -m json.tool
     ]
 }
 ```
+Tip from [Joe Kerhin](https://fosstodon.org/@jkerhin/110630056176028277):
+
+> `json.tool` will also exit with nonzero status if your json document is invalid.
+
 ### random
 
 I thought this might provide a utility for generating random numbers, but sadly it's just a benchmarking suite with no additional command-line options:
