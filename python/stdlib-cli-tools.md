@@ -348,6 +348,7 @@ Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
 23 24 25 26 27 28 29      27 28 29 30               25 26 27 28 29 30 31
 30 31
 ```
+This one has a bunch more options (visible with `-h`). `python -m calendar -t html` produces the calendar in HTML, for example.
 
 ### Loads more
 
