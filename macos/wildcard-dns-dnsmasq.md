@@ -4,6 +4,36 @@ I wanted to get wildcard DNS running on my Mac laptop, for development purposes.
 
 I figured out how to do this using `dnsmasq`, installed via Homebrew.
 
+## THIS MAY BE UNNECESSARY
+
+Tip [from Daniel Landau](https://social.treehouse.systems/@daniel/110633567689976666) - `anything.localhost` (and `foo.anything.localhost`) should resolve to `127.0.0.1` already. This seems to work on macOS, so this entire TIL is likely obsolete.
+
+```bash
+dig foo.bar.localhost
+```
+```
+; <<>> DiG 9.10.6 <<>> foo.bar.localhost
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 58764
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;foo.bar.localhost.		IN	A
+
+;; AUTHORITY SECTION:
+.			10800	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2023063000 1800 900 604800 86400
+
+;; Query time: 241 msec
+;; SERVER: 127.0.0.1#53(127.0.0.1)
+;; WHEN: Fri Jun 30 07:15:48 PDT 2023
+;; MSG SIZE  rcvd: 121
+```
+
+## Original TIL continues here
+
 Some clues:
 
 - [This conversation](https://gist.github.com/simonw/07632d0154f5761119dc02ea8243d3dd) with ChatGPT inspired me to look at `dnsmasq`.
