@@ -32,6 +32,8 @@ dig foo.bar.localhost
 ;; MSG SIZE  rcvd: 121
 ```
 
+Also this broke DNS for me on other networks - see note at the bottom for details.
+
 ## Original TIL continues here
 
 Some clues:
@@ -160,3 +162,11 @@ resolver #1
   reach    : 0x00020002 (Reachable,Directly Reachable Address)
 ```
 Finally, I ran a quick HTTP server using `python -m http.server 8005` and confirmed that `http://foo.bar.lan:8005/` in my browser worked as expected - which it did.
+
+## This broke DNS for me on other networks
+
+When I tried connecting to other networks later on the same day I found that DNS lookups were not working.
+
+I eventually figured out why by running `scutil --dns` and noting that it was always trying to hit `10.0.0.1`.
+
+The fix was to open up the DNS servers area in Network settings again and remove ALL of the nameservers from that list. Once I did that the DNS server for the WiFi network I was connected to started working again.
