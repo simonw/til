@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->427<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->428<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -709,4 +709,8 @@ Search these TILs at https://til.simonwillison.net/
 ## http
 
 * [Testing the Access-Control-Max-Age CORS header](https://github.com/simonw/til/blob/main/http/testing-cors-max-age.md) - 2023-05-25
+
+## discord
+
+* [A Discord bot to expand issue links to a private GitHub repository](https://github.com/simonw/til/blob/main/discord/discord-github-issues-bot.md) - 2023-06-29
 <!-- index ends -->
