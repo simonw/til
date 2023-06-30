@@ -48,6 +48,13 @@ The `-l` option causes `ripgrep` to list matching files without showing the cont
 
 I built up those `grep -v` exclusions over a few iterations - `idlelib/` and `turtledemo/` have a bunch of matches that I wasn't interested in.
 
+> **Update:** Here's an alternative way of expressing that search:
+>
+> ```bash
+> rg 'if __name__ =' -l | grep -v -e 'test/' -e 'tests/' -e idlelib -e turtledemo
+> ```
+> `grep -v` still means "everything that doesn't match this" - but then the multiple `-e '...'` patterns are used to construct a "this pattern or this pattern or this pattern" filter. This saves on having to pipe through `grep -v` multiple times. Thanks for the tip, [dfc](https://news.ycombinator.com/item?id=36519308).
+
 Here's the result:
 
 ```
