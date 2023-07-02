@@ -98,7 +98,7 @@ After spending some time in the Python debugger, I figured out that the tokens i
  Token(lineno=11, type='block_end', value='%}'),
  Token(lineno=11, type='data', value='\n')]
 ```
-To turn `key="value` syntax into a dictionary of attributes, I would need to read every token up to the `block_end` (`"%}"`) token, then look for sequences of three tokens - a `name`, an `assign` (=) and a `string`.
+To turn `key="value"` syntax into a dictionary of attributes, I would need to read every token up to the `block_end` (`"%}"`) token, then look for sequences of three tokens - a `name`, an `assign` (=) and a `string`.
 
 I ended up writing this code to do that:
 
