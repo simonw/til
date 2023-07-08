@@ -176,7 +176,7 @@ dependencies = [
     "httpx"
 ]
 ```
-These can use version specifiers, for example `httpx>=0.18.0` or `httpx~=0.18.
+These can use version specifiers, for example `httpx>=0.18.0` or `httpx~=0.18`.
 
 ## Test dependencies
 
