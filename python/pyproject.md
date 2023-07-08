@@ -26,6 +26,17 @@ When I'm working with packages there are really just two main things I do with t
 
 It turns out both of those commands now work on a folder containing just a `pyproject.toml` file, with no `setup.py` or `setup.cfg` or any of the other old packaging files!
 
+## It defaults to setuptools
+
+The reason this works is that a `pyproject.toml` file without a `[build-system]` section defaults to using [setuptools](https://setuptools.pypa.io/). Effectively it behaves the same as if you had added this block to the file:
+
+```toml
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+```
+If you want to be explicit you can add that section - it does no harm, and likely makes the file easier to understand in the future. I was excited to find that it worked without this though.
+
 ## Editable mode with pip install
 
 To demonstrate, I'm going to create a virtual environment and install my package in editable mode.
@@ -121,7 +132,7 @@ With `setup.py` I'm used to putting quite a bit of effort into telling Python wh
 
 As far as I can tell, the default behaviour now is to find all `*.py` files and all `*/*.py` files and include those - but to exclude common patterns such as `tests/` and `docs/` and `tests.py` and `test_*.py`.
 
-The [Automatic Discovery](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery) section of the `setuptools` documenattion outlines one version of these rules. I'm not sure if these are the rules that are applied by `pip` and `build` as described in this article though. Approach with caution - I may have misunderstood entirely how this works.
+This behaviour is defined by `setuptools`. The [Automatic Discovery](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery) section of the `setuptools` documentation describes these rules in detail.
 
 ## Adding metadata
 
@@ -263,7 +274,7 @@ which demo_package_hello
 ```
 ## pip and build both depend on tomli
 
-One thing that puzzled me about this: TOML suppor twas only added to the Python standard library in Python 3.11 - how come the `pip` and `build` packages are able to use it?
+One thing that puzzled me about this: TOML support was only added to the Python standard library in Python 3.11 - how come the `pip` and `build` packages are able to use it?
 
 It turns out `pip` vendors [tomli](https://github.com/hukkin/tomli):
 
