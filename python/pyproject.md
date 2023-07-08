@@ -121,7 +121,7 @@ With `setup.py` I'm used to putting quite a bit of effort into telling Python wh
 
 As far as I can tell, the default behaviour now is to find all `*.py` files and all `*/*.py` files and include those - but to exclude common patterns such as `tests/` and `docs/` and `tests.py` and `test_*.py`.
 
-I can't find the documentation that explains this now, and I'm wary that I've got the details wrong. Approach with caution.
+The [Automatic Discovery](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery) section of the `setuptools` documenattion outlines one version of these rules. I'm not sure if these are the rules that are applied by `pip` and `build` as described in this article though. Approach with caution - I may have misunderstood entirely how this works.
 
 ## Adding metadata
 
