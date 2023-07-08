@@ -6,6 +6,8 @@ I've been using `setuptools` and `setup.py` for my Python packages for a long ti
 
 Today I figured out how to package a project with a single `pyproject.toml` file, using just `pip` and `build` to install and build that package.
 
+(Note that the approach described in this document likely only works for pure Python packages. If your package includes any binary compiled dependencies you likely need to use a different approach.)
+
 Here's the simplest `pyproject.toml` file I could get to work:
 
 ```toml
@@ -113,6 +115,14 @@ ls dist
 demo-package-0.1.tar.gz
 demo_package-0.1-py3-none-any.whl
 ```
+## It finds the Python files for you
+
+With `setup.py` I'm used to putting quite a bit of effort into telling Python which files should be included in the package - and making sure it doesn't include the `tests/` and `docs/` folder.
+
+As far as I can tell, the default behaviour now is to find all `*.py` files and all `*/*.py` files and include those - but to exclude common patterns such as `tests/` and `docs/` and `tests.py` and `test_*.py`.
+
+I can't find the documentation that explains this now, and I'm wary that I've got the details wrong. Approach with caution.
+
 ## Adding metadata
 
 I can add metadata to my package directly in that `pyproject.toml`. `description = ` can add a short description, and `readme = "filename"` can add a long description imported from a README file.
