@@ -153,13 +153,13 @@ version = "0.1"
 description = "This is a demo package"
 readme = "README.md"
 authors = [{name = "Simon Willison"}]
-license = "Apache-2.0"
-homepage = "https://github.com/simonw/demo-package"
+license = {text = "Apache-2.0"}
 classifiers = [
     "Development Status :: 4 - Beta"
 ]
 
 [project.urls]
+homepage = "https://github.com/simonw/demo-package"
 Changelog = "https://github.com/simonw/demo-package/releases"
 Issues = "https://github.com/simonw/demo-package/issues"
 ```
