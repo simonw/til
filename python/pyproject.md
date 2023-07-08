@@ -245,6 +245,20 @@ if __name__ == '__main__':
     sys.exit(say_hello())
 ```
 
+## Entry points for Pluggy plugins
+
+I use [Pluggy](https://pluggy.readthedocs.io/) to provide a plugins mechanism for my [Datasette](https://datasette.io/) and [LLM](https://llm.datasette.io/) projects.
+
+Plugins require entry points to be configured in their packaging. The recipe for doing that for an LLM plugin (with [this feature](https://github.com/simonw/llm/issues/53) looks like this:
+```toml
+[project.entry-points.llm]
+markov = "llm_markov"
+```
+For a [Datasette plugin](https://docs.datasette.io/en/stable/writing_plugins.html) that would look like this:
+```toml
+[project.entry-points.datasette]
+cluster_map = "datasette_cluster_map"
+```
 ## These packages work with pipx
 
 Having built my new package (with the `scripts=` section) using `python3 -m build`, I then tried installing it in a brand new terminal window using [pipx](https://pypa.github.io/pipx/):
