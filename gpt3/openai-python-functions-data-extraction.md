@@ -4,6 +4,8 @@ Here's the pattern I figured out for using the [openai](https://github.com/opena
 
 The official documentation [mostly demonstrates](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_call_functions_with_chat_models.ipynb) how to do this by calling their HTTP API directly. Here's how to do it with the `openai` Python library instead.
 
+**Correction:** The official documentation does actually [show how do use functions with the Python client library](https://platform.openai.com/docs/guides/gpt/chat-completions-api).
+
 Since I want to extract multiple locations in a single call, here I'm defining a `extract_locations()` function that gets passed an array of objects. Each object has a `name` and a `country_iso_alpha2`.
 
 Passing `function_call={"name": "extract_locations"}` at the end _forces_ OpenAI to reply with a call to that function.
