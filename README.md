@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->434<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->435<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -86,6 +86,7 @@ Search these TILs at https://til.simonwillison.net/
 * [TOML in Python](https://github.com/simonw/til/blob/main/python/toml.md) - 2023-06-26
 * [CLI tools hidden in the Python standard library](https://github.com/simonw/til/blob/main/python/stdlib-cli-tools.md) - 2023-06-28
 * [Python packages with pyproject.toml and nothing else](https://github.com/simonw/til/blob/main/python/pyproject.md) - 2023-07-07
+* [Quickly testing code in a different Python version using pyenv](https://github.com/simonw/til/blob/main/python/quick-testing-pyenv.md) - 2023-07-10
 
 ## zeit-now
 
