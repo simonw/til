@@ -170,7 +170,7 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "https://github.com/simonw/demo-package"
+Homepage = "https://github.com/simonw/demo-package"
 Changelog = "https://github.com/simonw/demo-package/releases"
 Issues = "https://github.com/simonw/demo-package/issues"
 ```
