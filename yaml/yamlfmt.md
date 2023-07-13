@@ -93,8 +93,19 @@ I set the following options in that file:
 formatter:
   retain_line_breaks: true
   indentless_arrays: true
+  scan_folded_as_literal: true
 ```
 Now I can run `ymalfmt` anywhere without extra arguments and get my preferred formatting rules.
+
+I added `scan_folded_as_literal: true` because I noticed that it was reformatting my `>` string literal blocks to a single line, which I didn't like. Here's what it was doing:
+```diff
+   expected: >
+-    Here comes a table <table>
+-    <thead><tr><th>One</th><th>Two</th></tr></thead>
+-    <tbody> <tr><td>1</td><td>2</td></tr> </tbody>
+-    </table> Done
++    Here comes a table <table> <thead><tr><th>One</th><th>Two</th></tr></thead> <tbody> <tr><td>1</td><td>2</td></tr> </tbody> </table> Done
+```
 
 ## Running it in CI with -lint
 
