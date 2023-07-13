@@ -82,6 +82,20 @@ jobs:
 ```
 There's also a mechanism where you can put configuration options in a `.yamlfmt` file, or a file passed using `--conf` - those are [explained here](https://github.com/google/yamlfmt/blob/main/docs/config-file.md).
 
+## Configuring defaults
+
+You can set system-wide defaults for the tool by adding a `.yamlfmt` in the right place. On macOS I found it worked putting it here:
+```
+/.config/yamlfmt/.yamlfmt
+```
+I set the following options in that file:
+```yaml
+formatter:
+  retain_line_breaks: true
+  indentless_arrays: true
+```
+Now I can run `ymalfmt` anywhere without extra arguments and get my preferred formatting rules.
+
 ## Running it in CI with -lint
 
 The `-lint` option lets you check formatting in CI and fail if it would reformat (like `black --check`). You can run it like this:
