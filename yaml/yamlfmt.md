@@ -77,3 +77,29 @@ jobs:
         python-version: ${{ matrix.python-version }}
 ```
 There's also a mechanism where you can put configuration options in a `.yamlfmt` file, or a file passed using `--conf` - those are [explained here](https://github.com/google/yamlfmt/blob/main/docs/config-file.md).
+
+## Running it in CI with -lint
+
+The `-lint` option lets you check formatting in CI and fail if it would reformat (like `black --check`). You can run it like this:
+```bash
+~/go/bin/yamlfmt \
+  -formatter indentless_arrays=true,retain_line_breaks=true \
+  -lint \
+  .github/workflows/*.yml
+```
+Which will output a full copy of the reformatted file, with as indicator as to which lines it changes.
+
+I found that a bit noisy. You can add `-quiet` to get a less verbose output showing just the file paths that would change:
+```bash
+~/go/bin/yamlfmt \
+  -formatter indentless_arrays=true,retain_line_breaks=true \
+  -lint \
+  -quiet \
+  .github/workflows/*.yml
+```
+Output:
+```
+2023/07/13 07:16:36 The following files had formatting differences:
+
+.github/workflows/publish.yml
+```
