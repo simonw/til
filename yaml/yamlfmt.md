@@ -16,10 +16,14 @@ If you don't have Go installed, you can instead download a compiled binary from 
 
 ## Usage
 
-You need to pass files to it explicitly - unlike Black it doesn't just operate on everything in the current directory:
+You can pass files to it explicitly:
 
 ```bash
 ~/go/bin/yamlfmt .github/workflows/*.yml
+```
+Or you can run against every file `.yml` or `.yaml` file in a directory and its subdirectories:
+```bash
+~/go/bin/yamlfmt .
 ```
 The default format looked like this:
 ```yaml
