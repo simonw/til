@@ -2,6 +2,8 @@
 
 I decided to see if there was an equivalent of [Black](https://pypi.org/project/black/) or [Prettier](https://prettier.io/) for YAML files. I found [yamlfmt](https://github.com/google/yamlfmt) from Google.
 
+> **Update**: It turns out Prettier [can format YAML](https://prettier.io/blog/2018/07/29/1.14.0.html) too.
+
 ## Installation
 
 They suggest this:
