@@ -31,7 +31,7 @@ databases:
             else escape_fts(:q)
           end
         order by
-          til_fts.rank limit 20
+          til_fts.rank limit 40
       feed:
         title: Simon Willison TIL
         sql: |-
