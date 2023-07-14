@@ -2,6 +2,8 @@
 
 [tree-sitter](https://tree-sitter.github.io/tree-sitter/) is a "parser generator tool and an incremental parsing library". It has a very good reputation these days.
 
+Two useful posts by Douglas Creager: [Getting started with tree-sitter](https://dcreager.net/2021/06/getting-started-with-tree-sitter/) and [A map of the tree-sitter ecosystem](https://dcreager.net/2021/06/tree-sitter-map/).
+
 I want to be able to parse SQLite SQL - in particular I want to be able to parse `CREATE TABLE` statements, because SQLite stores those directly in its `sqlite_master` metadata table as the main source of truth about a table, and I want to be able to introspect them beyond what's possible with `pragma table_info()` and friends.
 
 It turns out there are tree-sitter grammars for a huge array of languages, including one for SQLite SQL hosted at [github.com/dhcmrlchtdj/tree-sitter-sqlite](https://github.com/dhcmrlchtdj/tree-sitter-sqlite).
