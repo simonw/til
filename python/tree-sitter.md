@@ -96,3 +96,41 @@ b'CREATE TABLE _datasette_auth_tokens (\n   id INTEGER PRIMARY KEY,\n   secret T
 b'CREATE TABLE _datasette_auth_tokens (\n   id INTEGER PRIMARY KEY,\n   secret TEXT,\n   description TEXT,\n   permissions TEXT,\n   actor_id TEXT,\n   created_timestamp INTEGER,\n   last_used_timestamp INTEGER,\n   expires_after_seconds INTEGER\n)'
 ```
 I've only just started exploring tree-sitter - the Python documentation [has more details](https://github.com/tree-sitter/py-tree-sitter#walking-syntax-trees) on ways to walk the tree, plus a description of tree-sitter's [pattern matching language](https://github.com/tree-sitter/py-tree-sitter#pattern-matching) which looks like it may be the key to using it effectively.
+
+## The tree-sitter-languages package
+
+[grantjenks/py-tree-sitter-languages](https://github.com/grantjenks/py-tree-sitter-languages) is a handy Python package that bundles compiled versions of a bunch of grammars for different architectures, as published wheel files:
+
+https://pypi.org/project/tree-sitter-languages/#files
+
+This means you can install that package rather than compiling them yourself:
+```bash
+pip install tree-sitter-languages
+```
+I had a [PR accepted](https://github.com/grantjenks/py-tree-sitter-languages/pull/19) adding the SQLite grammar. Now you can do this:
+
+```python
+from tree_sitter_languages import get_parser
+
+parser = get_parser("sqlite")
+tree = parser.parse(b"""CREATE TABLE [replicate_predictions] (
+   [id] TEXT PRIMARY KEY,
+   [_model_guess] TEXT,
+   [completed_at] TEXT,
+   [created_at] TEXT,
+   [error] TEXT,
+   [input] TEXT,
+   [logs] TEXT,
+   [metrics] TEXT,
+   [output] TEXT,
+   [started_at] TEXT,
+   [status] TEXT,
+   [urls] TEXT,
+   [version] TEXT,
+   [webhook_completed] TEXT
+)""")
+print(tree.root_node.sexp())
+```
+Output:
+
+`(sql_stmt_list (sql_stmt (create_table_stmt (CREATE) (TABLE) (identifier) (column_def (identifier) (type_name (identifier)) (column_constraint (PRIMARY) (KEY))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))) (column_def (identifier) (type_name (identifier))))))`
