@@ -77,7 +77,7 @@ My prompt:
 >       log output
 >    end repeat
 > end tell
->
+> ```
 > Write that in JavaScript that talks to Apple automation instead
 
 ChatGPT response:
