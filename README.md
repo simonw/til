@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->437<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->438<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -401,6 +401,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Interactive row selection prototype with Datasette](https://github.com/simonw/til/blob/main/datasette/row-selection-prototype.md) - 2023-03-30
 * [Exploring Baseline with Datasette Lite](https://github.com/simonw/til/blob/main/datasette/baseline.md) - 2023-05-12
 * [Syntax highlighted code examples in Datasette](https://github.com/simonw/til/blob/main/datasette/syntax-highlighted-code-examples.md) - 2023-07-01
+* [Using pytest-httpx to run intercepted requests through an in-memory Datasette instance](https://github.com/simonw/til/blob/main/datasette/pytest-httpx-datasette.md) - 2023-07-24
 
 ## jupyter
 
