@@ -66,5 +66,6 @@ Which looks like exactly what I would need to implement my own alternative to `s
 
 ## Elsewhere
 
+- [PEP 544 – Protocols: Structural subtyping (static duck typing)](https://peps.python.org/pep-0544/)
 - [Adam Johnson: Python Type Hints - Duck typing with Protocol](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/)
 - [Luciano Ramalho gave a talk at PyCon US 2021: Protocol: the keystone of type hints](https://www.youtube.com/watch?v=kDDCKwP7QgQ)
