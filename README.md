@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->438<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->439<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -88,6 +88,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Python packages with pyproject.toml and nothing else](https://github.com/simonw/til/blob/main/python/pyproject.md) - 2023-07-07
 * [Quickly testing code in a different Python version using pyenv](https://github.com/simonw/til/blob/main/python/quick-testing-pyenv.md) - 2023-07-10
 * [Using tree-sitter with Python](https://github.com/simonw/til/blob/main/python/tree-sitter.md) - 2023-07-13
+* [Protocols in Python](https://github.com/simonw/til/blob/main/python/protocols.md) - 2023-07-26
 
 ## zeit-now
 
