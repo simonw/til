@@ -63,3 +63,8 @@ The thing that surprised me about this at first is that I had expected I would n
 Effectively this code is saying "the objects returned by `get_rows()` should only be accessed via their `.keys()` and `__getitem__()` methods".
 
 Which looks like exactly what I would need to implement my own alternative to `sqlite3.Row` in the future in a way that works neatly with Python type checking tools.
+
+## Elsewhere
+
+- [Adam Johnson: Python Type Hints - Duck typing with Protocol](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/)
+- [Luciano Ramalho gave a talk at PyCon US 2021: Protocol: the keystone of type hints](https://www.youtube.com/watch?v=kDDCKwP7QgQ)
