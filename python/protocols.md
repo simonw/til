@@ -4,7 +4,7 @@
 
 I thought about implementing my own wrapper class for `sqlite3.Row`, but one of its benefits is that it's [written in C](https://github.com/python/cpython/blob/v3.11.4/Modules/_sqlite/row.c) and hence should provide optimal memory usage and performance.
 
-It looks like that's what `typing.Protocol` is for.
+It looks like that's what [typing.Protocol()](https://docs.python.org/3/library/typing.html#typing.Protocol) is for.
 
 Here's some code I put together (with initial assistance from both Claude and ChatGPT) to explore what that would look like:
 ```python
