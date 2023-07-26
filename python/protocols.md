@@ -64,6 +64,19 @@ Effectively this code is saying "the objects returned by `get_rows()` should onl
 
 Which looks like exactly what I would need to implement my own alternative to `sqlite3.Row` in the future in a way that works neatly with Python type checking tools.
 
+## Conditional reveal_type
+
+That `reveal_type(row)` line will raise an error if you run the code using `python` and not `mypy`. The fix for that looks like this:
+
+```python
+from typing import TYPE_CHECKING
+
+...
+
+if TYPE_CHECKING:
+    reveal_type(obj)
+```
+
 ## Elsewhere
 
 - [PEP 544 – Protocols: Structural subtyping (static duck typing)](https://peps.python.org/pep-0544/)
