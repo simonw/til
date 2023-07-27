@@ -156,6 +156,10 @@ Wall time: 493 ms
 ```
 So that's 931 places in Half Moon Bay.
 
+The total time taken was 493ms.
+
+The CPU times report there can be a bit confusing. `user` is time spent outside of the kernel - but crucially it includes all threads. DuckDB is very good at using threads, so here there was 3.32s of CPU time spent (3.87s total when you include kernel time, `sys`) despite the actual ellapsed time being less than half a second.
+
 ## Exporting the places to SQLite
 
 I use [Datasette](https://datasette.io/) for exploring data. Datasette needs that data to be in a SQLite database.
