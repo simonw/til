@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->439<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->440<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -727,4 +727,8 @@ Search these TILs at https://til.simonwillison.net/
 ## yaml
 
 * [Auto-formatting YAML files with yamlfmt](https://github.com/simonw/til/blob/main/yaml/yamlfmt.md) - 2023-07-13
+
+## overture-maps
+
+* [Exploring the Overture Maps places data using DuckDB, sqlite-utils and Datasette](https://github.com/simonw/til/blob/main/overture-maps/overture-maps-parquet.md) - 2023-07-27
 <!-- index ends -->
