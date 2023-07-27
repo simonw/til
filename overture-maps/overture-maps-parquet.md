@@ -72,7 +72,7 @@ I started out by running a remote query to try and count it.
 First I needed to figure out the correct URL to query. After some trial and experimentation I got to this:
 
 ```
-s3://overturemaps-us-west-2/release/2023-07-26-alpha.0/theme=places/type=*/*"
+s3://overturemaps-us-west-2/release/2023-07-26-alpha.0/theme=places/type=*/*
 ```
 I ran a `count(*)` against that like so:
 ```python
