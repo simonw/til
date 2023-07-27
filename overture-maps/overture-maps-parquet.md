@@ -166,7 +166,7 @@ First I needed the data as a list of Python dictionaries:
 ```python
 cursor = db.execute("""
 select *
-from read_parquet('/tmp/foop/type=place/*')
+from read_parquet('/tmp/places/type=place/*')
 where
     bbox.minx > -122.5292336382 
     AND bbox.maxx < -122.403920833 
