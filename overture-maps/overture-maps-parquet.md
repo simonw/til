@@ -4,6 +4,8 @@ The [Overture Maps Foundation](https://overturemaps.org/) published [their first
 
 I'm particularly excited about the "places" data, which consists of nearly 60 million place of interest listings (businesses, attractions, anything that might show up as a point on map) from around the world, covered by a [very permissive license](https://cdla.dev/permissive-2-0/).
 
+**Update:** You can explore the full places dataset on a map using [bdon.github.io/overture-tiles/places.html](https://bdon.github.io/overture-tiles/places.html) by [Brandon Liu](https://twitter.com/bdon/status/1684848001246986240).
+
 ## Pulling GeoJSON for every country boundary
 
 The files have been released as Parquet on Amazon S3 (and Microsoft Azure). The [official README](https://github.com/OvertureMaps/data/blob/main/README.md) has some hints on getting started.
