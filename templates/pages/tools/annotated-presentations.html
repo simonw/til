@@ -222,6 +222,11 @@
           var textarea = document.querySelector(`textarea[name="${key}"]`);
           if (textarea) {
             textarea.value = savedTextAreas[key];
+            // Trigger markdown rendering
+            textarea.dispatchEvent(new Event('input', {
+              'bubbles': true,
+              'cancelable': true
+            }));
           }
         }
       }
