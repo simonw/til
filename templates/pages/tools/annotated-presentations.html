@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annotated presentation creator</title>
+    <style>
+      img {
+        max-width: 300px;
+        float: left;
+      }
+      .clear {
+        clear: both;
+        border-bottom: 3px solid #666;
+      }
+      .textarea-alt,
+      .textarea-annotation {
+        height: 100px;
+        margin: 10px 0;
+      }
+      .textarea-alt {
+        margin-left: 2em;
+        height: 100px;
+        width: 200px;
+      }
+      .textarea-annotation {
+        width: 80%;
+      }
+      #preview {
+        margin-top: 2em;
+      }
+    </style>
+    <script src=" https://cdn.jsdelivr.net/npm/marked@4.3.0/lib/marked.umd.min.js "></script>
+    <script defer data-domain="til.simonwillison.net" src="https://plausible.io/js/plausible.js"></script>
+  </head>
+  <body>
+    <div id="controls">
+      <h1>Annotated presentation creator</h1>
+      <input type="file" id="imageInput" multiple accept="image/*" />
+      <button id="loadImagesButton">Load images</button>
+      <p style="display: none">
+        <button id="ocrMissingButton">OCR missing alt text</button>
+        <br /><progress id="ocrProgressBar" value="0" max="80"></progress>
+      </p>
+    </div>
+    <div id="preview"></div>
+    <div id="templateTool">
+      <p>Execute the following template against the slides on the page:</p>
+      <textarea id="templateToRun" style="width: 80%; height: 5em">
+<div class="slide">
+  <img src="weird-world-llms/${filename}" alt="${alt}">
+  ${markdownAsHtml}
+</div></textarea
+      >
+      <p><button id="executeTemplatesButton">Execute templates</button></p>
+    </div>
+
+    <script type="module">
+      var images = [];
+
+      document
+        .getElementById("loadImagesButton")
+        .addEventListener("click", createSlidesForImages);
+
+      const ocrButton = document.getElementById("ocrMissingButton");
+
+      ocrButton.addEventListener("click", ocrMissingAltText);
+
+      const progressBar = document.querySelector("#ocrProgressBar");
+
+      async function ocrMissingAltText() {
+        // Load Tesseract
+        var s = document.createElement("script");
+        s.src = "https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js";
+        document.head.appendChild(s);
+
+        s.onload = async () => {
+          const images = document.getElementsByTagName("img");
+          const worker = Tesseract.createWorker();
+          await worker.load();
+          await worker.loadLanguage("eng");
+          await worker.initialize("eng");
+          ocrButton.innerText = "Running OCR...";
+
+          // Iterate through all the images in the output div
+          for (const img of images) {
+            const altTextarea = img.parentNode.querySelector(".textarea-alt");
+            // Check if the alt textarea is empty
+            if (altTextarea.value === "") {
+              const imageUrl = img.src;
+              var {
+                data: { text },
+              } = await worker.recognize(imageUrl);
+              altTextarea.value = text; // Set the OCR result to the alt textarea
+              progressBar.value += 1;
+            }
+          }
+
+          await worker.terminate();
+          ocrButton.innerText = "OCR complete";
+        };
+      }
+
+      function createSlidesForImages() {
+        // Clear previous data
+        var previewDiv = document.getElementById("preview");
+        images = [];
+        previewDiv.innerHTML = "";
+
+        var files = document.getElementById("imageInput").files;
+        var processedCount = 0;
+        Array.from(files).forEach(function (file) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var base64content = e.target.result;
+            var filename = file.name;
+            // Append to the images array
+            images.push({ filename: filename, base64content: base64content });
+
+            processedCount++;
+            if (processedCount === files.length) {
+              allFilesProcessed();
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+
+        function allFilesProcessed() {
+          // Sort the images array by filename
+          images.sort((a, b) => a.filename.localeCompare(b.filename));
+
+          // Create slides for each image
+          images.forEach((image) => {
+            var div = document.createElement("div");
+            div.classList.add("bundle");
+            var imgTag = document.createElement("img");
+            imgTag.src = image.base64content;
+
+            var altTextarea = document.createElement("textarea");
+            altTextarea.placeholder = "alt";
+            altTextarea.className = "textarea-alt";
+            altTextarea.name = `image-${image.filename}-alt`;
+            altTextarea.dataset.filename = image.filename;
+            altTextarea.dataset.name = "alt";
+
+            var annotationTextarea = document.createElement("textarea");
+            annotationTextarea.placeholder = "annotation";
+            annotationTextarea.className = "textarea-annotation";
+            annotationTextarea.dataset.filename = image.filename;
+            annotationTextarea.name = `image-${image.filename}-annotation`;
+            annotationTextarea.dataset.name = "annotation";
+            annotationTextarea.addEventListener("input", function () {
+              updatePreview(this);
+            });
+
+            var annotationPreview = document.createElement("div");
+            annotationPreview.className = "annotation-preview";
+            annotationPreview.dataset["name"] = "markdownAsHtml";
+
+            var clearDiv = document.createElement("div");
+            clearDiv.className = "clear";
+
+            div.appendChild(imgTag);
+            div.appendChild(altTextarea);
+            clearDiv.appendChild(annotationTextarea);
+            clearDiv.appendChild(annotationPreview);
+            div.appendChild(clearDiv);
+            previewDiv.appendChild(div);
+          });
+
+          document.querySelector("#ocrMissingButton").parentNode.style.display =
+            "block";
+          progressBar.setAttribute("max", images.length);
+
+          addRestoreButton();
+        }
+
+        function updatePreview(textarea) {
+          var previewDiv = textarea.nextElementSibling;
+          var html = marked
+            .parse(textarea.value, { headerIds: false, mangle: false })
+            .trim();
+          previewDiv.innerHTML = html;
+        }
+      }
+
+      // Variable to store previous state of textareas
+      var previousTextareaState = "";
+
+      // Function to save textareas
+      function saveTextAreas() {
+        var textareas = document.querySelectorAll("textarea");
+        var savedTextAreas = {};
+
+        textareas.forEach(function (textarea) {
+          if (textarea.name && textarea.value.trim() !== "") {
+            savedTextAreas[textarea.name] = textarea.value;
+          }
+        });
+
+        var currentState = JSON.stringify(savedTextAreas);
+        if (currentState !== previousTextareaState && currentState != "{}") {
+          localStorage.setItem("savedTextAreas", currentState);
+          previousTextareaState = currentState;
+        }
+      }
+
+      // Function to restore textareas
+      function restoreTextAreas() {
+        var savedTextAreas = JSON.parse(
+          localStorage.getItem("savedTextAreas") || "{}",
+        );
+
+        for (var key in savedTextAreas) {
+          var textarea = document.querySelector(`textarea[name="${key}"]`);
+          if (textarea) {
+            textarea.value = savedTextAreas[key];
+          }
+        }
+      }
+
+      // Function to add restore button
+      function addRestoreButton() {
+        var savedTextAreas = JSON.parse(
+          localStorage.getItem("savedTextAreas") || "{}",
+        );
+        var count = Object.keys(savedTextAreas).filter(
+          (key) => savedTextAreas[key].trim() !== "",
+        ).length;
+        // Only show if there are enough textareas on the page
+        if (count > document.querySelectorAll("textarea").length) {
+          return;
+        }
+        var button;
+        if (count > 0) {
+          button = document.querySelector("#restoreButton");
+          if (!button) {
+            button = document.createElement("button");
+            button.setAttribute("id", "restoreButton");
+            button.addEventListener("click", restoreTextAreas);
+            document.querySelector("#controls").appendChild(button);
+          }
+          button.textContent = `Restore ${
+            count === 1 ? "1 stored textarea" : `${count} stored textareas`
+          }`;
+        }
+      }
+
+      setInterval(saveTextAreas, 1000);
+
+      // Check if there's saved textareas in localStorage and add restore button
+      window.addEventListener("load", addRestoreButton);
+
+      function gatherData(selector) {
+        const elements = document.querySelectorAll(selector);
+        const dataObjects = [];
+        elements.forEach((element) => {
+          const inputs = Array.from(
+            element.querySelectorAll("input,textarea,[data-name]"),
+          );
+          const elementData = {};
+          inputs.forEach((el) => {
+            if (el.dataset["name"] && el.tagName.toLowerCase() == "div") {
+              elementData[el.dataset["name"]] = el.innerHTML.trim();
+              return;
+            }
+            const elementName = el.dataset["name"] || el.getAttribute("name");
+
+            // Get the value of the input/textarea element
+            const elementValue = el.value;
+
+            // Add the name-value pair to the data object
+            elementData[elementName] = elementValue;
+
+            // Get data attributes (attributes starting with "data-")
+            const dataAttributes = el.dataset;
+            for (const attribute in dataAttributes) {
+              if (attribute != "name") {
+                elementData[attribute] = dataAttributes[attribute];
+              }
+            }
+          });
+          dataObjects.push(elementData);
+        });
+        return dataObjects;
+      }
+      window.gatherData = gatherData;
+
+      function executeTemplates(template, arrayOfObjects) {
+        return arrayOfObjects.map((obj) => {
+          const keys = Object.keys(obj);
+          const values = Object.values(obj);
+          const templateFunction = new Function(
+            ...keys,
+            `return \`${template}\`;`,
+          );
+          return templateFunction(...values);
+        });
+      }
+
+      document
+        .querySelector("#executeTemplatesButton")
+        .addEventListener("click", executeAllTemplates);
+      function executeAllTemplates() {
+        var template = document.querySelector("#templateToRun");
+        var objects = gatherData(".bundle");
+        var strings = executeTemplates(template.value, objects);
+        var textarea = document.querySelector("#templateOutput");
+        if (!textarea) {
+          textarea = document.createElement("textarea");
+          textarea.setAttribute("id", "templateOutput");
+          textarea.style.width = "80%";
+          textarea.style.height = "20em";
+          document.body.appendChild(textarea);
+        }
+        textarea.value = strings.join("\n");
+      }
+    </script>
+  </body>
+</html>
