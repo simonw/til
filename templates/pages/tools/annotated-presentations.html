@@ -31,7 +31,11 @@
       }
     </style>
     <script src=" https://cdn.jsdelivr.net/npm/marked@4.3.0/lib/marked.umd.min.js "></script>
-    <script defer data-domain="til.simonwillison.net" src="https://plausible.io/js/plausible.js"></script>
+    <script
+      defer
+      data-domain="til.simonwillison.net"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
   </head>
   <body>
     <div id="controls">
@@ -45,7 +49,10 @@
     </div>
     <div id="preview"></div>
     <div id="templateTool">
-      <p>Execute the following template against the slides on the page:</p>
+      <p>
+        Execute the following template against the slides on the page. An
+        <code>escapeHtml()</code> function is available.
+      </p>
       <textarea id="templateToRun" style="width: 80%; height: 5em">
 <div class="slide">
   <img src="weird-world-llms/${filename}" alt="${alt}">
@@ -288,8 +295,10 @@
 
       function executeTemplates(template, arrayOfObjects) {
         return arrayOfObjects.map((obj) => {
-          const keys = Object.keys(obj);
-          const values = Object.values(obj);
+          let keys = Array.from(Object.keys(obj));
+          let values = Array.from(Object.values(obj));
+          keys.push("escapeHtml");
+          values.push(escapeHtml);
           const templateFunction = new Function(
             ...keys,
             `return \`${template}\`;`,
@@ -301,10 +310,16 @@
       document
         .querySelector("#executeTemplatesButton")
         .addEventListener("click", executeAllTemplates);
+
       function executeAllTemplates() {
         var template = document.querySelector("#templateToRun");
-        var objects = gatherData(".bundle");
-        var strings = executeTemplates(template.value, objects);
+        try {
+          var objects = gatherData(".bundle");
+          var strings = executeTemplates(template.value, objects);
+        } catch (e) {
+          alert(e);
+          return;
+        }
         var textarea = document.querySelector("#templateOutput");
         if (!textarea) {
           textarea = document.createElement("textarea");
@@ -314,6 +329,14 @@
           document.body.appendChild(textarea);
         }
         textarea.value = strings.join("\n");
+      }
+      function escapeHtml(s) {
+        return s
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
       }
     </script>
   </body>
