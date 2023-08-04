@@ -211,7 +211,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Bulk fetching repository details with the GitHub GraphQL API](https://github.com/simonw/til/blob/main/github/bulk-repo-github-graphql.md) - 2021-01-17
 * [Syntax highlighting Python console examples with GFM](https://github.com/simonw/til/blob/main/github/syntax-highlighting-python-console.md) - 2021-01-18
 * [Transferring a GitHub issue from a private to a public repository](https://github.com/simonw/til/blob/main/github/transfer-issue-private-to-public.md) - 2021-12-22
-* [Configuring Dependabot for a Python project with dependencies in setup.py](https://github.com/simonw/til/blob/main/github/dependabot-python-setup.md) - 2022-01-14
+* [Configuring Dependabot for a Python project](https://github.com/simonw/til/blob/main/github/dependabot-python-setup.md) - 2022-01-14
 * [Setting up a custom subdomain for a GitHub Pages site](https://github.com/simonw/til/blob/main/github/custom-subdomain-github-pages.md) - 2022-05-04
 * [Reporting bugs in GitHub to GitHub](https://github.com/simonw/til/blob/main/github/reporting-bugs.md) - 2022-07-07
 * [Migrating a GitHub wiki from one repository to another](https://github.com/simonw/til/blob/main/github/migrate-github-wiki.md) - 2022-07-28
