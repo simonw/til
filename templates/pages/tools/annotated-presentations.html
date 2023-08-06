@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Annotated presentation creator</title>
     <style>
+      body {
+        font-family: sans-serif;
+      }
       img {
         max-width: 300px;
         float: left;
@@ -20,11 +23,14 @@
       }
       .textarea-alt {
         margin-left: 2em;
-        height: 100px;
-        width: 200px;
+        height: 200px;
+        width: 400px;
       }
       .textarea-annotation {
         width: 80%;
+      }
+      .annotation-preview {
+        padding-top: 0.5em;
       }
       #preview {
         margin-top: 2em;
@@ -169,8 +175,8 @@
 
             div.appendChild(imgTag);
             div.appendChild(altTextarea);
-            clearDiv.appendChild(annotationTextarea);
             clearDiv.appendChild(annotationPreview);
+            clearDiv.appendChild(annotationTextarea);
             div.appendChild(clearDiv);
             previewDiv.appendChild(div);
           });
@@ -183,7 +189,7 @@
         }
 
         function updatePreview(textarea) {
-          var previewDiv = textarea.nextElementSibling;
+          var previewDiv = textarea.parentElement.querySelector('.annotation-preview');
           var html = marked
             .parse(textarea.value, { headerIds: false, mangle: false })
             .trim();
