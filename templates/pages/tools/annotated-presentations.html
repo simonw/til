@@ -61,7 +61,7 @@
       </p>
       <textarea id="templateToRun" style="width: 80%; height: 5em">
 <div class="slide">
-  <img src="weird-world-llms/${filename}" alt="${alt}">
+  <img src="${filename}" alt="${escapeHtml(alt)}">
   ${markdownAsHtml}
 </div></textarea
       >
