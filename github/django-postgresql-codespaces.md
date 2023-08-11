@@ -146,3 +146,12 @@ Once it's finished starting up, there should be a Django development server runn
 ![The ports tab shows available ports, with their local addresses](https://user-images.githubusercontent.com/9599/259881100-eb9fac27-ab36-458a-a87c-09857aac4b50.png)
 
 This should open a new browser window that exposes the port-forwarded development server.
+
+## ALLOWED_HOSTS
+
+GitHub Codespaces assigns a random subdomain to your development environment every time you start it.
+
+I found I needed to add this to `settings.py`:
+```python
+ALLOWED_HOSTS = ["*"]
+```
