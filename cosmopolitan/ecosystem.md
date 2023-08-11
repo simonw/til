@@ -64,6 +64,27 @@ The homepage includes a Mandelbrot fractal demo. Clicking "build" on that genera
 
 Download that, run `chmod 755 ...` on it, then jump through the same security hoops as before... and you can run the command!
 
+## Cosmopolitan Python
+
+There are various versions of Python that have been compiled to Cosmopolitan, too.
+
+[Python is Actually Portable](https://ahgamut.github.io/2021/07/13/ape-python/) from July 2021, updated July 2022 describes efforts to run Python on Cosmopolitan in detail.
+
+[Issue #141: Compiling Python](https://github.com/jart/cosmopolitan/issues/141) is a multi-year, detailed issue thread documenting different attempts at this.
+
+[https://justine.lol/ftrace/python.com](https://justine.lol/ftrace/python.com) is a downloadable executable of Python 3.6 that worked on my Mac:
+
+```
+$ ./python.com   
+Python 3.6.14+ (Actually Portable Python) [GCC 9.2.0] on cosmo
+Type "help", "copyright", "credits" or "license" for more information.
+>>: import sys
+>>: sys.version
+'3.6.14+ (Actually Portable Python) [GCC 9.2.0]'
+```
+
+[superconfigure/releases/tag/z0.0.1](https://github.com/ahgamut/superconfigure/releases/tag/z0.0.1) is a release from 9th August 2023 that includes both a `python.com` bundling Python 3.11 and a `datasette.com` that packages my [Datasette](https://datasette.io/) application! Sadly these don't appear to include macOS ARM support so I haven't been able to run them myself yet.
+
 ## The --strace option
 
 A fun extra trick you can do: add `--strace` when running an API and it will output the system calls that are made as the executable runs.
