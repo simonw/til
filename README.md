@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->444<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->445<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -735,4 +735,8 @@ Search these TILs at https://til.simonwillison.net/
 ## overture-maps
 
 * [Exploring the Overture Maps places data using DuckDB, sqlite-utils and Datasette](https://github.com/simonw/til/blob/main/overture-maps/overture-maps-parquet.md) - 2023-07-27
+
+## cosmopolitan
+
+* [Catching up with the Cosmopolitan ecosystem](https://github.com/simonw/til/blob/main/cosmopolitan/ecosystem.md) - 2023-08-10
 <!-- index ends -->
