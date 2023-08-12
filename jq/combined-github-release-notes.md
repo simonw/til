@@ -109,7 +109,8 @@ And now I can run this to get release notes for any repo:
 
 Now that I have a tool that can output combined release notes on the command-line, I decided to try combining it with my [llm](https://llm.datasette.io/) CLI tool.
 ```bash
-./combined-release-notes.sh simonw/llm | llm -s 'High level explanation of what this tool does'
+./combined-release-notes.sh simonw/llm | \
+  llm -s 'High level explanation of what this tool does'
 ```
 Here's the output from that:
 
