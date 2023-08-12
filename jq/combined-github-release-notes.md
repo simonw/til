@@ -107,7 +107,7 @@ And now I can run this to get release notes for any repo:
 
 ## Using that with LLM
 
-Now that I have a tool that can output combined release notes on the command-line, I decided to try combining it with my [llm](https://llm.datasette.io/) CLI tool.
+Now that I have a tool that can output combined release notes on the command-line, I decided to try combining it with my [LLM](https://llm.datasette.io/) CLI tool.
 ```bash
 ./combined-release-notes.sh simonw/llm | \
   llm -s 'High level explanation of what this tool does'
@@ -121,3 +121,22 @@ Here's the output from that:
 > LLM also includes a plugin mechanism that enables users to install and use additional language models. These plugins can be created to support models hosted on different platforms or provided by different organizations.
 >
 > Overall, LLM simplifies the process of interacting with language models through a command-line interface, providing more control and flexibility to users.
+
+This also works for asking questions about the project:
+
+```bash
+./combined-release-notes.sh simonw/llm | llm -s 'how do I install it'
+```
+Which replied (using Markdown syntax that I could paste directly into this document):
+
+> To install LLM, you can choose one of the following methods:
+>
+> 1. Installation using Homebrew (only for versions 0.6.1 and above):
+>    - Open your terminal.
+>    - Run the command `brew install llm`.
+>
+> 2. Manual installation using Python package manager `pip`:
+>    - Open your terminal.
+>    - Run the command `pip install llm`.
+>
+> Once the installation is complete, you should be able to run LLM commands from your terminal.
