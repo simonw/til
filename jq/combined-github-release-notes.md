@@ -69,3 +69,54 @@ It gave me the following:
 jq -r '.[] | "## " + .name + "\n\n*dt " + .created_at + "*\n\n" + .body + "\n"'
 ```
 That wasn't exactly what I needed, but it was very easy to edit that into the final program.
+
+## Turning that into a bash script
+
+I pasted my `paginate-json` recipe into GPT-4 and said:
+
+> Turn this into a bash script that I can run like this: ./combined-release-notes.sh simonw/sqlite-utils
+
+It gave me the following:
+
+```bash
+#!/bin/bash
+
+# Check if the user has provided a repository as an argument
+if [ -z "$1" ]; then
+    echo "Usage: $0 <github-username/repository>"
+    exit 1
+fi
+
+# Set the API URL based on the provided repository
+URL="https://api.github.com/repos/$1/releases"
+
+# Fetch the release notes and format them
+paginate-json "$URL" | \
+  jq -r '.[] | "## " + .name + "\n\n*" + .created_at + "*\n\n" + .body + "\n"'
+```
+I like how it added usage instructions there!
+
+I added that to `combined-release-notes.sh` and ran this:
+```bash
+chmod 755 combined-release-notes.sh
+```
+And now I can run this to get release notes for any repo:
+```bash
+./combined-release-notes.sh simonw/datasette
+```
+
+## Using that with LLM
+
+Now that I have a tool that can output combined release notes on the command-line, I decided to try combining it with my [llm](https://llm.datasette.io/) CLI tool.
+```bash
+./combined-release-notes.sh simonw/llm | llm -s 'High level explanation of what this tool does'
+```
+Here's the output from that:
+
+> LLM is a command-line tool that allows users to interact with language models such as GPT-3 and GPT-4. It provides a convenient interface for generating text completions based on a given prompt. Users can input prompts either directly in the command line or by piping text from other sources.
+>
+> The tool provides additional features such as saving prompts as templates for reuse, logging all prompts and responses to a SQLite database for later review, and the ability to continue previous conversations with chat models.
+>
+> LLM also includes a plugin mechanism that enables users to install and use additional language models. These plugins can be created to support models hosted on different platforms or provided by different organizations.
+>
+> Overall, LLM simplifies the process of interacting with language models through a command-line interface, providing more control and flexibility to users.
