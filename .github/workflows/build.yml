@@ -59,6 +59,23 @@ jobs:
         cd main
         python generate_screenshots.py
         sqlite-utils vacuum tils.db
+    - name: Calculate embeddings and document similarity
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |-
+        # Fetch embeddings for documents that need them
+        openai-to-sqlite embeddings tils.db \
+          --sql 'select path, title, topic, body from til'
+        # Now calculate and save similarities
+        if sqlite-utils rows tils.db similarities --limit 1; then
+          # Table exists already, so only calculate new similarities
+          openai-to-sqlite similar tils.db \
+            $(git diff --name-only HEAD~10 HEAD | grep '/.*\.md$' | sed 's/\//_/g') \
+            --save --recalculate-for-matches --print
+        else
+          # Table does not exist, calculate for everything
+          openai-to-sqlite similar tils.db --all --save
+        fi
     - name: Update README
       run: |-
         cd main
