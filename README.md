@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->446<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->447<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -696,6 +696,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Expanding ChatGPT Code Interpreter with Python packages, Deno and Lua](https://github.com/simonw/til/blob/main/llms/code-interpreter-expansions.md) - 2023-04-30
 * [mlc-chat - RedPajama-INCITE-Chat-3B on macOS](https://github.com/simonw/til/blob/main/llms/mlc-chat-redpajama.md) - 2023-05-22
 * [Running OpenAI's large context models using llm](https://github.com/simonw/til/blob/main/llms/larger-context-openai-models-llm.md) - 2023-06-13
+* [Storing and serving related documents with openai-to-sqlite and embeddings](https://github.com/simonw/til/blob/main/llms/openai-embeddings-related-content.md) - 2023-08-14
 
 ## ab
 
