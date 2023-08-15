@@ -4,6 +4,8 @@ Today I added "related TILs" to this TIL website - so each TIL now shows five re
 
 I'm generating the related content using a SQLite full-text search query.
 
+UPDATE: I switched this out for a different implementation, described in [Storing and serving related documents with openai-to-sqlite and embeddings](https://til.simonwillison.net/llms/openai-embeddings-related-content).
+
 ## The related content query
 
 I take the title and body text of an entry, strip out any non-alphanumeric characters, de-dupe the words, and then combine them to form a big OR search query.
