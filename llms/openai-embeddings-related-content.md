@@ -222,3 +222,38 @@ async def related_tils(til):
 ... and it worked! All of my TILs now feature related articles powered by OpenAI embeddings.
 
 Here's [my issue](https://github.com/simonw/til/issues/79) for this - though most of the notes are already in this TIL.
+
+## Bonus: What are the most related pairs of articles?
+
+Here's a SQL query I figured out to show me which pairs of articles have the highest relatedness score out of everything on my site:
+```sql
+with top_similarities as (
+  select id, other_id, score
+  from similarities
+  where id < other_id
+),
+til_details as (
+  select path, title, 'https://til.simonwillison.net/' || topic || '/' || slug as url
+  from til
+)
+select
+  t1.title, t1.url, t2.title, t2.url, score
+from
+  til_details t1 join top_similarities on id = t1.path
+  join til_details t2 on other_id = t2.path
+order by score desc limit 100
+```
+The neatest trick here is the `where id < other_id` - I added that because without it I was getting the same pairings with the same score show up twice, one for A to B and one for B to A.
+
+(ChatGPT/GPT-4 [suggested that fix](https://chat.openai.com/share/2af7029e-20e1-46e2-9d98-f9072ede7c63) to me.)
+
+[Run that query here](https://til.simonwillison.net/tils?sql=with+top_similarities+as+%28%0D%0A++select+id%2C+other_id%2C+score%0D%0A++from+similarities%0D%0A++where+id+%3C+other_id%0D%0A%29%2C%0D%0Atil_details+as+%28%0D%0A++select+path%2C+title%2C+%27https%3A%2F%2Ftil.simonwillison.net%2F%27+%7C%7C+topic+%7C%7C+%27%2F%27+%7C%7C+slug+as+url%0D%0A++from+til%0D%0A%29%0D%0Aselect%0D%0A++t1.title%2C+t1.url%2C+t2.title%2C+t2.url%2C+score%0D%0Afrom%0D%0A++til_details+t1+join+top_similarities+on+id+%3D+t1.path%0D%0A++join+til_details+t2+on+other_id+%3D+t2.path%0D%0Aorder+by+score+desc+limit+100). Here are the top results:
+
+| title | url | title | url | score |
+| --- | --- | --- | --- | --- |
+| Running tests against PostgreSQL in a service container | <https://til.simonwillison.net/github-actions/postgresq-service-container> | Talking to a PostgreSQL service container from inside a Docker container | <https://til.simonwillison.net/github-actions/service-containers-docker> | 0.9206532310742105 |
+| Running nanoGPT on a MacBook M2 to generate terrible Shakespeare | <https://til.simonwillison.net/llms/nanogpt-shakespeare-m2> | Training nanoGPT entirely on content from my blog | <https://til.simonwillison.net/llms/training-nanogpt-on-my-blog> | 0.9205793403338383 |
+| Docker Compose for Django development | <https://til.simonwillison.net/docker/docker-compose-for-django-development> | Running a Django and PostgreSQL development environment in GitHub Codespaces | <https://til.simonwillison.net/github/django-postgresql-codespaces> | 0.8969306350526451 |
+| Installing Python on macOS with the official Python installer | <https://til.simonwillison.net/macos/python-installer-macos> | macOS Catalina sort-of includes Python 3 | <https://til.simonwillison.net/python/macos-catalina-sort-of-ships-with-python3> | 0.8921733219404457 |
+| Testing Electron apps with Playwright and GitHub Actions | <https://til.simonwillison.net/electron/testing-electron-playwright> | Using pytest and Playwright to test a JavaScript web application | <https://til.simonwillison.net/pytest/playwright-pytest> | 0.8920255287130459 |
+| Pisco sour | <https://til.simonwillison.net/cocktails/pisco-sour> | Whisky sour | <https://til.simonwillison.net/cocktails/whisky-sour> | 0.8917869309046109 |
