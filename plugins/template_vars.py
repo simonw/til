@@ -21,30 +21,18 @@ def highlight(s):
 @hookimpl
 def extra_template_vars(request, datasette):
     async def related_tils(til):
-        text = til["title"] + " " + til["body"]
-        text = non_alphanumeric.sub(" ", text)
-        text = multi_spaces.sub(" ", text)
-        words = list(set(text.lower().strip().split()))
+        path = til["path"]
         sql = """
         select
           til.topic, til.slug, til.title, til.created
-        from
-          til
-          join til_fts on til.rowid = til_fts.rowid
-        where
-          til_fts match :words
-          and not (
-            til.slug = :slug
-            and til.topic = :topic
-          )
-        order by
-          til_fts.rank
-        limit
-          5
+        from til
+          join similarities on til.path = similarities.other_id
+        where similarities.id = :path
+        order by similarities.score desc limit 10
         """
         result = await datasette.get_database().execute(
             sql,
-            {"words": " OR ".join(words), "slug": til["slug"], "topic": til["topic"]},
+            {"path": til["path"]},
         )
         return result.rows
 
