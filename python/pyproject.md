@@ -214,6 +214,11 @@ I often build tools which include command-line scripts. These can be defined by 
 # ... previous configuration
 scripts = { demo_package_hello = "demo_package:say_hello" }
 ```
+Or use this alternative syntax (here borrowed from my [db-build](https://github.com/simonw/db-build) Click app):
+```toml
+[project.scripts]
+db-build = "db_build.cli:cli"
+```
 Now run this again:
 ```bash
 pip install -e '/tmp/demo-package'
