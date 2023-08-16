@@ -42,14 +42,15 @@ This is the most complex file. Here's what I ended up with for a classic Django 
   },
   "portsAttributes": {
     "8000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
+      "label": "Application"
     }
   },
   "forwardPorts": [8000]
 }
 ```
 This references the `docker-compose.yml` file that we will define next, and specifies that the main service is the thing in that file that's defined in the `app` block.
+
+I originally had `"onAutoForward": "openPreview"` in the `"portsAttributes": {"8000"...}` section - but this caused Codespaces to constantly attempt to open a preview window every time the Django server restarted (which was every time I typed code into a file and it auto-saved it) which was really annoying, especially since that "Simple Browser" window just showed me a Firefox error due to not wanting to embed my page in that iframe).
 
 I haven't completely figured out the different commands, but the above recipe worked for me - where the `postCreateCommand` installs dependencies and runs migrations, and the `postAttachCommand` starts a development server.
 
