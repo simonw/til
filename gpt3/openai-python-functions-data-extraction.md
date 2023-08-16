@@ -156,3 +156,7 @@ Add `stream=True` to the `ChatCompletion.create()` call to turn on streaming. If
 As you can see, you would need to glue together those `choices.delta.function_call.arguments` blocks into a string of JSON and then evaluate it. Since JSON doesn't parse correctly until you've retrieved the whole thing I don't think it's worth using `stream=True` with the functions mechanism at all.
 
 I guess you could feed the results into [ijson](https://pypi.org/project/ijson/) and iteratively parse objects as they become available, but I have trouble imagining a scenario in which the effort would be worthwhile there.
+
+**Update:** I figured out why it's worthwhile: without streaming, the API can take a LONG time to return, without giving you any visible feedback that it's working correctly.
+
+So I figured out [a recipe for parsing the stream using ijson](https://til.simonwillison.net/json/ijson-stream) after all.
