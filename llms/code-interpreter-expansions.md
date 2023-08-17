@@ -186,6 +186,22 @@ And the (not particularly pretty) result:
            ****
             **
 ```
+
+Here's a similar recipe for compiling a single file PHP binary inside that Docker container that is compatible with the Code Interpreter Linux environment:
+
+```bash
+apt-get update
+apt-get install -y build-essential libxml2-dev git autoconf bison re2c
+git clone --depth 1 https://github.com/php/php-src
+cd php-src/
+./buildconf 
+./configure --disable-all --enable-static --disable-shared --with-pic
+make
+make
+./sapi/cli/php -v
+cp ./sapi/cli/php /mnt/
+```
+
 ## This is pretty wild
 
 Honestly, Code Interpreter is by far the most exciting feature I've played with in ChatGPT. I actually think it's more interesting than both ChatGPT Plugins and ChatGPT Browsing - the opportunities it opens up are pretty astonishing.
