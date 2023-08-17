@@ -83,7 +83,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 '3.6.14+ (Actually Portable Python) [GCC 9.2.0]'
 ```
 
-[superconfigure/releases/tag/z0.0.1](https://github.com/ahgamut/superconfigure/releases/tag/z0.0.1) is a release from 9th August 2023 that includes both a `python.com` bundling Python 3.11 and a `datasette.com` that packages my [Datasette](https://datasette.io/) application! Sadly these don't appear to include macOS ARM support so I haven't been able to run them myself yet.
+[superconfigure/releases/tag/z0.0.2](https://github.com/ahgamut/superconfigure/releases/tag/z0.0.2) is a release from 14th August 2023 that includes both a `python.com` bundling Python 3.11 and a `datasette.com` that packages my [Datasette](https://datasette.io/) application!
+
+The Python one includes packages such as Black, which means you can do this:
+```bash
+./python.com -m black .
+```
+To run the Black code formatter against all Python code in the current directory.
+
+I haven't got the Datasette one to work yet, [issue here](https://github.com/ahgamut/superconfigure/issues/1).
 
 ## The --strace option
 
