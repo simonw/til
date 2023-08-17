@@ -52,4 +52,10 @@ trap cleanup SIGINT
 ```
 So now I have a pattern for any time I want to write a Bash script that starts multiple background processe and terminates them when the script itself exits.
 
+## Even better: use EXIT
 
+I posted this [on Mastodon](https://fedi.simonwillison.net/@simon/110902899674170019) and got some useful tips.
+
+You can use `EXIT` instead of `SIGINT` to catch other reasons that the script may execute, such as from an error.
+
+[How "Exit Traps" Can Make Your Bash Scripts Way More Robust And Reliable](http://redsymbol.net/articles/bash-exit-traps/) by Aaron Maxwell expands on this and shows some other useful tricks you can do with it, like writing an administration script that stops a service and uses an EXIT trap to be absolutely certain to start the service again when the Bash script terminates.
