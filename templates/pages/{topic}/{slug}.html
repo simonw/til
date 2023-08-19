@@ -45,4 +45,26 @@
 {% endif %}
 
 <p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }} &middot; <a href="{{ til.url|replace("https://github.com/simonw/til/blob/", "https://github.com/simonw/til/commits/") }}">History</a>{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
+
+<script>
+// Add visible # links to all h2+ headings  
+document.querySelectorAll('h2,h3,h4,h5,h6').forEach(el => {
+  let anchor = el.querySelector('a.anchor');
+  if (!anchor) {
+    return;
+  }
+  let id = anchor.getAttribute('id');
+  el.removeChild(anchor);
+  el.setAttribute('id', id);
+  let hashLink = document.createElement('a');
+  hashLink.style.textDecoration = 'none';
+  hashLink.style.color = '#b7b3b3';
+  hashLink.style.fontSize = '0.8em';
+  hashLink.setAttribute('href', '#' + id);
+  hashLink.innerText = '#';
+  el.appendChild(document.createTextNode(' '));
+  // Add that link
+  el.appendChild(hashLink);
+})
+</script>
 {% endblock %}
