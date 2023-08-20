@@ -121,8 +121,9 @@ TMPDIR=$(mktemp -d /tmp/goscript.XXXXXX)
 SUBDIR="$TMPDIR/goscript_inner"
 mkdir -p $SUBDIR
 ```
+That `mktemp -d /tmp/goscript.XXXXXX` line uses the templating feature of `mktemp`, where a sequence of `XXX` is replaced by random characters.
 
-That `trap` call is interesting - see also [Running multiple servers in a single Bash script](https://til.simonwillison.net/bash/multiple-servers). Effectively it ensures the temporary directory is deleted when the script terminates, no matter why it terminates (success or error):
+The `trap` call is interesting - see also [Running multiple servers in a single Bash script](https://til.simonwillison.net/bash/multiple-servers). Effectively it ensures the temporary directory is deleted when the script terminates, no matter why it terminates (success or error):
 ```bash
 trap "rm -rf $TMPDIR" EXIT
 ```
