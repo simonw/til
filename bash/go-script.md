@@ -105,7 +105,7 @@ func main() {
 }
 ```
 
-With modern Go you need to use the following pattern to get somethin like this to work with a dependency:
+With modern Go you need to use the following pattern to get something like this to work with a dependency:
 
 ```bash
 go mod init tmp
