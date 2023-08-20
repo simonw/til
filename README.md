@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->452<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->453<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -362,6 +362,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Ignoring errors in a section of a Bash script](https://github.com/simonw/til/blob/main/bash/ignore-errors.md) - 2022-06-27
 * [Start, test, then stop a localhost web server in a Bash script](https://github.com/simonw/til/blob/main/bash/start-test-then-stop-server.md) - 2022-12-17
 * [Running multiple servers in a single Bash script](https://github.com/simonw/til/blob/main/bash/multiple-servers.md) - 2023-08-16
+* [A shell script for running Go one-liners](https://github.com/simonw/til/blob/main/bash/go-script.md) - 2023-08-20
 
 ## typescript
 
