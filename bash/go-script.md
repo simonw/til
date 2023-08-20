@@ -82,7 +82,7 @@ echo "}" >> $TMPFILE
 pushd $SUBDIR > /dev/null 2>&1
 go mod init tmp > /dev/null 2>&1
 go get github.com/bitfield/script > /dev/null 2>&1
-go run script.go "${@:3}"
+go run script.go
 popd > /dev/null 2>&1
 ```
 And [the full ChatGPT transcript](https://chat.openai.com/share/c4ca8622-9b01-4189-9e29-7414ddf79238) that lead to the final script presented here.
