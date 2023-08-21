@@ -240,7 +240,7 @@ git add docs/
 git commit -m "Doc changes from ${{ github.sha }}"
 git push origin stable
 ```
-Here's [an example commit](https://github.com/simonw/simonw-readthedocs-experiments/commit/261aeb94a07946a96e4f4b76360500db28313e43) that was created by this workflow.
+Here's [an example commit](https://github.com/simonw/llm/commit/b3949f10257943dccce0d6295e5d3c485014136c) that was created by this workflow.
 
 ## Configuring ReadTheDocs
 
@@ -264,3 +264,5 @@ And that should be it! With this workflow in place and ReadTheDocs configured th
 - Any time you ship a new release on GitHub, your `/stable/` documentation will be updated to the docs for that release.
 - You can fix typos in the `stable` branch and they will be quickly reflected in that `/stable/` documentation. Apply them to `main` too though or they'll be lost the next time you publish a release.
 - In any commit that updates a page of documentation where you want that entire page to be updated in the `/stable/` documentation, add `!stable-docs` to the commit message. The workflow will copy the full page content into the `stable` branch and trigger a new build.
+
+I'm using this pattern for my [simonw/llm](https://github.com/simonw/llm) repository now, and I expect to upgrade other repositories to it soon.
