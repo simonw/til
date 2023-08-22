@@ -182,4 +182,76 @@ Without the environment variable I get this instead:
   }
 }
 ```
-Interesting that the `dylib` version appears to be missing the FTS extension.
+Note that the `dylib` version appears to be missing the FTS extension.
+
+## Adding compiler options
+
+Here's a modification that includes full-text support:
+
+```bash
+gcc -dynamiclib sqlite3.c -o libsqlite3.0.dylib -lm -lpthread \
+  -DSQLITE_ENABLE_FTS3 \
+  -DSQLITE_ENABLE_FTS3_PARENTHESIS \
+  -DSQLITE_ENABLE_FTS4 \
+  -DSQLITE_ENABLE_FTS5
+```
+And now:
+```bash
+DYLD_LIBRARY_PATH=$PWD datasette --get /-/versions.json | jq .sqlite
+```
+Outputs:
+```json
+{
+  "version": "3.42.0",
+  "fts_versions": [
+    "FTS5",
+    "FTS4",
+    "FTS3"
+  ],
+  "extensions": {
+    "json1": null
+  },
+  "compile_options": [
+    "ATOMIC_INTRINSICS=1",
+    "COMPILER=clang-14.0.3",
+    "DEFAULT_AUTOVACUUM",
+    "DEFAULT_CACHE_SIZE=-2000",
+    "DEFAULT_FILE_FORMAT=4",
+    "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+    "DEFAULT_MMAP_SIZE=0",
+    "DEFAULT_PAGE_SIZE=4096",
+    "DEFAULT_PCACHE_INITSZ=20",
+    "DEFAULT_RECURSIVE_TRIGGERS",
+    "DEFAULT_SECTOR_SIZE=4096",
+    "DEFAULT_SYNCHRONOUS=2",
+    "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+    "DEFAULT_WAL_SYNCHRONOUS=2",
+    "DEFAULT_WORKER_THREADS=0",
+    "ENABLE_FTS3",
+    "ENABLE_FTS3_PARENTHESIS",
+    "ENABLE_FTS4",
+    "ENABLE_FTS5",
+    "MALLOC_SOFT_LIMIT=1024",
+    "MAX_ATTACHED=10",
+    "MAX_COLUMN=2000",
+    "MAX_COMPOUND_SELECT=500",
+    "MAX_DEFAULT_PAGE_SIZE=8192",
+    "MAX_EXPR_DEPTH=1000",
+    "MAX_FUNCTION_ARG=127",
+    "MAX_LENGTH=1000000000",
+    "MAX_LIKE_PATTERN_LENGTH=50000",
+    "MAX_MMAP_SIZE=0x7fff0000",
+    "MAX_PAGE_COUNT=1073741823",
+    "MAX_PAGE_SIZE=65536",
+    "MAX_SQL_LENGTH=1000000000",
+    "MAX_TRIGGER_DEPTH=1000",
+    "MAX_VARIABLE_NUMBER=32766",
+    "MAX_VDBE_OP=250000000",
+    "MAX_WORKER_THREADS=8",
+    "MUTEX_PTHREADS",
+    "SYSTEM_MALLOC",
+    "TEMP_STORE=1",
+    "THREADSAFE=1"
+  ]
+}
+```
