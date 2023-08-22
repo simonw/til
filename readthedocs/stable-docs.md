@@ -35,7 +35,7 @@ Then I use GitHub Actions to automate the process of updating that branch. In pa
 
 - Any time I tag and push a new release, the `stable` branch is entirely updated to reflect the content of that release. Any changes in that branch are discarded.
 - But... I can make edits to that branch myself in between releases. Those edits will be wiped out at the next release, so I need to be sure to apply them to the `main` branch as well.
-- I also have a shortcut: any time I commit to `main` I can include the text `!stable-docs` in my commit message. If I do that, GitHub Actions will copy the exact content of any files in the `docs/` directory and use them to update the `stable` branch, then publish that branch with those new changes.
+- I also have a shortcut: any time I commit to `main` I can include the text `!stable-docs` in my commit message. If I do that, GitHub Actions will copy the exact content of any files in the `docs/` directory that were modified in that commit and use them to update the `stable` branch, then publish that branch with those new changes.
 
 For general usage I only have to do two things: continue to ship releases, and occasionally include `!stable-docs` in a commit that updates a document which I'd like to be reflected instantly on the documentation site (a typo fix, project news or new plugin for example).
 
