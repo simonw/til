@@ -1,6 +1,6 @@
 # Compile and run a new SQLite version with the existing sqlite3 Python library on macOS
 
-I've been trying to figure this out for years. Previous notes include [Using LD_PRELOAD to run any version of SQLite with Python](https://til.simonwillison.net/sqlite/ld-preload) (Linux only) and [Using pysqlite3 on macOS](https://til.simonwillison.net/sqlite/pysqlite3-on-macos) (uses the `pysqlite3` package). But the dream was always to find a way to let me easily run a different SQLite version with the `sqlite3` module from the Python standard library directly on my Mac.
+I've been trying to figure this out for years. Previous notes include [Using LD_PRELOAD to run any version of SQLite with Python](https://til.simonwillison.net/sqlite/ld-preload) (Linux only), and [Building a specific version of SQLite with pysqlite on macOS/Linux](https://til.simonwillison.net/sqlite/build-specific-sqlite-pysqlite-macos) and [Using pysqlite3 on macOS](https://til.simonwillison.net/sqlite/pysqlite3-on-macos) (both using the `pysqlite3` package). But the dream was always to find a way to let me easily run a different SQLite version with the `sqlite3` module from the Python standard library directly on my Mac.
 
 [Alex Garcia](https://til.simonwillison.net/sqlite/pysqlite3-on-macos) helped me find the solution I've been looking for this morning.
 
