@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->456<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->457<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -145,6 +145,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Comparing two training datasets using sqlite-utils](https://github.com/simonw/til/blob/main/sqlite/comparing-datasets.md) - 2023-05-23
 * [A one-liner to output details of the current Python's SQLite](https://github.com/simonw/til/blob/main/sqlite/python-sqlite-environment.md) - 2023-08-19
 * [Calculating the size of a SQLite database file using SQL](https://github.com/simonw/til/blob/main/sqlite/database-file-size.md) - 2023-08-21
+* [Compile and run a new SQLite version with the existing sqlite3 Python library on macOS](https://github.com/simonw/til/blob/main/sqlite/sqlite-version-macos-python.md) - 2023-08-22
 
 ## presenting
 
