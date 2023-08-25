@@ -201,6 +201,7 @@ make
 ./sapi/cli/php -v
 cp ./sapi/cli/php /mnt/
 ```
+You can download [that 38.9MB php binary here](https://static.simonwillison.net/static/2023/php).
 
 ## This is pretty wild
 
