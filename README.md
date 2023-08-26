@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->457<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->458<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -171,6 +171,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using fs_usage to see what files a process is using](https://github.com/simonw/til/blob/main/macos/fs-usage.md) - 2023-06-15
 * [Syncing slide images and audio in iMovie](https://github.com/simonw/til/blob/main/macos/imovie-slides-and-audio.md) - 2023-06-15
 * [Local wildcard DNS on macOS with dnsmasq](https://github.com/simonw/til/blob/main/macos/wildcard-dns-dnsmasq.md) - 2023-06-30
+* [Downloading partial YouTube videos with ffmpeg](https://github.com/simonw/til/blob/main/macos/downloading-partial-youtube-videos.md) - 2023-08-26
 
 ## cloudrun
 
