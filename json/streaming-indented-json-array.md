@@ -68,3 +68,4 @@ The function then loops, each time fetching the next item and returning the prev
 
 When it runs out of items, it returns the last one and a `True` to indicate that it has reached the end.
 
+**Update:** I published this post and my [related entries](https://til.simonwillison.net/llms/openai-embeddings-related-content) feature instantly spotted that it's a slightly different solution to the [exact same problem](https://til.simonwillison.net/python/output-json-array-streaming) that I solved a year and a half ago for `s3-credentials`!
