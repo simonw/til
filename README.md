@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->458<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->459<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -688,6 +688,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [JSON Pointer](https://github.com/simonw/til/blob/main/json/json-pointer.md) - 2022-11-14
 * [Processing a stream of chunks of JSON with ijson](https://github.com/simonw/til/blob/main/json/ijson-stream.md) - 2023-08-15
+* [Streaming output of an indented JSON array](https://github.com/simonw/til/blob/main/json/streaming-indented-json-array.md) - 2023-08-29
 
 ## clickhouse
 
