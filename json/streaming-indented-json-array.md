@@ -40,6 +40,8 @@ Here's how this works:
 - Also keep track of if each item is the last object in the sequence. If it isn't the last one, include a trailing comma character.
 - At the end, output a closing `]`.
 
+Originally I outputted the first `[` before I stared the main loop. But then I realized that if the `iterator()` function raised an exception I would output that lone `[` before showing the error message, so I moved it into the loop and protected it with an `if first` instead.
+
 The trickiest part was looping through the objects while keeping track of whether or not each item was the last item. I didn't want to have to load everything into memory first in order to do this.
 
 I got GPT-4 Code Interpreter (now named Advanced Data Analysis, but I don't like that name much) to [write and test this function for me](https://chat.openai.com/share/83c1cac0-0e53-4e24-bebb-1c5437da2f31):
