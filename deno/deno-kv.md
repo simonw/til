@@ -1,5 +1,7 @@
 # Deno KV
 
+*Initial article: April 28th 2023 - see below for an update*
+
 I got intrigued by [Deno KV](https://deno.com/kv), which describes itself as "a global database for global apps". It's a key/value store for Deno applications which bundles some kind of worldwide distributed/replicated database service.
 
 The code example looked like this:
@@ -184,3 +186,16 @@ I had to upgrade to [Deno 1.32.5](https://github.com/denoland/deno/releases/tag/
 
 - The [Deno KV Key Space](https://deno.com/manual@v1.33.1/runtime/kv/key_space) documentation has some interesting lower-level details of how this all works.
 - [Secondary Indexes](https://deno.com/manual@v1.33.1/runtime/kv/secondary_indexes) shows some advanced patterns for working with Deno KV.
+
+## Update: 5th September 2023
+
+Deno KV is [now in open beta](https://deno.com/blog/kv-open-beta), with an intriguing new feature. You can now connect to a remote Deno KV database by setting a `DENO_KV_ACCESS_TOKEN` environment variable and then doing this:
+
+```javascript
+const kv = await Deno.openKv(
+  "https://api.deno.com/databases/<database-id>/connect",
+);
+```
+On first glance this looked to me like an even deeper intrusion of a proprietary extension into their open source core... but actually it's not. The protocol they are using for this is called [KV Connect](https://github.com/denoland/deno/blob/be1fc754a14683bf640b7bf0ecf6e286d02ee118/ext/kv/README.md#kv-connect) and is described in enough detail in their documentation that anyone else could build a backend that supports this same feature.
+
+I think this is really neat.
