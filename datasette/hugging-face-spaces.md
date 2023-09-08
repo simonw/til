@@ -106,6 +106,10 @@ One oddity here is that I had to `chmod 755` that `history.db` file in order for
 
 > Error running a Docker container: Path '/code/history.db' is not readable
 
+**UPDATE:** Nikhil Thorat [pointed me](https://twitter.com/nsthorat/status/1700175629767807394) to the [Docker Spaces Permissions](https://huggingface.co/docs/hub/spaces-sdks-docker#permissions) documentation which explains why this happened:
+
+> The container runs with user ID 1000. To avoid permission issues you should create a user and set its `WORKDIR` before any `COPY` or download.
+
 ## The result
 
 Here's the freshly deployed Datasette instance:
