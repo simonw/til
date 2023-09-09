@@ -110,3 +110,16 @@ Or run [Datasette](https://datasette.io/) against the full log database like thi
 ```bash
 datasette "$(llm logs path)"
 ```
+## Price estimates
+
+I found [this PDF](https://www-files.anthropic.com/production/images/model_pricing_july2023.pdf) of Claude's July 2023 pricing:
+
+- Claude Instant: $1.63/million prompt tokens, $5.51/million completion tokens
+- Claude 2: $11.02/million tokens prompt tokens, $32.68/million completion tokens
+
+The [Anthropic logs](https://console.anthropic.com/account/logs) listed my initial prompt (with all of the comments) as 38,254 prompt tokens returning 410 completion tokens.
+
+At those prices ([using Code Interpreter](https://chat.openai.com/share/8ca9d751-d59e-4a15-bd59-183281659dd2) a the world's most-over-powered calculator) that would have cost me:
+
+- $0.06461 or 6.5 cents for Claude Instant
+- $0.43496 or 43.5 cents for Claude 2
