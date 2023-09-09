@@ -12,7 +12,7 @@ My Bash script for this does the following:
 - Use `jq` to process the recursive JSON structure into a flat list of just the comment text
 - Pipe that to Claude via my LLM tool to generate a summary
 
-I'm using LLM with the [llm-claude](https://github.com/) plugin, which requires an API key from Anthropic. Prior to obtaining that key I used [llm-openrouter](https://github.com/simonw/llm-openrouter) which provides access to Claude via a paid endpoint.
+I'm using LLM with the [llm-claude](https://github.com/tomviner/llm-claude) plugin, which requires an API key from Anthropic. Prior to obtaining that key I used [llm-openrouter](https://github.com/simonw/llm-openrouter) which provides access to Claude via a paid endpoint.
 
 In both cases I had set the `claude` alias in my local LLM install using `llm aliases set claude longer-model-id`.
 
