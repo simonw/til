@@ -123,3 +123,64 @@ At those prices ([using Code Interpreter](https://chat.openai.com/share/8ca9d751
 
 - $0.06461 or 6.5 cents for Claude Instant
 - $0.43496 or 43.5 cents for Claude 2
+
+## Adding attribution
+
+I tried this variation of the one-liner to include attribution for each of the quotes:
+
+```bash
+curl -s "https://hn.algolia.com/api/v1/items/$1" | \
+  jq -r 'recurse(.children[]) | .author + ": " + .text' | \
+  llm -m claude 'Summarize the themes of the opinions expressed here, including quotes (with author attribution) where appropriate.'
+```
+Two things have changed here. First, I'm now getting the `jq` program to output `username: comment-text`:
+```bash
+jq -r 'recurse(.children[]) | .author + ": " + .text'
+```
+I've also updated the prompt to add the parenthesis bit here:
+
+> ...including quotes (with author attribution) where appropriate.
+
+This works, but I'm not sure I like it better. It seems to to result in longer quotes, where I actually liked the shorter, inline quotes from the previous version.
+
+Example output from [this conversation about NGINX Unit](https://news.ycombinator.com/item?id=37453854):
+
+```bash
+hn-summary.sh 37453854
+```
+
+> There are a few key themes in the discussion about Nginx Unit:
+> 
+> 1. Performance and benchmarking
+> 
+> - Several commenters are interested in how Nginx Unit compares performance-wise to other solutions like Nginx, Apache, php-fpm, etc. Some preliminary benchmarks show significant performance gains:
+> 
+>> "Trying this with a moderately complex PHP Laravel app and got a 40% speed improvement. Very useful to be able to run multiple apps each using different lang runtimes/versions without needing separate docker containers." - Dachande663
+> 
+>> "Nginx Unit + PHP seems to handedly out-perform Nginx + php-fpm[1][2][3]." - jchook
+> 
+> 2. Configuration and ease of use
+> 
+> - Many discuss the configuration and control of Nginx Unit via a JSON API. Some see value in dynamic configuration while others prefer file-based configuration.
+> 
+>> "Why the obsession (it seems to be the prominent point in the readme) with configuration via API? How often do you need to add php support on the fly? I want to configure my app server via files so it just starts up in the state that I expect." - gibmeat
+> 
+>> "This allows you to start up generic machines with no configuration and customize them after boot from a remote host. It's not so much "on the fly", as it is moving the long-term config storage to a different system." - sneak
+> 
+> 3. Language and runtime support 
+> 
+> - Commenters note the variety of languages supported in Nginx Unit and discuss how it compares to other specialized runtimes.
+> 
+>> "Instead the docs have you do something manual with certbot (a complete nono if you believe in automatic SSL and are using docker images that don't persist data, as Docker is meant to be used)." - tomjen3
+> 
+>> "I'd love to see a performance benchmark for unit. Especially for an nodejs/express app" - abdellah123
+> 
+> 4. Comparisons to similar tools
+> 
+> - Many are interested in how Nginx Unit compares to other web/app servers like Apache, Caddy, OpenResty, etc.
+> 
+>> "I switched to caddy from nginx and didn't look back. Auto SSL wildcards was enough." - andrewstuart
+> 
+>> "This seems to be a “universal” app server, like gunicorn is for running Pyhthon stuff, php-fpm for PHP and so on." - ExoticPearTree
+> 
+> In summary, commenters seem intrigued by Nginx Unit's potential for performance, ease of use, and language support, but want to see more benchmarking and comparisons to similar tools before adopting it more widely.
