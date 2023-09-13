@@ -108,3 +108,13 @@ As promised, the grammar ensured I got back a valid JSON array, with no filler t
 The model invented the shape of the JSON data. The next challenge will be to figure out how to build grammars that specify the actual JSON shape that I want.
 
 I [got GPT-4 to prototype that for me a bit](https://chat.openai.com/share/bf84aed9-d2a3-4175-ac6e-d2f0873092d7), but it needs a lot more work before it's usable.
+
+## Watch out for invalid JSON due to token truncation
+
+Here's one thing to watch out for: the grammar trick doesn't 100% guarantee that you will get back valid JSON, because there's always a chance that the model will run out of tokens before it's managed to produce a completed JSON array.
+
+I don't see any way to resolve this, unfortunately: the grammar is considered entirely separately from the part of the model that might decide that it needs to wrap things up because it's running out of tokens.
+
+There are tricks for dealing with incomplete JSON though, especially if it's producing an array of objects where you could discard the incomplete object at the end.
+
+Next time I dig into this I plan to experiment with [using ijson](https://til.simonwillison.net/json/ijson-stream), a streaming JSON parser, to try and account for this.
