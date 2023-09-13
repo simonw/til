@@ -459,3 +459,27 @@ CREATE TRIGGER "baz__crsql_dtrig"
         WHERE "a" IS OLD."a" AND __crsql_col_name != '-1';
     END;
 ```
+## Explained (a bit) by GPT-4
+
+And just because I can, using [LLM](https://llm.datasette.io/):
+
+```bash
+sqlite3 /tmp/temp.db .schema | llm -m gpt-4 -s 'explain this SQL, with a villainous twist'
+```
+Outputs:
+
+> This SQL script is establishing database tables and setting up triggers for tracking changes to the database. The villainous twist here is that it's designed to covertly track every change made to certain database tables ("foo" and "baz"), including inserts, updates, and deletions. The changes are logged in system tables ("crsql_tracked_peers", "crsql_master", "crsql_site_id", "foo__crsql_clock", "baz__crsql_clock") and tracked with various specific criteria ("__crsql_col_version", "__crsql_db_version", "__crsql_seq", "__crsql_site_id").
+>
+> The "foo" and "baz" tables represent databases the villain would like to monitor. The script will create these tables if they don't exist and is also adding triggers to them.
+>
+> Triggers are procedures that are automatically executed in response to certain events (e.g., insertions, updates, or deletions) on a particular table. 
+>
+> So the villainous twist is that after every INSERT, UPDATE, or DELETE operation on "foo" or "baz" tables, these changes are tracked and stored in "__crsql_clock" tables.
+>
+> When a row is inserted into "foo" or "baz", the "foo__crsql_itrig" or "baz__crsql_itrig" triggers fire. They update certain fields in the "foo__crsql_clock" or "baz__crsql_clock" tables and insert new rows if necessary.
+>
+> When a row is updated in "foo" or "baz", "foo__crsql_utrig" or "baz__crsql_utrig" triggers fire, doing the same thing but additionally checking if value of "a" was changed.  
+>
+> When a row is deleted from "foo" or "baz", "foo__crsql_dtrig" or "baz__crsql_dtrig" triggers run. They insert info about deleted row into "foo__crsql_clock" or "baz__crsql_clock" tables, and delete rows associated with that object.
+>
+> The villain's script is making sure no change goes unnoticed. If you don't know the triggers are there, you may never realize what's happening!
