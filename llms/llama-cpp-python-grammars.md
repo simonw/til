@@ -105,9 +105,13 @@ Which gave me:
 ```
 As promised, the grammar ensured I got back a valid JSON array, with no filler text ("Here's the data you asked for as JSON:") which Llama 2 is very prone to including.
 
+## Generating grammars
+
 The model invented the shape of the JSON data. The next challenge will be to figure out how to build grammars that specify the actual JSON shape that I want.
 
 I [got GPT-4 to prototype that for me a bit](https://chat.openai.com/share/bf84aed9-d2a3-4175-ac6e-d2f0873092d7), but it needs a lot more work before it's usable.
+
+[Grammar Builder](https://grammar.intrinsiclabs.ai/) by Intrinsic Labs is an interesting tool here - it can generate GBNF grammars from TypeScript declarations, and is accompanied by [an open source library](https://github.com/IntrinsicLabsAI/gbnfgen) that does the same trick. More about that in [this discussion thread](https://github.com/ggerganov/llama.cpp/discussions/2494).
 
 ## Watch out for invalid JSON due to token truncation
 
