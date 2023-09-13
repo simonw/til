@@ -62,7 +62,7 @@ response = llm(
 The result is a JSON string in `response['choices'][0]['text']`, so we can pretty-print it like this:
 ```python
 import json
-print(json.dumps(json.loads(response['choices'][0]['text'], indent=4))
+print(json.dumps(json.loads(response['choices'][0]['text']), indent=4))
 ```
 Which gave me:
 ```json
@@ -112,6 +112,8 @@ The model invented the shape of the JSON data. The next challenge will be to fig
 I [got GPT-4 to prototype that for me a bit](https://chat.openai.com/share/bf84aed9-d2a3-4175-ac6e-d2f0873092d7), but it needs a lot more work before it's usable.
 
 [Grammar Builder](https://grammar.intrinsiclabs.ai/) by Intrinsic Labs is an interesting tool here - it can generate GBNF grammars from TypeScript declarations, and is accompanied by [an open source library](https://github.com/IntrinsicLabsAI/gbnfgen) that does the same trick. More about that in [this discussion thread](https://github.com/ggerganov/llama.cpp/discussions/2494).
+
+Evan Jones [pointed out](https://twitter.com/evanqjones/status/1701938802611151300) the `llama.cpp` script [examples/json-schema-to-grammar.py](https://github.com/ggerganov/llama.cpp/blob/master/examples/json-schema-to-grammar.py), which looks like exactly what I want. It only supports a subset of JSON schema right now but it can turn that into a working GBNF grammar.
 
 ## Watch out for invalid JSON due to token truncation
 
