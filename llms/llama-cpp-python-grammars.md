@@ -24,7 +24,7 @@ https://github.com/ggerganov/llama.cpp/blob/b52b29ab9d601bb298050bcd2261169bc917
 
 I'll fetch that straight into Python using `httpx`.
 
-You also need a model. I'm using Llama 13B as GGUF from [TheBloke/Llama-2-13B-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-GGUF) - I downloaded the 8bit quantized model, a 13.8GM file from here:
+You also need a model. I'm using Llama 13B as GGUF from [TheBloke/Llama-2-13B-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-GGUF) - I downloaded the 8bit quantized model, a 13.8GB file from here:
 
 https://huggingface.co/TheBloke/Llama-2-13B-GGUF/resolve/main/llama-2-13b.Q8_0.gguf
 
