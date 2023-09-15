@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->465<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->466<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -32,6 +32,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Conditionally running a second job in a GitHub Actions workflow](https://github.com/simonw/til/blob/main/github-actions/conditionally-run-a-second-job.md) - 2022-07-11
 * [Ensure labels exist in a GitHub repository](https://github.com/simonw/til/blob/main/github-actions/ensure-labels.md) - 2022-09-25
 * [actions/setup-python caching for setup.py projects](https://github.com/simonw/til/blob/main/github-actions/cache-setup-py.md) - 2022-11-28
+* [Running tests against multiple versions of a Python dependency in GitHub Actions](https://github.com/simonw/til/blob/main/github-actions/running-tests-against-multiple-verisons-of-dependencies.md) - 2023-09-15
 
 ## python
 
