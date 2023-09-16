@@ -205,6 +205,13 @@ pip install -e '/tmp/demo-package[test]'
 ```
 The result was an installation of `pytest`, visible when I ran `pip freeze`.
 
+## Package data
+
+The build script will automatically find all Python files, but if you have other assets such as static CSS ond JavaScript, or templates with a `.html` extension, you need to specify package data. This works for adding everything in the `demo_package/static/` and `demo_package/templates/` directories:
+```toml
+[tool.setuptools.package-data]
+demo_package = ["static/*", "templates/*"]
+```
 ## Command-line scripts
 
 I often build tools which include command-line scripts. These can be defined by adding a `scripts=` section to the `[project]` block, like this:
