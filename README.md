@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->466<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->467<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -760,4 +760,8 @@ Search these TILs at https://til.simonwillison.net/
 ## cosmopolitan
 
 * [Catching up with the Cosmopolitan ecosystem](https://github.com/simonw/til/blob/main/cosmopolitan/ecosystem.md) - 2023-08-10
+
+## google
+
+* [Limited JSON API for Google searches using Programmable Search Engine](https://github.com/simonw/til/blob/main/google/json-api-programmable-search-engine.md) - 2023-09-16
 <!-- index ends -->
