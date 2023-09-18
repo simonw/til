@@ -237,14 +237,10 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-QUERY="$1"
-
-RESULT=$(llm similar blog-paragraphs -c "query: $QUERY" \
+llm similar blog-paragraphs -c "query: $1" \
   | jq '.content | sub("passage: "; "")' -r \
   | llm -m mlc-chat-Llama-2-7b-chat-hf-q4f16_1 \
-  "$QUERY" -s 'You answer questions as a single paragraph')
-
-echo "$RESULT"
+  "$1" -s 'You answer questions as a single paragraph'
 ```
 Then:
 ```bash
