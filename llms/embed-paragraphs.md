@@ -202,3 +202,56 @@ I think the results are _really good_.
   "metadata": null
 }
 ```
+
+## Answering a question
+
+I want to make this smoother, but for now here's a pipeline that can use this context to answer a question using Llama 2 13B run with my [llm-mlc](https://github.com/simonw/llm-mlc) plugin:
+```bash
+llm similar blog-paragraphs -c 'query: What is LLM?' \
+  | jq .content \
+  | llm -m mlc-chat-Llama-2-7b-chat-hf-q4f16_1 \
+  'What is LLM?' -s 'You answer questions'
+```
+On my computer just now that output:
+
+> Based on the given passages, LLM appears to be a tool or library for working with Large Language Models (LLMs) in Python. Here are some key points about LLM:
+>
+> 1. LLM is a Python library and command-line tool for working with LLMs.
+> 2. The latest version of LLM (0.9) includes new features that extend its capabilities to work with embeddings.
+> 3. LLM can install plugins that add support for additional models, including models that can run on your own hardware.
+> 4. The first version of LLM was built as a command-line tool for running prompts against LLMs and storing the results in a SQLite database.
+> 5. Web LLM is a project that runs the vicuna-7b-delta-v0 model in a browser, taking advantage of the new WebGPU API.
+> 6. The Privileged LLM is the core of an AI assistant that accepts input from trusted sources and acts on that input.
+> 7. LLMs are good at returning format like JSON, which is useful for writing code that uses them.
+> 8. There are two types of LLMs: the regular LLM and the quarantined LLM, which is the one that's expected to go rogue.
+> 9. LLM is a project that the author has been working on for a few months as a way of interacting with models.
+> 10. The latest version of LLM (0.5) includes a huge new feature: the ability to install plugins that add support for additional models.
+
+I turned that into a Bash script saved as `blog-answer.sh` (and added 'as a single paragraph') to the prompt):
+```bash
+#!/bin/bash
+
+# Check if a query was provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 'Your query'"
+    exit 1
+fi
+
+QUERY="$1"
+
+# The llm command pipeline
+RESULT=$(llm similar blog-paragraphs -c "query: $QUERY" \
+  | jq .content \
+  | llm -m mlc-chat-Llama-2-7b-chat-hf-q4f16_1 \
+  "$QUERY" -s 'You answer questions as a single paragraph')
+
+# Output the result
+echo "$RESULT"
+```
+Then:
+```bash
+./blog-answer.sh 'What is shot-scraper?'
+```
+Output:
+
+> Shot-scraper is a Python utility that wraps Playwright, providing both a command line interface and a YAML-driven configuration flow for automating the process of taking screenshots of web pages and scraping data from them using JavaScript. It can be used to take one-off screenshots or take multiple screenshots in a repeatable way by defining them in a YAML file. Additionally, it can be used to execute JavaScript on a page and return the resulting value.
