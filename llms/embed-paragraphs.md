@@ -239,13 +239,11 @@ fi
 
 QUERY="$1"
 
-# The llm command pipeline
 RESULT=$(llm similar blog-paragraphs -c "query: $QUERY" \
-  | jq .content \
+  | jq '.content | sub("passage: "; "")' -r \
   | llm -m mlc-chat-Llama-2-7b-chat-hf-q4f16_1 \
   "$QUERY" -s 'You answer questions as a single paragraph')
 
-# Output the result
 echo "$RESULT"
 ```
 Then:
@@ -255,3 +253,18 @@ Then:
 Output:
 
 > Shot-scraper is a Python utility that wraps Playwright, providing both a command line interface and a YAML-driven configuration flow for automating the process of taking screenshots of web pages and scraping data from them using JavaScript. It can be used to take one-off screenshots or take multiple screenshots in a repeatable way by defining them in a YAML file. Additionally, it can be used to execute JavaScript on a page and return the resulting value.
+
+The `jq` expression I'm using looks like this:
+```bash
+jq '.content | sub("passage: "; "")' -r
+```
+The `-r` causes it not to include double quotes in the output - it just produces the raw strings.
+
+The `sub("passage: "; "")` bit removes just the first occurence of the string `passage:` from the string, as demonstrated by:
+```bash
+echo '"passage: this is a passage: of text"' | jq 'sub("passage: "; "")'
+```
+Which outputs:
+```json
+"this is a passage: of text"
+```
