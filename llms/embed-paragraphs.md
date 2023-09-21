@@ -205,7 +205,7 @@ I think the results are _really good_.
 
 ## Answering a question
 
-I want to make this smoother, but for now here's a pipeline that can use this context to answer a question using Llama 2 13B run with my [llm-mlc](https://github.com/simonw/llm-mlc) plugin:
+I want to make this smoother, but for now here's a pipeline that can use this context to answer a question using Llama 2 7B run with my [llm-mlc](https://github.com/simonw/llm-mlc) plugin:
 ```bash
 llm similar blog-paragraphs -c 'query: What is LLM?' \
   | jq .content \
