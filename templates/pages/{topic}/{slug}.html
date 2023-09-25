@@ -49,12 +49,25 @@
 <script>
 // Add visible # links to all h2+ headings  
 document.querySelectorAll('h2,h3,h4,h5,h6').forEach(el => {
-  let anchor = el.querySelector('a.anchor');
-  if (!anchor) {
-    return;
+  // New style of links
+  let id = null;
+  let newStyle = el.querySelector('.heading-link');
+  if (newStyle) {
+    // Need to pull the text out of the link
+    id = newStyle.getAttribute('href').replace('#', '');
+    let text = newStyle.innerText;
+    el.removeChild(newStyle);
+    el.innerText = text;
+  } else {
+    let anchor = el.querySelector('a.anchor');
+    if (anchor) {
+      id = anchor.getAttribute('id');
+      el.removeChild(anchor);  
+    }
   }
-  let id = anchor.getAttribute('id');
-  el.removeChild(anchor);
+  if (!id) {
+    return;
+  }  
   el.setAttribute('id', id);
   let hashLink = document.createElement('a');
   hashLink.style.textDecoration = 'none';
