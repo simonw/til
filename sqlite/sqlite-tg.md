@@ -9,7 +9,7 @@
 
 TG was released on Friday. I posted [a note](https://simonwillison.net/2023/Sep/23/tg-polygon-indexing/) that "I think this could make the basis of a really useful SQLite extension—a lighter-weight alternative to SpatiaLite" in a couple of places...
 
-... and Alex Garcia clearly agreed, because he built [sqlite-tg](https://github.com/asg017/sqlite-tg) over the weekend, and then packaged it up as a [Python package](https://pypi.org/project/sqlite-tg/), `sqlite-utils` and Datasette plugins, a [Ruby gem](https://rubygems.org/gems/sqlite-tg), a [Deno package](https://deno.land/x/sqlite_t) and [an npm package](https://www.npmjs.com/package/sqlite-tg) too!
+... and Alex Garcia clearly agreed, because he built [sqlite-tg](https://github.com/asg017/sqlite-tg) over the weekend, and then packaged it up as a [Python package](https://pypi.org/project/sqlite-tg/), `sqlite-utils` and Datasette plugins, a [Ruby gem](https://rubygems.org/gems/sqlite-tg), a [Deno package](https://deno.land/x/sqlite_tg) and [an npm package](https://www.npmjs.com/package/sqlite-tg) too!
 
 It's still an early alpha, but it's actually very easy to try it out. Here's how I got it working in [Datasette](https://datasette.io/).
 
