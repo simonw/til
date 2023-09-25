@@ -95,7 +95,11 @@ I'm mixing GeoJSON and WKT here. I get back:
 ```
 1
 ```
-Because the point and the polygon intersect. Try that with Times Square in New York:
+Because the point and the polygon intersect.
+
+Instead of using the WKT `POINT(...)` string here we can use the `tg_point(longitude, latitude)` function. We'll use that in the next example.
+
+Let's try with Times Square in New York:
 ```sql
 select tg_intersects('{
   "type": "Polygon",
@@ -108,12 +112,13 @@ select tg_intersects('{
       [-122.51610563264538, 37.81424532146113]
     ]
   ]
-}', 'POINT(-73.985130 40.758896)')
+}', tg_point(-73.985130, 40.758896))
 ```
 And we get back:
 ```
 0
 ```
+
 Let's try something a bit more challenging.
 
 ## Timezone lookups
