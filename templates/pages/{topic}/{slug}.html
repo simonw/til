@@ -53,8 +53,9 @@ document.querySelectorAll('h2,h3,h4,h5,h6').forEach(el => {
   let id = null;
   let newStyle = el.querySelector('.heading-link');
   if (newStyle) {
+    // Keep using existing ID on element
+    id = el.getAttribute('id');
     // Need to pull the text out of the link
-    id = newStyle.getAttribute('href').replace('#', '');
     let text = newStyle.innerText;
     el.removeChild(newStyle);
     el.innerText = text;
