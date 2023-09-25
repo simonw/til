@@ -198,7 +198,7 @@ The query takes around 700ms on my M2 MacBook Pro. That's not a great number - u
 
 `sqlite-tg` doesn't yet include support for indexing. TG provides some [very interesting indexing mechanisms](https://github.com/tidwall/tg/blob/main/docs/POLYGON_INDEXING.md) as part of the library.
 
-And for added fun... I installed the [datasette-geojson-map](https://github.com/simonw/datasette-geojson-map) plugin and added `select *` to the query and I got this!
+And for added fun... I installed the [datasette-geojson-map](https://datasette.io/plugins/datasette-geojson-map) plugin and added `select *` to the query and I got this!
 
 ![Screenshot of the timezone for New York rendered on a map below the SQL query](https://static.simonwillison.net/static/2023/timezone-new-york.jpg)
 
