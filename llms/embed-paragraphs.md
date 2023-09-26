@@ -111,11 +111,13 @@ llm embed-multi blog-paragraphs -m lv2 \
 ```
 This creates a new collection of embeddings called `blog-paragraphs` using the E5-large-v2 embedding model. Then it reads through the CSV file and generates embeddings for each line. The `--store` line causes it to store the original text content in the database as well.
 
-This took about 25 minutes to run (on an M2 Macbook Pro with 64GB of RAM). The result was an embeddings collection containing 18,918 rows.
+The calculated embeddings will be stored in the default embeddings database, which on a Mac is at `~/Library/Application Support/io.datasette.llm/embeddings.db`. You can add `-d my-embeddings.db` to store them in a different location.
+
+The command took about 25 minutes to run (on an M2 Macbook Pro with 64GB of RAM). The result was an embeddings collection containing 18,918 rows.
 
 Here's a query to preview three rows from that collection:
 ```bash
-sqlite-utils "$(llm embed-db path)" '
+sqlite-utils "$(llm collections path)" '
   select id, content, length(embedding)
   from embeddings where collection_id = (
     select id from collections where name = "blog-paragraphs"
