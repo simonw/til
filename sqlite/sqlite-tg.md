@@ -60,7 +60,7 @@ This outputs (after pretty-printing):
   ]
 }
 ```
-This is already useful: having an easily installed mechanism for converting between WKT and GeoJSON with a SQL query is a great thing to have.
+This is already useful: an easily installed mechanism for converting between WKT and GeoJSON with a SQL query is a great thing to have.
 
 Let's convert a point within San Francisco to WKB binary format:
 ```sql
