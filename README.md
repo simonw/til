@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->469<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->470<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -211,6 +211,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Mocking a Textract LimitExceededException with boto](https://github.com/simonw/til/blob/main/pytest/mocking-boto.md) - 2022-08-07
 * [Show files opened by pytest tests](https://github.com/simonw/til/blob/main/pytest/show-files-opened-by-tests.md) - 2022-12-11
 * [Mocking subprocess with pytest-subprocess](https://github.com/simonw/til/blob/main/pytest/pytest-subprocess.md) - 2023-03-08
+* [Snapshot testing with Syrupy](https://github.com/simonw/til/blob/main/pytest/syrupy.md) - 2023-09-26
 
 ## github
 
