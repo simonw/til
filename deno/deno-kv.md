@@ -255,6 +255,27 @@ CREATE TABLE queue_running(
 );
 CREATE INDEX kv_expiration_ms_idx on kv (expiration_ms);
 ```
+Also in their codebase: [some constants containing SQL queries](https://github.com/denoland/deno/blob/v1.37.1/ext/kv/sqlite.rs#L64-L74) that are used to interact with that table:
+
+```rust
+const STATEMENT_QUEUE_ADD_READY: &str =
+  "insert into queue (ts, id, data, backoff_schedule, keys_if_undelivered) values(?, ?, ?, ?, ?)";
+const STATEMENT_QUEUE_GET_NEXT_READY: &str =
+  "select ts, id, data, backoff_schedule, keys_if_undelivered from queue where ts <= ? order by ts limit 100";
+const STATEMENT_QUEUE_GET_EARLIEST_READY: &str =
+  "select ts from queue order by ts limit 1";
+const STATEMENT_QUEUE_REMOVE_READY: &str =
+  "delete from queue where id = ?";
+const STATEMENT_QUEUE_ADD_RUNNING: &str =
+  "insert into queue_running (deadline, id, data, backoff_schedule, keys_if_undelivered) values(?, ?, ?, ?, ?)";
+const STATEMENT_QUEUE_REMOVE_RUNNING: &str =
+  "delete from queue_running where id = ?";
+const STATEMENT_QUEUE_GET_RUNNING_BY_ID: &str =
+  "select deadline, id, data, backoff_schedule, keys_if_undelivered from queue_running where id = ?";
+const STATEMENT_QUEUE_GET_RUNNING: &str =
+  "select id from queue_running order by deadline limit 100";
+```
+
 The hex `data` value decodes to this:
 
     \xff\x0fo"\x07channel"\x07C123456"\x04text"\rSlack message{\x02
