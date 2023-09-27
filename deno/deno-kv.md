@@ -199,3 +199,66 @@ const kv = await Deno.openKv(
 On first glance this looked to me like an even deeper intrusion of a proprietary extension into their open source core... but actually it's not. The protocol they are using for this is called [KV Connect](https://github.com/denoland/deno/blob/be1fc754a14683bf640b7bf0ecf6e286d02ee118/ext/kv/README.md#kv-connect) and is described in enough detail in their documentation that anyone else could build a backend that supports this same feature.
 
 I think this is really neat.
+
+## Deno Queues (27th September 2023)
+
+Today Deno announced [Deno Queues](https://deno.com/blog/queues) - a mechanism built on top of Deno KV that lets you send at-least-once delivered messages to a queue and read them back off again.
+
+As with other KV features it works locally using SQLite and uses Foundation DB if you deploy using Deno's cloud service.
+
+I got it working by upgrading to Deno 1.37 using `brew upgrade deno`, then putting this in a `demo.js` file:
+```javascript
+const db = await Deno.openKv('hello.db');
+
+db.listenQueue(async (msg) => {
+  console.log(msg);
+});
+
+await db.enqueue({ channel: "C123456", text: "Slack message" }, {
+  delay: 10000,
+});
+```
+This queues a message when the script starts, marking it to run 10s later.
+
+I did this so I could Ctrl+C the script before the ten seconds and see what the schema in SQLite looked like.
+
+I ran the script like this:
+```bash
+deno run --unstable demo.js
+```
+I quit before it displayed the message, then used `sqlite-utils dump hello.db` to inspect the database. The relevant tables are these ones:
+```sql
+CREATE TABLE queue (
+  ts integer not null,
+  id text not null,
+  data blob not null,
+  backoff_schedule text not null,
+  keys_if_undelivered blob not null,
+
+  primary key (ts, id)
+);
+INSERT INTO "queue" VALUES(
+  1695836430899,
+  'ab7ac84f-7ceb-4871-b78e-03e1805fd607',
+  X'FF0F6F22076368616E6E656C220743313233343536220474657874220D536C61636B206D6573736167657B02',
+  '[100,1000,5000,30000,60000]',
+  '[]'
+);
+CREATE TABLE queue_running(
+  deadline integer not null,
+  id text not null,
+  data blob not null,
+  backoff_schedule text not null,
+  keys_if_undelivered blob not null,
+
+  primary key (deadline, id)
+);
+CREATE INDEX kv_expiration_ms_idx on kv (expiration_ms);
+```
+The hex `data` value decodes to this:
+
+    \xff\x0fo"\x07channel"\x07C123456"\x04text"\rSlack message{\x02
+
+That appears to be some kind of custom encoding scheme, but it's clearly the data that we put in the queue.
+
+I found [ext/kv/codec.rs](https://github.com/denoland/deno/blob/v1.37.1/ext/kv/codec.rs) which looks like it might be the custom encoding.
