@@ -206,7 +206,9 @@ Today Deno announced [Deno Queues](https://deno.com/blog/queues) - a mechanism b
 
 As with other KV features it works locally using SQLite and uses Foundation DB if you deploy using Deno's cloud service.
 
-I got it working by upgrading to Deno 1.37 using `brew upgrade deno`, then putting this in a `demo.js` file:
+One surprising detail: there isn't currently a way to have multiple queues for a single KV instance. If you want to have multiple types of message they all have to go through the same queue - or you need to run against a separate SQLite KV store for each one (locally, I'm not sure what the Deno Deploy version of that looks like).
+
+I got queues working by upgrading to Deno 1.37 using `brew upgrade deno`, then putting this in a `demo.js` file:
 ```javascript
 const db = await Deno.openKv('hello.db');
 
