@@ -1,6 +1,6 @@
 # Understanding the CSS auto-resizing textarea trick
 
-Chris Coyier [wrote about](https://chriscoyier.net/2023/09/29/css-solves-auto-expanding-textareas-probably-eventually/) the new `form-sizing: normal` property, which can get a `<textarea>` to automatically expand to fit its content - but currently only in Google Chrome Canary. Chris also linked to [his own favourite trick](https://codepen.io/chriscoyier/pen/XWKEVLy) for doing that, using some CSS grid trickery.
+Chris Coyier [wrote about](https://chriscoyier.net/2023/09/29/css-solves-auto-expanding-textareas-probably-eventually/) the new `form-sizing: normal` property, which can get a `<textarea>` to automatically expand to fit its content - but currently only in Google Chrome Canary. Chris also linked to [his own favourite trick](https://codepen.io/chriscoyier/pen/XWKEVLy) for doing that, using some CSS grid trickery (original idea by Stephen Shaw).
 
 I decided to dig into that grid trick and figure out how it works, as well as adapt it slightly for my own preferences.
 
