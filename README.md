@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->470<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->471<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -770,4 +770,8 @@ Search these TILs at https://til.simonwillison.net/
 ## machinelearning
 
 * [Trying out the facebook/musicgen-small sound generation model](https://github.com/simonw/til/blob/main/machinelearning/musicgen.md) - 2023-09-23
+
+## css
+
+* [Understanding the CSS auto-resizing textarea trick](https://github.com/simonw/til/blob/main/css/resizing-textarea.md) - 2023-09-30
 <!-- index ends -->
