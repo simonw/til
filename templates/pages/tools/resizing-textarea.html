@@ -78,6 +78,19 @@ document.querySelectorAll('textarea').forEach(el => {
 </pre>
 
 <script>
+// Just for the demo: stash textarea value in localStorage
+const KEY = 'resizeTextareaContent';
+const ta = document.querySelector('textarea');
+function saveTextarea() {
+  localStorage.setItem(KEY, ta.value);
+}
+const saved = localStorage.getItem(KEY);
+if (saved && !ta.value) {
+  ta.value = saved;
+}
+ta.addEventListener('input', saveTextarea);
+
+// Trigger input on every textarea on the page, to trigger resize:
 document.querySelectorAll('textarea').forEach(el => {
   el.dispatchEvent(new Event('input', {
     bubbles: true,
