@@ -77,11 +77,6 @@ document.querySelectorAll('.grow-wrap').forEach(wrap => {
 </pre>
 
 <script>
-// Set attributes on page load
-document.querySelectorAll('.grow-wrap').forEach(wrap => {
-  wrap.setAttribute('data-replicated-value', wrap.querySelector('textarea').value);
-});
-
 // Just for the demo: stash textarea value in localStorage
 const KEY = 'resizeTextareaContent';
 const ta = document.querySelector('textarea');
@@ -93,6 +88,11 @@ if (saved && !ta.value) {
   ta.value = saved;
 }
 ta.addEventListener('input', saveTextarea);
+
+// Set attributes on page load
+document.querySelectorAll('.grow-wrap').forEach(wrap => {
+  wrap.setAttribute('data-replicated-value', wrap.querySelector('textarea').value);
+});
 </script>
 </body>
 </html>
