@@ -18,6 +18,7 @@ You can [try the final effect here](https://til.simonwillison.net/tools/resizing
 
 ![As text is typed into the textarea the textarea expands in height to fit](https://static.simonwillison.net/static/2023/resizing-textarea.gif)
 
+(It intermittently fails in Mobile Safari, see note at the bottom of this post.)
 
 ## The HTML
 
@@ -189,3 +190,19 @@ Here's what it looks like without that:
 And with it:
 
 ![The textarea has a more subtle blue inset shadow](https://static.simonwillison.net/static/2023/less-outline.png)
+
+## The Mobile Safari bug
+
+Since publishing this I've seen (and been pointed to) a frustrating intermittent bug in Mobile Safari: sometimes the effect works, and sometimes it doesn't.
+
+It's hard to reliably replicate it - it seems to not work when you click through to the demo from within the Twitter in-app browser, but I haven't confirmed if that's a reliable cause or not.
+
+I [opened an issue](https://github.com/simonw/til/issues/85) about this where I include a video of the problem.
+
+I tried swapping the JavaScript that populates textareas on load from the one using simulated events to this instead, but it didn't help:
+
+```javascript
+document.querySelectorAll('.grow-wrap').forEach(wrap => {
+  wrap.setAttribute('data-replicated-value', wrap.querySelector('textarea').value);
+});
+```
