@@ -71,15 +71,17 @@ textarea:focus {
 <p>I also added this JavaScript to ensure the textarea resizes to the correct size when the page first loads:</p>
 
 <pre>
-document.querySelectorAll('textarea').forEach(el => {
-  el.dispatchEvent(new Event('input', {
-    bubbles: true,
-    cancelable: true
-  }));
+document.querySelectorAll('.grow-wrap').forEach(wrap => {
+  wrap.setAttribute('data-replicated-value', wrap.querySelector('textarea').value);
 });
 </pre>
 
 <script>
+// Set attributes on page load
+document.querySelectorAll('.grow-wrap').forEach(wrap => {
+  wrap.setAttribute('data-replicated-value', wrap.querySelector('textarea').value);
+});
+
 // Just for the demo: stash textarea value in localStorage
 const KEY = 'resizeTextareaContent';
 const ta = document.querySelector('textarea');
@@ -91,14 +93,6 @@ if (saved && !ta.value) {
   ta.value = saved;
 }
 ta.addEventListener('input', saveTextarea);
-
-// Trigger input on every textarea on the page, to trigger resize:
-document.querySelectorAll('textarea').forEach(el => {
-  el.dispatchEvent(new Event('input', {
-    bubbles: true,
-    cancelable: true
-  }));
-});
 </script>
 </body>
 </html>
