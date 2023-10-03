@@ -144,7 +144,10 @@ name = "demo-package"
 version = "0.1"
 description = "This is a demo package"
 readme = "README.md"
+requires-python = ">=3.8"
 ```
+Note also the `requires-python = ">=3.8"` line to specify the minimum supported Python version.
+
 Then save a `README.md` file in the same directory containing markdown describing the project:
 ```markdown
 # demo-package
