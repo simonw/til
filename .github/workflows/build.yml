@@ -115,6 +115,7 @@ jobs:
           --install "datasette-debug-asgi>=1.1" \
           --install "datasette-graphql>=2.2" \
           --install datasette-block-robots \
+          --install datasette-llm-embed \
           --plugins-dir plugins \
           --template-dir templates \
           --public
