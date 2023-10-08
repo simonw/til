@@ -36,7 +36,7 @@
 
 {% set related = related_tils(til) %}
 {% if related %}
-  <h3>Related</h3>
+  <h3 id="related">Related</h3>
   <ul class="related">
     {% for til in related %}
     <li><span class="topic">{{ til.topic }}</span> <a href="/{{ til.topic }}/{{ til.slug }}">{{ til.title }}</a> - {{ til.created[:10] }}</li>
