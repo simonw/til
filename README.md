@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->471<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->472<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -574,6 +574,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Deploying a redbean app to Fly](https://github.com/simonw/til/blob/main/fly/redbean-on-fly.md) - 2022-07-24
 * [How to scp files to and from Fly](https://github.com/simonw/til/blob/main/fly/scp.md) - 2022-09-02
 * [Configuring Django SQL Dashboard for Fly PostgreSQL](https://github.com/simonw/til/blob/main/fly/django-sql-dashboard.md) - 2023-08-21
+* [Deploying the CLIP embedding model on Fly](https://github.com/simonw/til/blob/main/fly/clip-on-fly.md) - 2023-10-18
 
 ## caddy
 
