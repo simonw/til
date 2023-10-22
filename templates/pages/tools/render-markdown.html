@@ -198,6 +198,7 @@ button.addEventListener('click', async function() {
         Array.from(
             preview.querySelectorAll('a.heading-link')
         ).forEach(el => el.replaceWith(el.firstChild));
+        // Output it to the textarea
         output.value = preview.innerHTML.replace(
             /<h([1-6])>\n/g, '<h$1>'
         ).replace(
@@ -206,6 +207,14 @@ button.addEventListener('click', async function() {
             /<img ([^>].+?)>/g, '<img $1 />'
         );
     }
+    // And prepend the menu as well
+    const menu = '<ul>\n' + (
+      Array.from(
+        document.querySelectorAll('h2[id],h3[id],h4[id],h5[id],h6[id]')
+      ).map(el => `  <li><a href="#${el.id}">${el.innerText}</a></li>`).join('\n')
+    ) + '\n</ul>';
+    output.value = menu + '\n\n' + output.value;
+    preview.innerHTML = menu + '\n\n' + preview.innerHTML;
 });
 
 async function render(markdown) {
