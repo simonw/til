@@ -2,6 +2,8 @@
 
 I figured out how to serve a JavaScript project built using [Vite](https://vitejs.dev/) using GitHub Pages and a custom build script that runs using GitHub Actions.
 
+See [Serving a custom vector web map using PMTiles and maplibre-gl](https://til.simonwillison.net/gis/pmtiles) for details of that project.
+
 ## Creating a Vite project
 
 I started with a "vanilla" JavaScript Vite project. I used the following command to create it:
