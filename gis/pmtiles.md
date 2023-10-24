@@ -227,7 +227,7 @@ myMap.on("load", () => {
   myMap.setMaxBounds(myBounds);
 });
 ```
-This code needs to run on load because otherwise the myMap.getSource() method fails.
+This code needs to run on load because otherwise the `myMap.getSource()` method fails.
 
 Here we read the `bounds` property for our `protomaps` source and then use that to set the max bounds for the overall map.
 
