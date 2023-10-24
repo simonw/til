@@ -22,7 +22,7 @@ I used [bboxfinder.com](http://bboxfinder.com/#37.373977,-122.593346,37.570977,-
 
 I downloaded the latest `pmtiles` binary for Apple Silicon (the `go-pmtiles-1.10.5_Darwin_arm64.zip` file) from the [releases page](https://github.com/protomaps/go-pmtiles/releases).
 
-Then I ran it like this:
+Then I ran it against the URL to the latest build listed [on this page](https://maps.protomaps.com/builds/) like so:
 
     pmtiles extract \
       https://build.protomaps.com/20231023.pmtiles \
@@ -40,6 +40,35 @@ Extract required 32 total requests.
 Extract transferred 2.1 MB (overfetch 0.05) for an archive size of 2.0 MB
 ```
 Amazingly, that 2 MB file includes building-shape level detail for the entire area. It also includes much less detailed tiles for the rest of the world, so you can zoom in from globe level to street level within my specified area.
+
+You can also run the command without a `bbox` but with a `--maxzoom` to download a map of the whole world that works up to a specific zoom level, where 1 is the lowest (view the whole map at once). Zoom level 5 is only a 17 MB file:
+```bash
+pmtiles extract https://build.protomaps.com/20231023.pmtiles 5.pmtiles --maxzoom=5
+```
+Output:
+```
+fetching 1 dirs, 1 chunks, 1 requests
+Region tiles 1365, result tile entries 1101
+fetching 1101 tiles, 1 chunks, 1 requests
+fetching chunks 100% |█████████████████████████| (16/16 MB, 26 MB/s)        
+Completed in 1.519326s with 4 download threads (724.6634162544027 tiles/s).
+Extract required 5 total requests.
+Extract transferred 17 MB (overfetch 0.05) for an archive size of 17 MB
+```
+Add `--dry-run` to see the size without downloading the files - for example:
+```
+pmtiles extract https://build.protomaps.com/20231023.pmtiles OUTPUT.pmtiles --maxzoom=6 --dry-run
+```
+Which shows that zoom level 6 would be 46 MB:
+```
+fetching 1 dirs, 1 chunks, 1 requests
+Region tiles 5461, result tile entries 4832
+fetching 4832 tiles, 1 chunks, 1 requests
+Completed in 631.8625ms with 4 download threads (7647.232372992088 tiles/s).
+Extract required 5 total requests.
+Extract transferred 46 MB (overfetch 0.05) for an archive size of 46 MB
+```
+If you just need a very high level world map, zoom level 1 is only 495 KB.
 
 ## Exploring the pmtiles file
 
