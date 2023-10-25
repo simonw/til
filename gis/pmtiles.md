@@ -257,8 +257,15 @@ myMap.on("load", () => {
         const catlist = [categories.main, ...(categories.alternate || [])].join(
           ", ",
         );
+        let color = '#000080';
+        if (/store|shop/.test(catlist)) {
+          color = '#006400';
+        }
+        if (/restaurant|cafe/.test(catlist)) {
+          color = '#FFA500';
+        };
         const name = JSON.parse(row.names).value[0][0].value[0];
-        const marker = new maplibregl.Marker({ scale: 0.5, color: "#000080" });
+        const marker = new maplibregl.Marker({ scale: 0.5, color: color });
         marker
           .setLngLat([row.longitude, row.latitude])
           .setPopup(
@@ -273,6 +280,8 @@ myMap.on("load", () => {
 });
 ```
 The JSON format is a bit untidy, hence the `JSON.parse()` calls. But this works!
+
+I'm using a very simple set of regular expressions to show shops and restaurants with different marker colors.
 
 At first the markers were displaying in the wrong places, and the popup windows corrupted the display of the map. It turns out this is because I hadn't loaded the `maplibre-gl.css` file.
 
