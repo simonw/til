@@ -236,3 +236,53 @@ Here we read the `bounds` property for our `protomaps` source and then use that 
 I [deployed this with GitHub Pages](https://til.simonwillison.net/github-actions/vite-github-pages) and it can now be seen at https://simonw.github.io/hmb-map/
 
 <img width="1022" alt="Screenshot of a map centered on El Granada" src="https://github.com/simonw/til/assets/9599/a9d090c2-1015-4942-99e2-554599b2f98a">
+
+## Adding markers
+
+In a previous TIL I [extracted 900 point locations in Half Moon Bay](https://til.simonwillison.net/overture-maps/overture-maps-parquet#user-content-filtering-for-places-in-half-moon-bay) from the Overture Maps places dataset.
+
+I decided to add those to my new map the simplest way possible, by dropping in [a static JSON file](https://github.com/simonw/hmb-map/blob/main/public/places.json) (1.24MB).
+
+Then I added this to the JavaScript to load that JSON file and use it to populate markers for every point:
+
+```javascript
+myMap.on("load", () => {
+  const myBounds = myMap.getSource("protomaps").bounds;
+  myMap.setMaxBounds(myBounds);
+  // Now load the places.json
+  fetch("places.json").then((response) => {
+    response.json().then((data) => {
+      data.rows.forEach((row) => {
+        const categories = JSON.parse(row.categories);
+        const catlist = [categories.main, ...(categories.alternate || [])].join(
+          ", ",
+        );
+        const name = JSON.parse(row.names).value[0][0].value[0];
+        const marker = new maplibregl.Marker({ scale: 0.5, color: "#000080" });
+        marker
+          .setLngLat([row.longitude, row.latitude])
+          .setPopup(
+            new maplibregl.Popup().setHTML(
+              `<strong>${name}</strong><br>${catlist}`,
+            ),
+          );
+        marker.addTo(myMap);
+      });
+    });
+  });
+});
+```
+The JSON format is a bit untidy, hence the `JSON.parse()` calls. But this works!
+
+At first the markers were displaying in the wrong places, and the popup windows corrupted the display of the map. It turns out this is because I hadn't loaded the `maplibre-gl.css` file.
+
+I added this to `index.html`:
+
+```html
+<link rel="stylesheet" href="maplibre-gl.css">
+```
+And dropped a copy of the [maplibre-gl.css](https://github.com/simonw/hmb-map/blob/main/public/maplibre-gl.css) file into my `public/` directory.
+
+This fixed it, and now my map looks like this:
+
+![The map is now scattered with dark blue markers. One of them has a popup open, reading La Costanera: latin_american_restaurant, peruvian_restaurant, seafood_restaurant](https://github.com/simonw/til/assets/9599/82e5739b-13d8-4289-80d2-72716016d2b5)
