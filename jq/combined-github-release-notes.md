@@ -4,7 +4,7 @@ Matt Holt [asked](https://twitter.com/mholt6/status/1690177417393135616):
 
 > Is there a tool that uses the GitHub API to generate a doc with all release notes from a repo?
 
-Here's how do do that with the GitHub [releases API](https://docs.github.com/en/free-pro-team@latest/rest/releases/releases?apiVersion=2022-11-28#list-releases) and [jq](https://stedolan.github.io/jq/):
+Here's how to do that with the GitHub [releases API](https://docs.github.com/en/free-pro-team@latest/rest/releases/releases?apiVersion=2022-11-28#list-releases) and [jq](https://stedolan.github.io/jq/):
 
 ```bash
 curl -s 'https://api.github.com/repos/simonw/llm/releases' | \
