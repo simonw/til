@@ -83,7 +83,7 @@ ffmpeg \
 ```
 The two `-ss` lines seek the video stream and the audio stream to the `8:18:25` mark.
 
-`--s 5` seeks 5 seconds into the combined output. The instructions on StackExchange said to start at least 5s before the section of the video that you want to capture. The StackExchange recipe says this is for "giving me a few seconds to catch a good keyframe".
+`-ss 5` seeks 5 seconds into the combined output. The instructions on StackExchange said to start at least 5s before the section of the video that you want to capture. The StackExchange recipe says this is for "giving me a few seconds to catch a good keyframe".
 
 `-map 0:v` and `-map 1:a` sets the first stream up as video and the second stream as audio.
 
