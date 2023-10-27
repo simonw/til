@@ -32,7 +32,7 @@ I added a command to [sqlite-utils 2.15](https://sqlite-utils.datasette.io/en/st
 
     sqlite-utils enable-wal *.db
 
-The `disable-Wal` command disables it again.
+The `disable-wal` command disables it again.
 
 ## Futher notes
 
