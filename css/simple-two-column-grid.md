@@ -81,6 +81,8 @@ The key styles here are on that wrapping `<div>`.
 
 `grid-template-columns: 50% 50%` sets the grid to have two columns, each 50% of the width of the container.
 
+**Update:** Michael Nolan [points out](https://mastodon.me.uk/@mikenolan/111305738775991125) that a neater way to achieve the same thing is to use `grid-template-columns: 1fr 1fr;` - this has the same effect as `50% 50%` (two equally sized columns) but is a better pattern for when you start moving to other divisions, since `1fr 1fr 1fr` is a much nicer way to specify three columns than `33.33% 33.33% 33.33%`.
+
 `gap: 10px` is a shortcut that sets both the horizontal and vertical gap between the grid items to 10px.
 
 I decided to match the top padding of the `<figcaption>` to the gap between the grid items.
