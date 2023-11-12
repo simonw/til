@@ -68,6 +68,13 @@
 </div></textarea
       >
       <p><button id="executeTemplatesButton">Execute templates</button></p>
+<p>I often use a template like this one:</p>
+<pre>&lt;div class=&quot;slide&quot; id=&quot;${filename}&quot;&gt;
+  &lt;img src=&quot;https://static.simonwillison.net/static/2023/universe/${filename}&quot; alt=&quot;${escapeHtml(alt)}&quot;&gt;
+  &lt;a style=&quot;float: right; padding-left: 1em; border: none&quot; href=&quot;https://simonwillison.net/2023/Nov/10/universe/#${filename}&quot;&gt;#&lt;/a&gt;
+  ${markdownAsHtml}
+&lt;/div&gt;
+</pre>
     </div>
 
     <script type="module">
