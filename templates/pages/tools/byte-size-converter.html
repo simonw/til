@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Byte Size Converter</title>
+<style>
+    body {
+        font-family: Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .container {
+        text-align: center;
+    }
+    input, .output, .note {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Byte Size Converter</h1>
+    <input type="number" id="byteInput" placeholder="Enter size in bytes">
+    <div class="output" id="output"></div>
+    <div class="note">
+        <p>Note: 1 KB = 1024 bytes</p>
+        <p style="font-size: 0.8em">Built <a href="https://chat.openai.com/share/640d0d98-9493-4b62-9b27-e7b2acea36bd">using ChatGPT</a>.</p>
+    </div>
+</div>
+
+<script>
+    const formatter = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    document.getElementById('byteInput').addEventListener('input', function(e) {
+        var bytes = e.target.value;
+        var kb = bytes / 1024;
+        var mb = bytes / (1024**2);
+        var gb = bytes / (1024**3);
+        var tb = bytes / (1024**4);
+
+        document.getElementById('output').innerHTML = `
+            <p>${formatter.format(kb)} KB</p>
+            <p>${formatter.format(mb)} MB</p>
+            <p>${formatter.format(gb)} GB</p>
+            <p>${formatter.format(tb)} TB</p>
+        `;
+    });
+</script>
+</body>
+</html>
