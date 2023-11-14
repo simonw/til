@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->475<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->476<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -668,6 +668,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Using DuckDB in Python to access Parquet data](https://github.com/simonw/til/blob/main/duckdb/parquet.md) - 2022-09-16
 * [Use DuckDB to convert parquet to JSON and then open it in Datasette Lite](https://github.com/simonw/til/blob/main/duckdb/parquet-to-json.md) - 2023-03-21
+* [Summing columns in remote Parquet files using DuckDB](https://github.com/simonw/til/blob/main/duckdb/remote-parquet.md) - 2023-11-14
 
 ## awslambda
 
