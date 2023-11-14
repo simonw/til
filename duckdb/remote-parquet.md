@@ -136,6 +136,8 @@ I ran this in a fresh DuckDB instance with `nettop` watching the network traffic
 
 The total data transferred was 287 MiB - still a lot of data, but a big saving on 8GB.
 
+That's also around what I'd expect for 56 files, given that a single file fetched 5.3MB earlier and 5.3 * 56 = 296.8.
+
 The result it gave me was:
 ```
 ┌─────────────────┐
