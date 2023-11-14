@@ -130,7 +130,9 @@ FROM (
     SELECT SUM(size) as size_total FROM 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000055.parquet'
 );
 ```
-I ran this in a fresh DuckDB instance with `nettop` watching the network traffic. Here's the result:
+I ran this in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
+
+![Animated GIF of nettop showing different connections being made and how much bandwidth is used for each one](https://github.com/simonw/til/assets/9599/6e7f1e07-4d76-43d7-a2b7-81daba8c99ca)
 
 The total data transferred was 287 MiB - still a lot of data, but a big saving on 8GB.
 
