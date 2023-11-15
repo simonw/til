@@ -31,6 +31,8 @@ The URL to each Parquet file looks like this (this actually redirects to a final
 
     https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000000.parquet
 
+## Querying a single file
+
 Here's a DuckDB query that calculates the sum of that `size` column without retrieving the entire file:
 
 ```sql
@@ -66,6 +68,8 @@ Then I ran the SQL query, and saw this in the output from `nettop`:
 5331 KiB
 ```
 So DuckDB retrieved 5.3MB of data (from a file that was 159MB) to answer that query.
+
+## Using UNION ALL
 
 How about the total across all 56 files? I generated this `UNION ALL` query to answer that question:
 
@@ -130,6 +134,9 @@ FROM (
     SELECT SUM(size) as size_total FROM 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000055.parquet'
 );
 ```
+
+## Using read_parquet()
+
 **Update:** Alex Monahan [tipped me off](https://twitter.com/__AlexMonahan__/status/1724605446689108459) to a more concise alternative for the same query:
 
 ```sql
@@ -197,13 +204,15 @@ This version displays a useful progress bar while the query is executing:
 
 ![The results of the query with a progress bar at 100%](https://github.com/simonw/til/assets/9599/59dbc802-5fb7-4638-8248-9079a796811f)
 
-To meusure them, I ran a query in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
+To measure them, I ran a query in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
 
 ![Animated GIF of nettop showing different connections being made and how much bandwidth is used for each one](https://github.com/simonw/til/assets/9599/6e7f1e07-4d76-43d7-a2b7-81daba8c99ca)
 
 The total data transferred was 287 MiB - still a lot of data, but a big saving on 8GB.
 
 That's also around what I'd expect for 56 files, given that a single file fetched 5.3MB earlier and 5.3 * 56 = 296.8.
+
+## The end result
 
 The result it gave me was:
 ```
