@@ -215,7 +215,7 @@ SELECT
     SUM(size) AS size
 FROM read_parquet(
     list_transform(
-        generate_series(0,3),
+        generate_series(0, 55),
         n -> 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/' ||
             format('{:06d}', n) || '.parquet'
     )
