@@ -206,6 +206,23 @@ This version displays a useful progress bar while the query is executing:
 
 ![The results of the query with a progress bar at 100%](https://github.com/simonw/til/assets/9599/59dbc802-5fb7-4638-8248-9079a796811f)
 
+## Using list_transform()
+
+[@adityawarmanfw shared](https://twitter.com/adityawarmanfw/status/1724775939048182158) this much more elegant solution:
+
+```sql
+SELECT
+    SUM(size) AS size
+FROM read_parquet(
+    list_transform(
+        generate_series(0,3),
+        n -> 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/' ||
+            format('{:06d}', n) || '.parquet'
+    )
+);
+```
+This is using a [DuckDB lambda function](https://duckdb.org/docs/sql/functions/nested.html#lambda-functions) - really neat!
+
 To measure them, I ran a query in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
 
 ![Animated GIF of nettop showing different connections being made and how much bandwidth is used for each one](https://github.com/simonw/til/assets/9599/6e7f1e07-4d76-43d7-a2b7-81daba8c99ca)
