@@ -130,7 +130,74 @@ FROM (
     SELECT SUM(size) as size_total FROM 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000055.parquet'
 );
 ```
-I ran this in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
+**Update:** Alex Monahan [tipped me off](https://twitter.com/__AlexMonahan__/status/1724605446689108459) to a more concise alternative for the same query:
+
+```sql
+SELECT SUM(size)
+FROM read_parquet([
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000000.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000001.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000002.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000003.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000004.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000005.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000006.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000007.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000008.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000009.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000010.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000011.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000012.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000013.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000014.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000015.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000016.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000017.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000018.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000019.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000020.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000021.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000022.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000023.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000024.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000025.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000026.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000027.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000028.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000029.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000030.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000031.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000032.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000033.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000034.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000035.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000036.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000037.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000038.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000039.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000040.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000041.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000042.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000043.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000044.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000045.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000046.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000047.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000048.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000049.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000050.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000051.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000052.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000053.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000054.parquet',
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000055.parquet'
+]);
+```
+This version displays a useful progress bar while the query is executing:
+
+![The results of the query with a progress bar at 100%](https://github.com/simonw/til/assets/9599/59dbc802-5fb7-4638-8248-9079a796811f)
+
+To meusure them, I ran a query in a fresh DuckDB instance with `nettop` watching the network traffic. Here's what that looked like while it was running:
 
 ![Animated GIF of nettop showing different connections being made and how much bandwidth is used for each one](https://github.com/simonw/til/assets/9599/6e7f1e07-4d76-43d7-a2b7-81daba8c99ca)
 
