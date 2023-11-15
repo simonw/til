@@ -50,6 +50,8 @@ Running that in the `duckdb` CLI tool gives me this result:
 ```
 That's 3.14TB, just for the first file.
 
+## Tracking network usage with nettop
+
 How many bytes of data did that retrieve? We can find out on macOS using the `nettop` command.
 
 First we need the PID of our `duckdb` process:
@@ -61,7 +63,7 @@ simon            19985   0.0  0.0 408527616   4752 s118  S+    2:30PM   0:00.01 
 ```
 Now we can run the following, before we execute that SQL query:
 ```bash
-
+nettop -p 19985
 ```
 Then I ran the SQL query, and saw this in the output from `nettop`:
 ```
