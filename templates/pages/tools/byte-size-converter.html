@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Byte Size Converter</title>
-<style>
-    body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Byte Size Converter</title>
+    <style>
+      body {
         font-family: Helvetica, sans-serif;
         margin: 0;
         padding: 0;
@@ -14,47 +14,91 @@
         align-items: center;
         height: 100vh;
         background-color: #f0f0f0;
-    }
-    .container {
+      }
+      .container {
         text-align: center;
-    }
-    input, .output, .note {
+      }
+      input,
+      .output,
+      .note {
         margin-top: 20px;
         font-size: 20px;
-    }
-</style>
-</head>
-<body>
-<div class="container">
-    <h1>Byte Size Converter</h1>
-    <input type="number" id="byteInput" placeholder="Enter size in bytes">
-    <div class="output" id="output"></div>
-    <div class="note">
-        <p>This tool treats 1 KB as 1024 bytes</p>
-        <p style="font-size: 0.8em">Built <a href="https://chat.openai.com/share/640d0d98-9493-4b62-9b27-e7b2acea36bd">using ChatGPT</a>.</p>
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Byte Size Converter</h1>
+      <input type="number" id="byteInput" placeholder="Enter size in bytes" />
+      <div class="output" id="output"></div>
+      <div class="note">Note: 1 KB = 1024 bytes</div>
     </div>
-</div>
 
-<script>
-    const formatter = new Intl.NumberFormat('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    <script>
+      const formatter = new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: 0,
+      });
 
-    document.getElementById('byteInput').addEventListener('input', function(e) {
-        var bytes = e.target.value;
-        var kb = bytes / 1024;
-        var mb = bytes / (1024**2);
-        var gb = bytes / (1024**3);
-        var tb = bytes / (1024**4);
+      document
+        .getElementById("byteInput")
+        .addEventListener("input", function (e) {
+          // Parse the input as BigInt
+          var bytes = BigInt(e.target.value);
 
-        document.getElementById('output').innerHTML = `
-            <p>${formatter.format(kb)} KB</p>
-            <p>${formatter.format(mb)} MB</p>
-            <p>${formatter.format(gb)} GB</p>
-            <p>${formatter.format(tb)} TB</p>
-        `;
-    });
-</script>
-</body>
+          // Define the conversion factors as BigInt
+          const kbFactor = BigInt(1024);
+          const mbFactor = kbFactor ** BigInt(2);
+          const gbFactor = kbFactor ** BigInt(3);
+          const tbFactor = kbFactor ** BigInt(4);
+          const pbFactor = kbFactor ** BigInt(5);
+          const ebFactor = kbFactor ** BigInt(6);
+          const zbFactor = kbFactor ** BigInt(7);
+
+          // Perform calculations using BigInt arithmetic
+          var kb = bytes / kbFactor;
+          var mb = bytes / mbFactor;
+          var gb = bytes / gbFactor;
+          var tb = bytes / tbFactor;
+          var pb = bytes / pbFactor;
+          var eb = bytes / ebFactor;
+          var zb = bytes / zbFactor;
+
+          // Calculate fractional parts
+          var kbFraction = ((bytes % kbFactor) * 100n) / kbFactor;
+          var mbFraction = ((bytes % mbFactor) * 100n) / mbFactor;
+          var gbFraction = ((bytes % gbFactor) * 100n) / gbFactor;
+          var tbFraction = ((bytes % tbFactor) * 100n) / tbFactor;
+          var pbFraction = ((bytes % pbFactor) * 100n) / pbFactor;
+          var ebFraction = ((bytes % ebFactor) * 100n) / ebFactor;
+          var zbFraction = ((bytes % zbFactor) * 100n) / zbFactor;
+
+          // Format the results
+          function formatBigInt(value, fraction) {
+            let formattedValue =
+              value < Number.MAX_SAFE_INTEGER
+                ? formatter.format(Number(value))
+                : value.toString();
+            let formattedFraction = fraction.toString().padStart(2, "0"); // Ensure two digits
+            return `${formattedValue}.${formattedFraction}`;
+          }
+          let html = [];
+          [
+            [kb, kbFraction, "KB"],
+            [mb, mbFraction, "MB"],
+            [gb, gbFraction, "GB"],
+            [tb, tbFraction, "TB"],
+            [pb, pbFraction, "PB"],
+            [eb, ebFraction, "EB"],
+            [zb, zbFraction, "ZB"],
+          ].forEach(([value, fraction, unit]) => {
+            const formattedValue = formatBigInt(value, fraction);
+            if (formattedValue !== "0.00") {
+              html.push(`<p>${formattedValue} ${unit}</p>`);
+            }
+          });
+
+          document.getElementById("output").innerHTML = html.join("");
+        });
+    </script>
+  </body>
 </html>
