@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->476<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->477<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -746,6 +746,7 @@ Search these TILs at https://til.simonwillison.net/
 ## misc
 
 * [hexdump and hexdump -C](https://github.com/simonw/til/blob/main/misc/hexdump.md) - 2023-05-22
+* [Cloning my voice with ElevenLabs](https://github.com/simonw/til/blob/main/misc/voice-cloning.md) - 2023-11-15
 
 ## http
 
