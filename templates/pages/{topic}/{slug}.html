@@ -83,7 +83,7 @@ document.querySelectorAll('h2,h3,h4,h5,h6').forEach(el => {
 
 // Add an audio player after any .wav or .mp3 links
 // Get all anchor tags on the page
-document.querySelectorAll('a[href$=".wav"],a[href$=".mp3"]').forEach(function(link) {
+document.querySelectorAll('a[href$=".wav"],a[href$=".mp3"],a[href$=".m4a"]').forEach(function(link) {
   var href = link.getAttribute('href');
   var audio = document.createElement('audio');
   audio.controls = true;  // Show controls
