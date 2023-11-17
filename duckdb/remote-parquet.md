@@ -315,7 +315,7 @@ select * from parquet_metadata(
 );
 ```
 That returns the following, after fetching 37 KiB:
-```
+```wide
 ┌──────────────────────┬──────────────┬────────────────────┬───┬──────────────────┬──────────────────────┬──────────────────────┐
 │      file_name       │ row_group_id │ row_group_num_rows │ … │ data_page_offset │ total_compressed_s…  │ total_uncompressed…  │
 │       varchar        │    int64     │       int64        │   │      int64       │        int64         │        int64         │
@@ -334,8 +334,7 @@ That returns the following, after fetching 37 KiB:
 └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 Since some of the columns here were truncated in the middle, I typed `.columns` to switch modes and ran the query again:
-
-```
+```wide
 ┌──────────────────────┬─────────┬──────────────────────┬───┬──────────────────────┬──────────────────────┬──────────────────────┐
 │        Column        │  Type   │        Row 1         │ … │        Row 7         │        Row 8         │        Row 9         │
 ├──────────────────────┼─────────┼──────────────────────┼───┼──────────────────────┼──────────────────────┼──────────────────────┤
