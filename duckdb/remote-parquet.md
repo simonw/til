@@ -283,7 +283,7 @@ Running `create view` here transferred 37 KiB according to `nettop` - presumably
 describe midjourney_messages;
 ```
 Output:
-```
+```wide
 ┌─────────────┬─────────────┬─────────┬─────────┬─────────┬───────┐
 │ column_name │ column_type │  null   │   key   │ default │ extra │
 │   varchar   │   varchar   │ varchar │ varchar │ varchar │ int32 │
