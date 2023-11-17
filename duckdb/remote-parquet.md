@@ -385,3 +385,25 @@ Output:
     Peak memory usage: 458.88 KiB.
 
 This transfers around 290 MiB,  effectively the same as DuckDB.
+
+## Polars support for streaming Parquet over HTTP
+
+[Polars](https://github.com/pola-rs/polars) provides "blazingly fast DataFrames in Rust, Python, Node.js, R and SQL". Apparently inspired by this post, they added support for answering this kind of query by streaming portions of Parquet files over HTTP in [#12493: Downloading https dataset doesn't appropriately push down predicates](https://github.com/pola-rs/polars/issues/12493).
+
+In the released version, the following [should work](https://github.com/pola-rs/polars/issues/12493#issuecomment-1814763393):
+
+```python
+import polars as pl
+
+base_url = "https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/"
+
+files = []
+
+for i in range(56):
+    url = f"{base_url}{i:06}.parquet"
+    files.append(url)
+
+
+df = pl.scan_parquet(files).select(pl.col("size").sum())
+print(df.collect())
+```
