@@ -304,3 +304,22 @@ Output:
 select count(*) from midjourney_messages;
 ```
 Approximately 114 KiB of data was fetched.
+
+## The same trick in ClickHouse
+
+richraposa [on Hacker News](https://news.ycombinator.com/item?id=38271082#38271190) pointed out that [ClickHouse](https://www.clickhouse.com/) can do the same HTTP Range header trick:
+
+```sql
+SELECT sum(size)
+    FROM url('https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/0000{01..55}.parquet')
+```
+Output:
+
+    ┌───────sum(size)─┐
+    │ 159344011148016 │
+    └─────────────────┘
+    
+    1 row in set. Elapsed: 11.615 sec. Processed 54.08 million rows, 8.50 GB (4.66 million rows/s., 731.83 MB/s.)
+    Peak memory usage: 458.88 KiB.
+
+This transfers around 290 MiB,  effectively the same as DuckDB.
