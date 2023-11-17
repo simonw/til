@@ -245,3 +245,62 @@ The result it gave me was:
 That's 162800469938172 bytes - or 148.07 TB of CDN space used by Midjourney images!
 
 (I got ChatGPT to build me a tool for converting bytes to KB/MB/GB/TB: [Byte Size Converter](https://til.simonwillison.net/tools/byte-size-converter).)
+
+## CTEs and views work too
+
+You can run this query using a CTE to make it nicer to read:
+
+```sql
+with midjourney_messages as (
+    select
+        *
+    from read_parquet(
+        list_transform(
+            generate_series(0, 2),
+            n -> 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/' ||
+                format('{:06d}', n) || '.parquet'
+        )
+    )
+)
+select sum(size) as size from midjourney_messages;
+```
+(I used `generate_series(0, 2)` here instead of `(0, 55)` to speed up these subsequent experiments.)
+
+Or you can define a view, which lets you refer to `midjourney_messages` in multiple queries. This is a bad idea though, as each time you execute the query against the view it will download the data again:
+
+```sql
+create view midjourney_messages as
+select * from read_parquet(
+    list_transform(
+        generate_series(0, 2),
+        n -> 'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/' ||
+            format('{:06d}', n) || '.parquet'
+    )
+);
+```
+Running `create view` here transferred 37 KiB according to `nettop` - presumably from loading metadata in order to be able to answer `describe` queries like this one:
+```sql
+describe midjourney_messages;
+```
+Output:
+```
+┌─────────────┬─────────────┬─────────┬─────────┬─────────┬───────┐
+│ column_name │ column_type │  null   │   key   │ default │ extra │
+│   varchar   │   varchar   │ varchar │ varchar │ varchar │ int32 │
+├─────────────┼─────────────┼─────────┼─────────┼─────────┼───────┤
+│ id          │ VARCHAR     │ YES     │         │         │       │
+│ channel_id  │ VARCHAR     │ YES     │         │         │       │
+│ content     │ VARCHAR     │ YES     │         │         │       │
+│ timestamp   │ VARCHAR     │ YES     │         │         │       │
+│ image_id    │ VARCHAR     │ YES     │         │         │       │
+│ height      │ BIGINT      │ YES     │         │         │       │
+│ width       │ BIGINT      │ YES     │         │         │       │
+│ url         │ VARCHAR     │ YES     │         │         │       │
+│ size        │ BIGINT      │ YES     │         │         │       │
+└─────────────┴─────────────┴─────────┴─────────┴─────────┴───────┘
+```
+`nettop` confirmed that each time I ran this query:
+```sql
+select count(*) from midjourney_messages;
+```
+Approximately 114 KiB of data was fetched.
