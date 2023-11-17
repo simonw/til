@@ -305,6 +305,69 @@ select count(*) from midjourney_messages;
 ```
 Approximately 114 KiB of data was fetched.
 
+## parquet_metadata()
+
+chrisjc [tipped me off](https://news.ycombinator.com/item?id=38271082#38298799) about the `parquet_metadata()` function, which can be used like this:
+
+```sql
+select * from parquet_metadata(
+    'https://huggingface.co/datasets/vivym/midjourney-messages/resolve/main/data/000000.parquet'
+);
+```
+That returns the following, after fetching 37 KiB:
+```
+┌──────────────────────┬──────────────┬────────────────────┬───┬──────────────────┬──────────────────────┬──────────────────────┐
+│      file_name       │ row_group_id │ row_group_num_rows │ … │ data_page_offset │ total_compressed_s…  │ total_uncompressed…  │
+│       varchar        │    int64     │       int64        │   │      int64       │        int64         │        int64         │
+├──────────────────────┼──────────────┼────────────────────┼───┼──────────────────┼──────────────────────┼──────────────────────┤
+│ https://huggingfac…  │            0 │            1000000 │ … │           601280 │             13133418 │             23093988 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         13133571 │                  116 │                  112 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         13396455 │             46191873 │            208657682 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         59593218 │              9046231 │             36052113 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         68973087 │             13118570 │             23093988 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         81491806 │               498549 │               915584 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         81990515 │               496767 │               916607 │
+│ https://huggingfac…  │            0 │            1000000 │ … │         82909448 │             71430496 │            180090922 │
+│ https://huggingfac…  │            0 │            1000000 │ … │        154593238 │              5392260 │              8286381 │
+├──────────────────────┴──────────────┴────────────────────┴───┴──────────────────┴──────────────────────┴──────────────────────┤
+│ 9 rows                                                                                                   23 columns (6 shown) │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+Since some of the columns here were truncated in the middle, I typed `.columns` to switch modes and ran the query again:
+
+```
+┌──────────────────────┬─────────┬──────────────────────┬───┬──────────────────────┬──────────────────────┬──────────────────────┐
+│        Column        │  Type   │        Row 1         │ … │        Row 7         │        Row 8         │        Row 9         │
+├──────────────────────┼─────────┼──────────────────────┼───┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ file_name            │ varchar │  https://huggingfac… │ … │  https://huggingfac… │  https://huggingfac… │  https://huggingfac… │
+│ row_group_id         │ int64   │                    0 │ … │                    0 │                    0 │                    0 │
+│ row_group_num_rows   │ int64   │              1000000 │ … │              1000000 │              1000000 │              1000000 │
+│ row_group_num_colu…  │ int64   │                    9 │ … │                    9 │                    9 │                    9 │
+│ row_group_bytes      │ int64   │            481107377 │ … │            481107377 │            481107377 │            481107377 │
+│ column_id            │ int64   │                    0 │ … │                    6 │                    7 │                    8 │
+│ file_offset          │ int64   │             13133422 │ … │             82486423 │            153917026 │            159309733 │
+│ num_values           │ int64   │              1000000 │ … │              1000000 │              1000000 │              1000000 │
+│ path_in_schema       │ varchar │                   id │ … │                width │                  url │                 size │
+│ type                 │ varchar │           BYTE_ARRAY │ … │                INT64 │           BYTE_ARRAY │                INT64 │
+│ stats_min            │ varchar │                      │ … │                  256 │                      │                  312 │
+│ stats_max            │ varchar │                      │ … │                 9408 │                      │             17937790 │
+│ stats_null_count     │ int64   │                    0 │ … │                    0 │                    0 │                    0 │
+│ stats_distinct_count │ int64   │                      │ … │                      │                      │                      │
+│ stats_min_value      │ varchar │  1089054097631629352 │ … │                  256 │  https://cdn.discor… │                  312 │
+│ stats_max_value      │ varchar │  1144508197969854484 │ … │                 9408 │  https://cdn.discor… │             17937790 │
+│ compression          │ varchar │               SNAPPY │ … │               SNAPPY │               SNAPPY │               SNAPPY │
+│ encodings            │ varchar │  PLAIN, RLE, RLE_DI… │ … │  PLAIN, RLE, RLE_DI… │  PLAIN, RLE, RLE_DI… │  PLAIN, RLE, RLE_DI… │
+│ index_page_offset    │ int64   │                      │ … │                      │                      │                      │
+│ dictionary_page_of…  │ int64   │                    4 │ … │             81989656 │             82486530 │            153917473 │
+│ data_page_offset     │ int64   │               601280 │ … │             81990515 │             82909448 │            154593238 │
+│ total_compressed_s…  │ int64   │             13133418 │ … │               496767 │             71430496 │              5392260 │
+│ total_uncompressed…  │ int64   │             23093988 │ … │               916607 │            180090922 │              8286381 │
+├──────────────────────┴─────────┴──────────────────────┴───┴──────────────────────┴──────────────────────┴──────────────────────┤
+│ 9 rows  (4 shown)                                                                                                   23 columns │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+Typing `.rows` switches the mode back to the default again.
+
 ## The same trick in ClickHouse
 
 richraposa [on Hacker News](https://news.ycombinator.com/item?id=38271082#38271190) pointed out that [ClickHouse](https://www.clickhouse.com/) can do the same HTTP Range header trick:
