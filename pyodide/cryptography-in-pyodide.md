@@ -104,3 +104,7 @@ build:
     cd Lib && tar --exclude=test -cf - sqlite3 | tar -C $DISTDIR -xf -
 ```
 One thing I don't understand is why some pure-Python packages such as Click also [get this treatment](https://github.com/pyodide/pyodide/blob/main/packages/click/meta.yaml) - since those should work if installed directly from PyPI using `micropip.install()`.
+
+**Update:** John Ott [figured this out](https://mastodon.social/@jbott/111478972640883459). There's an open issue, [Remove pure Python packages from the repository](https://github.com/pyodide/pyodide/issues/2580), which says:
+
+> Currently, we have dozens of pure Python packages in the repository. Some packages require a patch, and some packages don't have a wheel, but many packages exist only because other packages with C-extension depend on them in runtime.
