@@ -44,7 +44,7 @@ That [packages/](https://github.com/pyodide/pyodide/tree/main/packages) folder h
 - `Pygments`
 - `biopython`
 - `fastparquet`
-- `ffmpg`
+- `ffmpeg`
 - `gdal`
 - `geopandas`
 - `geos`
