@@ -110,6 +110,34 @@ order by not_after desc;
 ```
 ![Screenshot of Datasette running that SQL query. The top results are lambda-demo.datasette.io 	2024-10-01 sqlite-utils.datasette.io 	2024-09-27 sqlite-utils.datasette.io 	2024-09-27 docs.datasette.io 	2024-05-13 docs.datasette.io 	2024-05-13 shot-scraper.datasette.io 	2024-04-17 shot-scraper.datasette.io 	2024-04-17](https://static.simonwillison.net/static/2023/steampipe-crt-datasette.jpg)
 
+Here's a more interesting query, returning my most recent Hacker News comments demonstrating a CTE, JSON processing and a join across two virtual tables:
+
+```sql
+with post_ids as (
+  select
+    value
+  from
+    json_each(submitted),
+    hackernews_user
+  where
+    hackernews_user.id = 'simonw'
+  limit
+    20
+)
+select
+  *
+from
+  hackernews_item
+where
+  hackernews_item.id in (
+    select
+      value
+    from
+      post_ids
+  )
+order by time desc
+```
+
 Here's more detailed documentation of the kind of queries you can now run:
 
 - [Tables in crt.sh](https://hub.steampipe.io/plugins/turbot/crtsh/tables)
