@@ -8,6 +8,8 @@ I want a fresh issue in my private `simonw/planner` repo for every day that I'm 
 
 So... I needed a mechanism for automatically creating a new issue every day.
 
+I used ChatGPT a bunch to help build this - a slightly edited transcript [is available here](https://gist.github.com/simonw/d189b737911317c2b9f970342e9fae95).
+
 ## Issue templates and URLs
 
 I created a file `.github/ISSUE_TEMPLATE/day.yml` with the following:`
