@@ -41,8 +41,9 @@ import sys
 import time
 import httpx
 
-@pytest.fixture
-def ds_server(tmpdir):
+@pytest.fixture(scope="session")
+def ds_server(tmp_path_factory):
+    tmpdir = tmp_path_factory.mktemp("tmp")
     db_path = str(tmpdir / "data.db")
     db = sqlite3.connect(db_path)
     db.execute("""
@@ -81,6 +82,10 @@ def wait_until_responds(url, timeout=5.0):
     raise AssertionError("Timed out waiting for {} to respond".format(url))
 ```
 The `ds_server` fixture creates a SQLite database in a temporary directory, runs Datasette against it using `subprocess.Popen()` and then waits for the server to respond to a request. Then it yields the URL to that server - that yielded value will become available to any test that uses that fixture.
+
+Note that `ds_server` is marked as `@pytest.fixture(scope="session")`. This means that the fixture will be excuted just once per test session and re-used by each test. Without the `scope="session"` the server will be started and then terminated once per test, which is a lot slower.
+
+See [Session-scoped temporary directories in pytest](https://til.simonwillison.net/pytest/session-scoped-tmp) for an explanation of the `tmp_path_factory` fixture.
 
 Here's what a basic test then looks like (in `tests/test_playwright.py`):
 ```python
