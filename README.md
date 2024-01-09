@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->484<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->485<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -601,6 +601,7 @@ Search these TILs at https://til.simonwillison.net/
 ## cloudflare
 
 * [Adding a robots.txt using Cloudflare workers](https://github.com/simonw/til/blob/main/cloudflare/robots-txt-cloudflare-workers.md) - 2021-12-21
+* [How to get Cloudflare to cache HTML](https://github.com/simonw/til/blob/main/cloudflare/cloudflare-cache-html.md) - 2024-01-08
 
 ## webauthn
 
