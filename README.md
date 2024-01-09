@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->485<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->486<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -427,6 +427,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using pytest-httpx to run intercepted requests through an in-memory Datasette instance](https://github.com/simonw/til/blob/main/datasette/pytest-httpx-datasette.md) - 2023-07-24
 * [Remember to commit when using datasette.execute_write_fn()](https://github.com/simonw/til/blob/main/datasette/remember-to-commit.md) - 2023-08-31
 * [Running Datasette on Hugging Face Spaces](https://github.com/simonw/til/blob/main/datasette/hugging-face-spaces.md) - 2023-09-08
+* [Writing Playwright tests for a Datasette Plugin](https://github.com/simonw/til/blob/main/datasette/playwright-tests-datasette-plugin.md) - 2024-01-08
 
 ## jupyter
 
