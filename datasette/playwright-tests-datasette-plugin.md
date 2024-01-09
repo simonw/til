@@ -4,7 +4,7 @@ I really like [Playwright](https://playwright.dev/) for writing automated tests 
 
 Today I integrated Playwright into the tests for one of my Datasette plugins for the first time. I based my work off Alex Garcia's [tests for datasette-comments](https://github.com/datasette/datasette-comments/tree/0.1.0/tests).
 
-I added Playwright to me [datasette-search-all](https://github.com/simonw/datasette-search-all) plugin as part of [issue #19](https://github.com/simonw/datasette-search-all/issues/19). Here's what I did.
+I added Playwright to my [datasette-search-all](https://github.com/simonw/datasette-search-all) plugin as part of [issue #19](https://github.com/simonw/datasette-search-all/issues/19). Here's what I did.
 
 ## Playwright as a test dependency
 
