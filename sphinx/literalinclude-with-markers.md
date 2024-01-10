@@ -57,3 +57,4 @@ async def test_signed_cookie_actor():
     assert response.json() == {"actor": {"id": "root"}}
 # -- end test_signed_cookie_actor --
 ```
+The rendered documentation [can be seen here](https://docs.datasette.io/en/latest/testing_plugins.html#using-datasette-client-in-tests).
