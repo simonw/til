@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->486<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->487<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -450,6 +450,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using sphinx.ext.extlinks for issue links](https://github.com/simonw/til/blob/main/sphinx/sphinx-ext-extlinks.md) - 2021-02-17
 * [Adding Sphinx autodoc to a project, and configuring Read The Docs to build it](https://github.com/simonw/til/blob/main/sphinx/sphinx-autodoc.md) - 2021-08-10
 * [Format code examples in documentation with blacken-docs](https://github.com/simonw/til/blob/main/sphinx/blacken-docs.md) - 2022-04-24
+* [literalinclude with markers for showing code in documentation](https://github.com/simonw/til/blob/main/sphinx/literalinclude-with-markers.md) - 2024-01-10
 
 ## postgresql
 
