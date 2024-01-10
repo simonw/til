@@ -61,4 +61,4 @@ async def test_signed_cookie_actor():
 ```
 The rendered documentation [can be seen here](https://docs.datasette.io/en/latest/testing_plugins.html#using-datasette-client-in-tests).
 
-The `# fmt: off` line at the start is an instruction to [Black](https://github.com/psf/black) to ignore that section of the file. Without that, running Black would insist on adding newlines before the closing `# -- end` comments, which would show up [as blank space in the documents](https://github.com/simonw/datasette/issues/2231).
+The `# fmt: off` line at the start is an instruction to [Black](https://github.com/psf/black) to ignore that section of the file. Without that, running Black would insist on adding newlines before the closing `# -- end` comments, which would show up [as blank space in the documentation](https://github.com/simonw/datasette/issues/2231).
