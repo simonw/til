@@ -1,6 +1,6 @@
 # literalinclude with markers for showing code in documentation
 
-I wanted to include some example Python tests in the Datasette documentation - but since they were tests, I also wanted to execute them as part of my test suite to make sure they worked correctly.
+I [wanted to include](https://github.com/simonw/datasette/issues/1830) some example Python tests in the Datasette documentation - but since they were tests, I also wanted to execute them as part of my test suite to make sure they worked correctly.
 
 I solved this with the Sphinx [literalinclude directive](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude).
 
