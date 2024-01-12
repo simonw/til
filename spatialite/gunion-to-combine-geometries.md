@@ -54,7 +54,7 @@ select GUnion(geometry) as geometry from track where "FRAREGIONS" = :p0
 
 Thanks to faceting I noticed there are 8 different FRAREGIONS. `datasette-geojson-map` supports [styled map features](https://datasette.io/plugins/datasette-geojson-map#user-content-styling-map-features), so I decided to try and show the different regions in different colours.
 
-This query did th trick:
+This query did the trick:
 
 ```sql
 select
