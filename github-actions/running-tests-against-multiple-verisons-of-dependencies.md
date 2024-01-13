@@ -45,3 +45,24 @@ pip install 'datasette${{ matrix.datasette-version }}'
 The single quotes there are important - without them my shell got confused by the `<=` and `>=` symbols.
 
 The end result of this is that tests run against the highest Datasette release in the `0.x` series, and also against the highest release in the `1.x` series, including alphas if no `1.x` stable release is out yet.
+
+## Adding extra version information to the pytest report
+
+When using this pattern, it can be useful to include the Datasette version in the output of the `pytest` command.
+
+Here's an easy way to do that: add the following to `tests/conftest.py`:
+
+```python
+import datasette
+
+
+def pytest_report_header():
+    return "Datasette: {}".format(datasette.__version__)
+```
+Running `pytest` will now output the following:
+```
+============================ test session starts ============================
+platform darwin -- Python 3.9.17, pytest-7.4.2, pluggy-1.3.0
+Datasette: 1.0a6
+rootdir: /Users/...
+```
