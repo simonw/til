@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->487<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->488<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -793,4 +793,8 @@ Search these TILs at https://til.simonwillison.net/
 ## pyodide
 
 * [Cryptography in Pyodide](https://github.com/simonw/til/blob/main/pyodide/cryptography-in-pyodide.md) - 2023-11-26
+
+## playwright
+
+* [Using expect() to wait for a selector to match multiple items](https://github.com/simonw/til/blob/main/playwright/expect-selector-count.md) - 2024-01-13
 <!-- index ends -->
