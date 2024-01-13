@@ -27,7 +27,7 @@ playwright = ["pytest-playwright"]
 ```
 With either of these patterns in place, the new dependencies can be installed like this:
 ```bash
-pip install -e .[test,playwright]
+pip install -e '.[test,playwright]'
 ```
 
 ## Running a localhost server for the tests
