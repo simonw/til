@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->489<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->490<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -254,6 +254,7 @@ Search these TILs at https://til.simonwillison.net/
 ## pypi
 
 * [Adding project links to PyPI](https://github.com/simonw/til/blob/main/pypi/project-links.md) - 2020-05-11
+* [Publish releases to PyPI from GitHub Actions without a password or token](https://github.com/simonw/til/blob/main/pypi/pypi-releases-from-github.md) - 2024-01-14
 
 ## asgi
 
