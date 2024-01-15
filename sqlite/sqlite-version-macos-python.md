@@ -186,7 +186,7 @@ Note that the `dylib` version appears to be missing the FTS extension.
 
 ## Adding compiler options
 
-Here's a modification that includes full-text support:
+Here's a modification that includes [full-text search](https://www.sqlite.org/fts5.html) support:
 
 ```bash
 gcc -dynamiclib sqlite3.c -o libsqlite3.0.dylib -lm -lpthread \
