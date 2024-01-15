@@ -38,6 +38,10 @@ I used `publish.yml` as the name of my workflow file.
 
 I also set the environment to `release`. I don't fully understand [GitHub Actions environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment) yet, but the PyPI documentation suggested this was a good idea and I think it gives me more flexibility for setting extra permissions in the future.
 
+PyPI says:
+
+> While not required, a dedicated publishing environment is strongly encouraged, especially if your repository has maintainers with commit access who shouldn't have PyPl publishing access.
+
 ## Creating the GitHub Actions environment
 
 Since we specified the environment on PyPI we need to create that environment. That can be done in the settings area for the repository - in my case that page was here:
