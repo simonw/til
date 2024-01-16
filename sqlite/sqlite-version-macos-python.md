@@ -6,6 +6,8 @@ I've been trying to figure this out for years. Previous notes include [Using LD_
 
 It's pretty simple: you compile a new `libsqlite3.0.dylib` module from the SQLite amalgamation release, then point `DYLD_LIBRARY_PATH` to it before loading Python and importing `sqlite3`.
 
+> :warning: This works against Python 3 installed via Homebrew, but has been reported not to work against a Python 3 installed directly from [www.python.org](https://www.python.org/)
+
 The amalgamation builds are released as zip files on the [SQLite downloads page](https://www.sqlite.org/download.html) - let's grab 3.42.0, the most recent stable release:
 
 ```bash
