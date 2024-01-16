@@ -136,7 +136,9 @@ This behaviour is defined by `setuptools`. The [Automatic Discovery](https://set
 
 ## Adding metadata
 
-I can add metadata to my package directly in that `pyproject.toml`. `description = ` can add a short description, and `readme = "filename"` can add a long description imported from a README file.
+I can add metadata to my package directly in that `pyproject.toml`.
+
+`description = ` can add a short description, and `readme = "filename"` can add a long description imported from a README file.
 
 ```toml
 [project]
@@ -246,6 +248,7 @@ type demo_package_hello
 ```
 ```
 demo_package_hello is /private/tmp/my-new-environment/venv/bin/demo_package_hello
+```
 ```bash
 cat $(which demo_package_hello)
 ```
