@@ -20,8 +20,6 @@ In the past I've had to create a token on PyPI and paste it into a GitHub Action
 
 This process differs slightly depending on if you are planning on publishing a brand new package or updating an existing one to use Trusted Publishers going forward.
 
-I haven't tried updating an existing package yet, but [the instructions for that are here](https://docs.pypi.org/trusted-publishers/adding-a-publisher/).
-
 When publishing a brand new package you can instead use [a special mechanism called "pending publishers"](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/).
 
 This also lets you reserve a package name before you publish the first version. I like this - in the past I've attempted to publish a package only to discover that someone else had already reserved a too-similar name.
@@ -151,3 +149,19 @@ For my repo I create a release using this form: https://github.com/datasette/dat
 Creating the release triggers the workflow, which runs the tests, builds the package and then publishes it to PyPI.
 
 Here's the resulting package: [pypi.org/project/datasette-build/](https://pypi.org/project/datasette-build/)
+
+## Configuring a trusted publisher for an existing package
+
+Here are [the instructions for upgrading an existing package](https://docs.pypi.org/trusted-publishers/adding-a-publisher/).
+
+I tried this myself for [datasette-edit-templates](). Here's [the diff](https://github.com/simonw/datasette-edit-templates/compare/7e1e0a58e60139adf5958dc42066af9978083296...0073bae4cd4609bc22aa10a3b81b22e7e6ba5e3f). I used this process:
+
+1. Upgrade the `publish.yml` deploy step to include `environment: release`, `permissions: id-token: write`, a `python -m build` step and the `pypa/gh-action-pypi-publish@release/v1` action.
+2. Navigate to that projkect on PyPI and add a new trusted publisher - for my project that page was https://pypi.org/manage/project/datasette-edit-templates/settings/publishing/
+3. Create the environment called `release` on the GitHub settings page for that repository.
+4. Update the version number and create a new release.
+
+The PyPI form looked like this:
+
+![Add a new publisher form. Owner (required) simonw. Repository name (required) datasette-edit-templates. Workflow name (required) publish.yml Environment name (optional) release.](https://github.com/simonw/til/assets/9599/4a790f99-1741-42f0-b067-37585e4b5fa5)
+
