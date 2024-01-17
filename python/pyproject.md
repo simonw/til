@@ -37,6 +37,10 @@ build-backend = "setuptools.build_meta"
 ```
 If you want to be explicit you can add that section - it does no harm, and likely makes the file easier to understand in the future. I was excited to find that it worked without this though.
 
+Here's the relevant section from [PEP 517](https://peps.python.org/pep-0517/):
+
+> If the `pyproject.toml` file is absent, or the `build-backend` key is missing, the source tree is not using this specification, and tools should revert to the legacy behaviour of running `setup.py` (either directly, or by implicitly invoking the `setuptools.build_meta:__legacy__` backend).
+
 ## Editable mode with pip install
 
 To demonstrate, I'm going to create a virtual environment and install my package in editable mode.
