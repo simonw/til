@@ -2,6 +2,8 @@
 
 I published a package to [PyPI](https://pypi.org) today using their [Trusted Publishers](https://docs.pypi.org/trusted-publishers/) mechanism for the first time.
 
+> **Update 17th January 2024**: My [python-lib](https://github.com/simonw/python-lib) cookiecutter template now implements this pattern, see [Publish Python packages to PyPI with a python-lib cookiecutter template and GitHub Actions](https://simonwillison.net/2024/Jan/16/python-lib-pypi/) for details.
+
 Trusted Publishers provides a mechanism for configuring PyPI to allow a specific GitHub Actions workflow to publish releases to PyPI without needing to use a password or token.
 
 It's based on OpenID Connect, but you don't need to know the details of that at all.
