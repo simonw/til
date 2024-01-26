@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->490<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->491<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -799,4 +799,8 @@ Search these TILs at https://til.simonwillison.net/
 ## playwright
 
 * [Using expect() to wait for a selector to match multiple items](https://github.com/simonw/til/blob/main/playwright/expect-selector-count.md) - 2024-01-13
+
+## httpx
+
+* [Logging OpenAI API requests and responses using HTTPX](https://github.com/simonw/til/blob/main/httpx/openai-log-requests-responses.md) - 2024-01-26
 <!-- index ends -->
