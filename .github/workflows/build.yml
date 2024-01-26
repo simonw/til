@@ -44,6 +44,8 @@ jobs:
       run: curl --fail -o main/tils.db https://s3.amazonaws.com/til.simonwillison.net/tils.db
       continue-on-error: true
     - name: Build database
+      env:
+        MARKDOWN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |-
         cd main
         python build_database.py
