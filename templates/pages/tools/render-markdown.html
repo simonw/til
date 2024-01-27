@@ -153,7 +153,11 @@ button {
 <h1>Render Markdown</h1>
 <p>Using GitHub's API, see <a href="/til/til/markdown_github-markdown-api.md">Rendering Markdown with the GitHub Markdown API</a></p>
 <p><textarea id="input" style="width: 80%; height: 10em"></textarea></p>
-<p><button>Render</button> <label><input type="checkbox" id="strip_hidden" checked> Strip hidden and cleanup HTML</label></p>
+<p>
+  <button>Render</button>
+  <label><input type="checkbox" id="strip_hidden" checked> Strip hidden and cleanup HTML</label>
+  <label><input type="checkbox" id="gfm_mode"> Use GitHub Flavored Markdown (GFM)</label>
+</p>
 <p><textarea id="output" style="width: 80%; height: 10em"></textarea></p>
 <div id="preview"></div>  
 <script>
@@ -218,12 +222,13 @@ button.addEventListener('click', async function() {
 });
 
 async function render(markdown) {
+    const mode = document.getElementById('gfm_mode').checked ? 'gfm' : 'markdown';
     return (await fetch('https://api.github.com/markdown', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({'mode': 'markdown', 'text': markdown})
+        body: JSON.stringify({'mode': mode, 'text': markdown})
     })).text();
 }
 
