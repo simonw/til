@@ -1,6 +1,6 @@
 # Pisco sour
 
-This classic Peruvian cocktail recipe is particularly useful if you have chickens producing fresh eggs!
+This classic Peruvian cocktail recipe is particularly useful if you have both a lemon tree and chickens producing fresh eggs!
 
 ![A pisco sour in a fancy crystal glass, with a thin layer of white foam on top](https://static.simonwillison.net/static/2022/pisco-sour.jpg)
 
