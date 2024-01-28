@@ -155,32 +155,39 @@ That `.from_index()` line takes a few seconds to run the first time, but subsequ
 
 `docs` is now an array of 10 dictionaries. They look like this (truncated a bit):
 
-```python
-[{'content': 'Running this:\r\n'
-             "./blog-answer.sh 'What is shot-scraper?'\r\n"
-             'Outputs this:\r\n'
-             '\r\n'
-             'Shot-scraper is a Python u...',
-  'document_id': '8296',
-  'document_metadata': {'created': '2023-10-23T13:36:21+00:00',
-                        'slug': 'embeddings'},
-  'rank': 1,
-  'score': 27.532695770263672},
- {'content': 'I can ask questions like "what is shot-scraper?" - it\'s a piece '
-             'of software I wrote. And the model k...',
-  'document_id': '8285',
-  'document_metadata': {'created': '2023-08-27T14:35:07+00:00',
-                        'slug': 'wordcamp-llms'},
-  'rank': 2,
-  'score': 27.147775650024414},
- {'content': 'First, some demos\r\n'
-             "I've implemented this pattern against my blog - 3,000 posts "
-             'going back over twent...',
-  'document_id': '8222',
-  'document_metadata': {'created': '2023-01-13T23:47:30+00:00',
-                        'slug': 'semantic-search-answers'},
-  'rank': 3,
-  'score': 26.7896728515625},
+```json
+[
+  {
+    "content": "Running this:\r\n./blog-answer.sh 'What is shot-scraper?'\r\nOutputs this:\r\n\r\nShot-scraper is a Python u...",
+    "document_id": "8296",
+    "document_metadata": {
+      "created": "2023-10-23T13:36:21+00:00",
+      "slug": "embeddings"
+    },
+    "rank": 1,
+    "score": 27.532695770263672
+  },
+  {
+    "content": "I can ask questions like \"what is shot-scraper?\" - it's a piece of software I wrote. And the model k...",
+    "document_id": "8285",
+    "document_metadata": {
+      "created": "2023-08-27T14:35:07+00:00",
+      "slug": "wordcamp-llms"
+    },
+    "rank": 2,
+    "score": 27.147775650024414
+  },
+  {
+    "content": "First, some demos\r\nI've implemented this pattern against my blog - 3,000 posts going back over twent...",
+    "document_id": "8222",
+    "document_metadata": {
+      "created": "2023-01-13T23:47:30+00:00",
+      "slug": "semantic-search-answers"
+    },
+    "rank": 3,
+    "score": 26.7896728515625
+  }
+]
 ```
 This looks pretty good! The returned items definitely look relevant to my query.
 
