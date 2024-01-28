@@ -27,6 +27,20 @@
 <meta property="og:image:alt" content="Screenshot: {{ til.title  }} - {{ til.summary }}">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="400">
+<script>
+// Fix broken images if data-canonical-src is available
+function handleImageError(event) {
+  if (event.target.tagName === 'IMG') {
+    const canonicalSrc = event.target.getAttribute('data-canonical-src');
+    if (canonicalSrc) {
+      event.target.src = canonicalSrc;
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('error', handleImageError, true);
+});
+</script>
 {% endblock %}
 
 {% block body %}
