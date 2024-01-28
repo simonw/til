@@ -6,7 +6,7 @@ I've been trying to get my head around [ColBERT](https://github.com/stanford-fut
 
 But what does that mean?
 
-I understand [embedding models](https://simonwillison.net/2023/Oct/23/embeddings/) pretty well now. They let you take some text and turn that into a fixed length array of floating point numbers, which can then be checked fo cosine similarity against other such arrays to find content that is semantically similar.
+I understand [embedding models](https://simonwillison.net/2023/Oct/23/embeddings/) pretty well now. They let you take some text and turn that into a fixed length array of floating point numbers, which can then be checked for cosine similarity against other such arrays to find content that is semantically similar.
 
 ColBERT doesn't exactly fit my mental model here. After some [back and forth on Twitter](https://twitter.com/simonw/status/1751411977279390141) with Mark Tenenholtz I think I understand how it differs now.
 
@@ -20,7 +20,7 @@ This image [by Jo Kristian Bergum](https://twitter.com/jobergum/status/175043544
 
 ColBERT clearly provides more information than a regular embedding search, because it can show you which of the words in the document are most relevant.
 
-Most ColBERT implementations don't directly visulize the data in that way, but this ability still plays into its ability to retrieve the best documents. [Mark explained](https://twitter.com/marktenenholtz/status/1751415287709102088):
+Most ColBERT implementations don't directly visualize the data in that way, but this extra information still plays into its ability to retrieve the best documents. [Mark explained](https://twitter.com/marktenenholtz/status/1751415287709102088):
 
 > At a high level:
 >
