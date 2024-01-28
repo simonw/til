@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->491<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->492<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -733,6 +733,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Embedding paragraphs from my blog with E5-large-v2](https://github.com/simonw/til/blob/main/llms/embed-paragraphs.md) - 2023-09-08
 * [Summarizing Hacker News discussion themes with Claude and LLM](https://github.com/simonw/til/blob/main/llms/claude-hacker-news-themes.md) - 2023-09-09
 * [Using llama-cpp-python grammars to generate JSON](https://github.com/simonw/til/blob/main/llms/llama-cpp-python-grammars.md) - 2023-09-12
+* [Exploring ColBERT with RAGatouille](https://github.com/simonw/til/blob/main/llms/colbert-ragatouille.md) - 2024-01-27
 
 ## ab
 
