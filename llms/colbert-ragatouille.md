@@ -14,9 +14,11 @@ With a regular embedding model you store a single vector for each document, and 
 
 ColBERT is slightly different: it provides a list of vectors showing how each token in the query matches up with each token in the document.
 
-This image [by Jo Kristian Bergum](https://twitter.com/jobergum/status/1750435446964834690) really helped me understand why this is useful:
+This image [by Jo Kristian Bergum](https://twitter.com/jobergum/status/1751640310642360694) really helped me understand why this is useful:
 
-![query: tell me about renewable energy. Passage: Renewable energy is derived from natural processes that are replenished constantly. This includes sunlight, geothermal heat, wind, tides, water, and various forms of biomass. This energy cannot be exhausted and is constantly renewed. MaxSim Score: 20.34. Contextualized highlight below: Renewable energy (in large bold) is derived from natural processes (lesser bold) that are replenished constantly. This includes sunlight, geothermal heat, wind, tides, water, and various forms of biomass. This energy (large bold) cannot be exhausted and is constantly renewed.](https://static.simonwillison.net/static/2024/colbert-visualization.png)
+![ColBERT query-passage scoring interpretability.  Query: Effects of climate change on marine ecosystems. Passage: The changing climate has profound impacts on marine ecosystems. Rising temperatures, ocean acidification, and altered precipitation patterns all contribute to shifts in the distribution and behavior of marine species, influencing the delicate balance of underwater ecosystems. MaxSim Score: 27.71. Estimated Relevance: 86.60%. Contextualised Highlights: The changing climate (those two words in bold) has profound impacts (bold) on marine ecosystems (two bold words). Rising temperatures, ocean acidification, and altered (slight bold) precipitation patterns all contribute to shifts in the distribution and behavior of marine (big bold) species (bold), influencing the delicate balance of under water ecosystems (3 words in bold).](https://static.simonwillison.net/static/2024/colbert-vis-2.jpg)
+
+That's from [colbert.aiserv.cloud](https://colbert.aiserv.cloud/), a really neat visualization tool which loads a ColBERT model directly in the browser and uses it to show highlighted text matches.
 
 ColBERT clearly provides more information than a regular embedding search, because it can show you which of the words in the document are most relevant.
 
