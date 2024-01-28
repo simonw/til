@@ -6,6 +6,8 @@ This broke when I upgraded the [OpenAI Python library](https://github.com/openai
 
 I [figured out](https://github.com/simonw/llm/issues/404) how to do this against HTTPX, using the [event hooks](https://www.python-httpx.org/advanced/#event-hooks) mechanism in that library.
 
+> **Update:** See [the bottom of this post](https://til.simonwillison.net/httpx/openai-log-requests-responses#user-content-a-better-solution) for a better solution.
+
 ## Passing a custom HTTPX client to OpenAI
 
 Using the OpenAI library starts with a client object created like this:
@@ -360,3 +362,41 @@ Response: status_code=200
 
 Hi!
 ```
+## A better solution
+
+I asked about this [on the httpx discussion board](https://github.com/encode/httpx/discussions/3073) and Kar Petrosyan offered this better solution:
+
+```python
+import httpx
+
+
+class LogResponse(httpx.Response):
+    def iter_bytes(self, *args, **kwargs):
+        for chunk in super().iter_bytes(*args, **kwargs):
+            print(chunk)
+            yield chunk
+
+
+class LogTransport(httpx.BaseTransport):
+    def __init__(self, transport: httpx.BaseTransport):
+        self.transport = transport
+
+    def handle_request(self, request: httpx.Request) -> httpx.Response:
+        response = self.transport.handle_request(request)
+
+        return LogResponse(
+            status_code=response.status_code,
+            headers=response.headers,
+            stream=response.stream,
+            extensions=response.extensions,
+        )
+
+
+transport = LogTransport(httpx.HTTPTransport())
+client = httpx.Client(transport=transport)
+
+response = client.get("https://www.youtube.com/")
+```
+This improves on my solution by avoiding using undocument HTTPX internals (the `httpx._transports.default.ResponseStream` hack) and instead using the HTTPX `transport=` mechanism.
+
+I've updated my LLM tool to use this pattern instead in [this commit](https://github.com/simonw/llm/commit/13ab8bb5fbd93088914867540659459396c5fe9d).
