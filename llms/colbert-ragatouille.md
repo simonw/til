@@ -225,7 +225,7 @@ Here's the (surprisingly lengthy) result. You can see the [/tmp/out.txt context 
 
 I spotted one more interesting trick in the RAGatouille examples: [a notebook about reranking queries](https://github.com/bclavie/RAGatouille/blob/main/examples/04-reranking.ipynb).
 
-This is a trick that works without building an index at all. Effectively it lets you run retrieval against some other index - a regular embedding model, or even full-text search - and thn re-rank the results using ColBERT.
+This is a trick that works without building an index at all. Effectively it lets you run retrieval against some other index - a regular embedding model, or even full-text search - and then re-rank the results using ColBERT.
 
 I tried that with some documents I had previously loaded for a "What is Datasette?" query like this:
 
