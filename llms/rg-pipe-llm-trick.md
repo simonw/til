@@ -66,7 +66,7 @@ db/schema.rb
 184:    t.index ["user_id"], name: "index_read_ribbons_on_user_id"
 ...
 ```
-For the purposes of feeding code into a large language model those line numbers are just wasted tokens. Using `-H` removes them:
+For the purposes of feeding code into a large language model those line numbers are just wasted tokens. Using `-N` removes them:
 ```bash
 rg -N read_ribbons
 ```
