@@ -1,6 +1,6 @@
 # Running Ethernet over existing coaxial cable
 
-I recently noticed that the router in our garage was providing around 900 Mbps if I plugged my laptop directly into it via an Ethernet cable, but that speed fell to around 80MBps (less than 1/10th that speed) elsewhere in our house.
+I recently noticed that the router in our garage was providing around 900 Mbps if I plugged my laptop directly into it via an Ethernet cable, but that speed fell to around 80Mbps (less than 1/10th that speed) elsewhere in our house.
 
 Our house came pre-wired with Ethernet, and we run a Netgear Orbi mesh network where the main router lives in the garage and the other two satellite routers are connected to it via that in-the-wall Ethernet.
 
