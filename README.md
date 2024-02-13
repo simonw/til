@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->494<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->495<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -657,6 +657,7 @@ Search these TILs at https://til.simonwillison.net/
 ## networking
 
 * [Making HTTP calls using IPv6](https://github.com/simonw/til/blob/main/networking/http-ipv6.md) - 2022-06-08
+* [Running Ethernet over existing coaxial cable](https://github.com/simonw/til/blob/main/networking/ethernet-over-coaxial-cable.md) - 2024-02-12
 
 ## gpt3
 
