@@ -103,7 +103,7 @@ docker run -it --rm cyberark/ubuntu-ruby-fips /bin/bash
 ```
 Then installed Python 3 and Git in that container like this:
 ```bash
-apt-gen update && apt-get install -y python3 git python3.10-venv
+apt-get update && apt-get install -y python3 git python3.10-venv
 ```
 Then I could run the Datasette test suite like so:
 ```bash
