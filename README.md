@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->495<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->496<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -96,6 +96,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Checking if something is callable or async callable in Python](https://github.com/simonw/til/blob/main/python/callable.md) - 2023-08-04
 * [A simple pattern for inlining binary content in a Python script](https://github.com/simonw/til/blob/main/python/inlining-binary-data.md) - 2023-08-19
 * [Using pprint() to print dictionaries while preserving their key order](https://github.com/simonw/til/blob/main/python/pprint-no-sort-dicts.md) - 2024-01-14
+* [Getting Python MD5 to work with FIPS systems](https://github.com/simonw/til/blob/main/python/md5-fips.md) - 2024-02-13
 
 ## zeit-now
 
