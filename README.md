@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->496<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->497<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -808,4 +808,8 @@ Search these TILs at https://til.simonwillison.net/
 ## httpx
 
 * [Logging OpenAI API requests and responses using HTTPX](https://github.com/simonw/til/blob/main/httpx/openai-log-requests-responses.md) - 2024-01-26
+
+## valtown
+
+* [Running a scheduled function on Val Town to import Atom feeds into Datasette Cloud](https://github.com/simonw/til/blob/main/valtown/scheduled.md) - 2024-02-20
 <!-- index ends -->
