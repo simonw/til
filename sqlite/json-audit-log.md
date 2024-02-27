@@ -99,10 +99,10 @@ select * from audit_log;
 
 id | timestamp | row_id | previous_values
 ---|---|---|---
-1|2024-02-27 01:34:50|1|`{"text_col":"Hello","int_col":42}`
-2|2024-02-27 01:34:50|1|`{"float_col":3.14}`
-3|2024-02-27 01:34:50|1|`{"blob_col":{"hex":"0102030405060708"}}`
-4|2024-02-27 01:34:50|1|`{"float_col":{"null":1}}`
+1|2024-02-27 01:34:50|1|`{"text_col": "Hello", "int_col": 42}`
+2|2024-02-27 01:34:50|1|`{"float_col": 3.14}`
+3|2024-02-27 01:34:50|1|`{"blob_col": {"hex": "0102030405060708"}}`
+4|2024-02-27 01:34:50|1|`{"float_col": {"null": 1}}`
 
 There's a lot of stuff going on here!
 
@@ -255,11 +255,11 @@ The result is an `audit_log` table containing the following:
 
 id | timestamp | row_id | updated_values
 ---|---|---|---
-1|2024-02-27 01:51:44|1|`{"text_col":"Hello","int_col":42,"float_col":3.14,"blob_col":{"hex":"0102030405060708"}}`
-2|2024-02-27 01:51:54|1|`{"text_col":"World","int_col":37}`
-3|2024-02-27 01:51:54|1|`{"float_col":{"null":1}}`
-4|2024-02-27 01:51:54|1|`{"blob_col":{"hex":"0807060504030201"}}`
-5|2024-02-27 01:51:54|1|`{"float_col":2.71828}`
+1|2024-02-27 01:51:44|1|`{"text_col": "Hello", "int_col": 42, "float_col": 3.14, "blob_col": {"hex": "0102030405060708"}}`
+2|2024-02-27 01:51:54|1|`{"text_col": "World", "int_col": 37}`
+3|2024-02-27 01:51:54|1|`{"float_col": {"null": 1}}`
+4|2024-02-27 01:51:54|1|`{"blob_col": {"hex": "0807060504030201"}}`
+5|2024-02-27 01:51:54|1|`{"float_col": 2.71828}`
 
 ## Next step: automate it with Python
 
