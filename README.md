@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->498<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->499<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -286,6 +286,7 @@ Search these TILs at https://til.simonwillison.net/
 * [JavaScript date objects](https://github.com/simonw/til/blob/main/javascript/javascript-date-objects.md) - 2022-01-16
 * [Creating a tiled zoomable image with OpenSeadragon and vips](https://github.com/simonw/til/blob/main/javascript/openseadragon.md) - 2022-08-12
 * [Copy rich text to the clipboard](https://github.com/simonw/til/blob/main/javascript/copy-rich-text-to-clipboard.md) - 2023-03-10
+* [Using packages from JSR with esbuild](https://github.com/simonw/til/blob/main/javascript/jsr-esbuild.md) - 2024-03-02
 
 ## django
 
