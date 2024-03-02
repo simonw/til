@@ -222,6 +222,7 @@ But I got the same error again:
 
 1 error
 ```
-And at this point... I gave up. I'm going to publish this TIL and see if anyone can get me unblocked!
+And at this point... I gave up. I'm still seeking a solution - progress so far:
 
-If you can help me get this working, please [leave comments in this issue](https://github.com/simonw/til/issues/89).
+- I asked about this on the JSR Discord and they suggested it might be a bug, so I filed [Something rewrote my import to from 'npm:lit@^2.2.7'; and now I can't build with esbuild](https://github.com/jsr-io/jsr/issues/139)
+- I started a [discussion on Mastodon](https://fedi.simonwillison.net/@simon/112027336520936261) and Bill Mill found [a workaround for the problem](https://notes.billmill.org/programming/javascript/build_tools/using_esbuild_to_package_a_deno_package_for_the_browser.html) using the [esbuild_deno_loader](https://github.com/lucacasonato/esbuild_deno_loader) plugin and Deno to build the bundle.
