@@ -226,3 +226,32 @@ And at this point... I gave up. I'm still seeking a solution - progress so far:
 
 - I asked about this on the JSR Discord and they suggested it might be a bug, so I filed [Something rewrote my import to from 'npm:lit@^2.2.7'; and now I can't build with esbuild](https://github.com/jsr-io/jsr/issues/139)
 - I started a [discussion on Mastodon](https://fedi.simonwillison.net/@simon/112027336520936261) and Bill Mill found [a workaround for the problem](https://notes.billmill.org/programming/javascript/build_tools/using_esbuild_to_package_a_deno_package_for_the_browser.html) using the [esbuild_deno_loader](https://github.com/lucacasonato/esbuild_deno_loader) plugin and Deno to build the bundle.
+
+## And now it works!
+
+Update 5th March 2024: the JSR team [shipped this fix](https://github.com/jsr-io/jsr/pull/172) and now the following recipe works exactly as I want it to:
+
+```bash
+mkdir /tmp/datasette-demo3
+cd /tmp/datasette-demo3
+echo '@jsr:registry=https://npm.jsr.io' > .npmrc
+npm install @jsr/datasette__table
+echo 'import * as mod from "@jsr/datasette__table";' > index.js
+npx esbuild index.js --bundle --outfile=bundle.js
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Datasette News</title>
+</head>
+<body>
+  <datasette-table
+  url="https://datasette.io/content/news.json"
+></datasette-table>
+<script src="bundle.js"></script>
+</body>
+</html>' > index.html
+```
+Now open `index.html` in a browser and:
+
+![Screenshot of a page with a table of recent news articles on it, rendered by my Web Component](https://github.com/simonw/til/assets/9599/fb916e87-a92f-4b55-99fc-63372669a74e)
