@@ -36,6 +36,16 @@ The query string parameters are:
 
 ![Screenshot of a Gmail compose window. The To, CC, BCC, Subject and Body are filled out as requested in the URL.](https://github.com/simonw/til/assets/9599/87c9ef81-c067-45b1-b9d1-b5a3334e07dc)
 
+## Tip about the /u/0/ bit
+
+Tip [from Corentin Smith](https://twitter.com/CorentinSmith/status/1768000490481004641):
+
+> You can replace the `/u/0/` with `/u/youremail@gmail.com/`, it will redirect you to the correct account
+
+## It doesn't work on Mobile Web
+
+Frustratingly, attempting to click one of these links in Mobile Safari takes you to the Gmail inbox but does not open a compose window. I don't know if there's a workaround for that.
+
 ## The answer from Gemini
 
 My prompt was:
