@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->500<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->501<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -156,6 +156,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Geospatial SQL queries in SQLite using TG, sqlite-tg and datasette-sqlite-tg](https://github.com/simonw/til/blob/main/sqlite/sqlite-tg.md) - 2023-09-25
 * [Running Steampipe extensions in sqlite-utils and Datasette](https://github.com/simonw/til/blob/main/sqlite/steampipe.md) - 2023-12-20
 * [Tracking SQLite table history using a JSON audit log](https://github.com/simonw/til/blob/main/sqlite/json-audit-log.md) - 2024-02-26
+* [SQLite timestamps with floating point seconds](https://github.com/simonw/til/blob/main/sqlite/floating-point-seconds.md) - 2024-03-13
 
 ## presenting
 
