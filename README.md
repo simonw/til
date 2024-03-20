@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->504<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->505<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -723,6 +723,7 @@ Search these TILs at https://til.simonwillison.net/
 ## clickhouse
 
 * [Querying the GitHub archive with the ClickHouse playground](https://github.com/simonw/til/blob/main/clickhouse/github-explorer.md) - 2022-12-31
+* [Reviewing your history of public GitHub repositories using ClickHouse](https://github.com/simonw/til/blob/main/clickhouse/github-public-history.md) - 2024-03-20
 
 ## cooking
 
