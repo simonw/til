@@ -85,3 +85,24 @@ Here's the official SQLite documentation for those [function flags](https://www.
 - `directonly` means that the function can only be called from "top-level SQL", not from triggers, views or things like generated columns or check constraints.
 - `innocuous` means that the function is "unlikely to cause problems even if misused" - crucially, it means the function has no side effects.
 - `subtype` looks like it's a window function concern - though I haven't yet found an example of a function that uses it. The documentation says "Specifying this flag makes no difference for scalar or aggregate user functions. However, if it is not specified for a user-defined window function, then any sub-types belonging to arguments passed to the window function may be discarded before the window function is called (i.e. `sqlite3_value_subtype()` will always return 0)." I don't understand the implications of this at all.
+
+## As a SQL view to support facets
+
+I decided it would be useful to be able to browse these using facets. I came up with [the following SQL view](https://gist.github.com/simonw/c6fa2d722e7599f3874f27cb19fc8fe4):
+
+```sql
+create view functions as
+select *,
+  case when flags & 0x800 != 0 then '1' else '0' end as 'deterministic',
+  case when flags & 0x000100000 != 0 then '1' else '0' end as 'subtype',
+  case when flags & 0x000200000 != 0 then '1' else '0' end as 'innocuous',
+  case when flags & 0x000080000 != 0 then '1' else '0' end as 'directonly'
+from pragma_function_list();
+```
+The `case` statements are necessary because Datasette doesn't currently facet views correctly if they return integer values.
+
+Since I saved this to a Gist I can open it in Datasette Lite like this:
+
+https://lite.datasette.io/?sql=https://gist.github.com/simonw/c6fa2d722e7599f3874f27cb19fc8fe4#/data/functions?_facet=deterministic&_facet=subtype&_facet=innocuous&_facet=directonly
+
+![Functions shown in Datasette Lite with facets for deterministic, subtype, innocuous and directonly](https://github.com/simonw/til/assets/9599/ef3d8238-7f45-4650-af5d-87fa8681532a)
