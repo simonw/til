@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head><title>Paste to see what's on your clipboard</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+.report {
+  border: solid 2px grey;
+  padding: 0;
+  margin-top: 1em;
+}
+.header {
+  padding: 0.5em;
+  bottom: 1em;
+  background: black;
+  color: white;
+}
+.content {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 0.5em;
+}
+h1 {
+  font-size: 1.5em;
+}
+/* .files shows children tiled three at a time, each 30% wide */
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+.files img, .files div {
+  width: 45%;
+  padding: 0;
+  border: solid 2px grey;
+}
+div.file-display {
+  font-family: monospace;
+  white-space: pre-wrap;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+.file-display pre {
+  white-space: pre-wrap;
+  max-height: 15em;
+  overflow: auto;
+}
+.typesMenu a {
+  display: inline-block;  
+  margin-right: 0.5em;
+}
+</style>
+</head>
+<body>
+<h1>Paste to see what's on your clipboard</h1>
+<p>Shows the different data types that are stored. No data is transmitted to a server when you use this tool.</p>
+<div class="files"></div>
+<div class="typesMenu"></div>
+<div class="clipboard"></div>
+<script>
+async function displayFile(fileObj, container) {
+  try {
+    const arrayBuffer = await fileObj.arrayBuffer();
+    const blob = new Blob([arrayBuffer], { type: fileObj.type });
+
+    const reader = new FileReader();
+    reader.onload = function () {
+      const dataURL = reader.result;
+
+      const imgElement = document.createElement('img');
+      imgElement.src = dataURL;
+      imgElement.style.maxWidth = '100%';
+      imgElement.onerror = function (error) {
+        console.log(error);
+        imgElement.remove();
+        let div = document.createElement('div');
+        div.className = 'file-display';
+        let reader2 = new FileReader();
+        reader2.onload = (e) => {
+          let pre = document.createElement('pre');
+          pre.textContent = e.target.result.slice(0, 10000);
+          let strong = document.createElement('strong');
+          strong.textContent = fileObj.type;
+          div.appendChild(strong);
+          div.appendChild(pre);
+          container.appendChild(div);
+        };
+        reader2.onerror = (e) => {
+          container.appendChild(document.createTextNode('Error reading file: ' + e.target.error));
+        };
+        reader2.readAsText(blob);
+      };
+      container.appendChild(imgElement);
+    };
+    reader.readAsDataURL(blob);
+  } catch (error) {
+    console.error('Error displaying file:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('paste', function(event) {
+    event.preventDefault();
+    let clipboardData = event.clipboardData || window.clipboardData || event.originalEvent.clipboardData;
+    let clipboard = document.querySelector('.clipboard');
+    clipboard.innerHTML = '';
+    console.log({types: clipboardData.types, files: Array.from(clipboardData.files)});
+    console.log({clipboardData});
+    let types = clipboardData.types;
+    let reports = [];
+    let filesContainer = document.querySelector('.files');
+    let typesMenu = document.querySelector('.typesMenu');
+    filesContainer.innerHTML = '';
+    typesMenu.innerHTML = '';
+    Array.from(clipboardData.files).forEach(file => {
+      console.log('file:', file);
+      displayFile(file, filesContainer);
+    });
+    for (var i = 0; i < types.length; ++i) {
+      var mime = types[i];
+      var report = document.createElement('div');
+      report.className = 'report';
+      report.setAttribute('id', mime);
+      var header = document.createElement('div');
+      header.className = 'header';
+      header.textContent = mime;
+      var content = document.createElement('div');
+      content.className = 'content';
+      let data = clipboardData.getData(mime);
+      if (data) {
+        content.textContent = data.slice(0, 10000);
+        report.appendChild(header);
+        report.appendChild(content);
+        reports.push(report);
+        // Add it to the typesMenu as well
+        let item = document.createElement('a');
+        item.href = '#' + mime;
+        item.textContent = mime;
+        typesMenu.appendChild(item);
+      }
+    }
+    // Sort reports by length, shortest first
+    reports.sort((a, b) => a.textContent.length - b.textContent.length);
+    reports.forEach(report => clipboard.appendChild(report));
+  });
+});
+</script>
