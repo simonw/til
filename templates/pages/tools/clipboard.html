@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>Paste to see what's on your clipboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
   font-family: sans-serif;
@@ -52,11 +53,22 @@ div.file-display {
   display: inline-block;  
   margin-right: 0.5em;
 }
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 5em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  padding: 0.5em;
+  /* disable resize */
+  resize: none;
+}
 </style>
 </head>
 <body>
 <h1>Paste to see what's on your clipboard</h1>
 <p>Shows the different data types that are stored. No data is transmitted to a server when you use this tool.</p>
+<textarea placeholder="Hit paste in here"></textarea>
 <div class="files"></div>
 <div class="typesMenu"></div>
 <div class="clipboard"></div>
