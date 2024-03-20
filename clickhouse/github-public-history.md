@@ -25,7 +25,7 @@ with public_events as (
     'Private repo made public' as action,
     repo_name
   from github_events 
-  where actor_login = 'simonw'
+  where lower(actor_login) = 'simonw'
   and event_type in ('PublicEvent')
 ),
 most_recent_public_push as (
@@ -35,7 +35,7 @@ most_recent_public_push as (
     repo_name
   from github_events
   where event_type = 'PushEvent'
-  and actor_login = 'simonw'
+  and lower(actor_login) = 'simonw'
   group by repo_name
 ),
 combined as (
@@ -77,7 +77,7 @@ results = username.trim() &&
     'Private repo made public' as action,
     repo_name
   from github_events 
-  where actor_login = '${username.trim()}'
+  where lower(actor_login) = '${username.trim().toLowerCase()}'
   and event_type in ('PublicEvent')
 ),
 most_recent_public_push as (
@@ -87,7 +87,7 @@ most_recent_public_push as (
     repo_name
   from github_events
   where event_type = 'PushEvent'
-  and actor_login = '${username.trim()}'
+  and lower(actor_login) = '${username.trim()}.toLowerCase()'
   group by repo_name
 ),
 combined as (
