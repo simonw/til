@@ -64,6 +64,14 @@ The documentation mentioned this option as something that would start a REPL pro
 ```
 This didn't work for me. Maybe they removed that feature?
 
+## More documentation
+
+[@dayson](https://twitter.com/dayson) pointed me to [Chrome’s Headless mode gets an upgrade: introducing --headless=new](https://developer.chrome.com/docs/chromium/new-headless) providing further documentation of the most recent changes.
+
+Frustratingly that documentation doesn't include a clear date, but it mentions features that are new in Chrome 112 which I found was released in March 2023.
+
+I don't know if you still need to run `--headless=new` for these new features. The two that caught my eye were `--timeout 1000` for capturing the page after the specified number of milliseconds, and the intriguing alternative `--virtual-time-budget=5000` which fakes the internal clock in Chrome to behave as if five seconds have passed and take the screenshot then, while not actually waiting those five seconds.
+
 ## Comparison to shot-scraper
 
 I didn't know about this `--headless` mode when I built my [shot-scraper](https://shot-scraper.datasette.io/) tool for headless screenshotting and scraping of web pages using [Playwright](https://playwright.dev/), which drives Chromium (and other browsers) under the hood.
