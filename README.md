@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->505<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->506<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -820,4 +820,8 @@ Search these TILs at https://til.simonwillison.net/
 ## valtown
 
 * [Running a scheduled function on Val Town to import Atom feeds into Datasette Cloud](https://github.com/simonw/til/blob/main/valtown/scheduled.md) - 2024-02-20
+
+## chrome
+
+* [Google Chrome --headless mode](https://github.com/simonw/til/blob/main/chrome/headless.md) - 2024-03-24
 <!-- index ends -->
