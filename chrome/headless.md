@@ -50,7 +50,7 @@ For a multi-page PDF of the full length page:
   --print-to-pdf=/tmp/page.pdf \
   https://simonwillison.net
 ```
-Here's [the output PDF for that](https://static.simonwillison.net.s3-us-west-1.amazonaws.com/static/2024/chrome-headless-page.pdf).
+Here's [the output PDF for that](https://static.simonwillison.net/static/2024/chrome-headless-page.pdf).
 
 ## --repl doesn't work for me
 
