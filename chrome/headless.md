@@ -97,7 +97,7 @@ echo '- output: example.com.png
 And its ability to [scrape data from a page](https://shot-scraper.datasette.io/en/stable/javascript.html) by executing JavaScript and returning the result as JSON:
 
 ```bash
-shot-scraper javascript https://til.simonwillison.net/chrome/headless"
+shot-scraper javascript https://til.simonwillison.net/chrome/headless "
 async () => {
   const readability = await import('https://cdn.skypack.dev/@mozilla/readability');
   return (new readability.Readability(document)).parse();
