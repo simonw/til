@@ -66,11 +66,13 @@ This didn't work for me. Maybe they removed that feature?
 
 ## More documentation
 
-[@dayson](https://twitter.com/dayson) pointed me to [Chrome’s Headless mode gets an upgrade: introducing --headless=new](https://developer.chrome.com/docs/chromium/new-headless) providing further documentation of the most recent changes.
+[@dayson](https://twitter.com/dayson/status/1772046580083765311) pointed me to [Chrome’s Headless mode gets an upgrade: introducing --headless=new](https://developer.chrome.com/docs/chromium/new-headless) providing further documentation of the most recent changes.
 
 Frustratingly that documentation doesn't include a clear date, but it mentions features that are new in Chrome 112 which I found was released in March 2023.
 
 I don't know if you still need to run `--headless=new` for these new features. The two that caught my eye were `--timeout 1000` for capturing the page after the specified number of milliseconds, and the intriguing alternative `--virtual-time-budget=5000` which fakes the internal clock in Chrome to behave as if five seconds have passed and take the screenshot then, while not actually waiting those five seconds.
+
+That page also mentions `--print-to-pdf --no-pdf-header-footer`. I found out elsewhere about `--hide-scrollbars` for screenshots from [@DJDellsperger](https://twitter.com/DJDellsperger/status/1772045666086195409).
 
 ## Comparison to shot-scraper
 
