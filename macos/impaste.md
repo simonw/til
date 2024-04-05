@@ -6,7 +6,7 @@ It turns out `pbpaste` only works with textual data - so copying a portion of a 
 ```bash
 pbpaste > /tmp/screenshot.png
 ```
-With some initial clues from [Feraidoon Mehri in a GitHub issue](https://github.com/simonw/llm/issues/331#issuecomment-2038425242) followed by some ChatGPT and [Claude 3 Opus prompting](https://gist.github.com/simonw/736bcc9bcfaef40a55deaa959fd57ca8) I got to the following script, saved as `~/.local/bin/impaste` on my machine (that folder is on my `PATH`) and made excutable with `chmod 755 ~/.local/bin/impaste`:
+With some initial clues from [Feraidoon Mehri in a GitHub issue](https://github.com/simonw/llm/issues/331#issuecomment-2038425242) followed by [some ChatGPT](https://chat.openai.com/share/25e3f8f8-3e8a-4b40-aa3c-aa724d69a349) and [Claude 3 Opus prompting](https://gist.github.com/simonw/736bcc9bcfaef40a55deaa959fd57ca8) I got to the following script, saved as `~/.local/bin/impaste` on my machine (that folder is on my `PATH`) and made excutable with `chmod 755 ~/.local/bin/impaste`:
 
 ```zsh
 #!/bin/zsh
