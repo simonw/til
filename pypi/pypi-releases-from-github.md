@@ -138,7 +138,7 @@ The `permissions` block there is essential - it's required for the OpenID Connec
     - name: Publish
       uses: pypa/gh-action-pypi-publish@release/v1
 ```
-This is the key line. It uses the [pypa/gh-action-pypi-publish](https://pypa/gh-action-pypi-publish) action to publish the package.
+This is the key line. It uses the [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) action to publish the package.
 
 Note that it doesn't need any settings - it just works, provided the trusted publisher on PyPI has been configured.
 
