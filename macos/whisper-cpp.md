@@ -18,10 +18,10 @@ Here's my recipe for using it to transcribe an MP3 file.
     ````
 4. Run the transcription:
     ```bash
-    whisper-cpp -m ggml-large-v3-q5_0.bin input.wav --output-txt out.txt
+    whisper-cpp -m ggml-large-v3-q5_0.bin input.wav --output-txt
     ```
 
-This output a whole bunch of information, including the transcript, and saved that transcript to `out.txt`.
+This output a whole bunch of information, including the transcript, and saved the text version of that transcript (no timestamps) to `input.wav.txt`.
 
 ## How I figured out the 16khz MP3 conversion
 
