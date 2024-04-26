@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->509<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->510<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -188,6 +188,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Editing an iPhone home screen using macOS](https://github.com/simonw/til/blob/main/macos/edit-ios-home-screen.md) - 2023-12-11
 * [impaste: pasting images to piped commands on macOS](https://github.com/simonw/til/blob/main/macos/impaste.md) - 2024-04-04
 * [A script to capture frames from a QuickTime video](https://github.com/simonw/til/blob/main/macos/quicktime-capture-script.md) - 2024-04-16
+* [Transcribing MP3s with whisper-cpp on macOS](https://github.com/simonw/til/blob/main/macos/whisper-cpp.md) - 2024-04-26
 
 ## cloudrun
 
