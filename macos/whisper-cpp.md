@@ -1,6 +1,6 @@
 # Transcribing MP3s with whisper-cpp on macOS
 
-I asked [on Twitter]() for tips about running Whisper transcriptions in the CLI on my Mac. Werner Robitza [pointed me](https://twitter.com/slhck/status/1783556354487034146) to Homebrew's [whisper-cpp](https://formulae.brew.sh/formula/whisper-cpp) formula, and when I complained that it didn't have quite enough documentation for me to know how to use it [got a PR accepted](https://github.com/Homebrew/homebrew-core/pull/170148) adding the missing details.
+I asked [on Twitter](https://twitter.com/simonw/status/1783520794754318600) for tips about running Whisper transcriptions in the CLI on my Mac. Werner Robitza [pointed me](https://twitter.com/slhck/status/1783556354487034146) to Homebrew's [whisper-cpp](https://formulae.brew.sh/formula/whisper-cpp) formula, and when I complained that it didn't have quite enough documentation for me to know how to use it [got a PR accepted](https://github.com/Homebrew/homebrew-core/pull/170148) adding the missing details.
 
 Here's my recipe for using it to transcribe an MP3 file.
 
