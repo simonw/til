@@ -12,11 +12,15 @@ Here's my recipe for using it to transcribe an MP3 file.
     This gave me a `/opt/homebrew/bin/whisper-cpp`, added to my `PATH` as `whisper-cpp`
 
 2. Download a Whisper model file. These are available [on Hugging Face](https://huggingface.co/ggerganov/whisper.cpp/tree/main) - there are a bunch of options, I decided to go for `ggml-large-v3-q5_0.bin` ([direct download link](https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin?download=true), 1GB) because it looked like it might offer right balance of file size to quality.
-3. Convert the MP3 file to the 16khz WAV file needed by Whisper:
+    ```bash
+    curl -o ggml-large-v3-q5_0.bin -L \
+      'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin?download=true'
+    ```
+4. Convert the MP3 file to the 16khz WAV file needed by Whisper:
     ```bash
     ffmpeg -i input.mp3 -ar 16000 input.wav
     ````
-4. Run the transcription:
+5. Run the transcription:
     ```bash
     whisper-cpp -m ggml-large-v3-q5_0.bin input.wav --output-txt
     ```
