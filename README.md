@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->510<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->511<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -831,4 +831,8 @@ Search these TILs at https://til.simonwillison.net/
 ## go
 
 * [Installing tools written in Go](https://github.com/simonw/til/blob/main/go/installing-tools.md) - 2024-03-25
+
+## ham-radio
+
+* [How I studied for my Ham radio general exam](https://github.com/simonw/til/blob/main/ham-radio/general.md) - 2024-05-11
 <!-- index ends -->
