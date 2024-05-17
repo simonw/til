@@ -25,15 +25,11 @@ I already had a clone of the `nanoGPT` repository, created like this:
 ```bash
 git clone https://github.com/karpathy/nanoGPT
 ```
-I had installed the following into a fresh Python virtual environment:
+I installed the following into a fresh Python virtual environment:
 ```
-pip install transformers datasets tiktoken tqdm wandb numpy
+pip install torch numpy transformers datasets tiktoken wandb tqdm
 pip install httpx
-pip install \
-  --pre torch torchvision torchaudio \
-  --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 ```
-
 
 In the `nanoGPT` folder I created a `data/simonwillisonblog` folder.
 
