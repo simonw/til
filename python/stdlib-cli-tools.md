@@ -286,6 +286,7 @@ avg 1.64228, stddev 2.13138, min 0.0386213, max 34.0379
 avg 3.18754, stddev 2.27556, min 0.00336177, max 6.28306
 ...
 ```
+**Update:** This is fixed [in Python 3.13](https://docs.python.org/3/library/random.html)
 
 ### nntplib
 
@@ -364,4 +365,6 @@ This one has a bunch more options (visible with `-h`). `python -m calendar -t ht
 ### Loads more
 
 There are plenty more in there - these are just the ones I've explored so far.
+
+Trey Hunner collected a more recent set of these in June 2024 in [Python's many command-line utilities](https://www.pythonmorsels.com/cli-tools/).
 
