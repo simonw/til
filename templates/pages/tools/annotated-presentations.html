@@ -48,6 +48,7 @@
     <div id="controls">
       <h1>Annotated presentation creator</h1>
       <p>See <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">How I make annotated presentations</a> for instructions on using this tool.</p>
+      <p>Enter "skip" as alt text to skip a slide.</p>
       <input type="file" id="imageInput" multiple accept="image/*" />
       <button id="loadImagesButton">Load images</button>
       <p style="display: none">
@@ -307,7 +308,11 @@
               }
             }
           });
-          dataObjects.push(elementData);
+          if (elementData.alt && elementData.alt.toLowerCase() == 'skip') {
+            // Skip this slide
+          } else {
+            dataObjects.push(elementData);
+          }
         });
         return dataObjects;
       }
