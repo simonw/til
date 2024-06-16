@@ -25,5 +25,5 @@ Here's what I did:
 6. Restore all of my databases using the `psql` command line tool like this:
 
     ```bash
-    cat /tmpl/all.sql | /Applications/Postgres.app/Contents/Versions/16/bin/psql
+    cat /tmp/all.sql | /Applications/Postgres.app/Contents/Versions/16/bin/psql
     ```
