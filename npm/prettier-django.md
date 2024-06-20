@@ -35,6 +35,9 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+# Store the current directory
+original_dir=$(pwd)
+
 # Change directory to ~/.local/bin/
 cd ~/.local/bin/ || exit
 
