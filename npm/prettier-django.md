@@ -58,3 +58,10 @@ Now I can run that command from anywhere on my computer:
 ```bash
 prettier-templates.sh templates/team_backups.html
 ```
+
+## Alternatives
+
+Jeff Triplett [pointed me](https://mastodon.social/@webology/112646633489421925) to two pure Python alternatives:
+
+- [curlylint](https://curlylint.org) is "experimental HTML templates linting for Jinja, Nunjucks, Django templates, Twig, Liquid" - `pip install curlylint` then `curlylint my/templates`
+- [DjHTML](https://github.com/rtts/djhtml) is "a pure-Python Django/Jinja template indenter without dependencies" - `pip install djhtml` then `djhtml template.html`
