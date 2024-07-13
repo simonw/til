@@ -90,6 +90,8 @@ if __name__ == "__main__":
 ```
 I saved this as `gildemo.py` and tried running it with the new Python binaries the one with free-threading enabled and the one without.
 
+**IMPORTANT: This code has a bug, explained below.
+
 Here's what I saw in Activity Monitor while running the scripts:
 
 No free-threading (with the GIL) - reported 99% CPU usage:
@@ -100,7 +102,9 @@ Free-threading (no GIL) - reported 258.8% CPU usage:
 
 ![Activity Monitor window showing a PythonT process using 258.8% CPU with 5 threads. Terminal visible above running a script: "Running 10 tasks of size 10000000 with 4 threads".](https://github.com/user-attachments/assets/e7b8d291-a8a1-4e98-a73f-880403e14e8c)
 
-And here are some results from running the script. First with the GIL in place:
+And here are some results from running the script (invalid due to the bug described below).
+
+First with the GIL in place:
 ```
 % python3.13 gildemo.py --size 1000000 
 Running 10 tasks of size 1000000 with 4 threads
@@ -111,4 +115,55 @@ And then without the GIL:
 % python3.13t gildemo.py --size 1000000 
 Running 10 tasks of size 1000000 with 4 threads
 Time with threads: 8.19 seconds
+```
+## Fixing an embarrassing bug
+
+Bartek Ogryczak [spotted a bug](https://twitter.com/var_tec/status/1811928300840976662) in the code above:
+
+> I was wondering with only 2x improvement with 4 threads, and seems like the the code is off:
+>
+> `map(cpu_bound_task, [args.tasks] * args.size)`
+>
+> ought to be
+>
+> `map(cpu_bound_task, [args.size] * args.tasks)`
+
+I had to think a bit about this. The `executor.map()` method takes two arguments - the function to be run in the thread, and a list of arguments where each argument will be passed to a separate invocation of that function.
+
+`tasks` is the number of times to run the function in the test. `size` controls the complexity of that function (the sum of squares up to that number).
+
+Running `[x] * 5` produces `[x, x, x, x, x]` - the list duplicated by that constant.
+
+So Bartek is right! Consider this invocation:
+
+```bash
+python3.13t gildemo.py --size 10000000 --threads 4 --tasks 10
+```
+That should run `sum(i * i for i in range(10000000))` 10 times in four different threads. But, thanks to the bug in the code, it actually runs `sum(i * i for i in range(10))` 10000000 times in four threads!
+
+The original mistake here came from Claude, but I'm responsible for it - I broke the cardinal rule of LLM-assisted programming, which is to closely review every line of code it produces.
+
+After applying Bartek's fix I get these results with free-threading (no GIL):
+```
+% python3.13t gildemo.py --size 10000000 --threads 4
+Running 10 tasks of size 10000000 with 4 threads
+Time with threads: 1.38 seconds
+% python3.13t gildemo.py --size 10000000 --threads 8
+Running 10 tasks of size 10000000 with 8 threads
+Time with threads: 1.10 seconds
+% python3.13t gildemo.py --size 10000000 --threads 12
+Running 10 tasks of size 10000000 with 12 threads
+Time with threads: 1.00 seconds
+```
+And these results with the GIL in place:
+```
+% python3.13 gildemo.py --size 10000000 --threads 4 
+Running 10 tasks of size 10000000 with 4 threads
+Time with threads: 4.01 seconds
+% python3.13 gildemo.py --size 10000000 --threads 8
+Running 10 tasks of size 10000000 with 8 threads
+Time with threads: 4.03 seconds
+% python3.13 gildemo.py --size 10000000 --threads 12 
+Running 10 tasks of size 10000000 with 12 threads
+Time with threads: 3.92 seconds
 ```
