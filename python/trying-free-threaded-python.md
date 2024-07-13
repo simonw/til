@@ -52,7 +52,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## Testing it out
 
-I asked Claude 3.5 Sonnet to write me [a quick test script](https://claude.site/artifacts/92aec50b-43c7-463a-b8a1-5d5ea0600708), then iterated on and simplified the result myself until I got to this:
+I asked Claude 3.5 Sonnet to write me [a quick test script](https://gist.github.com/simonw/21b1e208b81f10731798f11da0af775d), then iterated on and simplified the result myself until I got to this:
 
 ```python
 import argparse
