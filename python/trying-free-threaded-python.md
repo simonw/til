@@ -90,7 +90,7 @@ if __name__ == "__main__":
 ```
 I saved this as `gildemo.py` and tried running it with the new Python binaries the one with free-threading enabled and the one without.
 
-**IMPORTANT: This code has a bug, explained below.
+**IMPORTANT**: This code has a bug, explained below.
 
 Here's what I saw in Activity Monitor while running the scripts:
 
