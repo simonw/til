@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->517<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->518<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -98,6 +98,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using pprint() to print dictionaries while preserving their key order](https://github.com/simonw/til/blob/main/python/pprint-no-sort-dicts.md) - 2024-01-14
 * [Getting Python MD5 to work with FIPS systems](https://github.com/simonw/til/blob/main/python/md5-fips.md) - 2024-02-13
 * [Programmatically comparing Python version strings](https://github.com/simonw/til/blob/main/python/comparing-version-numbers.md) - 2024-03-17
+* [Trying out free-threaded Python on macOS](https://github.com/simonw/til/blob/main/python/trying-free-threaded-python.md) - 2024-07-12
 
 ## zeit-now
 
