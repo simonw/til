@@ -8,7 +8,7 @@ Here's the recipe I've landed on, after some experimentation.
 
 We've found that these measurements make enough for two drinks, though other recipes online suggest this is the right amount for a single serving.
 
-* 3/4oz simple syrup (1/1 ratio sugar to water by weight)
+* 3/4oz simple syrup (1/1 ratio sugar to water by weight) - white sugar works fine but I've started using soft brown sugar instead
 * 1oz lemon juice
 * 3oz pisco
 * 1 egg white
