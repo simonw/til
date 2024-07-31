@@ -98,15 +98,16 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |-
         s3-credentials put-object til.simonwillison.net tils.db main/tils.db
-    - name: Deploy Datasette using Vercel
+    - name: Install Fly
+      run: |
+        curl -L https://fly.io/install.sh | sh
+    - name: Deploy Datasette using Fly
       env:
-        NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+        FLY_API_TOKEN: ${{ secrets.FLY_TOKEN }}
       run: |-
         cd main
-        datasette publish vercel tils.db \
-          --token $NOW_TOKEN \
-          --project simon-til \
-          --scope datasette \
+        datasette publish fly tils.db \
+          --app simonw-tils \
           --metadata metadata.yaml \
           --static static:static \
           --install datasette-template-sql \
@@ -119,5 +120,4 @@ jobs:
           --install datasette-block-robots \
           --install datasette-llm-embed \
           --plugins-dir plugins \
-          --template-dir templates \
-          --public
+          --template-dir templates
