@@ -110,3 +110,5 @@ I ran that just now and got the following:
 > - Various minor bug fixes and code cleanup
 
 I don't think this is good enough to publish, but it's a useful aid to help spot if I missed anything that wasn't captured by the earlier list of commit messages and issue references.
+
+There's also at least one mistake in there: "Fixed CSRF protection for custom endpoints" isn't true, there were no changes made to CSRF protection in this set of commits, though one of them included documentation that was adjacent to a section about CSRF protection and hence was partially included in the diff.
