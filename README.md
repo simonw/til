@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->521<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->522<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -316,6 +316,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using just with Django](https://github.com/simonw/til/blob/main/django/just-with-django.md) - 2022-06-06
 * [Adding a Datasette ASGI app to Django](https://github.com/simonw/til/blob/main/django/datasette-django.md) - 2022-10-20
 * [Building a blog in Django](https://github.com/simonw/til/blob/main/django/building-a-blog-in-django.md) - 2023-08-15
+* [Using pytest-django with a reusable Django application](https://github.com/simonw/til/blob/main/django/pytest-django.md) - 2024-08-07
 
 ## docker
 
