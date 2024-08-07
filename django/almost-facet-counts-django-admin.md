@@ -2,6 +2,8 @@
 
 For a tantalizing moment today I thought I'd found a recipe for adding facet counts to the Django admin.
 
+> **UPDATE 7th August 2024**: This TIL was made obsolete by [Django 5.0](https://docs.djangoproject.com/en/5.0/releases/5.0/#what-s-new-in-django-5-0), released in December 2023, which now has facet counts in the admin as a core feature.
+
 I love faceted browsing. I've implemented it at least a dozen times in my career, using everything from Solr and Elasticsearch to PostgreSQL (see [Implementing faceted search with Django and PostgreSQL](https://simonwillison.net/2017/Oct/5/django-postgresql-faceted-search/)) or SQLite (see [Datasette Facets](https://simonwillison.net/2018/May/20/datasette-facets/)).
 
 The Django admin almost has facets out of the box, thanks to the `list_filter` interface. But they're missing the all-imprtant count values! Those are the thing that makes faceted search so valuable to me. Today I decided to try and add them.
