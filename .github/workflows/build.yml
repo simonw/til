@@ -119,5 +119,6 @@ jobs:
           --install "datasette-graphql>=2.2" \
           --install datasette-block-robots \
           --install datasette-llm-embed \
+          --install datasette-sqlite-vec \
           --plugins-dir plugins \
           --template-dir templates
