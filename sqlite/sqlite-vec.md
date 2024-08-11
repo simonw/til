@@ -137,4 +137,4 @@ The `where embedding match first_embedding and k = 5` clause hooks into the magi
 
 I'm using that `(select id from embeddings where embeddings.rowid = vec_tils.rowid) as id` trick to convert the numeric `rowid` into a human-readable `id` value by running a subquery against the `embeddings` table.
 
-The `vec_tils` table is created for my TIL site by [this step](https://github.com/simonw/til/blob/5382b6a5390d272eadaf84eafd2a8cf9d01b1ed9/.github/workflows/build.yml#L82-L90) in my GitHub Actions workflow that deploys the application.
+The `vec_tils` table is created for my TIL site by [this step](https://github.com/simonw/til/blob/e0dc31efcb41c9472681a8b1bb7a19993d4cb3f2/.github/workflows/build.yml#L82-L91) in my GitHub Actions workflow that deploys the application.
