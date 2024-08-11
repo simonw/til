@@ -79,6 +79,15 @@ jobs:
           # Table does not exist, calculate for everything
           openai-to-sqlite similar tils.db --all --save
         fi
+    - name: Create sqlite-vec index for embeddings
+      run: |-
+        cd main
+        sqlite-utils tils.db 'create virtual table vec_tils using vec0(
+          embedding float[1536]
+        );'
+        sqlite-utils tils.db 'insert into vec_tils(rowid, embedding)
+          select rowid, embedding from embeddings;
+        '
     - name: Update README
       run: |-
         cd main
