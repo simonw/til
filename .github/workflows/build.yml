@@ -82,6 +82,7 @@ jobs:
     - name: Create sqlite-vec index for embeddings
       run: |-
         cd main
+        sqlite-utils tils.db 'drop table if exists vec_tils;'
         sqlite-utils tils.db 'create virtual table vec_tils using vec0(
           embedding float[1536]
         );'
