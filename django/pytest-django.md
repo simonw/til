@@ -154,7 +154,7 @@ def test_debug_view():
     assert response.content == b"Test content"
     assert response["Content-Type"] == "text/plain"
 ```
-This uses `@pytest.mark.django_db` to ensure the Django databsae is configured (and then cleared) for that test. It uses the Django test client to exercise an endpoint, and the Django ORM to populate the database.
+This uses `@pytest.mark.django_db` to ensure the Django database is configured (and then cleared) for that test. It uses the Django test client to exercise an endpoint, and the Django ORM to populate the database.
 
 ## Configuring django-pytest
 
