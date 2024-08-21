@@ -137,11 +137,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Fetch Issues
       id: get-issues
-      uses: actions/github-script@v5
+      uses: actions/github-script@v7
       with:
         script: |
           const response = await github.rest.issues.listForRepo({
@@ -155,7 +155,7 @@ jobs:
       run: echo '${{ toJSON(steps.get-issues.outputs.result) }}' > issue-titles.json
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
