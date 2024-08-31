@@ -8,7 +8,6 @@ Here's a pattern I figured out using Python's `namedtuple` to make the test case
 from collections import namedtuple
 import pytest
 
-
 ManageTableTest = namedtuple(
     "ManageTableTest",
     (
@@ -20,6 +19,7 @@ ManageTableTest = namedtuple(
         "expected_audit_rows",
     ),
 )
+
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
     ManageTableTest._fields,
@@ -56,8 +56,8 @@ ManageTableTest = namedtuple(
                 }
             ],
         ),
-    )
-):
+    ),
+)
 def test_manage_table_permissions(
     description,
     setup_post_data,
