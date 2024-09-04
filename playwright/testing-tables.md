@@ -13,7 +13,7 @@ function tableToJson() {
       rows: Array.from(table.querySelectorAll("tr"))
         .slice(1)
         .map((tr) => {
-          return Array.from(tr.querySelectorAll("td, th")).map((cell) =>
+          return Array.from(tr.querySelectorAll("td")).map((cell) =>
             cell.textContent.trim(),
           );
         }),
