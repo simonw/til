@@ -5,18 +5,20 @@ I figured out this pattern today for testing an HTML table dynamically added to 
 ```python
 table_js = """
 function tableToJson() {
-    const tables = document.querySelectorAll('table');
-    return Array.from(tables).map(table => {
-        const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent.trim());
-        const rows = Array.from(table.querySelectorAll('tr')).slice(1).map(tr => {
-            const cells = Array.from(tr.querySelectorAll('td, th')).map(cell => cell.textContent.trim());
-            return cells;
-        });
-        return {
-            headers: headers,
-            rows: rows
-        };
-    });
+  return Array.from(document.querySelectorAll("table")).map((table) => {
+    return {
+      headers: Array.from(table.querySelectorAll("th")).map((th) =>
+        th.textContent.trim(),
+      ),
+      rows: Array.from(table.querySelectorAll("tr"))
+        .slice(1)
+        .map((tr) => {
+          return Array.from(tr.querySelectorAll("td, th")).map((cell) =>
+            cell.textContent.trim(),
+          );
+        }),
+    };
+  });
 }
 """
 
