@@ -241,3 +241,76 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+## Bonus  2: Processing streaming events in JavaScript with fetch()
+
+With [the help of Claude](https://gist.github.com/simonw/209b46563b520d1681a128c11dd117bc), here's some JavaScript code (using asynchronous iterators) that can make an API request to this kind of stream and log out the events as they come in:
+```javascript
+async function* sseStreamIterator(apiUrl, requestBody, extraHeaders)  {
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: { ...{'Content-Type': 'application/json'}, ...(extraHeaders || {}) },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break; // value is always undefined is done is true
+
+    // stream: true ensures multi-byte characters are handled correctly
+    buffer += decoder.decode(value, { stream: true });
+    const events = buffer.split(/\r?\n\r?\n/);
+    buffer = events.pop() || '';
+
+    for (const event of events) {
+      const lines = event.split(/\r?\n/);
+      const parsedEvent = {};
+
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          const dataContent = line.slice(6);
+          try {
+            parsedEvent.data = JSON.parse(dataContent);
+          } catch (error) {
+            parsedEvent.data = null;
+            parsedEvent.data_raw = dataContent;
+          }
+        } else if (line.includes(': ')) {
+          const [key, value] = line.split(': ', 2);
+          parsedEvent[key] = value;
+        }
+      }
+
+      if (Object.keys(parsedEvent).length > 0) {
+        yield parsedEvent;
+      }
+    }
+  }
+}
+
+async function handleSSE() {
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const requestBody = {
+    "model": "gpt-4o-mini",
+    "messages": [{"role": "user", "content": "Tell me a joke"}],
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    }
+  };
+  for await (const event of sseStreamIterator(apiUrl, requestBody, {
+    Authorization: 'Bearer sk-...'
+  })) {
+    console.log(event);
+  }
+}
+
+handleSSE()
+```
