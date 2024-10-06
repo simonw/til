@@ -8,11 +8,11 @@ Today I heard about the [sqlite3-rsync](https://sqlite.org/draft/rsync.html) com
 git clone https://github.com/sqlite/sqlite.git
 cd sqlite
 ./configure
-make sqlite-rsync
+make sqlite3-rsync
 ```
 So it looks like the `sqlite-rsync` command is no longer limited to a branch.
 
-## How I compiled it without using make sqlite-rsync
+## How I compiled it without using make sqlite3-rsync
 
 After some poking around (and some hints from Claude) I found a recipe for compiling and running it that seems to work:
 
