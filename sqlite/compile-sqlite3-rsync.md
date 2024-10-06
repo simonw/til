@@ -1,4 +1,4 @@
-# Compiling and running sqlite3-rsync from a branch
+# Compiling and running sqlite3-rsync
 
 Today I heard about the [sqlite3-rsync](https://sqlite.org/draft/rsync.html) command, currently available in a branch in the SQLite code repository. It provides a mechanism for efficiently creating or updating a copy of a SQLite database that is running in WAL mode, either locally or via SSH to another server.
 
@@ -38,6 +38,8 @@ gcc -o sqlite3-rsync sqlite3-rsync.c ../sqlite3.c -DSQLITE_ENABLE_DBPAGE_VTAB
 The `-DSQLITE_ENABLE_DBPAGE_VTAB` flag is necessary to enable the `dbpage` virtual table, which is used by the `sqlite3-rsync` tool. Without that I got this error when trying to run it:
 
 > `ERROR: unable to prepare SQL [SELECT hash(data) FROM sqlite_dbpage WHERE pgno<=min(1,7338) ORDER BY pgno]: no such table: sqlite_dbpage`
+
+## Trying out sqlite-rsync
 
 Having compiled the utility I tested it out like this:
 
