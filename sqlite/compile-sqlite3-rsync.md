@@ -2,6 +2,18 @@
 
 Today I heard about the [sqlite3-rsync](https://sqlite.org/draft/rsync.html) command, currently available in a branch in the SQLite code repository. It provides a mechanism for efficiently creating or updating a copy of a SQLite database that is running in WAL mode, either locally or via SSH to another server.
 
+**Update:** Thanks to [gary_0 on Hacker News](https://news.ycombinator.com/item?id=41749288#41760082) here's a MUCH simpler recipe:
+
+```bash
+git clone https://github.com/sqlite/sqlite.git
+cd sqlite
+./configure
+make sqlite-rsync
+```
+So it looks like the `sqlite-rsync` command is no longer limited to a branch.
+
+## How I compiled it without using make sqlite-rsync
+
 After some poking around (and some hints from Claude) I found a recipe for compiling and running it that seems to work:
 
 ```bash
