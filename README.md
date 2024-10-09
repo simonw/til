@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->529<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->530<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -342,6 +342,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Running a MySQL server using Homebrew](https://github.com/simonw/til/blob/main/homebrew/mysql-homebrew.md) - 2021-06-11
 * [Running the latest SQLite in Datasette using Homebrew](https://github.com/simonw/til/blob/main/homebrew/latest-sqlite.md) - 2022-02-28
 * [Automatically maintaining Homebrew formulas using GitHub Actions](https://github.com/simonw/til/blob/main/homebrew/auto-formulas-github-actions.md) - 2023-06-21
+* [Upgrading Homebrew and avoiding the failed to verify attestation error](https://github.com/simonw/til/blob/main/homebrew/no-verify-attestations.md) - 2024-10-09
 
 ## zsh
 
