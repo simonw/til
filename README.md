@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->528<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->529<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -654,6 +654,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Exporting and editing a Twitter Spaces recording](https://github.com/simonw/til/blob/main/twitter/export-edit-twitter-spaces.md) - 2022-03-23
 * [How to get credentials for a new Twitter bot](https://github.com/simonw/til/blob/main/twitter/credentials-twitter-bot.md) - 2022-04-17
 * [Loading Twitter Birdwatch into SQLite for analysis with Datasette](https://github.com/simonw/til/blob/main/twitter/birdwatch-sqlite.md) - 2022-09-03
+* [Collecting replies to tweets using JavaScript](https://github.com/simonw/til/blob/main/twitter/collecting-replies.md) - 2024-10-08
 
 ## shot-scraper
 
