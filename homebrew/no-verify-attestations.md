@@ -15,6 +15,34 @@ For some reason `brew upgrade` wasn't fetching that new version. I ended up usin
 cd "$(brew --repo)" && git fetch && git reset --hard origin/master && brew update
 ```
 
+## Developer mode
+
+After publishing this I got [this tip from Homebrew team member @yossarian](https://infosec.exchange/@yossarian/113278362201612512):
+
+> you’re getting attestations by default probably because you have developer mode enabled; those kind of rate limiting issues are why it isn’t in GA yet
+
+I must have turned developer mode on years ago and forgot about it! Here's [the documentation](https://docs.brew.sh/Manpage#developer-subcommand) - to check the mode run:
+
+```bash
+brew developer
+```
+I got this:
+```
+Developer mode is enabled.
+```
+To turn it off:
+```bash
+brew developer off
+```
+Then confirm:
+```bash
+brew developer
+```
+```
+Developer mode is disabled.
+```
+I believe the challenges I had in this TIL can be explained by developer mode.
+
 ## Failed to verify attestation
 
 Homebrew added [a feature recently](https://github.com/Homebrew/brew/issues/17019) that checks cryptographical "attestations" on downloaded packages. This is implemented via the GitHub `gh` command.
