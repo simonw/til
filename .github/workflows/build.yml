@@ -68,7 +68,7 @@ jobs:
         cd main
         # Fetch embeddings for documents that need them
         openai-to-sqlite embeddings tils.db \
-          --sql 'select path, title, topic, body from til'
+          --sql 'select path, title, topic, body from til' || true
         # Now calculate and save similarities
         if sqlite-utils rows tils.db similarities --limit 1; then
           # Table exists already, so only calculate new similarities
