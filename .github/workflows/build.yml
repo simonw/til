@@ -74,7 +74,7 @@ jobs:
           # Table exists already, so only calculate new similarities
           openai-to-sqlite similar tils.db \
             $(git diff --name-only HEAD~10 HEAD | grep '/.*\.md$' | sed 's/\//_/g') \
-            --save --recalculate-for-matches --print
+            --save --recalculate-for-matches --print || true
         else
           # Table does not exist, calculate for everything
           openai-to-sqlite similar tils.db --all --save
