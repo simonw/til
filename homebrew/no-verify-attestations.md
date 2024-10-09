@@ -9,7 +9,7 @@ We do not provide support for this pre-release version.
 
 It turns out I was on an older Homebrew version. Sequoia support was added [in Homebrew 4.4.0](https://brew.sh/2024/10/01/homebrew-4.4.0/) released on October 1st 2024.
 
-For some reason `brew upgrade` wasn't fetching that new version. I ended up using this recipe [from StackOverflow](https://apple.stackexchange.com/a/277391):
+For some reason `brew update` wasn't fetching that new version. I ended up using this recipe [from StackOverflow](https://apple.stackexchange.com/a/277391):
 
 ```bash
 cd "$(brew --repo)" && git fetch && git reset --hard origin/master && brew update
@@ -21,7 +21,11 @@ After publishing this I got [this tip from Homebrew team member @yossarian](http
 
 > you’re getting attestations by default probably because you have developer mode enabled; those kind of rate limiting issues are why it isn’t in GA yet
 
-I must have turned developer mode on years ago and forgot about it! Here's [the documentation](https://docs.brew.sh/Manpage#developer-subcommand) - to check the mode run:
+I must have turned developer mode on years ago and forgot about it! Here's [the documentation](https://docs.brew.sh/Manpage#developer-subcommand), which also explains why my `brew update` command didn't work as expected:
+
+> When developer mode is enabled, `brew update` will update Homebrew to the latest commit on the `master` branch instead of the latest stable version along with some other behaviour changes
+
+To check the mode run:
 
 ```bash
 brew developer
