@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->530<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->531<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -857,4 +857,8 @@ Search these TILs at https://til.simonwillison.net/
 ## ios
 
 * [Listen to a web page in Mobile Safari](https://github.com/simonw/til/blob/main/ios/listen-to-page.md) - 2024-05-21
+
+## youtube
+
+* [Livestreaming a community election event on YouTube](https://github.com/simonw/til/blob/main/youtube/livestreaming.md) - 2024-10-09
 <!-- index ends -->
