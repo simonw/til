@@ -43,6 +43,8 @@ With hindsight, I could have had the RØDE microphones record audio directly ont
 
 I assumed YouTube were more stringent with their Chrome testing than their Firefox testing, so I switched to Chrome for the second half of the event - [video here](https://www.youtube.com/watch?v=GHtMbhG9EIU) - and kept an eye on its memory usage in Activity Monitor. That worked fine.
 
+**Lesson learned:** For this kind of event, losing audio is worse than losing video. Just because test streams that were 5 minutes long worked fine doesn't mean that an hour long stream won't run into unexpected problems. There's a reason the RØDE microphon's have the option to create their own audio backups!
+
 ## Embedding the video
 
 I tried embedding the YouTube live video on our [coastsidecivic.com](https://coastsidecivic.com/) website for the duration of the event, but the iframe showed a message saying that the owner of the video had disallowed embedding.
