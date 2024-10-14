@@ -78,7 +78,6 @@ YouTube doesn't let you replace the full audio for a video OR replace the video 
 
 Here's the `ffmpeg` command I used:
 
-% llm cmd use ffmpeg to combine the video from GCSD\ Candidates\ Forum\ -\ Part\ 1.mp4 with the audio from part1-auphonic-loudness-normalization.mp3 and save the output as part1-audio-fixed.mp4
 ```bash
 ffmpeg -i "GCSD Candidates Forum - Part 1.mp4" \
   -i "part1-auphonic-loudness-normalization.mp3" \
