@@ -65,3 +65,25 @@ Once  I'd checked this option embedding the livestream video worked just fine. I
 </iframe>
 ```
 That `aspect-ratio` trick gave me the video at the correct dimensions even when it expanded to fill 100% of available width.
+
+## Fixing the audio
+
+After publishing we noticed that the audio in the part 1 (but not the part 2) video was uneven: the microphone for the candidates had produced much quieter audio. I don't know why that wasn't a problem in the second video.
+
+I ended up downloading the YouTube video, extracting the audio and using the [auto-leveller tool](https://auphonic.com/features#leveler) from [auphonic.com](https://auphonic.com/) to automatically fix this.
+
+YouTube doesn't let you replace the full audio for a video OR replace the video itself, so I combined the previous video and the new audio using `ffmpeg` and then uploaded a fresh video, then set the previous video to "unlisted" and placed a link to the new one in the old one's description.
+
+[Original video](https://www.youtube.com/watch?v=MolqZq9ij2c) / [Video with fixed audio](https://www.youtube.com/watch?v=nG-vNJmqZ3o) - the change is most obvious from about 8 minutes in.
+
+Here's the `ffmpeg` command I used:
+
+% llm cmd use ffmpeg to combine the video from GCSD\ Candidates\ Forum\ -\ Part\ 1.mp4 with the audio from part1-auphonic-loudness-normalization.mp3 and save the output as part1-audio-fixed.mp4
+```bash
+ffmpeg -i "GCSD Candidates Forum - Part 1.mp4" \
+  -i "part1-auphonic-loudness-normalization.mp3" \
+  -c:v copy -map 0:v:0 -map 1:a:0 -shortest "part1-audio-fixed.mp4
+```
+I figured that out using [llm-cmd](https://github.com/simonw/llm-cmd) like this:
+
+`llm cmd use ffmpeg to combine the video from GCSD\ Candidates\ Forum\ -\ Part\ 1.mp4 with the audio from part1-auphonic-loudness-normalization.mp3 and save the output as part1-audio-fixed.mp4`
