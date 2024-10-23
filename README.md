@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->532<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->533<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -765,6 +765,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Exploring ColBERT with RAGatouille](https://github.com/simonw/til/blob/main/llms/colbert-ragatouille.md) - 2024-01-27
 * [Piping from rg to llm to answer questions about code](https://github.com/simonw/til/blob/main/llms/rg-pipe-llm-trick.md) - 2024-02-11
 * [How streaming LLM APIs work](https://github.com/simonw/til/blob/main/llms/streaming-llm-apis.md) - 2024-09-21
+* [Running prompts against images and PDFs with Google Gemini](https://github.com/simonw/til/blob/main/llms/prompt-gemini.md) - 2024-10-23
 
 ## ab
 
