@@ -149,6 +149,16 @@ prompt-gemini 'extract text from this image' example-handwriting.jpg -m pro
 ```
 Shortcuts `pro`, `flash` and `8b` are supported - it defaults to the cheapest 8b model.
 
+By default it outputs the full JSON response, so you can see things like the `"usageMetadata"` block. To output just the raw returned text add `-r`:
+
+```bash
+prompt-gemini 'extract text from this image' example-handwriting.jpg -r
+```
+```
+Example handwriting
+Let's try this out
+```
+
 Here's the script - save it somewhere on your path and run `chmod 755 prompt-gemini` to make it executable:
 
 ```bash
@@ -160,10 +170,11 @@ if [ -z "$GOOGLE_API_KEY" ]; then
     exit 1
 fi
 
-# Default model
+# Default model and options
 model="8b"
 prompt=""
 image_file=""
+jq_filter="."
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -171,6 +182,10 @@ while [[ $# -gt 0 ]]; do
         -m)
             model="$2"
             shift 2
+            ;;
+        -r)
+            jq_filter=".candidates[0].content.parts[0].text"
+            shift
             ;;
         *)
             if [ -z "$prompt" ]; then
@@ -186,7 +201,7 @@ done
 # Validate prompt
 if [ -z "$prompt" ]; then
     echo "Error: No prompt provided" >&2
-    echo "Usage: prompt-gemini \"prompt\" [image_file] [-m model]" >&2
+    echo "Usage: prompt-gemini \"prompt\" [image_file] [-m model] [-r]" >&2
     exit 1
 fi
 
@@ -278,11 +293,11 @@ else
 EOF
 fi
 
-# Make API request
+# Make API request with jq filter
 curl -s "https://generativelanguage.googleapis.com/v1beta/models/$model_string:generateContent?key=$GOOGLE_API_KEY" \
     -H 'Content-Type: application/json' \
     -X POST \
-    -d @"$temp_file" | jq
+    -d @"$temp_file" | jq "$jq_filter" -r
 ```
 
 ## How I got Claude to write the Bash script
@@ -342,3 +357,13 @@ Here's the prompt I fed to Claude to create this, starting with the Bash + `curl
 > Any other value should be passed used directly in the `gemini-1.5-flash:generateContent` portion of the URL
 
 Here's [the full Claude transcript](https://gist.github.com/simonw/7cc2a9c3e612a8af502d733ff619e066).
+
+Then I added the `-r` option by pasting in the previous script and prompting:
+
+> Modify this script to add an extra `-r` option which, if present, causes the final line to pipe through `jq` like this:
+>
+> ```
+> ... | jq '.candidates[0].content.parts[0].text' -r
+> ```
+
+[Claude transcript here](https://gist.github.com/simonw/b1bffe54ebdf3583ec4e3639fb535567).
