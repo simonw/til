@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->533<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->534<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -631,6 +631,7 @@ Search these TILs at https://til.simonwillison.net/
 * [How to get Cloudflare to cache HTML](https://github.com/simonw/til/blob/main/cloudflare/cloudflare-cache-html.md) - 2024-01-08
 * [Redirecting a whole domain with Cloudflare](https://github.com/simonw/til/blob/main/cloudflare/redirect-whole-domain.md) - 2024-03-15
 * [Cloudflare redirect rules with dynamic expressions](https://github.com/simonw/til/blob/main/cloudflare/redirect-rules.md) - 2024-05-29
+* [Setting cache-control: max-age=31536000 with a Cloudflare Transform Rule](https://github.com/simonw/til/blob/main/cloudflare/cache-control-transform-rule.md) - 2024-10-23
 
 ## webauthn
 
