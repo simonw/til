@@ -174,7 +174,7 @@ I got into a tangle at first trying to figure this out, because I thought I need
 > - An activated Conda environment based on the `CONDA_PREFIX` environment variable.
 > - A virtual environment at `.venv` in the current directory, or in the nearest parent directory.
 
-I had Conda installed, which means I had a `CONDAPREFIX` environment variable set, which meant `uv pip` was ignoring my `.venv` directory entirely and using the Conda environment instead! 
+I had Conda installed, which means I had a `CONDA_PREFIX` environment variable set, which meant `uv pip` was ignoring my `.venv` directory entirely and using the Conda environment instead! 
 
 This caused all manner of confusion. I [put together this document](https://gist.github.com/simonw/975dfa41e9b03bca2513a986d9aa3dcf) and asked Charlie for help, and he graciously unblocked me.
 
