@@ -6,9 +6,9 @@ pip install flash-attn --no-build-isolation
 ```
 **Do not try to do this**. It is a trap. For some reason attempting to install this runs a compilation process which can take _multiple hours_. I tried to run this in Google Colab on an A100 machine that I was paying for and burned through $2 worth of "compute units" and an hour and a half of waiting before I gave up.
 
-Thankfully [I learned](https://twitter.com/Sampson4242/status/1849666226299281443) that there's an alternative: the Flash Attention team provide pre-built wheels for their project exclusively through GitHub releases. They're not uploaded to PyPI, possibly because they're 180MB each or maybe because PyPI can't automatically pick the correct torch version?
+> **Update**: I may be wrong about this, [the setup.py](https://github.com/Dao-AILab/flash-attention/blob/c1d146cbd5becd9e33634b1310c2d27a49c7e862/setup.py#L54-L56) for the project includes code that attempts to install wheels directly from the GitHub releases. That didn't work for me and I don't understand why.
 
-Whatever the reason, you can find them attached to the most recent release on https://github.com/Dao-AILab/flash-attention/releases
+Thankfully [I learned](https://twitter.com/Sampson4242/status/1849666226299281443) that there's an alternative: the Flash Attention team provide pre-built wheels for their project exclusively through GitHub releases. You can find them attached to the most recent release on https://github.com/Dao-AILab/flash-attention/releases
 
 But which one should you use out of the 83 files listed there?
 
