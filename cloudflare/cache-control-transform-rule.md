@@ -82,3 +82,9 @@ I then tested it in Firefox. I loaded the page, opened up the network tab in bro
 ![A screenshot of a browser network requests panel showing 18 HTTP requests for various resources including images, JavaScript, and icons. The requests are primarily to static.simonwillison.net, with most returning 200 status codes and "cached" transfer status. The page took 786ms to finish loading with DOMContentLoaded at 59ms.](https://github.com/user-attachments/assets/94b4eae4-c530-4379-b655-bea1f3689092)
 
 Note the summary that says "1.38MB / 1.62 kB transferred" - the caching is working extremely well.
+
+## Bonus: access-control-allow-origin
+
+I have an S3 bucket behind Cloudflare and I wanted a quick and easy way to put files online that are served with `access-control-allow-origin: *`, initially so I could experiment with things like [Datasette Lite](https://lite.datasette.io/) and the [DuckDB WASM Shell](https://duckdb.org/docs/api/wasm/overview.html).
+
+![Screenshot of a CORS configuration interface with fields for rule name "static.simonwillis.net/static/cors-allow/*", custom filter expression selected, URI Full field with wildcard operator and value "https://static.simonwillison.net/static/cors-allow/*", and response header configuration for access-control-allow-origin set to "*"](https://github.com/user-attachments/assets/bd476176-a942-47af-9d73-c9cbde476f89)
