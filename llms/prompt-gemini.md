@@ -1,6 +1,6 @@
-# Running prompts against images and PDFs with Google Gemini
+# Running prompts against images, PDFs, audio and video with Google Gemini
 
-I'm still working towards adding multi-modal support to my [LLM](https://llm.datasette.io/) tool. In the meantime, here are notes on running prompts against images and PDFs from the command-line using the [Google Gemini](https://ai.google.dev/gemini-api) family of models.
+I'm still working towards adding multi-modal support to my [LLM](https://llm.datasette.io/) tool. In the meantime, here are notes on running prompts against images and PDFs and audio and video files from the command-line using the [Google Gemini](https://ai.google.dev/gemini-api) family of models.
 
 ## Using curl
 
@@ -247,6 +247,12 @@ if [ -n "$image_file" ]; then
             ;;
         pdf)
             mime_type="application/pdf"
+            ;;
+        mp3)
+            mime_type="audio/mp3"
+            ;;
+        mp4)
+            mime_type="video/mp4"
             ;;
         *)
             echo "Error: Unsupported file type .$ext" >&2
