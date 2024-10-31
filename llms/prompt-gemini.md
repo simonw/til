@@ -2,6 +2,13 @@
 
 I'm still working towards adding multi-modal support to my [LLM](https://llm.datasette.io/) tool. In the meantime, here are notes on running prompts against images and PDFs and audio and video files from the command-line using the [Google Gemini](https://ai.google.dev/gemini-api) family of models.
 
+> **Update**: I integrated the research from this TIL into my LLM tool, which can now run multi-modal prompts against Gemini like this:
+>
+> ```bash
+> llm -m gemini-1.5-flash "describe this image" -a image.jpg
+> ```
+> See [You can now run prompts against images, audio and video in your terminal using LLM](https://simonwillison.net/2024/Oct/29/llm-multi-modal/#atom-everything) for details.
+
 ## Using curl
 
 Here's the initial recipe I figured out using `curl`.
