@@ -28,7 +28,7 @@ I'm using [llm-claude-3](https://github.com/simonw/llm-claude-3) here and a syst
 
 > `write detailed usage documentation including realistic examples`
 
-Here's a short exceprt of the result:
+Here's a short excerpt of the result:
 
 > ## Basic Usage
 > 
