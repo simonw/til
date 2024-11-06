@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->537<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->538<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -36,6 +36,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Serving a JavaScript project built using Vite from GitHub Pages](https://github.com/simonw/til/blob/main/github-actions/vite-github-pages.md) - 2023-10-23
 * [GitHub Actions, Issues and Pages to build a daily planner](https://github.com/simonw/til/blob/main/github-actions/daily-planner.md) - 2024-01-01
 * [Creating GitHub repository labels with an Actions workflow](https://github.com/simonw/til/blob/main/github-actions/creating-github-labels.md) - 2024-02-09
+* [Running cog automatically against GitHub pull requests](https://github.com/simonw/til/blob/main/github-actions/cog.md) - 2024-11-06
 
 ## python
 
