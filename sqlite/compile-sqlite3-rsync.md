@@ -8,7 +8,7 @@ Today I heard about the [sqlite3-rsync](https://sqlite.org/draft/rsync.html) com
 git clone https://github.com/sqlite/sqlite.git
 cd sqlite
 ./configure
-make sqlite3-rsync
+make sqlite3_rsync
 ```
 So it looks like the `sqlite-rsync` command is no longer limited to a branch.
 
