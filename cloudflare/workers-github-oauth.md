@@ -296,7 +296,7 @@ I started thinking this through with the help of Claude: I [pasted in the code](
 
 > `Explain the consequences of this not checking the state parameter`
 
-Some back and forth I'm ready to explain this in my own words.
+After some back and forth I'm ready to explain this in my own words.
 
 The specific attack to worry about here is one where an attacker tricks/forces a user into signing in to an account that the _attacker_ controls.
 
