@@ -123,6 +123,8 @@ The last step was to configure that URL. I navigated to my `simonwillison.net` C
 
 That final `*` wildcard turned out to be necessary to ensure that `?code=` querystring URLs would also activate the `/github-auth` worker - without that I got a 404 served by GitHub Pages for those URLs instead.
 
+Here's the deployed page - visiting it should redirect you straight to GitHub: https://tools.simonwillison.net/github-auth
+
 ## Using this from an application
 
 The OAuth flow works by setting a `github_token` key in `localStorage()` for the entire `tools.simonwillison.net` domain - which means JavaScript on any page can check for that key and make API calls to the GitHub Gist API if the key is present.
@@ -159,6 +161,8 @@ authLink.addEventListener('click', () => {
 `authLink` here is a reference to a "Authenticate with GitHub" link on that page. Clicking that link uses `window.open` to open a popup showing my new `/github-auth` page, which then automatically redirects to GitHub for permission.
 
 Clicking the link also starts a every-second poll to check if `github_token` has been set in `localStorage` yet. As soon as that becomes available the polling ends, the "Authenticate with GitHub" UI is hidden and a new `saveGistBtn` (a button to save a Gist) is made visible.
+
+Here's the page that uses that: https://tools.simonwillison.net/openai-audio-output - you'll need to provide an OpenAI API key and submit a prompt in order to see the option to Authenticate with GitHub.
 
 ## Adding error handling
 
