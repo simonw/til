@@ -159,3 +159,131 @@ authLink.addEventListener('click', () => {
 `authLink` here is a reference to a "Authenticate with GitHub" link on that page. Clicking that link uses `window.open` to open a popup showing my new `/github-auth` page, which then automatically redirects to GitHub for permission.
 
 Clicking the link also starts a every-second poll to check if `github_token` has been set in `localStorage` yet. As soon as that becomes available the polling ends, the "Authenticate with GitHub" UI is hidden and a new `saveGistBtn` (a button to save a Gist) is made visible.
+
+## Adding error handling
+
+That code Claude wrote is missing an important detail: error handling. If the GitHub API returns an error - e.g. because the `?code=` is invalid - the page won't reflect that to the user.
+
+I pasted in the code and prompted:
+
+> `Add error handling to this Cloudflare Workers script - if the GitHub API returns an error it should be shown to the user`
+
+Claude [wrote more code](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb6be47578#create-github-oauth-cloudflare-worker-with-error-handling), but it was a bit verbose. I prompted:
+
+> `refactor that code to have less code for the HTML`
+
+And [got back this](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb6be47578#rewrite-untitled), which is much better. I've now deployed that as an update to the original script.
+
+```javascript
+export default {
+  async fetch(request, env) {
+    const generateHTML = ({ title, content, isError = false }) => {
+      return new Response(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>${title}</title>
+            <style>
+              body {
+                font-family: -apple-system, system-ui, sans-serif;
+                padding: 2rem;
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: center;
+              }
+              .message {
+                padding: 1rem;
+                margin: 1rem 0;
+                border-radius: 4px;
+                background-color: ${isError ? '#ffebee' : '#e8f5e9'};
+                border: 1px solid ${isError ? '#ffcdd2' : '#c8e6c9'};
+                color: ${isError ? '#b71c1c' : '#2e7d32'};
+              }
+            </style>
+          </head>
+          <body>
+            <div class="message">
+              ${content}
+            </div>
+            ${isError ? '<p>Please close this window and try again. If the problem persists, contact support.</p>' : ''}
+          </body>
+        </html>
+      `, {
+        headers: { 'Content-Type': 'text/html' },
+        status: isError ? 400 : 200
+      });
+    };
+
+    try {
+      const url = new URL(request.url);
+      const clientId = env.GITHUB_CLIENT_ID;
+      const clientSecret = env.GITHUB_CLIENT_SECRET;
+      const redirectUri = env.GITHUB_REDIRECT_URI;
+      
+      if (!url.searchParams.has('code')) {
+        const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
+        githubAuthUrl.searchParams.set('client_id', clientId);
+        githubAuthUrl.searchParams.set('redirect_uri', redirectUri);
+        githubAuthUrl.searchParams.set('scope', 'gist');
+        githubAuthUrl.searchParams.set('state', crypto.randomUUID());
+        return Response.redirect(githubAuthUrl.toString(), 302);
+      }
+
+      const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          client_id: clientId,
+          client_secret: clientSecret,
+          code: url.searchParams.get('code'),
+          redirect_uri: redirectUri
+        })
+      });
+      
+      const tokenData = await tokenResponse.json();
+      
+      if (tokenData.error) {
+        return generateHTML({
+          title: 'GitHub OAuth Error',
+          content: `
+            <h3>Authentication Error</h3>
+            <p>Error: ${tokenData.error}</p>
+            ${tokenData.error_description ? `<p>Description: ${tokenData.error_description}</p>` : ''}
+          `,
+          isError: true
+        });
+      }
+      
+      return generateHTML({
+        title: 'GitHub OAuth Success',
+        content: `
+          <h2>Authentication successful!</h2>
+          <p>You can close this window.</p>
+          <script>
+            try {
+              localStorage.setItem('github_token', '${tokenData.access_token}');
+            } catch (err) {
+              document.body.innerHTML += '<p style="color: #c62828;">Warning: Unable to store token in localStorage</p>';
+            }
+          </script>
+        `
+      });
+
+    } catch (error) {
+      return generateHTML({
+        title: 'Unexpected Error',
+        content: `
+          <h3>Unexpected Error</h3>
+          <p>An unexpected error occurred during authentication.</p>
+          <p>Details: ${error.message}</p>
+        `,
+        isError: true
+      });
+    }
+  }
+};
+```
+Here's [an example page](https://tools.simonwillison.net/github-auth?code=bad-code) showing the new error message.
