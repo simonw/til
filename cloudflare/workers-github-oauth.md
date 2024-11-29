@@ -28,20 +28,104 @@ This is the simplest possible design for an OAuth flow: send the user straight t
 
 Here's [the full Claude transcript](https://gist.github.com/simonw/975b8934066417fe771561a1b672ad4f). Claude gave me almost *exactly* what I needed - the only missing detail was that it set the `redirectUri` to `url.origin` (just the site domain) when it should have been the full URL to the worker page.
 
-I edited the code to its final version, which looked like this:
+I tweaked the code to fix this, and later again to add error handling and then to address a potential security issue. My currently deployed code looks like this:
+
 ```javascript
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    const clientId = env.GITHUB_CLIENT_ID;
-    const clientSecret = env.GITHUB_CLIENT_SECRET;
-    const redirectUri = env.GITHUB_REDIRECT_URI;
-    
-    // If we have a code, exchange it for an access token
-    if (url.searchParams.has('code')) {
-      const code = url.searchParams.get('code');
+    const generateHTML = ({ title, content, isError = false, headers = {} }) => {
+      return new Response(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>${title}</title>
+            <style>
+              body {
+                font-family: -apple-system, system-ui, sans-serif;
+                padding: 2rem;
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: center;
+              }
+              .message {
+                padding: 1rem;
+                margin: 1rem 0;
+                border-radius: 4px;
+                background-color: ${isError ? '#ffebee' : '#e8f5e9'};
+                border: 1px solid ${isError ? '#ffcdd2' : '#c8e6c9'};
+                color: ${isError ? '#b71c1c' : '#2e7d32'};
+              }
+            </style>
+          </head>
+          <body>
+            <div class="message">
+              ${content}
+            </div>
+            ${isError ? '<p>Please close this window and try again. If the problem persists, contact support.</p>' : ''}
+          </body>
+        </html>
+      `, {
+        headers: {
+          'Content-Type': 'text/html',
+          ...headers
+        },
+        status: isError ? 400 : 200
+      });
+    };
+
+    try {
+      const url = new URL(request.url);
+      const clientId = env.GITHUB_CLIENT_ID;
+      const clientSecret = env.GITHUB_CLIENT_SECRET;
+      const redirectUri = env.GITHUB_REDIRECT_URI;
       
-      // Exchange the code for an access token
+      if (!url.searchParams.has('code')) {
+        // Initial authorization request
+        const state = crypto.randomUUID();
+        const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
+        githubAuthUrl.searchParams.set('client_id', clientId);
+        githubAuthUrl.searchParams.set('redirect_uri', redirectUri);
+        githubAuthUrl.searchParams.set('scope', 'gist');
+        githubAuthUrl.searchParams.set('state', state);
+
+        // Create headers object with the state cookie
+        const headers = new Headers({
+          'Location': githubAuthUrl.toString(),
+          'Set-Cookie': `github_auth_state=${state}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=3600`
+        });
+
+        return new Response(null, {
+          status: 302,
+          headers
+        });
+      }
+
+      // Callback handling
+      const returnedState = url.searchParams.get('state');
+      const cookies = request.headers.get('Cookie') || '';
+      const stateCookie = cookies.split(';')
+        .map(cookie => cookie.trim())
+        .find(cookie => cookie.startsWith('github_auth_state='));
+      const savedState = stateCookie ? stateCookie.split('=')[1] : null;
+
+      // Cookie cleanup header
+      const clearStateCookie = {
+        'Set-Cookie': 'github_auth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0'
+      };
+
+      // Validate state parameter
+      if (!savedState || savedState !== returnedState) {
+        return generateHTML({
+          title: 'Invalid State Parameter',
+          content: `
+            <h3>Security Error</h3>
+            <p>Invalid state parameter detected. This could indicate a CSRF attempt.</p>
+          `,
+          isError: true,
+          headers: clearStateCookie
+        });
+      }
+
       const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
         method: 'POST',
         headers: {
@@ -51,50 +135,66 @@ export default {
         body: JSON.stringify({
           client_id: clientId,
           client_secret: clientSecret,
-          code: code,
-          redirect_uri: redirectUri
+          code: url.searchParams.get('code'),
+          redirect_uri: redirectUri,
+          state: returnedState
         })
       });
       
       const tokenData = await tokenResponse.json();
       
-      // Return HTML that stores the token and closes the window
-      return new Response(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>GitHub OAuth Success</title>
-          </head>
-          <body>
-            <script>
+      if (tokenData.error) {
+        return generateHTML({
+          title: 'GitHub OAuth Error',
+          content: `
+            <h3>Authentication Error</h3>
+            <p>Error: ${tokenData.error}</p>
+            ${tokenData.error_description ? `<p>Description: ${tokenData.error_description}</p>` : ''}
+          `,
+          isError: true,
+          headers: clearStateCookie
+        });
+      }
+      
+      // Success response with cookie cleanup
+      return generateHTML({
+        title: 'GitHub OAuth Success',
+        content: `
+          <h2>Authentication successful!</h2>
+          <p>You can close this window.</p>
+          <script>
+            try {
               localStorage.setItem('github_token', '${tokenData.access_token}');
-              document.body.innerHTML = 'Authentication successful! You can close this window.';
-            </script>
-          </body>
-        </html>
-      `, {
+            } catch (err) {
+              document.body.innerHTML += '<p style="color: #c62828;">Warning: Unable to store token in localStorage</p>';
+            }
+          </script>
+        `,
+        headers: clearStateCookie
+      });
+
+    } catch (error) {
+      // Error response with cookie cleanup
+      return generateHTML({
+        title: 'Unexpected Error',
+        content: `
+          <h3>Unexpected Error</h3>
+          <p>An unexpected error occurred during authentication.</p>
+          <p>Details: ${error.message}</p>
+        `,
+        isError: true,
         headers: {
-          'Content-Type': 'text/html'
+          'Set-Cookie': 'github_auth_state=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0'
         }
       });
     }
-    
-    // If no code, redirect to GitHub OAuth
-    const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
-    githubAuthUrl.searchParams.set('client_id', clientId);
-    githubAuthUrl.searchParams.set('redirect_uri', redirectUri);
-    githubAuthUrl.searchParams.set('scope', 'gist');
-    githubAuthUrl.searchParams.set('state', crypto.randomUUID());
-    
-    return Response.redirect(githubAuthUrl.toString(), 302);
   }
 };
 ```
-I find it hard to imagine a simpler implementation of this pattern.
 
 The GitHub API has been around for a very long time, so it shouldn't be surprising that Claude knows exactly how to write the above code. I was still delighted at how much work it had saved me.
 
-(I should mention now that I completed this entire project on my phone, before I got up to make the morning coffee.)
+(I should mention now that I completed the entire initial project on my phone, before I got up to make the morning coffee.)
 
 ## Deploying this to Cloudflare Workers
 
@@ -166,7 +266,7 @@ Here's the page that uses that: https://tools.simonwillison.net/openai-audio-out
 
 ## Adding error handling
 
-That code Claude wrote is missing an important detail: error handling. If the GitHub API returns an error - e.g. because the `?code=` is invalid - the page won't reflect that to the user.
+The initial code that Claude wrote was missing an important detail: error handling. If the GitHub API returns an error - e.g. because the `?code=` is invalid - the page won't reflect that to the user.
 
 I pasted in the code and prompted:
 
@@ -176,118 +276,69 @@ Claude [wrote more code](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb
 
 > `refactor that code to have less code for the HTML`
 
-And [got back this](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb6be47578#rewrite-untitled), which is much better. I've now deployed that as an update to the original script.
+And [got back this](https://gist.github.com/simonw/85debbdf3d981ff7e54f8cdb6be47578#rewrite-untitled), which is much better. 
+
+Here's [an example page](https://tools.simonwillison.net/github-auth?code=bad-code) showing the new error message.
+
+## Preventing CSRF attacks
+
+Robert Munteanu [on Mastodon](https://fosstodon.org/@rombert/113566295983095957):
+
+> I have looked into OAuth 2.0 and OIDC recently, I wonder what your toughts are about adding CSRF protection? There seems to be no checking of the state parameter in the workers code.
+>
+> https://www.rfc-editor.org/rfc/rfc6749#section-10.12
+
+He's absolutely right! The `state=` parameter was being set but in the first few versions of the code it wasn't being checked later.
+
+### Understanding the attack
+
+I started thinking this through with the help of Claude: I [pasted in the code](https://gist.github.com/simonw/e87e55dfe13e7201dc0ae5042bc4d4eb) and prompted:
+
+> `Explain the consequences of this not checking the state parameter`
+
+Some back and forth I'm ready to explain this in my own words.
+
+The specific attack to worry about here is one where an attacker tricks/forces a user into signing in to an account that the _attacker_ controls.
+
+For my Gist example here, imagine if I could create a brand new GitHub account and then trick you into signing in to that account using OAuth, while giving you the impression that you had signed into your own account.
+
+If the user saves a Gist containing their private information, you can now access that as the real owner of the account.
+
+With GitHub OAuth here's how that could happen: as an attacker, I could initiate the OAuth flow against my new dedicated malicious account, and then at the end intercept that final redirect URL with the `?code=` parameter:
+
+```
+https://tools.simonwillison.net/github-auth?code=auth-code-I-generated
+```
+Rather than visit that URL I instead send it to my target and trick them into clicking on it.
+
+When they visit that page the Worker exchanges that `?code=` for an access token against MY account and stores that in my victim's `localStorage`.
+
+Now any Gists they save will be visible to me as the account's real owner.
+
+### How to prevent it
+
+This attack is why the OAuth specification describes the `&state=` parameter. This is a random value that the client generates and then sends to the server. The server echoes that value back to the client in the final redirect URL as the `?state=` parameter.
+
+To avoid CSRF attacks, we need to record that initial generated `state` and then compare it to the `state=` in the final redirect URL.
+
+I pasted in another copy of my script and prompted Claude:
+
+> `Modify this to store the state= parameter in an HTTP only session cookie called github_auth_state and then compare that when the user comes back and show an error if they do not match, otherwise unset the cookie and complete the operation`
+
+Claude [wrote some code](https://gist.github.com/simonw/ae56f00572dd80f9180687f9532a8226#create-github-oauth-worker-with-state-validation), but when I tried it out on Cloudflare I got this error... which I pasted back into Claude as a follow-up prompt:
+
+> `Unexpected Error An unexpected error occurred during authentication. Details: Can't modify immutable headers.`
+
+This time it [wrote code that worked](https://gist.github.com/simonw/ae56f00572dd80f9180687f9532a8226#rewrite-untitled) - it turns out the correct pattern for sending custom HTTP headers in a Cloudflare Worker looks like this:
 
 ```javascript
-export default {
-  async fetch(request, env) {
-    const generateHTML = ({ title, content, isError = false }) => {
-      return new Response(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <title>${title}</title>
-            <style>
-              body {
-                font-family: -apple-system, system-ui, sans-serif;
-                padding: 2rem;
-                max-width: 600px;
-                margin: 0 auto;
-                text-align: center;
-              }
-              .message {
-                padding: 1rem;
-                margin: 1rem 0;
-                border-radius: 4px;
-                background-color: ${isError ? '#ffebee' : '#e8f5e9'};
-                border: 1px solid ${isError ? '#ffcdd2' : '#c8e6c9'};
-                color: ${isError ? '#b71c1c' : '#2e7d32'};
-              }
-            </style>
-          </head>
-          <body>
-            <div class="message">
-              ${content}
-            </div>
-            ${isError ? '<p>Please close this window and try again. If the problem persists, contact support.</p>' : ''}
-          </body>
-        </html>
-      `, {
-        headers: { 'Content-Type': 'text/html' },
-        status: isError ? 400 : 200
-      });
-    };
-
-    try {
-      const url = new URL(request.url);
-      const clientId = env.GITHUB_CLIENT_ID;
-      const clientSecret = env.GITHUB_CLIENT_SECRET;
-      const redirectUri = env.GITHUB_REDIRECT_URI;
-      
-      if (!url.searchParams.has('code')) {
-        const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
-        githubAuthUrl.searchParams.set('client_id', clientId);
-        githubAuthUrl.searchParams.set('redirect_uri', redirectUri);
-        githubAuthUrl.searchParams.set('scope', 'gist');
-        githubAuthUrl.searchParams.set('state', crypto.randomUUID());
-        return Response.redirect(githubAuthUrl.toString(), 302);
-      }
-
-      const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          client_id: clientId,
-          client_secret: clientSecret,
-          code: url.searchParams.get('code'),
-          redirect_uri: redirectUri
-        })
-      });
-      
-      const tokenData = await tokenResponse.json();
-      
-      if (tokenData.error) {
-        return generateHTML({
-          title: 'GitHub OAuth Error',
-          content: `
-            <h3>Authentication Error</h3>
-            <p>Error: ${tokenData.error}</p>
-            ${tokenData.error_description ? `<p>Description: ${tokenData.error_description}</p>` : ''}
-          `,
-          isError: true
-        });
-      }
-      
-      return generateHTML({
-        title: 'GitHub OAuth Success',
-        content: `
-          <h2>Authentication successful!</h2>
-          <p>You can close this window.</p>
-          <script>
-            try {
-              localStorage.setItem('github_token', '${tokenData.access_token}');
-            } catch (err) {
-              document.body.innerHTML += '<p style="color: #c62828;">Warning: Unable to store token in localStorage</p>';
-            }
-          </script>
-        `
-      });
-
-    } catch (error) {
-      return generateHTML({
-        title: 'Unexpected Error',
-        content: `
-          <h3>Unexpected Error</h3>
-          <p>An unexpected error occurred during authentication.</p>
-          <p>Details: ${error.message}</p>
-        `,
-        isError: true
-      });
-    }
-  }
-};
+return new Response(`
+  <!DOCTYPE html>
+  <html>...</html>
+`, {
+  headers: {
+    'Content-Type': 'text/html',
+    ...headers
+  },
+);
 ```
-Here's [an example page](https://tools.simonwillison.net/github-auth?code=bad-code) showing the new error message.
