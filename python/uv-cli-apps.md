@@ -166,13 +166,15 @@ Then `uv run pytest` would work without needing to use `--extra` to ensure the t
 
 ## There's no need for uv pip
 
-I got into a tangle at first trying to figure this out, because I thought I needed to use `uv pip` to manage my environment... and it turns out `uv pip` follows [these rules](https://docs.astral.sh/uv/pip/environments/#discovery-of-python-environments):
+I got into a tangle at first trying to figure this out, because I thought I needed to use `uv pip` to manage my environment... and it turns out `uv pip` followed [these rules](https://docs.astral.sh/uv/pip/environments/#discovery-of-python-environments):
 
 > When running a command that mutates an environment such as `uv pip sync` or `uv pip install`, uv will search for a virtual environment in the following order:
 >
 > - An activated virtual environment based on the `VIRTUAL_ENV` environment variable.
 > - An activated Conda environment based on the `CONDA_PREFIX` environment variable.
 > - A virtual environment at `.venv` in the current directory, or in the nearest parent directory.
+
+**Update:** This changed in [uv 0.5.0](https://github.com/astral-sh/uv/releases/tag/0.5.0) so Conda should no longer result in this confusion.
 
 I had Conda installed, which means I had a `CONDA_PREFIX` environment variable set, which meant `uv pip` was ignoring my `.venv` directory entirely and using the Conda environment instead! 
 
