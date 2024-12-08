@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->539<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->540<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -623,6 +623,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Upgrading packages with npm](https://github.com/simonw/til/blob/main/npm/upgrading-packages.md) - 2022-07-13
 * [Running self-hosted QuickJS in a browser](https://github.com/simonw/til/blob/main/npm/self-hosted-quickjs.md) - 2024-03-20
 * [Running Prettier against Django or Jinja templates](https://github.com/simonw/til/blob/main/npm/prettier-django.md) - 2024-06-19
+* [Publishing a simple client-side JavaScript package to npm with GitHub Actions](https://github.com/simonw/til/blob/main/npm/npm-publish-github-actions.md) - 2024-12-07
 
 ## pluggy
 
