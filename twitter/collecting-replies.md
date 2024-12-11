@@ -66,3 +66,18 @@ setInterval(collectTweets, 500);
 // Run copy(window.tweets) later to copy collected tweets to the clipboard
 ```
 I built this with a bit of help from Claude - [transcript here](https://gist.github.com/simonw/49eb5c7128d44151e5851b79cc488baa).
+
+## Feeding those to an LLM
+
+I fed the collected tweets to an LLM (Google's [gemini-exp-1206](https://simonwillison.net/2024/Dec/6/gemini-exp-1206/)) and asked it this question:
+
+> `Group these into a set of definitions that illustrate the various different shapes of definition. For each of your definitions include quotes of the tweets that support that definition. Answer in markdown`
+
+I used this command:
+
+```bash
+curl 'https://gist.githubusercontent.com/simonw/bdc7b894eedcfd54f0a2422ea8feaa80/raw/9a76a9a33d16b8c5a8c036e0d92c2cb9bf83267c/tweets.json' | \
+  llm -m gemini-exp-1206 -s 'Group these into a set of definitions that illustrate the various different shapes of definition. For each of your definitions include quotes of the tweets that support that definition. Answer in markdown'
+```
+
+Here's the response I got: https://gist.github.com/simonw/beaa5f90133b30724c5cc1c4008d0654
