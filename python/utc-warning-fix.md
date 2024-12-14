@@ -28,7 +28,7 @@ I found another hint [in the docs](https://docs.python.org/3/library/datetime.ht
 Again, `timezone.utc` was the right fix here to keep things working in pre-3.11 versions:
 
 ```python
-import python
+import datetime
 
 utc_datetime = datetime.datetime.fromtimestamp(created_string, datetime.timezone.utc)
 ```
