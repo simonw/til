@@ -74,3 +74,33 @@ I'm running my S3 bucket behind a Cloudflare cache. As you can see above, S3 ret
 But... while Cloudflare [added support for Vary](https://blog.cloudflare.com/vary-for-images-serve-the-correct-images-to-the-correct-browsers/) in September 2021 they only support it for images, not for other file formats! So sadly I don't think you can use CORS for JavaScript modules in this way if you are using Cloudflare.
 
 I also tried using `"AllowedOrigins": ["*"]` in my S3 configuration, but I found that if you make a request without an `Origin` header S3 still doesn't return `Access-Control-Allow-Origin` - so under a cache that does not support Vary you run the risk of caching an asset without those headers.
+
+## CORS policy to allow PUT using signed credentials
+
+A useful feature of S3 is that you can generate [signed credentials](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html) that allow JavaScript running in a browser to upload files to a pre-determined key in a bucket.
+
+After much frustration, here's the CORS policy that's needed to enable this:
+
+```json
+[
+    {
+        "AllowedHeaders": [
+            "content-type"
+        ],
+        "AllowedMethods": [
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [
+            "content-type",
+            "etag"
+        ]
+    }
+]
+```
+I used this command to set that policy:
+```bash
+s3-credentials set-cors-policy -m PUT -o '*' name-of-bucket -e content-type -e etag -h content-type
+```
