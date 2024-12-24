@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->541<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->542<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -774,6 +774,7 @@ Search these TILs at https://til.simonwillison.net/
 * [How streaming LLM APIs work](https://github.com/simonw/til/blob/main/llms/streaming-llm-apis.md) - 2024-09-21
 * [Running prompts against images, PDFs, audio and video with Google Gemini](https://github.com/simonw/til/blob/main/llms/prompt-gemini.md) - 2024-10-23
 * [Generating documentation from tests using files-to-prompt and LLM](https://github.com/simonw/til/blob/main/llms/docs-from-tests.md) - 2024-11-05
+* [Named Entity Resolution with dslim/distilbert-NER](https://github.com/simonw/til/blob/main/llms/bert-ner.md) - 2024-12-23
 
 ## ab
 
