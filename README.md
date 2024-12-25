@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->542<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->543<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -584,6 +584,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Rewriting a Git repo to remove secrets from the history](https://github.com/simonw/til/blob/main/git/rewrite-repo-remove-secrets.md) - 2023-01-24
 * [Using git-filter-repo to set commit dates to author dates](https://github.com/simonw/til/blob/main/git/git-filter-repo.md) - 2023-07-10
 * [Back-dating Git commits based on file modification dates](https://github.com/simonw/til/blob/main/git/backdate-git-commits.md) - 2024-08-01
+* [Calculating the size of all LFS files in a repo](https://github.com/simonw/til/blob/main/git/size-of-lfs-files.md) - 2024-12-25
 
 ## web-components
 
