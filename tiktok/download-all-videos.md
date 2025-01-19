@@ -4,7 +4,7 @@ TikTok may or may not be banned in the USA within the next 24 hours or so. Here'
 
 ## Scrape the list of video URLs 
 
-I used a variant of my [Twitter scraping trick](). Start by loading up a profile page - like [https://www.tiktok.com/@ilgallinaio_special](www.tiktok.com/@ilgallinaio_special) - in Firefox or Chrome or Safari.
+I used a variant of my [Twitter scraping trick](https://til.simonwillison.net/twitter/collecting-replies). Start by loading up a profile page - like [https://www.tiktok.com/@ilgallinaio_special](www.tiktok.com/@ilgallinaio_special) - in Firefox or Chrome or Safari.
 
 Open up the DevTools and paste in the following JavaScript:
 
