@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->543<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->544<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -876,4 +876,8 @@ Search these TILs at https://til.simonwillison.net/
 ## hugo
 
 * [The most basic possible Hugo site](https://github.com/simonw/til/blob/main/hugo/basic.md) - 2024-10-22
+
+## tiktok
+
+* [Downloading every video for a TikTok account](https://github.com/simonw/til/blob/main/tiktok/download-all-videos.md) - 2025-01-18
 <!-- index ends -->
