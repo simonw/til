@@ -2,6 +2,14 @@
 
 TikTok may or may not be banned in the USA within the next 24 hours or so. Here's a pattern you can use to download all of the videos from a specific account.
 
+## Using yt-dlp directly
+
+After first publishing this TIL I found out you can point `yt-dlp` directly at an account page and it will download all videos for you:
+
+    yt-dlp 'https://www.tiktok.com/@username_goes_here' -o "downloads/%(title)s-%(id)s.%(ext)s"
+
+The rest of this TIL describes a more complex method.
+
 ## Scrape the list of video URLs 
 
 I used a variant of my [Twitter scraping trick](https://til.simonwillison.net/twitter/collecting-replies). Start by loading up a profile page - like [https://www.tiktok.com/@ilgallinaio_special](www.tiktok.com/@ilgallinaio_special) - in Firefox or Chrome or Safari.
