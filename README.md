@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->546<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->547<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -104,6 +104,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Installing flash-attn without compiling it](https://github.com/simonw/til/blob/main/python/installing-flash-attention.md) - 2024-10-24
 * [Fixes for datetime UTC warnings in Python](https://github.com/simonw/til/blob/main/python/utc-warning-fix.md) - 2024-12-12
 * [Geocoding from Python on macOS using pyobjc-framework-CoreLocation](https://github.com/simonw/til/blob/main/python/pyobjc-framework-corelocation.md) - 2025-01-26
+* [Trying out Python packages with ipython and uvx](https://github.com/simonw/til/blob/main/python/itry.md) - 2025-02-13
 
 ## zeit-now
 
