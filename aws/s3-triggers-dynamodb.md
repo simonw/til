@@ -448,6 +448,7 @@ This is a very solid proof of concept: I've conclusively proven to myself that t
 
 There's actually not much left before I would consider putting it in production. Off the top of my head:
 
+- A few people have pointed me to [Amazon S3 queryable metadata](https://aws.amazon.com/about-aws/whats-new/2025/01/amazon-s3-metadata-generally-available/), a brand new (previewed in December 2024, GA in January 2025) system that solves almost exactly the same problem! I may well use that instead.
 - The trigger right now only tracks `"s3:ObjectCreated:*"` and `"s3:ObjectRemoved:*"` - is there an equivalent for if an object is updated? Claude says that an update is treated as an `ObjectCreated` event as well so probably not but there might be other events I want to track.
 - I'd really like to get some automated testing in place for something like this. A CI job that creates a new bucket, adds some files, waits a bit, checks that the DynamoDB table was populated and then cleans up at the end would give me more confidence in the system going forward.
 - If I ever use this properly I'll turn it into a Python package with a GitHub repo, issues, a changelog etc.
