@@ -447,3 +447,12 @@ There's actually not much left before I would consider putting it in production.
 - Is DynamoDB the best choice for this? I'd like to spend a little more time thinking through the project rather than assuming that my first guesses were the most appropriate architecture here.
 
 Honestly though I feel like this prototype got me 90% of the way there already.
+
+## Bonus TIL: deleting an S3 bucket with uvx
+
+I wanted to clean up after myself, so I figured out how to run the `aws` CLI command via `uvx` like this:
+
+```bash
+uvx --with awscli aws s3 rb s3://simon-magic-bucket-6 --force
+```
+The `--force` option allows this to work even with buckets that aren't empty - it deletes each key first before deleting the bucket.
