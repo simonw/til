@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->547<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->548<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -420,6 +420,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using boto3 from the command line](https://github.com/simonw/til/blob/main/aws/boto-command-line.md) - 2022-08-02
 * [Athena error: The specified key does not exist](https://github.com/simonw/til/blob/main/aws/athena-key-does-not-exist.md) - 2022-09-27
 * [Querying newline-delimited JSON logs using AWS Athena](https://github.com/simonw/til/blob/main/aws/athena-newline-json.md) - 2022-10-06
+* [Using S3 triggers to maintain a list of files in DynamoDB](https://github.com/simonw/til/blob/main/aws/s3-triggers-dynamodb.md) - 2025-02-19
 
 ## jinja
 
