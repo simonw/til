@@ -405,7 +405,6 @@ uv run magic_bucket.py create-bucket simon-magic-bucket-6
 ```
 ```
 Created bucket: simon-magic-bucket-6
-Created bucket: simon-magic-bucket-6
 Created DynamoDB table: simon-magic-bucket-6-metadata
 Created/using IAM role: simon-magic-bucket-6-lambda-role - wait 10s for it to be ready
 Created Lambda function: simon-magic-bucket-6-processor
