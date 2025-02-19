@@ -12,6 +12,8 @@ I *hate* figuring out AWS things, but I've recently found that most of the moder
 
 Which means I can learn AWS by getting LLMs to write custom one-off tools for me!
 
+## v1 using Claude
+
 I started by prompting my [Claude Python app Project](https://simonwillison.net/2024/Dec/19/one-shot-python-tools/) with the following:
 
 > Python CLI app using boto3 with commands for creating a new S3 bucket which it also configures to have S3 lambada event triggers which moantian a dynamodb table containing metadata about all of the files in that bucket. Include these commands
@@ -31,6 +33,8 @@ Claude [gave me a script that looked convincing](https://gist.github.com/simonw/
 
 On reading the script more closely though I spotted what looked like a bug: it was sending the raw Python code to Lamba as the `Code={'ZipFile': lambda_code}` parameter, and I was pretty sure that was meant to be a zip file.
 
+## v2 using ChatGPT and o3-mini-high
+
 Rather than continuing to wrestle with Claude (which probably would have worked) I decided to switch models and dump the whole thing into ChatGPT's o3-mini-high model and tell it to identify and fix any bugs:
 
 > Identify, explain and then fix any bugs in this code:
@@ -38,7 +42,6 @@ Rather than continuing to wrestle with Claude (which probably would have worked)
 > *code from Claude pasted here*
 
 Here's [the transcript](https://chatgpt.com/c/67b635b9-170c-8006-b9c3-dea6d61b3f88). It "reasoned" for 1 minute and 9 seconds and then spat out the following (full code to follow at the end):
-
 
 > Below is one acceptable answer. In our original code there were three main issues:
 > 
@@ -103,6 +106,8 @@ Aborted!
 I pasted that error message back into o3-mini-high, it "reasoned" for another 8 seconds and suggested that I add `time.sleep(10)` after creating the role to allow it time to propagate.
 
 (I eventually added another `time.sleep(5)` elsewhere for a similar reason.)
+
+## The finished script
 
 All of that combined together gave me the following script - which works! I saved it as `magic_bucket.py`:
 
@@ -391,6 +396,8 @@ def list_files(bucket_name: str, prefix: Optional[str], region: str):
 if __name__ == "__main__":
     cli()
 ```
+## Trying it out
+
 I ran it with `uv` like this - the `/// script` block ensured that `uv` ran it with the `click` and `boto3` dependencies it needed:
 
 ```bash
