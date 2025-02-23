@@ -18,7 +18,7 @@ The great thing about an Apple TV for this is that it's an existing low power de
 
 The GitHub Actions workflow needs an OAuth client with credentials that allow it to join the Tailscale network.
 
-First I needed to define a "tag" for my OAuth cleint to ise. I used the JSON editing interface at [https://login.tailscale.com/admin/acls/file](https://login.tailscale.com/admin/acls/file) and added this:
+First I needed to define a Tailscale "tag" for my OAuth client to use. I used the JSON editing interface at [https://login.tailscale.com/admin/acls/file](https://login.tailscale.com/admin/acls/file) and added this:
 
 ```
 ...
@@ -111,3 +111,25 @@ When I [ran the workflow](https://github.com/simonw/playing-with-actions-single/
 > ***  apple-tv             user@   tvOS    active; exit node; relay "sfo", tx 148 rx 0
 > IP from ifconfig.me:
 > 67.... # my home IP address
+
+## Using the exit node's name instead of an IP address
+
+Bill Mill gave me [some great feedback](https://hachyderm.io/@llimllib/114051109409520394) on this article, including sharing [this example](https://github.com/llimllib/nba_data/blob/dab8ea23a2df145d0ae56287b9c8973e1ce2c69a/.github/workflows/dl.yml#L18-L33) of running a second command to set the exit node using its name rather than the IP address I describe above:
+
+```yaml
+      - name: Setup Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
+          tags: tag:github-actions
+
+      # you can't set the exit-node name at 'up' time; so instead set it after
+      # we've gotten up and running
+      # https://github.com/tailscale/github-action/issues/123
+      # https://github.com/tailscale/tailscale/issues/4152#issuecomment-1066126643
+      - name: use named exit node in tailscale
+        run: |
+          timeout 5m sudo -E tailscale set --exit-node=apple-tv --exit-node-allow-lan-access=true
+```
+I had to look up that `sudo -E` option - it's short for `--preserve-env` and causes the user's current environment to be inherited by the command that is running with elevated privileges.
