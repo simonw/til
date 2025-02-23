@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->548<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->549<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -214,6 +214,7 @@ Search these TILs at https://til.simonwillison.net/
 ## tailscale
 
 * [Restricting SSH connections to devices within a Tailscale network](https://github.com/simonw/til/blob/main/tailscale/lock-down-sshd.md) - 2020-04-23
+* [Using a Tailscale exit node with GitHub Actions](https://github.com/simonw/til/blob/main/tailscale/tailscale-github-actions.md) - 2025-02-22
 
 ## pytest
 
