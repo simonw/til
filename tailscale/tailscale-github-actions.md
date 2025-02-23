@@ -9,7 +9,7 @@ I figured out how to use [Tailscale](https://tailscale.com/) to allow GitHub Act
 This took a few steps:
 
 1. [Install the Tailscale app](https://tailscale.com/kb/1280/appletv) (from the App Store) on the Apple TV
-2. Configure the Apple TV as a "home hub". To do this I had to reconfigure my Apple TV to have a default iCloud account - we had previously configured it with no default account and two different associated accounts. I got various unhelplful error messages until I finally figured this out. The [Apple documentation](https://support.apple.com/en-us/102557) wasn't quite helpful enough here either.
+2. Configure the Apple TV as a "home hub". To do this I had to reconfigure my Apple TV to have a default iCloud account - we had previously configured it with no default account and two different associated accounts. I got various unhelpful error messages until I finally figured this out. The [Apple documentation](https://support.apple.com/en-us/102557) wasn't quite helpful enough here either.
 3. Configure the Apple TV to work as a Tailscale exit node. [Here's the Tailscale guide](https://tailscale.com/kb/1280/appletv#advertise-apple-tv-as-an-exit-node) to doing this - you configure it in the Apple TV app ("Run as Exit Node") and _then_ separately in the Tailscale web console. The hardest part here was finding the option there - it was tucked away in the "..." menu against the Apple TV machine under "Edit route settings".
 
 The great thing about an Apple TV for this is that it's an existing low power device that is always on and connected to the internet. A Raspberry Pi or similar would be another good choice.
