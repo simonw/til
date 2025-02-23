@@ -72,7 +72,7 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
-          args: "--exit-node=${{ secrets.TAILSCALE_EXIT_NODE }} --exit-node-allow-lan-access=true"
+          args: "--exit-node=${{ secrets.TAILSCALE_EXIT_NODE }}"
           tags: tag:github-actions
       
       - name: Verify HTTP traffic is routed through exit node
