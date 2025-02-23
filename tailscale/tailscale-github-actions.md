@@ -24,7 +24,7 @@ First I needed to define a "tag" for my OAuth cleint to ise. I used the JSON edi
 ...
 	"tagOwners": {
 		"tag:github-actions": ["autogroup:admin"],
-	}
+	},
 ...
 ```
 
