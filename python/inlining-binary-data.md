@@ -50,3 +50,26 @@ The ouput is:
  b'\x1b\x9a\x86\xe4Re\x0c-\xa4\x08`\x0fS\x92\xcc`HB\xd6\xa2\x86\x1e\xd9\x89'
  b"\x98\x89\x01\x00b\xe6g\xc5_\xc3\xfa'\x00\x00\x00\x00IEND\xaeB`\x82")
 ```
+## It works for strings too
+
+Sometimes when I include a long string in a test I like to wrap it in a similar way.
+
+```python
+from pprint import pprint
+
+s = "This image shows a Brown Pelican perched on some rocky shoreline or jetty. The pelican is backlit, creating a slight glowing effect around its head and body, particularly noticeable around its neck area. The bird has its distinctive long beak and characteristic pelican profile. In the background, you can see what appears to be boats or vessels docked in a marina or harbor, slightly out of focus. The pelican's feathers appear to be a grayish-brown color, and you can see its typical robust body structure. The lighting in the photo creates a nice contrast between the bird and its surroundings, highlighting the pelican's silhouette against the marine background."
+pprint(s)
+```
+Outputs:
+```python
+('This image shows a Brown Pelican perched on some rocky shoreline or jetty. '
+ 'The pelican is backlit, creating a slight glowing effect around its head and '
+ 'body, particularly noticeable around its neck area. The bird has its '
+ 'distinctive long beak and characteristic pelican profile. In the background, '
+ 'you can see what appears to be boats or vessels docked in a marina or '
+ "harbor, slightly out of focus. The pelican's feathers appear to be a "
+ 'grayish-brown color, and you can see its typical robust body structure. The '
+ 'lighting in the photo creates a nice contrast between the bird and its '
+ "surroundings, highlighting the pelican's silhouette against the marine "
+ 'background.')
+```
