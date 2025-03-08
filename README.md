@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->549<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->550<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -462,6 +462,7 @@ Search these TILs at https://til.simonwillison.net/
 ## jupyter
 
 * [Embedding JavaScript in a Jupyter notebook](https://github.com/simonw/til/blob/main/jupyter/javascript-in-a-jupyter-notebook.md) - 2021-01-22
+* [Running jupyterlab via uv tool install](https://github.com/simonw/til/blob/main/jupyter/jupyterlab-uv-tool-install.md) - 2025-03-08
 
 ## cookiecutter
 
