@@ -42,3 +42,7 @@ import subprocess, sys
 subprocess.check_call([sys.executable, "-m", "ensurepip"])
 ```
 After I ran this, the `%pip` magic command worked as expected - I didn't even need to restart the kernel.
+
+## Reported to Jupyter
+
+I [opened an issue](https://github.com/jupyterlab/jupyterlab/issues/17375) about this and [submitted a PR](https://github.com/jupyterlab/jupyterlab/pull/17376) with a potential fix.
