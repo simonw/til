@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->550<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->551<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -841,6 +841,7 @@ Search these TILs at https://til.simonwillison.net/
 
 * [Understanding the CSS auto-resizing textarea trick](https://github.com/simonw/til/blob/main/css/resizing-textarea.md) - 2023-09-30
 * [A simple two column CSS grid](https://github.com/simonw/til/blob/main/css/simple-two-column-grid.md) - 2023-10-26
+* [Styling an HTML dialog modal to take the full height of the viewport](https://github.com/simonw/til/blob/main/css/dialog-full-height.md) - 2025-03-14
 
 ## pyodide
 
