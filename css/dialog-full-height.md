@@ -139,3 +139,21 @@ I imagine it is off by default because it adds quite a lot of information:
 And thanks to _that_ I found [html.css](https://searchfox.org/mozilla-central/source/layout/style/res/html.css) in the Firefox source code repository, which lists all of the default styles used in thet browser.
 
 Here's the [full commit history](https://github.com/mozilla/gecko-dev/commits/HEAD/layout/style/res/html.css) for that `html.css` stylesheet on the official GitHub mirror.
+
+## Update 2: Some backstory on those default user styles
+
+Chromium engineer Ian Kilpatrick dropped a [fascinating comment](https://news.ycombinator.com/item?id=43378225#43380129) on Hacker News explaining the backstory for the `max-height` default rule:
+
+> There's quite a bit of history here, but the abbreviated version is that the dialog element was originally added as a replacement for window.alert(), and there were a libraries polyfilling dialog and being surprisingly widely used.
+>
+> The mechanism which dialog was originally positioned was relatively complex, and slightly hacky (magic values for the insets).
+>
+> Changing the behaviour basically meant that we had to add "overflow:auto", and some form of "max-height"/"max-width" to ensure that the content within the dialog was actually reachable.
+>
+> The better solution to this was to add "max-height:stretch", "max-width:stretch". You can see [the discussion for this here](https://github.com/whatwg/html/pull/5936#discussion_r513642207).
+>
+> The problem is that no browser had (and still has) shipped the "stretch" keyword. (Blink [likely will "soon"](https://groups.google.com/a/chromium.org/g/blink-dev/c/SiZ2nDt3B9E/m/kP_rKOaDAgAJ?pli=1))
+>
+> However this was pushed back against as this had to go in a specification - and nobody implemented it ("-webit-fill-available" would have been an acceptable substitute in Blink but other browsers didn't have this working the same yet).
+>
+> Hence the calc() variant. (Primarily because of "box-sizing:content-box" being the default, and pre-existing border/padding styles on dialog that we didn't want to touch). [...]
