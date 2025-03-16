@@ -136,3 +136,5 @@ Thanks to [uallo on Hacker News](https://news.ycombinator.com/item?id=43378225#4
 I imagine it is off by default because it adds quite a lot of information:
 
 ![DevTools now shows a lot of CSS for the dialog and dialog:modal, displayed as coming from user_agent html.css](https://static.simonwillison.net/static/2025/firefox-user-agent-styles.jpg)
+
+And thanks to _that_ I found [html.css](https://searchfox.org/mozilla-central/source/layout/style/res/html.css) in the Firefox source code repository, which lists all of the default styles used in thet browser.
