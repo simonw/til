@@ -29,7 +29,7 @@ dialog {
 ```
 Where was that gap coming from?
 
-I tried poking at Claude, then ChatGPT, and by the time I was [screen sharing with Gemini 2.0 Flash](https://aistudio.google.com/live) and arguing out loud with it about the CSS [Natalie](https://bsky.app/profile/natbat.bsky.social) overheard and took pity on me and stepped in to help.
+Firefox DevTools didn't answer my question, so I tried poking at Claude, then ChatGPT, and by the time I was [screen sharing with Gemini 2.0 Flash](https://aistudio.google.com/live) and arguing out loud with it about the CSS [Natalie](https://bsky.app/profile/natbat.bsky.social) overheard and took pity on me and stepped in to help.
 
 Her suspicion was that this had something to do with the `<dialog>` element. I got Claude 3.7 Sonnet to [rewrite the code to use a div](https://claude.ai/share/973af807-aaf9-49f4-b624-7b31d72ae563) instead of a dialog and the mysterious gap vanished, which was a strong hint that she was right.
 
