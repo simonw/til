@@ -126,3 +126,13 @@ Here's [979af1532](https://github.com/whatwg/html/commit/979af1532) with the com
 That commit landed in November 2020, and those linked issue threads have all sorts of details about how this change came about.
 
 I also found out today that the HTML [Living Standard](https://html.spec.whatwg.org/multipage/) is very much a living standard - the [whatwg/html](https://github.com/whatwg/html/commits/main) repo has had 12,318 commits, the most recent of which was less than 24 hours ago.
+
+## Update: Firefox can show browser styles
+
+Thanks to [uallo on Hacker News](https://news.ycombinator.com/item?id=43378225#43378963) I learned Firefox _can_ show browser styles in the inspector, but the option is turned off by default:
+
+![Screenshot of Firefox DevTools - click the dot-dot-dot menu, then Settings, then in the Inspector section click Show Browser Styles](https://static.simonwillison.net/static/2025/firefox-show-browser-styles.jpg)
+
+I imagine it is off by default because it adds quite a lot of information:
+
+![DevTools now shows a lot of CSS for the dialog and dialog:modal, displayed as coming from user_agent html.css](https://static.simonwillison.net/static/2025/firefox-user-agent-styles.jpg)
