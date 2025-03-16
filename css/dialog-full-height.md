@@ -53,7 +53,7 @@ dialog:-internal-dialog-in-top-layer {
 ```
 The mysterious gap was entirely explained by that `max-height: calc(100% - 2em - 6px);` rule.
 
-Adding `max-height: inherit` to my CSS (or `max-height: 100vh`) fixed the bug!
+Adding `max-height: none` to my CSS (or `max-height: 100vh`) fixed the bug!
 
 ![Same screen as before but this time the sidebar panel stretches from the top to the bottom of the viewport with no gap.](https://static.simonwillison.net/static/2025/dalog-gap-fixed.jpg)
 
