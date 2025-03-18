@@ -153,6 +153,6 @@ I wasn't expecting this to work. The Syrupy documentation says:
 
 > The default serializer supports all python built-in types and provides a sensible default for custom objects.
 
-It looks like there are a bunch of [more advanced ways](https://tophat.github.io/syrupy/#representation) to customize objects to make them work well with Syrupy, but I haven't dived into those yet.
+It looks like there are a bunch of [more advanced ways](https://syrupy-project.github.io/syrupy/#representation) to customize objects to make them work well with Syrupy, but I haven't dived into those yet.
 
 First impressions are that this looks like exactly the snapshot tool I've been waiting for.
