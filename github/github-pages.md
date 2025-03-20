@@ -109,4 +109,4 @@ content-type: text/html; charset=utf-8
 ```
 ## These days you can do custom things with GitHub Actions
 
-I've not dug into this yet. Here's [the blog page](https://github.blog/2022-08-10-github-pages-now-uses-actions-by-default/) announcement.
+See [Building and deploying a custom site using GitHub Actions and GitHub Pages](https://til.simonwillison.net/github-actions/github-pages) for a simple example.
