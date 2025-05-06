@@ -217,3 +217,46 @@ curl -s "https://hn.algolia.com/api/v1/items/$id" | \
   You MUST quote directly from users when crediting them, with double quotes.
   Fix HTML entities. Output markdown. Go long. Include a section of quotes that illustrate opinions uncommon in the rest of the piece'
 ```
+
+## Porting it to llm-hacker-news
+
+After LLM [grew support for fragment plugins](https://simonwillison.net/2025/Apr/7/long-context-llm/) I built one called [llm-hacker-news](https://github.com/simonw/llm-hacker-news) that can load a comments thread directly into a prompt fragment directly from the Hacker News API.
+
+My `hn-summary.sh` script now looks like this:
+
+```bash
+#!/bin/bash
+
+# Validate that the first argument is an integer
+if [[ ! $1 =~ ^[0-9]+$ ]]; then
+  echo "Please provide a valid integer as the first argument."
+  exit 1
+fi
+
+id="$1"
+shift  # Remove the first argument from the list
+
+# Parse the optional -m argument
+model="gpt-4.1"
+if [[ $1 == "-m" && -n $2 ]]; then
+  model="$2"
+  shift 2  # Remove these two arguments
+fi
+
+# Make API call, parse and summarize the discussion
+llm -f hn:$id -m "$model" "$@" -s 'Summarize the themes of the opinions expressed here.
+  For each theme, output a markdown header.
+  Include direct "quotations" (with author attribution) where appropriate.
+  You MUST quote directly from users when crediting them, with double quotes.
+  Fix HTML entities. Output markdown. Go long. Include a section of quotes that
+  illustrate opinions uncommon in the rest of the piece'
+```
+I switched the default model to `gpt-4.1` because that model has a much longer context window than Claude - 1,047,576 - while still being very inexpensive.
+
+I also often run this against the Google Gemini models, which also have a million token context window.
+
+Here's an example:
+```bash
+hn-summary.sh 43906018 -m gemini-2.5-pro-preview-05-06
+```
+You can see [the full output here](https://gist.github.com/simonw/7ef3d77c8aeeaf1bfe9cc6fd68760b96).
