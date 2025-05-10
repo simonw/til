@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->552<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->553<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -168,6 +168,7 @@ Search these TILs at https://til.simonwillison.net/
 * [SQLite timestamps with floating point seconds](https://github.com/simonw/til/blob/main/sqlite/floating-point-seconds.md) - 2024-03-13
 * [Using sqlite-vec with embeddings in sqlite-utils and Datasette](https://github.com/simonw/til/blob/main/sqlite/sqlite-vec.md) - 2024-08-11
 * [Compiling and running sqlite3-rsync](https://github.com/simonw/til/blob/main/sqlite/compile-sqlite3-rsync.md) - 2024-10-04
+* [SQLite triggers](https://github.com/simonw/til/blob/main/sqlite/sqlite-triggers.md) - 2025-05-09
 
 ## presenting
 
