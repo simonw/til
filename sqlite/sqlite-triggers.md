@@ -1,6 +1,6 @@
 # SQLite triggers
 
-I wrote a script, [triggers.py](triggers.py), to help me understand what data is available to SQLite triggers for which operations.
+I wrote a Python script, [triggers.py](https://github.com/simonw/til/blob/main/sqlite/triggers.py), to help me understand what data is available to SQLite triggers for which operations.
 
 SQLite triggers are [documented here](https://www.sqlite.org/lang_createtrigger.html). The key triggers are before and after for insert, update and delete. I have not explored [instead of triggers](https://www.sqlite.org/lang_createtrigger.html#instead_of_triggers) yet, since those only apply to SQL views.
 
