@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->553<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->554<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -242,6 +242,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Mocking Stripe signature checks in a pytest fixture](https://github.com/simonw/til/blob/main/pytest/pytest-stripe-signature.md) - 2024-07-01
 * [Using namedtuple for pytest parameterized tests](https://github.com/simonw/til/blob/main/pytest/namedtuple-parameterized-tests.md) - 2024-08-31
 * [Running pytest against a specific Python version with uv run](https://github.com/simonw/til/blob/main/pytest/pytest-uv.md) - 2025-02-04
+* [A tip for debugging pytest-httpx](https://github.com/simonw/til/blob/main/pytest/pytest-httpx-debug.md) - 2025-05-28
 
 ## github
 
