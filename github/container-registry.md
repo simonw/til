@@ -1,6 +1,6 @@
-# Publishing a Docker container for Microsoft's edit tool to GitHub Container Registry
+# Publishing a Docker container for Microsoft Edit to the GitHub Container Registry
 
-Microsoft recently [released edit](https://devblogs.microsoft.com/commandline/edit-is-now-open-source/), a new terminal text editor written in Rust. It's pretty nice - it's reminiscent of `nano` but with a slightly more modern feel.
+Microsoft recently [released Edit](https://devblogs.microsoft.com/commandline/edit-is-now-open-source/), a new terminal text editor written in Rust. It's pretty nice - it's reminiscent of `nano` but with a slightly more modern feel.
 
 I wanted to run it on my Apple Silicon Mac. Microsoft don't (yet) provide compiled builds for that platform, but they do have [a release](https://github.com/microsoft/edit/releases/tag/v1.2.0) for `aarch64-linux-gnu`. I figured I'd run that in o Docker container (I have [Docker for Desktop](https://www.docker.com/products/docker-desktop/) installed) to try it out.
 
@@ -11,7 +11,9 @@ docker run --platform linux/arm64 -it --rm -v $(pwd):/workspace ghcr.io/simonw/a
 ```
 Hit `Ctrl+Q` or use your mouse to acces `File -> Exit` to exit the editor and terminate the container.
 
-I did almost _all_ of my figuring out for this project in [this Claude Conversation](https://claude.ai/share/5f0e6547-a3e9-4252-98d0-56f3141c3694). This post is mainly the edited highlights of what I learned there.
+<img width="679" alt="Screenshot of the Edit text editor showing the File menu" src="https://github.com/user-attachments/assets/1c61a41e-4e84-4983-a7cf-1341c4206bf5" />
+
+I did almost _all_ of my figuring out for this project in [this Claude Conversation](https://claude.ai/share/5f0e6547-a3e9-4252-98d0-56f3141c3694). This post is the edited highlights of what I learned.
 
 ## Running it first as a one-liner
 
