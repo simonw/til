@@ -262,7 +262,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Bulk editing status in GitHub Projects](https://github.com/simonw/til/blob/main/github/bulk-edit-github-projects.md) - 2023-06-29
 * [Running a Django and PostgreSQL development environment in GitHub Codespaces](https://github.com/simonw/til/blob/main/github/django-postgresql-codespaces.md) - 2023-08-10
 * [Assistance with release notes using GitHub Issues](https://github.com/simonw/til/blob/main/github/release-note-assistance.md) - 2024-08-05
-* [Publishing a Docker container for Microsoft's edit tool to GitHub Container Registry](https://github.com/simonw/til/blob/main/github/container-registry.md) - 2025-06-21
+* [Publishing a Docker container for Microsoft Edit to the GitHub Container Registry](https://github.com/simonw/til/blob/main/github/container-registry.md) - 2025-06-21
 
 ## node
 
