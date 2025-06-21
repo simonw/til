@@ -1,6 +1,6 @@
 # Publishing a Docker container for Microsoft Edit to the GitHub Container Registry
 
-Microsoft recently [released Edit](https://devblogs.microsoft.com/commandline/edit-is-now-open-source/), a new terminal text editor written in Rust. It's pretty nice - it's reminiscent of `nano` but with a slightly more modern feel.
+Microsoft recently [released Edit](https://devblogs.microsoft.com/commandline/edit-is-now-open-source/), a new terminal text editor written in Rust. It's pretty nice - it's reminiscent of `nano` but with a retro MS DOS feel.
 
 I wanted to run it on my Apple Silicon Mac. Microsoft don't (yet) provide compiled builds for that platform, but they do have [a release](https://github.com/microsoft/edit/releases/tag/v1.2.0) for `aarch64-linux-gnu`. I figured I'd run that in o Docker container (I have [Docker for Desktop](https://www.docker.com/products/docker-desktop/) installed) to try it out.
 
