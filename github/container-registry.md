@@ -13,7 +13,7 @@ Hit `Ctrl+Q` or use your mouse to acces `File -> Exit` to exit the editor and te
 
 <img width="679" alt="Screenshot of the Edit text editor showing the File menu" src="https://github.com/user-attachments/assets/1c61a41e-4e84-4983-a7cf-1341c4206bf5" />
 
-I did almost _all_ of my figuring out for this project in [this Claude Conversation](https://claude.ai/share/5f0e6547-a3e9-4252-98d0-56f3141c3694). This post is the edited highlights of what I learned.
+I did almost _all_ of my figuring out for this project in [this 25 minute Claude Conversation](https://claude.ai/share/5f0e6547-a3e9-4252-98d0-56f3141c3694). This post is the edited highlights of what I learned.
 
 ## Running it first as a one-liner
 
