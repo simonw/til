@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->558<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->559<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -651,6 +651,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Setting cache-control: max-age=31536000 with a Cloudflare Transform Rule](https://github.com/simonw/til/blob/main/cloudflare/cache-control-transform-rule.md) - 2024-10-23
 * [GitHub OAuth for a static site using Cloudflare Workers](https://github.com/simonw/til/blob/main/cloudflare/workers-github-oauth.md) - 2024-11-28
 * [Redirecting a domain using Cloudflare Pages](https://github.com/simonw/til/blob/main/cloudflare/domain-redirect-with-pages.md) - 2025-05-28
+* [Rate limiting by IP using Cloudflare's rate limiting rules](https://github.com/simonw/til/blob/main/cloudflare/rate-limiting.md) - 2025-07-03
 
 ## webauthn
 
