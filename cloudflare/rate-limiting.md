@@ -24,7 +24,7 @@ I found this option in the `Security -> WAF -> Rate limiting rules` area of the 
 
 ![Screenshot of a rate limiting rule configuration interface titled "Edit rate limiting rule" with fields filled as follows: Rule name "simonwillison.net/search/ rate limit", URI Path field set to wildcard operator with value "/search/*", IP-based rate limiting set to 5 requests per 10 seconds, action set to Block for 10 seconds duration, with expression preview showing (http.request.uri.path wildcard "/search/*")](https://static.simonwillison.net/static/2025/cloudflare-waf.jpg)
 
-Matching the URI path on `/content/*` and having it block requests from an IP if the rate exceeded 5 requests in 10 seconds appeared to do the job.
+Matching the URI path on `/search/*` and having it block requests from an IP if the rate exceeded 5 requests in 10 seconds appeared to do the job.
 
 I've been running this for a few days now, and the Cloudflare dashboard shows that it's blocked 2,850 requests in the past 24 hours:
 
