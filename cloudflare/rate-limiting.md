@@ -20,7 +20,7 @@ Unfortunately this trick doesn't help for crawlers that are hitting every possib
 
 Thankfully, it turns out Cloudflare can also [rate limit requests](https://developers.cloudflare.com/waf/rate-limiting-rules/) to a path.
 
-I found this option in the `Security -> WAF -> Late limiting rules` area of the admin panel. Here's how I configured my rule:
+I found this option in the `Security -> WAF -> Rate limiting rules` area of the admin panel. Here's how I configured my rule:
 
 ![Screenshot of a rate limiting rule configuration interface titled "Edit rate limiting rule" with fields filled as follows: Rule name "simonwillison.net/search/ rate limit", URI Path field set to wildcard operator with value "/search/*", IP-based rate limiting set to 5 requests per 10 seconds, action set to Block for 10 seconds duration, with expression preview showing (http.request.uri.path wildcard "/search/*")](https://static.simonwillison.net/static/2025/cloudflare-waf.jpg)
 
