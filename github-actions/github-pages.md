@@ -14,9 +14,9 @@ on:
   workflow_dispatch:
 
 permissions:
+  contents: read
   pages: write
   id-token: write
-  contents: read
 
 jobs:
   build:
@@ -42,7 +42,11 @@ jobs:
 ```
 Anything that goes in that `_site/` directory will be published to the GitHub Pages site.
 
-The `permissions` are required - the `pages: write` one enables writes to pages and for some reason the `id-token: write` one is needed by the [actions/deploy-pages](https://github.com/actions/deploy-pages) action.
+The `permissions` are required:
+
+- `contents: read` allows the `actions/checkout` action to check out the repo
+- `pages: write` enables writes to pages
+- `id-token: write` one is needed by the [actions/deploy-pages](https://github.com/actions/deploy-pages) action for some reason
 
 The default URL for the site will be `https://$GITHUB_USERNAME.github.io/$REPO_NAME/`. You can set this to [custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) if you want.
 
