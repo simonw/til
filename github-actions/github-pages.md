@@ -16,6 +16,7 @@ on:
 permissions:
   pages: write
   id-token: write
+  contents: read
 
 jobs:
   build:
