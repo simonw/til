@@ -57,7 +57,7 @@ Here's that summary JSON in full:
   "score:std": 0.4978948740000801
 }
 ```
-That `score` is the most important number - the eval suite assigs a `1` for each correct answer and a `0` for incorrect answers and then displays the average across all questions, which here is 45.4%. `chars` is the average length of response, whitespace included. The `:std` things show the standard deviation of each.
+That `score` is the most important number - the eval suite assigns a `1` for each correct answer and a `0` for incorrect answers and then displays the average across all questions, which here is 45.4%. `chars` is the average length of response, whitespace included. The `:std` things show the standard deviation of each.
 
 ## An example benchmark question
 
