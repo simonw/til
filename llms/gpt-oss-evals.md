@@ -1,6 +1,6 @@
 # Running a gpt-oss eval suite against LM Studio on a Mac
 
-OpenAI's [gpt-oss models](https://github.com/openai/gpt-oss/) come with an eval suite, which is described in their [Verifying gpt-oss implementations](https://cookbook.openai.com/articles/gpt-oss/verifying-implementations) cookbook. I figured out how to run it on my Mac against their `gpt-oss-20b` model hosted locally using LM Studio, using [uv](github.com/astral-sh/uv).
+OpenAI's [gpt-oss models](https://github.com/openai/gpt-oss/) come with an eval suite, which is described in their [Verifying gpt-oss implementations](https://cookbook.openai.com/articles/gpt-oss/verifying-implementations) cookbook. I figured out how to run it on my Mac against their `gpt-oss-20b` model hosted locally using LM Studio, using [uv](https://github.com/astral-sh/uv).
 
 TLDR: Here's the recipe that worked for me:
 
@@ -19,6 +19,8 @@ OPENAI_API_KEY=x \
 You'll need to install the model in LM Studio first - you can start by clicking the "Use Model in LM Studio" button on their [openai/gpt-oss-20b page](https://lmstudio.ai/models/openai/gpt-oss-20b).
 
 When you load the model make sure to increase the context length available to it - the default, 4096, is too short for some of the exercises.
+
+The above command runs 240 prompts and can take several hours. Add `--debug` to run just 5 prompts which is a lot faster.
 
 ## The options
 
@@ -151,7 +153,7 @@ Each question in the benchmark has an expected correct answer, and the test harn
 ## The implementation of the eval
 
 The [gpt_oss/evals/aime_eval.py](https://github.com/openai/gpt-oss/blob/cf427a62e2d80b33b87cbd1ab715730910f5aad0/gpt_oss/evals/aime_eval.py) Python file is less than 100 lines long.
-
+ 
 It loads two separate newline-delimited JSON files and combines them into one collection of questions:
 
 - https://huggingface.co/datasets/opencompass/AIME2025/raw/main/aime2025-I.jsonl - 15 questions
@@ -169,5 +171,5 @@ So why did the eval take 3.5 hours to run? Because the questions are each run ei
 
 Unfortunately the eval only writes results to disk at the end of the run, so it's possible to only find out about problems after it has been chugging away for hours!
 
-- `No such file or directory: '/tmp/aime25_openai/gpt-...` - I got this error at the *end* of my first 3.5 hour run - the script tried to write the results to disk and failed because the expected directory did not exist yet.
+- `No such file or directory: '/tmp/aime25_openai/gpt-...` - I got this error at the *end* of my first 3.5 hour run - the script tried to write the results to disk and failed because the expected directory did not exist yet. Turns out that was because of the `/` in the `openai/gpt-oss-20b` model name, see [this issue](https://github.com/openai/gpt-oss/issues/141).
 - `Reached context length of 4096 tokens with model (arch: gpt-oss) that does not currently support mid-generation context overflow` - I saw this error a bunch of times when I was using the default 4096 context length, before I increased it.
