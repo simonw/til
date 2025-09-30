@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->561<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->562<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -888,6 +888,7 @@ Search these TILs at https://til.simonwillison.net/
 ## youtube
 
 * [Livestreaming a community election event on YouTube](https://github.com/simonw/til/blob/main/youtube/livestreaming.md) - 2024-10-09
+* [Error 153 Video player configuration error on YouTube embeds](https://github.com/simonw/til/blob/main/youtube/fixing-153-embed.md) - 2025-09-30
 
 ## hugo
 
