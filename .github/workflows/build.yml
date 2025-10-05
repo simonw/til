@@ -121,4 +121,5 @@ jobs:
           --install datasette-llm-embed \
           --install datasette-sqlite-vec \
           --plugins-dir plugins \
-          --template-dir templates
+          --template-dir templates \
+          --setting allow_facet off
