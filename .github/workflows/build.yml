@@ -120,6 +120,7 @@ jobs:
           --install datasette-block-robots \
           --install datasette-llm-embed \
           --install datasette-sqlite-vec \
+          --install datasette-os-info \
           --plugins-dir plugins \
           --template-dir templates \
           --setting allow_facet off
