@@ -106,7 +106,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Fixes for datetime UTC warnings in Python](https://github.com/simonw/til/blob/main/python/utc-warning-fix.md) - 2024-12-12
 * [Geocoding from Python on macOS using pyobjc-framework-CoreLocation](https://github.com/simonw/til/blob/main/python/pyobjc-framework-corelocation.md) - 2025-01-26
 * [Trying out Python packages with ipython and uvx](https://github.com/simonw/til/blob/main/python/itry.md) - 2025-02-13
-* [Running tests against different Python versions with uv](https://github.com/simonw/til/blob/main/python/uv-tests.md) - 2025-10-08
+* [Testing different Python versions with uv with-editable and uv-test](https://github.com/simonw/til/blob/main/python/uv-tests.md) - 2025-10-08
 
 ## zeit-now
 
