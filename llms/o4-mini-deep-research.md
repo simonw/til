@@ -73,7 +73,7 @@ Total cost: 77 + 30.4076 + 3 = **110.4076 cents**, $1.10.
 
 #### The results
 
-I [added a feature]() to my [JSON string extractor](https://tools.simonwillison.net/json-string-extractor) tool to help display the result. Here's [the long strings extracted]() from that full JSON.
+I [added a feature](https://github.com/simonw/tools/pull/69) (with [GitHub Copilot coding agent](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agents/coding-agent/about-coding-agent) to my [JSON string extractor](https://tools.simonwillison.net/json-string-extractor) tool to help display the result. Here's [the long strings extracted](https://tools.simonwillison.net/json-string-extractor#gist=3454a4ce40f8547a5c65c911de611ff4) from that full JSON.
 
 The thought process started like this:
 
