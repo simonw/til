@@ -95,6 +95,8 @@ https://gistpreview.github.io/?b9f5416b37c4ceec46d8447b52be0ad2
 
 ![Screenshot of the site. It lists details of an orchestrion at the Brentford Musical Museum in London.](https://static.simonwillison.net/static/2025/orchestrions-around-the-world.jpg)
 
+I'm using a secret URL Gist served through `gistpreview.github.io` here to reduce the chance of this unverified slop content getting indexed by crawlers and making it out into the wider world.
+
 #### How well did it do?
 
 It found me 19 orchestrions across 7 venues in 7 different countries.
