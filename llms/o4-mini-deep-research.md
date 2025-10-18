@@ -1,6 +1,6 @@
 # Exploring OpenAI's deep research API model o4-mini-deep-research
 
-I was reviewing some older PRs and landed [this one](https://github.com/simonw/llm-prices/pull/9) by Manuel Solorzano adding pricing for `o4-mini-deep-research` and `o3-deep-research` to my [llm-prices.com](https://www.llm-prices.com/) site. I realized I hadn't tried those models yet so I decided to give one of them a go.
+I was reviewing some older PRs and landed [this one](https://github.com/simonw/llm-prices/pull/9) by Manuel Solorzano adding pricing for [o4-mini-deep-research](https://platform.openai.com/docs/models/o4-mini-deep-research) and [o3-deep-research](https://platform.openai.com/docs/models/o3-deep-research) to my [llm-prices.com](https://www.llm-prices.com/) site. I realized I hadn't tried those models yet so I decided to give one of them a go.
 
 `o4-mini-deep-research` is significantly cheaper than `o3-deep-research` - $2/$8 per million for input/output compared to $10/$40 - so I tried that one.
 
