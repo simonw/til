@@ -4,7 +4,7 @@ I was reviewing some older PRs and landed [this one](https://github.com/simonw/l
 
 `o4-mini-deep-research` is significantly cheaper than `o3-deep-research` - $2/$8 per million for input/output compared to $10/$40 - so I tried that one.
 
-These models are only available via the Responses API and recommend running using their "background" model. My [LLM](https://llm.datasette.io/) tooling doesn't support that yet so I used `curl` instead.
+These models are only available via the Responses API and recommend running using their "background" mode. My [LLM](https://llm.datasette.io/) tooling doesn't support that yet so I used `curl` instead.
 
 Here's what I tried:
 
