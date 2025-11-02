@@ -78,3 +78,29 @@ Or combined:
 ```bash
 uv-test -p 3.12 -k permissions -vv
 ```
+
+## Variants: tadd and radd
+
+For [Datasette issue #2549](https://github.com/simonw/datasette/issues/2549) I found myself needing to run the test suites for *many* different Datasette plugins against my local not-released `main` branch of Datasette. I ended up creating two new utility scripts, chmod 755 and on my path.
+
+Here's `tadd`, for "test against Datasette dev":
+
+```bash
+#!/bin/sh
+uv run --no-project --isolated \
+  --with-editable '.[test]' --with-editable ~/dev/datasette \
+  python -m pytest
+```
+And `radd`, for "run against Datasette dev":
+
+```bash
+#!/bin/sh
+uv run --no-project --isolated \
+  --with-editable '.[test]' --with-editable ~/dev/datasette \
+  datasette "$@"
+```
+That second one takes arguments, e.g.:
+
+```bash
+radd content.db -p 8004 --root
+```
