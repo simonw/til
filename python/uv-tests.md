@@ -89,7 +89,7 @@ Here's `tadd`, for "test against Datasette dev":
 #!/bin/sh
 uv run --no-project --isolated \
   --with-editable '.[test]' --with-editable ~/dev/datasette \
-  python -m pytest
+  python -m pytest "$@"
 ```
 And `radd`, for "run against Datasette dev":
 
@@ -99,8 +99,9 @@ uv run --no-project --isolated \
   --with-editable '.[test]' --with-editable ~/dev/datasette \
   datasette "$@"
 ```
-That second one takes arguments, e.g.:
+They both take arguments, e.g.:
 
 ```bash
+tadd -x --pdb
 radd content.db -p 8004 --root
 ```
