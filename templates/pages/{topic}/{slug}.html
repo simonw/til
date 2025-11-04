@@ -61,37 +61,42 @@ document.addEventListener('DOMContentLoaded', () => {
 <p class="created">Created {{ til.created }}{% if til.created != til.updated %}, updated {{ til.updated }} &middot; <a href="{{ til.url|replace("https://github.com/simonw/til/blob/", "https://github.com/simonw/til/commits/") }}">History</a>{% endif %} &middot; <a href="{{ til.url }}">Edit</a></p>
 
 <script>
-// Add visible # links to all h2+ headings  
+// Add visible # links to all h2+ headings
 document.querySelectorAll('h2,h3,h4,h5,h6').forEach(el => {
-  // New style of links
-  let id = null;
-  let newStyle = el.querySelector('.heading-link');
-  if (newStyle) {
-    // Keep using existing ID on element
-    id = el.getAttribute('id');
-    // Need to pull the text out of the link
-    let text = newStyle.innerText;
-    el.removeChild(newStyle);
-    el.innerText = text;
-  } else {
-    let anchor = el.querySelector('a.anchor');
-    if (anchor) {
-      id = anchor.getAttribute('id');
-      el.removeChild(anchor);  
+  let id = el.id || null;
+
+  // Case 1: link nested inside the heading (".heading-link")
+  const inner = el.querySelector('.heading-link');
+  if (inner) {
+    id = id || (inner.getAttribute('href') || '').replace(/^#/, '') || el.id;
+    el.textContent = inner.textContent; // keep just the text
+    inner.remove();
+  }
+
+  // Case 2: GitHub-style sibling <a class="anchor"> next to the heading
+  if (!id) {
+    const sib = el.nextElementSibling;
+    if (sib && sib.matches('a.anchor')) {
+      // Prefer the href target (e.g. "#uv-test") over the sibling's id ("user-content-uv-test")
+      const href = sib.getAttribute('href') || '';
+      const hrefId = href.startsWith('#') ? href.slice(1) : null;
+      id = hrefId || sib.id || null;
+      sib.remove();
     }
   }
-  if (!id) {
-    return;
-  }  
-  el.setAttribute('id', id);
-  let hashLink = document.createElement('a');
+
+  if (!id) return; // nothing to do if we couldn't determine an id
+
+  el.id = id;
+
+  const hashLink = document.createElement('a');
+  hashLink.href = '#' + id;
+  hashLink.textContent = '#';
   hashLink.style.textDecoration = 'none';
   hashLink.style.color = '#b7b3b3';
   hashLink.style.fontSize = '0.8em';
-  hashLink.setAttribute('href', '#' + id);
-  hashLink.innerText = '#';
+
   el.appendChild(document.createTextNode(' '));
-  // Add that link
   el.appendChild(hashLink);
 });
 
