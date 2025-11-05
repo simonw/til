@@ -4,7 +4,7 @@ I use [ReadTheDocs](https://readthedocs.org/) for several of my projects. It's f
 
 I can then configure the main page of my project's documentation to redirect to `/stable/` by default.
 
-I'm using it for the following documentation sites:
+I'm using ReadTheDocs for the following documentation sites:
 
 - https://docs.datasette.io/
 - https://sqlite-utils.datasette.io/
