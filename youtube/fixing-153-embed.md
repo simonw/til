@@ -21,3 +21,17 @@ It turned out the solution may be to replace `www.youtube.com/embed/` with `www.
 This mostly fixed the problem, [as demonstrated by this page](https://simonwillison.net/2023/May/2/prompt-injection-explained/).
 
 (Weirdly on some refreshes of the page I get the same error. I'm not sure why that is.)
+
+## UPDATE: Avoid Referrer-Policy: same-origin
+
+As explained [over here](https://simonwillison.net/2025/Dec/1/youtube-embed-153-error/), it turned out the reason I still saw some failures is that Django's `SecurityMiddleware` defaults to sending this header:
+
+    Referrer-Policy: same-origin
+
+But [YouTube's documentation](https://developers.google.com/youtube/terms/required-minimum-functionality#embedded-player-api-client-identity) explains that this header, which strips all Referer information on links to external sites, causes the error in YouTube.
+
+The fix is to send this HTTP header instead:
+
+    Referrer-Policy: strict-origin-when-cross-origin
+
+Or leave the `Referrer-Policy` off entirely.
