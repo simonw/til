@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->566<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->569<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -897,6 +897,13 @@ Search these TILs at https://til.simonwillison.net/
 
 * [The most basic possible Hugo site](https://github.com/simonw/til/blob/main/hugo/basic.md) - 2024-10-22
 
+## uv
+
+* [Using uv to develop Python command-line applications](https://github.com/simonw/til/blob/main/uv/uv-cli-apps.md) - 2024-10-23
+* [Running pytest against a specific Python version with uv run](https://github.com/simonw/til/blob/main/uv/pytest-uv.md) - 2025-02-04
+* [Testing different Python versions with uv with-editable and uv-test](https://github.com/simonw/til/blob/main/uv/uv-tests.md) - 2025-10-08
+* [Dependency groups and uv run](https://github.com/simonw/til/blob/main/uv/dependency-groups.md) - 2025-12-02
+
 ## tiktok
 
 * [Downloading every video for a TikTok account](https://github.com/simonw/til/blob/main/tiktok/download-all-videos.md) - 2025-01-18
@@ -904,8 +911,4 @@ Search these TILs at https://til.simonwillison.net/
 ## claude-code
 
 * [Using Playwright MCP with Claude Code](https://github.com/simonw/til/blob/main/claude-code/playwright-mcp-claude-code.md) - 2025-07-01
-
-## uv
-
-* [Dependency groups and uv run](https://github.com/simonw/til/blob/main/uv/dependency-groups.md) - 2025-12-02
 <!-- index ends -->
