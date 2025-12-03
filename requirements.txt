@@ -1,4 +1,3 @@
-GitPython
 sqlite-utils>=3.2
 beautifulsoup4
 datasette>=0.65.1

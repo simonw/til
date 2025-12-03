@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
-from datetime import timezone
+from datetime import datetime, timezone
 import httpx
-import git
 import os
 import pathlib
+import subprocess
 from urllib.parse import urlencode
 import sqlite_utils
 from sqlite_utils.db import NotFoundError
@@ -17,30 +17,31 @@ def first_paragraph_text_only(html):
     return " ".join(soup.find("p").stripped_strings)
 
 
-def created_changed_times(repo_path, ref="main"):
-    created_changed_times = {}
-    repo = git.Repo(repo_path, odbt=git.GitDB)
-    commits = reversed(list(repo.iter_commits(ref)))
-    for commit in commits:
-        dt = commit.committed_datetime
-        affected_files = list(commit.stats.files.keys())
-        for filepath in affected_files:
-            if filepath not in created_changed_times:
-                created_changed_times[filepath] = {
-                    "created": dt.isoformat(),
-                    "created_utc": dt.astimezone(timezone.utc).isoformat(),
-                }
-            created_changed_times[filepath].update(
-                {
-                    "updated": dt.isoformat(),
-                    "updated_utc": dt.astimezone(timezone.utc).isoformat(),
-                }
-            )
-    return created_changed_times
+def get_file_times(repo_path, filepath):
+    """Get created and updated times for a file, following renames."""
+    # Get all commit dates for this file, following renames
+    # First line is most recent (updated), last line is oldest (created)
+    result = subprocess.run(
+        ["git", "log", "--follow", "--format=%cI", "--", filepath],
+        cwd=repo_path,
+        capture_output=True,
+        text=True,
+    )
+    output = result.stdout.strip()
+    if not output:
+        return None
+    dates = output.split("\n")
+    updated_dt = datetime.fromisoformat(dates[0])
+    created_dt = datetime.fromisoformat(dates[-1])
+    return {
+        "created": created_dt.isoformat(),
+        "created_utc": created_dt.astimezone(timezone.utc).isoformat(),
+        "updated": updated_dt.isoformat(),
+        "updated_utc": updated_dt.astimezone(timezone.utc).isoformat(),
+    }
 
 
 def build_database(repo_path):
-    all_times = created_changed_times(repo_path)
     db = sqlite_utils.Database(repo_path / "tils.db")
     table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
@@ -106,7 +107,10 @@ def build_database(repo_path):
         record["summary"] = first_paragraph_text_only(
             record.get("html") or previous_html or ""
         )
-        record.update(all_times[path])
+        # Get created/updated times, following renames
+        file_times = get_file_times(repo_path, path)
+        if file_times:
+            record.update(file_times)
         with db.conn:
             table.upsert(record, alter=True)
 
