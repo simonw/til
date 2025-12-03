@@ -2,6 +2,11 @@ title: Today I Learned
 about: simonw/til
 about_url: https://github.com/simonw/til
 plugins:
+  datasette-redirects:
+    301:
+      /python/uv-tests: /uv/uv-tests
+      /python/uv-cli-apps: /uv/uv-cli-apps
+      /pytest/pytest-uv: /uv/pytest-uv
   datasette-graphql:
     path: /-/graphql
   datasette-atom:

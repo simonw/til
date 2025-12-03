@@ -13,3 +13,4 @@ shot-scraper
 openai-to-sqlite>=0.4.2
 sqlite-utils-sqlite-vec
 datasette-sqlite-vec
+datasette-redirects
