@@ -133,3 +133,32 @@ dist/datasette_extract-0.2a0-py3-none-any.whl
 dist/datasette_extract-0.2a0.tar.gz
 ```
 The `.tar.gz` file should contain everything including the tests - the `.whl` file should contain just the non-development Python code.
+
+
+## Bonus tip: defining dev in terms of other dependency groups
+
+The `dev` group is a special case: tools like `uv run` will install everything in that group automatically.
+
+What if you want to divide up your dependencies into test dependencies, documentation dependencies and so on?
+
+Thanks to [Martín Gaitán's python-package-copier-template](https://github.com/mgaitan/python-package-copier-template/blob/676a89117b10f6267cfe45dd1c36efc80af95be7/project/pyproject.toml.jinja#L97-L121) I learned about this pattern for defining `dev` in terms of other groups:
+
+```toml
+[dependency-groups]
+test = [
+    "pytest",
+    "pytest-asyncio"
+]
+docs = [
+    "sphinx"
+]
+dev = [
+    { include-group = "test" },
+    { include-group = "docs" }
+]
+```
+
+Now if you just want to use the test depenedncies you can run this:
+```bash
+uv run --group test pytest
+```
