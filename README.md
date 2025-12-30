@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->570<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->571<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -267,6 +267,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Assistance with release notes using GitHub Issues](https://github.com/simonw/til/blob/main/github/release-note-assistance.md) - 2024-08-05
 * [Publishing a Docker container for Microsoft Edit to the GitHub Container Registry](https://github.com/simonw/til/blob/main/github/container-registry.md) - 2025-06-21
 * [Configuring GitHub Codespaces using devcontainers](https://github.com/simonw/til/blob/main/github/codespaces-devcontainers.md) - 2025-08-12
+* [Downloading archived Git repositories from archive.softwareheritage.org](https://github.com/simonw/til/blob/main/github/software-archive-recovery.md) - 2025-12-30
 
 ## node
 
