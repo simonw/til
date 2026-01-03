@@ -158,7 +158,7 @@ dev = [
 ]
 ```
 
-Now if you just want to use the test depenedncies you can run this:
+Now if you just want to use the test dependencies you can run this:
 ```bash
 uv run --group test pytest
 ```
