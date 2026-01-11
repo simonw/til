@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->571<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->572<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -913,4 +913,8 @@ Search these TILs at https://til.simonwillison.net/
 ## claude-code
 
 * [Using Playwright MCP with Claude Code](https://github.com/simonw/til/blob/main/claude-code/playwright-mcp-claude-code.md) - 2025-07-01
+
+## neon
+
+* [Taking Neon I at the Crucible](https://github.com/simonw/til/blob/main/neon/neon-1.md) - 2026-01-11
 <!-- index ends -->
