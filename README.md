@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->572<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->573<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -913,6 +913,7 @@ Search these TILs at https://til.simonwillison.net/
 ## claude-code
 
 * [Using Playwright MCP with Claude Code](https://github.com/simonw/til/blob/main/claude-code/playwright-mcp-claude-code.md) - 2025-07-01
+* [Previewing Claude Code for web branches with GitHub Pages](https://github.com/simonw/til/blob/main/claude-code/preview-github-pages.md) - 2026-01-22
 
 ## neon
 
