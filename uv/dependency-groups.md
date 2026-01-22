@@ -52,7 +52,7 @@ echo  'from my_new_library import hello
 def test_hello():
     assert hello() == "Hello from my-new-library!"' > tests/test_my_new_library.py
 ```
-Now I can run that test site using:
+Now I can run that test suite using:
 ```bash
 uv run pytest
 ```
@@ -158,7 +158,7 @@ dev = [
 ]
 ```
 
-Now if you just want to use the test depenedncies you can run this:
+Now if you just want to use the test dependencies you can run this:
 ```bash
 uv run --group test pytest
 ```
