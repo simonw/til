@@ -1,6 +1,6 @@
 # Running OpenClaw in Docker
 
-I'm not brave enough to run [OpenClaw](https://openclaw.ai/) (aka Clawdbot aka Moltbot) directly on my Mac, so I decided to try running it in a Docker instead container.
+I'm not brave enough to run [OpenClaw](https://openclaw.ai/) (aka Clawdbot aka Moltbot) directly on my Mac, so I decided to try running it in a Docker container instead.
 
 OpenClaw has Docker support out of the box, described [on this page](https://docs.openclaw.ai/install/docker) of their documentation. Here's what worked for me.
 
@@ -27,7 +27,7 @@ On first run OpenClaw asks you a *lot* of questions. Most of these are reasonabl
 - Model provider. I decided to go for OpenAI Codex with ChatGPT OAuth, which then allowed me to authenticate against ChatGPT to spend tokens already covered by my $20/month OpenAI subscription. I did this because I've heard that OpenClaw can spend a *lot* of tokens on API plans, and using ChatGPT put an easy upper limit on how much it could spend. When you opt for this OpenClaw gives you a URL to open in your browser which redirects back to a non-running `localhost` service and displays an error message - you then copy and paste that `localhost` URL back into OpenClaw to complete the authentication. Here's [what that looks like](https://gisthost.github.io/?6f7671b0c90839f01f63c5a3850656b7).
 - Tailscale: I tried to configure this the first time and it resulted in a machine I couldn't use, so the second time I said "no".
 
-Once it's up ad running you can run:
+Once it's up and running you can run:
 
     docker ps
 
@@ -41,7 +41,7 @@ This works for that, but you *must* run it in the same folder as that `docker-co
 
     docker compose run --rm openclaw-cli status
 
-## Setting up a Telegraph bot
+## Setting up a Telegram bot
 
 OpenClaw can communicate via a number of different messaging platforms, including WhatsApp and iMessage and Telegram and Slack and Discord. This means you can control the instance in your container directly from your phone.
 
@@ -71,7 +71,7 @@ To do that you need a special `?token=...` URL parameter. This may have been dis
 
     docker compose run --rm openclaw-cli dashboard --no-open
 
-Follew the URL that spits out to access the interface.
+Follow the URL that spits out to access the interface.
 
 Sometimes that's not enough either - you may see this error:
 
