@@ -41,7 +41,7 @@ This works for that, but you *must* run it in the same folder as that `docker-co
 
     docker compose run --rm openclaw-cli status
 
-## Setting up a Telegraph bot
+## Setting up a Telegram bot
 
 OpenClaw can communicate via a number of different messaging platforms, including WhatsApp and iMessage and Telegram and Slack and Discord. This means you can control the instance in your container directly from your phone.
 
