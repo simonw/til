@@ -27,7 +27,7 @@ On first run OpenClaw asks you a *lot* of questions. Most of these are reasonabl
 - Model provider. I decided to go for OpenAI Codex with ChatGPT OAuth, which then allowed me to authenticate against ChatGPT to spend tokens already covered by my $20/month OpenAI subscription. I did this because I've heard that OpenClaw can spend a *lot* of tokens on API plans, and using ChatGPT put an easy upper limit on how much it could spend. When you opt for this OpenClaw gives you a URL to open in your browser which redirects back to a non-running `localhost` service and displays an error message - you then copy and paste that `localhost` URL back into OpenClaw to complete the authentication. Here's [what that looks like](https://gisthost.github.io/?6f7671b0c90839f01f63c5a3850656b7).
 - Tailscale: I tried to configure this the first time and it resulted in a machine I couldn't use, so the second time I said "no".
 
-Once it's up ad running you can run:
+Once it's up and running you can run:
 
     docker ps
 
