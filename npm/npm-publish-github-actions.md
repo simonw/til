@@ -51,7 +51,7 @@ Really the three most important keys here are `"name"`, which needs to be a uniq
 
 All that's needed now is that `index.js` file - and optionally the `README.md` and `LICENSE` files if we want to include them in the package. The `README.md` ends up displayed on the NPM listing page so it's worth including.
 
-Here's my [index.js](https://github.com/simonw/prompts-js/blob/main/index.js) file. It starts and ends like this (an [IFFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)):
+Here's my [index.js](https://github.com/simonw/prompts-js/blob/main/index.js) file. It starts and ends like this (an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)):
 
 ```javascript
 const Prompts = (function () {
