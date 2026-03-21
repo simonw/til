@@ -1,6 +1,6 @@
 # Back-dating Git commits based on file modification dates
 
-I fell down a bit of a rabbit hole this morning. In trying to figure out [where the idea of celebrating World Wide Web Day on August 1st](https://simonwillison.net/2024/Aug/1/august-1st-world-wide-web-day/) came from I ran across Tim Berner-Lee's original code for the WorldWideWeb application for NeXT on the W3C's website:
+I fell down a bit of a rabbit hole this morning. In trying to figure out [where the idea of celebrating World Wide Web Day on August 1st](https://simonwillison.net/2024/Aug/1/august-1st-world-wide-web-day/) came from I ran across Tim Berners-Lee's original code for the WorldWideWeb application for NeXT on the W3C's website:
 
 https://www.w3.org/History/1991-WWW-NeXT/Implementation/
 
