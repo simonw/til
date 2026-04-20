@@ -2,14 +2,14 @@
 
 I've been experimenting with ways to fetch data from Datasette and display it in Google Sheets.
 
-I've found two patterns that work so far. The first uses a "named function" but can only fetch from public Datasette instances. The second uses App Script and can fetch from API-key protected instances as well.
+I've found three patterns that work so far. `importdata()` and "named functions" can only fetch from public Datasette instances. Apps Script can fetch from API key protected instances as well.
 
 ## Using IMPORTDATA()
 
-The easiest way to get this up and running doesn't involve any custom sheets functions at all. The [IMPORTDATA()](https://support.google.com/docs/answer/3093335?hl=en) default function can fetch any CSV data from a URL and load it into the sheet - and Datasette [exports CSV]() by default.
+The easiest way to get this up and running doesn't involve any custom sheets functions at all. The [IMPORTDATA()](https://support.google.com/docs/answer/3093335?hl=en) default function can fetch any CSV data from a URL and load it into the sheet - and Datasette [exports CSV](https://docs.datasette.io/en/latest/csv_export.html) by default.
 
 - https://latest.datasette.io/fixtures/roadside_attractions.csv - the CSV data for the [roadside_attractions](https://latest.datasette.io/fixtures/roadside_attractions) table.
-- https://latest.datasette.io/fixtures/-/query.csv?sql=select+pk%2C+name%2C+address%2C+url%2C+latitude%2C+longitude+from+roadside_attractions - a SQL export of a database query, in this case one that returns all rows from that table
+- https://latest.datasette.io/fixtures/-/query.csv?sql=select+pk%2C+name%2C+address%2C+url%2C+latitude%2C+longitude+from+roadside_attractions - a SQL export of a database query, in this case one that returns all rows from that table.
 
 Either of these URLs can be used in a Google Sheets cell like this:
 
@@ -19,7 +19,7 @@ Either of these URLs can be used in a Google Sheets cell like this:
 
 Ideally I'd like to use `=sql("SELECT ...")` in my spreadsheet cells instead. Google Sheets lets you define new "named functions" on a per-sheet basis, which can use existing Sheets functions and formulas - including `importdata()`.
 
-Go to `Data -> Named functions` and select "Add new function". Call it `SQL` and add a single argument placeholder called `query`, then the following formula definiton:
+Go to `Data -> Named functions` and select "Add new function". Call it `SQL` and add a single argument placeholder called `query`, then set the following formula definition:
 ```
 =IMPORTDATA(
   "https://latest.datasette.io/fixtures/-/query.csv?sql=" &
@@ -28,17 +28,17 @@ Go to `Data -> Named functions` and select "Add new function". Call it `SQL` and
 ```
 Now you can use `=SQL("select * from roadside_attractions")` in a cell to execute that SQL query and load in the CSV data:
 
-![Screenshot of Google Sheets. The spreadsheet displays data from a table, with the cell value set to =SQL("select pk, name, address, url, latitude, longitude from roadside_attractions order by pk limit 101"). The "Edit named function" panel is visible on the right, where a function called SQL takes an argument placeholder "query" and has the IMPORTDATA formula definiton shown above.](https://raw.githubusercontent.com/simonw/til/main/google-sheets/named-function.jpg)
+![Screenshot of Google Sheets. The spreadsheet displays data from a table, with the cell value set to =SQL("select pk, name, address, url, latitude, longitude from roadside_attractions order by pk limit 101"). The "Edit named function" panel is visible on the right, where a function called SQL takes an argument placeholder "query" and has the IMPORTDATA formula definition shown above.](https://raw.githubusercontent.com/simonw/til/main/google-sheets/named-function.jpg)
 
 ## Using Apps Script
 
-There's one big downside of `importdata()` or a named function built on top of it: only unaunthenticated URLs to CSV exports are supported. If your Datasette instance is protected by authentication and requires API keys to be sent as HTTP headers you will not be able to use them.
+There's one big downside of `importdata()` or a named function built on top of it: only unauthenticated URLs to CSV exports are supported. If your Datasette instance is protected by authentication and requires API keys to be sent as HTTP headers you will not be able to use them.
 
 (`importdata()` can work fine here if the API key is a query string argument though. Here's [how to enable that](https://github.com/simonw/datasette-auth-tokens/blob/main/README.md#api-tokens-as-a-query-string-parameter) using the `datasette-auth-tokens` plugin.)
 
-[Apps Script]() lets you define custom server-side JavaScript functions which can then be called from a Google Sheets cell. These can be a lot more flexible, including sending API tokens is HTTP headers.
+[Apps Script](https://developers.google.com/apps-script) lets you define custom server-side JavaScript functions which can then be called from a Google Sheets cell. These can be a lot more flexible, including sending API tokens in HTTP headers.
 
-To create an Apps Script for a spreadsheet, use "Extensions -> Apps Script". This will start you on a code editor with a `Code.gs` file that you can edit. Here's a function definition for a `=datasette_sql(query)` custom functions:
+To create an Apps Script for a spreadsheet, use "Extensions -> Apps Script". This will start you on a code editor with a `Code.gs` file that you can edit. Here's a function definition for a `=datasette_sql(query)` custom function:
 
 ```javascript
 function datasette_sql(query) {
@@ -82,7 +82,7 @@ function datasette_sql(query) {
 ```
 You can set the base URL and an optional API token in variables at the top of the script.
 
-![Apps Script editor UI - lots of menu items, a blue Deploy button and the source code for the Code.file.](https://raw.githubusercontent.com/simonw/til/main/google-sheets/apps-script-editor.jpg)
+![Apps Script editor UI - lots of menu items, a blue Deploy button and the source code for the Code.gs file.](https://raw.githubusercontent.com/simonw/til/main/google-sheets/apps-script-editor.jpg)
 
 You can ignore that "Deploy" button entirely, it's not necessary for custom functions for sheets. I had to hit the `Command+S` key combination to save my changes - confusingly I could not find a "save" button in the editor UI.
 
@@ -90,4 +90,4 @@ Apps Script has a script and document properties mechanism which theoretically c
 
 As far as I can tell users who have "view" permission but not "edit" permission on the spreadsheet are unable to view the source code, so it should be safe to keep read-only API tokens in the source code even for shared spreadsheets.
 
-I've prepared [this demo sheet](https://docs.google.com/spreadsheets/d/14lRV2-AeBmjI3lJbl2apwfC_ncXqL0uSV68lmtzUI7I/edit?gid=0#gid=0) showing all three of the above solutions - `importdata()`, a named `sql()` function and a `datasette_sql()` function defined using Apps Scripts.
+I've prepared [this demo sheet](https://docs.google.com/spreadsheets/d/14lRV2-AeBmjI3lJbl2apwfC_ncXqL0uSV68lmtzUI7I/edit?gid=0#gid=0) showing all three of the above solutions - `importdata()`, a named `sql()` function and a `datasette_sql()` function defined using Apps Script.
