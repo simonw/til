@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->575<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->576<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -675,6 +675,7 @@ Search these TILs at https://til.simonwillison.net/
 ## google-sheets
 
 * [Concatenating strings and newlines in Google Sheets](https://github.com/simonw/til/blob/main/google-sheets/concatenate.md) - 2022-03-15
+* [SQL functions in Google Sheets to fetch data from Datasette](https://github.com/simonw/til/blob/main/google-sheets/datasette-sql.md) - 2026-04-19
 
 ## twitter
 
