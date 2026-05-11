@@ -88,7 +88,37 @@ This needs to be run like this:
 > In hovercraft's hum, where the engines start,  
 > A skunk claims his kingdom, with pride and art.
 
-The most interesting way to use templates is with embedded tool functions. Here's a more complex example:
+## Templates with tools
+
+The most interesting way to use templates is with embedded tool functions. Here's a simple example of that, saved as `calc.sh`:
+```yaml
+#!/usr/bin/env -S llm -t
+model: gpt-5.4-mini
+system: |
+  Use tools to run calculations
+functions: |
+  def add(a: int, b: int) -> int:
+      return a + b
+  def multiply(a: int, b: int) -> int:
+      return a * b
+```
+Then:
+```bash
+chmod 755 calc.sh
+./calc.sh 'what is 2344 * 5252 + 134' --td
+```
+Which outputs (thanks to the `--td` tool debug option):
+```
+Tool call: multiply({'a': 2344, 'b': 5252})
+  12310688
+
+Tool call: add({'a': 12310688, 'b': 134})
+  12310822
+
+2344 × 5252 + 134 = **12,310,822**
+```
+
+Here's a more complex example which defines a tool for searching my blog:
 
 ```yaml
 #!/usr/usr/bin/env -S llm -t
