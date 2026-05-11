@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->576<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->577<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -799,6 +799,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Exploring OpenAI's deep research API model o4-mini-deep-research](https://github.com/simonw/til/blob/main/llms/o4-mini-deep-research.md) - 2025-10-18
 * [Using Codex CLI with gpt-oss:120b on an NVIDIA DGX Spark via Tailscale](https://github.com/simonw/til/blob/main/llms/codex-spark-gpt-oss.md) - 2025-11-06
 * [Running OpenClaw in Docker](https://github.com/simonw/til/blob/main/llms/openclaw-docker.md) - 2026-02-01
+* [Using LLM in the shebang line of a script](https://github.com/simonw/til/blob/main/llms/llm-shebang.md) - 2026-05-11
 
 ## ab
 
