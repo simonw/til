@@ -33,13 +33,21 @@ Generate an SVG of a pelican riding a bicycle
 ```
 
 The `-f` option needs to come last as it will be passed the path to the script file.
+
 ## How this works
+
+    #!/usr/bin/env -S llm -f
 
 The `-S` (for split) option to `env` is required because, without it, the `env` command will treat the rest of the line as the full name of the command, producing this error:
 
 > `/usr/bin/env: 'llm -f': No such file or directory`
 
-The path to the script itself is added to the end of the command. We use `llm -f` because `-f` is short for `--fragment` - it expects a path (or URL) to a file that will be treated as a fragment of prompt.
+With `-S` the `-f` is passed as an argument to LLM, and then the path to the file itself is passed after that:
+
+    llm -f path/to/pelican.sh
+
+This takes advantage of [LLM's fragments mechanism](https://llm.datasette.io/en/stable/fragments.html). The argument to `-f` is the path to a file, and the contents of that file will then be appended to the prompt.
+
 ## Adding tools
 
 Scripts like this are a lot more interesting if they can execute tools.
