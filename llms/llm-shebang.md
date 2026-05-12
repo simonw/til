@@ -84,7 +84,7 @@ I got this:
 Templates can include parameters, for example:
 
 ```yaml
-#!/usr/usr/bin/env -S llm -t
+#!/usr/bin/env -S llm -t
 prompt: |
   Two line poem about $animal who lives in $place
 ```
@@ -129,7 +129,7 @@ Tool call: add({'a': 12310688, 'b': 134})
 Here's a more complex example which defines a tool for searching my blog:
 
 ```yaml
-#!/usr/usr/bin/env -S llm -t
+#!/usr/bin/env -S llm -t
 model: gpt-5.5
 system: |
   You answer questions from Simon Willison's blog
