@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->577<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->578<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -800,6 +800,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Using Codex CLI with gpt-oss:120b on an NVIDIA DGX Spark via Tailscale](https://github.com/simonw/til/blob/main/llms/codex-spark-gpt-oss.md) - 2025-11-06
 * [Running OpenClaw in Docker](https://github.com/simonw/til/blob/main/llms/openclaw-docker.md) - 2026-02-01
 * [Using LLM in the shebang line of a script](https://github.com/simonw/til/blob/main/llms/llm-shebang.md) - 2026-05-11
+* [Setting a custom price for a model in AgentsView](https://github.com/simonw/til/blob/main/llms/agentsview-custom-model-price.md) - 2026-06-09
 
 ## ab
 
