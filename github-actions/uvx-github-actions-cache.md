@@ -12,7 +12,7 @@ My goal was to be able to drop `uvx name-of-tool` into a GitHub Actions workflow
 
 The key turned out to be the [UV_EXCLUDE_NEWER](https://docs.astral.sh/uv/reference/environment/#uv_exclude_newer) environment variable. This works the same as `uvx --exclude-newer DATE`, allowing you to tell `uv` to install the most recent package as-of a specific date.
 
-That date can then also be used as part of the cache key for GitHub Actions! This means you can set the date in the script once and get a repeatable set of installed versions for all of the tools. Then any time you want to bust the cache you can increment the date in that one palce:
+That date can then also be used as part of the cache key for GitHub Actions! This means you can set the date in the script once and get a repeatable set of installed versions for all of the tools. Then any time you want to bust the cache you can increment the date in that one place:
 
 ```yaml
 name: Run tools
