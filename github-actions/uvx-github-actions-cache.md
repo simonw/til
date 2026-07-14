@@ -29,27 +29,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-	  - name: Install uv and restore cache
-		id: setup-uv
-		uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
-		with:
-		  enable-cache: true
-		  cache-dependency-glob: ""
-		  cache-suffix: "tools-${{ env.UV_EXCLUDE_NEWER }}"
-		  prune-cache: false
-	
-	  - name: Require cache-only uv on cache hits
-		if: steps.setup-uv.outputs.cache-hit == 'true'
-		run: echo "UV_OFFLINE=1" >> "$GITHUB_ENV"
-	
-	  - name: Run sqlite-utils
-		run: uvx sqlite-utils --version
-	
-	  - name: Run datasette
-		run: uvx --pre datasette --version
-	
-	  - name: Run LLM
-		run: uvx llm --version
+      - name: Install uv and restore cache
+        id: setup-uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          enable-cache: true
+          cache-dependency-glob: ""
+          cache-suffix: "tools-${{ env.UV_EXCLUDE_NEWER }}"
+          prune-cache: false
+    
+      - name: Require cache-only uv on cache hits
+        if: steps.setup-uv.outputs.cache-hit == 'true'
+        run: echo "UV_OFFLINE=1" >> "$GITHUB_ENV"
+    
+      - name: Run sqlite-utils
+        run: uvx sqlite-utils --version
+    
+      - name: Run datasette
+        run: uvx --pre datasette --version
+    
+      - name: Run LLM
+        run: uvx llm --version
 ```
 
 [astral-sh/setup-uv](https://github.com/astral-sh/setup-uv) is Astral's official Action for getting `uv`. I'm annoyed that it appears to hit Astral's own `releases.astral.sh` site every time it runs but if that's how they want it to work I guess that's on them.
@@ -69,9 +69,9 @@ Personally I'd rather suffer from very slightly slower CI builds (presumably bec
 
 This block here enforces that the cache is used correctly:
 ```
-	  - name: Require cache-only uv on cache hits
-		if: steps.setup-uv.outputs.cache-hit == 'true'
-		run: echo "UV_OFFLINE=1" >> "$GITHUB_ENV"
+      - name: Require cache-only uv on cache hits
+        if: steps.setup-uv.outputs.cache-hit == 'true'
+        run: echo "UV_OFFLINE=1" >> "$GITHUB_ENV"
 ```
 Setting that `UV_OFFLINE=1` environment variable causes `uvx tool-name` to fail if the tool has not been previously installed. We only run that if we got a cache hit from the GitHub Actions cache.
 
