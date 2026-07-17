@@ -1,6 +1,6 @@
 # Running OpenClaw in Docker
 
-I'm not brave enough to run [OpenClaw](https://openclaw.ai/) (aka Clawdbot aka Moltbot) directly on my Mac, so I decided to try running it in a Docker instead container.
+I'm not brave enough to run [OpenClaw](https://openclaw.ai/) (aka Clawdbot aka Moltbot) directly on my Mac, so I decided to try running it in a Docker container instead.
 
 OpenClaw has Docker support out of the box, described [on this page](https://docs.openclaw.ai/install/docker) of their documentation. Here's what worked for me.
 
@@ -71,7 +71,7 @@ To do that you need a special `?token=...` URL parameter. This may have been dis
 
     docker compose run --rm openclaw-cli dashboard --no-open
 
-Follew the URL that spits out to access the interface.
+Follow the URL that spits out to access the interface.
 
 Sometimes that's not enough either - you may see this error:
 
