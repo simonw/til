@@ -10,7 +10,7 @@ Codespaces generally launch from a GitHub repository, which can be configured to
 
 ## A Python environment with some VS Code plugins
 
-My [simonw/codespaces](https://github.com/simonw/codespaces) repository contains a very simple configuration that provides Python 3.13 anh Node.js LTS plus VS Code with some useful plugins.
+My [simonw/codespaces](https://github.com/simonw/codespaces) repository contains a very simple configuration that provides Python 3.13 and Node.js LTS plus VS Code with some useful plugins.
 
 The only required file is [.devcontainer/devcontainer.json](https://github.com/simonw/codespaces/blob/main/.devcontainer/devcontainer.json). Here's that file in full:
 
