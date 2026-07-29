@@ -211,7 +211,7 @@ const myMap = new maplibregl.Map({
   },
 });
 ```
-I haven't yet figured out how to host my own copy of the `glpyhs` (effectively the fonts used to render labels on the map), so I'm using the Protomaps CDN for the moment.
+You can also self host the glyphs, by downloading them from here: [https://github.com/protomaps/basemaps-assets](https://github.com/protomaps/basemaps-assets)
 
 I needed to specify a full URL to my `hmb.pmtiles` file. In my development environment that's `http://localhost:5174/hmb.pmtiles` - but in production it's `https://simonw.github.io/hmb-map/hmb.pmtiles` - so I had to dynamically assemble that URL using the `location.protocol` and `location.host` and `location.pathname` properties.
 
