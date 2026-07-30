@@ -2,7 +2,7 @@
 
 I've started exploring [MCP](https://modelcontextprotocol.io/) in more detail. The web chat UIs for both Claude and ChatGPT can access MCP servers but it's not obvious how to set them up. Here's what I figured out.
 
-I'm using my new unauthenticated MCP for my blog - `https://datasette.simonwillison.net/-/mcp` - which uses [https://github.com/datasette/datasette-mcp](datasette-mcp) to allow the execution of read-only SQL queries against a copy of my site's database.
+I'm using my new unauthenticated MCP for my blog - `https://datasette.simonwillison.net/-/mcp` - which uses [datasette-mcp](https://github.com/datasette/datasette-mcp) to allow the execution of read-only SQL queries against a copy of my site's database.
 
 ## Claude
 
