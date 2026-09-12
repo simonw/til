@@ -26,3 +26,9 @@ Then changed that first line to:
 ds = Datasette(files=["content.db"])
 ```
 And restarted the server.
+
+To serve a database read-only, in [immutable mode](https://docs.datasette.io/en/0.54.1/performance.html#immutable-mode), use the named argument immutables, rather than files:
+
+```python
+ds = Datasette(immutables=["content.db"])
+```
