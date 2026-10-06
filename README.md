@@ -4,7 +4,7 @@ My Today I Learned snippets. Inspired by [jbranchaud/til](https://github.com/jbr
 
 Search these TILs at https://til.simonwillison.net/
 
-<!-- count starts -->582<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
+<!-- count starts -->583<!-- count ends --> TILs so far. <a href="https://til.simonwillison.net/til/feed.atom">Atom feed here</a>.
 
 <!-- index starts -->
 ## github-actions
@@ -468,6 +468,7 @@ Search these TILs at https://til.simonwillison.net/
 * [Remember to commit when using datasette.execute_write_fn()](https://github.com/simonw/til/blob/main/datasette/remember-to-commit.md) - 2023-08-31
 * [Running Datasette on Hugging Face Spaces](https://github.com/simonw/til/blob/main/datasette/hugging-face-spaces.md) - 2023-09-08
 * [Writing Playwright tests for a Datasette Plugin](https://github.com/simonw/til/blob/main/datasette/playwright-tests-datasette-plugin.md) - 2024-01-08
+* [Using Parseable with Datasette for OpenTelemetry traces](https://github.com/simonw/til/blob/main/datasette/datasette-parseable-opentelemetry.md) - 2026-10-06
 
 ## jupyter
 
